@@ -87,28 +87,40 @@
 
 
 
-<meta name="description" content="字符串Java没有内置的字符串类型，而是在标准Java类库中提供了一个预定义类：String。
+<meta name="description" content="字符串
+输入输出
+
+
+字符串Java没有内置的字符串类型，而是在标准Java类库中提供了一个预定义类：String。
 字串String类的substring方法可以用于提取字串：
 12String greeting = &quot;Hello&quot;;String s = greeting.substring(0, 3);
 拼接Java使用+号拼接两个字符串
-如果需要把多个字符串放在一起，用一个界定符分隔，可以使用静态join方法：">
+如果需要把多个字符串放在一起，用一个界定符分隔，可">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java笔记（二）--Java的基本程序设计结构（二）">
 <meta property="og:url" content="http://yoursite.com/2017/03/24/Java笔记（二）--Java的基本程序设计结构（二）/index.html">
 <meta property="og:site_name" content="Mr.Z's Blog">
-<meta property="og:description" content="字符串Java没有内置的字符串类型，而是在标准Java类库中提供了一个预定义类：String。
+<meta property="og:description" content="字符串
+输入输出
+
+
+字符串Java没有内置的字符串类型，而是在标准Java类库中提供了一个预定义类：String。
 字串String类的substring方法可以用于提取字串：
 12String greeting = &quot;Hello&quot;;String s = greeting.substring(0, 3);
 拼接Java使用+号拼接两个字符串
-如果需要把多个字符串放在一起，用一个界定符分隔，可以使用静态join方法：">
-<meta property="og:updated_time" content="2017-03-26T06:37:20.390Z">
+如果需要把多个字符串放在一起，用一个界定符分隔，可">
+<meta property="og:updated_time" content="2017-03-28T07:35:03.418Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java笔记（二）--Java的基本程序设计结构（二）">
-<meta name="twitter:description" content="字符串Java没有内置的字符串类型，而是在标准Java类库中提供了一个预定义类：String。
+<meta name="twitter:description" content="字符串
+输入输出
+
+
+字符串Java没有内置的字符串类型，而是在标准Java类库中提供了一个预定义类：String。
 字串String类的substring方法可以用于提取字串：
 12String greeting = &quot;Hello&quot;;String s = greeting.substring(0, 3);
 拼接Java使用+号拼接两个字符串
-如果需要把多个字符串放在一起，用一个界定符分隔，可以使用静态join方法：">
+如果需要把多个字符串放在一起，用一个界定符分隔，可">
 
 
 
@@ -365,7 +377,13 @@
       
 
       
-        <h1 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h1><p>Java没有内置的字符串类型，而是在标准Java类库中提供了一个预定义类：String。</p>
+        <blockquote>
+<ul>
+<li>字符串</li>
+<li>输入输出</li>
+</ul>
+</blockquote>
+<h1 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h1><p>Java没有内置的字符串类型，而是在标准Java类库中提供了一个预定义类：String。</p>
 <h2 id="字串"><a href="#字串" class="headerlink" title="字串"></a>字串</h2><p>String类的substring方法可以用于提取字串：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">String greeting = <span class="string">"Hello"</span>;</div><div class="line">String s = greeting.substring(<span class="number">0</span>, <span class="number">3</span>);</div></pre></td></tr></table></figure>
 <h2 id="拼接"><a href="#拼接" class="headerlink" title="拼接"></a>拼接</h2><p>Java使用+号拼接两个字符串</p>
@@ -383,6 +401,99 @@
 <p>String变量还可以存放一个特殊值，null。这表示目前没有任何对象与该变量关联。</p>
 <p>检测字符串是否为null：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span>(str == <span class="keyword">null</span>)</div></pre></td></tr></table></figure>
+<h1 id="输入输出"><a href="#输入输出" class="headerlink" title="输入输出"></a>输入输出</h1><h2 id="标准输入流"><a href="#标准输入流" class="headerlink" title="标准输入流"></a>标准输入流</h2><p>读取“标准输入流”System.in，需要先构造一个Scanner对象，并与“标准输入流”System.in关联</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Scanner in = <span class="keyword">new</span> Scanner(System.in);</div></pre></td></tr></table></figure>
+<p><strong>Console类:</strong> 适用于从控制台读取密码</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">Console cons = System.console();</div><div class="line">String username = cons.readLine(<span class="string">"User name: "</span>);</div><div class="line"><span class="comment">//安全起见，返回密码存放在一维字符数组中。对密码进行处理后，马上用一个填充值覆盖数组元素</span></div><div class="line"><span class="keyword">char</span>[] passwd = cons.readPassword(<span class="string">"Password: "</span>);</div></pre></td></tr></table></figure>
+<h2 id="格式化输出"><a href="#格式化输出" class="headerlink" title="格式化输出"></a>格式化输出</h2><p>Java SE 5.0 沿用了C语言库函数中的printf方法。例如，调用：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">System.out.printf(&quot;%8.2f&quot;, x);</div></pre></td></tr></table></figure>
+<p>可以用8个字符的宽度和小数点后两个字符的精度打印x。例如：</p>
+<p>3333.33</p>
+<p>在printf中，每一个以%字符开始的格式说明符都用相应的参数替换。格式说明符尾部的转换符将指示被格式化的数值类型。例如：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">System.out.printf(<span class="string">"Hello, %s. Next year, you'll be %d"</span>, name, age);</div></pre></td></tr></table></figure>
+<p><strong>用于printf的转换符</strong></p>
+<table>
+<thead>
+<tr>
+<th>转换符</th>
+<th>类型</th>
+<th>举例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>d</td>
+<td>十进制整数</td>
+<td>159</td>
+</tr>
+<tr>
+<td>x</td>
+<td>十六进制整数</td>
+<td>9f</td>
+</tr>
+<tr>
+<td>o</td>
+<td>八进制整数</td>
+<td>237</td>
+</tr>
+<tr>
+<td>f</td>
+<td>定点浮点数</td>
+<td>15.9</td>
+</tr>
+<tr>
+<td>e</td>
+<td>指数浮点数</td>
+<td>1.59e+01</td>
+</tr>
+<tr>
+<td>g</td>
+<td>通用浮点数</td>
+<td>—</td>
+</tr>
+<tr>
+<td>a</td>
+<td>十六进制浮点数</td>
+<td>0x1.fccdp3</td>
+</tr>
+<tr>
+<td>s</td>
+<td>字符串</td>
+<td>Hello</td>
+</tr>
+<tr>
+<td>c</td>
+<td>字符</td>
+<td>H</td>
+</tr>
+<tr>
+<td>b</td>
+<td>布尔</td>
+<td>True</td>
+</tr>
+<tr>
+<td>h</td>
+<td>散列码</td>
+<td>42628b2</td>
+</tr>
+<tr>
+<td>%</td>
+<td>百分号</td>
+<td>%</td>
+</tr>
+<tr>
+<td>n</td>
+<td>与平台有关的行分隔符</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<h2 id="文件输入与输出"><a href="#文件输入与输出" class="headerlink" title="文件输入与输出"></a>文件输入与输出</h2><h3 id="读取文件"><a href="#读取文件" class="headerlink" title="读取文件"></a>读取文件</h3><p>要对文件进行读取，需要用FIle对象构造一个Scanner对象，如：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Scanner in = <span class="keyword">new</span> Scanner(Paths.get(<span class="string">"myFile.txt"</span>), <span class="string">"UTF-8"</span>);</div></pre></td></tr></table></figure>
+<p>如果文件名中包含反斜杠符号，就要在每个反斜杠之前再加一个额外的反斜杠：”c:\\mydirectory\\myFile.txt”</p>
+<h3 id="写入文件"><a href="#写入文件" class="headerlink" title="写入文件"></a>写入文件</h3><p>写入文件需要构造一个PrintWriter对象。在构造器中，提供文件名：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">PrintWriter out = <span class="keyword">new</span> PrintWriter(<span class="string">"myFile.txt"</span>, <span class="string">"UTF-8"</span>);</div></pre></td></tr></table></figure>
+<p>如果该文件不存在，则会创建该文件。可以像输出到System.out一样使用print, println 以及 printf 命令。</p>
 
       
     </div>
@@ -428,6 +539,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/03/28/Java笔记（三）--Java的基本程序设计结构（三）/" rel="prev" title="">
+                 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -499,7 +614,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -552,7 +667,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#字符串"><span class="nav-number">1.</span> <span class="nav-text">字符串</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#字串"><span class="nav-number">1.1.</span> <span class="nav-text">字串</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#拼接"><span class="nav-number">1.2.</span> <span class="nav-text">拼接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#不可变字符串"><span class="nav-number">1.3.</span> <span class="nav-text">不可变字符串</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#检测字符串是否相等"><span class="nav-number">1.4.</span> <span class="nav-text">检测字符串是否相等</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#空串与Null串"><span class="nav-number">1.5.</span> <span class="nav-text">空串与Null串</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#字符串"><span class="nav-number">1.</span> <span class="nav-text">字符串</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#字串"><span class="nav-number">1.1.</span> <span class="nav-text">字串</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#拼接"><span class="nav-number">1.2.</span> <span class="nav-text">拼接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#不可变字符串"><span class="nav-number">1.3.</span> <span class="nav-text">不可变字符串</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#检测字符串是否相等"><span class="nav-number">1.4.</span> <span class="nav-text">检测字符串是否相等</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#空串与Null串"><span class="nav-number">1.5.</span> <span class="nav-text">空串与Null串</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#输入输出"><span class="nav-number">2.</span> <span class="nav-text">输入输出</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#标准输入流"><span class="nav-number">2.1.</span> <span class="nav-text">标准输入流</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#格式化输出"><span class="nav-number">2.2.</span> <span class="nav-text">格式化输出</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文件输入与输出"><span class="nav-number">2.3.</span> <span class="nav-text">文件输入与输出</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#读取文件"><span class="nav-number">2.3.1.</span> <span class="nav-text">读取文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#写入文件"><span class="nav-number">2.3.2.</span> <span class="nav-text">写入文件</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
