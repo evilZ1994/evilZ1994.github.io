@@ -115,7 +115,7 @@
 12String greeting = &quot;Hello&quot;;String s = greeting.substring(0, 3);
 拼接Java使用+号拼接两个字符串
 如果需要把多个字符串放在一">
-<meta property="og:updated_time" content="2017-03-28T13:46:14.078Z">
+<meta property="og:updated_time" content="2017-03-28T13:55:19.583Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java笔记（二）--Java的基本程序设计结构（二）">
 <meta name="twitter:description" content="字符串
@@ -502,7 +502,8 @@
 </table>
 <h2 id="文件输入与输出"><a href="#文件输入与输出" class="headerlink" title="文件输入与输出"></a>文件输入与输出</h2><h3 id="读取文件"><a href="#读取文件" class="headerlink" title="读取文件"></a>读取文件</h3><p>要对文件进行读取，需要用FIle对象构造一个Scanner对象，如：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Scanner in = <span class="keyword">new</span> Scanner(Paths.get(<span class="string">"myFile.txt"</span>), <span class="string">"UTF-8"</span>);</div></pre></td></tr></table></figure>
-<p>如果文件名中包含反斜杠符号，就要在每个反斜杠之前再加一个额外的反斜杠：”c:\\mydirectory\\myFile.txt”</p>
+<p>如果文件名中包含反斜杠符号，就要在每个反斜杠之前再加一个额外的反斜杠：</p>
+<p>“c:\\mydirectory\\myFile.txt”</p>
 <h3 id="写入文件"><a href="#写入文件" class="headerlink" title="写入文件"></a>写入文件</h3><p>写入文件需要构造一个PrintWriter对象。在构造器中，提供文件名：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">PrintWriter out = <span class="keyword">new</span> PrintWriter(<span class="string">"myFile.txt"</span>, <span class="string">"UTF-8"</span>);</div></pre></td></tr></table></figure>
 <p>如果该文件不存在，则会创建该文件。可以像输出到System.out一样使用print, println 以及 printf 命令。</p>
