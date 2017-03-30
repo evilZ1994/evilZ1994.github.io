@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="java," />
+  <meta name="keywords" content="android," />
 
 
 
@@ -87,58 +87,22 @@
 
 
 
-<meta name="description" content="类命名规范
-注释
-数据类型
-变量和常量
-运算符
-
-
-类命名规范类名是以大写字母开头的名词。如果名字由多个单词组成，每个单词的第一个字母都应该大写（骆驼命名法，如：CamelCase)。
-注释
-行注释//：从//开始到本行结尾
-段落注释/* */：使用/*和/*将一段注释括起来
-文档注释/** */：可以自动生成文档。
-
-数据类型Java是一种强类型语言，必须为每个变量声明一种类型。
-Java中">
+<meta name="description" content="在Android开发中，应该尽量将UI中的字符串存放在资源文件中（res/values/strings.xml）。
+支持不同语言如果需要添加对更多语言的支持，需要在res下创建额外的values目录，并在目录名称末尾加上连字符和ISO语言代码。例如，values-es/目录包含的简单资源用于语言代码为”es”的语言区域。Android根据运行时设备的语言区域设置加载相应的资源。
+一旦决定了为哪些语">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java笔记（一）--Java的基本程序设计结构（一）">
-<meta property="og:url" content="http://yoursite.com/2017/03/23/Java笔记（一）--Java的基本程序设计结构（一）/index.html">
+<meta property="og:title" content="Android国际化语言支持">
+<meta property="og:url" content="http://yoursite.com/2017/03/30/Android国际化语言支持/index.html">
 <meta property="og:site_name" content="Mr.Z's Blog">
-<meta property="og:description" content="类命名规范
-注释
-数据类型
-变量和常量
-运算符
-
-
-类命名规范类名是以大写字母开头的名词。如果名字由多个单词组成，每个单词的第一个字母都应该大写（骆驼命名法，如：CamelCase)。
-注释
-行注释//：从//开始到本行结尾
-段落注释/* */：使用/*和/*将一段注释括起来
-文档注释/** */：可以自动生成文档。
-
-数据类型Java是一种强类型语言，必须为每个变量声明一种类型。
-Java中">
-<meta property="og:updated_time" content="2017-03-28T06:46:25.708Z">
+<meta property="og:description" content="在Android开发中，应该尽量将UI中的字符串存放在资源文件中（res/values/strings.xml）。
+支持不同语言如果需要添加对更多语言的支持，需要在res下创建额外的values目录，并在目录名称末尾加上连字符和ISO语言代码。例如，values-es/目录包含的简单资源用于语言代码为”es”的语言区域。Android根据运行时设备的语言区域设置加载相应的资源。
+一旦决定了为哪些语">
+<meta property="og:updated_time" content="2017-03-30T13:10:35.829Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Java笔记（一）--Java的基本程序设计结构（一）">
-<meta name="twitter:description" content="类命名规范
-注释
-数据类型
-变量和常量
-运算符
-
-
-类命名规范类名是以大写字母开头的名词。如果名字由多个单词组成，每个单词的第一个字母都应该大写（骆驼命名法，如：CamelCase)。
-注释
-行注释//：从//开始到本行结尾
-段落注释/* */：使用/*和/*将一段注释括起来
-文档注释/** */：可以自动生成文档。
-
-数据类型Java是一种强类型语言，必须为每个变量声明一种类型。
-Java中">
+<meta name="twitter:title" content="Android国际化语言支持">
+<meta name="twitter:description" content="在Android开发中，应该尽量将UI中的字符串存放在资源文件中（res/values/strings.xml）。
+支持不同语言如果需要添加对更多语言的支持，需要在res下创建额外的values目录，并在目录名称末尾加上连字符和ISO语言代码。例如，values-es/目录包含的简单资源用于语言代码为”es”的语言区域。Android根据运行时设备的语言区域设置加载相应的资源。
+一旦决定了为哪些语">
 
 
 
@@ -166,13 +130,13 @@ Java中">
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/03/23/Java笔记（一）--Java的基本程序设计结构（一）/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/03/30/Android国际化语言支持/"/>
 
 
 
 
 
-  <title> Java笔记（一）--Java的基本程序设计结构（一） | Mr.Z's Blog </title>
+  <title> Android国际化语言支持 | Mr.Z's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -301,7 +265,7 @@ Java中">
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/23/Java笔记（一）--Java的基本程序设计结构（一）/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/30/Android国际化语言支持/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Zhu Yuexin">
@@ -322,7 +286,7 @@ Java中">
             
             
               
-                Java笔记（一）--Java的基本程序设计结构（一）
+                Android国际化语言支持
               
             
           </h1>
@@ -337,8 +301,8 @@ Java中">
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-23T21:30:00+08:00">
-                2017-03-23
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-30T21:00:00+08:00">
+                2017-03-30
               </time>
             
 
@@ -360,8 +324,8 @@ Java中">
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java笔记/" itemprop="url" rel="index">
-                    <span itemprop="name">Java笔记</span>
+                  <a href="/categories/Android碎片/" itemprop="url" rel="index">
+                    <span itemprop="name">Android碎片</span>
                   </a>
                 </span>
 
@@ -395,71 +359,16 @@ Java中">
       
 
       
-        <blockquote>
-<ul>
-<li>类命名规范</li>
-<li>注释</li>
-<li>数据类型</li>
-<li>变量和常量</li>
-<li>运算符</li>
-</ul>
-</blockquote>
-<h1 id="类命名规范"><a href="#类命名规范" class="headerlink" title="类命名规范"></a>类命名规范</h1><p>类名是以大写字母开头的名词。如果名字由多个单词组成，每个单词的第一个字母都应该大写（骆驼命名法，如：CamelCase)。</p>
-<h1 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h1><ol>
-<li>行注释//：从//开始到本行结尾</li>
-<li>段落注释/* */：使用/*和/*将一段注释括起来</li>
-<li>文档注释/** */：可以自动生成文档。</li>
-</ol>
-<h1 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h1><p>Java是一种强类型语言，必须为每个变量声明一种类型。</p>
-<p>Java中共有8种基本类型：4种整形(int,short,long,byte)，2种浮点型(float,double)，1种用于表示Unicode编码的字符单元的字符类型char，1种表示真值的boolean类型。</p>
-<h1 id="变量和常量"><a href="#变量和常量" class="headerlink" title="变量和常量"></a>变量和常量</h1><h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h2><p>每个变量都有一个类型。在声明变量时，变量的类型位于变量名之前：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">double</span> salary;</div><div class="line"><span class="keyword">int</span> vacationDays;</div></pre></td></tr></table></figure>
-<p>变量在使用前必须初始化。</p>
-<h2 id="常量"><a href="#常量" class="headerlink" title="常量"></a>常量</h2><p>Java中，使用关键字final指示常量。习惯上，常量名使用全大写。</p>
-<h3 id="类常量"><a href="#类常量" class="headerlink" title="类常量"></a>类常量</h3><p>如果希望某个常量可以在一个类中的多个方法中使用，那么这种常量称为类常量。可以使用关键字static final设置类常量。</p>
-<p>类常量通常定义于main方法外部。</p>
-<h1 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h1><h2 id="算术运算符："><a href="#算术运算符：" class="headerlink" title="算术运算符："></a>算术运算符：</h2><ul>
-<li>算术运算符：+、-、*、/</li>
-<li>/运算的两个操作数都是整数时，表示整数除法；否则，表示浮点除法</li>
-<li>求余（取模）操作：%</li>
-<li>整数被0除会产生一个异常；浮点数被0除会得到无穷大或NaN结果</li>
-</ul>
-<h2 id="数学函数与常量"><a href="#数学函数与常量" class="headerlink" title="数学函数与常量"></a>数学函数与常量</h2><p>Math类中包含了许多数学函数。如：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">double</span> y = Math.sqrt(x); <span class="comment">//sqrt方法是求数值的平方根</span></div><div class="line"><span class="keyword">double</span> y = Math.pow(x, a); <span class="comment">//pow方法是幂运算，求x的a次幂</span></div></pre></td></tr></table></figure>
-<p>常用三角函数：</p>
-<ul>
-<li><p>Math.sin</p>
-</li>
-<li><p>Math.cos</p>
-</li>
-<li><p>Math.tan</p>
-</li>
-<li><p>Math.atan</p>
-</li>
-<li><p>Math.atan2</p>
-</li>
-</ul>
-<p>指数函数及它的反函数：</p>
-<ul>
-<li><p>Math.exp</p>
-</li>
-<li><p>Math.log</p>
-</li>
-<li><p>Math.log10</p>
-</li>
-</ul>
-<p>两个用于表示π和e常量的近似值：</p>
-<ul>
-<li><p>Math.PI</p>
-</li>
-<li><p>Math.E</p>
-</li>
-</ul>
-<p>浮点数舍入运算：</p>
-<ul>
-<li>Math.round</li>
-</ul>
-
+        <p>在Android开发中，应该尽量将UI中的字符串存放在资源文件中（<em>res/values/strings.xml</em>）。</p>
+<h1 id="支持不同语言"><a href="#支持不同语言" class="headerlink" title="支持不同语言"></a>支持不同语言</h1><p>如果需要添加对更多语言的支持，需要在res下创建额外的values目录，并在目录名称末尾加上连字符和ISO语言代码。例如，<em>values-es/</em>目录包含的简单资源用于语言代码为”es”的语言区域。Android根据运行时设备的语言区域设置加载相应的资源。</p>
+<p>一旦决定了为哪些语言提供支持，便可创建资源子目录和字符串资源文件。例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">MyProject/</div><div class="line">    res/</div><div class="line">       values/</div><div class="line">           strings.xml</div><div class="line">       values-es/</div><div class="line">           strings.xml</div><div class="line">       values-fr/</div><div class="line">           strings.xml</div></pre></td></tr></table></figure>
+<p>英语（默认语言区域），<code>/values/strings.xml</code>：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</div><div class="line">&lt;resources&gt;</div><div class="line">    &lt;string name=&quot;title&quot;&gt;My Application&lt;/string&gt;</div><div class="line">    &lt;string name=&quot;hello_world&quot;&gt;Hello World!&lt;/string&gt;</div><div class="line">&lt;/resources&gt;</div></pre></td></tr></table></figure>
+<p>西班牙语，<code>/values-es/strings.xml</code>：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</div><div class="line">&lt;resources&gt;</div><div class="line">    &lt;string name=&quot;title&quot;&gt;Mi Aplicación&lt;/string&gt;</div><div class="line">    &lt;string name=&quot;hello_world&quot;&gt;Hola Mundo!&lt;/string&gt;</div><div class="line">&lt;/resources&gt;</div></pre></td></tr></table></figure>
+<p>法语，<code>/values-fr/strings.xml</code>：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</div><div class="line">&lt;resources&gt;</div><div class="line">    &lt;string name=&quot;title&quot;&gt;Mon Application&lt;/string&gt;</div><div class="line">    &lt;string name=&quot;hello_world&quot;&gt;Bonjour le monde !&lt;/string&gt;</div><div class="line">&lt;/resources&gt;</div></pre></td></tr></table></figure>
       
     </div>
 
@@ -482,7 +391,7 @@ Java中">
       
         <div class="post-tags">
           
-            <a href="/tags/java/" rel="tag"># java</a>
+            <a href="/tags/android/" rel="tag"># android</a>
           
         </div>
       
@@ -495,8 +404,8 @@ Java中">
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/03/22/皮皮夏的奇葩日记（一）/" rel="next" title="皮皮夏的奇葩日记（一）">
-                <i class="fa fa-chevron-left"></i> 皮皮夏的奇葩日记（一）
+              <a href="/2017/03/30/皮皮夏与她的小本本/" rel="next" title="皮皮夏与她的小本本">
+                <i class="fa fa-chevron-left"></i> 皮皮夏与她的小本本
               </a>
             
           </div>
@@ -505,8 +414,8 @@ Java中">
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/03/24/Java笔记（二）--Java的基本程序设计结构（二）/" rel="prev" title="Java笔记（二）--Java的基本程序设计结构（二）">
-                Java笔记（二）--Java的基本程序设计结构（二） <i class="fa fa-chevron-right"></i>
+              <a href="/2017/03/30/对不同平台版本的支持/" rel="prev" title="对不同平台版本的支持">
+                对不同平台版本的支持 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -632,7 +541,7 @@ Java中">
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#类命名规范"><span class="nav-number">1.</span> <span class="nav-text">类命名规范</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#注释"><span class="nav-number">2.</span> <span class="nav-text">注释</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数据类型"><span class="nav-number">3.</span> <span class="nav-text">数据类型</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#变量和常量"><span class="nav-number">4.</span> <span class="nav-text">变量和常量</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#变量"><span class="nav-number">4.1.</span> <span class="nav-text">变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常量"><span class="nav-number">4.2.</span> <span class="nav-text">常量</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#类常量"><span class="nav-number">4.2.1.</span> <span class="nav-text">类常量</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#运算符"><span class="nav-number">5.</span> <span class="nav-text">运算符</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#算术运算符："><span class="nav-number">5.1.</span> <span class="nav-text">算术运算符：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数学函数与常量"><span class="nav-number">5.2.</span> <span class="nav-text">数学函数与常量</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#支持不同语言"><span class="nav-number">1.</span> <span class="nav-text">支持不同语言</span></a></li></ol></div>
             
 
           </div>
