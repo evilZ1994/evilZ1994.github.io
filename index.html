@@ -260,6 +260,154 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/11/底部导航栏BottomNavigationView的使用/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Zhu Yuexin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://i4.buimg.com/567571/fbb0ec60f25374c4.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Mr.Z's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/08/11/底部导航栏BottomNavigationView的使用/" itemprop="url">
+                  底部导航栏BottomNavigationView的使用
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-11T16:39:00+08:00">
+                2017-08-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Android碎片/" itemprop="url" rel="index">
+                    <span itemprop="name">Android碎片</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h1><h2 id="在build-gradle文件中添加依赖"><a href="#在build-gradle文件中添加依赖" class="headerlink" title="在build.gradle文件中添加依赖"></a>在build.gradle文件中添加依赖</h2><p><code>compile &#39;com.android.support:design:25.3.1&#39;</code></p>
+<h2 id="添加布局文件"><a href="#添加布局文件" class="headerlink" title="添加布局文件"></a>添加布局文件</h2><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">RelativeLayout</span> <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span></span></div><div class="line">  <span class="attr">xmlns:app</span>=<span class="string">"http://schemas.android.com/apk/res-auto"</span></div><div class="line">  <span class="attr">xmlns:tools</span>=<span class="string">"http://schemas.android.com/tools"</span></div><div class="line">  <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></div><div class="line">  <span class="attr">android:layout_height</span>=<span class="string">"match_parent"</span>&gt;</div><div class="line"></div><div class="line">  <span class="tag">&lt;<span class="name">android.support.v4.view.ViewPager</span></span></div><div class="line">  <span class="attr">android:id</span>=<span class="string">"@+id/view_pager"</span></div><div class="line">  <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></div><div class="line">  <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span>/&gt;</div><div class="line"></div><div class="line">  <span class="tag">&lt;<span class="name">android.support.design.widget.BottomNavigationView</span></span></div><div class="line">  <span class="attr">android:id</span>=<span class="string">"@+id/bottom_navigation"</span></div><div class="line">  <span class="attr">android:layout_alignParentBottom</span>=<span class="string">"true"</span></div><div class="line">  <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></div><div class="line">  <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></div><div class="line">  <span class="attr">app:itemTextColor</span>=<span class="string">"@drawable/navigation_selector"</span></div><div class="line">  <span class="attr">app:itemIconTint</span>=<span class="string">"@drawable/navigation_selector"</span></div><div class="line">  <span class="attr">app:itemBackground</span>=<span class="string">"@color/white"</span></div><div class="line">  <span class="attr">app:menu</span>=<span class="string">"@menu/navigation_item"</span>/&gt;</div><div class="line"><span class="tag">&lt;/<span class="name">RelativeLayout</span>&gt;</span></div></pre></td></tr></table></figure>
+<h2 id="在res目录下新建menu文件夹，新建navigation-item-xml文件"><a href="#在res目录下新建menu文件夹，新建navigation-item-xml文件" class="headerlink" title="在res目录下新建menu文件夹，新建navigation_item.xml文件"></a>在res目录下新建menu文件夹，新建navigation_item.xml文件</h2><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version="1.0" encoding="utf-8" ?&gt;</div><div class="line"><span class="tag">&lt;<span class="name">menu</span> <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">item</span></span></div><div class="line">        <span class="attr">android:id</span>=<span class="string">"@+id/community"</span></div><div class="line">        <span class="attr">android:icon</span>=<span class="string">"@drawable/ic_home"</span></div><div class="line">        <span class="attr">android:title</span>=<span class="string">"@string/community"</span>/&gt;</div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">item</span></span></div><div class="line">        <span class="attr">android:id</span>=<span class="string">"@+id/message"</span></div><div class="line">        <span class="attr">android:icon</span>=<span class="string">"@drawable/ic_schedule"</span></div><div class="line">        <span class="attr">android:title</span>=<span class="string">"@string/schedule_table"</span>/&gt;</div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">item</span></span></div><div class="line">        <span class="attr">android:id</span>=<span class="string">"@+id/mine"</span></div><div class="line">        <span class="attr">android:icon</span>=<span class="string">"@drawable/ic_mine"</span></div><div class="line">        <span class="attr">android:title</span>=<span class="string">"@string/me"</span>/&gt;</div><div class="line"><span class="tag">&lt;/<span class="name">menu</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>这个文件对应于BottomNavigationView的”app:menu”属性，指定了导航栏的菜单图标与标题</p>
+<h2 id="在drawable文件夹下新建navigation-selector-xml文件"><a href="#在drawable文件夹下新建navigation-selector-xml文件" class="headerlink" title="在drawable文件夹下新建navigation_selector.xml文件"></a>在drawable文件夹下新建navigation_selector.xml文件</h2><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version="1.0" encoding="utf-8"?&gt;</div><div class="line"><span class="tag">&lt;<span class="name">selector</span> <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">item</span> <span class="attr">android:color</span>=<span class="string">"@color/gray_35"</span> <span class="attr">android:state_checked</span>=<span class="string">"false"</span>/&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">item</span> <span class="attr">android:color</span>=<span class="string">"@color/colorAccent"</span> <span class="attr">android:state_checked</span>=<span class="string">"true"</span>/&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">selector</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>这个文件可用于BottomNavigationView的背景、字体、图标颜色等的显示。</p>
+<h1 id="与ViewPager交互使用"><a href="#与ViewPager交互使用" class="headerlink" title="与ViewPager交互使用"></a>与ViewPager交互使用</h1><h2 id="新建MyFragmentPagerAdapter继承自FragmentPagerAdapter"><a href="#新建MyFragmentPagerAdapter继承自FragmentPagerAdapter" class="headerlink" title="新建MyFragmentPagerAdapter继承自FragmentPagerAdapter"></a>新建MyFragmentPagerAdapter继承自FragmentPagerAdapter</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyFragmentPagerAdapter</span> <span class="keyword">extends</span> <span class="title">FragmentPagerAdapter</span> </span>&#123;</div><div class="line">    <span class="keyword">private</span> List&lt;Fragment&gt; fragmentList;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">MyFragmentPagerAdapter</span><span class="params">(FragmentManager fm, List&lt;Fragment&gt; fragmentList)</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>(fm);</div><div class="line">        <span class="keyword">this</span>.fragmentList = fragmentList;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getCount</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> fragmentList.size();</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> Fragment <span class="title">getItem</span><span class="params">(<span class="keyword">int</span> position)</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> fragmentList.get(position);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">long</span> <span class="title">getItemId</span><span class="params">(<span class="keyword">int</span> position)</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> position;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="在Activity中引用"><a href="#在Activity中引用" class="headerlink" title="在Activity中引用"></a>在Activity中引用</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MainActivity</span> <span class="keyword">extends</span> <span class="title">AppCompatActivity</span> </span>&#123;</div><div class="line">    <span class="keyword">private</span> List&lt;Fragment&gt; fragmentList = <span class="keyword">new</span> ArrayList&lt;&gt;();</div><div class="line">    <span class="keyword">private</span> FragmentPagerAdapter fragmentPagerAdapter;</div><div class="line">    <span class="keyword">private</span> MenuItem menuItem;</div><div class="line"></div><div class="line">    <span class="comment">//三个Fragment</span></div><div class="line">    <span class="keyword">private</span> CommunityFragment communityFragment;</div><div class="line">    <span class="keyword">private</span> HomeFragment homeFragment;</div><div class="line">    <span class="keyword">private</span> ScheduleFragment scheduleFragment;</div><div class="line"></div><div class="line">    <span class="meta">@BindView</span>(R.id.view_pager)</div><div class="line">    ViewPager viewPager;</div><div class="line">    <span class="meta">@BindView</span>(R.id.bottom_navigation)</div><div class="line">    BottomNavigationView bottomNavigationView;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);</div><div class="line">        setContentView(R.layout.activity_main);</div><div class="line">        ButterKnife.bind(<span class="keyword">this</span>);</div><div class="line"></div><div class="line">        communityFragment = <span class="keyword">new</span> CommunityFragment();</div><div class="line">        homeFragment = <span class="keyword">new</span> HomeFragment();</div><div class="line">        scheduleFragment = <span class="keyword">new</span> ScheduleFragment();</div><div class="line">        fragmentList.add(communityFragment);</div><div class="line">        fragmentList.add(homeFragment);</div><div class="line">        fragmentList.add(scheduleFragment);</div><div class="line"></div><div class="line">        fragmentPagerAdapter = <span class="keyword">new</span> MyFragmentPagerAdapter(getSupportFragmentManager(), fragmentList);</div><div class="line">        viewPager.setAdapter(fragmentPagerAdapter);</div><div class="line"></div><div class="line">        bottomNavigationView.setOnNavigationItemSelectedListener(<span class="keyword">new</span> BottomNavigationView.OnNavigationItemSelectedListener() &#123;</div><div class="line">            <span class="meta">@Override</span></div><div class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">onNavigationItemSelected</span><span class="params">(@NonNull MenuItem item)</span> </span>&#123;</div><div class="line">                <span class="keyword">switch</span> (item.getItemId())&#123;</div><div class="line">                    <span class="keyword">case</span> R.id.community:</div><div class="line">                        viewPager.setCurrentItem(<span class="number">0</span>);</div><div class="line">                        <span class="keyword">break</span>;</div><div class="line">                    <span class="keyword">case</span> R.id.schedule:</div><div class="line">                        viewPager.setCurrentItem(<span class="number">1</span>);</div><div class="line">                        <span class="keyword">break</span>;</div><div class="line">                    <span class="keyword">case</span> R.id.me:</div><div class="line">                        viewPager.setCurrentItem(<span class="number">2</span>);</div><div class="line">                        <span class="keyword">break</span>;</div><div class="line">                &#125;</div><div class="line">                <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">            &#125;</div><div class="line">        &#125;);</div><div class="line"></div><div class="line">        viewPager.addOnPageChangeListener(<span class="keyword">new</span> ViewPager.OnPageChangeListener() &#123;</div><div class="line">            <span class="meta">@Override</span></div><div class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onPageScrolled</span><span class="params">(<span class="keyword">int</span> position, <span class="keyword">float</span> positionOffset, <span class="keyword">int</span> positionOffsetPixels)</span> </span>&#123;</div><div class="line"></div><div class="line">            &#125;</div><div class="line"></div><div class="line">            <span class="meta">@Override</span></div><div class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onPageSelected</span><span class="params">(<span class="keyword">int</span> position)</span> </span>&#123;</div><div class="line">                <span class="keyword">if</span> (menuItem != <span class="keyword">null</span>)&#123;</div><div class="line">                    menuItem.setChecked(<span class="keyword">false</span>);</div><div class="line">                &#125;<span class="keyword">else</span> &#123;</div><div class="line">                    menuItem = bottomNavigationView.getMenu().getItem(<span class="number">0</span>).setChecked(<span class="keyword">false</span>);</div><div class="line">                &#125;</div><div class="line">                menuItem = bottomNavigationView.getMenu().getItem(position).setChecked(<span class="keyword">true</span>);</div><div class="line">            &#125;</div><div class="line"></div><div class="line">            <span class="meta">@Override</span></div><div class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onPageScrollStateChanged</span><span class="params">(<span class="keyword">int</span> state)</span> </span>&#123;</div><div class="line"></div><div class="line">            &#125;</div><div class="line">        &#125;);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h1 id="效果如下"><a href="#效果如下" class="headerlink" title="效果如下"></a>效果如下</h1><p><img src="https://ws1.sinaimg.cn/large/e3417548gy1fifw0m0rwpg20go0tnwmm.jpg" alt=""></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/11/v7修改Button颜色并保持默认点击效果/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -671,11 +819,12 @@
 <p>一旦决定了为哪些语言提供支持，便可创建资源子目录和字符串资源文件。例如：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">MyProject/</div><div class="line">    res/</div><div class="line">       values/</div><div class="line">           strings.xml</div><div class="line">       values-es/</div><div class="line">           strings.xml</div><div class="line">       values-fr/</div><div class="line">           strings.xml</div></pre></td></tr></table></figure>
 <p>英语（默认语言区域），<code>/values/strings.xml</code>：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</div><div class="line">&lt;resources&gt;</div><div class="line">    &lt;string name=&quot;title&quot;&gt;My Application&lt;/string&gt;</div><div class="line">    &lt;string name=&quot;hello_world&quot;&gt;Hello World!&lt;/string&gt;</div><div class="line">&lt;/resources&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version="1.0" encoding="utf-8"?&gt;</div><div class="line"><span class="tag">&lt;<span class="name">resources</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">string</span> <span class="attr">name</span>=<span class="string">"title"</span>&gt;</span>My Application<span class="tag">&lt;/<span class="name">string</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">string</span> <span class="attr">name</span>=<span class="string">"hello_world"</span>&gt;</span>Hello World!<span class="tag">&lt;/<span class="name">string</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">resources</span>&gt;</span></div></pre></td></tr></table></figure>
 <p>西班牙语，<code>/values-es/strings.xml</code>：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</div><div class="line">&lt;resources&gt;</div><div class="line">    &lt;string name=&quot;title&quot;&gt;Mi Aplicación&lt;/string&gt;</div><div class="line">    &lt;string name=&quot;hello_world&quot;&gt;Hola Mundo!&lt;/string&gt;</div><div class="line">&lt;/resources&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version="1.0" encoding="utf-8"?&gt;</div><div class="line"><span class="tag">&lt;<span class="name">resources</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">string</span> <span class="attr">name</span>=<span class="string">"title"</span>&gt;</span>Mi Aplicación<span class="tag">&lt;/<span class="name">string</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">string</span> <span class="attr">name</span>=<span class="string">"hello_world"</span>&gt;</span>Hola Mundo!<span class="tag">&lt;/<span class="name">string</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">resources</span>&gt;</span></div></pre></td></tr></table></figure>
 <p>法语，<code>/values-fr/strings.xml</code>：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</div><div class="line">&lt;resources&gt;</div><div class="line">    &lt;string name=&quot;title&quot;&gt;Mon Application&lt;/string&gt;</div><div class="line">    &lt;string name=&quot;hello_world&quot;&gt;Bonjour le monde !&lt;/string&gt;</div><div class="line">&lt;/resources&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version="1.0" encoding="utf-8"?&gt;</div><div class="line"><span class="tag">&lt;<span class="name">resources</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">string</span> <span class="attr">name</span>=<span class="string">"title"</span>&gt;</span>Mon Application<span class="tag">&lt;/<span class="name">string</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">string</span> <span class="attr">name</span>=<span class="string">"hello_world"</span>&gt;</span>Bonjour le monde !<span class="tag">&lt;/<span class="name">string</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">resources</span>&gt;</span></div></pre></td></tr></table></figure>
+
           
         
       
@@ -1885,7 +2034,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-count">10</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
