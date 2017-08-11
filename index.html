@@ -260,6 +260,149 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/11/修改EditText下划线颜色样式/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Zhu Yuexin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://i4.buimg.com/567571/fbb0ec60f25374c4.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Mr.Z's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/08/11/修改EditText下划线颜色样式/" itemprop="url">
+                  修改EditText下划线颜色样式
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-11T18:02:00+08:00">
+                2017-08-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Android碎片/" itemprop="url" rel="index">
+                    <span itemprop="name">Android碎片</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="在build-gradle中添加最新的appcompat库"><a href="#在build-gradle中添加最新的appcompat库" class="headerlink" title="在build.gradle中添加最新的appcompat库"></a>在build.gradle中添加最新的appcompat库</h1><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">dependencies &#123;</div><div class="line">compile 'com.android.support:appcompat-v7:X.X.X' // X.X.X 为最新的版本号</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h1 id="让activity继承android-support-v7-app-AppCompatActivity"><a href="#让activity继承android-support-v7-app-AppCompatActivity" class="headerlink" title="让activity继承android.support.v7.app.AppCompatActivity"></a>让activity继承android.support.v7.app.AppCompatActivity</h1><h1 id="在styles-xml文件中自定义样式"><a href="#在styles-xml文件中自定义样式" class="headerlink" title="在styles.xml文件中自定义样式"></a>在styles.xml文件中自定义样式</h1><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">name</span>=<span class="string">"EditTextTheme"</span> <span class="attr">parent</span>=<span class="string">"Theme.AppCompat.Light"</span>&gt;</span><span class="xml"></span></div><div class="line">    <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"colorControlNormal"</span>&gt;</span>@color/gray_ccc<span class="tag">&lt;/<span class="name">item</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"colorControlActivated"</span>&gt;</span>@color/colorAccent<span class="tag">&lt;/<span class="name">item</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:textColorHint"</span>&gt;</span>@color/gray_ccc<span class="tag">&lt;/<span class="name">item</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div></pre></td></tr></table></figure>
+<h1 id="通过”android-theme”属性将自定义的样式应用于EditText"><a href="#通过”android-theme”属性将自定义的样式应用于EditText" class="headerlink" title="通过”android:theme”属性将自定义的样式应用于EditText"></a>通过”android:theme”属性将自定义的样式应用于EditText</h1><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">EditText</span></span></div><div class="line"><span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></div><div class="line"><span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></div><div class="line"><span class="attr">android:hint</span>=<span class="string">"Hint text"</span></div><div class="line"><span class="attr">android:theme</span>=<span class="string">"@style/EditTextTheme"</span>/&gt;</div></pre></td></tr></table></figure>
+<h1 id="如果是在-lt-android-support-design-widget-TextInputLayout-gt-下的EditText或者TextInputEditText，则需要在TextInputLayout上应用样式"><a href="#如果是在-lt-android-support-design-widget-TextInputLayout-gt-下的EditText或者TextInputEditText，则需要在TextInputLayout上应用样式" class="headerlink" title="如果是在&lt;android.support.design.widget.TextInputLayout&gt;下的EditText或者TextInputEditText，则需要在TextInputLayout上应用样式"></a>如果是在<code>&lt;android.support.design.widget.TextInputLayout&gt;</code>下的EditText或者TextInputEditText，则需要在TextInputLayout上应用样式</h1><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">android.support.design.widget.TextInputLayout</span></span></div><div class="line">    <span class="attr">app:theme</span>=<span class="string">"@style/EditTextTheme"</span></div><div class="line">    <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></div><div class="line">    <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span>&gt;</div><div class="line">    <span class="tag">&lt;<span class="name">android.support.design.widget.TextInputEditText</span></span></div><div class="line">        <span class="attr">android:id</span>=<span class="string">"@+id/register_pass"</span></div><div class="line">        <span class="attr">android:hint</span>=<span class="string">"@string/password"</span></div><div class="line">        <span class="attr">android:digits</span>=<span class="string">"@string/password_limit"</span></div><div class="line">        <span class="attr">android:inputType</span>=<span class="string">"textPassword"</span></div><div class="line">        <span class="attr">android:layout_marginTop</span>=<span class="string">"20dp"</span></div><div class="line">        <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></div><div class="line">        <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span> /&gt;</div><div class="line"><span class="tag">&lt;/<span class="name">android.support.design.widget.TextInputLayout</span>&gt;</span></div></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/11/常见用户设置页面布局/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1550,166 +1693,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/30/对不同平台版本的支持/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Zhu Yuexin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://i4.buimg.com/567571/fbb0ec60f25374c4.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Mr.Z's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/03/30/对不同平台版本的支持/" itemprop="url">
-                  对不同平台版本的支持
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-30T21:17:00+08:00">
-                2017-03-30
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Android碎片/" itemprop="url" rel="index">
-                    <span itemprop="name">Android碎片</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Android系统版本不断的在更新，最新的版本可以提供更好的APIs，但是在更多的设备更新之前，仍然需要在app中对旧版本提供支持。</p>
-<p>Google提供了一个仪表盘显示不同Android版本以及不同屏幕尺寸的设备的相对数量：<a href="https://developer.android.google.cn/about/dashboards/index.html" target="_blank" rel="external">dashboard</a></p>
-<h1 id="指定最低和目标API-Level"><a href="#指定最低和目标API-Level" class="headerlink" title="指定最低和目标API Level"></a>指定最低和目标API Level</h1><p><strong>AndroidManifest.xml</strong>文件描述了你的app细节并且确认该app支持的Android版本。特别是<strong><uses-sdk></uses-sdk></strong>标签中<strong>minSdkVersion</strong>和<strong>targetSdkVersion</strong>这两个属性确定了你的app兼容的最低API和最高API。</p>
-<p>例如：</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">manifest</span> <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span> <span class="attr">...</span> &gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">uses-sdk</span> <span class="attr">android:minSdkVersion</span>=<span class="string">"4"</span> <span class="attr">android:targetSdkVersion</span>=<span class="string">"15"</span> /&gt;</span></div><div class="line">    ...</div><div class="line"><span class="tag">&lt;/<span class="name">manifest</span>&gt;</span></div></pre></td></tr></table></figure>
-<p>当最新的Android版本发布时，一些样式和行为可能发生更改。为了允许你的app能够使用这些更改并确保你的app能够适配每个用户设备的样式，你应该将<strong>targetSdkVersion</strong>的值设置为可用的最新的Android版本。</p>
-<h1 id="在运行时检查系统版本"><a href="#在运行时检查系统版本" class="headerlink" title="在运行时检查系统版本"></a>在运行时检查系统版本</h1><p>Android在<a href="https://developer.android.google.cn/reference/android/os/Build.html" target="_blank" rel="external">Build</a>常量类中为每个平台版本提供了一个唯一的code。在你的app中使用这些code构建条件语句来确保依赖于更高版本API的代码仅能在这些API能适用于当前系统的条件下才能够运行。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">setUpActionBar</span><span class="params">()</span> </span>&#123;</div><div class="line">    <span class="comment">// Make sure we're running on Honeycomb or higher to use ActionBar APIs</span></div><div class="line">    <span class="keyword">if</span> (Build.VERSION.SDK_INT &gt;= Build.VERSION_CODES.HONEYCOMB) &#123;</div><div class="line">        ActionBar actionBar = getActionBar();</div><div class="line">        actionBar.setDisplayHomeAsUpEnabled(<span class="keyword">true</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<blockquote>
-<p>注意：当解析XML资源的时候，Android会忽略掉当前设备不支持的XML属性。所以你可以安全的使用只被更新的版本支持的XML属性而不必担心旧版本遇到这些代码时会中断。举个例子，如果你设置<strong>targetSdkVersion=11</strong>，你的app包含Android 3.0以及更高版本默认的ActionBar。为了继续给action bar添加menu item，你需要在你的XML文件menu中设置<strong>android:showAsAction=”ifRoom”</strong>。在跨版本的XML文件中这样做是安全的，因为Android旧版本简单的忽略<strong>showAsAction</strong>这个属性（所以，你不需要在<em>res/menu-v11/</em>中有版本区分）。</p>
-</blockquote>
-<h1 id="使用平台样式和主题"><a href="#使用平台样式和主题" class="headerlink" title="使用平台样式和主题"></a>使用平台样式和主题</h1><p>Android提供用户体验主题，为应用程序提供底层操作系统的外观和感觉。这些主题可以通过manifest文件应用到你的app中。通过使用样式和主题的构建，你的app会自然的体现Android每个新版本的外观和感觉。</p>
-<p>使你的activity看起来像一个对话框：</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">activity</span> <span class="attr">android:theme</span>=<span class="string">"@android:style/Theme.Dialog"</span>&gt;</span></div></pre></td></tr></table></figure>
-<p>使你的activity有透明的背景：</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">activity</span> <span class="attr">android:theme</span>=<span class="string">"@android:style/Theme.Translucent"</span>&gt;</span></div></pre></td></tr></table></figure>
-<p>应用你在<em>/res/values/styles.xml</em>中自定义的主题：</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">activity</span> <span class="attr">android:theme</span>=<span class="string">"@style/CustomTheme"</span>&gt;</span></div></pre></td></tr></table></figure>
-<p>应用一个主题到你的整个app（所有的activity），添加<em>android:theme</em>属性到<em><application></application></em>标签：</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">application</span> <span class="attr">android:theme</span>=<span class="string">"@style/CustomTheme"</span>&gt;</span></div></pre></td></tr></table></figure>
-<p>更多关于主题构建和使用:<a href="https://developer.android.google.cn/guide/topics/ui/themes.html" target="_blank" rel="external">Styles and Themes guide</a></p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1759,7 +1742,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">17</span>
+                <span class="site-state-item-count">18</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1777,7 +1760,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-count">7</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
