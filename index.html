@@ -260,6 +260,359 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/11/输入框设置右侧清空输入框图标（原生drawableEnd图标方法）/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Zhu Yuexin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://i4.buimg.com/567571/fbb0ec60f25374c4.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Mr.Z's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/08/11/输入框设置右侧清空输入框图标（原生drawableEnd图标方法）/" itemprop="url">
+                  输入框设置右侧清空输入框图标（原生drawableEnd图标方法）
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-11T18:20:00+08:00">
+                2017-08-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Android碎片/" itemprop="url" rel="index">
+                    <span itemprop="name">Android碎片</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="功能需求"><a href="#功能需求" class="headerlink" title="功能需求"></a>功能需求</h1><ul>
+<li>当输入框没有输入时，不显示清除图标</li>
+<li>当有字符输入时，显示清除图标</li>
+<li>失去焦点时隐藏图标，取得焦点并且输入框中有字符时显示图标</li>
+<li>点击清除图标时清空输入框，并且隐藏图标</li>
+</ul>
+<h1 id="实现过程"><a href="#实现过程" class="headerlink" title="实现过程"></a>实现过程</h1><p>原生EditText有自带drawableEnd属性，即可以设置一个右侧图标（其实有drawableStart, drawableTop, drawableEnd, drawableBottom四种属性，分别对应左、上、右、下侧图标）。但是Google并没有对drawableEnd图标提供相应的点击事件，点击图标无法执行相关操作。</p>
+<p>针对上面的需求，大多数人都选择自定义EditText实现，但个人觉得比较麻烦。一番搜索之后发现一个方法，可以通过判断EditText的点击位置，即如果是图标所在位置，就执行相关操作，以此来实现上述需求。</p>
+<h2 id="EditText点击位置监听"><a href="#EditText点击位置监听" class="headerlink" title="EditText点击位置监听"></a>EditText点击位置监听</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">InputClearOnTouchListener</span> <span class="keyword">implements</span> <span class="title">View</span>.<span class="title">OnTouchListener</span> </span>&#123;</div><div class="line">    <span class="keyword">private</span> EditText editText;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">InputClearOnTouchListener</span><span class="params">(EditText editText)</span></span>&#123;</div><div class="line">        <span class="keyword">this</span>.editText = editText;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">onTouch</span><span class="params">(View view, MotionEvent motionEvent)</span> </span>&#123;</div><div class="line">        <span class="comment">//获取右侧图标</span></div><div class="line">        Drawable drawableRight = editText.getCompoundDrawables()[<span class="number">2</span>];</div><div class="line">        <span class="comment">//如果右侧没有图标，则不做处理</span></div><div class="line">        <span class="keyword">if</span> (drawableRight == <span class="keyword">null</span>)&#123;</div><div class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span> (motionEvent.getAction() != MotionEvent.ACTION_UP)&#123;</div><div class="line">            <span class="comment">//如果不是按下事件，不做处理</span></div><div class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span> (motionEvent.getX() &gt; editText.getWidth()-editText.getPaddingEnd()-drawableRight.getIntrinsicWidth())&#123;</div><div class="line">            <span class="comment">//如果点击的位置在右侧图标处，则清空输入框</span></div><div class="line">            editText.setText(<span class="string">""</span>);</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>上面的代码实现了需求4，针对需求1，2可以通过监听EditText的输入来实现。在此之前，有一个地方需要注意，就是通过代码设置EditText的右侧图标：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">editText.setCompoundDrawablesRelativeWithIntrinsicBounds(<span class="keyword">null</span>, <span class="keyword">null</span>, context.getDrawable(R.drawable.ic_cancel), <span class="keyword">null</span>);</div><div class="line">或者</div><div class="line">editText.setCompoundDrawablesWithIntrinsicBounds(<span class="keyword">null</span>, <span class="keyword">null</span>, context.getDrawable(R.drawable.ic_cancel), <span class="keyword">null</span>);</div></pre></td></tr></table></figure>
+<p>其他几个方法似乎无法设置图标：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">editText.setCompoundDrawables(Drawable left, Drawable top, Drawable right, Drawable bottom);</div><div class="line">editText.setCompoundDrawablesRelative(Drawable start, Drawable top, Drawable end, Drawable bottom);</div></pre></td></tr></table></figure>
+<p>具体原因暂时没有深入探究。</p>
+<h2 id="EditText输入监听"><a href="#EditText输入监听" class="headerlink" title="EditText输入监听"></a>EditText输入监听</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">InputClearOnTextChangedListener</span> <span class="keyword">implements</span> <span class="title">TextWatcher</span> </span>&#123;</div><div class="line">    <span class="keyword">private</span> Context context;</div><div class="line">    <span class="keyword">private</span> EditText editText;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">InputClearOnTextChangedListener</span><span class="params">(Context context, EditText editText)</span></span>&#123;</div><div class="line">        <span class="keyword">this</span>.context = context;</div><div class="line">        <span class="keyword">this</span>.editText = editText;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">beforeTextChanged</span><span class="params">(CharSequence charSequence, <span class="keyword">int</span> i, <span class="keyword">int</span> i1, <span class="keyword">int</span> i2)</span> </span>&#123;</div><div class="line"></div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onTextChanged</span><span class="params">(CharSequence charSequence, <span class="keyword">int</span> i, <span class="keyword">int</span> i1, <span class="keyword">int</span> i2)</span> </span>&#123;</div><div class="line"></div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">afterTextChanged</span><span class="params">(Editable editable)</span> </span>&#123;</div><div class="line">        <span class="comment">//当输入框有字符输入时，显示清除图标，没有字符时隐藏清除图标</span></div><div class="line">        <span class="keyword">if</span> (editable.length()&gt;<span class="number">0</span>)&#123;</div><div class="line">            editText.setCompoundDrawablesRelativeWithIntrinsicBounds(<span class="keyword">null</span>, <span class="keyword">null</span>, context.getDrawable(R.drawable.ic_cancel), <span class="keyword">null</span>);</div><div class="line">            <span class="comment">//editText.setCompoundDrawablesWithIntrinsicBounds(null, null, context.getDrawable(R.drawable.ic_cancel), null);</span></div><div class="line">        &#125;<span class="keyword">else</span> &#123;</div><div class="line">            editText.setCompoundDrawablesRelativeWithIntrinsicBounds(<span class="keyword">null</span>, <span class="keyword">null</span>, <span class="keyword">null</span>, <span class="keyword">null</span>);</div><div class="line">            <span class="comment">//editText.setCompoundDrawablesWithIntrinsicBounds(null, null, null, null);</span></div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>对于需求3，可以监听EditText的焦点来实现</p>
+<h2 id="EditText焦点监听"><a href="#EditText焦点监听" class="headerlink" title="EditText焦点监听"></a>EditText焦点监听</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">InputClearOnFocusChangeListener</span> <span class="keyword">implements</span> <span class="title">View</span>.<span class="title">OnFocusChangeListener</span> </span>&#123;</div><div class="line">    <span class="keyword">private</span> Context context;</div><div class="line">    <span class="keyword">private</span> EditText editText;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">InputClearOnFocusChangeListener</span><span class="params">(Context context, EditText editText)</span></span>&#123;</div><div class="line">        <span class="keyword">this</span>.context = context;</div><div class="line">        <span class="keyword">this</span>.editText = editText;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onFocusChange</span><span class="params">(View view, <span class="keyword">boolean</span> hasFocus)</span> </span>&#123;</div><div class="line">        <span class="comment">//失去焦点时隐藏图标，取得焦点且输入框中有字符时，显示图标</span></div><div class="line">        <span class="keyword">if</span> (hasFocus &amp;&amp; editText.getText().length()&gt;<span class="number">0</span>)&#123;</div><div class="line">            editText.setCompoundDrawablesRelativeWithIntrinsicBounds(<span class="keyword">null</span>, <span class="keyword">null</span>, context.getDrawable(R.drawable.ic_cancel), <span class="keyword">null</span>);</div><div class="line">        &#125;<span class="keyword">else</span> &#123;</div><div class="line">            editText.setCompoundDrawablesRelativeWithIntrinsicBounds(<span class="keyword">null</span>, <span class="keyword">null</span>, <span class="keyword">null</span>, <span class="keyword">null</span>);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="在Activity中对相应的EditText绑定监听器"><a href="#在Activity中对相应的EditText绑定监听器" class="headerlink" title="在Activity中对相应的EditText绑定监听器"></a>在Activity中对相应的EditText绑定监听器</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//当输入框有字符输入时，显示清除图标，没有字符时隐藏清除图标</span></div><div class="line">usernameInput.addTextChangedListener(<span class="keyword">new</span> InputClearOnTextChangedListener(<span class="keyword">this</span>, usernameInput));</div><div class="line"><span class="comment">//根据点击位置设置清除图标的功能（drawableRight没有点击事件）</span></div><div class="line">usernameInput.setOnTouchListener(<span class="keyword">new</span> InputClearOnTouchListener(usernameInput));</div><div class="line"><span class="comment">//失去焦点时隐藏图标，取得焦点且输入框中有字符时，显示图标</span></div><div class="line">usernameInput.setOnFocusChangeListener(<span class="keyword">new</span> InputClearOnFocusChangeListener(<span class="keyword">this</span>, usernameInput));</div><div class="line">passInput.addTextChangedListener(<span class="keyword">new</span> InputClearOnTextChangedListener(<span class="keyword">this</span>, passInput));</div><div class="line">passInput.setOnTouchListener(<span class="keyword">new</span> InputClearOnTouchListener(passInput));</div><div class="line">passInput.setOnFocusChangeListener(<span class="keyword">new</span> InputClearOnFocusChangeListener(<span class="keyword">this</span>, passInput));</div></pre></td></tr></table></figure>
+<h1 id="实现效果"><a href="#实现效果" class="headerlink" title="实现效果"></a>实现效果</h1><p><img src="https://ws1.sinaimg.cn/large/e3417548gy1fifympn3b9g20go0tn7he.jpg" alt=""></p>
+<h1 id="代码改进"><a href="#代码改进" class="headerlink" title="代码改进"></a>代码改进</h1><h2 id="将三个监听器的代码写在一个类里，并且提供一个静态方法绑定监听器，减少代码量"><a href="#将三个监听器的代码写在一个类里，并且提供一个静态方法绑定监听器，减少代码量" class="headerlink" title="将三个监听器的代码写在一个类里，并且提供一个静态方法绑定监听器，减少代码量"></a>将三个监听器的代码写在一个类里，并且提供一个静态方法绑定监听器，减少代码量</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">InputClearListener</span> <span class="keyword">implements</span> <span class="title">View</span>.<span class="title">OnTouchListener</span>, <span class="title">TextWatcher</span>, <span class="title">View</span>.<span class="title">OnFocusChangeListener</span> </span>&#123;</div><div class="line">    <span class="keyword">private</span> Context context;</div><div class="line">    <span class="keyword">private</span> EditText editText;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">InputClearListener</span><span class="params">(Context context, EditText editText)</span></span>&#123;</div><div class="line">        <span class="keyword">this</span>.context = context;</div><div class="line">        <span class="keyword">this</span>.editText = editText;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">onTouch</span><span class="params">(View view, MotionEvent motionEvent)</span> </span>&#123;</div><div class="line">        <span class="comment">//获取右侧图标</span></div><div class="line">        Drawable drawableRight = editText.getCompoundDrawables()[<span class="number">2</span>];</div><div class="line">        <span class="comment">//如果右侧没有图标，则不做处理</span></div><div class="line">        <span class="keyword">if</span> (drawableRight == <span class="keyword">null</span>)&#123;</div><div class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span> (motionEvent.getAction() != MotionEvent.ACTION_UP)&#123;</div><div class="line">            <span class="comment">//如果不是按下事件，不做处理</span></div><div class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span> (motionEvent.getX() &gt; editText.getWidth()-editText.getPaddingEnd()-drawableRight.getIntrinsicWidth())&#123;</div><div class="line">            <span class="comment">//如果点击的位置在右侧图标处，则清空输入框</span></div><div class="line">            editText.setText(<span class="string">""</span>);</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">beforeTextChanged</span><span class="params">(CharSequence charSequence, <span class="keyword">int</span> i, <span class="keyword">int</span> i1, <span class="keyword">int</span> i2)</span> </span>&#123;</div><div class="line"></div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onTextChanged</span><span class="params">(CharSequence charSequence, <span class="keyword">int</span> i, <span class="keyword">int</span> i1, <span class="keyword">int</span> i2)</span> </span>&#123;</div><div class="line"></div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">afterTextChanged</span><span class="params">(Editable editable)</span> </span>&#123;</div><div class="line">        <span class="comment">//当输入框有字符输入时，显示清除图标，没有字符时隐藏清除图标</span></div><div class="line">        <span class="keyword">if</span> (editable.length()&gt;<span class="number">0</span>)&#123;</div><div class="line">            editText.setCompoundDrawablesRelativeWithIntrinsicBounds(<span class="keyword">null</span>, <span class="keyword">null</span>, context.getDrawable(R.drawable.ic_cancel), <span class="keyword">null</span>);</div><div class="line">            <span class="comment">//editText.setCompoundDrawablesWithIntrinsicBounds(null, null, context.getDrawable(R.drawable.ic_cancel), null);</span></div><div class="line">        &#125;<span class="keyword">else</span> &#123;</div><div class="line">            editText.setCompoundDrawablesRelativeWithIntrinsicBounds(<span class="keyword">null</span>, <span class="keyword">null</span>, <span class="keyword">null</span>, <span class="keyword">null</span>);</div><div class="line">            <span class="comment">//editText.setCompoundDrawablesWithIntrinsicBounds(null, null, null, null);</span></div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onFocusChange</span><span class="params">(View view, <span class="keyword">boolean</span> hasFocus)</span> </span>&#123;</div><div class="line">        <span class="comment">//失去焦点时隐藏图标，取得焦点且输入框中有字符时，显示图标</span></div><div class="line">        <span class="keyword">if</span> (hasFocus &amp;&amp; editText.getText().length()&gt;<span class="number">0</span>)&#123;</div><div class="line">            editText.setCompoundDrawablesRelativeWithIntrinsicBounds(<span class="keyword">null</span>, <span class="keyword">null</span>, context.getDrawable(R.drawable.ic_cancel), <span class="keyword">null</span>);</div><div class="line">        &#125;<span class="keyword">else</span> &#123;</div><div class="line">            editText.setCompoundDrawablesRelativeWithIntrinsicBounds(<span class="keyword">null</span>, <span class="keyword">null</span>, <span class="keyword">null</span>, <span class="keyword">null</span>);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line">     * 给EditText对象绑定监听器</div><div class="line">     * <span class="doctag">@param</span> context EditText所在的activity</div><div class="line">     * <span class="doctag">@param</span> editText 需要绑定监听器的EditText</div><div class="line">     */</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">addListener</span><span class="params">(Context context, EditText editText)</span></span>&#123;</div><div class="line">        InputClearListener listener = <span class="keyword">new</span> InputClearListener(context, editText);</div><div class="line">        editText.addTextChangedListener(listener);</div><div class="line">        editText.setOnTouchListener(listener);</div><div class="line">        editText.setOnFocusChangeListener(listener);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="修改Activity中绑定监听器的代码"><a href="#修改Activity中绑定监听器的代码" class="headerlink" title="修改Activity中绑定监听器的代码"></a>修改Activity中绑定监听器的代码</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">InputClearListener.addListener(<span class="keyword">this</span>, usernameInput);</div><div class="line">InputClearListener.addListener(<span class="keyword">this</span>, passInput);</div></pre></td></tr></table></figure>
+<p>代码看起来比以前的简洁了不少。</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/11/密码输入框限定英文字符和数字输入/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Zhu Yuexin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://i4.buimg.com/567571/fbb0ec60f25374c4.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Mr.Z's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/08/11/密码输入框限定英文字符和数字输入/" itemprop="url">
+                  密码输入框限定英文字符和数字输入
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-11T18:13:00+08:00">
+                2017-08-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Android碎片/" itemprop="url" rel="index">
+                    <span itemprop="name">Android碎片</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>通常情况下，密码是不允许使用中文的，一般是用数字或者英文字符作为密码。</p>
+<ul>
+<li>如果只是简单的限定为数字的话，可以使用一下属性：</li>
+</ul>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">android:inputType="numberPassword"</div></pre></td></tr></table></figure>
+<ul>
+<li>如果要求只能输入数字或者英文字母的话，可以使用digits属性手动指定只能输入的字符：</li>
+</ul>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">android:digits="@string/password_limit"</div><div class="line">...</div><div class="line"><span class="tag">&lt;<span class="name">string</span> <span class="attr">name</span>=<span class="string">"password_limit"</span>&gt;</span>0123456789qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM<span class="tag">&lt;/<span class="name">string</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>digits属性可以限制输入的字符，但是不能限制弹出的软键盘类型。EditText提供了一个android:inputType属性来设置输入框的类型，其中几个类型如下：</p>
+<table>
+<thead>
+<tr>
+<th>inputType属性值</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>number</td>
+<td>用来输入数字</td>
+</tr>
+<tr>
+<td>textCapCharacters</td>
+<td>输入的全部字母大写</td>
+</tr>
+<tr>
+<td>textCapWords</td>
+<td>输入的每个单词首字母大写</td>
+</tr>
+<tr>
+<td>textCapSentences</td>
+<td>输入的每个句子首字母大写</td>
+</tr>
+<tr>
+<td>textPassword</td>
+<td>用来输入密码，所有输入的字符都会变成星号*</td>
+</tr>
+<tr>
+<td>numberPassword</td>
+<td>用来输入密码，只能输入数字，所有输入的字符都会变成星号</td>
+</tr>
+<tr>
+<td>textVisiblePassword</td>
+<td>用来输入密码，输入的字符原样显示</td>
+</tr>
+<tr>
+<td>textEmailAddress</td>
+<td>用来输入Email地址</td>
+</tr>
+</tbody>
+</table>
+<p>当inputType属性设置为number或者numberPassword时，输入法开启时会自动切换到数字键盘；当inputType属性设置为以上其他类型时，输入法会自动切换到英文键盘。</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/11/修改EditText下划线颜色样式/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1397,301 +1750,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/11/底部导航栏BottomNavigationView的使用/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Zhu Yuexin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://i4.buimg.com/567571/fbb0ec60f25374c4.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Mr.Z's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/08/11/底部导航栏BottomNavigationView的使用/" itemprop="url">
-                  底部导航栏BottomNavigationView的使用
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-11T16:39:00+08:00">
-                2017-08-11
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Android碎片/" itemprop="url" rel="index">
-                    <span itemprop="name">Android碎片</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h1><h2 id="在build-gradle文件中添加依赖"><a href="#在build-gradle文件中添加依赖" class="headerlink" title="在build.gradle文件中添加依赖"></a>在build.gradle文件中添加依赖</h2><p><code>compile &#39;com.android.support:design:25.3.1&#39;</code></p>
-<h2 id="添加布局文件"><a href="#添加布局文件" class="headerlink" title="添加布局文件"></a>添加布局文件</h2><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">RelativeLayout</span> <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span></span></div><div class="line">  <span class="attr">xmlns:app</span>=<span class="string">"http://schemas.android.com/apk/res-auto"</span></div><div class="line">  <span class="attr">xmlns:tools</span>=<span class="string">"http://schemas.android.com/tools"</span></div><div class="line">  <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></div><div class="line">  <span class="attr">android:layout_height</span>=<span class="string">"match_parent"</span>&gt;</div><div class="line"></div><div class="line">  <span class="tag">&lt;<span class="name">android.support.v4.view.ViewPager</span></span></div><div class="line">  <span class="attr">android:id</span>=<span class="string">"@+id/view_pager"</span></div><div class="line">  <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></div><div class="line">  <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span>/&gt;</div><div class="line"></div><div class="line">  <span class="tag">&lt;<span class="name">android.support.design.widget.BottomNavigationView</span></span></div><div class="line">  <span class="attr">android:id</span>=<span class="string">"@+id/bottom_navigation"</span></div><div class="line">  <span class="attr">android:layout_alignParentBottom</span>=<span class="string">"true"</span></div><div class="line">  <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></div><div class="line">  <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></div><div class="line">  <span class="attr">app:itemTextColor</span>=<span class="string">"@drawable/navigation_selector"</span></div><div class="line">  <span class="attr">app:itemIconTint</span>=<span class="string">"@drawable/navigation_selector"</span></div><div class="line">  <span class="attr">app:itemBackground</span>=<span class="string">"@color/white"</span></div><div class="line">  <span class="attr">app:menu</span>=<span class="string">"@menu/navigation_item"</span>/&gt;</div><div class="line"><span class="tag">&lt;/<span class="name">RelativeLayout</span>&gt;</span></div></pre></td></tr></table></figure>
-<h2 id="在res目录下新建menu文件夹，新建navigation-item-xml文件"><a href="#在res目录下新建menu文件夹，新建navigation-item-xml文件" class="headerlink" title="在res目录下新建menu文件夹，新建navigation_item.xml文件"></a>在res目录下新建menu文件夹，新建navigation_item.xml文件</h2><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version="1.0" encoding="utf-8" ?&gt;</div><div class="line"><span class="tag">&lt;<span class="name">menu</span> <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">item</span></span></div><div class="line">        <span class="attr">android:id</span>=<span class="string">"@+id/community"</span></div><div class="line">        <span class="attr">android:icon</span>=<span class="string">"@drawable/ic_home"</span></div><div class="line">        <span class="attr">android:title</span>=<span class="string">"@string/community"</span>/&gt;</div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">item</span></span></div><div class="line">        <span class="attr">android:id</span>=<span class="string">"@+id/message"</span></div><div class="line">        <span class="attr">android:icon</span>=<span class="string">"@drawable/ic_schedule"</span></div><div class="line">        <span class="attr">android:title</span>=<span class="string">"@string/schedule_table"</span>/&gt;</div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">item</span></span></div><div class="line">        <span class="attr">android:id</span>=<span class="string">"@+id/mine"</span></div><div class="line">        <span class="attr">android:icon</span>=<span class="string">"@drawable/ic_mine"</span></div><div class="line">        <span class="attr">android:title</span>=<span class="string">"@string/me"</span>/&gt;</div><div class="line"><span class="tag">&lt;/<span class="name">menu</span>&gt;</span></div></pre></td></tr></table></figure>
-<p>这个文件对应于BottomNavigationView的”app:menu”属性，指定了导航栏的菜单图标与标题</p>
-<h2 id="在drawable文件夹下新建navigation-selector-xml文件"><a href="#在drawable文件夹下新建navigation-selector-xml文件" class="headerlink" title="在drawable文件夹下新建navigation_selector.xml文件"></a>在drawable文件夹下新建navigation_selector.xml文件</h2><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version="1.0" encoding="utf-8"?&gt;</div><div class="line"><span class="tag">&lt;<span class="name">selector</span> <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">item</span> <span class="attr">android:color</span>=<span class="string">"@color/gray_35"</span> <span class="attr">android:state_checked</span>=<span class="string">"false"</span>/&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">item</span> <span class="attr">android:color</span>=<span class="string">"@color/colorAccent"</span> <span class="attr">android:state_checked</span>=<span class="string">"true"</span>/&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">selector</span>&gt;</span></div></pre></td></tr></table></figure>
-<p>这个文件可用于BottomNavigationView的背景、字体、图标颜色等的显示。</p>
-<h1 id="与ViewPager交互使用"><a href="#与ViewPager交互使用" class="headerlink" title="与ViewPager交互使用"></a>与ViewPager交互使用</h1><h2 id="新建MyFragmentPagerAdapter继承自FragmentPagerAdapter"><a href="#新建MyFragmentPagerAdapter继承自FragmentPagerAdapter" class="headerlink" title="新建MyFragmentPagerAdapter继承自FragmentPagerAdapter"></a>新建MyFragmentPagerAdapter继承自FragmentPagerAdapter</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyFragmentPagerAdapter</span> <span class="keyword">extends</span> <span class="title">FragmentPagerAdapter</span> </span>&#123;</div><div class="line">    <span class="keyword">private</span> List&lt;Fragment&gt; fragmentList;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">MyFragmentPagerAdapter</span><span class="params">(FragmentManager fm, List&lt;Fragment&gt; fragmentList)</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>(fm);</div><div class="line">        <span class="keyword">this</span>.fragmentList = fragmentList;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getCount</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> fragmentList.size();</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> Fragment <span class="title">getItem</span><span class="params">(<span class="keyword">int</span> position)</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> fragmentList.get(position);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">long</span> <span class="title">getItemId</span><span class="params">(<span class="keyword">int</span> position)</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> position;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h2 id="在Activity中引用"><a href="#在Activity中引用" class="headerlink" title="在Activity中引用"></a>在Activity中引用</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MainActivity</span> <span class="keyword">extends</span> <span class="title">AppCompatActivity</span> </span>&#123;</div><div class="line">    <span class="keyword">private</span> List&lt;Fragment&gt; fragmentList = <span class="keyword">new</span> ArrayList&lt;&gt;();</div><div class="line">    <span class="keyword">private</span> FragmentPagerAdapter fragmentPagerAdapter;</div><div class="line">    <span class="keyword">private</span> MenuItem menuItem;</div><div class="line"></div><div class="line">    <span class="comment">//三个Fragment</span></div><div class="line">    <span class="keyword">private</span> CommunityFragment communityFragment;</div><div class="line">    <span class="keyword">private</span> HomeFragment homeFragment;</div><div class="line">    <span class="keyword">private</span> ScheduleFragment scheduleFragment;</div><div class="line"></div><div class="line">    <span class="meta">@BindView</span>(R.id.view_pager)</div><div class="line">    ViewPager viewPager;</div><div class="line">    <span class="meta">@BindView</span>(R.id.bottom_navigation)</div><div class="line">    BottomNavigationView bottomNavigationView;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);</div><div class="line">        setContentView(R.layout.activity_main);</div><div class="line">        ButterKnife.bind(<span class="keyword">this</span>);</div><div class="line"></div><div class="line">        communityFragment = <span class="keyword">new</span> CommunityFragment();</div><div class="line">        homeFragment = <span class="keyword">new</span> HomeFragment();</div><div class="line">        scheduleFragment = <span class="keyword">new</span> ScheduleFragment();</div><div class="line">        fragmentList.add(communityFragment);</div><div class="line">        fragmentList.add(homeFragment);</div><div class="line">        fragmentList.add(scheduleFragment);</div><div class="line"></div><div class="line">        fragmentPagerAdapter = <span class="keyword">new</span> MyFragmentPagerAdapter(getSupportFragmentManager(), fragmentList);</div><div class="line">        viewPager.setAdapter(fragmentPagerAdapter);</div><div class="line"></div><div class="line">        bottomNavigationView.setOnNavigationItemSelectedListener(<span class="keyword">new</span> BottomNavigationView.OnNavigationItemSelectedListener() &#123;</div><div class="line">            <span class="meta">@Override</span></div><div class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">onNavigationItemSelected</span><span class="params">(@NonNull MenuItem item)</span> </span>&#123;</div><div class="line">                <span class="keyword">switch</span> (item.getItemId())&#123;</div><div class="line">                    <span class="keyword">case</span> R.id.community:</div><div class="line">                        viewPager.setCurrentItem(<span class="number">0</span>);</div><div class="line">                        <span class="keyword">break</span>;</div><div class="line">                    <span class="keyword">case</span> R.id.schedule:</div><div class="line">                        viewPager.setCurrentItem(<span class="number">1</span>);</div><div class="line">                        <span class="keyword">break</span>;</div><div class="line">                    <span class="keyword">case</span> R.id.me:</div><div class="line">                        viewPager.setCurrentItem(<span class="number">2</span>);</div><div class="line">                        <span class="keyword">break</span>;</div><div class="line">                &#125;</div><div class="line">                <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">            &#125;</div><div class="line">        &#125;);</div><div class="line"></div><div class="line">        viewPager.addOnPageChangeListener(<span class="keyword">new</span> ViewPager.OnPageChangeListener() &#123;</div><div class="line">            <span class="meta">@Override</span></div><div class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onPageScrolled</span><span class="params">(<span class="keyword">int</span> position, <span class="keyword">float</span> positionOffset, <span class="keyword">int</span> positionOffsetPixels)</span> </span>&#123;</div><div class="line"></div><div class="line">            &#125;</div><div class="line"></div><div class="line">            <span class="meta">@Override</span></div><div class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onPageSelected</span><span class="params">(<span class="keyword">int</span> position)</span> </span>&#123;</div><div class="line">                <span class="keyword">if</span> (menuItem != <span class="keyword">null</span>)&#123;</div><div class="line">                    menuItem.setChecked(<span class="keyword">false</span>);</div><div class="line">                &#125;<span class="keyword">else</span> &#123;</div><div class="line">                    menuItem = bottomNavigationView.getMenu().getItem(<span class="number">0</span>).setChecked(<span class="keyword">false</span>);</div><div class="line">                &#125;</div><div class="line">                menuItem = bottomNavigationView.getMenu().getItem(position).setChecked(<span class="keyword">true</span>);</div><div class="line">            &#125;</div><div class="line"></div><div class="line">            <span class="meta">@Override</span></div><div class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onPageScrollStateChanged</span><span class="params">(<span class="keyword">int</span> state)</span> </span>&#123;</div><div class="line"></div><div class="line">            &#125;</div><div class="line">        &#125;);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h1 id="效果如下"><a href="#效果如下" class="headerlink" title="效果如下"></a>效果如下</h1><p><img src="https://ws1.sinaimg.cn/large/e3417548gy1fifw0m0rwpg20go0tnwmm.jpg" alt=""></p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/11/v7修改Button颜色并保持默认点击效果/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Zhu Yuexin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://i4.buimg.com/567571/fbb0ec60f25374c4.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Mr.Z's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/08/11/v7修改Button颜色并保持默认点击效果/" itemprop="url">
-                  v7修改Button颜色并保持默认点击效果
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-11T16:28:00+08:00">
-                2017-08-11
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Android碎片/" itemprop="url" rel="index">
-                    <span itemprop="name">Android碎片</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>通常我们修改Button的颜色会通过修改”android:background”属性来修改Button的背景颜色，但是这样做会丢失Button默认的点击效果，尤其是5.0以上的系统中的点击涟漪效果等。虽然我们可以通过使用selector来实现点击效果，但工作量很大，而且5.0自带的涟漪效果是很不错的。</p>
-<p><strong>修改方法</strong></p>
-<p>我们可以通过Style修改Button的颜色。AppCompat中提供的按钮有5中Style：</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">name</span>=<span class="string">"Widget.AppCompat.Button"</span> <span class="attr">parent</span>=<span class="string">"Base.Widget.AppCompat.Button"</span>/&gt;</span><span class="xml"></span></div><div class="line">    默认的状态  背景颜色属性：colorButtonNormal 文字颜色属性:黑色</div><div class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">name</span>=<span class="string">"Widget.AppCompat.Button.Colored"</span> <span class="attr">parent</span>=<span class="string">"Base.Widget.AppCompat.Button.Colored"</span>/&gt;</span><span class="xml"></span></div><div class="line">    背景颜色属性:colorAccent 文字颜色属性:白色</div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">name</span>=<span class="string">"Widget.AppCompat.Button.Borderless"</span> <span class="attr">parent</span>=<span class="string">"Base.Widget.AppCompat.Button.Borderless"</span>/&gt;</span><span class="xml"></span></div><div class="line">    背景颜色属性：透明  文字颜色属性：白色</div><div class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">name</span>=<span class="string">"Widget.AppCompat.Button.Borderless.Colored"</span> <span class="attr">parent</span>=<span class="string">"Base.Widget.AppCompat.Button.Borderless.Colored"</span>/&gt;</span><span class="xml"></span></div><div class="line">   背景颜色属性：透明 文字颜色属性：colorAccent</div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">name</span>=<span class="string">"Widget.AppCompat.Button.Small"</span> <span class="attr">parent</span>=<span class="string">"Base.Widget.AppCompat.Button.Small"</span>/&gt;</span><span class="undefined"></span></div><div class="line">      背景颜色属性：colorButtonNormal 文字颜色属性:黑色</div></pre></td></tr></table></figure>
-<p>我们可以在styles.xml文件中新建style，设置”buttonStyle”属性，通过相应的其他属性修改Button的背景色或文字颜色，然后在layout文件中需要修改的Button中通过”android:theme”属性引用新建的style。</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">name</span>=<span class="string">"ButtonTheme"</span> <span class="attr">parent</span>=<span class="string">"AppTheme"</span>&gt;</span><span class="xml"></span></div><div class="line">     <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"buttonStyle"</span>&gt;</span>@style/Widget.AppCompat.Button<span class="tag">&lt;/<span class="name">item</span>&gt;</span></div><div class="line">     <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"colorButtonNormal"</span>&gt;</span>@color/blue<span class="tag">&lt;/<span class="name">item</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div></pre></td></tr></table></figure>
-<p>然后在layout文件中引用：</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">Button</span></span></div><div class="line">    <span class="attr">android:layout_width</span>=<span class="string">"wrap_content"</span></div><div class="line">    <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></div><div class="line">    <span class="attr">android:text</span>=<span class="string">"login"</span></div><div class="line">    <span class="attr">android:theme</span>=<span class="string">"@style/ButtonTheme"</span> /&gt;</div></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1741,7 +1799,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">18</span>
+                <span class="site-state-item-count">20</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>

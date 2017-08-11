@@ -1,0 +1,736 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="android," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="功能需求
+当输入框没有输入时，不显示清除图标
+当有字符输入时，显示清除图标
+失去焦点时隐藏图标，取得焦点并且输入框中有字符时显示图标
+点击清除图标时清空输入框，并且隐藏图标
+
+实现过程原生EditText有自带drawableEnd属性，即可以设置一个右侧图标（其实有drawableStart, drawableTop, drawableEnd, drawableBottom四种属性，分别对应左、">
+<meta property="og:type" content="article">
+<meta property="og:title" content="输入框设置右侧清空输入框图标（原生drawableEnd图标方法）">
+<meta property="og:url" content="http://yoursite.com/2017/08/11/输入框设置右侧清空输入框图标（原生drawableEnd图标方法）/index.html">
+<meta property="og:site_name" content="Mr.Z's Blog">
+<meta property="og:description" content="功能需求
+当输入框没有输入时，不显示清除图标
+当有字符输入时，显示清除图标
+失去焦点时隐藏图标，取得焦点并且输入框中有字符时显示图标
+点击清除图标时清空输入框，并且隐藏图标
+
+实现过程原生EditText有自带drawableEnd属性，即可以设置一个右侧图标（其实有drawableStart, drawableTop, drawableEnd, drawableBottom四种属性，分别对应左、">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/e3417548gy1fifympn3b9g20go0tn7he.jpg">
+<meta property="og:updated_time" content="2017-08-11T10:28:48.590Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="输入框设置右侧清空输入框图标（原生drawableEnd图标方法）">
+<meta name="twitter:description" content="功能需求
+当输入框没有输入时，不显示清除图标
+当有字符输入时，显示清除图标
+失去焦点时隐藏图标，取得焦点并且输入框中有字符时显示图标
+点击清除图标时清空输入框，并且隐藏图标
+
+实现过程原生EditText有自带drawableEnd属性，即可以设置一个右侧图标（其实有drawableStart, drawableTop, drawableEnd, drawableBottom四种属性，分别对应左、">
+<meta name="twitter:image" content="https://ws1.sinaimg.cn/large/e3417548gy1fifympn3b9g20go0tn7he.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/08/11/输入框设置右侧清空输入框图标（原生drawableEnd图标方法）/"/>
+
+
+
+
+
+  <title> 输入框设置右侧清空输入框图标（原生drawableEnd图标方法） | Mr.Z's Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Mr.Z's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/11/输入框设置右侧清空输入框图标（原生drawableEnd图标方法）/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Zhu Yuexin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://i4.buimg.com/567571/fbb0ec60f25374c4.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Mr.Z's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                输入框设置右侧清空输入框图标（原生drawableEnd图标方法）
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-11T18:20:00+08:00">
+                2017-08-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Android碎片/" itemprop="url" rel="index">
+                    <span itemprop="name">Android碎片</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="功能需求"><a href="#功能需求" class="headerlink" title="功能需求"></a>功能需求</h1><ul>
+<li>当输入框没有输入时，不显示清除图标</li>
+<li>当有字符输入时，显示清除图标</li>
+<li>失去焦点时隐藏图标，取得焦点并且输入框中有字符时显示图标</li>
+<li>点击清除图标时清空输入框，并且隐藏图标</li>
+</ul>
+<h1 id="实现过程"><a href="#实现过程" class="headerlink" title="实现过程"></a>实现过程</h1><p>原生EditText有自带drawableEnd属性，即可以设置一个右侧图标（其实有drawableStart, drawableTop, drawableEnd, drawableBottom四种属性，分别对应左、上、右、下侧图标）。但是Google并没有对drawableEnd图标提供相应的点击事件，点击图标无法执行相关操作。</p>
+<p>针对上面的需求，大多数人都选择自定义EditText实现，但个人觉得比较麻烦。一番搜索之后发现一个方法，可以通过判断EditText的点击位置，即如果是图标所在位置，就执行相关操作，以此来实现上述需求。</p>
+<h2 id="EditText点击位置监听"><a href="#EditText点击位置监听" class="headerlink" title="EditText点击位置监听"></a>EditText点击位置监听</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">InputClearOnTouchListener</span> <span class="keyword">implements</span> <span class="title">View</span>.<span class="title">OnTouchListener</span> </span>&#123;</div><div class="line">    <span class="keyword">private</span> EditText editText;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">InputClearOnTouchListener</span><span class="params">(EditText editText)</span></span>&#123;</div><div class="line">        <span class="keyword">this</span>.editText = editText;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">onTouch</span><span class="params">(View view, MotionEvent motionEvent)</span> </span>&#123;</div><div class="line">        <span class="comment">//获取右侧图标</span></div><div class="line">        Drawable drawableRight = editText.getCompoundDrawables()[<span class="number">2</span>];</div><div class="line">        <span class="comment">//如果右侧没有图标，则不做处理</span></div><div class="line">        <span class="keyword">if</span> (drawableRight == <span class="keyword">null</span>)&#123;</div><div class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span> (motionEvent.getAction() != MotionEvent.ACTION_UP)&#123;</div><div class="line">            <span class="comment">//如果不是按下事件，不做处理</span></div><div class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span> (motionEvent.getX() &gt; editText.getWidth()-editText.getPaddingEnd()-drawableRight.getIntrinsicWidth())&#123;</div><div class="line">            <span class="comment">//如果点击的位置在右侧图标处，则清空输入框</span></div><div class="line">            editText.setText(<span class="string">""</span>);</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>上面的代码实现了需求4，针对需求1，2可以通过监听EditText的输入来实现。在此之前，有一个地方需要注意，就是通过代码设置EditText的右侧图标：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">editText.setCompoundDrawablesRelativeWithIntrinsicBounds(<span class="keyword">null</span>, <span class="keyword">null</span>, context.getDrawable(R.drawable.ic_cancel), <span class="keyword">null</span>);</div><div class="line">或者</div><div class="line">editText.setCompoundDrawablesWithIntrinsicBounds(<span class="keyword">null</span>, <span class="keyword">null</span>, context.getDrawable(R.drawable.ic_cancel), <span class="keyword">null</span>);</div></pre></td></tr></table></figure>
+<p>其他几个方法似乎无法设置图标：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">editText.setCompoundDrawables(Drawable left, Drawable top, Drawable right, Drawable bottom);</div><div class="line">editText.setCompoundDrawablesRelative(Drawable start, Drawable top, Drawable end, Drawable bottom);</div></pre></td></tr></table></figure>
+<p>具体原因暂时没有深入探究。</p>
+<h2 id="EditText输入监听"><a href="#EditText输入监听" class="headerlink" title="EditText输入监听"></a>EditText输入监听</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">InputClearOnTextChangedListener</span> <span class="keyword">implements</span> <span class="title">TextWatcher</span> </span>&#123;</div><div class="line">    <span class="keyword">private</span> Context context;</div><div class="line">    <span class="keyword">private</span> EditText editText;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">InputClearOnTextChangedListener</span><span class="params">(Context context, EditText editText)</span></span>&#123;</div><div class="line">        <span class="keyword">this</span>.context = context;</div><div class="line">        <span class="keyword">this</span>.editText = editText;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">beforeTextChanged</span><span class="params">(CharSequence charSequence, <span class="keyword">int</span> i, <span class="keyword">int</span> i1, <span class="keyword">int</span> i2)</span> </span>&#123;</div><div class="line"></div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onTextChanged</span><span class="params">(CharSequence charSequence, <span class="keyword">int</span> i, <span class="keyword">int</span> i1, <span class="keyword">int</span> i2)</span> </span>&#123;</div><div class="line"></div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">afterTextChanged</span><span class="params">(Editable editable)</span> </span>&#123;</div><div class="line">        <span class="comment">//当输入框有字符输入时，显示清除图标，没有字符时隐藏清除图标</span></div><div class="line">        <span class="keyword">if</span> (editable.length()&gt;<span class="number">0</span>)&#123;</div><div class="line">            editText.setCompoundDrawablesRelativeWithIntrinsicBounds(<span class="keyword">null</span>, <span class="keyword">null</span>, context.getDrawable(R.drawable.ic_cancel), <span class="keyword">null</span>);</div><div class="line">            <span class="comment">//editText.setCompoundDrawablesWithIntrinsicBounds(null, null, context.getDrawable(R.drawable.ic_cancel), null);</span></div><div class="line">        &#125;<span class="keyword">else</span> &#123;</div><div class="line">            editText.setCompoundDrawablesRelativeWithIntrinsicBounds(<span class="keyword">null</span>, <span class="keyword">null</span>, <span class="keyword">null</span>, <span class="keyword">null</span>);</div><div class="line">            <span class="comment">//editText.setCompoundDrawablesWithIntrinsicBounds(null, null, null, null);</span></div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>对于需求3，可以监听EditText的焦点来实现</p>
+<h2 id="EditText焦点监听"><a href="#EditText焦点监听" class="headerlink" title="EditText焦点监听"></a>EditText焦点监听</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">InputClearOnFocusChangeListener</span> <span class="keyword">implements</span> <span class="title">View</span>.<span class="title">OnFocusChangeListener</span> </span>&#123;</div><div class="line">    <span class="keyword">private</span> Context context;</div><div class="line">    <span class="keyword">private</span> EditText editText;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">InputClearOnFocusChangeListener</span><span class="params">(Context context, EditText editText)</span></span>&#123;</div><div class="line">        <span class="keyword">this</span>.context = context;</div><div class="line">        <span class="keyword">this</span>.editText = editText;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onFocusChange</span><span class="params">(View view, <span class="keyword">boolean</span> hasFocus)</span> </span>&#123;</div><div class="line">        <span class="comment">//失去焦点时隐藏图标，取得焦点且输入框中有字符时，显示图标</span></div><div class="line">        <span class="keyword">if</span> (hasFocus &amp;&amp; editText.getText().length()&gt;<span class="number">0</span>)&#123;</div><div class="line">            editText.setCompoundDrawablesRelativeWithIntrinsicBounds(<span class="keyword">null</span>, <span class="keyword">null</span>, context.getDrawable(R.drawable.ic_cancel), <span class="keyword">null</span>);</div><div class="line">        &#125;<span class="keyword">else</span> &#123;</div><div class="line">            editText.setCompoundDrawablesRelativeWithIntrinsicBounds(<span class="keyword">null</span>, <span class="keyword">null</span>, <span class="keyword">null</span>, <span class="keyword">null</span>);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="在Activity中对相应的EditText绑定监听器"><a href="#在Activity中对相应的EditText绑定监听器" class="headerlink" title="在Activity中对相应的EditText绑定监听器"></a>在Activity中对相应的EditText绑定监听器</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//当输入框有字符输入时，显示清除图标，没有字符时隐藏清除图标</span></div><div class="line">usernameInput.addTextChangedListener(<span class="keyword">new</span> InputClearOnTextChangedListener(<span class="keyword">this</span>, usernameInput));</div><div class="line"><span class="comment">//根据点击位置设置清除图标的功能（drawableRight没有点击事件）</span></div><div class="line">usernameInput.setOnTouchListener(<span class="keyword">new</span> InputClearOnTouchListener(usernameInput));</div><div class="line"><span class="comment">//失去焦点时隐藏图标，取得焦点且输入框中有字符时，显示图标</span></div><div class="line">usernameInput.setOnFocusChangeListener(<span class="keyword">new</span> InputClearOnFocusChangeListener(<span class="keyword">this</span>, usernameInput));</div><div class="line">passInput.addTextChangedListener(<span class="keyword">new</span> InputClearOnTextChangedListener(<span class="keyword">this</span>, passInput));</div><div class="line">passInput.setOnTouchListener(<span class="keyword">new</span> InputClearOnTouchListener(passInput));</div><div class="line">passInput.setOnFocusChangeListener(<span class="keyword">new</span> InputClearOnFocusChangeListener(<span class="keyword">this</span>, passInput));</div></pre></td></tr></table></figure>
+<h1 id="实现效果"><a href="#实现效果" class="headerlink" title="实现效果"></a>实现效果</h1><p><img src="https://ws1.sinaimg.cn/large/e3417548gy1fifympn3b9g20go0tn7he.jpg" alt=""></p>
+<h1 id="代码改进"><a href="#代码改进" class="headerlink" title="代码改进"></a>代码改进</h1><h2 id="将三个监听器的代码写在一个类里，并且提供一个静态方法绑定监听器，减少代码量"><a href="#将三个监听器的代码写在一个类里，并且提供一个静态方法绑定监听器，减少代码量" class="headerlink" title="将三个监听器的代码写在一个类里，并且提供一个静态方法绑定监听器，减少代码量"></a>将三个监听器的代码写在一个类里，并且提供一个静态方法绑定监听器，减少代码量</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">InputClearListener</span> <span class="keyword">implements</span> <span class="title">View</span>.<span class="title">OnTouchListener</span>, <span class="title">TextWatcher</span>, <span class="title">View</span>.<span class="title">OnFocusChangeListener</span> </span>&#123;</div><div class="line">    <span class="keyword">private</span> Context context;</div><div class="line">    <span class="keyword">private</span> EditText editText;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">InputClearListener</span><span class="params">(Context context, EditText editText)</span></span>&#123;</div><div class="line">        <span class="keyword">this</span>.context = context;</div><div class="line">        <span class="keyword">this</span>.editText = editText;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">onTouch</span><span class="params">(View view, MotionEvent motionEvent)</span> </span>&#123;</div><div class="line">        <span class="comment">//获取右侧图标</span></div><div class="line">        Drawable drawableRight = editText.getCompoundDrawables()[<span class="number">2</span>];</div><div class="line">        <span class="comment">//如果右侧没有图标，则不做处理</span></div><div class="line">        <span class="keyword">if</span> (drawableRight == <span class="keyword">null</span>)&#123;</div><div class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span> (motionEvent.getAction() != MotionEvent.ACTION_UP)&#123;</div><div class="line">            <span class="comment">//如果不是按下事件，不做处理</span></div><div class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span> (motionEvent.getX() &gt; editText.getWidth()-editText.getPaddingEnd()-drawableRight.getIntrinsicWidth())&#123;</div><div class="line">            <span class="comment">//如果点击的位置在右侧图标处，则清空输入框</span></div><div class="line">            editText.setText(<span class="string">""</span>);</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">beforeTextChanged</span><span class="params">(CharSequence charSequence, <span class="keyword">int</span> i, <span class="keyword">int</span> i1, <span class="keyword">int</span> i2)</span> </span>&#123;</div><div class="line"></div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onTextChanged</span><span class="params">(CharSequence charSequence, <span class="keyword">int</span> i, <span class="keyword">int</span> i1, <span class="keyword">int</span> i2)</span> </span>&#123;</div><div class="line"></div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">afterTextChanged</span><span class="params">(Editable editable)</span> </span>&#123;</div><div class="line">        <span class="comment">//当输入框有字符输入时，显示清除图标，没有字符时隐藏清除图标</span></div><div class="line">        <span class="keyword">if</span> (editable.length()&gt;<span class="number">0</span>)&#123;</div><div class="line">            editText.setCompoundDrawablesRelativeWithIntrinsicBounds(<span class="keyword">null</span>, <span class="keyword">null</span>, context.getDrawable(R.drawable.ic_cancel), <span class="keyword">null</span>);</div><div class="line">            <span class="comment">//editText.setCompoundDrawablesWithIntrinsicBounds(null, null, context.getDrawable(R.drawable.ic_cancel), null);</span></div><div class="line">        &#125;<span class="keyword">else</span> &#123;</div><div class="line">            editText.setCompoundDrawablesRelativeWithIntrinsicBounds(<span class="keyword">null</span>, <span class="keyword">null</span>, <span class="keyword">null</span>, <span class="keyword">null</span>);</div><div class="line">            <span class="comment">//editText.setCompoundDrawablesWithIntrinsicBounds(null, null, null, null);</span></div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onFocusChange</span><span class="params">(View view, <span class="keyword">boolean</span> hasFocus)</span> </span>&#123;</div><div class="line">        <span class="comment">//失去焦点时隐藏图标，取得焦点且输入框中有字符时，显示图标</span></div><div class="line">        <span class="keyword">if</span> (hasFocus &amp;&amp; editText.getText().length()&gt;<span class="number">0</span>)&#123;</div><div class="line">            editText.setCompoundDrawablesRelativeWithIntrinsicBounds(<span class="keyword">null</span>, <span class="keyword">null</span>, context.getDrawable(R.drawable.ic_cancel), <span class="keyword">null</span>);</div><div class="line">        &#125;<span class="keyword">else</span> &#123;</div><div class="line">            editText.setCompoundDrawablesRelativeWithIntrinsicBounds(<span class="keyword">null</span>, <span class="keyword">null</span>, <span class="keyword">null</span>, <span class="keyword">null</span>);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line">     * 给EditText对象绑定监听器</div><div class="line">     * <span class="doctag">@param</span> context EditText所在的activity</div><div class="line">     * <span class="doctag">@param</span> editText 需要绑定监听器的EditText</div><div class="line">     */</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">addListener</span><span class="params">(Context context, EditText editText)</span></span>&#123;</div><div class="line">        InputClearListener listener = <span class="keyword">new</span> InputClearListener(context, editText);</div><div class="line">        editText.addTextChangedListener(listener);</div><div class="line">        editText.setOnTouchListener(listener);</div><div class="line">        editText.setOnFocusChangeListener(listener);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="修改Activity中绑定监听器的代码"><a href="#修改Activity中绑定监听器的代码" class="headerlink" title="修改Activity中绑定监听器的代码"></a>修改Activity中绑定监听器的代码</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">InputClearListener.addListener(<span class="keyword">this</span>, usernameInput);</div><div class="line">InputClearListener.addListener(<span class="keyword">this</span>, passInput);</div></pre></td></tr></table></figure>
+<p>代码看起来比以前的简洁了不少。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/android/" rel="tag"># android</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/08/11/密码输入框限定英文字符和数字输入/" rel="next" title="密码输入框限定英文字符和数字输入">
+                <i class="fa fa-chevron-left"></i> 密码输入框限定英文字符和数字输入
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+          
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://i4.buimg.com/567571/fbb0ec60f25374c4.png"
+               alt="Zhu Yuexin" />
+          <p class="site-author-name" itemprop="name">Zhu Yuexin</p>
+           
+              <p class="site-description motion-element" itemprop="description">呀！发现一只会写代码的猪！</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">20</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#功能需求"><span class="nav-number">1.</span> <span class="nav-text">功能需求</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#实现过程"><span class="nav-number">2.</span> <span class="nav-text">实现过程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#EditText点击位置监听"><span class="nav-number">2.1.</span> <span class="nav-text">EditText点击位置监听</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#EditText输入监听"><span class="nav-number">2.2.</span> <span class="nav-text">EditText输入监听</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#EditText焦点监听"><span class="nav-number">2.3.</span> <span class="nav-text">EditText焦点监听</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在Activity中对相应的EditText绑定监听器"><span class="nav-number">2.4.</span> <span class="nav-text">在Activity中对相应的EditText绑定监听器</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#实现效果"><span class="nav-number">3.</span> <span class="nav-text">实现效果</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#代码改进"><span class="nav-number">4.</span> <span class="nav-text">代码改进</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#将三个监听器的代码写在一个类里，并且提供一个静态方法绑定监听器，减少代码量"><span class="nav-number">4.1.</span> <span class="nav-text">将三个监听器的代码写在一个类里，并且提供一个静态方法绑定监听器，减少代码量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修改Activity中绑定监听器的代码"><span class="nav-number">4.2.</span> <span class="nav-text">修改Activity中绑定监听器的代码</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Zhu Yuexin</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+</body>
+</html>
