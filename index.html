@@ -260,6 +260,723 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/11/常见用户设置页面布局/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Zhu Yuexin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://i4.buimg.com/567571/fbb0ec60f25374c4.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Mr.Z's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/08/11/常见用户设置页面布局/" itemprop="url">
+                  常见用户设置页面布局
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-11T17:48:00+08:00">
+                2017-08-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Android碎片/" itemprop="url" rel="index">
+                    <span itemprop="name">Android碎片</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>写了一个用户设置页面，这里做一个记录，作为以后的参考。布局的参数设置抽取出来写在了style文件里。</p>
+<h1 id="布局文件"><a href="#布局文件" class="headerlink" title="布局文件"></a>布局文件</h1><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version="1.0" encoding="utf-8"?&gt;</div><div class="line"><span class="tag">&lt;<span class="name">android.support.v7.widget.LinearLayoutCompat</span> <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span></span></div><div class="line">  <span class="attr">xmlns:app</span>=<span class="string">"http://schemas.android.com/apk/res-auto"</span></div><div class="line">  <span class="attr">xmlns:tools</span>=<span class="string">"http://schemas.android.com/tools"</span></div><div class="line">  <span class="attr">android:orientation</span>=<span class="string">"vertical"</span></div><div class="line">  <span class="attr">android:background</span>=<span class="string">"@color/gray_f2"</span></div><div class="line">  <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></div><div class="line">  <span class="attr">android:layout_height</span>=<span class="string">"match_parent"</span></div><div class="line">  <span class="attr">tools:context</span>=<span class="string">"com.example.lollipop.makeupapp.ui.activity.SettingActivity"</span>&gt;</div><div class="line"></div><div class="line">  <span class="tag">&lt;<span class="name">android.support.v7.widget.Toolbar</span></span></div><div class="line">  <span class="attr">android:id</span>=<span class="string">"@+id/toolbar"</span></div><div class="line">  <span class="attr">android:background</span>=<span class="string">"@color/white"</span></div><div class="line">  <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></div><div class="line">  <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span>&gt;</div><div class="line">  <span class="tag">&lt;<span class="name">FrameLayout</span></span></div><div class="line">  <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></div><div class="line">  <span class="attr">android:layout_height</span>=<span class="string">"match_parent"</span>&gt;</div><div class="line">  <span class="tag">&lt;<span class="name">android.support.v7.widget.LinearLayoutCompat</span></span></div><div class="line">  <span class="attr">android:layout_gravity</span>=<span class="string">"center_vertical"</span></div><div class="line">  <span class="attr">android:orientation</span>=<span class="string">"horizontal"</span></div><div class="line">  <span class="attr">android:gravity</span>=<span class="string">"center"</span></div><div class="line">  <span class="attr">android:layout_width</span>=<span class="string">"wrap_content"</span></div><div class="line">  <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span>&gt;</div><div class="line">  <span class="tag">&lt;<span class="name">android.support.v7.widget.AppCompatImageView</span></span></div><div class="line">  <span class="attr">app:srcCompat</span>=<span class="string">"@drawable/ic_back"</span></div><div class="line">  <span class="attr">android:layout_width</span>=<span class="string">"wrap_content"</span></div><div class="line">  <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span> /&gt;</div><div class="line">  <span class="tag">&lt;<span class="name">android.support.v7.widget.AppCompatTextView</span></span></div><div class="line">  <span class="attr">android:text</span>=<span class="string">"@string/me"</span></div><div class="line">  <span class="attr">android:layout_width</span>=<span class="string">"wrap_content"</span></div><div class="line">  <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span> /&gt;</div><div class="line">  <span class="tag">&lt;/<span class="name">android.support.v7.widget.LinearLayoutCompat</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">android.support.v7.widget.AppCompatTextView</span></span></div><div class="line">  <span class="attr">android:gravity</span>=<span class="string">"center"</span></div><div class="line">  <span class="attr">android:text</span>=<span class="string">"@string/setting"</span></div><div class="line">  <span class="attr">android:textSize</span>=<span class="string">"20sp"</span></div><div class="line">  <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></div><div class="line">  <span class="attr">android:layout_height</span>=<span class="string">"match_parent"</span> /&gt;</div><div class="line">  <span class="tag">&lt;/<span class="name">FrameLayout</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">android.support.v7.widget.Toolbar</span>&gt;</span></div><div class="line"></div><div class="line">  <span class="tag">&lt;<span class="name">android.support.v4.widget.NestedScrollView</span></span></div><div class="line">  <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></div><div class="line">  <span class="attr">android:layout_height</span>=<span class="string">"match_parent"</span>&gt;</div><div class="line">  <span class="tag">&lt;<span class="name">android.support.v7.widget.LinearLayoutCompat</span></span></div><div class="line">  <span class="attr">android:orientation</span>=<span class="string">"vertical"</span></div><div class="line">  <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></div><div class="line">  <span class="attr">android:layout_height</span>=<span class="string">"match_parent"</span>&gt;</div><div class="line">  <span class="tag">&lt;<span class="name">RelativeLayout</span> <span class="attr">android:id</span>=<span class="string">"@+id/account_manage"</span> <span class="attr">style</span>=<span class="string">"@style/wrap_layout"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">android.support.v7.widget.AppCompatTextView</span></span></div><div class="line">  <span class="attr">android:text</span>=<span class="string">"@string/account_manage"</span></div><div class="line">  <span class="attr">style</span>=<span class="string">"@style/text_style"</span> /&gt;</div><div class="line">  <span class="tag">&lt;<span class="name">android.support.v7.widget.AppCompatImageView</span> <span class="attr">style</span>=<span class="string">"@style/img_style"</span>/&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">RelativeLayout</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">RelativeLayout</span> <span class="attr">android:id</span>=<span class="string">"@+id/personal_info"</span> <span class="attr">style</span>=<span class="string">"@style/bottom_layout"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">android.support.v7.widget.AppCompatTextView</span></span></div><div class="line">  <span class="attr">android:text</span>=<span class="string">"@string/personal_info"</span></div><div class="line">  <span class="attr">style</span>=<span class="string">"@style/text_style"</span> /&gt;</div><div class="line">  <span class="tag">&lt;<span class="name">android.support.v7.widget.AppCompatImageView</span> <span class="attr">style</span>=<span class="string">"@style/img_style"</span>/&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">RelativeLayout</span>&gt;</span></div><div class="line"></div><div class="line">  <span class="tag">&lt;<span class="name">RelativeLayout</span></span></div><div class="line">  <span class="attr">android:id</span>=<span class="string">"@+id/dress_up"</span></div><div class="line">  <span class="attr">style</span>=<span class="string">"@style/wrap_layout"</span>&gt;</div><div class="line">  <span class="tag">&lt;<span class="name">android.support.v7.widget.AppCompatTextView</span></span></div><div class="line">  <span class="attr">android:text</span>=<span class="string">"@string/dress_up"</span></div><div class="line">  <span class="attr">style</span>=<span class="string">"@style/text_style"</span> /&gt;</div><div class="line">  <span class="tag">&lt;<span class="name">android.support.v7.widget.AppCompatImageView</span> <span class="attr">style</span>=<span class="string">"@style/img_style"</span>/&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">RelativeLayout</span>&gt;</span></div><div class="line"></div><div class="line">  <span class="tag">&lt;<span class="name">RelativeLayout</span> <span class="attr">android:id</span>=<span class="string">"@+id/clean_cache"</span> <span class="attr">style</span>=<span class="string">"@style/wrap_layout"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">android.support.v7.widget.AppCompatTextView</span></span></div><div class="line">  <span class="attr">android:text</span>=<span class="string">"@string/clean_cache"</span></div><div class="line">  <span class="attr">style</span>=<span class="string">"@style/text_style"</span> /&gt;</div><div class="line">  <span class="tag">&lt;<span class="name">android.support.v7.widget.AppCompatImageView</span></span></div><div class="line">  <span class="attr">android:id</span>=<span class="string">"@+id/img"</span></div><div class="line">  <span class="attr">style</span>=<span class="string">"@style/img_style"</span> /&gt;</div><div class="line">  <span class="tag">&lt;<span class="name">TextView</span></span></div><div class="line">  <span class="attr">android:id</span>=<span class="string">"@+id/cache"</span></div><div class="line">  <span class="attr">android:text</span>=<span class="string">"@string/cache_test"</span></div><div class="line">  <span class="attr">android:layout_centerVertical</span>=<span class="string">"true"</span></div><div class="line">  <span class="attr">android:layout_toStartOf</span>=<span class="string">"@id/img"</span></div><div class="line">  <span class="attr">android:layout_width</span>=<span class="string">"wrap_content"</span></div><div class="line">  <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span> /&gt;</div><div class="line">  <span class="tag">&lt;/<span class="name">RelativeLayout</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">RelativeLayout</span> <span class="attr">android:id</span>=<span class="string">"@+id/advice"</span> <span class="attr">style</span>=<span class="string">"@style/mid_layout"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">android.support.v7.widget.AppCompatTextView</span></span></div><div class="line">  <span class="attr">android:text</span>=<span class="string">"@string/advice"</span></div><div class="line">  <span class="attr">style</span>=<span class="string">"@style/text_style"</span> /&gt;</div><div class="line">  <span class="tag">&lt;<span class="name">android.support.v7.widget.AppCompatImageView</span> <span class="attr">style</span>=<span class="string">"@style/img_style"</span>/&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">RelativeLayout</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">RelativeLayout</span> <span class="attr">android:id</span>=<span class="string">"@+id/about_us"</span> <span class="attr">style</span>=<span class="string">"@style/bottom_layout"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">android.support.v7.widget.AppCompatTextView</span></span></div><div class="line">  <span class="attr">android:text</span>=<span class="string">"@string/account_manage"</span></div><div class="line">  <span class="attr">style</span>=<span class="string">"@style/text_style"</span> /&gt;</div><div class="line">  <span class="tag">&lt;<span class="name">android.support.v7.widget.AppCompatImageView</span> <span class="attr">style</span>=<span class="string">"@style/img_style"</span>/&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">RelativeLayout</span>&gt;</span></div><div class="line"></div><div class="line">  <span class="tag">&lt;<span class="name">android.support.v7.widget.AppCompatButton</span></span></div><div class="line">  <span class="attr">android:text</span>=<span class="string">"@string/exit_current_account"</span></div><div class="line">  <span class="attr">android:textColor</span>=<span class="string">"@color/red"</span></div><div class="line">  <span class="attr">android:layout_marginTop</span>=<span class="string">"40dp"</span></div><div class="line">  <span class="attr">app:theme</span>=<span class="string">"@style/LogoutButton"</span></div><div class="line">  <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></div><div class="line">  <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span> /&gt;</div><div class="line">  <span class="tag">&lt;/<span class="name">android.support.v7.widget.LinearLayoutCompat</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">android.support.v4.widget.NestedScrollView</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">android.support.v7.widget.LinearLayoutCompat</span>&gt;</span></div></pre></td></tr></table></figure>
+<h1 id="样式文件"><a href="#样式文件" class="headerlink" title="样式文件"></a>样式文件</h1><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!-- 共用样式 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">name</span>=<span class="string">"base_layout"</span>&gt;</span><span class="xml"></span></div><div class="line">  <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:clickable"</span>&gt;</span>true<span class="tag">&lt;/<span class="name">item</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:background"</span>&gt;</span>@drawable/item_click_selector<span class="tag">&lt;/<span class="name">item</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:layout_width"</span>&gt;</span>match_parent<span class="tag">&lt;/<span class="name">item</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:layout_height"</span>&gt;</span>wrap_content<span class="tag">&lt;/<span class="name">item</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:paddingStart"</span>&gt;</span>10dp<span class="tag">&lt;/<span class="name">item</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:paddingEnd"</span>&gt;</span>10dp<span class="tag">&lt;/<span class="name">item</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:paddingTop"</span>&gt;</span>10dp<span class="tag">&lt;/<span class="name">item</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:paddingBottom"</span>&gt;</span>10dp<span class="tag">&lt;/<span class="name">item</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line"><span class="comment">&lt;!-- 外层样式 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">name</span>=<span class="string">"wrap_layout"</span> <span class="attr">parent</span>=<span class="string">"base_layout"</span>&gt;</span><span class="xml"></span></div><div class="line">  <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:layout_marginTop"</span>&gt;</span>20dp<span class="tag">&lt;/<span class="name">item</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:layout_marginBottom"</span>&gt;</span>0.5dp<span class="tag">&lt;/<span class="name">item</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line"><span class="comment">&lt;!-- 中间层样式 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">name</span>=<span class="string">"mid_layout"</span> <span class="attr">parent</span>=<span class="string">"base_layout"</span>&gt;</span><span class="xml"></span></div><div class="line">  <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:layout_marginBottom"</span>&gt;</span>0.5dp<span class="tag">&lt;/<span class="name">item</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line"><span class="comment">&lt;!-- 底层样式 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">name</span>=<span class="string">"bottom_layout"</span> <span class="attr">parent</span>=<span class="string">"base_layout"</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line"><span class="comment">&lt;!-- 文本样式 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">name</span>=<span class="string">"text_style"</span>&gt;</span><span class="xml"></span></div><div class="line">  <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:layout_width"</span>&gt;</span>wrap_content<span class="tag">&lt;/<span class="name">item</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:layout_height"</span>&gt;</span>wrap_content<span class="tag">&lt;/<span class="name">item</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:textSize"</span>&gt;</span>18sp<span class="tag">&lt;/<span class="name">item</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:layout_alignParentStart"</span>&gt;</span>true<span class="tag">&lt;/<span class="name">item</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:layout_centerVertical"</span>&gt;</span>true<span class="tag">&lt;/<span class="name">item</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line"><span class="comment">&lt;!-- 图标样式 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">name</span>=<span class="string">"img_style"</span>&gt;</span><span class="xml"></span></div><div class="line">  <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:layout_width"</span>&gt;</span>wrap_content<span class="tag">&lt;/<span class="name">item</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:layout_height"</span>&gt;</span>wrap_content<span class="tag">&lt;/<span class="name">item</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:layout_alignParentEnd"</span>&gt;</span>true<span class="tag">&lt;/<span class="name">item</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:layout_centerVertical"</span>&gt;</span>true<span class="tag">&lt;/<span class="name">item</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:src"</span>&gt;</span>@drawable/ic_next<span class="tag">&lt;/<span class="name">item</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div></pre></td></tr></table></figure>
+<h1 id="点击效果"><a href="#点击效果" class="headerlink" title="点击效果"></a>点击效果</h1><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version="1.0" encoding="utf-8"?&gt;</div><div class="line"><span class="tag">&lt;<span class="name">selector</span> <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">item</span> <span class="attr">android:drawable</span>=<span class="string">"@color/white"</span> <span class="attr">android:state_pressed</span>=<span class="string">"false"</span>/&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">item</span> <span class="attr">android:drawable</span>=<span class="string">"@color/gray_f2"</span> <span class="attr">android:state_pressed</span>=<span class="string">"true"</span> /&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">selector</span>&gt;</span></div></pre></td></tr></table></figure>
+<h1 id="页面预览"><a href="#页面预览" class="headerlink" title="页面预览"></a>页面预览</h1><p><img src="https://ws1.sinaimg.cn/large/e3417548gy1fifxomg9sqj20u01hc0vo.jpg" alt=""></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/11/在Fragment中嵌套ViewPager时，内部Fragment不显示且滑动不流畅/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Zhu Yuexin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://i4.buimg.com/567571/fbb0ec60f25374c4.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Mr.Z's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/08/11/在Fragment中嵌套ViewPager时，内部Fragment不显示且滑动不流畅/" itemprop="url">
+                  在Fragment中嵌套ViewPager时，内部Fragment不显示且滑动不流畅
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-11T17:23:00+08:00">
+                2017-08-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Android错误解决/" itemprop="url" rel="index">
+                    <span itemprop="name">Android错误解决</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>#遇到的问题</p>
+<p>我在开发过程中用到了ViewPager和Fragment配合使用的情况，在ViewPager下的一个Fragment里又有情况需要用到ViewPager+Fragment，出现了ViewPager的嵌套，这时里层ViewPager的滑动显得十分不流畅，而且里层Fragment的内容不显示出来。</p>
+<h1 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h1><p>我的里层ViewPager获取Fragment Manager的代码如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">MyFragmentStatePagerAdapter adapter = <span class="keyword">new</span> MyFragmentStatePagerAdapter(getActivity().getSupportFragmentManager(), fragments, Arrays.asList(TITLES));</div></pre></td></tr></table></figure>
+<p>这里的<code>getActivity().getSupportFragmentManager()</code>方法获取到的是父级的FragmentManager，于是出现了里层ViewPager与外层共用一个FragmentManager的情况，导致问题出现。</p>
+<h1 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h1><p>修改适配器获取FragmentManager的方法：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">MyFragmentStatePagerAdapter adapter = <span class="keyword">new</span> MyFragmentStatePagerAdapter(getChildFragmentManager(), fragments, Arrays.asList(TITLES));</div></pre></td></tr></table></figure>
+<p>使用<code>getChildFragmentManager()</code>代替<code>getActivity().getSupportFragmentManager()</code>方法。</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/11/修改ToolBar溢出菜单字体颜色（即MenuItem字体颜色）/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Zhu Yuexin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://i4.buimg.com/567571/fbb0ec60f25374c4.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Mr.Z's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/08/11/修改ToolBar溢出菜单字体颜色（即MenuItem字体颜色）/" itemprop="url">
+                  修改ToolBar溢出菜单字体颜色（即MenuItem字体颜色）
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-11T17:18:00+08:00">
+                2017-08-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Android碎片/" itemprop="url" rel="index">
+                    <span itemprop="name">Android碎片</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="更改溢出菜单栏里的字体颜色"><a href="#更改溢出菜单栏里的字体颜色" class="headerlink" title="更改溢出菜单栏里的字体颜色"></a>更改溢出菜单栏里的字体颜色</h1><p>默认情况下，ToolBar溢出菜单的字体颜色是黑色的。如果要更改溢出菜单的文字颜色，需要为ToolBar添加一个主题，在styles.xml文件中新建：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">name</span>=<span class="string">"ToolBarThemeWhite"</span> <span class="attr">parent</span>=<span class="string">"Theme.AppCompat.Light"</span>&gt;</span><span class="xml"></span></div><div class="line">    <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:textColor"</span>&gt;</span>@color/white<span class="tag">&lt;/<span class="name">item</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:textSize"</span>&gt;</span>25sp<span class="tag">&lt;/<span class="name">item</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div></pre></td></tr></table></figure>
+<h1 id="更改显示在ToolBar上的菜单文字颜色"><a href="#更改显示在ToolBar上的菜单文字颜色" class="headerlink" title="更改显示在ToolBar上的菜单文字颜色"></a>更改显示在ToolBar上的菜单文字颜色</h1><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">name</span>=<span class="string">"ToolBarThemeWhite"</span> <span class="attr">parent</span>=<span class="string">"Theme.AppCompat.Light"</span>&gt;</span><span class="xml"></span></div><div class="line">    <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"actionMenuTextColor"</span>&gt;</span>@color/white<span class="tag">&lt;/<span class="name">item</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:textSize"</span>&gt;</span>20sp<span class="tag">&lt;/<span class="name">item</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div></pre></td></tr></table></figure>
+<h1 id="在ToolBar中应用新建的主题"><a href="#在ToolBar中应用新建的主题" class="headerlink" title="在ToolBar中应用新建的主题"></a>在ToolBar中应用新建的主题</h1><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">android.support.v7.widget.Toolbar</span></span></div><div class="line">    <span class="attr">android:id</span>=<span class="string">"@+id/toolbar"</span></div><div class="line">    <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></div><div class="line">    <span class="attr">android:layout_height</span>=<span class="string">"?attr/actionBarSize"</span></div><div class="line">    <span class="attr">app:theme</span>=<span class="string">"@style/ToolBarThemeWhite"</span></div><div class="line">    <span class="attr">app:titleTextColor</span>=<span class="string">"@color/white"</span></div><div class="line">    <span class="attr">app:layout_collapseMode</span>=<span class="string">"pin"</span></div><div class="line">    <span class="attr">app:navigationIcon</span>=<span class="string">"@drawable/ic_back_white"</span> /&gt;</div></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/11/getResource().getColor()方法废弃，其他获取颜色的方法/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Zhu Yuexin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://i4.buimg.com/567571/fbb0ec60f25374c4.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Mr.Z's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/08/11/getResource().getColor()方法废弃，其他获取颜色的方法/" itemprop="url">
+                  getResource().getColor()方法废弃，其他获取颜色的方法
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-11T17:15:00+08:00">
+                2017-08-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Android碎片/" itemprop="url" rel="index">
+                    <span itemprop="name">Android碎片</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><code>getResouce().getColor(int id)</code>在API 23以上版本时被废弃了，替换为方法<code>getResource().getColor(int id, Theme theme)</code>，但这个方法要求API&gt;=23。</p>
+<p>当前同时兼容高低版本的方法是：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ContextCompat.getColor(Context context, <span class="keyword">int</span> id);</div></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/11/LinearLayout中的所有子控件均匀分布/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Zhu Yuexin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://i4.buimg.com/567571/fbb0ec60f25374c4.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Mr.Z's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/08/11/LinearLayout中的所有子控件均匀分布/" itemprop="url">
+                  LinearLayout中的所有子控件均匀分布
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-11T17:10:00+08:00">
+                2017-08-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Android碎片/" itemprop="url" rel="index">
+                    <span itemprop="name">Android碎片</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>在设置LinearLayout的orientation为horizontal的时候，每个横向子控件如果想要大小一样的话，设置他们的”layout_weight”等于1即可。</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">LinearLayout</span></span></div><div class="line"></div><div class="line">	<span class="attr">android:layout_width</span>=<span class="string">"fill_parent"</span></div><div class="line"></div><div class="line">	<span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></div><div class="line"></div><div class="line">	<span class="attr">android:layout_alignParentTop</span>=<span class="string">"true"</span></div><div class="line"></div><div class="line">	<span class="attr">android:layout_centerHorizontal</span>=<span class="string">"true"</span></div><div class="line"></div><div class="line">	<span class="attr">android:layout_marginTop</span>=<span class="string">"98dp"</span></div><div class="line"></div><div class="line">	<span class="attr">android:orientation</span>=<span class="string">"horizontal"</span> &gt;</div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">Button</span></span></div><div class="line"></div><div class="line">        <span class="attr">android:id</span>=<span class="string">"@+id/button1"</span></div><div class="line"></div><div class="line">        <span class="attr">android:layout_width</span>=<span class="string">"fill_parent"</span></div><div class="line"></div><div class="line">        <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></div><div class="line"></div><div class="line">        <span class="attr">android:layout_weight</span>=<span class="string">"1"</span> /&gt;</div><div class="line"></div><div class="line">	<span class="tag">&lt;<span class="name">Button</span></span></div><div class="line"></div><div class="line">        <span class="attr">android:id</span>=<span class="string">"@+id/button2"</span></div><div class="line"></div><div class="line">        <span class="attr">android:layout_width</span>=<span class="string">"fill_parent"</span></div><div class="line"></div><div class="line">        <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></div><div class="line"></div><div class="line">        <span class="attr">android:layout_weight</span>=<span class="string">"1"</span> /&gt;</div><div class="line"></div><div class="line"><span class="tag">&lt;/<span class="name">LinearLayout</span>&gt;</span></div></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/11/TextView单行显示，并且文字过多显示省略号/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -993,946 +1710,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/30/Android国际化语言支持/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Zhu Yuexin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://i4.buimg.com/567571/fbb0ec60f25374c4.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Mr.Z's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/03/30/Android国际化语言支持/" itemprop="url">
-                  Android国际化语言支持
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-30T21:00:00+08:00">
-                2017-03-30
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Android碎片/" itemprop="url" rel="index">
-                    <span itemprop="name">Android碎片</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>在Android开发中，应该尽量将UI中的字符串存放在资源文件中（<em>res/values/strings.xml</em>）。</p>
-<h1 id="支持不同语言"><a href="#支持不同语言" class="headerlink" title="支持不同语言"></a>支持不同语言</h1><p>如果需要添加对更多语言的支持，需要在res下创建额外的values目录，并在目录名称末尾加上连字符和ISO语言代码。例如，<em>values-es/</em>目录包含的简单资源用于语言代码为”es”的语言区域。Android根据运行时设备的语言区域设置加载相应的资源。</p>
-<p>一旦决定了为哪些语言提供支持，便可创建资源子目录和字符串资源文件。例如：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">MyProject/</div><div class="line">    res/</div><div class="line">       values/</div><div class="line">           strings.xml</div><div class="line">       values-es/</div><div class="line">           strings.xml</div><div class="line">       values-fr/</div><div class="line">           strings.xml</div></pre></td></tr></table></figure>
-<p>英语（默认语言区域），<code>/values/strings.xml</code>：</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version="1.0" encoding="utf-8"?&gt;</div><div class="line"><span class="tag">&lt;<span class="name">resources</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">string</span> <span class="attr">name</span>=<span class="string">"title"</span>&gt;</span>My Application<span class="tag">&lt;/<span class="name">string</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">string</span> <span class="attr">name</span>=<span class="string">"hello_world"</span>&gt;</span>Hello World!<span class="tag">&lt;/<span class="name">string</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">resources</span>&gt;</span></div></pre></td></tr></table></figure>
-<p>西班牙语，<code>/values-es/strings.xml</code>：</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version="1.0" encoding="utf-8"?&gt;</div><div class="line"><span class="tag">&lt;<span class="name">resources</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">string</span> <span class="attr">name</span>=<span class="string">"title"</span>&gt;</span>Mi Aplicación<span class="tag">&lt;/<span class="name">string</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">string</span> <span class="attr">name</span>=<span class="string">"hello_world"</span>&gt;</span>Hola Mundo!<span class="tag">&lt;/<span class="name">string</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">resources</span>&gt;</span></div></pre></td></tr></table></figure>
-<p>法语，<code>/values-fr/strings.xml</code>：</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version="1.0" encoding="utf-8"?&gt;</div><div class="line"><span class="tag">&lt;<span class="name">resources</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">string</span> <span class="attr">name</span>=<span class="string">"title"</span>&gt;</span>Mon Application<span class="tag">&lt;/<span class="name">string</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">string</span> <span class="attr">name</span>=<span class="string">"hello_world"</span>&gt;</span>Bonjour le monde !<span class="tag">&lt;/<span class="name">string</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">resources</span>&gt;</span></div></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/30/皮皮夏与她的小本本/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Zhu Yuexin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://i4.buimg.com/567571/fbb0ec60f25374c4.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Mr.Z's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/03/30/皮皮夏与她的小本本/" itemprop="url">
-                  皮皮夏与她的小本本
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-30T10:37:22+08:00">
-                2017-03-30
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/皮皮夏/" itemprop="url" rel="index">
-                    <span itemprop="name">皮皮夏</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="N宗罪"><a href="#N宗罪" class="headerlink" title="N宗罪"></a>N宗罪</h1><h2 id="NO-1"><a href="#NO-1" class="headerlink" title="NO.1"></a>NO.1</h2><p>没主见还要说我没主见，明明每次自己都没想好要吃什么，每次都说是我。(`へ´≠)</p>
-<h2 id="NO-2"><a href="#NO-2" class="headerlink" title="NO.2"></a>NO.2</h2><p>爱嘲笑。每当问我一件事，只要我不知道，便开始对我的嘲笑。</p>
-<h2 id="NO-3"><a href="#NO-3" class="headerlink" title="NO.3"></a>NO.3</h2><p>怀疑我。只要我发表我的观点，便会在第一时间，甚至是毫无思考的状态下就说我乱讲。</p>
-<h2 id="NO-4"><a href="#NO-4" class="headerlink" title="NO.4"></a>NO.4</h2><p>玩手机。自从换了新手机后，知道了刷微博的乐趣所在，便玩手机！以前我玩手机某人是怎么甩脸子的，就不怕我报复么。</p>
-<h2 id="NO-5"><a href="#NO-5" class="headerlink" title="NO.5"></a>NO.5</h2><p>总是将自己的喜恶强加于我。古人云:“己所不欲，勿施于人”。不知道怎么深奥的道理，某人明白不啰。</p>
-<h2 id="NO-6"><a href="#NO-6" class="headerlink" title="NO.6"></a>NO.6</h2><p>唠叨啰嗦……感觉这m年真是深受其害。</p>
-<h2 id="NO-7"><a href="#NO-7" class="headerlink" title="NO.7"></a>NO.7</h2><p>装无辜。明明知道自己做了什么欠的事，非要问，非要问…你这样良心真的不会痛么？</p>
-<h2 id="NO-8"><a href="#NO-8" class="headerlink" title="NO.8"></a>NO.8</h2><p>甩脸。只要自己不高兴了，就给我甩脸。其实没给你讲，你甩脸的时候真的丑得无与伦比！</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/29/Java8新特性：Date和Time类/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Zhu Yuexin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://i4.buimg.com/567571/fbb0ec60f25374c4.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Mr.Z's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/03/29/Java8新特性：Date和Time类/" itemprop="url">
-                  Java8新特性：Date和Time类（LocalDate, LocalTime, LocalDateTime）
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-29T21:40:00+08:00">
-                2017-03-29
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java笔记/" itemprop="url" rel="index">
-                    <span itemprop="name">Java笔记</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>这篇文章主要是java8中新的Date和Time API的实战。新的Date和Time类是java开发者社区千呼万唤始出来的。Java8 之前存在的Date类一直都受人诟病，很多人都会选择使用第三方的date库<a href="http://www.joda.org/joda-time/" target="_blank" rel="external">joda-time</a>。Java8中的date和time api是jodatime的作者参与开发的，实现了JSR310的全部内容。这些新的api都在包java.time下。</p>
-<p>既然第三方的joda-time,date4j都已经足够强大了，为什么java8还要重新实现他呢，一部分的原因是这些第三方的库是存在兼容问题的，比如标准的JSF日期转化器与joda-time api，就不兼容，每次使用都需要编写自己的转换器，所以标准化api是必须的，就有了JSR310，java8中就实现了他全部的规定内容。</p>
-<h2 id="新Date类和Time类背后的设计原则："><a href="#新Date类和Time类背后的设计原则：" class="headerlink" title="新Date类和Time类背后的设计原则："></a>新Date类和Time类背后的设计原则：</h2><p><strong>不可变类</strong></p>
-<p>java8之前，Date类都是可变类。当我们在多线程环境下使用它，编程人员应该确认Date对象的线程安全。Java8的Date和Time API提供了线程安全的不可变类。编程人员不用考虑并发的问题。</p>
-<p><strong>领域模型驱动设计方法</strong></p>
-<p>新的日期和时间的类别遵循“域驱动设计”。对于开发者来说，理解方法和类的功能是很容易的。</p>
-<h2 id="接下来让我们来看看新Date和Time-API"><a href="#接下来让我们来看看新Date和Time-API" class="headerlink" title="接下来让我们来看看新Date和Time API:"></a>接下来让我们来看看新Date和Time API:</h2><h2 id="java-time-LocalDate"><a href="#java-time-LocalDate" class="headerlink" title="java.time.LocalDate:"></a>java.time.LocalDate:</h2><p>LocalDate只提供日期不提供时间信息。它是不可变类且线程安全的。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> org.smarttechie;</div><div class="line"><span class="keyword">import</span> java.time.LocalDate;</div><div class="line"><span class="keyword">import</span> java.time.temporal.ChronoUnit;</div><div class="line"><span class="comment">/**</span></div><div class="line">* This class demonstrates JAVA 8 data and time API</div><div class="line">* <span class="doctag">@author</span> Siva Prasad Rao Janapati</div><div class="line">* */</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DateTimeDemonstration</span> </span>&#123;</div><div class="line"><span class="comment">/**</span></div><div class="line">* <span class="doctag">@param</span> args</div><div class="line">*/</div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">  <span class="comment">//Create date LocalDate </span></div><div class="line">  localDate = LocalDate.now();</div><div class="line">  System.out.println(<span class="string">"The local date is :: "</span> + localDate); </div><div class="line">  <span class="comment">//Find the length of the month. That is, how many days are there for this month.</span></div><div class="line">  System.out.println(<span class="string">"The number of days available for this month:: "</span> + 		localDate.lengthOfMonth()); </div><div class="line">   <span class="comment">//Know the month name</span></div><div class="line">   System.out.println(<span class="string">"What is the month name? :: "</span> + localDate.getMonth().name()); </div><div class="line">   <span class="comment">//add 2 days to the today's date.</span></div><div class="line">   System.out.println(localDate.plus(<span class="number">2</span>, ChronoUnit.DAYS)); </div><div class="line">   <span class="comment">//substract 2 days from today</span></div><div class="line">   System.out.println(localDate.minus(<span class="number">2</span>, ChronoUnit.DAYS)); </div><div class="line">   <span class="comment">//Convert the string to date</span></div><div class="line">   System.out.println(localDate.parse(<span class="string">"2017-04-07"</span>));</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h2 id="java-time-LocalTime"><a href="#java-time-LocalTime" class="headerlink" title="java.time.LocalTime:"></a>java.time.LocalTime:</h2><p>LocalTime只提供时间而不提供日期信息，它是不可变类且线程安全的。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> org.smarttechie;</div><div class="line"><span class="keyword">import</span> java.time.LocalTime;</div><div class="line"><span class="keyword">import</span> java.time.temporal.ChronoUnit;</div><div class="line"><span class="comment">/**</span></div><div class="line">* This class demonstrates JAVA 8 data and time API</div><div class="line">* <span class="doctag">@author</span> Siva Prasad Rao Janapati</div><div class="line">* */</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DateTimeDemonstration</span> </span>&#123;</div><div class="line"><span class="comment">/**</span></div><div class="line">* <span class="doctag">@param</span> args</div><div class="line">*/</div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">   <span class="comment">//Get local time</span></div><div class="line">   LocalTime localTime = LocalTime.now();</div><div class="line">   System.out.println(localTime);</div><div class="line">  <span class="comment">//Get the hour of the day</span></div><div class="line">  System.out.println(<span class="string">"The hour of the day:: "</span> + localTime.getHour());</div><div class="line">  <span class="comment">//add 2 hours to the time.</span></div><div class="line">  System.out.println(localTime.plus(<span class="number">2</span>, ChronoUnit.HOURS));</div><div class="line">  <span class="comment">//add 6 minutes to the time.</span></div><div class="line">  System.out.println(localTime.plusMinutes(<span class="number">6</span>));</div><div class="line">  <span class="comment">//substract 2 hours from current time</span></div><div class="line">  System.out.println(localTime.minus(<span class="number">2</span>, ChronoUnit.HOURS));</div><div class="line"> &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h2 id="java-time-LocalDateTime"><a href="#java-time-LocalDateTime" class="headerlink" title="java.time.LocalDateTime:"></a>java.time.LocalDateTime:</h2><p>LocalDateTime提供时间和日期的信息，它是不可变类且线程安全的</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> orr.smarttechie;</div><div class="line"><span class="keyword">import</span> java.time.LocalDateTime;</div><div class="line"><span class="keyword">import</span> java.time.temporal.ChronoUnit;</div><div class="line"><span class="comment">/**</span></div><div class="line">* This class demonstrates JAVA 8 data and time API</div><div class="line">* <span class="doctag">@author</span> Siva Prasad Rao Janapati</div><div class="line">*</div><div class="line">*/</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DateTimeDemonstration</span> </span>&#123;</div><div class="line"><span class="comment">/**</span></div><div class="line">* <span class="doctag">@param</span> args</div><div class="line">*/</div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">    <span class="comment">//Get LocalDateTime object</span></div><div class="line">    LocalDateTime localDateTime = LocalDateTime.now();</div><div class="line">    System.out.println(localDateTime);</div><div class="line">    <span class="comment">//Find the length of month. That is, how many days are there for this month.</span></div><div class="line">    System.out.println(<span class="string">"The number of days available for this month:: "</span> + localDateTime.getMonth().length(<span class="keyword">true</span>));</div><div class="line">    <span class="comment">//Know the month name</span></div><div class="line">    System.out.println(<span class="string">"What is the month name? :: "</span> + localDateTime.getMonth().name());</div><div class="line">    <span class="comment">//add 2 days to today's date.</span></div><div class="line">    System.out.println(localDateTime.plus(<span class="number">2</span>, ChronoUnit.DAYS));</div><div class="line">    <span class="comment">//substract 2 days from today</span></div><div class="line">    System.out.println(localDateTime.minus(<span class="number">2</span>, ChronoUnit.DAYS));</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h2 id="java-time-Year"><a href="#java-time-Year" class="headerlink" title="java.time.Year:"></a>java.time.Year:</h2><p>Year提供年的信息，它是不可变类且线程安全的。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> orr.smarttechie;</div><div class="line"><span class="keyword">import</span> java.time.Year;</div><div class="line"><span class="keyword">import</span> java.time.temporal.ChronoUnit;</div><div class="line"><span class="comment">/**</span></div><div class="line">* This class demonstrates JAVA 8 data and time API</div><div class="line">* <span class="doctag">@author</span> Siva Prasad Rao Janapati</div><div class="line">*</div><div class="line">*/</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DateTimeDemonstration</span> </span>&#123;</div><div class="line"><span class="comment">/**</span></div><div class="line">* <span class="doctag">@param</span> args</div><div class="line">*/</div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">   <span class="comment">//Get year</span></div><div class="line">   Year year = Year.now();</div><div class="line">   System.out.println(<span class="string">"Year ::"</span> + year);</div><div class="line">   <span class="comment">//know the year is leap year or not</span></div><div class="line">   System.out.println(<span class="string">"Is year["</span> +year+<span class="string">"] leap year?"</span>+ year.isLeap());</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h2 id="java-time-Duration"><a href="#java-time-Duration" class="headerlink" title="java.time.Duration:"></a>java.time.Duration:</h2><p>Duration是用来计算两个给定的日期之间包含多少秒，多少毫秒，它是不可变类且线程安全的</p>
-<h2 id="java-time-Period"><a href="#java-time-Period" class="headerlink" title="java.time.Period:"></a>java.time.Period:</h2><p>Period是用来计算两个给定的日期之间包含多少天，多少月或者多少年，它是不可变类且线程安全的</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> orr.smarttechie;</div><div class="line"><span class="keyword">import</span> java.time.LocalDate;</div><div class="line"><span class="keyword">import</span> java.time.Period;</div><div class="line"><span class="keyword">import</span> java.time.temporal.ChronoUnit;</div><div class="line"><span class="comment">/**</span></div><div class="line">* This class demonstrates JAVA 8 data and time API</div><div class="line">* <span class="doctag">@author</span> Siva Prasad Rao Janapati</div><div class="line">*</div><div class="line">*/</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DateTimeDemonstration</span> </span>&#123;</div><div class="line"><span class="comment">/**</span></div><div class="line">* <span class="doctag">@param</span> args</div><div class="line">*/</div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">   LocalDate localDate = LocalDate.now();</div><div class="line">   Period period = Period.between(localDate, localDate.plus(<span class="number">2</span>, ChronoUnit.DAYS));</div><div class="line">   System.out.println(period.getDays());</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/28/Java笔记（三）--Java的基本程序设计结构（三）/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Zhu Yuexin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://i4.buimg.com/567571/fbb0ec60f25374c4.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Mr.Z's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/03/28/Java笔记（三）--Java的基本程序设计结构（三）/" itemprop="url">
-                  未命名
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-28T22:21:15+08:00">
-                2017-03-28
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/24/Java笔记（二）--Java的基本程序设计结构（二）/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Zhu Yuexin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://i4.buimg.com/567571/fbb0ec60f25374c4.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Mr.Z's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/03/24/Java笔记（二）--Java的基本程序设计结构（二）/" itemprop="url">
-                  Java笔记（二）--Java的基本程序设计结构（二）
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-24T21:00:00+08:00">
-                2017-03-24
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java笔记/" itemprop="url" rel="index">
-                    <span itemprop="name">Java笔记</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <blockquote>
-<ul>
-<li>字符串</li>
-<li>输入输出</li>
-<li>控制流程</li>
-<li>大数值</li>
-<li>数组</li>
-</ul>
-</blockquote>
-<h1 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h1><p>Java没有内置的字符串类型，而是在标准Java类库中提供了一个预定义类：String。</p>
-<h2 id="字串"><a href="#字串" class="headerlink" title="字串"></a>字串</h2><p>String类的substring方法可以用于提取字串：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">String greeting = <span class="string">"Hello"</span>;</div><div class="line">String s = greeting.substring(<span class="number">0</span>, <span class="number">3</span>);</div></pre></td></tr></table></figure>
-<h2 id="拼接"><a href="#拼接" class="headerlink" title="拼接"></a>拼接</h2><p>Java使用+号拼接两个字符串</p>
-<p>如果需要把多个字符串放在一起，用一个界定符分隔，可以使用静态join方法：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">String all = String.join(<span class="string">"/"</span>, <span class="string">"S"</span>, <span class="string">"M"</span>, <span class="string">"L"</span>, <span class="string">"XL"</span>);	<span class="comment">//all is the string "S/M/L/XL"</span></div></pre></td></tr></table></figure>
-<h2 id="不可变字符串"><a href="#不可变字符串" class="headerlink" title="不可变字符串"></a>不可变字符串</h2><p>String类中没有提供用于修改字符串的方法，在Java文档中将String类对象称为不可变字符串。</p>
-<h2 id="检测字符串是否相等"><a href="#检测字符串是否相等" class="headerlink" title="检测字符串是否相等"></a>检测字符串是否相等</h2><p>使用equals方法检测两个字符串是否相等：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">s.equals(t);</div><div class="line"><span class="string">"Hello"</span>.equalsIgnoreCase(<span class="string">"Hello"</span>); <span class="comment">//不区分大小写</span></div></pre></td></tr></table></figure>
-<p><strong>注意</strong>：不要使用 == 运算符检测两个字符串是否相等，这个运算符只能够确定两个字符串是否放置在同一个位置上。</p>
-<h2 id="空串与Null串"><a href="#空串与Null串" class="headerlink" title="空串与Null串"></a>空串与Null串</h2><p>空串“”是长度为0的字符串。可以用以下代码检查一个字符串是否为空：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span>(str.length() == <span class="number">0</span>)</div></pre></td></tr></table></figure>
-<p>或</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span>(str.equals(<span class="string">""</span>))</div></pre></td></tr></table></figure>
-<p><strong>注意</strong>：空串是一个Java对象，有自己的串长度（0）和内容（空）。</p>
-<p>String变量还可以存放一个特殊值，null。这表示目前没有任何对象与该变量关联。</p>
-<p>检测字符串是否为null：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span>(str == <span class="keyword">null</span>)</div></pre></td></tr></table></figure>
-<h1 id="输入输出"><a href="#输入输出" class="headerlink" title="输入输出"></a>输入输出</h1><h2 id="标准输入流"><a href="#标准输入流" class="headerlink" title="标准输入流"></a>标准输入流</h2><p>读取“标准输入流”System.in，需要先构造一个Scanner对象，并与“标准输入流”System.in关联</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Scanner in = <span class="keyword">new</span> Scanner(System.in);</div></pre></td></tr></table></figure>
-<p><strong>Console类:</strong> 适用于从控制台读取密码</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">Console cons = System.console();</div><div class="line">String username = cons.readLine(<span class="string">"User name: "</span>);</div><div class="line"><span class="comment">//安全起见，返回密码存放在一维字符数组中。对密码进行处理后，马上用一个填充值覆盖数组元素</span></div><div class="line"><span class="keyword">char</span>[] passwd = cons.readPassword(<span class="string">"Password: "</span>);</div></pre></td></tr></table></figure>
-<h2 id="格式化输出"><a href="#格式化输出" class="headerlink" title="格式化输出"></a>格式化输出</h2><p>Java SE 5.0 沿用了C语言库函数中的printf方法。例如，调用：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">System.out.printf(&quot;%8.2f&quot;, x);</div></pre></td></tr></table></figure>
-<p>可以用8个字符的宽度和小数点后两个字符的精度打印x。例如：</p>
-<p>3333.33</p>
-<p>在printf中，每一个以%字符开始的格式说明符都用相应的参数替换。格式说明符尾部的转换符将指示被格式化的数值类型。例如：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">System.out.printf(<span class="string">"Hello, %s. Next year, you'll be %d"</span>, name, age);</div></pre></td></tr></table></figure>
-<p><strong>用于printf的转换符</strong></p>
-<table>
-<thead>
-<tr>
-<th>转换符</th>
-<th>类型</th>
-<th>举例</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>d</td>
-<td>十进制整数</td>
-<td>159</td>
-</tr>
-<tr>
-<td>x</td>
-<td>十六进制整数</td>
-<td>9f</td>
-</tr>
-<tr>
-<td>o</td>
-<td>八进制整数</td>
-<td>237</td>
-</tr>
-<tr>
-<td>f</td>
-<td>定点浮点数</td>
-<td>15.9</td>
-</tr>
-<tr>
-<td>e</td>
-<td>指数浮点数</td>
-<td>1.59e+01</td>
-</tr>
-<tr>
-<td>g</td>
-<td>通用浮点数</td>
-<td>—</td>
-</tr>
-<tr>
-<td>a</td>
-<td>十六进制浮点数</td>
-<td>0x1.fccdp3</td>
-</tr>
-<tr>
-<td>s</td>
-<td>字符串</td>
-<td>Hello</td>
-</tr>
-<tr>
-<td>c</td>
-<td>字符</td>
-<td>H</td>
-</tr>
-<tr>
-<td>b</td>
-<td>布尔</td>
-<td>True</td>
-</tr>
-<tr>
-<td>h</td>
-<td>散列码</td>
-<td>42628b2</td>
-</tr>
-<tr>
-<td>%</td>
-<td>百分号</td>
-<td>%</td>
-</tr>
-<tr>
-<td>n</td>
-<td>与平台有关的行分隔符</td>
-<td>—</td>
-</tr>
-</tbody>
-</table>
-<h2 id="文件输入与输出"><a href="#文件输入与输出" class="headerlink" title="文件输入与输出"></a>文件输入与输出</h2><h3 id="读取文件"><a href="#读取文件" class="headerlink" title="读取文件"></a>读取文件</h3><p>要对文件进行读取，需要用File对象构造一个Scanner对象，如：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Scanner in = <span class="keyword">new</span> Scanner(Paths.get(<span class="string">"myFile.txt"</span>), <span class="string">"UTF-8"</span>);</div></pre></td></tr></table></figure>
-<p>如果文件名中包含反斜杠符号，就要在每个反斜杠之前再加一个额外的反斜杠：</p>
-<p>“c:\\mydirectory\\myFile.txt”</p>
-<h3 id="写入文件"><a href="#写入文件" class="headerlink" title="写入文件"></a>写入文件</h3><p>写入文件需要构造一个PrintWriter对象。在构造器中，提供文件名：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">PrintWriter out = <span class="keyword">new</span> PrintWriter(<span class="string">"myFile.txt"</span>, <span class="string">"UTF-8"</span>);</div></pre></td></tr></table></figure>
-<p>如果该文件不存在，则会创建该文件。可以像输出到System.out一样使用print, println 以及 printf 命令。</p>
-<h1 id="控制流程"><a href="#控制流程" class="headerlink" title="控制流程"></a>控制流程</h1><p>if, while, for….</p>
-<p><strong>带标签</strong>的<strong>break</strong>语句：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">Scanner in = <span class="keyword">new</span> Scanner(System.in);</div><div class="line"><span class="keyword">int</span> n;</div><div class="line">read_data: <span class="comment">//这是标签，放在需要跳出的循环的最外层</span></div><div class="line"><span class="keyword">while</span>(...)&#123;</div><div class="line">    ...</div><div class="line">    <span class="keyword">for</span>(...)&#123;</div><div class="line">      System.out.print(<span class="string">"Enter a number &gt;= 0:"</span>);</div><div class="line">      n = in.nextInt();</div><div class="line">      <span class="keyword">if</span>(n&lt;<span class="number">0</span>)&#123;</div><div class="line">        <span class="keyword">break</span> read_data; <span class="comment">//跳出循环</span></div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h1 id="大数值"><a href="#大数值" class="headerlink" title="大数值"></a>大数值</h1><p>如果基本的整数和浮点数的精度不能够满足需求，则可以使用java.math包中的<strong>BigInteger</strong>和<strong>BigDecimal</strong>。</p>
-<p><strong>BigInteger</strong>实现了任意精度的整数运算，<strong>BigDecimal</strong>实现了任意精度的浮点数运算。</p>
-<p>可以使用静态的valueOf方法将普通的数值转换为大数值：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">BigInteger a = BigInteger.valueOf(<span class="number">100</span>);</div></pre></td></tr></table></figure>
-<p>不能使用算术运算符（+,-,*,/）处理大数值。需要使用大数值类中的add,multiply方法等：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">BigInteger c = a.add(b);</div><div class="line">BigInteger d = c.multiply(b.add(BigInteger.valueOf(<span class="number">2</span>))); <span class="comment">//d=c*(b+2)</span></div></pre></td></tr></table></figure>
-<blockquote>
-<p><strong>API</strong> java.math.BigInteger 1.1</p>
-</blockquote>
-<ul>
-<li><p>BigInteger add(BigInteger other)</p>
-</li>
-<li><p>BigInteger substract(BigInteger other)</p>
-</li>
-<li><p>BigInteger multiply(BigInteger other)</p>
-</li>
-<li><p>BigInteger divide(BigInteger other)</p>
-</li>
-<li><p>BigInteger mod(BigInteger other)</p>
-<p>返回这个大整数和另一个大整数other的和、差、积、商以及余数</p>
-</li>
-<li><p>int compareTo(BigInteger other)</p>
-<p>如果这个大整数与另一个大整数other相等，返回0；小于，返回复数；大于，返回正数</p>
-</li>
-<li><p>static BigInteger valueOf(long x)</p>
-<p>返回值等于x的大整数</p>
-</li>
-</ul>
-<blockquote>
-<p><strong>API</strong> java.math.BigDecimal 1.1</p>
-</blockquote>
-<ul>
-<li><p>BigDecimal add(BigDecimal other)</p>
-</li>
-<li><p>BigDecimal substract(BigDecimal other)</p>
-</li>
-<li><p>BigDecimal multiply(BigDecimal other)</p>
-</li>
-<li><p>BigDecimal divide(BIgDecimal other, RoundingMode mode)</p>
-<p>返回这个大实数与另一个大实数的和、差、积、商。要想计算商，必须给出<em>舍入方式</em>(rounding mode)。RoundingMode.HALF_UP是四舍五入方式。</p>
-</li>
-<li><p>int compareTo(BigDecimal other)</p>
-<p>如果这个大实数与另一个大实数other相等，返回0；小于，返回复数；大于，返回正数</p>
-</li>
-<li><p>static BigDecimal valueOf(long x)</p>
-</li>
-<li><p>static BigDecimal valueOf(long x, int s)</p>
-<p>返回值为x或$x/10^s$的一个大实数</p>
-</li>
-</ul>
-<h1 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h1><p>声明数组：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span>[] a;</div></pre></td></tr></table></figure>
-<p>创建数组：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span>[] a = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">100</span>];</div></pre></td></tr></table></figure>
-<p>创建一个数字数组时，所有元素都初始化为0；boolean数组的元素会初始化为false；对象数组的元素会初始化为特殊值null，表示这些元素还未存放任何对象。</p>
-<h2 id="for-each循环"><a href="#for-each循环" class="headerlink" title="for each循环"></a>for each循环</h2><p>增强for循环：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> (variable : collection) statement</div></pre></td></tr></table></figure>
-<p>collection这一集合表达式必须是一个数组或者是一个实现了Iterable接口的类对象（例如ArrayList）</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span>[] a = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">100</span>];</div><div class="line">...</div><div class="line"><span class="keyword">for</span> (<span class="keyword">int</span> element : a)&#123;</div><div class="line">  System.out.println(element);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h2 id="数组初始化及匿名数组"><a href="#数组初始化及匿名数组" class="headerlink" title="数组初始化及匿名数组"></a>数组初始化及匿名数组</h2><p>创建数组对象并同时赋予初始值：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span>[] smallPrimes = &#123; <span class="number">2</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">7</span>, <span class="number">11</span>, <span class="number">13</span>&#125;;</div></pre></td></tr></table></figure>
-<p>初始化一个匿名数组：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">new</span> <span class="keyword">int</span>[] &#123; <span class="number">17</span>, <span class="number">19</span>, <span class="number">21</span>, <span class="number">27</span>&#125;;</div></pre></td></tr></table></figure>
-<p>这种语法可以在不创建新的变量的情况下重新初始化一个数组：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">smallPrimes = <span class="keyword">new</span> <span class="keyword">int</span>[] &#123; <span class="number">17</span>, <span class="number">19</span>, <span class="number">21</span>, <span class="number">27</span>&#125;;</div></pre></td></tr></table></figure>
-<h2 id="数组拷贝"><a href="#数组拷贝" class="headerlink" title="数组拷贝"></a>数组拷贝</h2><p>将一个数组变量拷贝给另一个数组变量，两个变量将引用同一个数组。</p>
-<p>如果希望将一个数组的所有值拷贝到一个新的数组中去，使用Arrays类的copyOf方法：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span>[] copiedLuckyNumbers = Arrays.copyOf(luckNumbers, luckyNumbers.length);</div></pre></td></tr></table></figure>
-<p>第2个参数是新数组的长度。这个方法通常用来增加数组的大小：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">luckNumbers = Arrays.copyOf(luckNumbers, luckyNumbers.length*<span class="number">2</span>);</div></pre></td></tr></table></figure>
-<p>如果数组元素是数值型，多余元素将被赋值为0；布尔型，将赋值为false。相反，如果长度小于原始长度，则只拷贝最前面的元素。</p>
-<blockquote>
-<p><strong>API</strong> java.util.Arrays 1.2</p>
-</blockquote>
-<ul>
-<li><p>static String toString(type[] a)</p>
-<p>返回包含a中数据元素的字符串，这些数据元素被放在括号内，并用逗号分隔。如：</p>
-<p>[2, 3, 4, 5, 6]</p>
-</li>
-<li><p>static type copyOf(type[] a, int length)</p>
-</li>
-<li><p>static type copyOfRange(type[] a, int start, int end)</p>
-<p>返回与a类型相同的一个数组，长度为length或者end-start，数组元素为a的值</p>
-</li>
-<li><p>static void sort(type[] a)</p>
-<p>采用优化的快速排序算法对数组进行排序</p>
-</li>
-<li><p>static int binarySearch(type[] a, type v)</p>
-</li>
-<li><p>static int binarySearch(type[] a, int start, int end, type v)</p>
-<p>采用二分搜索算法查找值v。如果查找成功，则返回相应的下标值；否则，返回一个复数值r。</p>
-</li>
-<li><p>static void fill(type[] a, type v)</p>
-<p>将数组的所有数据元素值设置为v</p>
-</li>
-<li><p>static boolean equals(type[] a, type[] b)</p>
-<p>如果两个数组大小相同，并且下标相同的元素都对应相等，返回true</p>
-</li>
-</ul>
-<h2 id="多维数组"><a href="#多维数组" class="headerlink" title="多维数组"></a>多维数组</h2><p>声明：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">double</span>[][] balances;</div></pre></td></tr></table></figure>
-<p>初始化：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">balances = <span class="keyword">new</span> <span class="keyword">double</span>[NYEARS][NRATES];</div></pre></td></tr></table></figure>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span>[][] magicSquare =</div><div class="line">&#123;</div><div class="line">  &#123;<span class="number">16</span>, <span class="number">18</span>, <span class="number">2</span>, <span class="number">13</span>&#125;,</div><div class="line">  &#123;<span class="number">28</span>, <span class="number">12</span>, <span class="number">32</span>, <span class="number">12</span>&#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
-<p>快速打印二维数组元素列表，使用Arrays.deepToString()方法：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">System.out.println(Arrays.deepToString(a));</div></pre></td></tr></table></figure>
-<h2 id="不规则数组"><a href="#不规则数组" class="headerlink" title="不规则数组"></a>不规则数组</h2><p>java实际上没有多维数组，只有一维数组。多维数组被解释为“数组的数组”。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span>[][] odds =</div><div class="line">&#123;</div><div class="line">  &#123;<span class="number">1</span>&#125;,</div><div class="line">  &#123;<span class="number">1</span>, <span class="number">2</span>&#125;,</div><div class="line">  &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>&#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1982,7 +1759,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-count">17</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1991,7 +1768,7 @@
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-count">5</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -2000,7 +1777,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

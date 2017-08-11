@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="android," />
 
 
 
@@ -87,16 +87,22 @@
 
 
 
-<meta name="description" content="这是关于">
-<meta property="og:type" content="website">
-<meta property="og:title" content="about">
-<meta property="og:url" content="http://yoursite.com/about/index.html">
+<meta name="description" content="getResouce().getColor(int id)在API 23以上版本时被废弃了，替换为方法getResource().getColor(int id, Theme theme)，但这个方法要求API&amp;gt;=23。
+当前同时兼容高低版本的方法是：
+1ContextCompat.getColor(Context context, int id);">
+<meta property="og:type" content="article">
+<meta property="og:title" content="getResource().getColor()方法废弃，其他获取颜色的方法">
+<meta property="og:url" content="http://yoursite.com/2017/08/11/getResource().getColor()方法废弃，其他获取颜色的方法/index.html">
 <meta property="og:site_name" content="Mr.Z's Blog">
-<meta property="og:description" content="这是关于">
-<meta property="og:updated_time" content="2017-03-22T08:01:34.000Z">
+<meta property="og:description" content="getResouce().getColor(int id)在API 23以上版本时被废弃了，替换为方法getResource().getColor(int id, Theme theme)，但这个方法要求API&amp;gt;=23。
+当前同时兼容高低版本的方法是：
+1ContextCompat.getColor(Context context, int id);">
+<meta property="og:updated_time" content="2017-08-11T09:16:57.107Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="about">
-<meta name="twitter:description" content="这是关于">
+<meta name="twitter:title" content="getResource().getColor()方法废弃，其他获取颜色的方法">
+<meta name="twitter:description" content="getResouce().getColor(int id)在API 23以上版本时被废弃了，替换为方法getResource().getColor(int id, Theme theme)，但这个方法要求API&amp;gt;=23。
+当前同时兼容高低版本的方法是：
+1ContextCompat.getColor(Context context, int id);">
 
 
 
@@ -124,19 +130,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/about/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/08/11/getResource().getColor()方法废弃，其他获取颜色的方法/"/>
 
 
 
 
 
-  <title>
-  
-
-  
-    about | Mr.Z's Blog
-  
-</title>
+  <title> getResource().getColor()方法废弃，其他获取颜色的方法 | Mr.Z's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -161,7 +161,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left  ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -256,19 +256,176 @@
             
 
   <div id="posts" class="posts-expand">
-  <header class="post-header">
+    
 
-	<h1 class="post-title" itemprop="name headline">about</h1>
+  
 
+  
+  
+  
 
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/11/getResource().getColor()方法废弃，其他获取颜色的方法/">
 
-</header>
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Zhu Yuexin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://i4.buimg.com/567571/fbb0ec60f25374c4.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Mr.Z's Blog">
+    </span>
 
     
-    
-      <p>这是关于</p>
+      <header class="post-header">
 
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                getResource().getColor()方法废弃，其他获取颜色的方法
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-11T17:15:00+08:00">
+                2017-08-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Android碎片/" itemprop="url" rel="index">
+                    <span itemprop="name">Android碎片</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
     
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><code>getResouce().getColor(int id)</code>在API 23以上版本时被废弃了，替换为方法<code>getResource().getColor(int id, Theme theme)</code>，但这个方法要求API&gt;=23。</p>
+<p>当前同时兼容高低版本的方法是：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ContextCompat.getColor(Context context, <span class="keyword">int</span> id);</div></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/android/" rel="tag"># android</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/08/11/LinearLayout中的所有子控件均匀分布/" rel="next" title="LinearLayout中的所有子控件均匀分布">
+                <i class="fa fa-chevron-left"></i> LinearLayout中的所有子控件均匀分布
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/08/11/修改ToolBar溢出菜单字体颜色（即MenuItem字体颜色）/" rel="prev" title="修改ToolBar溢出菜单字体颜色（即MenuItem字体颜色）">
+                修改ToolBar溢出菜单字体颜色（即MenuItem字体颜色） <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
   </div>
 
           
@@ -464,6 +621,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
 
   
 
