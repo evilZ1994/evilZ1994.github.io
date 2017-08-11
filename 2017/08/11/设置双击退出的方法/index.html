@@ -87,22 +87,19 @@
 
 
 
-<meta name="description" content="通常我们修改Button的颜色会通过修改”android:background”属性来修改Button的背景颜色，但是这样做会丢失Button默认的点击效果，尤其是5.0以上的系统中的点击涟漪效果等。虽然我们可以通过使用selector来实现点击效果，但工作量很大，而且5.0自带的涟漪效果是很不错的。
-修改方法
-我们可以通过Style修改Button的颜色。AppCompat中提供的按钮有5中St">
+<meta name="description" content="方法一设置一个mPressedTime变量和一个mNowTime变量，通过重写onBackPressed()方法，计算两个时间的差值设置双击退出。
+123456789101112131415161718//点击返回键时的时间，用于控制双击退出private long mPressedTime = 0;/*** 重写onBackPressed()方法，设置双击退出，时间差500毫秒*/@Overri">
 <meta property="og:type" content="article">
-<meta property="og:title" content="v7修改Button颜色并保持默认点击效果">
-<meta property="og:url" content="http://yoursite.com/2017/08/11/v7修改Button颜色并保持默认点击效果/index.html">
+<meta property="og:title" content="设置双击退出的方法">
+<meta property="og:url" content="http://yoursite.com/2017/08/11/设置双击退出的方法/index.html">
 <meta property="og:site_name" content="Mr.Z's Blog">
-<meta property="og:description" content="通常我们修改Button的颜色会通过修改”android:background”属性来修改Button的背景颜色，但是这样做会丢失Button默认的点击效果，尤其是5.0以上的系统中的点击涟漪效果等。虽然我们可以通过使用selector来实现点击效果，但工作量很大，而且5.0自带的涟漪效果是很不错的。
-修改方法
-我们可以通过Style修改Button的颜色。AppCompat中提供的按钮有5中St">
-<meta property="og:updated_time" content="2017-08-11T08:32:46.643Z">
+<meta property="og:description" content="方法一设置一个mPressedTime变量和一个mNowTime变量，通过重写onBackPressed()方法，计算两个时间的差值设置双击退出。
+123456789101112131415161718//点击返回键时的时间，用于控制双击退出private long mPressedTime = 0;/*** 重写onBackPressed()方法，设置双击退出，时间差500毫秒*/@Overri">
+<meta property="og:updated_time" content="2017-08-11T09:03:13.427Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="v7修改Button颜色并保持默认点击效果">
-<meta name="twitter:description" content="通常我们修改Button的颜色会通过修改”android:background”属性来修改Button的背景颜色，但是这样做会丢失Button默认的点击效果，尤其是5.0以上的系统中的点击涟漪效果等。虽然我们可以通过使用selector来实现点击效果，但工作量很大，而且5.0自带的涟漪效果是很不错的。
-修改方法
-我们可以通过Style修改Button的颜色。AppCompat中提供的按钮有5中St">
+<meta name="twitter:title" content="设置双击退出的方法">
+<meta name="twitter:description" content="方法一设置一个mPressedTime变量和一个mNowTime变量，通过重写onBackPressed()方法，计算两个时间的差值设置双击退出。
+123456789101112131415161718//点击返回键时的时间，用于控制双击退出private long mPressedTime = 0;/*** 重写onBackPressed()方法，设置双击退出，时间差500毫秒*/@Overri">
 
 
 
@@ -130,13 +127,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/08/11/v7修改Button颜色并保持默认点击效果/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/08/11/设置双击退出的方法/"/>
 
 
 
 
 
-  <title> v7修改Button颜色并保持默认点击效果 | Mr.Z's Blog </title>
+  <title> 设置双击退出的方法 | Mr.Z's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -265,7 +262,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/11/v7修改Button颜色并保持默认点击效果/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/11/设置双击退出的方法/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Zhu Yuexin">
@@ -286,7 +283,7 @@
             
             
               
-                v7修改Button颜色并保持默认点击效果
+                设置双击退出的方法
               
             
           </h1>
@@ -301,7 +298,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-11T16:28:00+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-11T17:00:00+08:00">
                 2017-08-11
               </time>
             
@@ -359,14 +356,8 @@
       
 
       
-        <p>通常我们修改Button的颜色会通过修改”android:background”属性来修改Button的背景颜色，但是这样做会丢失Button默认的点击效果，尤其是5.0以上的系统中的点击涟漪效果等。虽然我们可以通过使用selector来实现点击效果，但工作量很大，而且5.0自带的涟漪效果是很不错的。</p>
-<p><strong>修改方法</strong></p>
-<p>我们可以通过Style修改Button的颜色。AppCompat中提供的按钮有5中Style：</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">name</span>=<span class="string">"Widget.AppCompat.Button"</span> <span class="attr">parent</span>=<span class="string">"Base.Widget.AppCompat.Button"</span>/&gt;</span><span class="xml"></span></div><div class="line">    默认的状态  背景颜色属性：colorButtonNormal 文字颜色属性:黑色</div><div class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">name</span>=<span class="string">"Widget.AppCompat.Button.Colored"</span> <span class="attr">parent</span>=<span class="string">"Base.Widget.AppCompat.Button.Colored"</span>/&gt;</span><span class="xml"></span></div><div class="line">    背景颜色属性:colorAccent 文字颜色属性:白色</div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">name</span>=<span class="string">"Widget.AppCompat.Button.Borderless"</span> <span class="attr">parent</span>=<span class="string">"Base.Widget.AppCompat.Button.Borderless"</span>/&gt;</span><span class="xml"></span></div><div class="line">    背景颜色属性：透明  文字颜色属性：白色</div><div class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">name</span>=<span class="string">"Widget.AppCompat.Button.Borderless.Colored"</span> <span class="attr">parent</span>=<span class="string">"Base.Widget.AppCompat.Button.Borderless.Colored"</span>/&gt;</span><span class="xml"></span></div><div class="line">   背景颜色属性：透明 文字颜色属性：colorAccent</div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">name</span>=<span class="string">"Widget.AppCompat.Button.Small"</span> <span class="attr">parent</span>=<span class="string">"Base.Widget.AppCompat.Button.Small"</span>/&gt;</span><span class="undefined"></span></div><div class="line">      背景颜色属性：colorButtonNormal 文字颜色属性:黑色</div></pre></td></tr></table></figure>
-<p>我们可以在styles.xml文件中新建style，设置”buttonStyle”属性，通过相应的其他属性修改Button的背景色或文字颜色，然后在layout文件中需要修改的Button中通过”android:theme”属性引用新建的style。</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">name</span>=<span class="string">"ButtonTheme"</span> <span class="attr">parent</span>=<span class="string">"AppTheme"</span>&gt;</span><span class="xml"></span></div><div class="line">     <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"buttonStyle"</span>&gt;</span>@style/Widget.AppCompat.Button<span class="tag">&lt;/<span class="name">item</span>&gt;</span></div><div class="line">     <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"colorButtonNormal"</span>&gt;</span>@color/blue<span class="tag">&lt;/<span class="name">item</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div></pre></td></tr></table></figure>
-<p>然后在layout文件中引用：</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">Button</span></span></div><div class="line">    <span class="attr">android:layout_width</span>=<span class="string">"wrap_content"</span></div><div class="line">    <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></div><div class="line">    <span class="attr">android:text</span>=<span class="string">"login"</span></div><div class="line">    <span class="attr">android:theme</span>=<span class="string">"@style/ButtonTheme"</span> /&gt;</div></pre></td></tr></table></figure>
+        <h1 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h1><p>设置一个mPressedTime变量和一个mNowTime变量，通过重写onBackPressed()方法，计算两个时间的差值设置双击退出。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//点击返回键时的时间，用于控制双击退出</span></div><div class="line"><span class="keyword">private</span> <span class="keyword">long</span> mPressedTime = <span class="number">0</span>;</div><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line">* 重写onBackPressed()方法，设置双击退出，时间差500毫秒</div><div class="line">*/</div><div class="line"><span class="meta">@Override</span></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onBackPressed</span><span class="params">()</span> </span>&#123;</div><div class="line">    <span class="keyword">long</span> mNowTime = System.currentTimeMillis();</div><div class="line">    <span class="keyword">if</span> (mNowTime - mPressedTime &gt; <span class="number">500</span>)&#123;</div><div class="line">        Toast.makeText(<span class="keyword">this</span>, <span class="string">"再次点击退出"</span>, Toast.LENGTH_SHORT).show();</div><div class="line">        mPressedTime = mNowTime;</div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">        <span class="comment">//做一些退出操作</span></div><div class="line">        <span class="keyword">this</span>.finish();</div><div class="line">        System.exit(<span class="number">0</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -403,8 +394,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/03/30/对不同平台版本的支持/" rel="next" title="对不同平台版本的支持">
-                <i class="fa fa-chevron-left"></i> 对不同平台版本的支持
+              <a href="/2017/08/11/底部导航栏BottomNavigationView的使用/" rel="next" title="底部导航栏BottomNavigationView的使用">
+                <i class="fa fa-chevron-left"></i> 底部导航栏BottomNavigationView的使用
               </a>
             
           </div>
@@ -413,8 +404,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/08/11/底部导航栏BottomNavigationView的使用/" rel="prev" title="底部导航栏BottomNavigationView的使用">
-                底部导航栏BottomNavigationView的使用 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/08/11/TextView单行显示，并且文字过多显示省略号/" rel="prev" title="TextView单行显示，并且文字过多显示省略号">
+                TextView单行显示，并且文字过多显示省略号 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -462,8 +453,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="http://i4.buimg.com/567571/fbb0ec60f25374c4.png"
@@ -521,6 +521,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#方法一"><span class="nav-number">1.</span> <span class="nav-text">方法一</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
