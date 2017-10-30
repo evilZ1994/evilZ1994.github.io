@@ -101,7 +101,7 @@ outputs:
 12365&amp;lt;class &amp;apos;int&amp;apos;&amp;gt;
 type函数可以查看变量的数据类型
 浮点型浮点数可以用数学写法，如1.23，3.14，-9.01，等等。但是对于很大或很小的浮点数，就必须用科学计数法表示，把10用e替代，1.23x10">
-<meta property="og:updated_time" content="2017-10-27T09:55:29.520Z">
+<meta property="og:updated_time" content="2017-10-30T02:27:47.146Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python快速入门（一）：基本数据类型">
 <meta name="twitter:description" content="整形1234days_1 = 365days_2 = 366print(days_1)print(type(days_1))
@@ -386,6 +386,14 @@ type函数可以查看变量的数据类型
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">print(<span class="string">'''line1</span></div><div class="line">line2</div><div class="line">line3''')</div></pre></td></tr></table></figure>
 <p>outputs:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">line1</div><div class="line">line2</div><div class="line">line3</div></pre></td></tr></table></figure>
+<p><code>len</code>函数可以查看字符串的长度（也就是字符串的字符数）</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">s = <span class="string">"hello"</span></div><div class="line">print(len(s))</div></pre></td></tr></table></figure>
+<p>outputs:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">5</div></pre></td></tr></table></figure>
+<p>Python中<strong>格式化</strong>输出字符串和C语言类似，用<code>%</code>实现，不同的是，Python中也用<code>%</code>连接要格式化的内容，而不是逗号。<code>%s</code>表示字符串替换，<code>%d</code>表示整数替换，<code>%f</code>表示浮点数替换，<code>%x</code>表示十六进制整数。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">name = <span class="string">"Tom"</span></div><div class="line">age = <span class="number">20</span></div><div class="line">print(<span class="string">"hello %s! Your age is %d"</span> % (name, age))</div></pre></td></tr></table></figure>
+<p>outputs:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hello Tom! Your age is 20</div></pre></td></tr></table></figure>
 <h1 id="布尔值"><a href="#布尔值" class="headerlink" title="布尔值"></a>布尔值</h1><p>只有<code>True</code>、<code>False</code>两种值</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">True</span></div><div class="line"><span class="keyword">True</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">False</span></div><div class="line"><span class="keyword">False</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">3</span> &gt; <span class="number">2</span></div><div class="line"><span class="keyword">True</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">3</span> &gt; <span class="number">5</span></div><div class="line"><span class="keyword">False</span></div></pre></td></tr></table></figure>
 <p>布尔值的运算：<code>and</code>、<code>or</code>、<code>not</code></p>
@@ -520,7 +528,7 @@ type函数可以查看变量的数据类型
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">29</span>
+                <span class="site-state-item-count">30</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
