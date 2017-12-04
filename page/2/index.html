@@ -260,6 +260,147 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/14/Activity统一堆栈管理/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Zhu Yuexin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://i4.buimg.com/567571/fbb0ec60f25374c4.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Mr.Z's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/08/14/Activity统一堆栈管理/" itemprop="url">
+                  Activity统一堆栈管理
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-14T12:51:00+08:00">
+                2017-08-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Android碎片/" itemprop="url" rel="index">
+                    <span itemprop="name">Android碎片</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Activity管理类：AppManager"><a href="#Activity管理类：AppManager" class="headerlink" title="Activity管理类：AppManager"></a>Activity管理类：AppManager</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AppManager</span> </span>&#123;</div><div class="line">    <span class="keyword">private</span> <span class="keyword">static</span> Stack&lt;Activity&gt; activityStack;</div><div class="line">    <span class="keyword">private</span> <span class="keyword">static</span> AppManager instance;</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line">    * 单一实例</div><div class="line">    */</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> AppManager <span class="title">getInstance</span><span class="params">()</span></span>&#123;</div><div class="line">        <span class="keyword">if</span> (instance == <span class="keyword">null</span>)&#123;</div><div class="line">            instance = <span class="keyword">new</span> AppManager();</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> instance;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line">    * 添加Activity到堆栈</div><div class="line">    */</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">addActivity</span><span class="params">(Activity activity)</span></span>&#123;</div><div class="line">        <span class="keyword">if</span> (activityStack == <span class="keyword">null</span>)&#123;</div><div class="line">            activityStack = <span class="keyword">new</span> Stack&lt;&gt;();</div><div class="line">        &#125;</div><div class="line">        activityStack.add(activity);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line">    * 获取当前Activity（堆栈中最后一个压入的）</div><div class="line">    */</div><div class="line">    <span class="function"><span class="keyword">public</span> Activity <span class="title">currentActivity</span><span class="params">()</span></span>&#123;</div><div class="line">        <span class="keyword">return</span> activityStack.lastElement();</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line">    * 结束当前Activity（堆栈中最后一个压入的）</div><div class="line">    */</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">finishActivity</span><span class="params">()</span></span>&#123;</div><div class="line">        Activity activity = activityStack.pop();</div><div class="line">        activity.finish();</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line">    * 结束指定Activity</div><div class="line">    */</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">finishActivity</span><span class="params">(Activity activity)</span></span>&#123;</div><div class="line">        <span class="keyword">if</span> (activity != <span class="keyword">null</span>)&#123;</div><div class="line">            activityStack.remove(activity);</div><div class="line">            <span class="keyword">if</span> (!activity.isFinishing())&#123;</div><div class="line">                activity.finish();</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line">    * 结束指定类名的Activity</div><div class="line">    */</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">finishActivity</span><span class="params">(Class&lt;?&gt; cls)</span></span>&#123;</div><div class="line">        <span class="keyword">for</span> (Activity activity : activityStack)&#123;</div><div class="line">            <span class="keyword">if</span> (activity.getClass().equals(cls))&#123;</div><div class="line">                finishActivity(activity);</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line">    * 结束所有的Activity</div><div class="line">    */</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">finishAllActivity</span><span class="params">()</span></span>&#123;</div><div class="line">        <span class="keyword">for</span> (Activity activity : activityStack)&#123;</div><div class="line">            <span class="keyword">if</span> (activity != <span class="keyword">null</span>)&#123;</div><div class="line">                activity.finish();</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        activityStack.clear();</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line">    * 退出应用程序</div><div class="line">    */</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">AppExit</span><span class="params">(Context context)</span></span>&#123;</div><div class="line">        finishAllActivity();</div><div class="line">        ActivityManager activityManager = (ActivityManager) context.getSystemService(Context.ACTIVITY_SERVICE);</div><div class="line">        activityManager.killBackgroundProcesses(context.getPackageName());</div><div class="line">        System.exit(<span class="number">0</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h1 id="Activity基类：BaseActivity"><a href="#Activity基类：BaseActivity" class="headerlink" title="Activity基类：BaseActivity"></a>Activity基类：BaseActivity</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">BaseActivity</span> <span class="keyword">extends</span> <span class="title">AppCompatActivity</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(@Nullable Bundle savedInstanceState)</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);</div><div class="line"></div><div class="line">        <span class="comment">//初始化时将Activity压入管理栈</span></div><div class="line">        AppManager.getInstance().addActivity(<span class="keyword">this</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/14/普通按钮添加波纹点击效果/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1611,147 +1752,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/11/LinearLayout中的所有子控件均匀分布/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Zhu Yuexin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://i4.buimg.com/567571/fbb0ec60f25374c4.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Mr.Z's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/08/11/LinearLayout中的所有子控件均匀分布/" itemprop="url">
-                  LinearLayout中的所有子控件均匀分布
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-11T17:10:00+08:00">
-                2017-08-11
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Android碎片/" itemprop="url" rel="index">
-                    <span itemprop="name">Android碎片</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>在设置LinearLayout的orientation为horizontal的时候，每个横向子控件如果想要大小一样的话，设置他们的”layout_weight”等于1即可。</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">LinearLayout</span></span></div><div class="line"></div><div class="line">	<span class="attr">android:layout_width</span>=<span class="string">"fill_parent"</span></div><div class="line"></div><div class="line">	<span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></div><div class="line"></div><div class="line">	<span class="attr">android:layout_alignParentTop</span>=<span class="string">"true"</span></div><div class="line"></div><div class="line">	<span class="attr">android:layout_centerHorizontal</span>=<span class="string">"true"</span></div><div class="line"></div><div class="line">	<span class="attr">android:layout_marginTop</span>=<span class="string">"98dp"</span></div><div class="line"></div><div class="line">	<span class="attr">android:orientation</span>=<span class="string">"horizontal"</span> &gt;</div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">Button</span></span></div><div class="line"></div><div class="line">        <span class="attr">android:id</span>=<span class="string">"@+id/button1"</span></div><div class="line"></div><div class="line">        <span class="attr">android:layout_width</span>=<span class="string">"fill_parent"</span></div><div class="line"></div><div class="line">        <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></div><div class="line"></div><div class="line">        <span class="attr">android:layout_weight</span>=<span class="string">"1"</span> /&gt;</div><div class="line"></div><div class="line">	<span class="tag">&lt;<span class="name">Button</span></span></div><div class="line"></div><div class="line">        <span class="attr">android:id</span>=<span class="string">"@+id/button2"</span></div><div class="line"></div><div class="line">        <span class="attr">android:layout_width</span>=<span class="string">"fill_parent"</span></div><div class="line"></div><div class="line">        <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></div><div class="line"></div><div class="line">        <span class="attr">android:layout_weight</span>=<span class="string">"1"</span> /&gt;</div><div class="line"></div><div class="line"><span class="tag">&lt;/<span class="name">LinearLayout</span>&gt;</span></div></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1801,7 +1801,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">32</span>
+                <span class="site-state-item-count">33</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
