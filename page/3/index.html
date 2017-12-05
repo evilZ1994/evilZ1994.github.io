@@ -260,6 +260,152 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/11/在Fragment中嵌套ViewPager时，内部Fragment不显示且滑动不流畅/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Zhu Yuexin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://i4.buimg.com/567571/fbb0ec60f25374c4.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Mr.Z's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/08/11/在Fragment中嵌套ViewPager时，内部Fragment不显示且滑动不流畅/" itemprop="url">
+                  在Fragment中嵌套ViewPager时，内部Fragment不显示且滑动不流畅
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-11T17:23:00+08:00">
+                2017-08-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Android错误解决/" itemprop="url" rel="index">
+                    <span itemprop="name">Android错误解决</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="遇到的问题"><a href="#遇到的问题" class="headerlink" title="遇到的问题"></a>遇到的问题</h1><p>我在开发过程中用到了ViewPager和Fragment配合使用的情况，在ViewPager下的一个Fragment里又有情况需要用到ViewPager+Fragment，出现了ViewPager的嵌套，这时里层ViewPager的滑动显得十分不流畅，而且里层Fragment的内容不显示出来。</p>
+<h1 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h1><p>我的里层ViewPager获取Fragment Manager的代码如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">MyFragmentStatePagerAdapter adapter = <span class="keyword">new</span> MyFragmentStatePagerAdapter(getActivity().getSupportFragmentManager(), fragments, Arrays.asList(TITLES));</div></pre></td></tr></table></figure>
+<p>这里的<code>getActivity().getSupportFragmentManager()</code>方法获取到的是父级的FragmentManager，于是出现了里层ViewPager与外层共用一个FragmentManager的情况，导致问题出现。</p>
+<h1 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h1><p>修改适配器获取FragmentManager的方法：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">MyFragmentStatePagerAdapter adapter = <span class="keyword">new</span> MyFragmentStatePagerAdapter(getChildFragmentManager(), fragments, Arrays.asList(TITLES));</div></pre></td></tr></table></figure>
+<p>使用<code>getChildFragmentManager()</code>代替<code>getActivity().getSupportFragmentManager()</code>方法。</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/11/修改ToolBar溢出菜单字体颜色（即MenuItem字体颜色）/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1568,153 +1714,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/30/皮皮夏与她的小本本/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Zhu Yuexin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://i4.buimg.com/567571/fbb0ec60f25374c4.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Mr.Z's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/03/30/皮皮夏与她的小本本/" itemprop="url">
-                  皮皮夏与她的小本本
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-30T15:59:23+08:00">
-                2017-03-30
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/皮皮夏/" itemprop="url" rel="index">
-                    <span itemprop="name">皮皮夏</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="N宗罪"><a href="#N宗罪" class="headerlink" title="N宗罪"></a>N宗罪</h1><h2 id="NO-1"><a href="#NO-1" class="headerlink" title="NO.1"></a>NO.1</h2><p>没主见还要说我没主见，明明每次自己都没想好要吃什么，每次都说是我。(`へ´≠)</p>
-<h2 id="NO-2"><a href="#NO-2" class="headerlink" title="NO.2"></a>NO.2</h2><p>爱嘲笑。每当问我一件事，只要我不知道，便开始对我的嘲笑。</p>
-<h2 id="NO-3"><a href="#NO-3" class="headerlink" title="NO.3"></a>NO.3</h2><p>怀疑我。只要我发表我的观点，便会在第一时间，甚至是毫无思考的状态下就说我乱讲。</p>
-<h2 id="NO-4"><a href="#NO-4" class="headerlink" title="NO.4"></a>NO.4</h2><p>玩手机。自从换了新手机后，知道了刷微博的乐趣所在，便玩手机！以前我玩手机某人是怎么甩脸子的，就不怕我报复么。</p>
-<h2 id="NO-5"><a href="#NO-5" class="headerlink" title="NO.5"></a>NO.5</h2><p>总是将自己的喜恶强加于我。古人云:“己所不欲，勿施于人”。不知道怎么深奥的道理，某人明白不啰。</p>
-<h2 id="NO-6"><a href="#NO-6" class="headerlink" title="NO.6"></a>NO.6</h2><p>唠叨啰嗦……感觉这m年真是深受其害。</p>
-<h2 id="NO-7"><a href="#NO-7" class="headerlink" title="NO.7"></a>NO.7</h2><p>装无辜。明明知道自己做了什么欠的事，非要问，非要问…你这样良心真的不会痛么？</p>
-<h2 id="NO-8"><a href="#NO-8" class="headerlink" title="NO.8"></a>NO.8</h2><p>甩脸。只要自己不高兴了，就给我甩脸。其实没给你讲，你甩脸的时候真的丑得无与伦比！</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1764,7 +1763,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">35</span>
+                <span class="site-state-item-count">36</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
