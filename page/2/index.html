@@ -260,6 +260,340 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/27/Python入坑笔记（一）：基本数据类型/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Zhu Yuexin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://i4.buimg.com/567571/fbb0ec60f25374c4.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Mr.Z's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/10/27/Python入坑笔记（一）：基本数据类型/" itemprop="url">
+                  Python入坑笔记（一）：基本数据类型
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-27T17:07:00+08:00">
+                2017-10-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Python/" itemprop="url" rel="index">
+                    <span itemprop="name">Python</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="整形"><a href="#整形" class="headerlink" title="整形"></a>整形</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">days_1 = <span class="number">365</span></div><div class="line">days_2 = <span class="number">366</span></div><div class="line">print(days_1)</div><div class="line">print(type(days_1))</div></pre></td></tr></table></figure>
+<p>outputs:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">365</div><div class="line">&lt;class &apos;int&apos;&gt;</div></pre></td></tr></table></figure>
+<p><code>type</code>函数可以查看变量的数据类型</p>
+<h1 id="浮点型"><a href="#浮点型" class="headerlink" title="浮点型"></a>浮点型</h1><p>浮点数可以用数学写法，如<code>1.23</code>，<code>3.14</code>，<code>-9.01</code>，等等。但是对于很大或很小的浮点数，就必须用科学计数法表示，把10用e替代，1.23x109就是<code>1.23e9</code>，或者<code>12.3e8</code>，0.000012可以写成<code>1.2e-5</code>，等等。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">f1 = <span class="number">1.23e9</span></div><div class="line">f2 = <span class="number">1.23e-5</span></div><div class="line">print(f1)</div><div class="line">print(f2)</div></pre></td></tr></table></figure>
+<p>outputs:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">1230000000.0</div><div class="line">1.23e-05</div></pre></td></tr></table></figure>
+<h1 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h1><p>字符串用单引号<code>&#39;</code>或双引号<code>&quot;</code>括起来，如<code>&#39;hi&#39;</code>、<code>&quot;hello&quot;</code>。</p>
+<p>如果字符串内部包含<code>&#39;</code>或者<code>&quot;</code>，可以使用转义符<code>\</code>进行转义。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">print(<span class="string">"Are you \"ok\""</span>)</div></pre></td></tr></table></figure>
+<p>outputs:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Are you &quot;ok&quot;</div></pre></td></tr></table></figure>
+<p>Python允许使用<code>r&#39;&#39;</code>或者<code>r&quot;&quot;</code>表示<code>&#39;&#39;</code>或<code>&quot;&quot;</code>内部的字符串默认不转义</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">print(<span class="string">r"Are you \"ok\""</span>)</div></pre></td></tr></table></figure>
+<p>outputs:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Are you \&quot;ok\&quot;</div></pre></td></tr></table></figure>
+<p>如果字符串有多行，可以用<code>&#39;&#39;&#39;...&#39;&#39;&#39;</code>的格式表示多行内容</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">print(<span class="string">'''line1</span></div><div class="line">line2</div><div class="line">line3''')</div></pre></td></tr></table></figure>
+<p>outputs:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">line1</div><div class="line">line2</div><div class="line">line3</div></pre></td></tr></table></figure>
+<p><code>len</code>函数可以查看字符串的长度（也就是字符串的字符数）</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">s = <span class="string">"hello"</span></div><div class="line">print(len(s))</div></pre></td></tr></table></figure>
+<p>outputs:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">5</div></pre></td></tr></table></figure>
+<p>Python中<strong>格式化</strong>输出字符串和C语言类似，用<code>%</code>实现，不同的是，Python中也用<code>%</code>连接要格式化的内容，而不是逗号。<code>%s</code>表示字符串替换，<code>%d</code>表示整数替换，<code>%f</code>表示浮点数替换，<code>%x</code>表示十六进制整数。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">name = <span class="string">"Tom"</span></div><div class="line">age = <span class="number">20</span></div><div class="line">print(<span class="string">"hello %s! Your age is %d"</span> % (name, age))</div></pre></td></tr></table></figure>
+<p>outputs:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hello Tom! Your age is 20</div></pre></td></tr></table></figure>
+<h1 id="布尔值"><a href="#布尔值" class="headerlink" title="布尔值"></a>布尔值</h1><p>只有<code>True</code>、<code>False</code>两种值</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">True</span></div><div class="line"><span class="keyword">True</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">False</span></div><div class="line"><span class="keyword">False</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">3</span> &gt; <span class="number">2</span></div><div class="line"><span class="keyword">True</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">3</span> &gt; <span class="number">5</span></div><div class="line"><span class="keyword">False</span></div></pre></td></tr></table></figure>
+<p>布尔值的运算：<code>and</code>、<code>or</code>、<code>not</code></p>
+<h1 id="空值"><a href="#空值" class="headerlink" title="空值"></a>空值</h1><p>在Java语言里用<code>null</code>表示空值，而在Python里，空值用<code>None</code>表示</p>
+<h1 id="数据类型转换"><a href="#数据类型转换" class="headerlink" title="数据类型转换"></a>数据类型转换</h1><h2 id="转字符串"><a href="#转字符串" class="headerlink" title="转字符串"></a>转字符串</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">num = <span class="number">10</span></div><div class="line">f_num = <span class="number">10.002</span></div><div class="line">print(str(num))</div><div class="line">print(str(f_num))</div></pre></td></tr></table></figure>
+<p>outputs:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">10</div><div class="line">10.002</div></pre></td></tr></table></figure>
+<h2 id="转整形"><a href="#转整形" class="headerlink" title="转整形"></a>转整形</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">s = <span class="string">'123'</span></div><div class="line">f_num = <span class="number">10.002</span></div><div class="line">print(int(s))</div><div class="line">print(int(f_num))</div></pre></td></tr></table></figure>
+<p>outputs:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">123</div><div class="line">10</div></pre></td></tr></table></figure>
+<p>##转浮点型</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">s = <span class="string">'123.432'</span></div><div class="line">num = <span class="number">10</span></div><div class="line">print(float(s))</div><div class="line">print(float(num))</div></pre></td></tr></table></figure>
+<p>outputs:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">123.432</div><div class="line">10.0</div></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/25/从命令行禁用Ubuntu下的触摸板/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Zhu Yuexin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://i4.buimg.com/567571/fbb0ec60f25374c4.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Mr.Z's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/10/25/从命令行禁用Ubuntu下的触摸板/" itemprop="url">
+                  从命令行禁用Ubuntu下的触摸板
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-25T15:00:00+08:00">
+                2017-10-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Ubuntu/" itemprop="url" rel="index">
+                    <span itemprop="name">Ubuntu</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>在我的Ubuntu17.04更新到17.10并使用X.Org进入桌面后，在系统设置中找不到触摸板的禁用／启用项，无法禁用触摸板。在网上搜索后发现可以在命令行中禁用，以下是解决办法：</p>
+<h1 id="使用命令行"><a href="#使用命令行" class="headerlink" title="使用命令行"></a>使用命令行</h1><p>命令<code>xinput</code>可以查看touchpad的设备ID：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">zyx@zyx-ThundeRobot:~$ xinput</div><div class="line">⎡ Virtual core pointer                    	id=2	[master pointer  (3)]</div><div class="line">⎜   ↳ Virtual core XTEST pointer              	id=4	[slave  pointer  (2)]</div><div class="line">⎜   ↳ Razer Razer Abyssus                     	id=12	[slave  pointer  (2)]</div><div class="line">⎜   ↳ SynPS/2 Synaptics TouchPad              	id=14	[slave  pointer  (2)]</div><div class="line">⎣ Virtual core keyboard                   	id=3	[master keyboard (2)]</div><div class="line">    ↳ Virtual core XTEST keyboard             	id=5	[slave  keyboard (3)]</div><div class="line">    ↳ Video Bus                               	id=7	[slave  keyboard (3)]</div><div class="line">    ↳ Video Bus                               	id=8	[slave  keyboard (3)]</div><div class="line">    ↳ Power Button                            	id=9	[slave  keyboard (3)]</div><div class="line">    ↳ BisonCam, NB Pro: BisonCam, NB          	id=11	[slave  keyboard (3)]</div><div class="line">    ↳ Power Button                            	id=6	[slave  keyboard (3)]</div><div class="line">    ↳ Sleep Button                            	id=10	[slave  keyboard (3)]</div><div class="line">    ↳ AT Translated Set 2 keyboard            	id=13	[slave  keyboard (3)]</div></pre></td></tr></table></figure>
+<p>可以看到这里的触摸板设备ID是<strong>14</strong>，知道ID后就可以执行命令禁用设备：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">xinput disable 14</div></pre></td></tr></table></figure>
+<p>同样可以使用命令启用设备：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">xinput enable 14</div></pre></td></tr></table></figure>
+<h1 id="脚本"><a href="#脚本" class="headerlink" title="脚本"></a>脚本</h1><p>使用命令比较麻烦的话，可以写个脚本touchpad_set.sh：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">#!/bin/bash</div><div class="line">##################################################</div><div class="line">#this script is used to disable/enable the touchpad</div><div class="line">##################################################</div><div class="line">#命令xinput list-props 14可以列出触摸板的当前信息，</div><div class="line">#其中的Device Enabled (171): 1显示设备是否启用，数字1表示启用，0表示禁用。</div><div class="line"></div><div class="line">output=$(xinput list-props 14)</div><div class="line"></div><div class="line">if [[ &quot;$output&quot; =~ Device.Enabled.\(171\):.1 ]]</div><div class="line">then</div><div class="line">    xinput disable 14</div><div class="line">else</div><div class="line">    xinput enable 14</div><div class="line">fi</div></pre></td></tr></table></figure>
+<p>将脚本丢进/usr/local/bin/，添加可执行权限，就可以使用这个脚本来启用/禁用触摸板。</p>
+<h1 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h1><p>如果觉得使用脚本还是麻烦的话，可以添加到快捷键。</p>
+<p>首先用命令<code>chmod -x touchpad_set.sh</code>来去除脚本的执行权限，如果不去除执行权限，脚本将无法通过快捷键执行。</p>
+<p>然后在系统设置－&gt;设备-&gt;键盘里添加快捷键，导入这个脚本。</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/25/Ubuntu下virtualenv、virtualenvwrapper的安装及使用/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1546,293 +1880,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/11/修改EditText下划线颜色样式/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Zhu Yuexin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://i4.buimg.com/567571/fbb0ec60f25374c4.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Mr.Z's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/08/11/修改EditText下划线颜色样式/" itemprop="url">
-                  修改EditText下划线颜色样式
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-11T18:02:00+08:00">
-                2017-08-11
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Android碎片/" itemprop="url" rel="index">
-                    <span itemprop="name">Android碎片</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="在build-gradle中添加最新的appcompat库"><a href="#在build-gradle中添加最新的appcompat库" class="headerlink" title="在build.gradle中添加最新的appcompat库"></a>在build.gradle中添加最新的appcompat库</h1><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">dependencies &#123;</div><div class="line">compile 'com.android.support:appcompat-v7:X.X.X' // X.X.X 为最新的版本号</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h1 id="让activity继承android-support-v7-app-AppCompatActivity"><a href="#让activity继承android-support-v7-app-AppCompatActivity" class="headerlink" title="让activity继承android.support.v7.app.AppCompatActivity"></a>让activity继承android.support.v7.app.AppCompatActivity</h1><h1 id="在styles-xml文件中自定义样式"><a href="#在styles-xml文件中自定义样式" class="headerlink" title="在styles.xml文件中自定义样式"></a>在styles.xml文件中自定义样式</h1><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">name</span>=<span class="string">"EditTextTheme"</span> <span class="attr">parent</span>=<span class="string">"Theme.AppCompat.Light"</span>&gt;</span><span class="xml"></span></div><div class="line">    <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"colorControlNormal"</span>&gt;</span>@color/gray_ccc<span class="tag">&lt;/<span class="name">item</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"colorControlActivated"</span>&gt;</span>@color/colorAccent<span class="tag">&lt;/<span class="name">item</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:textColorHint"</span>&gt;</span>@color/gray_ccc<span class="tag">&lt;/<span class="name">item</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div></pre></td></tr></table></figure>
-<h1 id="通过”android-theme”属性将自定义的样式应用于EditText"><a href="#通过”android-theme”属性将自定义的样式应用于EditText" class="headerlink" title="通过”android:theme”属性将自定义的样式应用于EditText"></a>通过”android:theme”属性将自定义的样式应用于EditText</h1><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">EditText</span></span></div><div class="line"><span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></div><div class="line"><span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></div><div class="line"><span class="attr">android:hint</span>=<span class="string">"Hint text"</span></div><div class="line"><span class="attr">android:theme</span>=<span class="string">"@style/EditTextTheme"</span>/&gt;</div></pre></td></tr></table></figure>
-<h1 id="如果是在-lt-android-support-design-widget-TextInputLayout-gt-下的EditText或者TextInputEditText，则需要在TextInputLayout上应用样式"><a href="#如果是在-lt-android-support-design-widget-TextInputLayout-gt-下的EditText或者TextInputEditText，则需要在TextInputLayout上应用样式" class="headerlink" title="如果是在&lt;android.support.design.widget.TextInputLayout&gt;下的EditText或者TextInputEditText，则需要在TextInputLayout上应用样式"></a>如果是在<code>&lt;android.support.design.widget.TextInputLayout&gt;</code>下的EditText或者TextInputEditText，则需要在TextInputLayout上应用样式</h1><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">android.support.design.widget.TextInputLayout</span></span></div><div class="line">    <span class="attr">app:theme</span>=<span class="string">"@style/EditTextTheme"</span></div><div class="line">    <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></div><div class="line">    <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span>&gt;</div><div class="line">    <span class="tag">&lt;<span class="name">android.support.design.widget.TextInputEditText</span></span></div><div class="line">        <span class="attr">android:id</span>=<span class="string">"@+id/register_pass"</span></div><div class="line">        <span class="attr">android:hint</span>=<span class="string">"@string/password"</span></div><div class="line">        <span class="attr">android:digits</span>=<span class="string">"@string/password_limit"</span></div><div class="line">        <span class="attr">android:inputType</span>=<span class="string">"textPassword"</span></div><div class="line">        <span class="attr">android:layout_marginTop</span>=<span class="string">"20dp"</span></div><div class="line">        <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></div><div class="line">        <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span> /&gt;</div><div class="line"><span class="tag">&lt;/<span class="name">android.support.design.widget.TextInputLayout</span>&gt;</span></div></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/11/常见用户设置页面布局/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Zhu Yuexin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://i4.buimg.com/567571/fbb0ec60f25374c4.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Mr.Z's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/08/11/常见用户设置页面布局/" itemprop="url">
-                  常见用户设置页面布局
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-11T17:48:00+08:00">
-                2017-08-11
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Android碎片/" itemprop="url" rel="index">
-                    <span itemprop="name">Android碎片</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>写了一个用户设置页面，这里做一个记录，作为以后的参考。布局的参数设置抽取出来写在了style文件里。</p>
-<h1 id="布局文件"><a href="#布局文件" class="headerlink" title="布局文件"></a>布局文件</h1><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version="1.0" encoding="utf-8"?&gt;</div><div class="line"><span class="tag">&lt;<span class="name">android.support.v7.widget.LinearLayoutCompat</span> <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span></span></div><div class="line">  <span class="attr">xmlns:app</span>=<span class="string">"http://schemas.android.com/apk/res-auto"</span></div><div class="line">  <span class="attr">xmlns:tools</span>=<span class="string">"http://schemas.android.com/tools"</span></div><div class="line">  <span class="attr">android:orientation</span>=<span class="string">"vertical"</span></div><div class="line">  <span class="attr">android:background</span>=<span class="string">"@color/gray_f2"</span></div><div class="line">  <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></div><div class="line">  <span class="attr">android:layout_height</span>=<span class="string">"match_parent"</span></div><div class="line">  <span class="attr">tools:context</span>=<span class="string">"com.example.lollipop.makeupapp.ui.activity.SettingActivity"</span>&gt;</div><div class="line"></div><div class="line">  <span class="tag">&lt;<span class="name">android.support.v7.widget.Toolbar</span></span></div><div class="line">  <span class="attr">android:id</span>=<span class="string">"@+id/toolbar"</span></div><div class="line">  <span class="attr">android:background</span>=<span class="string">"@color/white"</span></div><div class="line">  <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></div><div class="line">  <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span>&gt;</div><div class="line">  <span class="tag">&lt;<span class="name">FrameLayout</span></span></div><div class="line">  <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></div><div class="line">  <span class="attr">android:layout_height</span>=<span class="string">"match_parent"</span>&gt;</div><div class="line">  <span class="tag">&lt;<span class="name">android.support.v7.widget.LinearLayoutCompat</span></span></div><div class="line">  <span class="attr">android:layout_gravity</span>=<span class="string">"center_vertical"</span></div><div class="line">  <span class="attr">android:orientation</span>=<span class="string">"horizontal"</span></div><div class="line">  <span class="attr">android:gravity</span>=<span class="string">"center"</span></div><div class="line">  <span class="attr">android:layout_width</span>=<span class="string">"wrap_content"</span></div><div class="line">  <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span>&gt;</div><div class="line">  <span class="tag">&lt;<span class="name">android.support.v7.widget.AppCompatImageView</span></span></div><div class="line">  <span class="attr">app:srcCompat</span>=<span class="string">"@drawable/ic_back"</span></div><div class="line">  <span class="attr">android:layout_width</span>=<span class="string">"wrap_content"</span></div><div class="line">  <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span> /&gt;</div><div class="line">  <span class="tag">&lt;<span class="name">android.support.v7.widget.AppCompatTextView</span></span></div><div class="line">  <span class="attr">android:text</span>=<span class="string">"@string/me"</span></div><div class="line">  <span class="attr">android:layout_width</span>=<span class="string">"wrap_content"</span></div><div class="line">  <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span> /&gt;</div><div class="line">  <span class="tag">&lt;/<span class="name">android.support.v7.widget.LinearLayoutCompat</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">android.support.v7.widget.AppCompatTextView</span></span></div><div class="line">  <span class="attr">android:gravity</span>=<span class="string">"center"</span></div><div class="line">  <span class="attr">android:text</span>=<span class="string">"@string/setting"</span></div><div class="line">  <span class="attr">android:textSize</span>=<span class="string">"20sp"</span></div><div class="line">  <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></div><div class="line">  <span class="attr">android:layout_height</span>=<span class="string">"match_parent"</span> /&gt;</div><div class="line">  <span class="tag">&lt;/<span class="name">FrameLayout</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">android.support.v7.widget.Toolbar</span>&gt;</span></div><div class="line"></div><div class="line">  <span class="tag">&lt;<span class="name">android.support.v4.widget.NestedScrollView</span></span></div><div class="line">  <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></div><div class="line">  <span class="attr">android:layout_height</span>=<span class="string">"match_parent"</span>&gt;</div><div class="line">  <span class="tag">&lt;<span class="name">android.support.v7.widget.LinearLayoutCompat</span></span></div><div class="line">  <span class="attr">android:orientation</span>=<span class="string">"vertical"</span></div><div class="line">  <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></div><div class="line">  <span class="attr">android:layout_height</span>=<span class="string">"match_parent"</span>&gt;</div><div class="line">  <span class="tag">&lt;<span class="name">RelativeLayout</span> <span class="attr">android:id</span>=<span class="string">"@+id/account_manage"</span> <span class="attr">style</span>=<span class="string">"@style/wrap_layout"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">android.support.v7.widget.AppCompatTextView</span></span></div><div class="line">  <span class="attr">android:text</span>=<span class="string">"@string/account_manage"</span></div><div class="line">  <span class="attr">style</span>=<span class="string">"@style/text_style"</span> /&gt;</div><div class="line">  <span class="tag">&lt;<span class="name">android.support.v7.widget.AppCompatImageView</span> <span class="attr">style</span>=<span class="string">"@style/img_style"</span>/&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">RelativeLayout</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">RelativeLayout</span> <span class="attr">android:id</span>=<span class="string">"@+id/personal_info"</span> <span class="attr">style</span>=<span class="string">"@style/bottom_layout"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">android.support.v7.widget.AppCompatTextView</span></span></div><div class="line">  <span class="attr">android:text</span>=<span class="string">"@string/personal_info"</span></div><div class="line">  <span class="attr">style</span>=<span class="string">"@style/text_style"</span> /&gt;</div><div class="line">  <span class="tag">&lt;<span class="name">android.support.v7.widget.AppCompatImageView</span> <span class="attr">style</span>=<span class="string">"@style/img_style"</span>/&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">RelativeLayout</span>&gt;</span></div><div class="line"></div><div class="line">  <span class="tag">&lt;<span class="name">RelativeLayout</span></span></div><div class="line">  <span class="attr">android:id</span>=<span class="string">"@+id/dress_up"</span></div><div class="line">  <span class="attr">style</span>=<span class="string">"@style/wrap_layout"</span>&gt;</div><div class="line">  <span class="tag">&lt;<span class="name">android.support.v7.widget.AppCompatTextView</span></span></div><div class="line">  <span class="attr">android:text</span>=<span class="string">"@string/dress_up"</span></div><div class="line">  <span class="attr">style</span>=<span class="string">"@style/text_style"</span> /&gt;</div><div class="line">  <span class="tag">&lt;<span class="name">android.support.v7.widget.AppCompatImageView</span> <span class="attr">style</span>=<span class="string">"@style/img_style"</span>/&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">RelativeLayout</span>&gt;</span></div><div class="line"></div><div class="line">  <span class="tag">&lt;<span class="name">RelativeLayout</span> <span class="attr">android:id</span>=<span class="string">"@+id/clean_cache"</span> <span class="attr">style</span>=<span class="string">"@style/wrap_layout"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">android.support.v7.widget.AppCompatTextView</span></span></div><div class="line">  <span class="attr">android:text</span>=<span class="string">"@string/clean_cache"</span></div><div class="line">  <span class="attr">style</span>=<span class="string">"@style/text_style"</span> /&gt;</div><div class="line">  <span class="tag">&lt;<span class="name">android.support.v7.widget.AppCompatImageView</span></span></div><div class="line">  <span class="attr">android:id</span>=<span class="string">"@+id/img"</span></div><div class="line">  <span class="attr">style</span>=<span class="string">"@style/img_style"</span> /&gt;</div><div class="line">  <span class="tag">&lt;<span class="name">TextView</span></span></div><div class="line">  <span class="attr">android:id</span>=<span class="string">"@+id/cache"</span></div><div class="line">  <span class="attr">android:text</span>=<span class="string">"@string/cache_test"</span></div><div class="line">  <span class="attr">android:layout_centerVertical</span>=<span class="string">"true"</span></div><div class="line">  <span class="attr">android:layout_toStartOf</span>=<span class="string">"@id/img"</span></div><div class="line">  <span class="attr">android:layout_width</span>=<span class="string">"wrap_content"</span></div><div class="line">  <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span> /&gt;</div><div class="line">  <span class="tag">&lt;/<span class="name">RelativeLayout</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">RelativeLayout</span> <span class="attr">android:id</span>=<span class="string">"@+id/advice"</span> <span class="attr">style</span>=<span class="string">"@style/mid_layout"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">android.support.v7.widget.AppCompatTextView</span></span></div><div class="line">  <span class="attr">android:text</span>=<span class="string">"@string/advice"</span></div><div class="line">  <span class="attr">style</span>=<span class="string">"@style/text_style"</span> /&gt;</div><div class="line">  <span class="tag">&lt;<span class="name">android.support.v7.widget.AppCompatImageView</span> <span class="attr">style</span>=<span class="string">"@style/img_style"</span>/&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">RelativeLayout</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">RelativeLayout</span> <span class="attr">android:id</span>=<span class="string">"@+id/about_us"</span> <span class="attr">style</span>=<span class="string">"@style/bottom_layout"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">android.support.v7.widget.AppCompatTextView</span></span></div><div class="line">  <span class="attr">android:text</span>=<span class="string">"@string/account_manage"</span></div><div class="line">  <span class="attr">style</span>=<span class="string">"@style/text_style"</span> /&gt;</div><div class="line">  <span class="tag">&lt;<span class="name">android.support.v7.widget.AppCompatImageView</span> <span class="attr">style</span>=<span class="string">"@style/img_style"</span>/&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">RelativeLayout</span>&gt;</span></div><div class="line"></div><div class="line">  <span class="tag">&lt;<span class="name">android.support.v7.widget.AppCompatButton</span></span></div><div class="line">  <span class="attr">android:text</span>=<span class="string">"@string/exit_current_account"</span></div><div class="line">  <span class="attr">android:textColor</span>=<span class="string">"@color/red"</span></div><div class="line">  <span class="attr">android:layout_marginTop</span>=<span class="string">"40dp"</span></div><div class="line">  <span class="attr">app:theme</span>=<span class="string">"@style/LogoutButton"</span></div><div class="line">  <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></div><div class="line">  <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span> /&gt;</div><div class="line">  <span class="tag">&lt;/<span class="name">android.support.v7.widget.LinearLayoutCompat</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">android.support.v4.widget.NestedScrollView</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">android.support.v7.widget.LinearLayoutCompat</span>&gt;</span></div></pre></td></tr></table></figure>
-<h1 id="样式文件"><a href="#样式文件" class="headerlink" title="样式文件"></a>样式文件</h1><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!-- 共用样式 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">name</span>=<span class="string">"base_layout"</span>&gt;</span><span class="xml"></span></div><div class="line">  <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:clickable"</span>&gt;</span>true<span class="tag">&lt;/<span class="name">item</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:background"</span>&gt;</span>@drawable/item_click_selector<span class="tag">&lt;/<span class="name">item</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:layout_width"</span>&gt;</span>match_parent<span class="tag">&lt;/<span class="name">item</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:layout_height"</span>&gt;</span>wrap_content<span class="tag">&lt;/<span class="name">item</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:paddingStart"</span>&gt;</span>10dp<span class="tag">&lt;/<span class="name">item</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:paddingEnd"</span>&gt;</span>10dp<span class="tag">&lt;/<span class="name">item</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:paddingTop"</span>&gt;</span>10dp<span class="tag">&lt;/<span class="name">item</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:paddingBottom"</span>&gt;</span>10dp<span class="tag">&lt;/<span class="name">item</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line"><span class="comment">&lt;!-- 外层样式 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">name</span>=<span class="string">"wrap_layout"</span> <span class="attr">parent</span>=<span class="string">"base_layout"</span>&gt;</span><span class="xml"></span></div><div class="line">  <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:layout_marginTop"</span>&gt;</span>20dp<span class="tag">&lt;/<span class="name">item</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:layout_marginBottom"</span>&gt;</span>0.5dp<span class="tag">&lt;/<span class="name">item</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line"><span class="comment">&lt;!-- 中间层样式 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">name</span>=<span class="string">"mid_layout"</span> <span class="attr">parent</span>=<span class="string">"base_layout"</span>&gt;</span><span class="xml"></span></div><div class="line">  <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:layout_marginBottom"</span>&gt;</span>0.5dp<span class="tag">&lt;/<span class="name">item</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line"><span class="comment">&lt;!-- 底层样式 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">name</span>=<span class="string">"bottom_layout"</span> <span class="attr">parent</span>=<span class="string">"base_layout"</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line"><span class="comment">&lt;!-- 文本样式 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">name</span>=<span class="string">"text_style"</span>&gt;</span><span class="xml"></span></div><div class="line">  <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:layout_width"</span>&gt;</span>wrap_content<span class="tag">&lt;/<span class="name">item</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:layout_height"</span>&gt;</span>wrap_content<span class="tag">&lt;/<span class="name">item</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:textSize"</span>&gt;</span>18sp<span class="tag">&lt;/<span class="name">item</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:layout_alignParentStart"</span>&gt;</span>true<span class="tag">&lt;/<span class="name">item</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:layout_centerVertical"</span>&gt;</span>true<span class="tag">&lt;/<span class="name">item</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line"><span class="comment">&lt;!-- 图标样式 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">name</span>=<span class="string">"img_style"</span>&gt;</span><span class="xml"></span></div><div class="line">  <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:layout_width"</span>&gt;</span>wrap_content<span class="tag">&lt;/<span class="name">item</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:layout_height"</span>&gt;</span>wrap_content<span class="tag">&lt;/<span class="name">item</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:layout_alignParentEnd"</span>&gt;</span>true<span class="tag">&lt;/<span class="name">item</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:layout_centerVertical"</span>&gt;</span>true<span class="tag">&lt;/<span class="name">item</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:src"</span>&gt;</span>@drawable/ic_next<span class="tag">&lt;/<span class="name">item</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div></pre></td></tr></table></figure>
-<h1 id="点击效果"><a href="#点击效果" class="headerlink" title="点击效果"></a>点击效果</h1><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version="1.0" encoding="utf-8"?&gt;</div><div class="line"><span class="tag">&lt;<span class="name">selector</span> <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">item</span> <span class="attr">android:drawable</span>=<span class="string">"@color/white"</span> <span class="attr">android:state_pressed</span>=<span class="string">"false"</span>/&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">item</span> <span class="attr">android:drawable</span>=<span class="string">"@color/gray_f2"</span> <span class="attr">android:state_pressed</span>=<span class="string">"true"</span> /&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">selector</span>&gt;</span></div></pre></td></tr></table></figure>
-<h1 id="页面预览"><a href="#页面预览" class="headerlink" title="页面预览"></a>页面预览</h1><p><img src="https://ws1.sinaimg.cn/large/e3417548gy1fifxomg9sqj20u01hc0vo.jpg" alt=""></p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1882,7 +1929,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">36</span>
+                <span class="site-state-item-count">38</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1891,7 +1938,7 @@
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-count">10</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -1900,7 +1947,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">19</span>
+                <span class="site-state-item-count">20</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

@@ -260,6 +260,300 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/14/用BAT批处理文件启动我的Java小程序/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Zhu Yuexin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://i4.buimg.com/567571/fbb0ec60f25374c4.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Mr.Z's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/12/14/用BAT批处理文件启动我的Java小程序/" itemprop="url">
+                  用BAT批处理文件启动我的Java小程序
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-14T21:15:47+08:00">
+                2017-12-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/杂记/" itemprop="url" rel="index">
+                    <span itemprop="name">杂记</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>前段时间用Java写了两个小工具，打包成jar文件后，为了方便打开，于是写了一个简单的批处理文件来进行操作。</p>
+<p>两个小工具一个是用来方便生成博客的md文件，另一个用来进行文件加解密。代码如下：</p>
+<h1 id="BlogGenerator"><a href="#BlogGenerator" class="headerlink" title="BlogGenerator"></a>BlogGenerator</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> main;</div><div class="line"></div><div class="line"><span class="keyword">import</span> java.io.BufferedWriter;</div><div class="line"><span class="keyword">import</span> java.io.File;</div><div class="line"><span class="keyword">import</span> java.io.FileOutputStream;</div><div class="line"><span class="keyword">import</span> java.io.IOException;</div><div class="line"><span class="keyword">import</span> java.io.OutputStreamWriter;</div><div class="line"><span class="keyword">import</span> java.io.PrintWriter;</div><div class="line"><span class="keyword">import</span> java.text.SimpleDateFormat;</div><div class="line"><span class="keyword">import</span> java.util.ArrayList;</div><div class="line"><span class="keyword">import</span> java.util.Date;</div><div class="line"><span class="keyword">import</span> java.util.List;</div><div class="line"><span class="keyword">import</span> java.util.Scanner;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Generator</span> </span>&#123;</div><div class="line">	<span class="keyword">static</span> String formatStr = <span class="string">"yyyy-MM-dd HH:mm:ss"</span>;</div><div class="line">	</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">		System.out.println(<span class="string">"Input your title: "</span>);</div><div class="line">		Scanner in = <span class="keyword">new</span> Scanner(System.in);</div><div class="line">		String title = in.nextLine();</div><div class="line">		String filename = <span class="string">"D:/Dropbox/Hexo/blog/source/_posts/"</span>+title+<span class="string">".md"</span>;</div><div class="line">		System.out.println(<span class="string">"categories: "</span>);</div><div class="line">		String categories = in.nextLine();</div><div class="line">		System.out.println(<span class="string">"tags:"</span>);</div><div class="line">		System.out.printf(<span class="string">"- "</span>);</div><div class="line">		String tag;</div><div class="line">		List&lt;String&gt; tags = <span class="keyword">new</span> ArrayList&lt;&gt;();</div><div class="line">		<span class="keyword">while</span> ((tag=in.nextLine())!=<span class="keyword">null</span>&amp;&amp;tag.length()&gt;<span class="number">0</span>) &#123;</div><div class="line">			tags.add(tag);</div><div class="line">			System.out.printf(<span class="string">"- "</span>);</div><div class="line">		&#125;</div><div class="line">		</div><div class="line">		StringBuilder builder = <span class="keyword">new</span> StringBuilder();</div><div class="line">		builder.append(<span class="string">"---\n"</span>);</div><div class="line">		builder.append(<span class="string">"title: "</span>+title+<span class="string">"\n"</span>);</div><div class="line">		builder.append(<span class="string">"date: "</span>+<span class="keyword">new</span> SimpleDateFormat(formatStr).format(<span class="keyword">new</span> Date())+<span class="string">"\n"</span>);</div><div class="line">		builder.append(<span class="string">"categories: "</span>+categories+<span class="string">"\n"</span>);</div><div class="line">		builder.append(<span class="string">"tags:\n"</span>);</div><div class="line">		<span class="keyword">for</span> (String str : tags) &#123;</div><div class="line">			builder.append(<span class="string">"- "</span>+str+<span class="string">"\n"</span>);</div><div class="line">		&#125;</div><div class="line">		builder.append(<span class="string">"---\n"</span>);</div><div class="line">		</div><div class="line">		File file = <span class="keyword">new</span> File(filename);</div><div class="line">		<span class="keyword">try</span> &#123;</div><div class="line">			<span class="keyword">if</span> (!file.exists()) &#123;</div><div class="line">				file.createNewFile();</div><div class="line">			&#125;</div><div class="line">			PrintWriter writer = <span class="keyword">new</span> PrintWriter(<span class="keyword">new</span> BufferedWriter(<span class="keyword">new</span> OutputStreamWriter(<span class="keyword">new</span> FileOutputStream(file), <span class="string">"UTF-8"</span>)));</div><div class="line">			String content = builder.toString();</div><div class="line">			writer.write(content);</div><div class="line">			writer.flush();</div><div class="line">			writer.close();</div><div class="line">			in.close();</div><div class="line">			</div><div class="line">			<span class="comment">//打开文件</span></div><div class="line">			Runtime runtime = Runtime.getRuntime();</div><div class="line">			runtime.exec(<span class="string">"cmd /c start "</span>+filename);</div><div class="line">		&#125; <span class="keyword">catch</span> (IOException e) &#123;</div><div class="line">			e.printStackTrace();</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>代码很简单，这里只是单纯的保存一下代码。</p>
+<h1 id="FileEncryptor"><a href="#FileEncryptor" class="headerlink" title="FileEncryptor"></a>FileEncryptor</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> main;</div><div class="line"></div><div class="line"><span class="keyword">import</span> java.io.FileInputStream;</div><div class="line"><span class="keyword">import</span> java.io.FileNotFoundException;</div><div class="line"><span class="keyword">import</span> java.io.FileOutputStream;</div><div class="line"><span class="keyword">import</span> java.io.IOException;</div><div class="line"><span class="keyword">import</span> java.io.InputStream;</div><div class="line"><span class="keyword">import</span> java.io.OutputStream;</div><div class="line"><span class="keyword">import</span> java.security.InvalidKeyException;</div><div class="line"><span class="keyword">import</span> java.security.Key;</div><div class="line"><span class="keyword">import</span> java.security.NoSuchAlgorithmException;</div><div class="line"><span class="keyword">import</span> java.util.Scanner;</div><div class="line"></div><div class="line"><span class="keyword">import</span> javax.crypto.Cipher;</div><div class="line"><span class="keyword">import</span> javax.crypto.CipherOutputStream;</div><div class="line"><span class="keyword">import</span> javax.crypto.NoSuchPaddingException;</div><div class="line"><span class="keyword">import</span> javax.crypto.SecretKey;</div><div class="line"><span class="keyword">import</span> javax.crypto.spec.SecretKeySpec;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Entrance</span> </span>&#123;</div><div class="line">	<span class="keyword">private</span> <span class="keyword">static</span> String ALGORITHM = <span class="string">"DES"</span>;</div><div class="line">	</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> NoSuchAlgorithmException </span>&#123;</div><div class="line">		System.out.println(<span class="string">"Choose the mode:"</span>);</div><div class="line">		System.out.println(<span class="string">"1. Encrypt"</span>);</div><div class="line">		System.out.println(<span class="string">"2. Decrypt"</span>);</div><div class="line">		Scanner in = <span class="keyword">new</span> Scanner(System.in);</div><div class="line">		String mode = in.nextLine();</div><div class="line">		<span class="keyword">switch</span> (mode) &#123;</div><div class="line">		<span class="keyword">case</span> <span class="string">"1"</span>:</div><div class="line">			System.out.println(<span class="string">"Input the file path which you want to encrypt:"</span>);</div><div class="line">			String inputFile = in.nextLine();</div><div class="line">			System.out.println(<span class="string">"Input the file path where you want to store:"</span>);</div><div class="line">			String outputFile = in.nextLine();</div><div class="line">			System.out.println(<span class="string">"Input your key:"</span>);</div><div class="line">			String keyString = in.nextLine();</div><div class="line">			SecretKey secretKey = <span class="keyword">new</span> SecretKeySpec(keyString.getBytes(), ALGORITHM);</div><div class="line">			encrypt(inputFile, outputFile, secretKey);</div><div class="line">			<span class="keyword">break</span>;</div><div class="line">		<span class="keyword">case</span> <span class="string">"2"</span>:</div><div class="line">			System.out.println(<span class="string">"Input the file path which you want to decrypt:"</span>);</div><div class="line">			String inputFile2 = in.nextLine();</div><div class="line">			System.out.println(<span class="string">"Input the file path where you want to store:"</span>);</div><div class="line">			String outputFile2 = in.nextLine();</div><div class="line">			System.out.println(<span class="string">"Input your key:"</span>);</div><div class="line">			String keyString2 = in.nextLine();</div><div class="line">			SecretKey secretKey2 = <span class="keyword">new</span> SecretKeySpec(keyString2.getBytes(), ALGORITHM);</div><div class="line">			decrypt(inputFile2, outputFile2, secretKey2);</div><div class="line">			<span class="keyword">break</span>;</div><div class="line">		<span class="keyword">default</span>:</div><div class="line">			System.out.println(<span class="string">"Wrong input!"</span>);</div><div class="line">			<span class="keyword">break</span>;</div><div class="line">		&#125;</div><div class="line">		</div><div class="line">		System.out.println(<span class="string">"Press any key to exit ..."</span>);</div><div class="line">		in.nextLine();</div><div class="line">		in.close();</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">encrypt</span><span class="params">(String inputFile, String outputFile, Key key)</span> </span>&#123;</div><div class="line">		System.out.printf(<span class="string">"Encrypting "</span>);</div><div class="line">		<span class="keyword">try</span> &#123;</div><div class="line">			Cipher cipher = Cipher.getInstance(ALGORITHM);</div><div class="line">			cipher.init(Cipher.ENCRYPT_MODE, key);</div><div class="line">			</div><div class="line">			InputStream in = <span class="keyword">new</span> FileInputStream(inputFile);</div><div class="line">			OutputStream out = <span class="keyword">new</span> FileOutputStream(outputFile);		</div><div class="line">			CipherOutputStream cos = <span class="keyword">new</span> CipherOutputStream(out, cipher);</div><div class="line">			<span class="keyword">byte</span>[] buffer = <span class="keyword">new</span> <span class="keyword">byte</span>[<span class="number">100</span>*<span class="number">1024</span>*<span class="number">1024</span>];</div><div class="line">			<span class="keyword">int</span> r;</div><div class="line">			<span class="keyword">while</span>((r=in.read(buffer)) &gt; <span class="number">0</span>)&#123;</div><div class="line">				cos.write(buffer, <span class="number">0</span>, r);</div><div class="line">				System.out.printf(<span class="string">"."</span>);</div><div class="line">			&#125;</div><div class="line">			cos.close();</div><div class="line">			out.close();</div><div class="line">			in.close();</div><div class="line">			</div><div class="line">		&#125; <span class="keyword">catch</span> (NoSuchAlgorithmException | NoSuchPaddingException e) &#123;</div><div class="line">			e.printStackTrace();</div><div class="line">		&#125; <span class="keyword">catch</span> (InvalidKeyException e) &#123;</div><div class="line">			e.printStackTrace();</div><div class="line">		&#125; <span class="keyword">catch</span> (FileNotFoundException e) &#123;</div><div class="line">			e.printStackTrace();</div><div class="line">		&#125; <span class="keyword">catch</span> (IOException e) &#123;</div><div class="line">			e.printStackTrace();</div><div class="line">		&#125;</div><div class="line">		System.out.println();</div><div class="line">		System.out.println(<span class="string">"Done!"</span>);</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">decrypt</span><span class="params">(String inputFile, String outputFile, Key key)</span> </span>&#123;</div><div class="line">		System.out.printf(<span class="string">"Decrypting "</span>);</div><div class="line">		<span class="keyword">try</span> &#123;</div><div class="line">			Cipher cipher = Cipher.getInstance(ALGORITHM);</div><div class="line">			cipher.init(Cipher.DECRYPT_MODE, key);</div><div class="line">			</div><div class="line">			InputStream in = <span class="keyword">new</span> FileInputStream(inputFile);</div><div class="line">			OutputStream out = <span class="keyword">new</span> FileOutputStream(outputFile);</div><div class="line">			CipherOutputStream cos = <span class="keyword">new</span> CipherOutputStream(out, cipher);</div><div class="line">			<span class="keyword">byte</span>[] buffer = <span class="keyword">new</span> <span class="keyword">byte</span>[<span class="number">100</span>*<span class="number">1024</span>*<span class="number">1024</span>];</div><div class="line">			<span class="keyword">int</span> r;</div><div class="line">			<span class="keyword">while</span>((r=in.read(buffer)) &gt; <span class="number">0</span>)&#123;</div><div class="line">				cos.write(buffer, <span class="number">0</span>, r);</div><div class="line">				System.out.printf(<span class="string">"."</span>);</div><div class="line">			&#125;</div><div class="line">			cos.close();</div><div class="line">			out.close();</div><div class="line">			in.close();</div><div class="line">			</div><div class="line">		&#125; <span class="keyword">catch</span> (NoSuchAlgorithmException e) &#123;</div><div class="line">			e.printStackTrace();</div><div class="line">		&#125; <span class="keyword">catch</span> (NoSuchPaddingException e) &#123;</div><div class="line">			e.printStackTrace();</div><div class="line">		&#125; <span class="keyword">catch</span> (InvalidKeyException e) &#123;</div><div class="line">			e.printStackTrace();</div><div class="line">		&#125; <span class="keyword">catch</span> (FileNotFoundException e) &#123;</div><div class="line">			e.printStackTrace();</div><div class="line">		&#125; <span class="keyword">catch</span> (IOException e) &#123;</div><div class="line">			e.printStackTrace();</div><div class="line">		&#125;</div><div class="line">		System.out.println();</div><div class="line">		System.out.println(<span class="string">"Done!"</span>);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>就是调用Cipher类进行加解密，这里只用了DES，后面可以改进。</p>
+<h1 id="ToolBox"><a href="#ToolBox" class="headerlink" title="ToolBox"></a>ToolBox</h1><p>为了方便调用，这里写了一个批处理文件ToolBox.bat</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">@<span class="built_in">echo</span> off</div><div class="line">:begin</div><div class="line"><span class="built_in">echo</span> Welcome!</div><div class="line"><span class="built_in">echo</span> <span class="string">"1"</span> <span class="keyword">for</span> B<span class="built_in">log</span>Generator</div><div class="line"><span class="built_in">echo</span> <span class="string">"2"</span> <span class="keyword">for</span> FileEncryptor</div><div class="line"><span class="built_in">set</span>/p step=Input your choice:</div><div class="line"><span class="built_in">echo</span> %step%</div><div class="line"><span class="keyword">if</span> <span class="string">"%step%"</span>==<span class="string">"1"</span> (</div><div class="line">	goto next1</div><div class="line">) <span class="keyword">else</span> (</div><div class="line">	<span class="keyword">if</span> <span class="string">"%step%"</span>==<span class="string">"2"</span> (</div><div class="line">		goto next2</div><div class="line">	) <span class="keyword">else</span> (</div><div class="line">		goto end</div><div class="line">	)</div><div class="line">)</div><div class="line">:next1</div><div class="line">start java -jar D:/Dropbox/MySoftware/B<span class="built_in">log</span>Generator.jar</div><div class="line">goto end</div><div class="line">:next2</div><div class="line">start java -jar D:/Dropbox/MySoftware/FileEncryptor.jar</div><div class="line">goto end</div><div class="line">:end</div><div class="line"><span class="built_in">exit</span></div></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/11/Python入坑笔记（六）：类/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Zhu Yuexin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://i4.buimg.com/567571/fbb0ec60f25374c4.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Mr.Z's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/12/11/Python入坑笔记（六）：类/" itemprop="url">
+                  Python入坑笔记（六）：类
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-11T20:36:23+08:00">
+                2017-12-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Python/" itemprop="url" rel="index">
+                    <span itemprop="name">Python</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="类的创建和使用"><a href="#类的创建和使用" class="headerlink" title="类的创建和使用"></a>类的创建和使用</h1><p>举个栗子：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Dog</span><span class="params">()</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, name, age)</span>:</span></div><div class="line">        <span class="string">"""初始化属性name和age"""</span></div><div class="line">        self.name = name</div><div class="line">        self.age = age</div><div class="line">    </div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">sit</span><span class="params">(self)</span>:</span></div><div class="line">        <span class="string">"""模拟小狗蹲下"""</span></div><div class="line">        print(self.name.title() + <span class="string">" is now sitting."</span>)</div><div class="line">        </div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">roll</span><span class="params">(self)</span>:</span></div><div class="line">        <span class="string">"""模拟小狗打滚"""</span></div><div class="line">        print(self.name.title() + <span class="string">" rolled over!"</span>)</div><div class="line"></div><div class="line"><span class="comment">#创建实例</span></div><div class="line">my_dog = Dog(<span class="string">"Whillie"</span>, <span class="number">6</span>)</div><div class="line"></div><div class="line">print(<span class="string">"My dog's name is "</span> + my_dog.name.title())</div><div class="line">print(<span class="string">"My dog is "</span> + str(my_dog.age) + <span class="string">" years old"</span>)</div><div class="line">my_dog.roll()</div></pre></td></tr></table></figure>
+<p>以上创建了一个Dog类（类名首字母大写），类属性有<code>name</code>和<code>age</code>，类方法有<code>sit()</code>和<code>roll()</code>。</p>
+<ul>
+<li>方法<code>__init__()</code>是一个特殊的方法，类似于Java中的构造函数，每当根据Dog类创建新实例时，Python都会自动运行它，做一些初始化操作。</li>
+<li>参数<code>self</code>在<code>__init__()</code>方法中必不可少且在所有形参之前，它是一个指向实例本身的引用，让实例能够访问类中的属性和方法。<code>self</code>在创建实例时自动传递，不需要手动传递实参。</li>
+<li>在类中使用<code>self.name</code>这种方式访问类属性或方法。在类外则用实例名访问或调用，如<code>my_dog.name</code>。</li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/05/室内设计师皮皮夏手稿珍藏/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -661,7 +955,33 @@
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">pets</span><span class="params">(name, type=<span class="string">"dog"</span>)</span>:</span></div><div class="line">    print(<span class="string">"I hava a "</span> + type)</div><div class="line">    print(<span class="string">"It's name is "</span> + name)</div><div class="line">    </div><div class="line">pets(<span class="string">"Peggy"</span>)</div></pre></td></tr></table></figure>
 <p>outputs:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">I hava a dog</div><div class="line">It&apos;s name is Peggy</div></pre></td></tr></table></figure>
-<p><strong>注意：</strong>参数定义中，有默认值的参数的位置必须在无默认值的参数之后。</p>
+<p><strong>注意：</strong>参数定义中，有默认值的参数的位置必须在无默认值的参数之后。默认参数必须指向不变对象！</p>
+<h2 id="传递任意数量的实参"><a href="#传递任意数量的实参" class="headerlink" title="传递任意数量的实参"></a>传递任意数量的实参</h2><p>如果预先不知道函数需要接受多少个实参，Python允许函数从调用语句中接收任意数量的实参。在形参定义时前面加一个<code>*</code>号，它会创建一个空元组，用来接收所有的参数值。比如<code>def fun(*params)</code>，会创建一个名为<code>params</code>的 空元组，将接收到的所有值封装进去。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">pets</span><span class="params">(*types)</span>:</span></div><div class="line">    <span class="keyword">for</span> pet <span class="keyword">in</span> types:</div><div class="line">        print(pet)</div><div class="line"></div><div class="line">pets(<span class="string">"dog"</span>, <span class="string">"cat"</span>, <span class="string">"monkey"</span>)</div></pre></td></tr></table></figure>
+<p>outputs:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">dog</div><div class="line">cat</div><div class="line">monkey</div></pre></td></tr></table></figure>
+<h2 id="传递任意数量的关键字实参"><a href="#传递任意数量的关键字实参" class="headerlink" title="传递任意数量的关键字实参"></a>传递任意数量的关键字实参</h2><p>Python函数还可以接收任意数量的关键字实参，即任意数量的键值对。任意数量的关键字实参用<code>**</code>定义，Python会创建一个字典保存所接收到的所有关键字实参。比如<code>def func(**kvs)</code>，会创建一个名为<code>kvs</code>的字典，接收所有的关键字实参。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">user_info</span><span class="params">(**info)</span>:</span></div><div class="line">    <span class="keyword">for</span> k,v <span class="keyword">in</span> info.items():</div><div class="line">        print(k + <span class="string">" is "</span> + str(v))</div><div class="line"></div><div class="line">user_info(name=<span class="string">'Tom'</span>, age=<span class="number">21</span>, location=<span class="string">'Chongqing'</span>)</div></pre></td></tr></table></figure>
+<p>outputs:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">name is Tom</div><div class="line">age is 21</div><div class="line">location is Chongqing</div></pre></td></tr></table></figure>
+<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><ul>
+<li>参数定义顺序：必选参数、默认参数、可变参数、可变关键字参数</li>
+<li>默认参数必须指向不变对象</li>
+<li>给形参指定默认值时，等号两边不要有空格</li>
+</ul>
+<h1 id="返回值"><a href="#返回值" class="headerlink" title="返回值"></a>返回值</h1><p>函数可返回任何类型的值，包括列表和字典等较复杂的数据结构。用<code>return</code>语句返回。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_sum</span><span class="params">(a, b)</span>:</span></div><div class="line">    <span class="keyword">return</span> a+b</div><div class="line"></div><div class="line">sum = get_sum(<span class="number">1</span>,<span class="number">2</span>)</div><div class="line">print(sum)</div></pre></td></tr></table></figure>
+<p>output:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">3</div></pre></td></tr></table></figure>
+<h1 id="传递列表"><a href="#传递列表" class="headerlink" title="传递列表"></a>传递列表</h1><p>有时候需要将列表作为参数传递给函数，更方便的操作列表。列表传递给函数后，函数能直接访问它的内容，<strong>注意</strong>，函数中对列表的修改是永久性的。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">check</span><span class="params">(users)</span>:</span></div><div class="line">    <span class="keyword">while</span> users:</div><div class="line">        user = users.pop()</div><div class="line">        print(user+<span class="string">" checked!"</span>)</div><div class="line"></div><div class="line">users = [<span class="string">"Tom"</span>, <span class="string">"Jhon"</span>, <span class="string">"Edward"</span>]</div><div class="line">check(users)</div><div class="line">print(<span class="string">"last: "</span>+ str(len(users)))</div></pre></td></tr></table></figure>
+<p>outputs:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">Edward checked!</div><div class="line">Jhon checked!</div><div class="line">Tom checked!</div><div class="line">last: 0</div></pre></td></tr></table></figure>
+<h2 id="禁止函数修改列表"><a href="#禁止函数修改列表" class="headerlink" title="禁止函数修改列表"></a>禁止函数修改列表</h2><p>Python提供了对列表的<strong>切片</strong>操作符<code>:</code>，比如有一个列表<code>L</code>，那么<code>L[0:3]</code>表示，在列表<code>L</code>中从索引<code>0</code>开始，取到索引<code>3</code>但不包括索引<code>3</code>，取出包含这三个元素的列表副本。</p>
+<p>在传入函数的实参列表，这样使用切片<code>[:]</code>，就可以将列表的完整副本传入函数中，这样函数对列表的操作就不会影响到原始列表。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">check</span><span class="params">(users)</span>:</span></div><div class="line">    <span class="keyword">while</span> users:</div><div class="line">        user = users.pop()</div><div class="line">        print(user+<span class="string">" checked!"</span>)</div><div class="line"></div><div class="line">users = [<span class="string">"Tom"</span>, <span class="string">"Jhon"</span>, <span class="string">"Edward"</span>]</div><div class="line"></div><div class="line">check(users[:])</div><div class="line"></div><div class="line">print(<span class="string">"last: "</span>+ str(len(users)))</div></pre></td></tr></table></figure>
+<p>outputs:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">Edward checked!</div><div class="line">Jhon checked!</div><div class="line">Tom checked!</div><div class="line">last: 3</div></pre></td></tr></table></figure>
 
           
         
@@ -1568,340 +1888,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/27/Python入坑笔记（一）：基本数据类型/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Zhu Yuexin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://i4.buimg.com/567571/fbb0ec60f25374c4.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Mr.Z's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/10/27/Python入坑笔记（一）：基本数据类型/" itemprop="url">
-                  Python入坑笔记（一）：基本数据类型
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-27T17:07:00+08:00">
-                2017-10-27
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Python/" itemprop="url" rel="index">
-                    <span itemprop="name">Python</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="整形"><a href="#整形" class="headerlink" title="整形"></a>整形</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">days_1 = <span class="number">365</span></div><div class="line">days_2 = <span class="number">366</span></div><div class="line">print(days_1)</div><div class="line">print(type(days_1))</div></pre></td></tr></table></figure>
-<p>outputs:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">365</div><div class="line">&lt;class &apos;int&apos;&gt;</div></pre></td></tr></table></figure>
-<p><code>type</code>函数可以查看变量的数据类型</p>
-<h1 id="浮点型"><a href="#浮点型" class="headerlink" title="浮点型"></a>浮点型</h1><p>浮点数可以用数学写法，如<code>1.23</code>，<code>3.14</code>，<code>-9.01</code>，等等。但是对于很大或很小的浮点数，就必须用科学计数法表示，把10用e替代，1.23x109就是<code>1.23e9</code>，或者<code>12.3e8</code>，0.000012可以写成<code>1.2e-5</code>，等等。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">f1 = <span class="number">1.23e9</span></div><div class="line">f2 = <span class="number">1.23e-5</span></div><div class="line">print(f1)</div><div class="line">print(f2)</div></pre></td></tr></table></figure>
-<p>outputs:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">1230000000.0</div><div class="line">1.23e-05</div></pre></td></tr></table></figure>
-<h1 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h1><p>字符串用单引号<code>&#39;</code>或双引号<code>&quot;</code>括起来，如<code>&#39;hi&#39;</code>、<code>&quot;hello&quot;</code>。</p>
-<p>如果字符串内部包含<code>&#39;</code>或者<code>&quot;</code>，可以使用转义符<code>\</code>进行转义。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">print(<span class="string">"Are you \"ok\""</span>)</div></pre></td></tr></table></figure>
-<p>outputs:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Are you &quot;ok&quot;</div></pre></td></tr></table></figure>
-<p>Python允许使用<code>r&#39;&#39;</code>或者<code>r&quot;&quot;</code>表示<code>&#39;&#39;</code>或<code>&quot;&quot;</code>内部的字符串默认不转义</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">print(<span class="string">r"Are you \"ok\""</span>)</div></pre></td></tr></table></figure>
-<p>outputs:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Are you \&quot;ok\&quot;</div></pre></td></tr></table></figure>
-<p>如果字符串有多行，可以用<code>&#39;&#39;&#39;...&#39;&#39;&#39;</code>的格式表示多行内容</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">print(<span class="string">'''line1</span></div><div class="line">line2</div><div class="line">line3''')</div></pre></td></tr></table></figure>
-<p>outputs:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">line1</div><div class="line">line2</div><div class="line">line3</div></pre></td></tr></table></figure>
-<p><code>len</code>函数可以查看字符串的长度（也就是字符串的字符数）</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">s = <span class="string">"hello"</span></div><div class="line">print(len(s))</div></pre></td></tr></table></figure>
-<p>outputs:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">5</div></pre></td></tr></table></figure>
-<p>Python中<strong>格式化</strong>输出字符串和C语言类似，用<code>%</code>实现，不同的是，Python中也用<code>%</code>连接要格式化的内容，而不是逗号。<code>%s</code>表示字符串替换，<code>%d</code>表示整数替换，<code>%f</code>表示浮点数替换，<code>%x</code>表示十六进制整数。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">name = <span class="string">"Tom"</span></div><div class="line">age = <span class="number">20</span></div><div class="line">print(<span class="string">"hello %s! Your age is %d"</span> % (name, age))</div></pre></td></tr></table></figure>
-<p>outputs:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hello Tom! Your age is 20</div></pre></td></tr></table></figure>
-<h1 id="布尔值"><a href="#布尔值" class="headerlink" title="布尔值"></a>布尔值</h1><p>只有<code>True</code>、<code>False</code>两种值</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">True</span></div><div class="line"><span class="keyword">True</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">False</span></div><div class="line"><span class="keyword">False</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">3</span> &gt; <span class="number">2</span></div><div class="line"><span class="keyword">True</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">3</span> &gt; <span class="number">5</span></div><div class="line"><span class="keyword">False</span></div></pre></td></tr></table></figure>
-<p>布尔值的运算：<code>and</code>、<code>or</code>、<code>not</code></p>
-<h1 id="空值"><a href="#空值" class="headerlink" title="空值"></a>空值</h1><p>在Java语言里用<code>null</code>表示空值，而在Python里，空值用<code>None</code>表示</p>
-<h1 id="数据类型转换"><a href="#数据类型转换" class="headerlink" title="数据类型转换"></a>数据类型转换</h1><h2 id="转字符串"><a href="#转字符串" class="headerlink" title="转字符串"></a>转字符串</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">num = <span class="number">10</span></div><div class="line">f_num = <span class="number">10.002</span></div><div class="line">print(str(num))</div><div class="line">print(str(f_num))</div></pre></td></tr></table></figure>
-<p>outputs:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">10</div><div class="line">10.002</div></pre></td></tr></table></figure>
-<h2 id="转整形"><a href="#转整形" class="headerlink" title="转整形"></a>转整形</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">s = <span class="string">'123'</span></div><div class="line">f_num = <span class="number">10.002</span></div><div class="line">print(int(s))</div><div class="line">print(int(f_num))</div></pre></td></tr></table></figure>
-<p>outputs:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">123</div><div class="line">10</div></pre></td></tr></table></figure>
-<p>##转浮点型</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">s = <span class="string">'123.432'</span></div><div class="line">num = <span class="number">10</span></div><div class="line">print(float(s))</div><div class="line">print(float(num))</div></pre></td></tr></table></figure>
-<p>outputs:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">123.432</div><div class="line">10.0</div></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/25/从命令行禁用Ubuntu下的触摸板/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Zhu Yuexin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://i4.buimg.com/567571/fbb0ec60f25374c4.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Mr.Z's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/10/25/从命令行禁用Ubuntu下的触摸板/" itemprop="url">
-                  从命令行禁用Ubuntu下的触摸板
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-25T15:00:00+08:00">
-                2017-10-25
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Ubuntu/" itemprop="url" rel="index">
-                    <span itemprop="name">Ubuntu</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>在我的Ubuntu17.04更新到17.10并使用X.Org进入桌面后，在系统设置中找不到触摸板的禁用／启用项，无法禁用触摸板。在网上搜索后发现可以在命令行中禁用，以下是解决办法：</p>
-<h1 id="使用命令行"><a href="#使用命令行" class="headerlink" title="使用命令行"></a>使用命令行</h1><p>命令<code>xinput</code>可以查看touchpad的设备ID：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">zyx@zyx-ThundeRobot:~$ xinput</div><div class="line">⎡ Virtual core pointer                    	id=2	[master pointer  (3)]</div><div class="line">⎜   ↳ Virtual core XTEST pointer              	id=4	[slave  pointer  (2)]</div><div class="line">⎜   ↳ Razer Razer Abyssus                     	id=12	[slave  pointer  (2)]</div><div class="line">⎜   ↳ SynPS/2 Synaptics TouchPad              	id=14	[slave  pointer  (2)]</div><div class="line">⎣ Virtual core keyboard                   	id=3	[master keyboard (2)]</div><div class="line">    ↳ Virtual core XTEST keyboard             	id=5	[slave  keyboard (3)]</div><div class="line">    ↳ Video Bus                               	id=7	[slave  keyboard (3)]</div><div class="line">    ↳ Video Bus                               	id=8	[slave  keyboard (3)]</div><div class="line">    ↳ Power Button                            	id=9	[slave  keyboard (3)]</div><div class="line">    ↳ BisonCam, NB Pro: BisonCam, NB          	id=11	[slave  keyboard (3)]</div><div class="line">    ↳ Power Button                            	id=6	[slave  keyboard (3)]</div><div class="line">    ↳ Sleep Button                            	id=10	[slave  keyboard (3)]</div><div class="line">    ↳ AT Translated Set 2 keyboard            	id=13	[slave  keyboard (3)]</div></pre></td></tr></table></figure>
-<p>可以看到这里的触摸板设备ID是<strong>14</strong>，知道ID后就可以执行命令禁用设备：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">xinput disable 14</div></pre></td></tr></table></figure>
-<p>同样可以使用命令启用设备：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">xinput enable 14</div></pre></td></tr></table></figure>
-<h1 id="脚本"><a href="#脚本" class="headerlink" title="脚本"></a>脚本</h1><p>使用命令比较麻烦的话，可以写个脚本touchpad_set.sh：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">#!/bin/bash</div><div class="line">##################################################</div><div class="line">#this script is used to disable/enable the touchpad</div><div class="line">##################################################</div><div class="line">#命令xinput list-props 14可以列出触摸板的当前信息，</div><div class="line">#其中的Device Enabled (171): 1显示设备是否启用，数字1表示启用，0表示禁用。</div><div class="line"></div><div class="line">output=$(xinput list-props 14)</div><div class="line"></div><div class="line">if [[ &quot;$output&quot; =~ Device.Enabled.\(171\):.1 ]]</div><div class="line">then</div><div class="line">    xinput disable 14</div><div class="line">else</div><div class="line">    xinput enable 14</div><div class="line">fi</div></pre></td></tr></table></figure>
-<p>将脚本丢进/usr/local/bin/，添加可执行权限，就可以使用这个脚本来启用/禁用触摸板。</p>
-<h1 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h1><p>如果觉得使用脚本还是麻烦的话，可以添加到快捷键。</p>
-<p>首先用命令<code>chmod -x touchpad_set.sh</code>来去除脚本的执行权限，如果不去除执行权限，脚本将无法通过快捷键执行。</p>
-<p>然后在系统设置－&gt;设备-&gt;键盘里添加快捷键，导入这个脚本。</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1951,7 +1937,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">36</span>
+                <span class="site-state-item-count">38</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1960,7 +1946,7 @@
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-count">10</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -1969,7 +1955,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">19</span>
+                <span class="site-state-item-count">20</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

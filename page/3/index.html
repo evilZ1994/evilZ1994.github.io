@@ -260,6 +260,293 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/11/修改EditText下划线颜色样式/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Zhu Yuexin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://i4.buimg.com/567571/fbb0ec60f25374c4.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Mr.Z's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/08/11/修改EditText下划线颜色样式/" itemprop="url">
+                  修改EditText下划线颜色样式
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-11T18:02:00+08:00">
+                2017-08-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Android碎片/" itemprop="url" rel="index">
+                    <span itemprop="name">Android碎片</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="在build-gradle中添加最新的appcompat库"><a href="#在build-gradle中添加最新的appcompat库" class="headerlink" title="在build.gradle中添加最新的appcompat库"></a>在build.gradle中添加最新的appcompat库</h1><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">dependencies &#123;</div><div class="line">compile 'com.android.support:appcompat-v7:X.X.X' // X.X.X 为最新的版本号</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h1 id="让activity继承android-support-v7-app-AppCompatActivity"><a href="#让activity继承android-support-v7-app-AppCompatActivity" class="headerlink" title="让activity继承android.support.v7.app.AppCompatActivity"></a>让activity继承android.support.v7.app.AppCompatActivity</h1><h1 id="在styles-xml文件中自定义样式"><a href="#在styles-xml文件中自定义样式" class="headerlink" title="在styles.xml文件中自定义样式"></a>在styles.xml文件中自定义样式</h1><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">name</span>=<span class="string">"EditTextTheme"</span> <span class="attr">parent</span>=<span class="string">"Theme.AppCompat.Light"</span>&gt;</span><span class="xml"></span></div><div class="line">    <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"colorControlNormal"</span>&gt;</span>@color/gray_ccc<span class="tag">&lt;/<span class="name">item</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"colorControlActivated"</span>&gt;</span>@color/colorAccent<span class="tag">&lt;/<span class="name">item</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:textColorHint"</span>&gt;</span>@color/gray_ccc<span class="tag">&lt;/<span class="name">item</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div></pre></td></tr></table></figure>
+<h1 id="通过”android-theme”属性将自定义的样式应用于EditText"><a href="#通过”android-theme”属性将自定义的样式应用于EditText" class="headerlink" title="通过”android:theme”属性将自定义的样式应用于EditText"></a>通过”android:theme”属性将自定义的样式应用于EditText</h1><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">EditText</span></span></div><div class="line"><span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></div><div class="line"><span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></div><div class="line"><span class="attr">android:hint</span>=<span class="string">"Hint text"</span></div><div class="line"><span class="attr">android:theme</span>=<span class="string">"@style/EditTextTheme"</span>/&gt;</div></pre></td></tr></table></figure>
+<h1 id="如果是在-lt-android-support-design-widget-TextInputLayout-gt-下的EditText或者TextInputEditText，则需要在TextInputLayout上应用样式"><a href="#如果是在-lt-android-support-design-widget-TextInputLayout-gt-下的EditText或者TextInputEditText，则需要在TextInputLayout上应用样式" class="headerlink" title="如果是在&lt;android.support.design.widget.TextInputLayout&gt;下的EditText或者TextInputEditText，则需要在TextInputLayout上应用样式"></a>如果是在<code>&lt;android.support.design.widget.TextInputLayout&gt;</code>下的EditText或者TextInputEditText，则需要在TextInputLayout上应用样式</h1><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">android.support.design.widget.TextInputLayout</span></span></div><div class="line">    <span class="attr">app:theme</span>=<span class="string">"@style/EditTextTheme"</span></div><div class="line">    <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></div><div class="line">    <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span>&gt;</div><div class="line">    <span class="tag">&lt;<span class="name">android.support.design.widget.TextInputEditText</span></span></div><div class="line">        <span class="attr">android:id</span>=<span class="string">"@+id/register_pass"</span></div><div class="line">        <span class="attr">android:hint</span>=<span class="string">"@string/password"</span></div><div class="line">        <span class="attr">android:digits</span>=<span class="string">"@string/password_limit"</span></div><div class="line">        <span class="attr">android:inputType</span>=<span class="string">"textPassword"</span></div><div class="line">        <span class="attr">android:layout_marginTop</span>=<span class="string">"20dp"</span></div><div class="line">        <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></div><div class="line">        <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span> /&gt;</div><div class="line"><span class="tag">&lt;/<span class="name">android.support.design.widget.TextInputLayout</span>&gt;</span></div></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/11/常见用户设置页面布局/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Zhu Yuexin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://i4.buimg.com/567571/fbb0ec60f25374c4.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Mr.Z's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/08/11/常见用户设置页面布局/" itemprop="url">
+                  常见用户设置页面布局
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-11T17:48:00+08:00">
+                2017-08-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Android碎片/" itemprop="url" rel="index">
+                    <span itemprop="name">Android碎片</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>写了一个用户设置页面，这里做一个记录，作为以后的参考。布局的参数设置抽取出来写在了style文件里。</p>
+<h1 id="布局文件"><a href="#布局文件" class="headerlink" title="布局文件"></a>布局文件</h1><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version="1.0" encoding="utf-8"?&gt;</div><div class="line"><span class="tag">&lt;<span class="name">android.support.v7.widget.LinearLayoutCompat</span> <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span></span></div><div class="line">  <span class="attr">xmlns:app</span>=<span class="string">"http://schemas.android.com/apk/res-auto"</span></div><div class="line">  <span class="attr">xmlns:tools</span>=<span class="string">"http://schemas.android.com/tools"</span></div><div class="line">  <span class="attr">android:orientation</span>=<span class="string">"vertical"</span></div><div class="line">  <span class="attr">android:background</span>=<span class="string">"@color/gray_f2"</span></div><div class="line">  <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></div><div class="line">  <span class="attr">android:layout_height</span>=<span class="string">"match_parent"</span></div><div class="line">  <span class="attr">tools:context</span>=<span class="string">"com.example.lollipop.makeupapp.ui.activity.SettingActivity"</span>&gt;</div><div class="line"></div><div class="line">  <span class="tag">&lt;<span class="name">android.support.v7.widget.Toolbar</span></span></div><div class="line">  <span class="attr">android:id</span>=<span class="string">"@+id/toolbar"</span></div><div class="line">  <span class="attr">android:background</span>=<span class="string">"@color/white"</span></div><div class="line">  <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></div><div class="line">  <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span>&gt;</div><div class="line">  <span class="tag">&lt;<span class="name">FrameLayout</span></span></div><div class="line">  <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></div><div class="line">  <span class="attr">android:layout_height</span>=<span class="string">"match_parent"</span>&gt;</div><div class="line">  <span class="tag">&lt;<span class="name">android.support.v7.widget.LinearLayoutCompat</span></span></div><div class="line">  <span class="attr">android:layout_gravity</span>=<span class="string">"center_vertical"</span></div><div class="line">  <span class="attr">android:orientation</span>=<span class="string">"horizontal"</span></div><div class="line">  <span class="attr">android:gravity</span>=<span class="string">"center"</span></div><div class="line">  <span class="attr">android:layout_width</span>=<span class="string">"wrap_content"</span></div><div class="line">  <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span>&gt;</div><div class="line">  <span class="tag">&lt;<span class="name">android.support.v7.widget.AppCompatImageView</span></span></div><div class="line">  <span class="attr">app:srcCompat</span>=<span class="string">"@drawable/ic_back"</span></div><div class="line">  <span class="attr">android:layout_width</span>=<span class="string">"wrap_content"</span></div><div class="line">  <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span> /&gt;</div><div class="line">  <span class="tag">&lt;<span class="name">android.support.v7.widget.AppCompatTextView</span></span></div><div class="line">  <span class="attr">android:text</span>=<span class="string">"@string/me"</span></div><div class="line">  <span class="attr">android:layout_width</span>=<span class="string">"wrap_content"</span></div><div class="line">  <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span> /&gt;</div><div class="line">  <span class="tag">&lt;/<span class="name">android.support.v7.widget.LinearLayoutCompat</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">android.support.v7.widget.AppCompatTextView</span></span></div><div class="line">  <span class="attr">android:gravity</span>=<span class="string">"center"</span></div><div class="line">  <span class="attr">android:text</span>=<span class="string">"@string/setting"</span></div><div class="line">  <span class="attr">android:textSize</span>=<span class="string">"20sp"</span></div><div class="line">  <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></div><div class="line">  <span class="attr">android:layout_height</span>=<span class="string">"match_parent"</span> /&gt;</div><div class="line">  <span class="tag">&lt;/<span class="name">FrameLayout</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">android.support.v7.widget.Toolbar</span>&gt;</span></div><div class="line"></div><div class="line">  <span class="tag">&lt;<span class="name">android.support.v4.widget.NestedScrollView</span></span></div><div class="line">  <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></div><div class="line">  <span class="attr">android:layout_height</span>=<span class="string">"match_parent"</span>&gt;</div><div class="line">  <span class="tag">&lt;<span class="name">android.support.v7.widget.LinearLayoutCompat</span></span></div><div class="line">  <span class="attr">android:orientation</span>=<span class="string">"vertical"</span></div><div class="line">  <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></div><div class="line">  <span class="attr">android:layout_height</span>=<span class="string">"match_parent"</span>&gt;</div><div class="line">  <span class="tag">&lt;<span class="name">RelativeLayout</span> <span class="attr">android:id</span>=<span class="string">"@+id/account_manage"</span> <span class="attr">style</span>=<span class="string">"@style/wrap_layout"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">android.support.v7.widget.AppCompatTextView</span></span></div><div class="line">  <span class="attr">android:text</span>=<span class="string">"@string/account_manage"</span></div><div class="line">  <span class="attr">style</span>=<span class="string">"@style/text_style"</span> /&gt;</div><div class="line">  <span class="tag">&lt;<span class="name">android.support.v7.widget.AppCompatImageView</span> <span class="attr">style</span>=<span class="string">"@style/img_style"</span>/&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">RelativeLayout</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">RelativeLayout</span> <span class="attr">android:id</span>=<span class="string">"@+id/personal_info"</span> <span class="attr">style</span>=<span class="string">"@style/bottom_layout"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">android.support.v7.widget.AppCompatTextView</span></span></div><div class="line">  <span class="attr">android:text</span>=<span class="string">"@string/personal_info"</span></div><div class="line">  <span class="attr">style</span>=<span class="string">"@style/text_style"</span> /&gt;</div><div class="line">  <span class="tag">&lt;<span class="name">android.support.v7.widget.AppCompatImageView</span> <span class="attr">style</span>=<span class="string">"@style/img_style"</span>/&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">RelativeLayout</span>&gt;</span></div><div class="line"></div><div class="line">  <span class="tag">&lt;<span class="name">RelativeLayout</span></span></div><div class="line">  <span class="attr">android:id</span>=<span class="string">"@+id/dress_up"</span></div><div class="line">  <span class="attr">style</span>=<span class="string">"@style/wrap_layout"</span>&gt;</div><div class="line">  <span class="tag">&lt;<span class="name">android.support.v7.widget.AppCompatTextView</span></span></div><div class="line">  <span class="attr">android:text</span>=<span class="string">"@string/dress_up"</span></div><div class="line">  <span class="attr">style</span>=<span class="string">"@style/text_style"</span> /&gt;</div><div class="line">  <span class="tag">&lt;<span class="name">android.support.v7.widget.AppCompatImageView</span> <span class="attr">style</span>=<span class="string">"@style/img_style"</span>/&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">RelativeLayout</span>&gt;</span></div><div class="line"></div><div class="line">  <span class="tag">&lt;<span class="name">RelativeLayout</span> <span class="attr">android:id</span>=<span class="string">"@+id/clean_cache"</span> <span class="attr">style</span>=<span class="string">"@style/wrap_layout"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">android.support.v7.widget.AppCompatTextView</span></span></div><div class="line">  <span class="attr">android:text</span>=<span class="string">"@string/clean_cache"</span></div><div class="line">  <span class="attr">style</span>=<span class="string">"@style/text_style"</span> /&gt;</div><div class="line">  <span class="tag">&lt;<span class="name">android.support.v7.widget.AppCompatImageView</span></span></div><div class="line">  <span class="attr">android:id</span>=<span class="string">"@+id/img"</span></div><div class="line">  <span class="attr">style</span>=<span class="string">"@style/img_style"</span> /&gt;</div><div class="line">  <span class="tag">&lt;<span class="name">TextView</span></span></div><div class="line">  <span class="attr">android:id</span>=<span class="string">"@+id/cache"</span></div><div class="line">  <span class="attr">android:text</span>=<span class="string">"@string/cache_test"</span></div><div class="line">  <span class="attr">android:layout_centerVertical</span>=<span class="string">"true"</span></div><div class="line">  <span class="attr">android:layout_toStartOf</span>=<span class="string">"@id/img"</span></div><div class="line">  <span class="attr">android:layout_width</span>=<span class="string">"wrap_content"</span></div><div class="line">  <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span> /&gt;</div><div class="line">  <span class="tag">&lt;/<span class="name">RelativeLayout</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">RelativeLayout</span> <span class="attr">android:id</span>=<span class="string">"@+id/advice"</span> <span class="attr">style</span>=<span class="string">"@style/mid_layout"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">android.support.v7.widget.AppCompatTextView</span></span></div><div class="line">  <span class="attr">android:text</span>=<span class="string">"@string/advice"</span></div><div class="line">  <span class="attr">style</span>=<span class="string">"@style/text_style"</span> /&gt;</div><div class="line">  <span class="tag">&lt;<span class="name">android.support.v7.widget.AppCompatImageView</span> <span class="attr">style</span>=<span class="string">"@style/img_style"</span>/&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">RelativeLayout</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">RelativeLayout</span> <span class="attr">android:id</span>=<span class="string">"@+id/about_us"</span> <span class="attr">style</span>=<span class="string">"@style/bottom_layout"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">android.support.v7.widget.AppCompatTextView</span></span></div><div class="line">  <span class="attr">android:text</span>=<span class="string">"@string/account_manage"</span></div><div class="line">  <span class="attr">style</span>=<span class="string">"@style/text_style"</span> /&gt;</div><div class="line">  <span class="tag">&lt;<span class="name">android.support.v7.widget.AppCompatImageView</span> <span class="attr">style</span>=<span class="string">"@style/img_style"</span>/&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">RelativeLayout</span>&gt;</span></div><div class="line"></div><div class="line">  <span class="tag">&lt;<span class="name">android.support.v7.widget.AppCompatButton</span></span></div><div class="line">  <span class="attr">android:text</span>=<span class="string">"@string/exit_current_account"</span></div><div class="line">  <span class="attr">android:textColor</span>=<span class="string">"@color/red"</span></div><div class="line">  <span class="attr">android:layout_marginTop</span>=<span class="string">"40dp"</span></div><div class="line">  <span class="attr">app:theme</span>=<span class="string">"@style/LogoutButton"</span></div><div class="line">  <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></div><div class="line">  <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span> /&gt;</div><div class="line">  <span class="tag">&lt;/<span class="name">android.support.v7.widget.LinearLayoutCompat</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">android.support.v4.widget.NestedScrollView</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">android.support.v7.widget.LinearLayoutCompat</span>&gt;</span></div></pre></td></tr></table></figure>
+<h1 id="样式文件"><a href="#样式文件" class="headerlink" title="样式文件"></a>样式文件</h1><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!-- 共用样式 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">name</span>=<span class="string">"base_layout"</span>&gt;</span><span class="xml"></span></div><div class="line">  <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:clickable"</span>&gt;</span>true<span class="tag">&lt;/<span class="name">item</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:background"</span>&gt;</span>@drawable/item_click_selector<span class="tag">&lt;/<span class="name">item</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:layout_width"</span>&gt;</span>match_parent<span class="tag">&lt;/<span class="name">item</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:layout_height"</span>&gt;</span>wrap_content<span class="tag">&lt;/<span class="name">item</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:paddingStart"</span>&gt;</span>10dp<span class="tag">&lt;/<span class="name">item</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:paddingEnd"</span>&gt;</span>10dp<span class="tag">&lt;/<span class="name">item</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:paddingTop"</span>&gt;</span>10dp<span class="tag">&lt;/<span class="name">item</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:paddingBottom"</span>&gt;</span>10dp<span class="tag">&lt;/<span class="name">item</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line"><span class="comment">&lt;!-- 外层样式 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">name</span>=<span class="string">"wrap_layout"</span> <span class="attr">parent</span>=<span class="string">"base_layout"</span>&gt;</span><span class="xml"></span></div><div class="line">  <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:layout_marginTop"</span>&gt;</span>20dp<span class="tag">&lt;/<span class="name">item</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:layout_marginBottom"</span>&gt;</span>0.5dp<span class="tag">&lt;/<span class="name">item</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line"><span class="comment">&lt;!-- 中间层样式 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">name</span>=<span class="string">"mid_layout"</span> <span class="attr">parent</span>=<span class="string">"base_layout"</span>&gt;</span><span class="xml"></span></div><div class="line">  <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:layout_marginBottom"</span>&gt;</span>0.5dp<span class="tag">&lt;/<span class="name">item</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line"><span class="comment">&lt;!-- 底层样式 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">name</span>=<span class="string">"bottom_layout"</span> <span class="attr">parent</span>=<span class="string">"base_layout"</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line"><span class="comment">&lt;!-- 文本样式 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">name</span>=<span class="string">"text_style"</span>&gt;</span><span class="xml"></span></div><div class="line">  <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:layout_width"</span>&gt;</span>wrap_content<span class="tag">&lt;/<span class="name">item</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:layout_height"</span>&gt;</span>wrap_content<span class="tag">&lt;/<span class="name">item</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:textSize"</span>&gt;</span>18sp<span class="tag">&lt;/<span class="name">item</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:layout_alignParentStart"</span>&gt;</span>true<span class="tag">&lt;/<span class="name">item</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:layout_centerVertical"</span>&gt;</span>true<span class="tag">&lt;/<span class="name">item</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line"><span class="comment">&lt;!-- 图标样式 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">name</span>=<span class="string">"img_style"</span>&gt;</span><span class="xml"></span></div><div class="line">  <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:layout_width"</span>&gt;</span>wrap_content<span class="tag">&lt;/<span class="name">item</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:layout_height"</span>&gt;</span>wrap_content<span class="tag">&lt;/<span class="name">item</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:layout_alignParentEnd"</span>&gt;</span>true<span class="tag">&lt;/<span class="name">item</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:layout_centerVertical"</span>&gt;</span>true<span class="tag">&lt;/<span class="name">item</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:src"</span>&gt;</span>@drawable/ic_next<span class="tag">&lt;/<span class="name">item</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div></pre></td></tr></table></figure>
+<h1 id="点击效果"><a href="#点击效果" class="headerlink" title="点击效果"></a>点击效果</h1><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version="1.0" encoding="utf-8"?&gt;</div><div class="line"><span class="tag">&lt;<span class="name">selector</span> <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">item</span> <span class="attr">android:drawable</span>=<span class="string">"@color/white"</span> <span class="attr">android:state_pressed</span>=<span class="string">"false"</span>/&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">item</span> <span class="attr">android:drawable</span>=<span class="string">"@color/gray_f2"</span> <span class="attr">android:state_pressed</span>=<span class="string">"true"</span> /&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">selector</span>&gt;</span></div></pre></td></tr></table></figure>
+<h1 id="页面预览"><a href="#页面预览" class="headerlink" title="页面预览"></a>页面预览</h1><p><img src="https://ws1.sinaimg.cn/large/e3417548gy1fifxomg9sqj20u01hc0vo.jpg" alt=""></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/11/在Fragment中嵌套ViewPager时，内部Fragment不显示且滑动不流畅/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1405,315 +1692,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/30/对不同平台版本的支持/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Zhu Yuexin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://i4.buimg.com/567571/fbb0ec60f25374c4.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Mr.Z's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/03/30/对不同平台版本的支持/" itemprop="url">
-                  对不同平台版本的支持
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-30T21:17:00+08:00">
-                2017-03-30
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Android碎片/" itemprop="url" rel="index">
-                    <span itemprop="name">Android碎片</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Android系统版本不断的在更新，最新的版本可以提供更好的APIs，但是在更多的设备更新之前，仍然需要在app中对旧版本提供支持。</p>
-<p>Google提供了一个仪表盘显示不同Android版本以及不同屏幕尺寸的设备的相对数量：<a href="https://developer.android.google.cn/about/dashboards/index.html" target="_blank" rel="external">dashboard</a></p>
-<h1 id="指定最低和目标API-Level"><a href="#指定最低和目标API-Level" class="headerlink" title="指定最低和目标API Level"></a>指定最低和目标API Level</h1><p><strong>AndroidManifest.xml</strong>文件描述了你的app细节并且确认该app支持的Android版本。特别是<strong><uses-sdk></uses-sdk></strong>标签中<strong>minSdkVersion</strong>和<strong>targetSdkVersion</strong>这两个属性确定了你的app兼容的最低API和最高API。</p>
-<p>例如：</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">manifest</span> <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span> <span class="attr">...</span> &gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">uses-sdk</span> <span class="attr">android:minSdkVersion</span>=<span class="string">"4"</span> <span class="attr">android:targetSdkVersion</span>=<span class="string">"15"</span> /&gt;</span></div><div class="line">    ...</div><div class="line"><span class="tag">&lt;/<span class="name">manifest</span>&gt;</span></div></pre></td></tr></table></figure>
-<p>当最新的Android版本发布时，一些样式和行为可能发生更改。为了允许你的app能够使用这些更改并确保你的app能够适配每个用户设备的样式，你应该将<strong>targetSdkVersion</strong>的值设置为可用的最新的Android版本。</p>
-<h1 id="在运行时检查系统版本"><a href="#在运行时检查系统版本" class="headerlink" title="在运行时检查系统版本"></a>在运行时检查系统版本</h1><p>Android在<a href="https://developer.android.google.cn/reference/android/os/Build.html" target="_blank" rel="external">Build</a>常量类中为每个平台版本提供了一个唯一的code。在你的app中使用这些code构建条件语句来确保依赖于更高版本API的代码仅能在这些API能适用于当前系统的条件下才能够运行。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">setUpActionBar</span><span class="params">()</span> </span>&#123;</div><div class="line">    <span class="comment">// Make sure we're running on Honeycomb or higher to use ActionBar APIs</span></div><div class="line">    <span class="keyword">if</span> (Build.VERSION.SDK_INT &gt;= Build.VERSION_CODES.HONEYCOMB) &#123;</div><div class="line">        ActionBar actionBar = getActionBar();</div><div class="line">        actionBar.setDisplayHomeAsUpEnabled(<span class="keyword">true</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<blockquote>
-<p>注意：当解析XML资源的时候，Android会忽略掉当前设备不支持的XML属性。所以你可以安全的使用只被更新的版本支持的XML属性而不必担心旧版本遇到这些代码时会中断。举个例子，如果你设置<strong>targetSdkVersion=11</strong>，你的app包含Android 3.0以及更高版本默认的ActionBar。为了继续给action bar添加menu item，你需要在你的XML文件menu中设置<strong>android:showAsAction=”ifRoom”</strong>。在跨版本的XML文件中这样做是安全的，因为Android旧版本简单的忽略<strong>showAsAction</strong>这个属性（所以，你不需要在<em>res/menu-v11/</em>中有版本区分）。</p>
-</blockquote>
-<h1 id="使用平台样式和主题"><a href="#使用平台样式和主题" class="headerlink" title="使用平台样式和主题"></a>使用平台样式和主题</h1><p>Android提供用户体验主题，为应用程序提供底层操作系统的外观和感觉。这些主题可以通过manifest文件应用到你的app中。通过使用样式和主题的构建，你的app会自然的体现Android每个新版本的外观和感觉。</p>
-<p>使你的activity看起来像一个对话框：</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">activity</span> <span class="attr">android:theme</span>=<span class="string">"@android:style/Theme.Dialog"</span>&gt;</span></div></pre></td></tr></table></figure>
-<p>使你的activity有透明的背景：</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">activity</span> <span class="attr">android:theme</span>=<span class="string">"@android:style/Theme.Translucent"</span>&gt;</span></div></pre></td></tr></table></figure>
-<p>应用你在<em>/res/values/styles.xml</em>中自定义的主题：</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">activity</span> <span class="attr">android:theme</span>=<span class="string">"@style/CustomTheme"</span>&gt;</span></div></pre></td></tr></table></figure>
-<p>应用一个主题到你的整个app（所有的activity），添加<em>android:theme</em>属性到<em><application></application></em>标签：</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">application</span> <span class="attr">android:theme</span>=<span class="string">"@style/CustomTheme"</span>&gt;</span></div></pre></td></tr></table></figure>
-<p>更多关于主题构建和使用:<a href="https://developer.android.google.cn/guide/topics/ui/themes.html" target="_blank" rel="external">Styles and Themes guide</a></p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/30/Android国际化语言支持/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Zhu Yuexin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://i4.buimg.com/567571/fbb0ec60f25374c4.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Mr.Z's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/03/30/Android国际化语言支持/" itemprop="url">
-                  Android国际化语言支持
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-30T21:00:00+08:00">
-                2017-03-30
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Android碎片/" itemprop="url" rel="index">
-                    <span itemprop="name">Android碎片</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>在Android开发中，应该尽量将UI中的字符串存放在资源文件中（<em>res/values/strings.xml</em>）。</p>
-<h1 id="支持不同语言"><a href="#支持不同语言" class="headerlink" title="支持不同语言"></a>支持不同语言</h1><p>如果需要添加对更多语言的支持，需要在res下创建额外的values目录，并在目录名称末尾加上连字符和ISO语言代码。例如，<em>values-es/</em>目录包含的简单资源用于语言代码为”es”的语言区域。Android根据运行时设备的语言区域设置加载相应的资源。</p>
-<p>一旦决定了为哪些语言提供支持，便可创建资源子目录和字符串资源文件。例如：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">MyProject/</div><div class="line">    res/</div><div class="line">       values/</div><div class="line">           strings.xml</div><div class="line">       values-es/</div><div class="line">           strings.xml</div><div class="line">       values-fr/</div><div class="line">           strings.xml</div></pre></td></tr></table></figure>
-<p>英语（默认语言区域），<code>/values/strings.xml</code>：</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version="1.0" encoding="utf-8"?&gt;</div><div class="line"><span class="tag">&lt;<span class="name">resources</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">string</span> <span class="attr">name</span>=<span class="string">"title"</span>&gt;</span>My Application<span class="tag">&lt;/<span class="name">string</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">string</span> <span class="attr">name</span>=<span class="string">"hello_world"</span>&gt;</span>Hello World!<span class="tag">&lt;/<span class="name">string</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">resources</span>&gt;</span></div></pre></td></tr></table></figure>
-<p>西班牙语，<code>/values-es/strings.xml</code>：</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version="1.0" encoding="utf-8"?&gt;</div><div class="line"><span class="tag">&lt;<span class="name">resources</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">string</span> <span class="attr">name</span>=<span class="string">"title"</span>&gt;</span>Mi Aplicación<span class="tag">&lt;/<span class="name">string</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">string</span> <span class="attr">name</span>=<span class="string">"hello_world"</span>&gt;</span>Hola Mundo!<span class="tag">&lt;/<span class="name">string</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">resources</span>&gt;</span></div></pre></td></tr></table></figure>
-<p>法语，<code>/values-fr/strings.xml</code>：</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version="1.0" encoding="utf-8"?&gt;</div><div class="line"><span class="tag">&lt;<span class="name">resources</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">string</span> <span class="attr">name</span>=<span class="string">"title"</span>&gt;</span>Mon Application<span class="tag">&lt;/<span class="name">string</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">string</span> <span class="attr">name</span>=<span class="string">"hello_world"</span>&gt;</span>Bonjour le monde !<span class="tag">&lt;/<span class="name">string</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">resources</span>&gt;</span></div></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1763,7 +1741,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">36</span>
+                <span class="site-state-item-count">38</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1772,7 +1750,7 @@
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-count">10</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -1781,7 +1759,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">19</span>
+                <span class="site-state-item-count">20</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
