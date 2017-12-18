@@ -280,168 +280,57 @@
 
 <!-- Layouts -->
 
-    <!-- Post Module -->
-    <div class="material-post_container">
+    <!-- Tags Cloud -->
+    <style>
+    #bottom{
+        position: relative;
+    }
 
-        <div class="material-post mdl-grid">
-            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+    @media screen and (max-width: 480px) {
+        .material-tagscloud{
+            margin: 6em 2em 0;
+        }
+    }
 
-                <!-- Post Header(Thumbnail & Title) -->
-                
-    <!-- Paradox Post Header -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-            <script type="text/ls-javascript" id="post-thumbnail-script">
-    var randomNum = Math.floor(Math.random() * 19 + 1);
+    .material-tagscloud a{
+        text-decoration:none;
+        padding: 1px 9px;
+        margin: 9px 1px;
+        line-height: 40px;
+        white-space: nowrap;
+        transition: .6s;
+        opacity: .85;
+    }
 
-    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
-    $('.post_thumbnail-random').addClass('lazy');
+    .material-tagscloud a:hover{
+        transition: .6s;
+        opacity: 1;
+        background: #FAFAFA;
+        box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);
+    }
+</style>
+
+<div class=" material-tagscloud">
+    <div class="material-post mdl-grid">
+        <a href="/tags/EditText/" style="font-size: 16px; color: #757575">EditText</a> <a href="/tags/Label-Enhancement/" style="font-size: 19.8px; color: #646464">Label Enhancement</a> <a href="/tags/Multi-Label/" style="font-size: 19.8px; color: #646464">Multi-Label</a> <a href="/tags/activity/" style="font-size: 16px; color: #757575">activity</a> <a href="/tags/android/" style="font-size: 35px; color: #212121">android</a> <a href="/tags/bat/" style="font-size: 16px; color: #757575">bat</a> <a href="/tags/button/" style="font-size: 19.8px; color: #646464">button</a> <a href="/tags/java/" style="font-size: 27.4px; color: #434343">java</a> <a href="/tags/platform/" style="font-size: 16px; color: #757575">platform</a> <a href="/tags/python/" style="font-size: 31.2px; color: #323232">python</a> <a href="/tags/shell/" style="font-size: 16px; color: #757575">shell</a> <a href="/tags/sublime-text/" style="font-size: 16px; color: #757575">sublime_text</a> <a href="/tags/ubuntu/" style="font-size: 23.6px; color: #535353">ubuntu</a> <a href="/tags/version/" style="font-size: 16px; color: #757575">version</a> <a href="/tags/virtualenv/" style="font-size: 16px; color: #757575">virtualenv</a> <a href="/tags/机器学习/" style="font-size: 16px; color: #757575">机器学习</a> <a href="/tags/深度学习/" style="font-size: 16px; color: #757575">深度学习</a> <a href="/tags/错误解决/" style="font-size: 16px; color: #757575">错误解决</a> <a href="/tags/页面布局/" style="font-size: 16px; color: #757575">页面布局</a>
+    </div>
+</div>
+
+
+<script type="text/ls-javascript" id="page-tagcloud-script">
+    var adjustFooter = function() {
+        if( ($('#bottom').offset().top + $('#bottom').outerHeight() ) < $(window).height() ) {
+            var footerBottom = $(window).height() - $('#bottom').outerHeight() - $('#bottom').offset().top;
+            $('#bottom').css('bottom', '-' + footerBottom + 'px');
+        }
+    };
+
+    $(document).ready(function() {
+        adjustFooter();
+    });
 </script>
 
-        
-    
-            <p class="article-headline-p">
-                tags
-            </p>
-        </div>
 
-
-
-
-
-                
-                    <!-- Paradox Post Info -->
-                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
-
-    <!-- Author Avatar -->
-    <div id="author-avatar">
-        <img src="/img/avatar.gif" width="44px" height="44px" alt="Author Avatar"/>
-    </div>
-    <!-- Author Name & Date -->
-    <div>
-        <strong>Zhu Yuexin</strong>
-        <span>Mar 22, 2017</span>
-    </div>
-
-    <div class="section-spacer"></div>
-
-    <!-- Favorite -->
-    <!--
-        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
-            <i class="material-icons" role="presentation">favorite</i>
-            <span class="visuallyhidden">favorites</span>
-        </button>
-    -->
-
-    <!-- Qrcode -->
-    
-
-    <!-- Tags (bookmark) -->
-    
-    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
-        <i class="material-icons" role="presentation">bookmark</i>
-        <span class="visuallyhidden">bookmark</span>
-    </button>
-    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
-        <li class="mdl-menu__item">
-        
-    </ul>
-    
-
-    <!-- Share -->
-    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
-    <i class="material-icons" role="presentation">share</i>
-    <span class="visuallyhidden">share</span>
-</button>
-<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
-    
-
-    
-
-    <!-- Share Weibo -->
-    
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=tags&url=http://yoursite.com/tags/index.html&pic=&searchPic=false&style=simple" target="_blank">
-            <li class="mdl-menu__item">
-                Share to Weibo
-            </li>
-        </a>
-    
-
-    <!-- Share Twitter -->
-    
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=tags&url=http://yoursite.com/tags/index.html&via=Zhu Yuexin" target="_blank">
-            <li class="mdl-menu__item">
-                Share to Twitter
-            </li>
-        </a>
-    
-
-    <!-- Share Facebook -->
-    
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/tags/index.html" target="_blank">
-            <li class="mdl-menu__item">
-                Share to Facebook
-            </li>
-        </a>
-    
-
-    <!-- Share Google+ -->
-    
-        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com/tags/index.html" target="_blank">
-            <li class="mdl-menu__item">
-                Share to Google+
-            </li>
-        </a>
-    
-
-    <!-- Share LinkedIn -->
-    
-
-    <!-- Share QQ -->
-    
-
-    <!-- Share Telegram -->
-    
-</ul>
-
-</div>
-
-                
-
-                <!-- Post Content -->
-                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
-    
-        
-    
-
-    
-</div>
-
-
-                
-
-                <!-- Post Comments -->
-                
-                    
-                
-            </div>
-
-            <!-- Post Prev & Next Nav -->
-            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
-    <!-- Prev Nav -->
-    
-
-    <!-- Section Spacer -->
-    <div class="section-spacer"></div>
-
-    <!-- Next Nav -->
-    
-</nav>
-
-        </div>
-    </div>
 
 
 
