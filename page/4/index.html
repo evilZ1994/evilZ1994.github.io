@@ -1,1849 +1,1069 @@
-<!doctype html>
+<!DOCTYPE html>
+<html style="display: none;" lang="zh">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.4.0 -->
+    <script>window.materialVersion = "1.4.0"</script>
 
+    <!-- Title -->
+    
+    <title>
+        
+        Mr.Z&#39;s Blog
+    </title>
 
-
-  
-
-
-<html class="theme-next mist use-motion" lang="zh-Hans">
-<head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
-
-
-
-
-  
-  
-  
-  
-
-  
+    <!-- dns prefetch -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
     
     
-  
-
-  
-
-  
-
-  
-
-  
-
-  
     
     
-    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-  
+    
+    
+    
+    
+    
+    
+
+    <!-- Meta & Info -->
+    <meta http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="theme-color" content="#0097A7">
+    <meta name="author" content="Zhu Yuexin">
+    <meta name="description" itemprop="description" content="呀！发现一只会写代码的猪！">
+    <meta name="keywords" content="null">
+
+    <!-- Site Verification -->
+    
+    
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/favicon.png">
+    <link rel="icon" sizes="192x192" href="/img/favicon.png">
+    <link rel="apple-touch-icon" href="/img/favicon.png">
+
+    <!--iOS -->
+    <meta name="apple-mobile-web-app-title" content="Title">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="480">
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Mr.Z&#39;s Blog">
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="http://yoursite.com">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="Mr.Z&#39;s Blog">
+    <meta property="og:image" content="/img/favicon.png" />
+    <meta property="og:description" content="呀！发现一只会写代码的猪！">
+    
+
+    
+
+    <!-- The Twitter Card protocol -->
+    <meta name="twitter:title" content="Mr.Z&#39;s Blog">
+    <meta name="twitter:description" content="呀！发现一只会写代码的猪！">
+    <meta name="twitter:image" content="/img/favicon.png">
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="http://yoursite.com" />
+
+    <!-- Add canonical link for SEO -->
+    
+        <link rel="canonical" href="http://yoursite.com/page/4/index.html" />
+    
+
+    <!-- Structured-data for SEO -->
+    
+        
 
 
 
+    
 
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
 
+        
+            <script src="/js/ie-blocker.en.js"></script>
+        
+    <![endif]-->
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+    <!-- Import lsloader -->
+    <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(key){try{localStorage.removeItem(key)}catch(e){}};lsloader.setLS=function(key,val){try{localStorage.setItem(key,val)}catch(e){}};lsloader.getLS=function(key){var val="";try{val=localStorage.getItem(key)}catch(e){val=""}return val};versionString="/*"+materialVersion+"*/";lsloader.clean=function(){try{var keys=[];for(var i=0;i<localStorage.length;i++){keys.push(localStorage.key(i))}keys.forEach(function(key){var data=lsloader.getLS(key);if(data&&data.indexOf(versionString)===-1){lsloader.removeLS(key)}})}catch(e){}};lsloader.clean();lsloader.load=function(jsname,jspath,cssonload){cssonload=cssonload||function(){};var code;code=this.getLS(jsname);if(code&&code.indexOf(versionString)===-1){this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload);return}if(code){var versionNumber=code.split(versionString)[0];if(versionNumber!=jspath){console.log("reload:"+jspath);this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload);return}code=code.split(versionString)[1];if(/\.js?.+$/.test(versionNumber)){this.jsRunSequence.push({name:jsname,code:code});this.runjs(jspath,jsname,code)}else{document.getElementById(jsname).appendChild(document.createTextNode(code));cssonload()}}else{this.requestResource(jsname,jspath,cssonload)}};lsloader.requestResource=function(name,path,cssonload){var that=this;if(/\.js?.+$/.test(path)){this.iojs(path,name,function(path,name,code){that.setLS(name,path+versionString+code);that.runjs(path,name,code)})}else if(/\.css?.+$/.test(path)){this.iocss(path,name,function(code){document.getElementById(name).appendChild(document.createTextNode(code));that.setLS(name,path+versionString+code)},cssonload)}};lsloader.iojs=function(path,jsname,callback){var that=this;that.jsRunSequence.push({name:jsname,code:""});try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(path,jsname,xhr.response);return}}that.jsfallback(path,jsname)}};xhr.send(null)}catch(e){that.jsfallback(path,jsname)}};lsloader.iocss=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.iofonts=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.runjs=function(path,name,code){if(!!name&&!!code){for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code=code}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var script=document.createElement("script");script.appendChild(document.createTextNode(this.jsRunSequence[0].code));script.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(script);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var that=this;var script=document.createElement("script");script.src=this.jsRunSequence[0].path;script.type="text/javascript";this.jsRunSequence[0].status="loading";script.onload=function(){that.jsRunSequence.shift();if(that.jsRunSequence.length>0){that.runjs()}};document.body.appendChild(script)}};lsloader.tagLoad=function(path,name){this.jsRunSequence.push({name:name,code:"",path:path,status:"failed"});this.runjs()};lsloader.jsfallback=function(path,name){if(!!this.jsnamemap[name]){return}else{this.jsnamemap[name]=name}for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code="";this.jsRunSequence[k].status="failed";this.jsRunSequence[k].path=path}}this.runjs()};lsloader.cssfallback=function(path,name,cssonload){if(!!this.cssnamemap[name]){return}else{this.cssnamemap[name]=1}var link=document.createElement("link");link.type="text/css";link.href=path;link.rel="stylesheet";link.onload=link.onerror=cssonload;var root=document.getElementsByTagName("script")[0];root.parentNode.insertBefore(link,root)};lsloader.runInlineScript=function(scriptId,codeId){var code=document.getElementById(codeId).innerText;this.jsRunSequence.push({name:scriptId,code:code});this.runjs()};lsloader.loadCombo=function(jslist){var updateList="";var requestingModules={};for(var k in jslist){var LS=this.getLS(jslist[k].name);if(!!LS){var version=LS.split(versionString)[0];var code=LS.split(versionString)[1]}else{var version=""}if(version==jslist[k].path){this.jsRunSequence.push({name:jslist[k].name,code:code,path:jslist[k].path})}else{this.jsRunSequence.push({name:jslist[k].name,code:null,path:jslist[k].path,status:"comboloading"});requestingModules[jslist[k].name]=true;updateList+=(updateList==""?"":";")+jslist[k].path}}var that=this;if(!!updateList){var xhr=new XMLHttpRequest;xhr.open("get",combo+updateList,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){that.runCombo(xhr.response,requestingModules);return}}else{for(var i in that.jsRunSequence){if(requestingModules[that.jsRunSequence[i].name]){that.jsRunSequence[i].status="failed"}}that.runjs()}}};xhr.send(null)}this.runjs()};lsloader.runCombo=function(comboCode,requestingModules){comboCode=comboCode.split("/*combojs*/");comboCode.shift();for(var k in this.jsRunSequence){if(!!requestingModules[this.jsRunSequence[k].name]&&!!comboCode[0]){this.jsRunSequence[k].status="comboJS";this.jsRunSequence[k].code=comboCode[0];this.setLS(this.jsRunSequence[k].name,this.jsRunSequence[k].path+versionString+comboCode[0]);comboCode.shift()}}this.runjs()}})();</script>
 
-<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
-
-
-  <meta name="keywords" content="Hexo, NexT" />
-
-
-
-
-
-
-
-
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
-
-
-
-
-
-
-<meta name="description" content="呀！发现一只会写代码的猪！">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Mr.Z's Blog">
-<meta property="og:url" content="http://yoursite.com/page/4/index.html">
-<meta property="og:site_name" content="Mr.Z's Blog">
-<meta property="og:description" content="呀！发现一只会写代码的猪！">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Mr.Z's Blog">
-<meta name="twitter:description" content="呀！发现一只会写代码的猪！">
-
-
-
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Mist',
-    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
-    fancybox: true,
-    motion: true,
-    duoshuo: {
-      userId: '0',
-      author: '博主'
-    },
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    <!-- Import CSS & jQuery -->
+    
+        <style id="css/material.min.css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("css/material.min.css","/css/material.min.css?fJTiM/K1J3dWIruo3pxtAw==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";})</script>
+        <style id="css/style.min.css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("css/style.min.css","/css/style.min.css?oCSEO3ST+aEypEwttTDI9g==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";})</script>
+        
+        
+            <style>
+    
+    .footer-sns-facebook {
+        background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0OCIgaGVpZ2h0PSI0OCIgY2xhc3M9Imljb24iIHZpZXdCb3g9IjAgMCAxMDI0IDEwMjQiPjxwYXRoIGQ9Ik0xMzguNiA3OGMtMjIuNCA1LjItNTUuOCA0MC4yLTYwLjYgNjMuNC0xLjQgNi40LTIgMTI5LjgtMS42IDM2Ny42LjYgMjk4LjYgMSAzNTguOCAzLjQgMzYzIDExIDIwLjIgMjEuNiAzMi40IDM3LjIgNDMgMTUgMTAuMiAxNy40IDExLjIgMzMgMTMgMTEuMiAxLjQgMTM2IDIgMzY1IDEuNiAzMTQtLjYgMzQ4LjYtMSAzNTUtMy44IDE1LjgtNy4yIDMzLjgtMjIgNDMuMi0zNS40IDUuMi03LjQgMTAuOC0xNi42IDEyLjYtMjAuNCAyLjgtNi40IDMuMi00MC44IDMuOC0zNTQgLjQtMjIzLS4yLTM1My40LTEuNC0zNjUtMi0xNy0yLjYtMTguNi0xMy0zNC04LjYtMTIuNi0xNC4yLTE4LjQtMjUuMi0yNS44LTcuOC01LjQtMTcuNC0xMS0yMS42LTEyLjQtNi0yLjItNzIuOC0yLjYtMzY1LjQtMi42LTE5Ni44LjItMzYxIC44LTM2NC40IDEuOHptNjU3LjYgODcuOGw0LjggMy44djU1LjJjMCA1NC42IDAgNTUuMi00LjYgNTkuNi00LjQgNC40LTYgNC42LTUwLjIgNS42bC00NS42IDEtNy4yIDUuNmMtMTAuNCA4LTE2LjggMTcuMi0xOS4yIDI3LjQtMSA1LTEuOCAyNC44LTEuOCA0NCAuMiAzOCAxLjYgNDQuNiAxMC44IDQ4IDIuOCAxLjIgMjguNCAyIDU2LjggMiA0Ny44IDAgNTIgLjIgNTYuMiAzLjhsNC44IDMuOHY1NS4yYzAgNTQuNiAwIDU1LjItNC42IDU5LjYtNC40IDQuNi01LjQgNC42LTU3IDUuMi0yOC44LjItNTQuNC44LTU2LjggMS40LTIuNC42LTUuNiAzLTYuOCA1LjQtMS44IDMuMi0yLjQgNDEuNC0yLjYgMTQzLjJsLS4yIDEzOC44LTUuNiA0LjgtNS42IDQuOEg2MDljLTUyLjQgMC01Mi44IDAtNTguMi00LjZsLTUuNC00LjYtLjItMTQwLjYtLjItMTQwLjYtNC44LTMuOGMtNC4yLTMuNC04LTMuOC0zNS42LTMuOC0zMi44IDAtNDEtMS44LTQzLjYtMTAtLjYtMi4yLTEuMi0yNS40LTEuMi01MS40IDAtNjAuOC0uMi01NyAzLjQtNjEuNiAyLjgtMy42IDYtNCAzNy44LTUgMzMtMSAzNS4yLTEuMiAzOS40LTUuNiA0LjYtNC40IDQuNi01LjIgNS44LTcxIDEuMi03My40LjItNjcuMiAxNi42LTk5LjQgOC0xNS44IDEyLjgtMjIgMjgtMzcgMTUuMi0xNS4yIDIxLjQtMTkuNiAzOC4yLTI4IDExLTUuNCAyNC0xMSAyOS0xMi4yIDYuMi0xLjggMjguNi0yLjYgNzEuMi0yLjYgNTguNi0uMiA2Mi42IDAgNjcgMy42eiIvPjwvc3ZnPg==);
     }
-  };
-</script>
+    
+    
+    .footer-sns-twitter {
+        background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0OCIgaGVpZ2h0PSI0OCIgY2xhc3M9Imljb24iIHZpZXdCb3g9IjAgMCAxMDI0IDEwMjQiPjxwYXRoIGQ9Ik0xMzguNiA3OGMtMjIuNCA1LjItNTUuOCA0MC4yLTYwLjYgNjMuNC0xLjQgNi40LTIgMTI5LjgtMS42IDM2Ny42LjYgMjk4LjYgMSAzNTguOCAzLjQgMzYzIDExIDIwLjIgMjEuNiAzMi40IDM3LjIgNDMgMTUgMTAuMiAxNy40IDExLjIgMzMgMTMgMTEuMiAxLjQgMTM2IDIgMzY1IDEuNiAzMTQtLjYgMzQ4LjYtMSAzNTUtMy44IDE1LjgtNy4yIDMzLjgtMjIgNDMuMi0zNS40IDUuMi03LjQgMTAuOC0xNi42IDEyLjYtMjAuNCAyLjgtNi40IDMuMi00MC44IDMuOC0zNTQgLjQtMjIzLS4yLTM1My40LTEuNC0zNjUtMi0xNy0yLjYtMTguNi0xMy0zNC04LjYtMTIuNi0xNC4yLTE4LjQtMjUuMi0yNS44LTcuOC01LjQtMTcuNC0xMS0yMS42LTEyLjQtNi0yLjItNzIuOC0yLjYtMzY1LjQtMi42LTE5Ni44LjItMzYxIC44LTM2NC40IDEuOHptNTMyLjggMjA1YzEwIDQgMjMgMTAuOCAyOC44IDE1LjIgMTIuNiA5LjIgMTYuNiAxMC42IDI5LjQgOS40IDYuNi0uNiAxMy0zLjIgMjAuNC04LjIgMTEuMi03LjYgMTkuNC05LjIgMjMuNi01IDMuNiAzLjYgMi44IDktMi44IDE4LjYtNy4yIDEyLjQtNiAxOC44IDQuMiAyNC4yIDQuNCAyLjIgOC4yIDUuNiA4LjYgNy40IDEgNC44LTEyLjYgMjQuMi0yMiAzMS44LTExLjggOS4yLTE3LjIgMjIuNi0xOS42IDQ3LjgtNC44IDUwLjQtNy44IDY2LjYtMTYuNCA4NS40LTMgNy03IDE3LjgtOC44IDI0LTEuOCA2LjQtNSAxNC42LTcuNCAxOC40LTIuMiAzLjgtNy40IDEzLTExLjQgMjAuNC0xNy4yIDMwLjgtNDMuNCA2MS40LTcxLjQgODMuOC0yNS42IDIwLjQtNDYgMzMuMi02NC4yIDQwLjItOC40IDMuMi0xOCA3LjYtMjEuNCA5LjYtNy40IDQuNi0yMi40IDguNi01Ny4yIDE1LTYyLjIgMTEuNi03OS4yIDExLjQtMTM1LjYtMS0zMi40LTctMzguNi05LTUyLTE2LjgtMjEuNC0xMi42LTI0LjItMTQuOC0yNC4yLTE5LjQgMC02LjIgMTAuMi05LjIgMzUtMTAuNCAyMi40LTEgMjguNi0yLjYgNTctMTQuMiAyMy44LTkuOCAyOS40LTEyLjggMzAuNC0xNi44IDIuMi04LjItMy0xMy4yLTI2LjgtMjUuNC0yNS44LTEzLjItMzIuMi0xOC40LTQzLjgtMzUuOC05LTEzLjYtMTAtMjEuMi0zLjYtMzMuNiA1LjQtMTAuOCAzLjYtMTUtMTEuOC0yNS40LTktNi0xNC0xMS42LTIwLjgtMjIuNi0yMy40LTM3LjgtMjUtNTAuOC03LjItNTkuOCA0LjgtMi40IDkuNC01LjQgMTAuMi02LjYgMi44LTQuMi0uNC0xNS42LTguNC0yOS0xMS42LTE5LjYtMTMuMi0yNS44LTEzLjItNTUuMiAwLTI4LjggMi42LTM3LjggMTItNDAuMiA5LTIuMiAxNC44IDEgMzUuNiAyMC4yIDI0LjggMjIuOCA0My42IDM2LjYgNjIuOCA0NS44IDggMy44IDE3LjggOS4yIDIyIDEyIDQuMiAyLjggMTQuOCA3IDIzLjQgOS4yIDguNiAyLjIgMjQuMiA2LjggMzQuOCAxMC4yIDEzLjQgNC40IDIzLjYgNi40IDMzIDYuNiAxMi44LjIgMTQuMi0uMiAxOC42LTUuNCA0LTQuOCA0LjgtNy44IDQuOC0xOS4yIDAtMTQuNCA1LjYtMzkuNiAxMS4yLTUwLjYgNC4yLTguNCAyOS4yLTM0LjIgMzkuOC00MS40IDcuOC01LjQgMzUuNi0xNiA1Mi0yMCAxNC4yLTMuNiAzMi42LTEuMiA1Mi40IDYuOHoiLz48L3N2Zz4=);
+    }
+    
+    
+    .footer-sns-gplus {
+        background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0OCIgaGVpZ2h0PSI0OCIgY2xhc3M9Imljb24iIHZpZXdCb3g9IjAgMCAxMDI0IDEwMjQiPjxwYXRoIGQ9Ik0xMzguNiA3OGMtMjIuNCA1LjItNTUuOCA0MC4yLTYwLjYgNjMuNC0xLjQgNi40LTIgMTI5LjgtMS42IDM2Ny42LjYgMjk4LjYgMSAzNTguOCAzLjQgMzYzIDExIDIwLjIgMjEuNiAzMi40IDM3LjIgNDMgMTUgMTAuMiAxNy40IDExLjIgMzMgMTMgMTEuMiAxLjQgMTM2IDIgMzY1IDEuNiAzMTQtLjYgMzQ4LjYtMSAzNTUtMy44IDE1LjgtNy4yIDMzLjgtMjIgNDMuMi0zNS40IDUuMi03LjQgMTAuOC0xNi42IDEyLjYtMjAuNCAyLjgtNi40IDMuMi00MC44IDMuOC0zNTQgLjQtMjIzLS4yLTM1My40LTEuNC0zNjUtMi0xNy0yLjYtMTguNi0xMy0zNC04LjYtMTIuNi0xNC4yLTE4LjQtMjUuMi0yNS44LTcuOC01LjQtMTcuNC0xMS0yMS42LTEyLjQtNi0yLjItNzIuOC0yLjYtMzY1LjQtMi42LTE5Ni44LjItMzYxIC44LTM2NC40IDEuOHpNNDMwIDI5NS40YzQwLjYgMTUuNCA1Ni42IDIzLjggNzIuNiAzOC40IDYuOCA2LjIgNy4yIDE1LjIgMSAyMy40LTYuMiA4LTMzLjYgMzMuOC0zOSAzNi42LTUuNiAyLjgtMTcuNiAyLjgtMjMuMi0uMi0yLjQtMS4yLTguMi01LjItMTMtOC44LTExLjItOC42LTI0LjYtMTEuMi01NS4yLTExLjItMjcuNCAwLTQwLjYgMi42LTUyLjIgMTAuNC00LjQgMi44LTEyLjIgNy42LTE3LjIgMTAuNi0yMyAxMy4yLTUxLjQgNTUtNTUuOCA4Mi40LTIuNiAxNS42LTIuNCAzNC44LjIgNTEgMi44IDE3LjQgMTkuOCA0OC44IDM1LjIgNjUuMiAxNiAxNi42IDQ1IDMzLjYgNjIuOCAzNi42IDI2LjggNC40IDY1LjggMS42IDc5LjQtNS44IDIwLjYtMTEuNCAzMS0xOSA0MS0zMC40IDE4LjgtMjEuNiAyMy40LTM0LjIgMTUuNi00My44LTMuOC00LjgtNC40LTQuOC01MS01LjgtNjAuOC0xLjItNTYuMiAyLjItNTYuMi00My4yIDAtMzIuNC4yLTMzLjIgNC44LTM3IDQuNC0zLjYgOS0zLjggOTItMy44IDc5IDAgODcuOC40IDk0LjIgMy42IDExLjIgNS42IDEzIDExLjQgMTIuOCA0My40IDAgMjUuNC0uOCAzMC44LTcuNiA1OC00IDE2LjYtOS44IDM0LTEyLjYgMzktMi44IDUtOC4yIDE0LjItMTEuNiAyMC42LTguNCAxNS40LTI3LjIgMzYuOC00MC44IDQ2LjYtNS44IDQuNC0xMy44IDEwLjItMTcuNiAxMy4yLTMuOCAzLTExIDctMTYuMiA4LjgtNS4yIDEuOC0xNi4yIDYuNC0yNC40IDEwLTIyLjQgOS42LTM0LjggMTEuNi03MyAxMS42LTM3LjYuMi00Ny0xLjQtNzEtMTItOC4yLTMuNi0xNy42LTcuMi0yMC44LTgtMTUuOC0zLjgtNjctNDUuMi03Ny44LTYyLjgtMi4yLTMuOC03LjYtMTEuNi0xMS44LTE3LjItNC4yLTUuNC05LTE0LTEwLjYtMTktMS44LTQuOC02LjItMTYtMTAtMjQuOC0zLjYtOC44LTcuOC0yMi4yLTkuMi0yOS42LTMuMi0xOC44LTEuNC03OS40IDIuOC05MS40IDEzLjgtNDAuNiAzNS42LTc4IDU4LjgtMTAwLjIgMTQtMTMuNiA0Ny4yLTM2LjQgNTgtMzkuOCA0LjItMS40IDEzLjQtNS4yIDIwLjYtOC40IDIyLTEwIDMyLjgtMTEuNiA3Ni0xMSAzMy44LjYgNDAuNCAxLjIgNTAgNC44em0zNDAuOCA4MC44YzggMy42IDkuNiAxMS4yIDkuMiAzOS4yLS42IDM0LjQtLjYgMzQgNSAzOS42IDQuOCA1IDUuNCA1IDM3LjYgNSA0My40IDAgNDQuNC44IDQzLjIgMzYuMi0uOCAxNy0xLjIgMTguNC02LjQgMjMtNS40IDQuNi02LjYgNC44LTM3LjYgNC44LTMxLjIgMC0zMiAuMi0zNi44IDUtNS42IDUuNC01LjYgNC40LTUgNDEuMi40IDI2LjQuMiAyNy40LTQuNiAzMy00LjggNS42LTYgNS44LTI0LjQgNi40LTIwLjguOC0yOS42LTEuNC0zMy40LTguNC0xLjQtMi42LTItMTUuNi0xLjgtMzUuNi40LTMxLjIuNC0zMS42LTQuNi0zNi42cy01LjYtNS0zNi01Yy0xOC44IDAtMzMtLjgtMzYtMi4yLTcuNi0zLjYtOS42LTExLjItOC44LTMzLjguOC0yOC4yLjQtMjggNDEtMjggNDUuNCAwIDQ1LjQgMCA0NC42LTQyLjYtLjYtMzMtLjYtMzMgNS0zOC40IDQuNC00LjYgNi4yLTUgMjQuOC01IDExIDAgMjIuMiAxIDI1IDIuMnoiLz48L3N2Zz4=);
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</style>
+
+        
+        <!-- Config CSS -->
+
+<!-- Other Styles -->
+<style>
+  body, html {
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+  }
+
+  a {
+    color: #00838F;
+  }
+
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: #0097A7 !important;
+  }
+
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: #0097A7 !important;
+  }
+
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: #0097A7 !important;
+  }
+
+  .toTop {
+    background: #757575 !important;
+  }
+
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: #757575;
+  }
+
+  #scheme-Paradox .MD-burger-layer {
+    background-color: #757575;
+  }
+
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: #757575;
+  }
+
+  .post-toc a:hover {
+    color: #00838F;
+    text-decoration: underline;
+  }
+
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+      body{
+        background-color: #F5F5F5;
+      }
+
+      /* blog_info bottom background */
+      #scheme-Paradox .material-layout .something-else .mdl-card__supporting-text{
+        background-color: #fff;
+      }
+    </style>
 
 
 
-  <link rel="canonical" href="http://yoursite.com/page/4/"/>
+
+<!-- Fade Effect -->
+
+    <style>
+      .fade {
+        transition: all 800ms linear;
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+        opacity: 1;
+      }
+
+      .fade.out{
+        opacity: 0;
+      }
+    </style>
 
 
+<!-- Import Font -->
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
 
 
+        <script>lsloader.load("js/jquery.min.js","/js/jquery.min.js?qcusAULNeBksqffqUM2+Ig==")</script>
+    
+    
+    <script>function Queue(){this.dataStore=[];this.offer=b;this.poll=d;this.execNext=a;this.debug=false;this.startDebug=c;function b(e){if(this.debug){console.log("Offered a Queued Function.")}if(typeof e==="function"){this.dataStore.push(e)}else{console.log("You must offer a function.")}}function d(){if(this.debug){console.log("Polled a Queued Function.")}return this.dataStore.shift()}function a(){var e=this.poll();if(e!==undefined){if(this.debug){console.log("Run a Queued Function.")}e()}}function c(){this.debug=true}}var queue=new Queue();</script>
 
-  <title> Mr.Z's Blog </title>
+    <!-- Analytics -->
+    
+
+    <!-- Custom Head -->
+    
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
     
-  
+        <body id="scheme-Paradox" class="lazy">
+            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
 
-  <div class="container one-collumn sidebar-position-left 
-   page-home 
- ">
-    <div class="headband"></div>
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
 
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
+
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span class="MD-burger-layer"></span>
+                        </button>
+                    
+
+                    <!-- Index Module -->
+<div class="material-index mdl-grid">
+    
+    <div class="locate-thumbnail-symbol"></div>
+
+    <!-- Pin on top -->
     
 
-    <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Mr.Z's Blog</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
+    <!-- Normal Post -->
+    
+        
+            
+                <!-- Paradox Thumbnail -->
+                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
+    <!-- Post Thumbnail -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+        
+    
+
+        <!-- Post Title -->
+        <p class="article-headline-p"><a href="/2017/03/30/对不同平台版本的支持/">对不同平台版本的支持</a></p>
     </div>
-      
-        <p class="site-subtitle"></p>
-      
-  </div>
 
-  <div class="site-nav-toggle">
-    <button>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
-  </div>
+    <!-- Post Excerpt -->
+    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
+        
+            Android系统版本不断的在更新，最新的版本可以提供更好的APIs，但是在更多的设备更新之前，仍然需要在app中对旧版本提供支持。
+...
+        
+        &nbsp;&nbsp;&nbsp;
+        <span>
+            <a href="/2017/03/30/对不同平台版本的支持/" target="_self">Weiterlesen</a>
+        </span>
+    </div>
+    <!-- Post_entry Info-->
+    <div id="post_entry-info">
+        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
+            <!-- Author Avatar -->
+            <div id="author-avatar">
+                <img src="/img/avatar.png" width="44px" height="44px" alt="Zhu Yuexin's avatar">
+            </div>
+            <div>
+                <strong>Zhu Yuexin</strong>
+                <span>Mar 30, 2017</span>
+            </div>
+        </div>
+        <div id="post_entry-right-info">
+            <!-- Category -->
+            <span class="post_entry-category">
+                <a class="post_category-link" href="/categories/Android碎片/">Android碎片</a>
+            </span>
+
+            
+
+            
+
+            <!-- Post Views -->
+            <span class="post_entry-views">
+            </span>
+        </div>
+    </div>
 </div>
 
-<nav class="site-nav">
-  
-
-  
-    <ul id="menu" class="menu">
-      
+            
+            
         
-        <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
-            
-            首页
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-categories">
-          <a href="/categories" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
-            
-            分类
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-archives">
-          <a href="/archives" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
-            
-            归档
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-tags">
-          <a href="/tags" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
-            
-            标签
-          </a>
-        </li>
-      
-
-      
-    </ul>
-  
-
-  
-</nav>
-
-
-
- </div>
-    </header>
-
-    <main id="main" class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          <div id="content" class="content">
-            
-  <section id="posts" class="posts-expand">
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/30/对不同平台版本的支持/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Zhu Yuexin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://i4.buimg.com/567571/fbb0ec60f25374c4.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Mr.Z's Blog">
-    </span>
-
+        
+            
+                <!-- Paradox Thumbnail -->
+                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
+    <!-- Post Thumbnail -->
     
-      <header class="post-header">
-
         
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
         
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/03/30/对不同平台版本的支持/" itemprop="url">
-                  对不同平台版本的支持
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-30T21:17:00+08:00">
-                2017-03-30
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Android碎片/" itemprop="url" rel="index">
-                    <span itemprop="name">Android碎片</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
     
 
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Android系统版本不断的在更新，最新的版本可以提供更好的APIs，但是在更多的设备更新之前，仍然需要在app中对旧版本提供支持。</p>
-<p>Google提供了一个仪表盘显示不同Android版本以及不同屏幕尺寸的设备的相对数量：<a href="https://developer.android.google.cn/about/dashboards/index.html" target="_blank" rel="external">dashboard</a></p>
-<h1 id="指定最低和目标API-Level"><a href="#指定最低和目标API-Level" class="headerlink" title="指定最低和目标API Level"></a>指定最低和目标API Level</h1><p><strong>AndroidManifest.xml</strong>文件描述了你的app细节并且确认该app支持的Android版本。特别是<strong><uses-sdk></uses-sdk></strong>标签中<strong>minSdkVersion</strong>和<strong>targetSdkVersion</strong>这两个属性确定了你的app兼容的最低API和最高API。</p>
-<p>例如：</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">manifest</span> <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span> <span class="attr">...</span> &gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">uses-sdk</span> <span class="attr">android:minSdkVersion</span>=<span class="string">"4"</span> <span class="attr">android:targetSdkVersion</span>=<span class="string">"15"</span> /&gt;</span></div><div class="line">    ...</div><div class="line"><span class="tag">&lt;/<span class="name">manifest</span>&gt;</span></div></pre></td></tr></table></figure>
-<p>当最新的Android版本发布时，一些样式和行为可能发生更改。为了允许你的app能够使用这些更改并确保你的app能够适配每个用户设备的样式，你应该将<strong>targetSdkVersion</strong>的值设置为可用的最新的Android版本。</p>
-<h1 id="在运行时检查系统版本"><a href="#在运行时检查系统版本" class="headerlink" title="在运行时检查系统版本"></a>在运行时检查系统版本</h1><p>Android在<a href="https://developer.android.google.cn/reference/android/os/Build.html" target="_blank" rel="external">Build</a>常量类中为每个平台版本提供了一个唯一的code。在你的app中使用这些code构建条件语句来确保依赖于更高版本API的代码仅能在这些API能适用于当前系统的条件下才能够运行。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">setUpActionBar</span><span class="params">()</span> </span>&#123;</div><div class="line">    <span class="comment">// Make sure we're running on Honeycomb or higher to use ActionBar APIs</span></div><div class="line">    <span class="keyword">if</span> (Build.VERSION.SDK_INT &gt;= Build.VERSION_CODES.HONEYCOMB) &#123;</div><div class="line">        ActionBar actionBar = getActionBar();</div><div class="line">        actionBar.setDisplayHomeAsUpEnabled(<span class="keyword">true</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<blockquote>
-<p>注意：当解析XML资源的时候，Android会忽略掉当前设备不支持的XML属性。所以你可以安全的使用只被更新的版本支持的XML属性而不必担心旧版本遇到这些代码时会中断。举个例子，如果你设置<strong>targetSdkVersion=11</strong>，你的app包含Android 3.0以及更高版本默认的ActionBar。为了继续给action bar添加menu item，你需要在你的XML文件menu中设置<strong>android:showAsAction=”ifRoom”</strong>。在跨版本的XML文件中这样做是安全的，因为Android旧版本简单的忽略<strong>showAsAction</strong>这个属性（所以，你不需要在<em>res/menu-v11/</em>中有版本区分）。</p>
-</blockquote>
-<h1 id="使用平台样式和主题"><a href="#使用平台样式和主题" class="headerlink" title="使用平台样式和主题"></a>使用平台样式和主题</h1><p>Android提供用户体验主题，为应用程序提供底层操作系统的外观和感觉。这些主题可以通过manifest文件应用到你的app中。通过使用样式和主题的构建，你的app会自然的体现Android每个新版本的外观和感觉。</p>
-<p>使你的activity看起来像一个对话框：</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">activity</span> <span class="attr">android:theme</span>=<span class="string">"@android:style/Theme.Dialog"</span>&gt;</span></div></pre></td></tr></table></figure>
-<p>使你的activity有透明的背景：</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">activity</span> <span class="attr">android:theme</span>=<span class="string">"@android:style/Theme.Translucent"</span>&gt;</span></div></pre></td></tr></table></figure>
-<p>应用你在<em>/res/values/styles.xml</em>中自定义的主题：</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">activity</span> <span class="attr">android:theme</span>=<span class="string">"@style/CustomTheme"</span>&gt;</span></div></pre></td></tr></table></figure>
-<p>应用一个主题到你的整个app（所有的activity），添加<em>android:theme</em>属性到<em><application></application></em>标签：</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">application</span> <span class="attr">android:theme</span>=<span class="string">"@style/CustomTheme"</span>&gt;</span></div></pre></td></tr></table></figure>
-<p>更多关于主题构建和使用:<a href="https://developer.android.google.cn/guide/topics/ui/themes.html" target="_blank" rel="external">Styles and Themes guide</a></p>
-
-          
-        
-      
+        <!-- Post Title -->
+        <p class="article-headline-p"><a href="/2017/03/30/Android国际化语言支持/">Android国际化语言支持</a></p>
     </div>
 
-    <div>
-      
+    <!-- Post Excerpt -->
+    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
+        
+            在Android开发中，应该尽量将UI中的字符串存放在资源文件中（res/values/strings.xml）。
+
+        
+        &nbsp;&nbsp;&nbsp;
+        <span>
+            <a href="/2017/03/30/Android国际化语言支持/" target="_self">Weiterlesen</a>
+        </span>
     </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/30/Android国际化语言支持/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Zhu Yuexin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://i4.buimg.com/567571/fbb0ec60f25374c4.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Mr.Z's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/03/30/Android国际化语言支持/" itemprop="url">
-                  Android国际化语言支持
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-30T21:00:00+08:00">
-                2017-03-30
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Android碎片/" itemprop="url" rel="index">
-                    <span itemprop="name">Android碎片</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>在Android开发中，应该尽量将UI中的字符串存放在资源文件中（<em>res/values/strings.xml</em>）。</p>
-<h1 id="支持不同语言"><a href="#支持不同语言" class="headerlink" title="支持不同语言"></a>支持不同语言</h1><p>如果需要添加对更多语言的支持，需要在res下创建额外的values目录，并在目录名称末尾加上连字符和ISO语言代码。例如，<em>values-es/</em>目录包含的简单资源用于语言代码为”es”的语言区域。Android根据运行时设备的语言区域设置加载相应的资源。</p>
-<p>一旦决定了为哪些语言提供支持，便可创建资源子目录和字符串资源文件。例如：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">MyProject/</div><div class="line">    res/</div><div class="line">       values/</div><div class="line">           strings.xml</div><div class="line">       values-es/</div><div class="line">           strings.xml</div><div class="line">       values-fr/</div><div class="line">           strings.xml</div></pre></td></tr></table></figure>
-<p>英语（默认语言区域），<code>/values/strings.xml</code>：</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version="1.0" encoding="utf-8"?&gt;</div><div class="line"><span class="tag">&lt;<span class="name">resources</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">string</span> <span class="attr">name</span>=<span class="string">"title"</span>&gt;</span>My Application<span class="tag">&lt;/<span class="name">string</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">string</span> <span class="attr">name</span>=<span class="string">"hello_world"</span>&gt;</span>Hello World!<span class="tag">&lt;/<span class="name">string</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">resources</span>&gt;</span></div></pre></td></tr></table></figure>
-<p>西班牙语，<code>/values-es/strings.xml</code>：</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version="1.0" encoding="utf-8"?&gt;</div><div class="line"><span class="tag">&lt;<span class="name">resources</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">string</span> <span class="attr">name</span>=<span class="string">"title"</span>&gt;</span>Mi Aplicación<span class="tag">&lt;/<span class="name">string</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">string</span> <span class="attr">name</span>=<span class="string">"hello_world"</span>&gt;</span>Hola Mundo!<span class="tag">&lt;/<span class="name">string</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">resources</span>&gt;</span></div></pre></td></tr></table></figure>
-<p>法语，<code>/values-fr/strings.xml</code>：</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version="1.0" encoding="utf-8"?&gt;</div><div class="line"><span class="tag">&lt;<span class="name">resources</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">string</span> <span class="attr">name</span>=<span class="string">"title"</span>&gt;</span>Mon Application<span class="tag">&lt;/<span class="name">string</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">string</span> <span class="attr">name</span>=<span class="string">"hello_world"</span>&gt;</span>Bonjour le monde !<span class="tag">&lt;/<span class="name">string</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">resources</span>&gt;</span></div></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/30/皮皮夏与她的小本本/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Zhu Yuexin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://i4.buimg.com/567571/fbb0ec60f25374c4.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Mr.Z's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/03/30/皮皮夏与她的小本本/" itemprop="url">
-                  皮皮夏与她的小本本
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-30T15:59:23+08:00">
-                2017-03-30
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/皮皮夏/" itemprop="url" rel="index">
-                    <span itemprop="name">皮皮夏</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="N宗罪"><a href="#N宗罪" class="headerlink" title="N宗罪"></a>N宗罪</h1><h2 id="NO-1"><a href="#NO-1" class="headerlink" title="NO.1"></a>NO.1</h2><p>没主见还要说我没主见，明明每次自己都没想好要吃什么，每次都说是我。(`へ´≠)</p>
-<h2 id="NO-2"><a href="#NO-2" class="headerlink" title="NO.2"></a>NO.2</h2><p>爱嘲笑。每当问我一件事，只要我不知道，便开始对我的嘲笑。</p>
-<h2 id="NO-3"><a href="#NO-3" class="headerlink" title="NO.3"></a>NO.3</h2><p>怀疑我。只要我发表我的观点，便会在第一时间，甚至是毫无思考的状态下就说我乱讲。</p>
-<h2 id="NO-4"><a href="#NO-4" class="headerlink" title="NO.4"></a>NO.4</h2><p>玩手机。自从换了新手机后，知道了刷微博的乐趣所在，便玩手机！以前我玩手机某人是怎么甩脸子的，就不怕我报复么。</p>
-<h2 id="NO-5"><a href="#NO-5" class="headerlink" title="NO.5"></a>NO.5</h2><p>总是将自己的喜恶强加于我。古人云:“己所不欲，勿施于人”。不知道怎么深奥的道理，某人明白不啰。</p>
-<h2 id="NO-6"><a href="#NO-6" class="headerlink" title="NO.6"></a>NO.6</h2><p>唠叨啰嗦……感觉这m年真是深受其害。</p>
-<h2 id="NO-7"><a href="#NO-7" class="headerlink" title="NO.7"></a>NO.7</h2><p>装无辜。明明知道自己做了什么欠的事，非要问，非要问…你这样良心真的不会痛么？</p>
-<h2 id="NO-8"><a href="#NO-8" class="headerlink" title="NO.8"></a>NO.8</h2><p>甩脸。只要自己不高兴了，就给我甩脸。其实没给你讲，你甩脸的时候真的丑得无与伦比！</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/29/Java8新特性：Date和Time类/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Zhu Yuexin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://i4.buimg.com/567571/fbb0ec60f25374c4.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Mr.Z's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/03/29/Java8新特性：Date和Time类/" itemprop="url">
-                  Java8新特性：Date和Time类（LocalDate, LocalTime, LocalDateTime）
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-29T21:40:00+08:00">
-                2017-03-29
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java笔记/" itemprop="url" rel="index">
-                    <span itemprop="name">Java笔记</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>这篇文章主要是java8中新的Date和Time API的实战。新的Date和Time类是java开发者社区千呼万唤始出来的。Java8 之前存在的Date类一直都受人诟病，很多人都会选择使用第三方的date库<a href="http://www.joda.org/joda-time/" target="_blank" rel="external">joda-time</a>。Java8中的date和time api是jodatime的作者参与开发的，实现了JSR310的全部内容。这些新的api都在包java.time下。</p>
-<p>既然第三方的joda-time,date4j都已经足够强大了，为什么java8还要重新实现他呢，一部分的原因是这些第三方的库是存在兼容问题的，比如标准的JSF日期转化器与joda-time api，就不兼容，每次使用都需要编写自己的转换器，所以标准化api是必须的，就有了JSR310，java8中就实现了他全部的规定内容。</p>
-<h2 id="新Date类和Time类背后的设计原则："><a href="#新Date类和Time类背后的设计原则：" class="headerlink" title="新Date类和Time类背后的设计原则："></a>新Date类和Time类背后的设计原则：</h2><p><strong>不可变类</strong></p>
-<p>java8之前，Date类都是可变类。当我们在多线程环境下使用它，编程人员应该确认Date对象的线程安全。Java8的Date和Time API提供了线程安全的不可变类。编程人员不用考虑并发的问题。</p>
-<p><strong>领域模型驱动设计方法</strong></p>
-<p>新的日期和时间的类别遵循“域驱动设计”。对于开发者来说，理解方法和类的功能是很容易的。</p>
-<h2 id="接下来让我们来看看新Date和Time-API"><a href="#接下来让我们来看看新Date和Time-API" class="headerlink" title="接下来让我们来看看新Date和Time API:"></a>接下来让我们来看看新Date和Time API:</h2><h2 id="java-time-LocalDate"><a href="#java-time-LocalDate" class="headerlink" title="java.time.LocalDate:"></a>java.time.LocalDate:</h2><p>LocalDate只提供日期不提供时间信息。它是不可变类且线程安全的。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> org.smarttechie;</div><div class="line"><span class="keyword">import</span> java.time.LocalDate;</div><div class="line"><span class="keyword">import</span> java.time.temporal.ChronoUnit;</div><div class="line"><span class="comment">/**</span></div><div class="line">* This class demonstrates JAVA 8 data and time API</div><div class="line">* <span class="doctag">@author</span> Siva Prasad Rao Janapati</div><div class="line">* */</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DateTimeDemonstration</span> </span>&#123;</div><div class="line"><span class="comment">/**</span></div><div class="line">* <span class="doctag">@param</span> args</div><div class="line">*/</div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">  <span class="comment">//Create date LocalDate </span></div><div class="line">  localDate = LocalDate.now();</div><div class="line">  System.out.println(<span class="string">"The local date is :: "</span> + localDate); </div><div class="line">  <span class="comment">//Find the length of the month. That is, how many days are there for this month.</span></div><div class="line">  System.out.println(<span class="string">"The number of days available for this month:: "</span> + 		localDate.lengthOfMonth()); </div><div class="line">   <span class="comment">//Know the month name</span></div><div class="line">   System.out.println(<span class="string">"What is the month name? :: "</span> + localDate.getMonth().name()); </div><div class="line">   <span class="comment">//add 2 days to the today's date.</span></div><div class="line">   System.out.println(localDate.plus(<span class="number">2</span>, ChronoUnit.DAYS)); </div><div class="line">   <span class="comment">//substract 2 days from today</span></div><div class="line">   System.out.println(localDate.minus(<span class="number">2</span>, ChronoUnit.DAYS)); </div><div class="line">   <span class="comment">//Convert the string to date</span></div><div class="line">   System.out.println(localDate.parse(<span class="string">"2017-04-07"</span>));</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h2 id="java-time-LocalTime"><a href="#java-time-LocalTime" class="headerlink" title="java.time.LocalTime:"></a>java.time.LocalTime:</h2><p>LocalTime只提供时间而不提供日期信息，它是不可变类且线程安全的。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> org.smarttechie;</div><div class="line"><span class="keyword">import</span> java.time.LocalTime;</div><div class="line"><span class="keyword">import</span> java.time.temporal.ChronoUnit;</div><div class="line"><span class="comment">/**</span></div><div class="line">* This class demonstrates JAVA 8 data and time API</div><div class="line">* <span class="doctag">@author</span> Siva Prasad Rao Janapati</div><div class="line">* */</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DateTimeDemonstration</span> </span>&#123;</div><div class="line"><span class="comment">/**</span></div><div class="line">* <span class="doctag">@param</span> args</div><div class="line">*/</div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">   <span class="comment">//Get local time</span></div><div class="line">   LocalTime localTime = LocalTime.now();</div><div class="line">   System.out.println(localTime);</div><div class="line">  <span class="comment">//Get the hour of the day</span></div><div class="line">  System.out.println(<span class="string">"The hour of the day:: "</span> + localTime.getHour());</div><div class="line">  <span class="comment">//add 2 hours to the time.</span></div><div class="line">  System.out.println(localTime.plus(<span class="number">2</span>, ChronoUnit.HOURS));</div><div class="line">  <span class="comment">//add 6 minutes to the time.</span></div><div class="line">  System.out.println(localTime.plusMinutes(<span class="number">6</span>));</div><div class="line">  <span class="comment">//substract 2 hours from current time</span></div><div class="line">  System.out.println(localTime.minus(<span class="number">2</span>, ChronoUnit.HOURS));</div><div class="line"> &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h2 id="java-time-LocalDateTime"><a href="#java-time-LocalDateTime" class="headerlink" title="java.time.LocalDateTime:"></a>java.time.LocalDateTime:</h2><p>LocalDateTime提供时间和日期的信息，它是不可变类且线程安全的</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> orr.smarttechie;</div><div class="line"><span class="keyword">import</span> java.time.LocalDateTime;</div><div class="line"><span class="keyword">import</span> java.time.temporal.ChronoUnit;</div><div class="line"><span class="comment">/**</span></div><div class="line">* This class demonstrates JAVA 8 data and time API</div><div class="line">* <span class="doctag">@author</span> Siva Prasad Rao Janapati</div><div class="line">*</div><div class="line">*/</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DateTimeDemonstration</span> </span>&#123;</div><div class="line"><span class="comment">/**</span></div><div class="line">* <span class="doctag">@param</span> args</div><div class="line">*/</div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">    <span class="comment">//Get LocalDateTime object</span></div><div class="line">    LocalDateTime localDateTime = LocalDateTime.now();</div><div class="line">    System.out.println(localDateTime);</div><div class="line">    <span class="comment">//Find the length of month. That is, how many days are there for this month.</span></div><div class="line">    System.out.println(<span class="string">"The number of days available for this month:: "</span> + localDateTime.getMonth().length(<span class="keyword">true</span>));</div><div class="line">    <span class="comment">//Know the month name</span></div><div class="line">    System.out.println(<span class="string">"What is the month name? :: "</span> + localDateTime.getMonth().name());</div><div class="line">    <span class="comment">//add 2 days to today's date.</span></div><div class="line">    System.out.println(localDateTime.plus(<span class="number">2</span>, ChronoUnit.DAYS));</div><div class="line">    <span class="comment">//substract 2 days from today</span></div><div class="line">    System.out.println(localDateTime.minus(<span class="number">2</span>, ChronoUnit.DAYS));</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h2 id="java-time-Year"><a href="#java-time-Year" class="headerlink" title="java.time.Year:"></a>java.time.Year:</h2><p>Year提供年的信息，它是不可变类且线程安全的。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> orr.smarttechie;</div><div class="line"><span class="keyword">import</span> java.time.Year;</div><div class="line"><span class="keyword">import</span> java.time.temporal.ChronoUnit;</div><div class="line"><span class="comment">/**</span></div><div class="line">* This class demonstrates JAVA 8 data and time API</div><div class="line">* <span class="doctag">@author</span> Siva Prasad Rao Janapati</div><div class="line">*</div><div class="line">*/</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DateTimeDemonstration</span> </span>&#123;</div><div class="line"><span class="comment">/**</span></div><div class="line">* <span class="doctag">@param</span> args</div><div class="line">*/</div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">   <span class="comment">//Get year</span></div><div class="line">   Year year = Year.now();</div><div class="line">   System.out.println(<span class="string">"Year ::"</span> + year);</div><div class="line">   <span class="comment">//know the year is leap year or not</span></div><div class="line">   System.out.println(<span class="string">"Is year["</span> +year+<span class="string">"] leap year?"</span>+ year.isLeap());</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h2 id="java-time-Duration"><a href="#java-time-Duration" class="headerlink" title="java.time.Duration:"></a>java.time.Duration:</h2><p>Duration是用来计算两个给定的日期之间包含多少秒，多少毫秒，它是不可变类且线程安全的</p>
-<h2 id="java-time-Period"><a href="#java-time-Period" class="headerlink" title="java.time.Period:"></a>java.time.Period:</h2><p>Period是用来计算两个给定的日期之间包含多少天，多少月或者多少年，它是不可变类且线程安全的</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> orr.smarttechie;</div><div class="line"><span class="keyword">import</span> java.time.LocalDate;</div><div class="line"><span class="keyword">import</span> java.time.Period;</div><div class="line"><span class="keyword">import</span> java.time.temporal.ChronoUnit;</div><div class="line"><span class="comment">/**</span></div><div class="line">* This class demonstrates JAVA 8 data and time API</div><div class="line">* <span class="doctag">@author</span> Siva Prasad Rao Janapati</div><div class="line">*</div><div class="line">*/</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DateTimeDemonstration</span> </span>&#123;</div><div class="line"><span class="comment">/**</span></div><div class="line">* <span class="doctag">@param</span> args</div><div class="line">*/</div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">   LocalDate localDate = LocalDate.now();</div><div class="line">   Period period = Period.between(localDate, localDate.plus(<span class="number">2</span>, ChronoUnit.DAYS));</div><div class="line">   System.out.println(period.getDays());</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/28/Java笔记（三）--Java的基本程序设计结构（三）/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Zhu Yuexin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://i4.buimg.com/567571/fbb0ec60f25374c4.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Mr.Z's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/03/28/Java笔记（三）--Java的基本程序设计结构（三）/" itemprop="url">
-                  未命名
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-28T14:42:23+08:00">
-                2017-03-28
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/24/Java笔记（二）--Java的基本程序设计结构（二）/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Zhu Yuexin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://i4.buimg.com/567571/fbb0ec60f25374c4.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Mr.Z's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/03/24/Java笔记（二）--Java的基本程序设计结构（二）/" itemprop="url">
-                  Java笔记（二）--Java的基本程序设计结构（二）
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-24T21:00:00+08:00">
-                2017-03-24
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java笔记/" itemprop="url" rel="index">
-                    <span itemprop="name">Java笔记</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <blockquote>
-<ul>
-<li>字符串</li>
-<li>输入输出</li>
-<li>控制流程</li>
-<li>大数值</li>
-<li>数组</li>
-</ul>
-</blockquote>
-<h1 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h1><p>Java没有内置的字符串类型，而是在标准Java类库中提供了一个预定义类：String。</p>
-<h2 id="字串"><a href="#字串" class="headerlink" title="字串"></a>字串</h2><p>String类的substring方法可以用于提取字串：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">String greeting = <span class="string">"Hello"</span>;</div><div class="line">String s = greeting.substring(<span class="number">0</span>, <span class="number">3</span>);</div></pre></td></tr></table></figure>
-<h2 id="拼接"><a href="#拼接" class="headerlink" title="拼接"></a>拼接</h2><p>Java使用+号拼接两个字符串</p>
-<p>如果需要把多个字符串放在一起，用一个界定符分隔，可以使用静态join方法：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">String all = String.join(<span class="string">"/"</span>, <span class="string">"S"</span>, <span class="string">"M"</span>, <span class="string">"L"</span>, <span class="string">"XL"</span>);	<span class="comment">//all is the string "S/M/L/XL"</span></div></pre></td></tr></table></figure>
-<h2 id="不可变字符串"><a href="#不可变字符串" class="headerlink" title="不可变字符串"></a>不可变字符串</h2><p>String类中没有提供用于修改字符串的方法，在Java文档中将String类对象称为不可变字符串。</p>
-<h2 id="检测字符串是否相等"><a href="#检测字符串是否相等" class="headerlink" title="检测字符串是否相等"></a>检测字符串是否相等</h2><p>使用equals方法检测两个字符串是否相等：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">s.equals(t);</div><div class="line"><span class="string">"Hello"</span>.equalsIgnoreCase(<span class="string">"Hello"</span>); <span class="comment">//不区分大小写</span></div></pre></td></tr></table></figure>
-<p><strong>注意</strong>：不要使用 == 运算符检测两个字符串是否相等，这个运算符只能够确定两个字符串是否放置在同一个位置上。</p>
-<h2 id="空串与Null串"><a href="#空串与Null串" class="headerlink" title="空串与Null串"></a>空串与Null串</h2><p>空串“”是长度为0的字符串。可以用以下代码检查一个字符串是否为空：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span>(str.length() == <span class="number">0</span>)</div></pre></td></tr></table></figure>
-<p>或</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span>(str.equals(<span class="string">""</span>))</div></pre></td></tr></table></figure>
-<p><strong>注意</strong>：空串是一个Java对象，有自己的串长度（0）和内容（空）。</p>
-<p>String变量还可以存放一个特殊值，null。这表示目前没有任何对象与该变量关联。</p>
-<p>检测字符串是否为null：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span>(str == <span class="keyword">null</span>)</div></pre></td></tr></table></figure>
-<h1 id="输入输出"><a href="#输入输出" class="headerlink" title="输入输出"></a>输入输出</h1><h2 id="标准输入流"><a href="#标准输入流" class="headerlink" title="标准输入流"></a>标准输入流</h2><p>读取“标准输入流”System.in，需要先构造一个Scanner对象，并与“标准输入流”System.in关联</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Scanner in = <span class="keyword">new</span> Scanner(System.in);</div></pre></td></tr></table></figure>
-<p><strong>Console类:</strong> 适用于从控制台读取密码</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">Console cons = System.console();</div><div class="line">String username = cons.readLine(<span class="string">"User name: "</span>);</div><div class="line"><span class="comment">//安全起见，返回密码存放在一维字符数组中。对密码进行处理后，马上用一个填充值覆盖数组元素</span></div><div class="line"><span class="keyword">char</span>[] passwd = cons.readPassword(<span class="string">"Password: "</span>);</div></pre></td></tr></table></figure>
-<h2 id="格式化输出"><a href="#格式化输出" class="headerlink" title="格式化输出"></a>格式化输出</h2><p>Java SE 5.0 沿用了C语言库函数中的printf方法。例如，调用：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">System.out.printf(&quot;%8.2f&quot;, x);</div></pre></td></tr></table></figure>
-<p>可以用8个字符的宽度和小数点后两个字符的精度打印x。例如：</p>
-<p>3333.33</p>
-<p>在printf中，每一个以%字符开始的格式说明符都用相应的参数替换。格式说明符尾部的转换符将指示被格式化的数值类型。例如：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">System.out.printf(<span class="string">"Hello, %s. Next year, you'll be %d"</span>, name, age);</div></pre></td></tr></table></figure>
-<p><strong>用于printf的转换符</strong></p>
-<table>
-<thead>
-<tr>
-<th>转换符</th>
-<th>类型</th>
-<th>举例</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>d</td>
-<td>十进制整数</td>
-<td>159</td>
-</tr>
-<tr>
-<td>x</td>
-<td>十六进制整数</td>
-<td>9f</td>
-</tr>
-<tr>
-<td>o</td>
-<td>八进制整数</td>
-<td>237</td>
-</tr>
-<tr>
-<td>f</td>
-<td>定点浮点数</td>
-<td>15.9</td>
-</tr>
-<tr>
-<td>e</td>
-<td>指数浮点数</td>
-<td>1.59e+01</td>
-</tr>
-<tr>
-<td>g</td>
-<td>通用浮点数</td>
-<td>—</td>
-</tr>
-<tr>
-<td>a</td>
-<td>十六进制浮点数</td>
-<td>0x1.fccdp3</td>
-</tr>
-<tr>
-<td>s</td>
-<td>字符串</td>
-<td>Hello</td>
-</tr>
-<tr>
-<td>c</td>
-<td>字符</td>
-<td>H</td>
-</tr>
-<tr>
-<td>b</td>
-<td>布尔</td>
-<td>True</td>
-</tr>
-<tr>
-<td>h</td>
-<td>散列码</td>
-<td>42628b2</td>
-</tr>
-<tr>
-<td>%</td>
-<td>百分号</td>
-<td>%</td>
-</tr>
-<tr>
-<td>n</td>
-<td>与平台有关的行分隔符</td>
-<td>—</td>
-</tr>
-</tbody>
-</table>
-<h2 id="文件输入与输出"><a href="#文件输入与输出" class="headerlink" title="文件输入与输出"></a>文件输入与输出</h2><h3 id="读取文件"><a href="#读取文件" class="headerlink" title="读取文件"></a>读取文件</h3><p>要对文件进行读取，需要用File对象构造一个Scanner对象，如：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Scanner in = <span class="keyword">new</span> Scanner(Paths.get(<span class="string">"myFile.txt"</span>), <span class="string">"UTF-8"</span>);</div></pre></td></tr></table></figure>
-<p>如果文件名中包含反斜杠符号，就要在每个反斜杠之前再加一个额外的反斜杠：</p>
-<p>“c:\\mydirectory\\myFile.txt”</p>
-<h3 id="写入文件"><a href="#写入文件" class="headerlink" title="写入文件"></a>写入文件</h3><p>写入文件需要构造一个PrintWriter对象。在构造器中，提供文件名：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">PrintWriter out = <span class="keyword">new</span> PrintWriter(<span class="string">"myFile.txt"</span>, <span class="string">"UTF-8"</span>);</div></pre></td></tr></table></figure>
-<p>如果该文件不存在，则会创建该文件。可以像输出到System.out一样使用print, println 以及 printf 命令。</p>
-<h1 id="控制流程"><a href="#控制流程" class="headerlink" title="控制流程"></a>控制流程</h1><p>if, while, for….</p>
-<p><strong>带标签</strong>的<strong>break</strong>语句：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">Scanner in = <span class="keyword">new</span> Scanner(System.in);</div><div class="line"><span class="keyword">int</span> n;</div><div class="line">read_data: <span class="comment">//这是标签，放在需要跳出的循环的最外层</span></div><div class="line"><span class="keyword">while</span>(...)&#123;</div><div class="line">    ...</div><div class="line">    <span class="keyword">for</span>(...)&#123;</div><div class="line">      System.out.print(<span class="string">"Enter a number &gt;= 0:"</span>);</div><div class="line">      n = in.nextInt();</div><div class="line">      <span class="keyword">if</span>(n&lt;<span class="number">0</span>)&#123;</div><div class="line">        <span class="keyword">break</span> read_data; <span class="comment">//跳出循环</span></div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h1 id="大数值"><a href="#大数值" class="headerlink" title="大数值"></a>大数值</h1><p>如果基本的整数和浮点数的精度不能够满足需求，则可以使用java.math包中的<strong>BigInteger</strong>和<strong>BigDecimal</strong>。</p>
-<p><strong>BigInteger</strong>实现了任意精度的整数运算，<strong>BigDecimal</strong>实现了任意精度的浮点数运算。</p>
-<p>可以使用静态的valueOf方法将普通的数值转换为大数值：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">BigInteger a = BigInteger.valueOf(<span class="number">100</span>);</div></pre></td></tr></table></figure>
-<p>不能使用算术运算符（+,-,*,/）处理大数值。需要使用大数值类中的add,multiply方法等：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">BigInteger c = a.add(b);</div><div class="line">BigInteger d = c.multiply(b.add(BigInteger.valueOf(<span class="number">2</span>))); <span class="comment">//d=c*(b+2)</span></div></pre></td></tr></table></figure>
-<blockquote>
-<p><strong>API</strong> java.math.BigInteger 1.1</p>
-</blockquote>
-<ul>
-<li><p>BigInteger add(BigInteger other)</p>
-</li>
-<li><p>BigInteger substract(BigInteger other)</p>
-</li>
-<li><p>BigInteger multiply(BigInteger other)</p>
-</li>
-<li><p>BigInteger divide(BigInteger other)</p>
-</li>
-<li><p>BigInteger mod(BigInteger other)</p>
-<p>返回这个大整数和另一个大整数other的和、差、积、商以及余数</p>
-</li>
-<li><p>int compareTo(BigInteger other)</p>
-<p>如果这个大整数与另一个大整数other相等，返回0；小于，返回复数；大于，返回正数</p>
-</li>
-<li><p>static BigInteger valueOf(long x)</p>
-<p>返回值等于x的大整数</p>
-</li>
-</ul>
-<blockquote>
-<p><strong>API</strong> java.math.BigDecimal 1.1</p>
-</blockquote>
-<ul>
-<li><p>BigDecimal add(BigDecimal other)</p>
-</li>
-<li><p>BigDecimal substract(BigDecimal other)</p>
-</li>
-<li><p>BigDecimal multiply(BigDecimal other)</p>
-</li>
-<li><p>BigDecimal divide(BIgDecimal other, RoundingMode mode)</p>
-<p>返回这个大实数与另一个大实数的和、差、积、商。要想计算商，必须给出<em>舍入方式</em>(rounding mode)。RoundingMode.HALF_UP是四舍五入方式。</p>
-</li>
-<li><p>int compareTo(BigDecimal other)</p>
-<p>如果这个大实数与另一个大实数other相等，返回0；小于，返回复数；大于，返回正数</p>
-</li>
-<li><p>static BigDecimal valueOf(long x)</p>
-</li>
-<li><p>static BigDecimal valueOf(long x, int s)</p>
-<p>返回值为x或$x/10^s$的一个大实数</p>
-</li>
-</ul>
-<h1 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h1><p>声明数组：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span>[] a;</div></pre></td></tr></table></figure>
-<p>创建数组：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span>[] a = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">100</span>];</div></pre></td></tr></table></figure>
-<p>创建一个数字数组时，所有元素都初始化为0；boolean数组的元素会初始化为false；对象数组的元素会初始化为特殊值null，表示这些元素还未存放任何对象。</p>
-<h2 id="for-each循环"><a href="#for-each循环" class="headerlink" title="for each循环"></a>for each循环</h2><p>增强for循环：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> (variable : collection) statement</div></pre></td></tr></table></figure>
-<p>collection这一集合表达式必须是一个数组或者是一个实现了Iterable接口的类对象（例如ArrayList）</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span>[] a = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">100</span>];</div><div class="line">...</div><div class="line"><span class="keyword">for</span> (<span class="keyword">int</span> element : a)&#123;</div><div class="line">  System.out.println(element);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h2 id="数组初始化及匿名数组"><a href="#数组初始化及匿名数组" class="headerlink" title="数组初始化及匿名数组"></a>数组初始化及匿名数组</h2><p>创建数组对象并同时赋予初始值：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span>[] smallPrimes = &#123; <span class="number">2</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">7</span>, <span class="number">11</span>, <span class="number">13</span>&#125;;</div></pre></td></tr></table></figure>
-<p>初始化一个匿名数组：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">new</span> <span class="keyword">int</span>[] &#123; <span class="number">17</span>, <span class="number">19</span>, <span class="number">21</span>, <span class="number">27</span>&#125;;</div></pre></td></tr></table></figure>
-<p>这种语法可以在不创建新的变量的情况下重新初始化一个数组：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">smallPrimes = <span class="keyword">new</span> <span class="keyword">int</span>[] &#123; <span class="number">17</span>, <span class="number">19</span>, <span class="number">21</span>, <span class="number">27</span>&#125;;</div></pre></td></tr></table></figure>
-<h2 id="数组拷贝"><a href="#数组拷贝" class="headerlink" title="数组拷贝"></a>数组拷贝</h2><p>将一个数组变量拷贝给另一个数组变量，两个变量将引用同一个数组。</p>
-<p>如果希望将一个数组的所有值拷贝到一个新的数组中去，使用Arrays类的copyOf方法：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span>[] copiedLuckyNumbers = Arrays.copyOf(luckNumbers, luckyNumbers.length);</div></pre></td></tr></table></figure>
-<p>第2个参数是新数组的长度。这个方法通常用来增加数组的大小：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">luckNumbers = Arrays.copyOf(luckNumbers, luckyNumbers.length*<span class="number">2</span>);</div></pre></td></tr></table></figure>
-<p>如果数组元素是数值型，多余元素将被赋值为0；布尔型，将赋值为false。相反，如果长度小于原始长度，则只拷贝最前面的元素。</p>
-<blockquote>
-<p><strong>API</strong> java.util.Arrays 1.2</p>
-</blockquote>
-<ul>
-<li><p>static String toString(type[] a)</p>
-<p>返回包含a中数据元素的字符串，这些数据元素被放在括号内，并用逗号分隔。如：</p>
-<p>[2, 3, 4, 5, 6]</p>
-</li>
-<li><p>static type copyOf(type[] a, int length)</p>
-</li>
-<li><p>static type copyOfRange(type[] a, int start, int end)</p>
-<p>返回与a类型相同的一个数组，长度为length或者end-start，数组元素为a的值</p>
-</li>
-<li><p>static void sort(type[] a)</p>
-<p>采用优化的快速排序算法对数组进行排序</p>
-</li>
-<li><p>static int binarySearch(type[] a, type v)</p>
-</li>
-<li><p>static int binarySearch(type[] a, int start, int end, type v)</p>
-<p>采用二分搜索算法查找值v。如果查找成功，则返回相应的下标值；否则，返回一个复数值r。</p>
-</li>
-<li><p>static void fill(type[] a, type v)</p>
-<p>将数组的所有数据元素值设置为v</p>
-</li>
-<li><p>static boolean equals(type[] a, type[] b)</p>
-<p>如果两个数组大小相同，并且下标相同的元素都对应相等，返回true</p>
-</li>
-</ul>
-<h2 id="多维数组"><a href="#多维数组" class="headerlink" title="多维数组"></a>多维数组</h2><p>声明：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">double</span>[][] balances;</div></pre></td></tr></table></figure>
-<p>初始化：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">balances = <span class="keyword">new</span> <span class="keyword">double</span>[NYEARS][NRATES];</div></pre></td></tr></table></figure>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span>[][] magicSquare =</div><div class="line">&#123;</div><div class="line">  &#123;<span class="number">16</span>, <span class="number">18</span>, <span class="number">2</span>, <span class="number">13</span>&#125;,</div><div class="line">  &#123;<span class="number">28</span>, <span class="number">12</span>, <span class="number">32</span>, <span class="number">12</span>&#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
-<p>快速打印二维数组元素列表，使用Arrays.deepToString()方法：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">System.out.println(Arrays.deepToString(a));</div></pre></td></tr></table></figure>
-<h2 id="不规则数组"><a href="#不规则数组" class="headerlink" title="不规则数组"></a>不规则数组</h2><p>java实际上没有多维数组，只有一维数组。多维数组被解释为“数组的数组”。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span>[][] odds =</div><div class="line">&#123;</div><div class="line">  &#123;<span class="number">1</span>&#125;,</div><div class="line">  &#123;<span class="number">1</span>, <span class="number">2</span>&#125;,</div><div class="line">  &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>&#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/23/Java笔记（一）--Java的基本程序设计结构（一）/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Zhu Yuexin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://i4.buimg.com/567571/fbb0ec60f25374c4.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Mr.Z's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/03/23/Java笔记（一）--Java的基本程序设计结构（一）/" itemprop="url">
-                  Java笔记（一）--Java的基本程序设计结构（一）
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-23T21:30:00+08:00">
-                2017-03-23
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java笔记/" itemprop="url" rel="index">
-                    <span itemprop="name">Java笔记</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <blockquote>
-<ul>
-<li>类命名规范</li>
-<li>注释</li>
-<li>数据类型</li>
-<li>变量和常量</li>
-<li>运算符</li>
-</ul>
-</blockquote>
-<h1 id="类命名规范"><a href="#类命名规范" class="headerlink" title="类命名规范"></a>类命名规范</h1><p>类名是以大写字母开头的名词。如果名字由多个单词组成，每个单词的第一个字母都应该大写（骆驼命名法，如：CamelCase)。</p>
-<h1 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h1><ol>
-<li>行注释//：从//开始到本行结尾</li>
-<li>段落注释/* */：使用/*和/*将一段注释括起来</li>
-<li>文档注释/** */：可以自动生成文档。</li>
-</ol>
-<h1 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h1><p>Java是一种强类型语言，必须为每个变量声明一种类型。</p>
-<p>Java中共有8种基本类型：4种整形(int,short,long,byte)，2种浮点型(float,double)，1种用于表示Unicode编码的字符单元的字符类型char，1种表示真值的boolean类型。</p>
-<h1 id="变量和常量"><a href="#变量和常量" class="headerlink" title="变量和常量"></a>变量和常量</h1><h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h2><p>每个变量都有一个类型。在声明变量时，变量的类型位于变量名之前：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">double</span> salary;</div><div class="line"><span class="keyword">int</span> vacationDays;</div></pre></td></tr></table></figure>
-<p>变量在使用前必须初始化。</p>
-<h2 id="常量"><a href="#常量" class="headerlink" title="常量"></a>常量</h2><p>Java中，使用关键字final指示常量。习惯上，常量名使用全大写。</p>
-<h3 id="类常量"><a href="#类常量" class="headerlink" title="类常量"></a>类常量</h3><p>如果希望某个常量可以在一个类中的多个方法中使用，那么这种常量称为类常量。可以使用关键字static final设置类常量。</p>
-<p>类常量通常定义于main方法外部。</p>
-<h1 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h1><h2 id="算术运算符："><a href="#算术运算符：" class="headerlink" title="算术运算符："></a>算术运算符：</h2><ul>
-<li>算术运算符：+、-、*、/</li>
-<li>/运算的两个操作数都是整数时，表示整数除法；否则，表示浮点除法</li>
-<li>求余（取模）操作：%</li>
-<li>整数被0除会产生一个异常；浮点数被0除会得到无穷大或NaN结果</li>
-</ul>
-<h2 id="数学函数与常量"><a href="#数学函数与常量" class="headerlink" title="数学函数与常量"></a>数学函数与常量</h2><p>Math类中包含了许多数学函数。如：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">double</span> y = Math.sqrt(x); <span class="comment">//sqrt方法是求数值的平方根</span></div><div class="line"><span class="keyword">double</span> y = Math.pow(x, a); <span class="comment">//pow方法是幂运算，求x的a次幂</span></div></pre></td></tr></table></figure>
-<p>常用三角函数：</p>
-<ul>
-<li><p>Math.sin</p>
-</li>
-<li><p>Math.cos</p>
-</li>
-<li><p>Math.tan</p>
-</li>
-<li><p>Math.atan</p>
-</li>
-<li><p>Math.atan2</p>
-</li>
-</ul>
-<p>指数函数及它的反函数：</p>
-<ul>
-<li><p>Math.exp</p>
-</li>
-<li><p>Math.log</p>
-</li>
-<li><p>Math.log10</p>
-</li>
-</ul>
-<p>两个用于表示π和e常量的近似值：</p>
-<ul>
-<li><p>Math.PI</p>
-</li>
-<li><p>Math.E</p>
-</li>
-</ul>
-<p>浮点数舍入运算：</p>
-<ul>
-<li>Math.round</li>
-</ul>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/22/皮皮夏的奇葩日记（一）/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Zhu Yuexin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://i4.buimg.com/567571/fbb0ec60f25374c4.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Mr.Z's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/03/22/皮皮夏的奇葩日记（一）/" itemprop="url">
-                  皮皮夏的奇葩日记（一）
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-22T22:00:00+08:00">
-                2017-03-22
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/皮皮夏的奇葩日记/" itemprop="url" rel="index">
-                    <span itemprop="name">皮皮夏的奇葩日记</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="皮皮夏与小黄鸭的故事"><a href="#皮皮夏与小黄鸭的故事" class="headerlink" title="皮皮夏与小黄鸭的故事"></a>皮皮夏与小黄鸭的故事</h2><p>有一天，<strong>皮皮夏</strong>走在路上，看到一只小黄鸭在过马路。突然，一辆小车过来，撞到了小黄鸭。小黄鸭“呱”的叫了一声，变成了<strong>小黄瓜</strong>。于是<strong>皮皮夏</strong>开心的把<strong>小黄瓜</strong>捡回了家。</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-  </section>
-
-  
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/3/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span>
-  </nav>
-
-
-          
-          </div>
-          
-
-
-          
-
-        </div>
-        
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
-  </div>
-
-  <aside id="sidebar" class="sidebar">
-    <div class="sidebar-inner">
-
-      
-
-      
-
-      <section class="site-overview sidebar-panel sidebar-panel-active">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image"
-               src="http://i4.buimg.com/567571/fbb0ec60f25374c4.png"
-               alt="Zhu Yuexin" />
-          <p class="site-author-name" itemprop="name">Zhu Yuexin</p>
-           
-              <p class="site-description motion-element" itemprop="description">呀！发现一只会写代码的猪！</p>
-          
-        </div>
-        <nav class="site-state motion-element">
-        
-          
-            <div class="site-state-item site-state-posts">
-              <a href="/archives">
-                <span class="site-state-item-count">38</span>
-                <span class="site-state-item-name">日志</span>
-              </a>
+    <!-- Post_entry Info-->
+    <div id="post_entry-info">
+        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
+            <!-- Author Avatar -->
+            <div id="author-avatar">
+                <img src="/img/avatar.png" width="44px" height="44px" alt="Zhu Yuexin's avatar">
             </div>
-          
-
-          
-            <div class="site-state-item site-state-categories">
-              <a href="/categories">
-                <span class="site-state-item-count">10</span>
-                <span class="site-state-item-name">分类</span>
-              </a>
+            <div>
+                <strong>Zhu Yuexin</strong>
+                <span>Mar 30, 2017</span>
             </div>
-          
+        </div>
+        <div id="post_entry-right-info">
+            <!-- Category -->
+            <span class="post_entry-category">
+                <a class="post_category-link" href="/categories/Android碎片/">Android碎片</a>
+            </span>
 
-          
-            <div class="site-state-item site-state-tags">
-              <a href="/tags">
-                <span class="site-state-item-count">20</span>
-                <span class="site-state-item-name">标签</span>
-              </a>
+            
+
+            
+
+            <!-- Post Views -->
+            <span class="post_entry-views">
+            </span>
+        </div>
+    </div>
+</div>
+
+            
+            
+        
+    
+        
+            
+                <!-- Paradox Thumbnail -->
+                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
+    <!-- Post Thumbnail -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+        
+    
+
+        <!-- Post Title -->
+        <p class="article-headline-p"><a href="/2017/03/30/皮皮夏与她的小本本/">皮皮夏与她的小本本</a></p>
+    </div>
+
+    <!-- Post Excerpt -->
+    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
+        
+            N宗罪
+        
+        &nbsp;&nbsp;&nbsp;
+        <span>
+            <a href="/2017/03/30/皮皮夏与她的小本本/" target="_self">Weiterlesen</a>
+        </span>
+    </div>
+    <!-- Post_entry Info-->
+    <div id="post_entry-info">
+        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
+            <!-- Author Avatar -->
+            <div id="author-avatar">
+                <img src="/img/avatar.png" width="44px" height="44px" alt="Zhu Yuexin's avatar">
             </div>
-          
+            <div>
+                <strong>Zhu Yuexin</strong>
+                <span>Mar 30, 2017</span>
+            </div>
+        </div>
+        <div id="post_entry-right-info">
+            <!-- Category -->
+            <span class="post_entry-category">
+                <a class="post_category-link" href="/categories/皮皮夏/">皮皮夏</a>
+            </span>
 
+            
+
+            
+
+            <!-- Post Views -->
+            <span class="post_entry-views">
+            </span>
+        </div>
+    </div>
+</div>
+
+            
+            
+        
+    
+        
+            
+                <!-- Paradox Thumbnail -->
+                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
+    <!-- Post Thumbnail -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+        
+    
+
+        <!-- Post Title -->
+        <p class="article-headline-p"><a href="/2017/03/29/Java8新特性：Date和Time类/">Java8新特性：Date和Time类（LocalDate, LocalTime, LocalDateTime）</a></p>
+    </div>
+
+    <!-- Post Excerpt -->
+    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
+        
+            这篇文章主要是java8中新的Date和Time API的实战。新的Date和Time类是java开发者社区千呼万唤始出来的。Java8 之前存在的...
+        
+        &nbsp;&nbsp;&nbsp;
+        <span>
+            <a href="/2017/03/29/Java8新特性：Date和Time类/" target="_self">Weiterlesen</a>
+        </span>
+    </div>
+    <!-- Post_entry Info-->
+    <div id="post_entry-info">
+        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
+            <!-- Author Avatar -->
+            <div id="author-avatar">
+                <img src="/img/avatar.png" width="44px" height="44px" alt="Zhu Yuexin's avatar">
+            </div>
+            <div>
+                <strong>Zhu Yuexin</strong>
+                <span>Mar 29, 2017</span>
+            </div>
+        </div>
+        <div id="post_entry-right-info">
+            <!-- Category -->
+            <span class="post_entry-category">
+                <a class="post_category-link" href="/categories/Java笔记/">Java笔记</a>
+            </span>
+
+            
+
+            
+
+            <!-- Post Views -->
+            <span class="post_entry-views">
+            </span>
+        </div>
+    </div>
+</div>
+
+            
+            
+        
+    
+        
+            
+                <!-- Paradox Thumbnail -->
+                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
+    <!-- Post Thumbnail -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+        
+    
+
+        <!-- Post Title -->
+        <p class="article-headline-p"><a href="/2017/03/28/Java笔记（三）--Java的基本程序设计结构（三）/"></a></p>
+    </div>
+
+    <!-- Post Excerpt -->
+    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
+        
+            
+        
+        &nbsp;&nbsp;&nbsp;
+        <span>
+            <a href="/2017/03/28/Java笔记（三）--Java的基本程序设计结构（三）/" target="_self">Weiterlesen</a>
+        </span>
+    </div>
+    <!-- Post_entry Info-->
+    <div id="post_entry-info">
+        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
+            <!-- Author Avatar -->
+            <div id="author-avatar">
+                <img src="/img/avatar.png" width="44px" height="44px" alt="Zhu Yuexin's avatar">
+            </div>
+            <div>
+                <strong>Zhu Yuexin</strong>
+                <span>Mar 28, 2017</span>
+            </div>
+        </div>
+        <div id="post_entry-right-info">
+            <!-- Category -->
+            <span class="post_entry-category">
+                
+            </span>
+
+            
+
+            
+
+            <!-- Post Views -->
+            <span class="post_entry-views">
+            </span>
+        </div>
+    </div>
+</div>
+
+            
+            
+        
+    
+        
+            
+                <!-- Paradox Thumbnail -->
+                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
+    <!-- Post Thumbnail -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+        
+    
+
+        <!-- Post Title -->
+        <p class="article-headline-p"><a href="/2017/03/24/Java笔记（二）--Java的基本程序设计结构（二）/">Java笔记（二）--Java的基本程序设计结构（二）</a></p>
+    </div>
+
+    <!-- Post Excerpt -->
+    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
+        
+            
+
+字符串
+输入输出
+控制流程
+大数值
+数...
+        
+        &nbsp;&nbsp;&nbsp;
+        <span>
+            <a href="/2017/03/24/Java笔记（二）--Java的基本程序设计结构（二）/" target="_self">Weiterlesen</a>
+        </span>
+    </div>
+    <!-- Post_entry Info-->
+    <div id="post_entry-info">
+        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
+            <!-- Author Avatar -->
+            <div id="author-avatar">
+                <img src="/img/avatar.png" width="44px" height="44px" alt="Zhu Yuexin's avatar">
+            </div>
+            <div>
+                <strong>Zhu Yuexin</strong>
+                <span>Mar 24, 2017</span>
+            </div>
+        </div>
+        <div id="post_entry-right-info">
+            <!-- Category -->
+            <span class="post_entry-category">
+                <a class="post_category-link" href="/categories/Java笔记/">Java笔记</a>
+            </span>
+
+            
+
+            
+
+            <!-- Post Views -->
+            <span class="post_entry-views">
+            </span>
+        </div>
+    </div>
+</div>
+
+            
+            
+        
+    
+        
+            
+                <!-- Paradox Thumbnail -->
+                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
+    <!-- Post Thumbnail -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+        
+    
+
+        <!-- Post Title -->
+        <p class="article-headline-p"><a href="/2017/03/23/Java笔记（一）--Java的基本程序设计结构（一）/">Java笔记（一）--Java的基本程序设计结构（一）</a></p>
+    </div>
+
+    <!-- Post Excerpt -->
+    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
+        
+            
+
+类命名规范
+注释
+数据类型
+变量和常量
+
+        
+        &nbsp;&nbsp;&nbsp;
+        <span>
+            <a href="/2017/03/23/Java笔记（一）--Java的基本程序设计结构（一）/" target="_self">Weiterlesen</a>
+        </span>
+    </div>
+    <!-- Post_entry Info-->
+    <div id="post_entry-info">
+        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
+            <!-- Author Avatar -->
+            <div id="author-avatar">
+                <img src="/img/avatar.png" width="44px" height="44px" alt="Zhu Yuexin's avatar">
+            </div>
+            <div>
+                <strong>Zhu Yuexin</strong>
+                <span>Mar 23, 2017</span>
+            </div>
+        </div>
+        <div id="post_entry-right-info">
+            <!-- Category -->
+            <span class="post_entry-category">
+                <a class="post_category-link" href="/categories/Java笔记/">Java笔记</a>
+            </span>
+
+            
+
+            
+
+            <!-- Post Views -->
+            <span class="post_entry-views">
+            </span>
+        </div>
+    </div>
+</div>
+
+            
+            
+        
+    
+        
+            
+                <!-- Paradox Thumbnail -->
+                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
+    <!-- Post Thumbnail -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+        
+    
+
+        <!-- Post Title -->
+        <p class="article-headline-p"><a href="/2017/03/22/皮皮夏的奇葩日记（一）/">皮皮夏的奇葩日记（一）</a></p>
+    </div>
+
+    <!-- Post Excerpt -->
+    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
+        
+            
+        
+        &nbsp;&nbsp;&nbsp;
+        <span>
+            <a href="/2017/03/22/皮皮夏的奇葩日记（一）/" target="_self">Weiterlesen</a>
+        </span>
+    </div>
+    <!-- Post_entry Info-->
+    <div id="post_entry-info">
+        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
+            <!-- Author Avatar -->
+            <div id="author-avatar">
+                <img src="/img/avatar.png" width="44px" height="44px" alt="Zhu Yuexin's avatar">
+            </div>
+            <div>
+                <strong>Zhu Yuexin</strong>
+                <span>Mar 22, 2017</span>
+            </div>
+        </div>
+        <div id="post_entry-right-info">
+            <!-- Category -->
+            <span class="post_entry-category">
+                <a class="post_category-link" href="/categories/皮皮夏的奇葩日记/">皮皮夏的奇葩日记</a>
+            </span>
+
+            
+
+            
+
+            <!-- Post Views -->
+            <span class="post_entry-views">
+            </span>
+        </div>
+    </div>
+</div>
+
+            
+            
+        
+    
+
+    
+    <!-- Index nav -->
+        <nav class="material-nav mdl-cell mdl-cell--12-col">
+            <a class="extend prev" rel="prev" href="/page/3/"><button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"><i class="material-icons" role="presentation">arrow_back</i></button></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span>
         </nav>
+    
 
+    
+        <script type="text/ls-javascript" id="thumbnail-script">
+    var randomNum;
+
+    var locatePost = $('.locate-thumbnail-symbol').next();
+    for(var i = 0; i < 10; i++) {
+        randomNum = Math.floor(Math.random() * 19 + 1);
+
+        locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
+        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').addClass('lazy');
+
+        locatePost = locatePost.next();
+    }
+</script>
+
+    
+</div>
+
+
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(/img/sidebar_header.png);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="/img/avatar.png" alt="Zhu Yuexin's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        youremail@email.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="#" target="_blank" title="Email Me">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        
+                        Email Me
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    
+        <li id="sidebar-first-li">
+            <a href="/">
+                
+                    <i class="material-icons sidebar-material-icons">home</i>
+                
+                Home
+            </a>
+        </li>
         
+    
 
-        <div class="links-of-author motion-element">
-          
+    <!-- Archives  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">inbox</i>
+                
+                    Archive
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+            <li>
+                <a class="sidebar_archives-link" href="/archives/2017/12/">December 2017<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/11/">November 2017<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/10/">October 2017<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/08/">August 2017<span class="sidebar_archives-count">15</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/03/">March 2017<span class="sidebar_archives-count">8</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Categories  -->
+    
+
+    <!-- Pages  -->
+    
+
+    <!-- Article Number  -->
+    
+</ul>
+
+
+        <!-- Sidebar Footer -->
+        <!--
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :)
+-->
+
+<!-- Sidebar Divider -->
+
+    <div class="sidebar-divider"></div>
+
+
+<!-- Theme Material -->
+
+    <a href="https://github.com/viosey/hexo-theme-material"  class="sidebar-footer-text-a" target="_blank">
+        <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+            Theme - Material
+            <span class="sidebar-badge badge-circle">i</span>
         </div>
-
-        
-        
-
-        
-        
-
-        
+    </a>
 
 
-      </section>
+<!-- Help & Support -->
+<!--
 
-      
+-->
 
-      
+<!-- Feedback -->
+<!--
+
+-->
+
+<!-- About Theme -->
+<!--
+
+-->
 
     </div>
-  </aside>
 
+    <!-- Sidebar Image -->
+    
 
-        
-      </div>
-    </main>
+</aside>
 
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright" >
-  
-  &copy; 
-  <span itemprop="copyrightYear">2017</span>
-  <span class="with-love">
-    <i class="fa fa-heart"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">Zhu Yuexin</span>
+                    
+
+                    
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+    
+        <!-- Paradox Footer Left Section -->
+        <div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+        <a href="https://twitter.com/twitter" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-twitter">
+                <span class="visuallyhidden">Twitter</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Facebook -->
+    
+        <a href="https://www.facebook.com/facebook" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-facebook">
+                <span class="visuallyhidden">Facebook</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Google + -->
+    
+        <a href="https://www.google.com/" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-gplus">
+                <span class="visuallyhidden">Google Plus</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Weibo -->
+    
+
+    <!-- Instagram -->
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+
+    <!-- LinkedIn -->
+    
+
+    <!-- Zhihu -->
+    
+
+    <!-- Bilibili -->
+    
+
+    <!-- Telegram -->
+    
 </div>
 
 
-<div class="powered-by">
-  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
-</div>
+        <!--Copyright-->
+        <div id="copyright">
+            Copyright&nbsp;©<script type="text/javascript">var fd = new Date();document.write("&nbsp;" + fd.getFullYear() + "&nbsp;");</script>Mr.Z's Blog
+        </div>
 
-<div class="theme-info">
-  主题 -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Mist
-  </a>
-</div>
+        <!-- Paradox Footer Right Section -->
 
+        <!--
+        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+        It will not impact the appearance and can give developers a lot of support :)
 
-        
+        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+        它不会影响美观并可以给开发者很大的支持。 :)
+        -->
 
-        
-      </div>
-    </footer>
-
+        <div class="mdl-mini-footer--right-section">
+            <div>
+                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
+                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+            </div>
+        </div>
     
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
-    
-    
-  </div>
+</footer>
 
-  
 
-<script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
-  }
+                    <!-- Import File -->
+
+
+    <script>lsloader.load("js/lazyload.min.js","/js/lazyload.min.js?1BcfzuNXqV+ntF6gq+5X3Q==")</script>
+    <script>lsloader.load("js/js.min.js","/js/js.min.js?oAl/+lvaqTFV31JXTmbrNA==")</script>
+
+
+
+    <script>lsloader.load("js/nprogress.js","/js/nprogress.js?pl3Qhb9lvqR1FlyLUna1Yw==")</script>
+
+
+<script type="text/ls-javascript" id="NProgress-script">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    $('#nprogress .bar').css({
+        'background': '#29d'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#29d',
+        'border-left-color': '#29d'
+    });
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
 </script>
 
 
@@ -1854,95 +1074,62 @@
 
 
 
-  
 
 
 
 
-  
-  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+<!-- UC Browser Compatible -->
+<script>
+	var agent = navigator.userAgent.toLowerCase();
+	if(agent.indexOf('ucbrowser')>0) {
+		document.write('<link rel="stylesheet" href="/css/uc.css">');
+	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+	}
+</script>
 
-  
-  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+<!-- Window Load-->
+<script type="text/ls-javascript" id="window-load">
+    $(window).on('load', function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+</script>
 
-  
-  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+<!-- MathJax Load-->
 
-  
-  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+<script type="text/ls-javascript" id="lazy-load">
+    // Offer LazyLoad
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
 
-  
-  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+    // Start Queue
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script>
 
-  
-  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
-
-
-
-  
-  
-
-  
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
-
+<!-- Bing Background -->
 
 
-  
+<script>
+    (function(){
+        var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
 
+        for (var i = 0; i < scriptList.length; ++i) {
+            var item = scriptList[i];
+            lsloader.runInlineScript(item.id,item.id);
+        }
+    })()
+console.log('\n %c © Material Theme | Version: 1.4.0 | https://github.com/viosey/hexo-theme-material %c \n', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;');
+</script>
 
-
-  
-
-
-
-
-	
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-
-
-  
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-</body>
+                </main>
+            </div>
+        </body>
+    
 </html>

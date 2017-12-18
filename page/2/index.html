@@ -1,2035 +1,1176 @@
-<!doctype html>
+<!DOCTYPE html>
+<html style="display: none;" lang="zh">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.4.0 -->
+    <script>window.materialVersion = "1.4.0"</script>
 
+    <!-- Title -->
+    
+    <title>
+        
+        Mr.Z&#39;s Blog
+    </title>
 
-
-  
-
-
-<html class="theme-next mist use-motion" lang="zh-Hans">
-<head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
-
-
-
-
-  
-  
-  
-  
-
-  
+    <!-- dns prefetch -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
     
     
-  
-
-  
-
-  
-
-  
-
-  
-
-  
     
     
-    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-  
+    
+    
+    
+    
+    
+    
+
+    <!-- Meta & Info -->
+    <meta http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="theme-color" content="#0097A7">
+    <meta name="author" content="Zhu Yuexin">
+    <meta name="description" itemprop="description" content="呀！发现一只会写代码的猪！">
+    <meta name="keywords" content="null">
+
+    <!-- Site Verification -->
+    
+    
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/favicon.png">
+    <link rel="icon" sizes="192x192" href="/img/favicon.png">
+    <link rel="apple-touch-icon" href="/img/favicon.png">
+
+    <!--iOS -->
+    <meta name="apple-mobile-web-app-title" content="Title">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="480">
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Mr.Z&#39;s Blog">
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="http://yoursite.com">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="Mr.Z&#39;s Blog">
+    <meta property="og:image" content="/img/favicon.png" />
+    <meta property="og:description" content="呀！发现一只会写代码的猪！">
+    
+
+    
+
+    <!-- The Twitter Card protocol -->
+    <meta name="twitter:title" content="Mr.Z&#39;s Blog">
+    <meta name="twitter:description" content="呀！发现一只会写代码的猪！">
+    <meta name="twitter:image" content="/img/favicon.png">
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="http://yoursite.com" />
+
+    <!-- Add canonical link for SEO -->
+    
+        <link rel="canonical" href="http://yoursite.com/page/2/index.html" />
+    
+
+    <!-- Structured-data for SEO -->
+    
+        
 
 
 
+    
 
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
 
+        
+            <script src="/js/ie-blocker.en.js"></script>
+        
+    <![endif]-->
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+    <!-- Import lsloader -->
+    <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(key){try{localStorage.removeItem(key)}catch(e){}};lsloader.setLS=function(key,val){try{localStorage.setItem(key,val)}catch(e){}};lsloader.getLS=function(key){var val="";try{val=localStorage.getItem(key)}catch(e){val=""}return val};versionString="/*"+materialVersion+"*/";lsloader.clean=function(){try{var keys=[];for(var i=0;i<localStorage.length;i++){keys.push(localStorage.key(i))}keys.forEach(function(key){var data=lsloader.getLS(key);if(data&&data.indexOf(versionString)===-1){lsloader.removeLS(key)}})}catch(e){}};lsloader.clean();lsloader.load=function(jsname,jspath,cssonload){cssonload=cssonload||function(){};var code;code=this.getLS(jsname);if(code&&code.indexOf(versionString)===-1){this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload);return}if(code){var versionNumber=code.split(versionString)[0];if(versionNumber!=jspath){console.log("reload:"+jspath);this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload);return}code=code.split(versionString)[1];if(/\.js?.+$/.test(versionNumber)){this.jsRunSequence.push({name:jsname,code:code});this.runjs(jspath,jsname,code)}else{document.getElementById(jsname).appendChild(document.createTextNode(code));cssonload()}}else{this.requestResource(jsname,jspath,cssonload)}};lsloader.requestResource=function(name,path,cssonload){var that=this;if(/\.js?.+$/.test(path)){this.iojs(path,name,function(path,name,code){that.setLS(name,path+versionString+code);that.runjs(path,name,code)})}else if(/\.css?.+$/.test(path)){this.iocss(path,name,function(code){document.getElementById(name).appendChild(document.createTextNode(code));that.setLS(name,path+versionString+code)},cssonload)}};lsloader.iojs=function(path,jsname,callback){var that=this;that.jsRunSequence.push({name:jsname,code:""});try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(path,jsname,xhr.response);return}}that.jsfallback(path,jsname)}};xhr.send(null)}catch(e){that.jsfallback(path,jsname)}};lsloader.iocss=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.iofonts=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.runjs=function(path,name,code){if(!!name&&!!code){for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code=code}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var script=document.createElement("script");script.appendChild(document.createTextNode(this.jsRunSequence[0].code));script.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(script);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var that=this;var script=document.createElement("script");script.src=this.jsRunSequence[0].path;script.type="text/javascript";this.jsRunSequence[0].status="loading";script.onload=function(){that.jsRunSequence.shift();if(that.jsRunSequence.length>0){that.runjs()}};document.body.appendChild(script)}};lsloader.tagLoad=function(path,name){this.jsRunSequence.push({name:name,code:"",path:path,status:"failed"});this.runjs()};lsloader.jsfallback=function(path,name){if(!!this.jsnamemap[name]){return}else{this.jsnamemap[name]=name}for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code="";this.jsRunSequence[k].status="failed";this.jsRunSequence[k].path=path}}this.runjs()};lsloader.cssfallback=function(path,name,cssonload){if(!!this.cssnamemap[name]){return}else{this.cssnamemap[name]=1}var link=document.createElement("link");link.type="text/css";link.href=path;link.rel="stylesheet";link.onload=link.onerror=cssonload;var root=document.getElementsByTagName("script")[0];root.parentNode.insertBefore(link,root)};lsloader.runInlineScript=function(scriptId,codeId){var code=document.getElementById(codeId).innerText;this.jsRunSequence.push({name:scriptId,code:code});this.runjs()};lsloader.loadCombo=function(jslist){var updateList="";var requestingModules={};for(var k in jslist){var LS=this.getLS(jslist[k].name);if(!!LS){var version=LS.split(versionString)[0];var code=LS.split(versionString)[1]}else{var version=""}if(version==jslist[k].path){this.jsRunSequence.push({name:jslist[k].name,code:code,path:jslist[k].path})}else{this.jsRunSequence.push({name:jslist[k].name,code:null,path:jslist[k].path,status:"comboloading"});requestingModules[jslist[k].name]=true;updateList+=(updateList==""?"":";")+jslist[k].path}}var that=this;if(!!updateList){var xhr=new XMLHttpRequest;xhr.open("get",combo+updateList,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){that.runCombo(xhr.response,requestingModules);return}}else{for(var i in that.jsRunSequence){if(requestingModules[that.jsRunSequence[i].name]){that.jsRunSequence[i].status="failed"}}that.runjs()}}};xhr.send(null)}this.runjs()};lsloader.runCombo=function(comboCode,requestingModules){comboCode=comboCode.split("/*combojs*/");comboCode.shift();for(var k in this.jsRunSequence){if(!!requestingModules[this.jsRunSequence[k].name]&&!!comboCode[0]){this.jsRunSequence[k].status="comboJS";this.jsRunSequence[k].code=comboCode[0];this.setLS(this.jsRunSequence[k].name,this.jsRunSequence[k].path+versionString+comboCode[0]);comboCode.shift()}}this.runjs()}})();</script>
 
-<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
-
-
-  <meta name="keywords" content="Hexo, NexT" />
-
-
-
-
-
-
-
-
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
-
-
-
-
-
-
-<meta name="description" content="呀！发现一只会写代码的猪！">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Mr.Z's Blog">
-<meta property="og:url" content="http://yoursite.com/page/2/index.html">
-<meta property="og:site_name" content="Mr.Z's Blog">
-<meta property="og:description" content="呀！发现一只会写代码的猪！">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Mr.Z's Blog">
-<meta name="twitter:description" content="呀！发现一只会写代码的猪！">
-
-
-
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Mist',
-    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
-    fancybox: true,
-    motion: true,
-    duoshuo: {
-      userId: '0',
-      author: '博主'
-    },
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    <!-- Import CSS & jQuery -->
+    
+        <style id="css/material.min.css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("css/material.min.css","/css/material.min.css?fJTiM/K1J3dWIruo3pxtAw==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";})</script>
+        <style id="css/style.min.css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("css/style.min.css","/css/style.min.css?oCSEO3ST+aEypEwttTDI9g==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";})</script>
+        
+        
+            <style>
+    
+    .footer-sns-facebook {
+        background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0OCIgaGVpZ2h0PSI0OCIgY2xhc3M9Imljb24iIHZpZXdCb3g9IjAgMCAxMDI0IDEwMjQiPjxwYXRoIGQ9Ik0xMzguNiA3OGMtMjIuNCA1LjItNTUuOCA0MC4yLTYwLjYgNjMuNC0xLjQgNi40LTIgMTI5LjgtMS42IDM2Ny42LjYgMjk4LjYgMSAzNTguOCAzLjQgMzYzIDExIDIwLjIgMjEuNiAzMi40IDM3LjIgNDMgMTUgMTAuMiAxNy40IDExLjIgMzMgMTMgMTEuMiAxLjQgMTM2IDIgMzY1IDEuNiAzMTQtLjYgMzQ4LjYtMSAzNTUtMy44IDE1LjgtNy4yIDMzLjgtMjIgNDMuMi0zNS40IDUuMi03LjQgMTAuOC0xNi42IDEyLjYtMjAuNCAyLjgtNi40IDMuMi00MC44IDMuOC0zNTQgLjQtMjIzLS4yLTM1My40LTEuNC0zNjUtMi0xNy0yLjYtMTguNi0xMy0zNC04LjYtMTIuNi0xNC4yLTE4LjQtMjUuMi0yNS44LTcuOC01LjQtMTcuNC0xMS0yMS42LTEyLjQtNi0yLjItNzIuOC0yLjYtMzY1LjQtMi42LTE5Ni44LjItMzYxIC44LTM2NC40IDEuOHptNjU3LjYgODcuOGw0LjggMy44djU1LjJjMCA1NC42IDAgNTUuMi00LjYgNTkuNi00LjQgNC40LTYgNC42LTUwLjIgNS42bC00NS42IDEtNy4yIDUuNmMtMTAuNCA4LTE2LjggMTcuMi0xOS4yIDI3LjQtMSA1LTEuOCAyNC44LTEuOCA0NCAuMiAzOCAxLjYgNDQuNiAxMC44IDQ4IDIuOCAxLjIgMjguNCAyIDU2LjggMiA0Ny44IDAgNTIgLjIgNTYuMiAzLjhsNC44IDMuOHY1NS4yYzAgNTQuNiAwIDU1LjItNC42IDU5LjYtNC40IDQuNi01LjQgNC42LTU3IDUuMi0yOC44LjItNTQuNC44LTU2LjggMS40LTIuNC42LTUuNiAzLTYuOCA1LjQtMS44IDMuMi0yLjQgNDEuNC0yLjYgMTQzLjJsLS4yIDEzOC44LTUuNiA0LjgtNS42IDQuOEg2MDljLTUyLjQgMC01Mi44IDAtNTguMi00LjZsLTUuNC00LjYtLjItMTQwLjYtLjItMTQwLjYtNC44LTMuOGMtNC4yLTMuNC04LTMuOC0zNS42LTMuOC0zMi44IDAtNDEtMS44LTQzLjYtMTAtLjYtMi4yLTEuMi0yNS40LTEuMi01MS40IDAtNjAuOC0uMi01NyAzLjQtNjEuNiAyLjgtMy42IDYtNCAzNy44LTUgMzMtMSAzNS4yLTEuMiAzOS40LTUuNiA0LjYtNC40IDQuNi01LjIgNS44LTcxIDEuMi03My40LjItNjcuMiAxNi42LTk5LjQgOC0xNS44IDEyLjgtMjIgMjgtMzcgMTUuMi0xNS4yIDIxLjQtMTkuNiAzOC4yLTI4IDExLTUuNCAyNC0xMSAyOS0xMi4yIDYuMi0xLjggMjguNi0yLjYgNzEuMi0yLjYgNTguNi0uMiA2Mi42IDAgNjcgMy42eiIvPjwvc3ZnPg==);
     }
-  };
-</script>
+    
+    
+    .footer-sns-twitter {
+        background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0OCIgaGVpZ2h0PSI0OCIgY2xhc3M9Imljb24iIHZpZXdCb3g9IjAgMCAxMDI0IDEwMjQiPjxwYXRoIGQ9Ik0xMzguNiA3OGMtMjIuNCA1LjItNTUuOCA0MC4yLTYwLjYgNjMuNC0xLjQgNi40LTIgMTI5LjgtMS42IDM2Ny42LjYgMjk4LjYgMSAzNTguOCAzLjQgMzYzIDExIDIwLjIgMjEuNiAzMi40IDM3LjIgNDMgMTUgMTAuMiAxNy40IDExLjIgMzMgMTMgMTEuMiAxLjQgMTM2IDIgMzY1IDEuNiAzMTQtLjYgMzQ4LjYtMSAzNTUtMy44IDE1LjgtNy4yIDMzLjgtMjIgNDMuMi0zNS40IDUuMi03LjQgMTAuOC0xNi42IDEyLjYtMjAuNCAyLjgtNi40IDMuMi00MC44IDMuOC0zNTQgLjQtMjIzLS4yLTM1My40LTEuNC0zNjUtMi0xNy0yLjYtMTguNi0xMy0zNC04LjYtMTIuNi0xNC4yLTE4LjQtMjUuMi0yNS44LTcuOC01LjQtMTcuNC0xMS0yMS42LTEyLjQtNi0yLjItNzIuOC0yLjYtMzY1LjQtMi42LTE5Ni44LjItMzYxIC44LTM2NC40IDEuOHptNTMyLjggMjA1YzEwIDQgMjMgMTAuOCAyOC44IDE1LjIgMTIuNiA5LjIgMTYuNiAxMC42IDI5LjQgOS40IDYuNi0uNiAxMy0zLjIgMjAuNC04LjIgMTEuMi03LjYgMTkuNC05LjIgMjMuNi01IDMuNiAzLjYgMi44IDktMi44IDE4LjYtNy4yIDEyLjQtNiAxOC44IDQuMiAyNC4yIDQuNCAyLjIgOC4yIDUuNiA4LjYgNy40IDEgNC44LTEyLjYgMjQuMi0yMiAzMS44LTExLjggOS4yLTE3LjIgMjIuNi0xOS42IDQ3LjgtNC44IDUwLjQtNy44IDY2LjYtMTYuNCA4NS40LTMgNy03IDE3LjgtOC44IDI0LTEuOCA2LjQtNSAxNC42LTcuNCAxOC40LTIuMiAzLjgtNy40IDEzLTExLjQgMjAuNC0xNy4yIDMwLjgtNDMuNCA2MS40LTcxLjQgODMuOC0yNS42IDIwLjQtNDYgMzMuMi02NC4yIDQwLjItOC40IDMuMi0xOCA3LjYtMjEuNCA5LjYtNy40IDQuNi0yMi40IDguNi01Ny4yIDE1LTYyLjIgMTEuNi03OS4yIDExLjQtMTM1LjYtMS0zMi40LTctMzguNi05LTUyLTE2LjgtMjEuNC0xMi42LTI0LjItMTQuOC0yNC4yLTE5LjQgMC02LjIgMTAuMi05LjIgMzUtMTAuNCAyMi40LTEgMjguNi0yLjYgNTctMTQuMiAyMy44LTkuOCAyOS40LTEyLjggMzAuNC0xNi44IDIuMi04LjItMy0xMy4yLTI2LjgtMjUuNC0yNS44LTEzLjItMzIuMi0xOC40LTQzLjgtMzUuOC05LTEzLjYtMTAtMjEuMi0zLjYtMzMuNiA1LjQtMTAuOCAzLjYtMTUtMTEuOC0yNS40LTktNi0xNC0xMS42LTIwLjgtMjIuNi0yMy40LTM3LjgtMjUtNTAuOC03LjItNTkuOCA0LjgtMi40IDkuNC01LjQgMTAuMi02LjYgMi44LTQuMi0uNC0xNS42LTguNC0yOS0xMS42LTE5LjYtMTMuMi0yNS44LTEzLjItNTUuMiAwLTI4LjggMi42LTM3LjggMTItNDAuMiA5LTIuMiAxNC44IDEgMzUuNiAyMC4yIDI0LjggMjIuOCA0My42IDM2LjYgNjIuOCA0NS44IDggMy44IDE3LjggOS4yIDIyIDEyIDQuMiAyLjggMTQuOCA3IDIzLjQgOS4yIDguNiAyLjIgMjQuMiA2LjggMzQuOCAxMC4yIDEzLjQgNC40IDIzLjYgNi40IDMzIDYuNiAxMi44LjIgMTQuMi0uMiAxOC42LTUuNCA0LTQuOCA0LjgtNy44IDQuOC0xOS4yIDAtMTQuNCA1LjYtMzkuNiAxMS4yLTUwLjYgNC4yLTguNCAyOS4yLTM0LjIgMzkuOC00MS40IDcuOC01LjQgMzUuNi0xNiA1Mi0yMCAxNC4yLTMuNiAzMi42LTEuMiA1Mi40IDYuOHoiLz48L3N2Zz4=);
+    }
+    
+    
+    .footer-sns-gplus {
+        background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0OCIgaGVpZ2h0PSI0OCIgY2xhc3M9Imljb24iIHZpZXdCb3g9IjAgMCAxMDI0IDEwMjQiPjxwYXRoIGQ9Ik0xMzguNiA3OGMtMjIuNCA1LjItNTUuOCA0MC4yLTYwLjYgNjMuNC0xLjQgNi40LTIgMTI5LjgtMS42IDM2Ny42LjYgMjk4LjYgMSAzNTguOCAzLjQgMzYzIDExIDIwLjIgMjEuNiAzMi40IDM3LjIgNDMgMTUgMTAuMiAxNy40IDExLjIgMzMgMTMgMTEuMiAxLjQgMTM2IDIgMzY1IDEuNiAzMTQtLjYgMzQ4LjYtMSAzNTUtMy44IDE1LjgtNy4yIDMzLjgtMjIgNDMuMi0zNS40IDUuMi03LjQgMTAuOC0xNi42IDEyLjYtMjAuNCAyLjgtNi40IDMuMi00MC44IDMuOC0zNTQgLjQtMjIzLS4yLTM1My40LTEuNC0zNjUtMi0xNy0yLjYtMTguNi0xMy0zNC04LjYtMTIuNi0xNC4yLTE4LjQtMjUuMi0yNS44LTcuOC01LjQtMTcuNC0xMS0yMS42LTEyLjQtNi0yLjItNzIuOC0yLjYtMzY1LjQtMi42LTE5Ni44LjItMzYxIC44LTM2NC40IDEuOHpNNDMwIDI5NS40YzQwLjYgMTUuNCA1Ni42IDIzLjggNzIuNiAzOC40IDYuOCA2LjIgNy4yIDE1LjIgMSAyMy40LTYuMiA4LTMzLjYgMzMuOC0zOSAzNi42LTUuNiAyLjgtMTcuNiAyLjgtMjMuMi0uMi0yLjQtMS4yLTguMi01LjItMTMtOC44LTExLjItOC42LTI0LjYtMTEuMi01NS4yLTExLjItMjcuNCAwLTQwLjYgMi42LTUyLjIgMTAuNC00LjQgMi44LTEyLjIgNy42LTE3LjIgMTAuNi0yMyAxMy4yLTUxLjQgNTUtNTUuOCA4Mi40LTIuNiAxNS42LTIuNCAzNC44LjIgNTEgMi44IDE3LjQgMTkuOCA0OC44IDM1LjIgNjUuMiAxNiAxNi42IDQ1IDMzLjYgNjIuOCAzNi42IDI2LjggNC40IDY1LjggMS42IDc5LjQtNS44IDIwLjYtMTEuNCAzMS0xOSA0MS0zMC40IDE4LjgtMjEuNiAyMy40LTM0LjIgMTUuNi00My44LTMuOC00LjgtNC40LTQuOC01MS01LjgtNjAuOC0xLjItNTYuMiAyLjItNTYuMi00My4yIDAtMzIuNC4yLTMzLjIgNC44LTM3IDQuNC0zLjYgOS0zLjggOTItMy44IDc5IDAgODcuOC40IDk0LjIgMy42IDExLjIgNS42IDEzIDExLjQgMTIuOCA0My40IDAgMjUuNC0uOCAzMC44LTcuNiA1OC00IDE2LjYtOS44IDM0LTEyLjYgMzktMi44IDUtOC4yIDE0LjItMTEuNiAyMC42LTguNCAxNS40LTI3LjIgMzYuOC00MC44IDQ2LjYtNS44IDQuNC0xMy44IDEwLjItMTcuNiAxMy4yLTMuOCAzLTExIDctMTYuMiA4LjgtNS4yIDEuOC0xNi4yIDYuNC0yNC40IDEwLTIyLjQgOS42LTM0LjggMTEuNi03MyAxMS42LTM3LjYuMi00Ny0xLjQtNzEtMTItOC4yLTMuNi0xNy42LTcuMi0yMC44LTgtMTUuOC0zLjgtNjctNDUuMi03Ny44LTYyLjgtMi4yLTMuOC03LjYtMTEuNi0xMS44LTE3LjItNC4yLTUuNC05LTE0LTEwLjYtMTktMS44LTQuOC02LjItMTYtMTAtMjQuOC0zLjYtOC44LTcuOC0yMi4yLTkuMi0yOS42LTMuMi0xOC44LTEuNC03OS40IDIuOC05MS40IDEzLjgtNDAuNiAzNS42LTc4IDU4LjgtMTAwLjIgMTQtMTMuNiA0Ny4yLTM2LjQgNTgtMzkuOCA0LjItMS40IDEzLjQtNS4yIDIwLjYtOC40IDIyLTEwIDMyLjgtMTEuNiA3Ni0xMSAzMy44LjYgNDAuNCAxLjIgNTAgNC44em0zNDAuOCA4MC44YzggMy42IDkuNiAxMS4yIDkuMiAzOS4yLS42IDM0LjQtLjYgMzQgNSAzOS42IDQuOCA1IDUuNCA1IDM3LjYgNSA0My40IDAgNDQuNC44IDQzLjIgMzYuMi0uOCAxNy0xLjIgMTguNC02LjQgMjMtNS40IDQuNi02LjYgNC44LTM3LjYgNC44LTMxLjIgMC0zMiAuMi0zNi44IDUtNS42IDUuNC01LjYgNC40LTUgNDEuMi40IDI2LjQuMiAyNy40LTQuNiAzMy00LjggNS42LTYgNS44LTI0LjQgNi40LTIwLjguOC0yOS42LTEuNC0zMy40LTguNC0xLjQtMi42LTItMTUuNi0xLjgtMzUuNi40LTMxLjIuNC0zMS42LTQuNi0zNi42cy01LjYtNS0zNi01Yy0xOC44IDAtMzMtLjgtMzYtMi4yLTcuNi0zLjYtOS42LTExLjItOC44LTMzLjguOC0yOC4yLjQtMjggNDEtMjggNDUuNCAwIDQ1LjQgMCA0NC42LTQyLjYtLjYtMzMtLjYtMzMgNS0zOC40IDQuNC00LjYgNi4yLTUgMjQuOC01IDExIDAgMjIuMiAxIDI1IDIuMnoiLz48L3N2Zz4=);
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</style>
+
+        
+        <!-- Config CSS -->
+
+<!-- Other Styles -->
+<style>
+  body, html {
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+  }
+
+  a {
+    color: #00838F;
+  }
+
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: #0097A7 !important;
+  }
+
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: #0097A7 !important;
+  }
+
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: #0097A7 !important;
+  }
+
+  .toTop {
+    background: #757575 !important;
+  }
+
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: #757575;
+  }
+
+  #scheme-Paradox .MD-burger-layer {
+    background-color: #757575;
+  }
+
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: #757575;
+  }
+
+  .post-toc a:hover {
+    color: #00838F;
+    text-decoration: underline;
+  }
+
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+      body{
+        background-color: #F5F5F5;
+      }
+
+      /* blog_info bottom background */
+      #scheme-Paradox .material-layout .something-else .mdl-card__supporting-text{
+        background-color: #fff;
+      }
+    </style>
 
 
 
-  <link rel="canonical" href="http://yoursite.com/page/2/"/>
+
+<!-- Fade Effect -->
+
+    <style>
+      .fade {
+        transition: all 800ms linear;
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+        opacity: 1;
+      }
+
+      .fade.out{
+        opacity: 0;
+      }
+    </style>
 
 
+<!-- Import Font -->
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
 
 
+        <script>lsloader.load("js/jquery.min.js","/js/jquery.min.js?qcusAULNeBksqffqUM2+Ig==")</script>
+    
+    
+    <script>function Queue(){this.dataStore=[];this.offer=b;this.poll=d;this.execNext=a;this.debug=false;this.startDebug=c;function b(e){if(this.debug){console.log("Offered a Queued Function.")}if(typeof e==="function"){this.dataStore.push(e)}else{console.log("You must offer a function.")}}function d(){if(this.debug){console.log("Polled a Queued Function.")}return this.dataStore.shift()}function a(){var e=this.poll();if(e!==undefined){if(this.debug){console.log("Run a Queued Function.")}e()}}function c(){this.debug=true}}var queue=new Queue();</script>
 
-  <title> Mr.Z's Blog </title>
+    <!-- Analytics -->
+    
+
+    <!-- Custom Head -->
+    
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
     
-  
+        <body id="scheme-Paradox" class="lazy">
+            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
 
-  <div class="container one-collumn sidebar-position-left 
-   page-home 
- ">
-    <div class="headband"></div>
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
 
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
+
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span class="MD-burger-layer"></span>
+                        </button>
+                    
+
+                    <!-- Index Module -->
+<div class="material-index mdl-grid">
+    
+    <div class="locate-thumbnail-symbol"></div>
+
+    <!-- Pin on top -->
     
 
-    <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Mr.Z's Blog</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
+    <!-- Normal Post -->
+    
+        
+            
+                <!-- Paradox Thumbnail -->
+                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
+    <!-- Post Thumbnail -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+        
+    
+
+        <!-- Post Title -->
+        <p class="article-headline-p"><a href="/2017/10/27/Python入坑笔记（一）：基本数据类型/">Python入坑笔记（一）：基本数据类型</a></p>
     </div>
-      
-        <p class="site-subtitle"></p>
-      
-  </div>
 
-  <div class="site-nav-toggle">
-    <button>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
-  </div>
+    <!-- Post Excerpt -->
+    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
+        
+            整形
+        
+        &nbsp;&nbsp;&nbsp;
+        <span>
+            <a href="/2017/10/27/Python入坑笔记（一）：基本数据类型/" target="_self">Weiterlesen</a>
+        </span>
+    </div>
+    <!-- Post_entry Info-->
+    <div id="post_entry-info">
+        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
+            <!-- Author Avatar -->
+            <div id="author-avatar">
+                <img src="/img/avatar.png" width="44px" height="44px" alt="Zhu Yuexin's avatar">
+            </div>
+            <div>
+                <strong>Zhu Yuexin</strong>
+                <span>Oct 27, 2017</span>
+            </div>
+        </div>
+        <div id="post_entry-right-info">
+            <!-- Category -->
+            <span class="post_entry-category">
+                <a class="post_category-link" href="/categories/Python/">Python</a>
+            </span>
+
+            
+
+            
+
+            <!-- Post Views -->
+            <span class="post_entry-views">
+            </span>
+        </div>
+    </div>
 </div>
 
-<nav class="site-nav">
-  
-
-  
-    <ul id="menu" class="menu">
-      
+            
+            
         
-        <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
-            
-            首页
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-categories">
-          <a href="/categories" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
-            
-            分类
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-archives">
-          <a href="/archives" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
-            
-            归档
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-tags">
-          <a href="/tags" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
-            
-            标签
-          </a>
-        </li>
-      
-
-      
-    </ul>
-  
-
-  
-</nav>
-
-
-
- </div>
-    </header>
-
-    <main id="main" class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          <div id="content" class="content">
-            
-  <section id="posts" class="posts-expand">
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/27/Python入坑笔记（一）：基本数据类型/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Zhu Yuexin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://i4.buimg.com/567571/fbb0ec60f25374c4.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Mr.Z's Blog">
-    </span>
-
+        
+            
+                <!-- Paradox Thumbnail -->
+                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
+    <!-- Post Thumbnail -->
     
-      <header class="post-header">
-
         
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
         
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/10/27/Python入坑笔记（一）：基本数据类型/" itemprop="url">
-                  Python入坑笔记（一）：基本数据类型
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-27T17:07:00+08:00">
-                2017-10-27
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Python/" itemprop="url" rel="index">
-                    <span itemprop="name">Python</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
     
 
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="整形"><a href="#整形" class="headerlink" title="整形"></a>整形</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">days_1 = <span class="number">365</span></div><div class="line">days_2 = <span class="number">366</span></div><div class="line">print(days_1)</div><div class="line">print(type(days_1))</div></pre></td></tr></table></figure>
-<p>outputs:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">365</div><div class="line">&lt;class &apos;int&apos;&gt;</div></pre></td></tr></table></figure>
-<p><code>type</code>函数可以查看变量的数据类型</p>
-<h1 id="浮点型"><a href="#浮点型" class="headerlink" title="浮点型"></a>浮点型</h1><p>浮点数可以用数学写法，如<code>1.23</code>，<code>3.14</code>，<code>-9.01</code>，等等。但是对于很大或很小的浮点数，就必须用科学计数法表示，把10用e替代，1.23x109就是<code>1.23e9</code>，或者<code>12.3e8</code>，0.000012可以写成<code>1.2e-5</code>，等等。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">f1 = <span class="number">1.23e9</span></div><div class="line">f2 = <span class="number">1.23e-5</span></div><div class="line">print(f1)</div><div class="line">print(f2)</div></pre></td></tr></table></figure>
-<p>outputs:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">1230000000.0</div><div class="line">1.23e-05</div></pre></td></tr></table></figure>
-<h1 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h1><p>字符串用单引号<code>&#39;</code>或双引号<code>&quot;</code>括起来，如<code>&#39;hi&#39;</code>、<code>&quot;hello&quot;</code>。</p>
-<p>如果字符串内部包含<code>&#39;</code>或者<code>&quot;</code>，可以使用转义符<code>\</code>进行转义。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">print(<span class="string">"Are you \"ok\""</span>)</div></pre></td></tr></table></figure>
-<p>outputs:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Are you &quot;ok&quot;</div></pre></td></tr></table></figure>
-<p>Python允许使用<code>r&#39;&#39;</code>或者<code>r&quot;&quot;</code>表示<code>&#39;&#39;</code>或<code>&quot;&quot;</code>内部的字符串默认不转义</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">print(<span class="string">r"Are you \"ok\""</span>)</div></pre></td></tr></table></figure>
-<p>outputs:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Are you \&quot;ok\&quot;</div></pre></td></tr></table></figure>
-<p>如果字符串有多行，可以用<code>&#39;&#39;&#39;...&#39;&#39;&#39;</code>的格式表示多行内容</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">print(<span class="string">'''line1</span></div><div class="line">line2</div><div class="line">line3''')</div></pre></td></tr></table></figure>
-<p>outputs:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">line1</div><div class="line">line2</div><div class="line">line3</div></pre></td></tr></table></figure>
-<p><code>len</code>函数可以查看字符串的长度（也就是字符串的字符数）</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">s = <span class="string">"hello"</span></div><div class="line">print(len(s))</div></pre></td></tr></table></figure>
-<p>outputs:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">5</div></pre></td></tr></table></figure>
-<p>Python中<strong>格式化</strong>输出字符串和C语言类似，用<code>%</code>实现，不同的是，Python中也用<code>%</code>连接要格式化的内容，而不是逗号。<code>%s</code>表示字符串替换，<code>%d</code>表示整数替换，<code>%f</code>表示浮点数替换，<code>%x</code>表示十六进制整数。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">name = <span class="string">"Tom"</span></div><div class="line">age = <span class="number">20</span></div><div class="line">print(<span class="string">"hello %s! Your age is %d"</span> % (name, age))</div></pre></td></tr></table></figure>
-<p>outputs:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hello Tom! Your age is 20</div></pre></td></tr></table></figure>
-<h1 id="布尔值"><a href="#布尔值" class="headerlink" title="布尔值"></a>布尔值</h1><p>只有<code>True</code>、<code>False</code>两种值</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">True</span></div><div class="line"><span class="keyword">True</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">False</span></div><div class="line"><span class="keyword">False</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">3</span> &gt; <span class="number">2</span></div><div class="line"><span class="keyword">True</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">3</span> &gt; <span class="number">5</span></div><div class="line"><span class="keyword">False</span></div></pre></td></tr></table></figure>
-<p>布尔值的运算：<code>and</code>、<code>or</code>、<code>not</code></p>
-<h1 id="空值"><a href="#空值" class="headerlink" title="空值"></a>空值</h1><p>在Java语言里用<code>null</code>表示空值，而在Python里，空值用<code>None</code>表示</p>
-<h1 id="数据类型转换"><a href="#数据类型转换" class="headerlink" title="数据类型转换"></a>数据类型转换</h1><h2 id="转字符串"><a href="#转字符串" class="headerlink" title="转字符串"></a>转字符串</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">num = <span class="number">10</span></div><div class="line">f_num = <span class="number">10.002</span></div><div class="line">print(str(num))</div><div class="line">print(str(f_num))</div></pre></td></tr></table></figure>
-<p>outputs:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">10</div><div class="line">10.002</div></pre></td></tr></table></figure>
-<h2 id="转整形"><a href="#转整形" class="headerlink" title="转整形"></a>转整形</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">s = <span class="string">'123'</span></div><div class="line">f_num = <span class="number">10.002</span></div><div class="line">print(int(s))</div><div class="line">print(int(f_num))</div></pre></td></tr></table></figure>
-<p>outputs:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">123</div><div class="line">10</div></pre></td></tr></table></figure>
-<p>##转浮点型</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">s = <span class="string">'123.432'</span></div><div class="line">num = <span class="number">10</span></div><div class="line">print(float(s))</div><div class="line">print(float(num))</div></pre></td></tr></table></figure>
-<p>outputs:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">123.432</div><div class="line">10.0</div></pre></td></tr></table></figure>
-
-          
-        
-      
+        <!-- Post Title -->
+        <p class="article-headline-p"><a href="/2017/10/25/从命令行禁用Ubuntu下的触摸板/">从命令行禁用Ubuntu下的触摸板</a></p>
     </div>
 
-    <div>
-      
+    <!-- Post Excerpt -->
+    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
+        
+            在我的Ubuntu17.04更新到17.10并使用X.Org进入桌面后，在系统设置中找不到触摸板的禁用／启用项，无法禁用触摸板。在网上搜索后发现可以...
+        
+        &nbsp;&nbsp;&nbsp;
+        <span>
+            <a href="/2017/10/25/从命令行禁用Ubuntu下的触摸板/" target="_self">Weiterlesen</a>
+        </span>
     </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/25/从命令行禁用Ubuntu下的触摸板/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Zhu Yuexin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://i4.buimg.com/567571/fbb0ec60f25374c4.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Mr.Z's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/10/25/从命令行禁用Ubuntu下的触摸板/" itemprop="url">
-                  从命令行禁用Ubuntu下的触摸板
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-25T15:00:00+08:00">
-                2017-10-25
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Ubuntu/" itemprop="url" rel="index">
-                    <span itemprop="name">Ubuntu</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>在我的Ubuntu17.04更新到17.10并使用X.Org进入桌面后，在系统设置中找不到触摸板的禁用／启用项，无法禁用触摸板。在网上搜索后发现可以在命令行中禁用，以下是解决办法：</p>
-<h1 id="使用命令行"><a href="#使用命令行" class="headerlink" title="使用命令行"></a>使用命令行</h1><p>命令<code>xinput</code>可以查看touchpad的设备ID：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">zyx@zyx-ThundeRobot:~$ xinput</div><div class="line">⎡ Virtual core pointer                    	id=2	[master pointer  (3)]</div><div class="line">⎜   ↳ Virtual core XTEST pointer              	id=4	[slave  pointer  (2)]</div><div class="line">⎜   ↳ Razer Razer Abyssus                     	id=12	[slave  pointer  (2)]</div><div class="line">⎜   ↳ SynPS/2 Synaptics TouchPad              	id=14	[slave  pointer  (2)]</div><div class="line">⎣ Virtual core keyboard                   	id=3	[master keyboard (2)]</div><div class="line">    ↳ Virtual core XTEST keyboard             	id=5	[slave  keyboard (3)]</div><div class="line">    ↳ Video Bus                               	id=7	[slave  keyboard (3)]</div><div class="line">    ↳ Video Bus                               	id=8	[slave  keyboard (3)]</div><div class="line">    ↳ Power Button                            	id=9	[slave  keyboard (3)]</div><div class="line">    ↳ BisonCam, NB Pro: BisonCam, NB          	id=11	[slave  keyboard (3)]</div><div class="line">    ↳ Power Button                            	id=6	[slave  keyboard (3)]</div><div class="line">    ↳ Sleep Button                            	id=10	[slave  keyboard (3)]</div><div class="line">    ↳ AT Translated Set 2 keyboard            	id=13	[slave  keyboard (3)]</div></pre></td></tr></table></figure>
-<p>可以看到这里的触摸板设备ID是<strong>14</strong>，知道ID后就可以执行命令禁用设备：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">xinput disable 14</div></pre></td></tr></table></figure>
-<p>同样可以使用命令启用设备：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">xinput enable 14</div></pre></td></tr></table></figure>
-<h1 id="脚本"><a href="#脚本" class="headerlink" title="脚本"></a>脚本</h1><p>使用命令比较麻烦的话，可以写个脚本touchpad_set.sh：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">#!/bin/bash</div><div class="line">##################################################</div><div class="line">#this script is used to disable/enable the touchpad</div><div class="line">##################################################</div><div class="line">#命令xinput list-props 14可以列出触摸板的当前信息，</div><div class="line">#其中的Device Enabled (171): 1显示设备是否启用，数字1表示启用，0表示禁用。</div><div class="line"></div><div class="line">output=$(xinput list-props 14)</div><div class="line"></div><div class="line">if [[ &quot;$output&quot; =~ Device.Enabled.\(171\):.1 ]]</div><div class="line">then</div><div class="line">    xinput disable 14</div><div class="line">else</div><div class="line">    xinput enable 14</div><div class="line">fi</div></pre></td></tr></table></figure>
-<p>将脚本丢进/usr/local/bin/，添加可执行权限，就可以使用这个脚本来启用/禁用触摸板。</p>
-<h1 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h1><p>如果觉得使用脚本还是麻烦的话，可以添加到快捷键。</p>
-<p>首先用命令<code>chmod -x touchpad_set.sh</code>来去除脚本的执行权限，如果不去除执行权限，脚本将无法通过快捷键执行。</p>
-<p>然后在系统设置－&gt;设备-&gt;键盘里添加快捷键，导入这个脚本。</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/25/Ubuntu下virtualenv、virtualenvwrapper的安装及使用/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Zhu Yuexin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://i4.buimg.com/567571/fbb0ec60f25374c4.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Mr.Z's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/10/25/Ubuntu下virtualenv、virtualenvwrapper的安装及使用/" itemprop="url">
-                  Ubuntu下virtualenv、virtualenvwrapper的安装及使用
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-25T12:30:00+08:00">
-                2017-10-25
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Python/" itemprop="url" rel="index">
-                    <span itemprop="name">Python</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="virtualenv介绍"><a href="#virtualenv介绍" class="headerlink" title="virtualenv介绍"></a>virtualenv介绍</h1><p>在python开发中，不同的项目会依赖不同的python环境。virtualenv用于创建独立的Python环境，开发过程中可随时切换，多个Python环境相互独立，互不影响。使用virtualenv可以：</p>
-<ul>
-<li>在没有权限的情况下安装新套件</li>
-<li>不同应用可以使用不同的套件版本</li>
-<li>套件升级不影响其他应用</li>
-</ul>
-<h1 id="virtualenv安装"><a href="#virtualenv安装" class="headerlink" title="virtualenv安装"></a>virtualenv安装</h1><ul>
-<li><p>执行命令</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install python-virtualenv</div></pre></td></tr></table></figure>
-</li>
-<li><p>使用方法</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">virtualenv [虚拟环境名称-也是目录名称]</div></pre></td></tr></table></figure>
-<p>比如：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">virtualenv ENV</div></pre></td></tr></table></figure>
-<p>创建了一个名为ENV的虚拟环境</p>
-</li>
-<li><p>启动环境</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cd ENV</div><div class="line">source ./bin/activate</div></pre></td></tr></table></figure>
-<p>ENV为虚拟环境名称，接下来所有模块都只会安装到该目录中去。</p>
-<p>默认情况下，虚拟环境会依赖系统环境中的site packages，如果不想依赖这些package，那么可以加上参数 –no-site-packages建立虚拟环境：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">virtualenv --no-site-packages [虚拟环境名称]</div></pre></td></tr></table></figure>
-</li>
-<li><p>退出</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">deactivate</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>如果没有启动虚拟环境，系统也安装了pip工具，那么套件将被安装在系统环境中，为了避免发生此事，可以在~/.bashrc文件中加上：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">export PIP_REQUIRE_VIRTUALENV=true</div></pre></td></tr></table></figure>
-<p>或者让在执行pip的时候让系统自动开启虚拟环境：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">export PIP_RESPECT_VIRTUALENV=true</div></pre></td></tr></table></figure>
-<h1 id="virtualenvwrapper"><a href="#virtualenvwrapper" class="headerlink" title="virtualenvwrapper"></a>virtualenvwrapper</h1><p>Virtaulenvwrapper是virtualenv的扩展包，用于更方便管理虚拟环境，它可以做：</p>
-<ol>
-<li>将所有虚拟环境整合在一个目录下</li>
-<li>管理（新增，删除，复制）虚拟环境</li>
-<li>快速切换虚拟环境</li>
-<li>…</li>
-</ol>
-<h2 id="安装方法"><a href="#安装方法" class="headerlink" title="安装方法"></a>安装方法</h2><ul>
-<li><p>运行</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pip install virtualenvwrapper</div></pre></td></tr></table></figure>
-</li>
-<li><p>创建目录用来存放虚拟环境</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mkdir ~/.virtualenvs</div></pre></td></tr></table></figure>
-</li>
-<li><p>在.bashrc中添加</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">export WORKON_HOME=~/.virtualenvs</div><div class="line">source /usr/local/bin/virtualenvwrapper.sh</div></pre></td></tr></table></figure>
-</li>
-<li><p>运行： <code>source ~/.bashrc</code></p>
-</li>
-</ul>
-<p>此时virtualenvwrapper就可以使用了。</p>
-<h2 id="virualenvwrapper使用方法"><a href="#virualenvwrapper使用方法" class="headerlink" title="virualenvwrapper使用方法"></a>virualenvwrapper使用方法</h2><ul>
-<li>workon : 列出虚拟环境列表</li>
-<li>lsvirtualenv : 同上</li>
-<li>mkvirtualenv  : 新建虚拟环境</li>
-<li>workon [虚拟环境名称] : 切换虚拟环境</li>
-<li>rmvirtualenv : 删除虚拟环境</li>
-<li>deactivate :  离开虚拟环境</li>
-</ul>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/25/ubuntu设置SublimeText3支持中文并设为默认编辑器/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Zhu Yuexin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://i4.buimg.com/567571/fbb0ec60f25374c4.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Mr.Z's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/10/25/ubuntu设置SublimeText3支持中文并设为默认编辑器/" itemprop="url">
-                  ubuntu设置SublimeText3支持中文并设为默认编辑器
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-25T12:07:00+08:00">
-                2017-10-25
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Ubuntu/" itemprop="url" rel="index">
-                    <span itemprop="name">Ubuntu</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <blockquote>
-<p>转：<a href="http://blog.csdn.net/Akeron/article/details/51027243" target="_blank" rel="external">http://blog.csdn.net/Akeron/article/details/51027243</a></p>
-</blockquote>
-<h1 id="设置SublimeText3支持中文输入"><a href="#设置SublimeText3支持中文输入" class="headerlink" title="设置SublimeText3支持中文输入"></a>设置SublimeText3支持中文输入</h1><ul>
-<li><p>复制如下的代码为sublime_imfix.c文件并放到sublime_text的安装目录下，默认为/opt/sublime_text</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*</span></div><div class="line">    sublime_imfix.c</div><div class="line">    Use LD_PRELOAD to interpose some function to fix sublime input method support for linux.</div><div class="line">    By Cjacker Huang &lt;jianzhong.huang at i-soft.com.cn&gt;</div><div class="line"></div><div class="line">    gcc -shared -o libsublime-imfix.so sublime_imfix.c  `pkg-config --libs --cflags gtk+-2.0` -fPIC</div><div class="line">    LD_PRELOAD=./libsublime-imfix.so sublime_text</div><div class="line">    */</div><div class="line">    <span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;gtk/gtk.h&gt;</span></span></div><div class="line">    <span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;gdk/gdkx.h&gt;</span></span></div><div class="line">    <span class="keyword">typedef</span> GdkSegment GdkRegionBox;</div><div class="line"></div><div class="line">    <span class="keyword">struct</span> _GdkRegion</div><div class="line">    &#123;</div><div class="line">      <span class="keyword">long</span> size;</div><div class="line">      <span class="keyword">long</span> numRects;</div><div class="line">      GdkRegionBox *rects;</div><div class="line">      GdkRegionBox extents;</div><div class="line">    &#125;;</div><div class="line"></div><div class="line">    GtkIMContext *local_context;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">void</span> <span class="title">gdk_region_get_clipbox</span> <span class="params">(<span class="keyword">const</span> GdkRegion *region,</span></span></div><div class="line">                GdkRectangle    *rectangle)</div><div class="line">    &#123;</div><div class="line">      g_return_if_fail (region != <span class="literal">NULL</span>);</div><div class="line">      g_return_if_fail (rectangle != <span class="literal">NULL</span>);</div><div class="line"></div><div class="line">      rectangle-&gt;x = region-&gt;extents.x1;</div><div class="line">      rectangle-&gt;y = region-&gt;extents.y1;</div><div class="line">      rectangle-&gt;width = region-&gt;extents.x2 - region-&gt;extents.x1;</div><div class="line">      rectangle-&gt;height = region-&gt;extents.y2 - region-&gt;extents.y1;</div><div class="line">      GdkRectangle rect;</div><div class="line">      rect.x = rectangle-&gt;x;</div><div class="line">      rect.y = rectangle-&gt;y;</div><div class="line">      rect.width = <span class="number">0</span>;</div><div class="line">      rect.height = rectangle-&gt;height;</div><div class="line">      <span class="comment">//The caret width is 2;</span></div><div class="line">      <span class="comment">//Maybe sometimes we will make a mistake, but for most of the time, it should be the caret.</span></div><div class="line">      <span class="keyword">if</span>(rectangle-&gt;width == <span class="number">2</span> &amp;&amp; GTK_IS_IM_CONTEXT(local_context)) &#123;</div><div class="line">            gtk_im_context_set_cursor_location(local_context, rectangle);</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">//this is needed, for example, if you input something in file dialog and return back the edit area</span></div><div class="line">    <span class="comment">//context will lost, so here we set it again.</span></div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">static</span> GdkFilterReturn <span class="title">event_filter</span> <span class="params">(GdkXEvent *xevent, GdkEvent *event, gpointer im_context)</span></span></div><div class="line">    &#123;</div><div class="line">        XEvent *xev = (XEvent *)xevent;</div><div class="line">        <span class="keyword">if</span>(xev-&gt;type == KeyRelease &amp;&amp; GTK_IS_IM_CONTEXT(im_context)) &#123;</div><div class="line">           GdkWindow * win = g_object_get_data(G_OBJECT(im_context),<span class="string">"window"</span>);</div><div class="line">           <span class="keyword">if</span>(GDK_IS_WINDOW(win))</div><div class="line">             gtk_im_context_set_client_window(im_context, win);</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> GDK_FILTER_CONTINUE;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">void</span> <span class="title">gtk_im_context_set_client_window</span> <span class="params">(GtkIMContext *context,</span></span></div><div class="line">              GdkWindow    *window)</div><div class="line">    &#123;</div><div class="line">      GtkIMContextClass *klass;</div><div class="line">      g_return_if_fail (GTK_IS_IM_CONTEXT (context));</div><div class="line">      klass = GTK_IM_CONTEXT_GET_CLASS (context);</div><div class="line">      <span class="keyword">if</span> (klass-&gt;set_client_window)</div><div class="line">        klass-&gt;set_client_window (context, window);</div><div class="line"></div><div class="line">      <span class="keyword">if</span>(!GDK_IS_WINDOW (window))</div><div class="line">        <span class="keyword">return</span>;</div><div class="line">      g_object_set_data(G_OBJECT(context),<span class="string">"window"</span>,window);</div><div class="line">      <span class="keyword">int</span> width = gdk_window_get_width(window);</div><div class="line">      <span class="keyword">int</span> height = gdk_window_get_height(window);</div><div class="line">      <span class="keyword">if</span>(width != <span class="number">0</span> &amp;&amp; height !=<span class="number">0</span>) &#123;</div><div class="line">        gtk_im_context_focus_in(context);</div><div class="line">        local_context = context;</div><div class="line">      &#125;</div><div class="line">      gdk_window_add_filter (window, event_filter, context);</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
-</li>
-<li><p>安装编译所需的工具，如果已经安装则跳过</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install build-essential  </div><div class="line">sudo apt-get install libgtk2.0-dev</div></pre></td></tr></table></figure>
-</li>
-<li><p>安装完成后，进入sublime_text的安装目录，在命令行下编译，生成-o之后的文件，记住它的位置：</p>
-</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">gcc -shared -o libsublime-imfix.so sublime_imfix.c  `pkg-config --libs --cflags gtk+-2.0` -fPIC</div></pre></td></tr></table></figure>
-<ul>
-<li><p>命令行中进入/usr/share/applications目录下，用subl打开sublime_text.desktop文件，即sublime_text的类似于快捷方式的文件，可能名字会有不一样，可先用ls查看一下文件名字</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo subl sublime_text.desktop</div></pre></td></tr></table></figure>
-<p>然后将三个对应Exec更改为如下所示：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">Exec=bash -c &quot;LD_PRELOAD=/opt/sublime_text/libsublime-imfix.so /opt/sublime_text/sublime_text %F&quot;</div><div class="line"></div><div class="line"></div><div class="line">Exec=bash -c &quot;LD_PRELOAD=/opt/sublime_text/libsublime-imfix.so /opt/sublime_text/sublime_text -n&quot;</div><div class="line"></div><div class="line"></div><div class="line">Exec=bash -c &quot;LD_PRELOAD=/opt/sublime_text/libsublime-imfix.so /opt/sublime_text/sublime_text --command new_file&quot;</div></pre></td></tr></table></figure>
-<p><strong>注意这里一定要是双引号</strong>，因为用单引号会出现只弹出Sublime_text，不打开文件等情况。网上好多教程在这一步都是单引号，可能是版本已经不适用,保存文件，现在用subl打开文本已经支持中文。 </p>
-<p>​</p>
-<h1 id="将SublimeText设置为默认编辑器"><a href="#将SublimeText设置为默认编辑器" class="headerlink" title="将SublimeText设置为默认编辑器"></a>将SublimeText设置为默认编辑器</h1><p>在命令行输入以下命令：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo subl /etc/gnome/defaults.list</div></pre></td></tr></table></figure>
-<p>在里面ctrl+h替换所有gedit.desktop为sublime_text.desktop保存即可。</p>
-</li>
-</ul>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/23/什么是hard negative mining（难分样本挖掘）/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Zhu Yuexin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://i4.buimg.com/567571/fbb0ec60f25374c4.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Mr.Z's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/10/23/什么是hard negative mining（难分样本挖掘）/" itemprop="url">
-                  什么是 hard negative mining （难分样本挖掘）
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-23T11:04:26+08:00">
-                2017-10-23
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/机器学习/" itemprop="url" rel="index">
-                    <span itemprop="name">机器学习</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="What-is-Hard-Nagetive-Mining"><a href="#What-is-Hard-Nagetive-Mining" class="headerlink" title="What is Hard Nagetive Mining"></a>What is Hard Nagetive Mining</h1><p>Let’s say I give you a bunch of images that contain one or more people, and I give you bounding boxes for each one. Your classifier will need both positive training examples (person) and negative training examples (not person).</p>
-<p>For each person, you create a positive training example by looking inside that bounding box. But how do you create useful negative examples?</p>
-<p>A good way to start is to generate a bunch of random bounding boxes, and for each that doesn’t overlap with any of your positives, keep that new box as a negative.</p>
-<p>Ok, so you have positives and negatives, so you train a classifier, and to test it out, you run it on your training images again with a sliding window. But it turns out that your classifier isn’t very good, because it throws a bunch of false positives (people detected where there aren’t actually people).</p>
-<p>A hard negative is when you take that falsely detected patch, and explicitly create a negative example out of that patch, and add that negative to your training set. When you retrain your classifier, it should perform better with this extra knowledge, and not make as many false positives.</p>
-<p><a href="https://www.reddit.com/r/computervision/comments/2ggc5l/what_is_hard_negative_mining_and_how_is_it/" target="_blank" rel="external">https://www.reddit.com/r/computervision/comments/2ggc5l/what_is_hard_negative_mining_and_how_is_it/</a></p>
-<h1 id="简单总结"><a href="#简单总结" class="headerlink" title="简单总结"></a>简单总结</h1><p>给定一堆包含一个或多个人的图像，给图像中每个人一个边框。</p>
-<p>通过查看边框来创建正例，但是负例呢？可以通过生成一堆随机边框，将其中不与正例边框重合的边框保留为负例，就得到了负例。</p>
-<p>有了正例和负例，就可以训练分类器，再一次利用<strong>滑动窗口</strong>在训练集上运行分类器去测试分类器。这个时候的分类器并不很好，因为它会抛出一堆假正例（没有与人重叠，但是被标记为正例）。</p>
-<p>hard negative就是把这些假正例明确的作为负例添加到训练集中，再一次训练分类器，它的表现就会更好。重复操作直到假正例越来越少。</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/14/Activity统一堆栈管理/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Zhu Yuexin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://i4.buimg.com/567571/fbb0ec60f25374c4.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Mr.Z's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/08/14/Activity统一堆栈管理/" itemprop="url">
-                  Activity统一堆栈管理
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-14T12:51:00+08:00">
-                2017-08-14
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Android碎片/" itemprop="url" rel="index">
-                    <span itemprop="name">Android碎片</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="Activity管理类：AppManager"><a href="#Activity管理类：AppManager" class="headerlink" title="Activity管理类：AppManager"></a>Activity管理类：AppManager</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AppManager</span> </span>&#123;</div><div class="line">    <span class="keyword">private</span> <span class="keyword">static</span> Stack&lt;Activity&gt; activityStack;</div><div class="line">    <span class="keyword">private</span> <span class="keyword">static</span> AppManager instance;</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line">    * 单一实例</div><div class="line">    */</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> AppManager <span class="title">getInstance</span><span class="params">()</span></span>&#123;</div><div class="line">        <span class="keyword">if</span> (instance == <span class="keyword">null</span>)&#123;</div><div class="line">            instance = <span class="keyword">new</span> AppManager();</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> instance;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line">    * 添加Activity到堆栈</div><div class="line">    */</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">addActivity</span><span class="params">(Activity activity)</span></span>&#123;</div><div class="line">        <span class="keyword">if</span> (activityStack == <span class="keyword">null</span>)&#123;</div><div class="line">            activityStack = <span class="keyword">new</span> Stack&lt;&gt;();</div><div class="line">        &#125;</div><div class="line">        activityStack.add(activity);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line">    * 获取当前Activity（堆栈中最后一个压入的）</div><div class="line">    */</div><div class="line">    <span class="function"><span class="keyword">public</span> Activity <span class="title">currentActivity</span><span class="params">()</span></span>&#123;</div><div class="line">        <span class="keyword">return</span> activityStack.lastElement();</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line">    * 结束当前Activity（堆栈中最后一个压入的）</div><div class="line">    */</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">finishActivity</span><span class="params">()</span></span>&#123;</div><div class="line">        Activity activity = activityStack.pop();</div><div class="line">        activity.finish();</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line">    * 结束指定Activity</div><div class="line">    */</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">finishActivity</span><span class="params">(Activity activity)</span></span>&#123;</div><div class="line">        <span class="keyword">if</span> (activity != <span class="keyword">null</span>)&#123;</div><div class="line">            activityStack.remove(activity);</div><div class="line">            <span class="keyword">if</span> (!activity.isFinishing())&#123;</div><div class="line">                activity.finish();</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line">    * 结束指定类名的Activity</div><div class="line">    */</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">finishActivity</span><span class="params">(Class&lt;?&gt; cls)</span></span>&#123;</div><div class="line">        <span class="keyword">for</span> (Activity activity : activityStack)&#123;</div><div class="line">            <span class="keyword">if</span> (activity.getClass().equals(cls))&#123;</div><div class="line">                finishActivity(activity);</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line">    * 结束所有的Activity</div><div class="line">    */</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">finishAllActivity</span><span class="params">()</span></span>&#123;</div><div class="line">        <span class="keyword">for</span> (Activity activity : activityStack)&#123;</div><div class="line">            <span class="keyword">if</span> (activity != <span class="keyword">null</span>)&#123;</div><div class="line">                activity.finish();</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        activityStack.clear();</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line">    * 退出应用程序</div><div class="line">    */</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">AppExit</span><span class="params">(Context context)</span></span>&#123;</div><div class="line">        finishAllActivity();</div><div class="line">        ActivityManager activityManager = (ActivityManager) context.getSystemService(Context.ACTIVITY_SERVICE);</div><div class="line">        activityManager.killBackgroundProcesses(context.getPackageName());</div><div class="line">        System.exit(<span class="number">0</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h1 id="Activity基类：BaseActivity"><a href="#Activity基类：BaseActivity" class="headerlink" title="Activity基类：BaseActivity"></a>Activity基类：BaseActivity</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">BaseActivity</span> <span class="keyword">extends</span> <span class="title">AppCompatActivity</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(@Nullable Bundle savedInstanceState)</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);</div><div class="line"></div><div class="line">        <span class="comment">//初始化时将Activity压入管理栈</span></div><div class="line">        AppManager.getInstance().addActivity(<span class="keyword">this</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/14/普通按钮添加波纹点击效果/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Zhu Yuexin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://i4.buimg.com/567571/fbb0ec60f25374c4.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Mr.Z's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/08/14/普通按钮添加波纹点击效果/" itemprop="url">
-                  普通按钮添加波纹点击效果
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-14T10:19:00+08:00">
-                2017-08-14
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Android碎片/" itemprop="url" rel="index">
-                    <span itemprop="name">Android碎片</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Android 5.0以后新增了按钮的波纹点击效果，AppCompatButton是自带波纹效果的，但是如果项目中有需要动态改变按钮的颜色，就会丢失波纹效果（如果只需要改变一次的话，可以通过新建样式style解决），这个时候我们可以利用5.0新增的ripple类型来自定义波纹点击效果。</p>
-<h1 id="自定义ripple文件"><a href="#自定义ripple文件" class="headerlink" title="自定义ripple文件"></a>自定义ripple文件</h1><p>button_ripple_login.xml:</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version="1.0" encoding="utf-8"?&gt;</div><div class="line"><span class="tag">&lt;<span class="name">ripple</span> <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span></span></div><div class="line">    <span class="attr">android:color</span>=<span class="string">"#FF818181"</span>&gt;</div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">item</span> <span class="attr">android:drawable</span>=<span class="string">"@drawable/button_bg"</span> /&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;/<span class="name">ripple</span>&gt;</span></div></pre></td></tr></table></figure>
-<p>ripple相当于layer-list层叠效果，ripple元素的color属性即指定了波纹效果的颜色，但必须是8位颜色代码值，前两位指定了波纹的透明度，后六位即波纹颜色，以黑色000000及白色FFFFFF效果最为明显。而<code>&lt;item android:drawable=&quot;@drawable/button_bg&quot; /&gt;</code>即指定了按钮的正常状态的显示效果。</p>
-<h1 id="根据按钮可点击状态，动态改变按钮颜色"><a href="#根据按钮可点击状态，动态改变按钮颜色" class="headerlink" title="根据按钮可点击状态，动态改变按钮颜色"></a>根据按钮可点击状态，动态改变按钮颜色</h1><p>login_button_selector.xml:</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version="1.0" encoding="utf-8"?&gt;</div><div class="line"><span class="tag">&lt;<span class="name">selector</span> <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">item</span> <span class="attr">android:drawable</span>=<span class="string">"@drawable/button_ripple_login"</span> <span class="attr">android:state_enabled</span>=<span class="string">"true"</span> /&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">item</span> <span class="attr">android:drawable</span>=<span class="string">"@color/loginBtn1"</span> <span class="attr">android:state_enabled</span>=<span class="string">"false"</span> /&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">selector</span>&gt;</span></div></pre></td></tr></table></figure>
-<p>这样既能动态改变按钮背景颜色，也可以有波纹点击效果了。</p>
-<h1 id="其他设置"><a href="#其他设置" class="headerlink" title="其他设置"></a>其他设置</h1><p>可以通过如下代码设置波纹的背景：</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">android:background="?android:attr/selectableItemBackground" 波纹有边界</div><div class="line"></div><div class="line">android:background="?android:attr/selectableItemBackgroundBorderless" 波纹超出边界</div></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/14/设置Button不可点击/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Zhu Yuexin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://i4.buimg.com/567571/fbb0ec60f25374c4.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Mr.Z's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/08/14/设置Button不可点击/" itemprop="url">
-                  设置Button不可点击
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-14T10:14:00+08:00">
-                2017-08-14
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Android碎片/" itemprop="url" rel="index">
-                    <span itemprop="name">Android碎片</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>由于Button默认”android:clickable”属性是”true”，所以如果想设置Button不可点击的话，用这个属性是没有效果的。对于Button，应该设置”enable”属性为false才行：</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">android:enable=false</div></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/11/输入框设置右侧清空输入框图标（原生drawableEnd图标方法）/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Zhu Yuexin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://i4.buimg.com/567571/fbb0ec60f25374c4.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Mr.Z's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/08/11/输入框设置右侧清空输入框图标（原生drawableEnd图标方法）/" itemprop="url">
-                  输入框设置右侧清空输入框图标（原生drawableEnd图标方法）
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-11T18:20:00+08:00">
-                2017-08-11
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Android碎片/" itemprop="url" rel="index">
-                    <span itemprop="name">Android碎片</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="功能需求"><a href="#功能需求" class="headerlink" title="功能需求"></a>功能需求</h1><ul>
-<li>当输入框没有输入时，不显示清除图标</li>
-<li>当有字符输入时，显示清除图标</li>
-<li>失去焦点时隐藏图标，取得焦点并且输入框中有字符时显示图标</li>
-<li>点击清除图标时清空输入框，并且隐藏图标</li>
-</ul>
-<h1 id="实现过程"><a href="#实现过程" class="headerlink" title="实现过程"></a>实现过程</h1><p>原生EditText有自带drawableEnd属性，即可以设置一个右侧图标（其实有drawableStart, drawableTop, drawableEnd, drawableBottom四种属性，分别对应左、上、右、下侧图标）。但是Google并没有对drawableEnd图标提供相应的点击事件，点击图标无法执行相关操作。</p>
-<p>针对上面的需求，大多数人都选择自定义EditText实现，但个人觉得比较麻烦。一番搜索之后发现一个方法，可以通过判断EditText的点击位置，即如果是图标所在位置，就执行相关操作，以此来实现上述需求。</p>
-<h2 id="EditText点击位置监听"><a href="#EditText点击位置监听" class="headerlink" title="EditText点击位置监听"></a>EditText点击位置监听</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">InputClearOnTouchListener</span> <span class="keyword">implements</span> <span class="title">View</span>.<span class="title">OnTouchListener</span> </span>&#123;</div><div class="line">    <span class="keyword">private</span> EditText editText;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">InputClearOnTouchListener</span><span class="params">(EditText editText)</span></span>&#123;</div><div class="line">        <span class="keyword">this</span>.editText = editText;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">onTouch</span><span class="params">(View view, MotionEvent motionEvent)</span> </span>&#123;</div><div class="line">        <span class="comment">//获取右侧图标</span></div><div class="line">        Drawable drawableRight = editText.getCompoundDrawables()[<span class="number">2</span>];</div><div class="line">        <span class="comment">//如果右侧没有图标，则不做处理</span></div><div class="line">        <span class="keyword">if</span> (drawableRight == <span class="keyword">null</span>)&#123;</div><div class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span> (motionEvent.getAction() != MotionEvent.ACTION_UP)&#123;</div><div class="line">            <span class="comment">//如果不是按下事件，不做处理</span></div><div class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span> (motionEvent.getX() &gt; editText.getWidth()-editText.getPaddingEnd()-drawableRight.getIntrinsicWidth())&#123;</div><div class="line">            <span class="comment">//如果点击的位置在右侧图标处，则清空输入框</span></div><div class="line">            editText.setText(<span class="string">""</span>);</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>上面的代码实现了需求4，针对需求1，2可以通过监听EditText的输入来实现。在此之前，有一个地方需要注意，就是通过代码设置EditText的右侧图标：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">editText.setCompoundDrawablesRelativeWithIntrinsicBounds(<span class="keyword">null</span>, <span class="keyword">null</span>, context.getDrawable(R.drawable.ic_cancel), <span class="keyword">null</span>);</div><div class="line">或者</div><div class="line">editText.setCompoundDrawablesWithIntrinsicBounds(<span class="keyword">null</span>, <span class="keyword">null</span>, context.getDrawable(R.drawable.ic_cancel), <span class="keyword">null</span>);</div></pre></td></tr></table></figure>
-<p>其他几个方法似乎无法设置图标：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">editText.setCompoundDrawables(Drawable left, Drawable top, Drawable right, Drawable bottom);</div><div class="line">editText.setCompoundDrawablesRelative(Drawable start, Drawable top, Drawable end, Drawable bottom);</div></pre></td></tr></table></figure>
-<p>具体原因暂时没有深入探究。</p>
-<h2 id="EditText输入监听"><a href="#EditText输入监听" class="headerlink" title="EditText输入监听"></a>EditText输入监听</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">InputClearOnTextChangedListener</span> <span class="keyword">implements</span> <span class="title">TextWatcher</span> </span>&#123;</div><div class="line">    <span class="keyword">private</span> Context context;</div><div class="line">    <span class="keyword">private</span> EditText editText;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">InputClearOnTextChangedListener</span><span class="params">(Context context, EditText editText)</span></span>&#123;</div><div class="line">        <span class="keyword">this</span>.context = context;</div><div class="line">        <span class="keyword">this</span>.editText = editText;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">beforeTextChanged</span><span class="params">(CharSequence charSequence, <span class="keyword">int</span> i, <span class="keyword">int</span> i1, <span class="keyword">int</span> i2)</span> </span>&#123;</div><div class="line"></div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onTextChanged</span><span class="params">(CharSequence charSequence, <span class="keyword">int</span> i, <span class="keyword">int</span> i1, <span class="keyword">int</span> i2)</span> </span>&#123;</div><div class="line"></div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">afterTextChanged</span><span class="params">(Editable editable)</span> </span>&#123;</div><div class="line">        <span class="comment">//当输入框有字符输入时，显示清除图标，没有字符时隐藏清除图标</span></div><div class="line">        <span class="keyword">if</span> (editable.length()&gt;<span class="number">0</span>)&#123;</div><div class="line">            editText.setCompoundDrawablesRelativeWithIntrinsicBounds(<span class="keyword">null</span>, <span class="keyword">null</span>, context.getDrawable(R.drawable.ic_cancel), <span class="keyword">null</span>);</div><div class="line">            <span class="comment">//editText.setCompoundDrawablesWithIntrinsicBounds(null, null, context.getDrawable(R.drawable.ic_cancel), null);</span></div><div class="line">        &#125;<span class="keyword">else</span> &#123;</div><div class="line">            editText.setCompoundDrawablesRelativeWithIntrinsicBounds(<span class="keyword">null</span>, <span class="keyword">null</span>, <span class="keyword">null</span>, <span class="keyword">null</span>);</div><div class="line">            <span class="comment">//editText.setCompoundDrawablesWithIntrinsicBounds(null, null, null, null);</span></div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>对于需求3，可以监听EditText的焦点来实现</p>
-<h2 id="EditText焦点监听"><a href="#EditText焦点监听" class="headerlink" title="EditText焦点监听"></a>EditText焦点监听</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">InputClearOnFocusChangeListener</span> <span class="keyword">implements</span> <span class="title">View</span>.<span class="title">OnFocusChangeListener</span> </span>&#123;</div><div class="line">    <span class="keyword">private</span> Context context;</div><div class="line">    <span class="keyword">private</span> EditText editText;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">InputClearOnFocusChangeListener</span><span class="params">(Context context, EditText editText)</span></span>&#123;</div><div class="line">        <span class="keyword">this</span>.context = context;</div><div class="line">        <span class="keyword">this</span>.editText = editText;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onFocusChange</span><span class="params">(View view, <span class="keyword">boolean</span> hasFocus)</span> </span>&#123;</div><div class="line">        <span class="comment">//失去焦点时隐藏图标，取得焦点且输入框中有字符时，显示图标</span></div><div class="line">        <span class="keyword">if</span> (hasFocus &amp;&amp; editText.getText().length()&gt;<span class="number">0</span>)&#123;</div><div class="line">            editText.setCompoundDrawablesRelativeWithIntrinsicBounds(<span class="keyword">null</span>, <span class="keyword">null</span>, context.getDrawable(R.drawable.ic_cancel), <span class="keyword">null</span>);</div><div class="line">        &#125;<span class="keyword">else</span> &#123;</div><div class="line">            editText.setCompoundDrawablesRelativeWithIntrinsicBounds(<span class="keyword">null</span>, <span class="keyword">null</span>, <span class="keyword">null</span>, <span class="keyword">null</span>);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h2 id="在Activity中对相应的EditText绑定监听器"><a href="#在Activity中对相应的EditText绑定监听器" class="headerlink" title="在Activity中对相应的EditText绑定监听器"></a>在Activity中对相应的EditText绑定监听器</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//当输入框有字符输入时，显示清除图标，没有字符时隐藏清除图标</span></div><div class="line">usernameInput.addTextChangedListener(<span class="keyword">new</span> InputClearOnTextChangedListener(<span class="keyword">this</span>, usernameInput));</div><div class="line"><span class="comment">//根据点击位置设置清除图标的功能（drawableRight没有点击事件）</span></div><div class="line">usernameInput.setOnTouchListener(<span class="keyword">new</span> InputClearOnTouchListener(usernameInput));</div><div class="line"><span class="comment">//失去焦点时隐藏图标，取得焦点且输入框中有字符时，显示图标</span></div><div class="line">usernameInput.setOnFocusChangeListener(<span class="keyword">new</span> InputClearOnFocusChangeListener(<span class="keyword">this</span>, usernameInput));</div><div class="line">passInput.addTextChangedListener(<span class="keyword">new</span> InputClearOnTextChangedListener(<span class="keyword">this</span>, passInput));</div><div class="line">passInput.setOnTouchListener(<span class="keyword">new</span> InputClearOnTouchListener(passInput));</div><div class="line">passInput.setOnFocusChangeListener(<span class="keyword">new</span> InputClearOnFocusChangeListener(<span class="keyword">this</span>, passInput));</div></pre></td></tr></table></figure>
-<h1 id="实现效果"><a href="#实现效果" class="headerlink" title="实现效果"></a>实现效果</h1><p><img src="https://ws1.sinaimg.cn/large/e3417548gy1fifympn3b9g20go0tn7he.jpg" alt=""></p>
-<h1 id="代码改进"><a href="#代码改进" class="headerlink" title="代码改进"></a>代码改进</h1><h2 id="将三个监听器的代码写在一个类里，并且提供一个静态方法绑定监听器，减少代码量"><a href="#将三个监听器的代码写在一个类里，并且提供一个静态方法绑定监听器，减少代码量" class="headerlink" title="将三个监听器的代码写在一个类里，并且提供一个静态方法绑定监听器，减少代码量"></a>将三个监听器的代码写在一个类里，并且提供一个静态方法绑定监听器，减少代码量</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">InputClearListener</span> <span class="keyword">implements</span> <span class="title">View</span>.<span class="title">OnTouchListener</span>, <span class="title">TextWatcher</span>, <span class="title">View</span>.<span class="title">OnFocusChangeListener</span> </span>&#123;</div><div class="line">    <span class="keyword">private</span> Context context;</div><div class="line">    <span class="keyword">private</span> EditText editText;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">InputClearListener</span><span class="params">(Context context, EditText editText)</span></span>&#123;</div><div class="line">        <span class="keyword">this</span>.context = context;</div><div class="line">        <span class="keyword">this</span>.editText = editText;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">onTouch</span><span class="params">(View view, MotionEvent motionEvent)</span> </span>&#123;</div><div class="line">        <span class="comment">//获取右侧图标</span></div><div class="line">        Drawable drawableRight = editText.getCompoundDrawables()[<span class="number">2</span>];</div><div class="line">        <span class="comment">//如果右侧没有图标，则不做处理</span></div><div class="line">        <span class="keyword">if</span> (drawableRight == <span class="keyword">null</span>)&#123;</div><div class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span> (motionEvent.getAction() != MotionEvent.ACTION_UP)&#123;</div><div class="line">            <span class="comment">//如果不是按下事件，不做处理</span></div><div class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span> (motionEvent.getX() &gt; editText.getWidth()-editText.getPaddingEnd()-drawableRight.getIntrinsicWidth())&#123;</div><div class="line">            <span class="comment">//如果点击的位置在右侧图标处，则清空输入框</span></div><div class="line">            editText.setText(<span class="string">""</span>);</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">beforeTextChanged</span><span class="params">(CharSequence charSequence, <span class="keyword">int</span> i, <span class="keyword">int</span> i1, <span class="keyword">int</span> i2)</span> </span>&#123;</div><div class="line"></div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onTextChanged</span><span class="params">(CharSequence charSequence, <span class="keyword">int</span> i, <span class="keyword">int</span> i1, <span class="keyword">int</span> i2)</span> </span>&#123;</div><div class="line"></div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">afterTextChanged</span><span class="params">(Editable editable)</span> </span>&#123;</div><div class="line">        <span class="comment">//当输入框有字符输入时，显示清除图标，没有字符时隐藏清除图标</span></div><div class="line">        <span class="keyword">if</span> (editable.length()&gt;<span class="number">0</span>)&#123;</div><div class="line">            editText.setCompoundDrawablesRelativeWithIntrinsicBounds(<span class="keyword">null</span>, <span class="keyword">null</span>, context.getDrawable(R.drawable.ic_cancel), <span class="keyword">null</span>);</div><div class="line">            <span class="comment">//editText.setCompoundDrawablesWithIntrinsicBounds(null, null, context.getDrawable(R.drawable.ic_cancel), null);</span></div><div class="line">        &#125;<span class="keyword">else</span> &#123;</div><div class="line">            editText.setCompoundDrawablesRelativeWithIntrinsicBounds(<span class="keyword">null</span>, <span class="keyword">null</span>, <span class="keyword">null</span>, <span class="keyword">null</span>);</div><div class="line">            <span class="comment">//editText.setCompoundDrawablesWithIntrinsicBounds(null, null, null, null);</span></div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onFocusChange</span><span class="params">(View view, <span class="keyword">boolean</span> hasFocus)</span> </span>&#123;</div><div class="line">        <span class="comment">//失去焦点时隐藏图标，取得焦点且输入框中有字符时，显示图标</span></div><div class="line">        <span class="keyword">if</span> (hasFocus &amp;&amp; editText.getText().length()&gt;<span class="number">0</span>)&#123;</div><div class="line">            editText.setCompoundDrawablesRelativeWithIntrinsicBounds(<span class="keyword">null</span>, <span class="keyword">null</span>, context.getDrawable(R.drawable.ic_cancel), <span class="keyword">null</span>);</div><div class="line">        &#125;<span class="keyword">else</span> &#123;</div><div class="line">            editText.setCompoundDrawablesRelativeWithIntrinsicBounds(<span class="keyword">null</span>, <span class="keyword">null</span>, <span class="keyword">null</span>, <span class="keyword">null</span>);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line">     * 给EditText对象绑定监听器</div><div class="line">     * <span class="doctag">@param</span> context EditText所在的activity</div><div class="line">     * <span class="doctag">@param</span> editText 需要绑定监听器的EditText</div><div class="line">     */</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">addListener</span><span class="params">(Context context, EditText editText)</span></span>&#123;</div><div class="line">        InputClearListener listener = <span class="keyword">new</span> InputClearListener(context, editText);</div><div class="line">        editText.addTextChangedListener(listener);</div><div class="line">        editText.setOnTouchListener(listener);</div><div class="line">        editText.setOnFocusChangeListener(listener);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h2 id="修改Activity中绑定监听器的代码"><a href="#修改Activity中绑定监听器的代码" class="headerlink" title="修改Activity中绑定监听器的代码"></a>修改Activity中绑定监听器的代码</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">InputClearListener.addListener(<span class="keyword">this</span>, usernameInput);</div><div class="line">InputClearListener.addListener(<span class="keyword">this</span>, passInput);</div></pre></td></tr></table></figure>
-<p>代码看起来比以前的简洁了不少。</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/11/密码输入框限定英文字符和数字输入/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Zhu Yuexin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://i4.buimg.com/567571/fbb0ec60f25374c4.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Mr.Z's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/08/11/密码输入框限定英文字符和数字输入/" itemprop="url">
-                  密码输入框限定英文字符和数字输入
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-11T18:13:00+08:00">
-                2017-08-11
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Android碎片/" itemprop="url" rel="index">
-                    <span itemprop="name">Android碎片</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>通常情况下，密码是不允许使用中文的，一般是用数字或者英文字符作为密码。</p>
-<ul>
-<li>如果只是简单的限定为数字的话，可以使用一下属性：</li>
-</ul>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">android:inputType="numberPassword"</div></pre></td></tr></table></figure>
-<ul>
-<li>如果要求只能输入数字或者英文字母的话，可以使用digits属性手动指定只能输入的字符：</li>
-</ul>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">android:digits="@string/password_limit"</div><div class="line">...</div><div class="line"><span class="tag">&lt;<span class="name">string</span> <span class="attr">name</span>=<span class="string">"password_limit"</span>&gt;</span>0123456789qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM<span class="tag">&lt;/<span class="name">string</span>&gt;</span></div></pre></td></tr></table></figure>
-<p>digits属性可以限制输入的字符，但是不能限制弹出的软键盘类型。EditText提供了一个android:inputType属性来设置输入框的类型，其中几个类型如下：</p>
-<table>
-<thead>
-<tr>
-<th>inputType属性值</th>
-<th>含义</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>number</td>
-<td>用来输入数字</td>
-</tr>
-<tr>
-<td>textCapCharacters</td>
-<td>输入的全部字母大写</td>
-</tr>
-<tr>
-<td>textCapWords</td>
-<td>输入的每个单词首字母大写</td>
-</tr>
-<tr>
-<td>textCapSentences</td>
-<td>输入的每个句子首字母大写</td>
-</tr>
-<tr>
-<td>textPassword</td>
-<td>用来输入密码，所有输入的字符都会变成星号*</td>
-</tr>
-<tr>
-<td>numberPassword</td>
-<td>用来输入密码，只能输入数字，所有输入的字符都会变成星号</td>
-</tr>
-<tr>
-<td>textVisiblePassword</td>
-<td>用来输入密码，输入的字符原样显示</td>
-</tr>
-<tr>
-<td>textEmailAddress</td>
-<td>用来输入Email地址</td>
-</tr>
-</tbody>
-</table>
-<p>当inputType属性设置为number或者numberPassword时，输入法开启时会自动切换到数字键盘；当inputType属性设置为以上其他类型时，输入法会自动切换到英文键盘。</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-  </section>
-
-  
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
-  </nav>
-
-
-          
-          </div>
-          
-
-
-          
-
-        </div>
-        
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
-  </div>
-
-  <aside id="sidebar" class="sidebar">
-    <div class="sidebar-inner">
-
-      
-
-      
-
-      <section class="site-overview sidebar-panel sidebar-panel-active">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image"
-               src="http://i4.buimg.com/567571/fbb0ec60f25374c4.png"
-               alt="Zhu Yuexin" />
-          <p class="site-author-name" itemprop="name">Zhu Yuexin</p>
-           
-              <p class="site-description motion-element" itemprop="description">呀！发现一只会写代码的猪！</p>
-          
-        </div>
-        <nav class="site-state motion-element">
-        
-          
-            <div class="site-state-item site-state-posts">
-              <a href="/archives">
-                <span class="site-state-item-count">38</span>
-                <span class="site-state-item-name">日志</span>
-              </a>
+    <!-- Post_entry Info-->
+    <div id="post_entry-info">
+        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
+            <!-- Author Avatar -->
+            <div id="author-avatar">
+                <img src="/img/avatar.png" width="44px" height="44px" alt="Zhu Yuexin's avatar">
             </div>
-          
-
-          
-            <div class="site-state-item site-state-categories">
-              <a href="/categories">
-                <span class="site-state-item-count">10</span>
-                <span class="site-state-item-name">分类</span>
-              </a>
+            <div>
+                <strong>Zhu Yuexin</strong>
+                <span>Oct 25, 2017</span>
             </div>
-          
+        </div>
+        <div id="post_entry-right-info">
+            <!-- Category -->
+            <span class="post_entry-category">
+                <a class="post_category-link" href="/categories/Ubuntu/">Ubuntu</a>
+            </span>
 
-          
-            <div class="site-state-item site-state-tags">
-              <a href="/tags">
-                <span class="site-state-item-count">20</span>
-                <span class="site-state-item-name">标签</span>
-              </a>
+            
+
+            
+
+            <!-- Post Views -->
+            <span class="post_entry-views">
+            </span>
+        </div>
+    </div>
+</div>
+
+            
+            
+        
+    
+        
+            
+                <!-- Paradox Thumbnail -->
+                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
+    <!-- Post Thumbnail -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+        
+    
+
+        <!-- Post Title -->
+        <p class="article-headline-p"><a href="/2017/10/25/Ubuntu下virtualenv、virtualenvwrapper的安装及使用/">Ubuntu下virtualenv、virtualenvwrapper的安装及使用</a></p>
+    </div>
+
+    <!-- Post Excerpt -->
+    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
+        
+            
+        
+        &nbsp;&nbsp;&nbsp;
+        <span>
+            <a href="/2017/10/25/Ubuntu下virtualenv、virtualenvwrapper的安装及使用/" target="_self">Weiterlesen</a>
+        </span>
+    </div>
+    <!-- Post_entry Info-->
+    <div id="post_entry-info">
+        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
+            <!-- Author Avatar -->
+            <div id="author-avatar">
+                <img src="/img/avatar.png" width="44px" height="44px" alt="Zhu Yuexin's avatar">
             </div>
-          
+            <div>
+                <strong>Zhu Yuexin</strong>
+                <span>Oct 25, 2017</span>
+            </div>
+        </div>
+        <div id="post_entry-right-info">
+            <!-- Category -->
+            <span class="post_entry-category">
+                <a class="post_category-link" href="/categories/Python/">Python</a>
+            </span>
 
+            
+
+            
+
+            <!-- Post Views -->
+            <span class="post_entry-views">
+            </span>
+        </div>
+    </div>
+</div>
+
+            
+            
+        
+    
+        
+            
+                <!-- Paradox Thumbnail -->
+                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
+    <!-- Post Thumbnail -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+        
+    
+
+        <!-- Post Title -->
+        <p class="article-headline-p"><a href="/2017/10/25/ubuntu设置SublimeText3支持中文并设为默认编辑器/">ubuntu设置SublimeText3支持中文并设为默认编辑器</a></p>
+    </div>
+
+    <!-- Post Excerpt -->
+    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
+        
+            
+转：
+        
+        &nbsp;&nbsp;&nbsp;
+        <span>
+            <a href="/2017/10/25/ubuntu设置SublimeText3支持中文并设为默认编辑器/" target="_self">Weiterlesen</a>
+        </span>
+    </div>
+    <!-- Post_entry Info-->
+    <div id="post_entry-info">
+        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
+            <!-- Author Avatar -->
+            <div id="author-avatar">
+                <img src="/img/avatar.png" width="44px" height="44px" alt="Zhu Yuexin's avatar">
+            </div>
+            <div>
+                <strong>Zhu Yuexin</strong>
+                <span>Oct 25, 2017</span>
+            </div>
+        </div>
+        <div id="post_entry-right-info">
+            <!-- Category -->
+            <span class="post_entry-category">
+                <a class="post_category-link" href="/categories/Ubuntu/">Ubuntu</a>
+            </span>
+
+            
+
+            
+
+            <!-- Post Views -->
+            <span class="post_entry-views">
+            </span>
+        </div>
+    </div>
+</div>
+
+            
+            
+        
+    
+        
+            
+                <!-- Paradox Thumbnail -->
+                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
+    <!-- Post Thumbnail -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+        
+    
+
+        <!-- Post Title -->
+        <p class="article-headline-p"><a href="/2017/10/23/什么是hard negative mining（难分样本挖掘）/">什么是 hard negative mining （难分样本挖掘）</a></p>
+    </div>
+
+    <!-- Post Excerpt -->
+    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
+        
+            
+        
+        &nbsp;&nbsp;&nbsp;
+        <span>
+            <a href="/2017/10/23/什么是hard negative mining（难分样本挖掘）/" target="_self">Weiterlesen</a>
+        </span>
+    </div>
+    <!-- Post_entry Info-->
+    <div id="post_entry-info">
+        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
+            <!-- Author Avatar -->
+            <div id="author-avatar">
+                <img src="/img/avatar.png" width="44px" height="44px" alt="Zhu Yuexin's avatar">
+            </div>
+            <div>
+                <strong>Zhu Yuexin</strong>
+                <span>Oct 23, 2017</span>
+            </div>
+        </div>
+        <div id="post_entry-right-info">
+            <!-- Category -->
+            <span class="post_entry-category">
+                <a class="post_category-link" href="/categories/机器学习/">机器学习</a>
+            </span>
+
+            
+
+            
+
+            <!-- Post Views -->
+            <span class="post_entry-views">
+            </span>
+        </div>
+    </div>
+</div>
+
+            
+            
+        
+    
+        
+            
+                <!-- Paradox Thumbnail -->
+                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
+    <!-- Post Thumbnail -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+        
+    
+
+        <!-- Post Title -->
+        <p class="article-headline-p"><a href="/2017/08/14/Activity统一堆栈管理/">Activity统一堆栈管理</a></p>
+    </div>
+
+    <!-- Post Excerpt -->
+    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
+        
+            
+        
+        &nbsp;&nbsp;&nbsp;
+        <span>
+            <a href="/2017/08/14/Activity统一堆栈管理/" target="_self">Weiterlesen</a>
+        </span>
+    </div>
+    <!-- Post_entry Info-->
+    <div id="post_entry-info">
+        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
+            <!-- Author Avatar -->
+            <div id="author-avatar">
+                <img src="/img/avatar.png" width="44px" height="44px" alt="Zhu Yuexin's avatar">
+            </div>
+            <div>
+                <strong>Zhu Yuexin</strong>
+                <span>Aug 14, 2017</span>
+            </div>
+        </div>
+        <div id="post_entry-right-info">
+            <!-- Category -->
+            <span class="post_entry-category">
+                <a class="post_category-link" href="/categories/Android碎片/">Android碎片</a>
+            </span>
+
+            
+
+            
+
+            <!-- Post Views -->
+            <span class="post_entry-views">
+            </span>
+        </div>
+    </div>
+</div>
+
+            
+            
+        
+    
+        
+            
+                <!-- Paradox Thumbnail -->
+                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
+    <!-- Post Thumbnail -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+        
+    
+
+        <!-- Post Title -->
+        <p class="article-headline-p"><a href="/2017/08/14/普通按钮添加波纹点击效果/">普通按钮添加波纹点击效果</a></p>
+    </div>
+
+    <!-- Post Excerpt -->
+    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
+        
+            Android 5.0以后新增了按钮的波纹点击效果，AppCompatButton是自带波纹效果的，但是如果项目中有需要动态改变按钮的颜色，就会丢失...
+        
+        &nbsp;&nbsp;&nbsp;
+        <span>
+            <a href="/2017/08/14/普通按钮添加波纹点击效果/" target="_self">Weiterlesen</a>
+        </span>
+    </div>
+    <!-- Post_entry Info-->
+    <div id="post_entry-info">
+        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
+            <!-- Author Avatar -->
+            <div id="author-avatar">
+                <img src="/img/avatar.png" width="44px" height="44px" alt="Zhu Yuexin's avatar">
+            </div>
+            <div>
+                <strong>Zhu Yuexin</strong>
+                <span>Aug 14, 2017</span>
+            </div>
+        </div>
+        <div id="post_entry-right-info">
+            <!-- Category -->
+            <span class="post_entry-category">
+                <a class="post_category-link" href="/categories/Android碎片/">Android碎片</a>
+            </span>
+
+            
+
+            
+
+            <!-- Post Views -->
+            <span class="post_entry-views">
+            </span>
+        </div>
+    </div>
+</div>
+
+            
+            
+        
+    
+        
+            
+                <!-- Paradox Thumbnail -->
+                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
+    <!-- Post Thumbnail -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+        
+    
+
+        <!-- Post Title -->
+        <p class="article-headline-p"><a href="/2017/08/14/设置Button不可点击/">设置Button不可点击</a></p>
+    </div>
+
+    <!-- Post Excerpt -->
+    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
+        
+            由于Button默认”android:clickable”属性是”true”，所以如果想设置Button不可点击的话，用这个属性是没有效果的。对于B...
+        
+        &nbsp;&nbsp;&nbsp;
+        <span>
+            <a href="/2017/08/14/设置Button不可点击/" target="_self">Weiterlesen</a>
+        </span>
+    </div>
+    <!-- Post_entry Info-->
+    <div id="post_entry-info">
+        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
+            <!-- Author Avatar -->
+            <div id="author-avatar">
+                <img src="/img/avatar.png" width="44px" height="44px" alt="Zhu Yuexin's avatar">
+            </div>
+            <div>
+                <strong>Zhu Yuexin</strong>
+                <span>Aug 14, 2017</span>
+            </div>
+        </div>
+        <div id="post_entry-right-info">
+            <!-- Category -->
+            <span class="post_entry-category">
+                <a class="post_category-link" href="/categories/Android碎片/">Android碎片</a>
+            </span>
+
+            
+
+            
+
+            <!-- Post Views -->
+            <span class="post_entry-views">
+            </span>
+        </div>
+    </div>
+</div>
+
+            
+            
+        
+    
+        
+            
+                <!-- Paradox Thumbnail -->
+                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
+    <!-- Post Thumbnail -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+        
+    
+
+        <!-- Post Title -->
+        <p class="article-headline-p"><a href="/2017/08/11/输入框设置右侧清空输入框图标（原生drawableEnd图标方法）/">输入框设置右侧清空输入框图标（原生drawableEnd图标方法）</a></p>
+    </div>
+
+    <!-- Post Excerpt -->
+    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
+        
+            功能需求
+        
+        &nbsp;&nbsp;&nbsp;
+        <span>
+            <a href="/2017/08/11/输入框设置右侧清空输入框图标（原生drawableEnd图标方法）/" target="_self">Weiterlesen</a>
+        </span>
+    </div>
+    <!-- Post_entry Info-->
+    <div id="post_entry-info">
+        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
+            <!-- Author Avatar -->
+            <div id="author-avatar">
+                <img src="/img/avatar.png" width="44px" height="44px" alt="Zhu Yuexin's avatar">
+            </div>
+            <div>
+                <strong>Zhu Yuexin</strong>
+                <span>Aug 11, 2017</span>
+            </div>
+        </div>
+        <div id="post_entry-right-info">
+            <!-- Category -->
+            <span class="post_entry-category">
+                <a class="post_category-link" href="/categories/Android碎片/">Android碎片</a>
+            </span>
+
+            
+
+            
+
+            <!-- Post Views -->
+            <span class="post_entry-views">
+            </span>
+        </div>
+    </div>
+</div>
+
+            
+            
+        
+    
+        
+            
+                <!-- Paradox Thumbnail -->
+                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
+    <!-- Post Thumbnail -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+        
+    
+
+        <!-- Post Title -->
+        <p class="article-headline-p"><a href="/2017/08/11/密码输入框限定英文字符和数字输入/">密码输入框限定英文字符和数字输入</a></p>
+    </div>
+
+    <!-- Post Excerpt -->
+    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
+        
+            通常情况下，密码是不允许使用中文的，一般是用数字或者英文字符作为密码。
+
+如果只是简单的限定为数字的话，可以使用一下属性：
+        
+        &nbsp;&nbsp;&nbsp;
+        <span>
+            <a href="/2017/08/11/密码输入框限定英文字符和数字输入/" target="_self">Weiterlesen</a>
+        </span>
+    </div>
+    <!-- Post_entry Info-->
+    <div id="post_entry-info">
+        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
+            <!-- Author Avatar -->
+            <div id="author-avatar">
+                <img src="/img/avatar.png" width="44px" height="44px" alt="Zhu Yuexin's avatar">
+            </div>
+            <div>
+                <strong>Zhu Yuexin</strong>
+                <span>Aug 11, 2017</span>
+            </div>
+        </div>
+        <div id="post_entry-right-info">
+            <!-- Category -->
+            <span class="post_entry-category">
+                <a class="post_category-link" href="/categories/Android碎片/">Android碎片</a>
+            </span>
+
+            
+
+            
+
+            <!-- Post Views -->
+            <span class="post_entry-views">
+            </span>
+        </div>
+    </div>
+</div>
+
+            
+            
+        
+    
+
+    
+    <!-- Index nav -->
+        <nav class="material-nav mdl-cell mdl-cell--12-col">
+            <a class="extend prev" rel="prev" href="/"><button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"><i class="material-icons" role="presentation">arrow_back</i></button></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/"><button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"><i class="material-icons" role="presentation">arrow_forward</i></button></a>
         </nav>
+    
 
+    
+        <script type="text/ls-javascript" id="thumbnail-script">
+    var randomNum;
+
+    var locatePost = $('.locate-thumbnail-symbol').next();
+    for(var i = 0; i < 10; i++) {
+        randomNum = Math.floor(Math.random() * 19 + 1);
+
+        locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
+        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').addClass('lazy');
+
+        locatePost = locatePost.next();
+    }
+</script>
+
+    
+</div>
+
+
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(/img/sidebar_header.png);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="/img/avatar.png" alt="Zhu Yuexin's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        youremail@email.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="#" target="_blank" title="Email Me">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        
+                        Email Me
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    
+        <li id="sidebar-first-li">
+            <a href="/">
+                
+                    <i class="material-icons sidebar-material-icons">home</i>
+                
+                Home
+            </a>
+        </li>
         
+    
 
-        <div class="links-of-author motion-element">
-          
+    <!-- Archives  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">inbox</i>
+                
+                    Archive
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+            <li>
+                <a class="sidebar_archives-link" href="/archives/2017/12/">December 2017<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/11/">November 2017<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/10/">October 2017<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/08/">August 2017<span class="sidebar_archives-count">15</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/03/">March 2017<span class="sidebar_archives-count">8</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Categories  -->
+    
+
+    <!-- Pages  -->
+    
+
+    <!-- Article Number  -->
+    
+</ul>
+
+
+        <!-- Sidebar Footer -->
+        <!--
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :)
+-->
+
+<!-- Sidebar Divider -->
+
+    <div class="sidebar-divider"></div>
+
+
+<!-- Theme Material -->
+
+    <a href="https://github.com/viosey/hexo-theme-material"  class="sidebar-footer-text-a" target="_blank">
+        <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+            Theme - Material
+            <span class="sidebar-badge badge-circle">i</span>
         </div>
-
-        
-        
-
-        
-        
-
-        
+    </a>
 
 
-      </section>
+<!-- Help & Support -->
+<!--
 
-      
+-->
 
-      
+<!-- Feedback -->
+<!--
+
+-->
+
+<!-- About Theme -->
+<!--
+
+-->
 
     </div>
-  </aside>
 
+    <!-- Sidebar Image -->
+    
 
-        
-      </div>
-    </main>
+</aside>
 
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright" >
-  
-  &copy; 
-  <span itemprop="copyrightYear">2017</span>
-  <span class="with-love">
-    <i class="fa fa-heart"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">Zhu Yuexin</span>
+                    
+
+                    
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+    
+        <!-- Paradox Footer Left Section -->
+        <div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+        <a href="https://twitter.com/twitter" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-twitter">
+                <span class="visuallyhidden">Twitter</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Facebook -->
+    
+        <a href="https://www.facebook.com/facebook" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-facebook">
+                <span class="visuallyhidden">Facebook</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Google + -->
+    
+        <a href="https://www.google.com/" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-gplus">
+                <span class="visuallyhidden">Google Plus</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Weibo -->
+    
+
+    <!-- Instagram -->
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+
+    <!-- LinkedIn -->
+    
+
+    <!-- Zhihu -->
+    
+
+    <!-- Bilibili -->
+    
+
+    <!-- Telegram -->
+    
 </div>
 
 
-<div class="powered-by">
-  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
-</div>
+        <!--Copyright-->
+        <div id="copyright">
+            Copyright&nbsp;©<script type="text/javascript">var fd = new Date();document.write("&nbsp;" + fd.getFullYear() + "&nbsp;");</script>Mr.Z's Blog
+        </div>
 
-<div class="theme-info">
-  主题 -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Mist
-  </a>
-</div>
+        <!-- Paradox Footer Right Section -->
 
+        <!--
+        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+        It will not impact the appearance and can give developers a lot of support :)
 
-        
+        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+        它不会影响美观并可以给开发者很大的支持。 :)
+        -->
 
-        
-      </div>
-    </footer>
-
+        <div class="mdl-mini-footer--right-section">
+            <div>
+                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
+                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+            </div>
+        </div>
     
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
-    
-    
-  </div>
+</footer>
 
-  
 
-<script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
-  }
+                    <!-- Import File -->
+
+
+    <script>lsloader.load("js/lazyload.min.js","/js/lazyload.min.js?1BcfzuNXqV+ntF6gq+5X3Q==")</script>
+    <script>lsloader.load("js/js.min.js","/js/js.min.js?oAl/+lvaqTFV31JXTmbrNA==")</script>
+
+
+
+    <script>lsloader.load("js/nprogress.js","/js/nprogress.js?pl3Qhb9lvqR1FlyLUna1Yw==")</script>
+
+
+<script type="text/ls-javascript" id="NProgress-script">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    $('#nprogress .bar').css({
+        'background': '#29d'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#29d',
+        'border-left-color': '#29d'
+    });
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
 </script>
 
 
@@ -2040,95 +1181,62 @@
 
 
 
-  
 
 
 
 
-  
-  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+<!-- UC Browser Compatible -->
+<script>
+	var agent = navigator.userAgent.toLowerCase();
+	if(agent.indexOf('ucbrowser')>0) {
+		document.write('<link rel="stylesheet" href="/css/uc.css">');
+	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+	}
+</script>
 
-  
-  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+<!-- Window Load-->
+<script type="text/ls-javascript" id="window-load">
+    $(window).on('load', function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+</script>
 
-  
-  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+<!-- MathJax Load-->
 
-  
-  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+<script type="text/ls-javascript" id="lazy-load">
+    // Offer LazyLoad
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
 
-  
-  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+    // Start Queue
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script>
 
-  
-  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
-
-
-
-  
-  
-
-  
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
-
+<!-- Bing Background -->
 
 
-  
+<script>
+    (function(){
+        var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
 
+        for (var i = 0; i < scriptList.length; ++i) {
+            var item = scriptList[i];
+            lsloader.runInlineScript(item.id,item.id);
+        }
+    })()
+console.log('\n %c © Material Theme | Version: 1.4.0 | https://github.com/viosey/hexo-theme-material %c \n', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;');
+</script>
 
-
-  
-
-
-
-
-	
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-
-
-  
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-</body>
+                </main>
+            </div>
+        </body>
+    
 </html>

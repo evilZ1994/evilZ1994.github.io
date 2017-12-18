@@ -1,1847 +1,1175 @@
-<!doctype html>
+<!DOCTYPE html>
+<html style="display: none;" lang="zh">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.4.0 -->
+    <script>window.materialVersion = "1.4.0"</script>
 
+    <!-- Title -->
+    
+    <title>
+        
+        Mr.Z&#39;s Blog
+    </title>
 
-
-  
-
-
-<html class="theme-next mist use-motion" lang="zh-Hans">
-<head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
-
-
-
-
-  
-  
-  
-  
-
-  
+    <!-- dns prefetch -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
     
     
-  
-
-  
-
-  
-
-  
-
-  
-
-  
     
     
-    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-  
+    
+    
+    
+    
+    
+    
+
+    <!-- Meta & Info -->
+    <meta http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="theme-color" content="#0097A7">
+    <meta name="author" content="Zhu Yuexin">
+    <meta name="description" itemprop="description" content="呀！发现一只会写代码的猪！">
+    <meta name="keywords" content="null">
+
+    <!-- Site Verification -->
+    
+    
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/favicon.png">
+    <link rel="icon" sizes="192x192" href="/img/favicon.png">
+    <link rel="apple-touch-icon" href="/img/favicon.png">
+
+    <!--iOS -->
+    <meta name="apple-mobile-web-app-title" content="Title">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="480">
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Mr.Z&#39;s Blog">
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="http://yoursite.com">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="Mr.Z&#39;s Blog">
+    <meta property="og:image" content="/img/favicon.png" />
+    <meta property="og:description" content="呀！发现一只会写代码的猪！">
+    
+
+    
+
+    <!-- The Twitter Card protocol -->
+    <meta name="twitter:title" content="Mr.Z&#39;s Blog">
+    <meta name="twitter:description" content="呀！发现一只会写代码的猪！">
+    <meta name="twitter:image" content="/img/favicon.png">
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="http://yoursite.com" />
+
+    <!-- Add canonical link for SEO -->
+    
+        <link rel="canonical" href="http://yoursite.com/page/3/index.html" />
+    
+
+    <!-- Structured-data for SEO -->
+    
+        
 
 
 
+    
 
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
 
+        
+            <script src="/js/ie-blocker.en.js"></script>
+        
+    <![endif]-->
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+    <!-- Import lsloader -->
+    <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(key){try{localStorage.removeItem(key)}catch(e){}};lsloader.setLS=function(key,val){try{localStorage.setItem(key,val)}catch(e){}};lsloader.getLS=function(key){var val="";try{val=localStorage.getItem(key)}catch(e){val=""}return val};versionString="/*"+materialVersion+"*/";lsloader.clean=function(){try{var keys=[];for(var i=0;i<localStorage.length;i++){keys.push(localStorage.key(i))}keys.forEach(function(key){var data=lsloader.getLS(key);if(data&&data.indexOf(versionString)===-1){lsloader.removeLS(key)}})}catch(e){}};lsloader.clean();lsloader.load=function(jsname,jspath,cssonload){cssonload=cssonload||function(){};var code;code=this.getLS(jsname);if(code&&code.indexOf(versionString)===-1){this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload);return}if(code){var versionNumber=code.split(versionString)[0];if(versionNumber!=jspath){console.log("reload:"+jspath);this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload);return}code=code.split(versionString)[1];if(/\.js?.+$/.test(versionNumber)){this.jsRunSequence.push({name:jsname,code:code});this.runjs(jspath,jsname,code)}else{document.getElementById(jsname).appendChild(document.createTextNode(code));cssonload()}}else{this.requestResource(jsname,jspath,cssonload)}};lsloader.requestResource=function(name,path,cssonload){var that=this;if(/\.js?.+$/.test(path)){this.iojs(path,name,function(path,name,code){that.setLS(name,path+versionString+code);that.runjs(path,name,code)})}else if(/\.css?.+$/.test(path)){this.iocss(path,name,function(code){document.getElementById(name).appendChild(document.createTextNode(code));that.setLS(name,path+versionString+code)},cssonload)}};lsloader.iojs=function(path,jsname,callback){var that=this;that.jsRunSequence.push({name:jsname,code:""});try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(path,jsname,xhr.response);return}}that.jsfallback(path,jsname)}};xhr.send(null)}catch(e){that.jsfallback(path,jsname)}};lsloader.iocss=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.iofonts=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.runjs=function(path,name,code){if(!!name&&!!code){for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code=code}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var script=document.createElement("script");script.appendChild(document.createTextNode(this.jsRunSequence[0].code));script.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(script);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var that=this;var script=document.createElement("script");script.src=this.jsRunSequence[0].path;script.type="text/javascript";this.jsRunSequence[0].status="loading";script.onload=function(){that.jsRunSequence.shift();if(that.jsRunSequence.length>0){that.runjs()}};document.body.appendChild(script)}};lsloader.tagLoad=function(path,name){this.jsRunSequence.push({name:name,code:"",path:path,status:"failed"});this.runjs()};lsloader.jsfallback=function(path,name){if(!!this.jsnamemap[name]){return}else{this.jsnamemap[name]=name}for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code="";this.jsRunSequence[k].status="failed";this.jsRunSequence[k].path=path}}this.runjs()};lsloader.cssfallback=function(path,name,cssonload){if(!!this.cssnamemap[name]){return}else{this.cssnamemap[name]=1}var link=document.createElement("link");link.type="text/css";link.href=path;link.rel="stylesheet";link.onload=link.onerror=cssonload;var root=document.getElementsByTagName("script")[0];root.parentNode.insertBefore(link,root)};lsloader.runInlineScript=function(scriptId,codeId){var code=document.getElementById(codeId).innerText;this.jsRunSequence.push({name:scriptId,code:code});this.runjs()};lsloader.loadCombo=function(jslist){var updateList="";var requestingModules={};for(var k in jslist){var LS=this.getLS(jslist[k].name);if(!!LS){var version=LS.split(versionString)[0];var code=LS.split(versionString)[1]}else{var version=""}if(version==jslist[k].path){this.jsRunSequence.push({name:jslist[k].name,code:code,path:jslist[k].path})}else{this.jsRunSequence.push({name:jslist[k].name,code:null,path:jslist[k].path,status:"comboloading"});requestingModules[jslist[k].name]=true;updateList+=(updateList==""?"":";")+jslist[k].path}}var that=this;if(!!updateList){var xhr=new XMLHttpRequest;xhr.open("get",combo+updateList,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){that.runCombo(xhr.response,requestingModules);return}}else{for(var i in that.jsRunSequence){if(requestingModules[that.jsRunSequence[i].name]){that.jsRunSequence[i].status="failed"}}that.runjs()}}};xhr.send(null)}this.runjs()};lsloader.runCombo=function(comboCode,requestingModules){comboCode=comboCode.split("/*combojs*/");comboCode.shift();for(var k in this.jsRunSequence){if(!!requestingModules[this.jsRunSequence[k].name]&&!!comboCode[0]){this.jsRunSequence[k].status="comboJS";this.jsRunSequence[k].code=comboCode[0];this.setLS(this.jsRunSequence[k].name,this.jsRunSequence[k].path+versionString+comboCode[0]);comboCode.shift()}}this.runjs()}})();</script>
 
-<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
-
-
-  <meta name="keywords" content="Hexo, NexT" />
-
-
-
-
-
-
-
-
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
-
-
-
-
-
-
-<meta name="description" content="呀！发现一只会写代码的猪！">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Mr.Z's Blog">
-<meta property="og:url" content="http://yoursite.com/page/3/index.html">
-<meta property="og:site_name" content="Mr.Z's Blog">
-<meta property="og:description" content="呀！发现一只会写代码的猪！">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Mr.Z's Blog">
-<meta name="twitter:description" content="呀！发现一只会写代码的猪！">
-
-
-
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Mist',
-    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
-    fancybox: true,
-    motion: true,
-    duoshuo: {
-      userId: '0',
-      author: '博主'
-    },
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    <!-- Import CSS & jQuery -->
+    
+        <style id="css/material.min.css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("css/material.min.css","/css/material.min.css?fJTiM/K1J3dWIruo3pxtAw==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";})</script>
+        <style id="css/style.min.css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("css/style.min.css","/css/style.min.css?oCSEO3ST+aEypEwttTDI9g==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";})</script>
+        
+        
+            <style>
+    
+    .footer-sns-facebook {
+        background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0OCIgaGVpZ2h0PSI0OCIgY2xhc3M9Imljb24iIHZpZXdCb3g9IjAgMCAxMDI0IDEwMjQiPjxwYXRoIGQ9Ik0xMzguNiA3OGMtMjIuNCA1LjItNTUuOCA0MC4yLTYwLjYgNjMuNC0xLjQgNi40LTIgMTI5LjgtMS42IDM2Ny42LjYgMjk4LjYgMSAzNTguOCAzLjQgMzYzIDExIDIwLjIgMjEuNiAzMi40IDM3LjIgNDMgMTUgMTAuMiAxNy40IDExLjIgMzMgMTMgMTEuMiAxLjQgMTM2IDIgMzY1IDEuNiAzMTQtLjYgMzQ4LjYtMSAzNTUtMy44IDE1LjgtNy4yIDMzLjgtMjIgNDMuMi0zNS40IDUuMi03LjQgMTAuOC0xNi42IDEyLjYtMjAuNCAyLjgtNi40IDMuMi00MC44IDMuOC0zNTQgLjQtMjIzLS4yLTM1My40LTEuNC0zNjUtMi0xNy0yLjYtMTguNi0xMy0zNC04LjYtMTIuNi0xNC4yLTE4LjQtMjUuMi0yNS44LTcuOC01LjQtMTcuNC0xMS0yMS42LTEyLjQtNi0yLjItNzIuOC0yLjYtMzY1LjQtMi42LTE5Ni44LjItMzYxIC44LTM2NC40IDEuOHptNjU3LjYgODcuOGw0LjggMy44djU1LjJjMCA1NC42IDAgNTUuMi00LjYgNTkuNi00LjQgNC40LTYgNC42LTUwLjIgNS42bC00NS42IDEtNy4yIDUuNmMtMTAuNCA4LTE2LjggMTcuMi0xOS4yIDI3LjQtMSA1LTEuOCAyNC44LTEuOCA0NCAuMiAzOCAxLjYgNDQuNiAxMC44IDQ4IDIuOCAxLjIgMjguNCAyIDU2LjggMiA0Ny44IDAgNTIgLjIgNTYuMiAzLjhsNC44IDMuOHY1NS4yYzAgNTQuNiAwIDU1LjItNC42IDU5LjYtNC40IDQuNi01LjQgNC42LTU3IDUuMi0yOC44LjItNTQuNC44LTU2LjggMS40LTIuNC42LTUuNiAzLTYuOCA1LjQtMS44IDMuMi0yLjQgNDEuNC0yLjYgMTQzLjJsLS4yIDEzOC44LTUuNiA0LjgtNS42IDQuOEg2MDljLTUyLjQgMC01Mi44IDAtNTguMi00LjZsLTUuNC00LjYtLjItMTQwLjYtLjItMTQwLjYtNC44LTMuOGMtNC4yLTMuNC04LTMuOC0zNS42LTMuOC0zMi44IDAtNDEtMS44LTQzLjYtMTAtLjYtMi4yLTEuMi0yNS40LTEuMi01MS40IDAtNjAuOC0uMi01NyAzLjQtNjEuNiAyLjgtMy42IDYtNCAzNy44LTUgMzMtMSAzNS4yLTEuMiAzOS40LTUuNiA0LjYtNC40IDQuNi01LjIgNS44LTcxIDEuMi03My40LjItNjcuMiAxNi42LTk5LjQgOC0xNS44IDEyLjgtMjIgMjgtMzcgMTUuMi0xNS4yIDIxLjQtMTkuNiAzOC4yLTI4IDExLTUuNCAyNC0xMSAyOS0xMi4yIDYuMi0xLjggMjguNi0yLjYgNzEuMi0yLjYgNTguNi0uMiA2Mi42IDAgNjcgMy42eiIvPjwvc3ZnPg==);
     }
-  };
-</script>
+    
+    
+    .footer-sns-twitter {
+        background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0OCIgaGVpZ2h0PSI0OCIgY2xhc3M9Imljb24iIHZpZXdCb3g9IjAgMCAxMDI0IDEwMjQiPjxwYXRoIGQ9Ik0xMzguNiA3OGMtMjIuNCA1LjItNTUuOCA0MC4yLTYwLjYgNjMuNC0xLjQgNi40LTIgMTI5LjgtMS42IDM2Ny42LjYgMjk4LjYgMSAzNTguOCAzLjQgMzYzIDExIDIwLjIgMjEuNiAzMi40IDM3LjIgNDMgMTUgMTAuMiAxNy40IDExLjIgMzMgMTMgMTEuMiAxLjQgMTM2IDIgMzY1IDEuNiAzMTQtLjYgMzQ4LjYtMSAzNTUtMy44IDE1LjgtNy4yIDMzLjgtMjIgNDMuMi0zNS40IDUuMi03LjQgMTAuOC0xNi42IDEyLjYtMjAuNCAyLjgtNi40IDMuMi00MC44IDMuOC0zNTQgLjQtMjIzLS4yLTM1My40LTEuNC0zNjUtMi0xNy0yLjYtMTguNi0xMy0zNC04LjYtMTIuNi0xNC4yLTE4LjQtMjUuMi0yNS44LTcuOC01LjQtMTcuNC0xMS0yMS42LTEyLjQtNi0yLjItNzIuOC0yLjYtMzY1LjQtMi42LTE5Ni44LjItMzYxIC44LTM2NC40IDEuOHptNTMyLjggMjA1YzEwIDQgMjMgMTAuOCAyOC44IDE1LjIgMTIuNiA5LjIgMTYuNiAxMC42IDI5LjQgOS40IDYuNi0uNiAxMy0zLjIgMjAuNC04LjIgMTEuMi03LjYgMTkuNC05LjIgMjMuNi01IDMuNiAzLjYgMi44IDktMi44IDE4LjYtNy4yIDEyLjQtNiAxOC44IDQuMiAyNC4yIDQuNCAyLjIgOC4yIDUuNiA4LjYgNy40IDEgNC44LTEyLjYgMjQuMi0yMiAzMS44LTExLjggOS4yLTE3LjIgMjIuNi0xOS42IDQ3LjgtNC44IDUwLjQtNy44IDY2LjYtMTYuNCA4NS40LTMgNy03IDE3LjgtOC44IDI0LTEuOCA2LjQtNSAxNC42LTcuNCAxOC40LTIuMiAzLjgtNy40IDEzLTExLjQgMjAuNC0xNy4yIDMwLjgtNDMuNCA2MS40LTcxLjQgODMuOC0yNS42IDIwLjQtNDYgMzMuMi02NC4yIDQwLjItOC40IDMuMi0xOCA3LjYtMjEuNCA5LjYtNy40IDQuNi0yMi40IDguNi01Ny4yIDE1LTYyLjIgMTEuNi03OS4yIDExLjQtMTM1LjYtMS0zMi40LTctMzguNi05LTUyLTE2LjgtMjEuNC0xMi42LTI0LjItMTQuOC0yNC4yLTE5LjQgMC02LjIgMTAuMi05LjIgMzUtMTAuNCAyMi40LTEgMjguNi0yLjYgNTctMTQuMiAyMy44LTkuOCAyOS40LTEyLjggMzAuNC0xNi44IDIuMi04LjItMy0xMy4yLTI2LjgtMjUuNC0yNS44LTEzLjItMzIuMi0xOC40LTQzLjgtMzUuOC05LTEzLjYtMTAtMjEuMi0zLjYtMzMuNiA1LjQtMTAuOCAzLjYtMTUtMTEuOC0yNS40LTktNi0xNC0xMS42LTIwLjgtMjIuNi0yMy40LTM3LjgtMjUtNTAuOC03LjItNTkuOCA0LjgtMi40IDkuNC01LjQgMTAuMi02LjYgMi44LTQuMi0uNC0xNS42LTguNC0yOS0xMS42LTE5LjYtMTMuMi0yNS44LTEzLjItNTUuMiAwLTI4LjggMi42LTM3LjggMTItNDAuMiA5LTIuMiAxNC44IDEgMzUuNiAyMC4yIDI0LjggMjIuOCA0My42IDM2LjYgNjIuOCA0NS44IDggMy44IDE3LjggOS4yIDIyIDEyIDQuMiAyLjggMTQuOCA3IDIzLjQgOS4yIDguNiAyLjIgMjQuMiA2LjggMzQuOCAxMC4yIDEzLjQgNC40IDIzLjYgNi40IDMzIDYuNiAxMi44LjIgMTQuMi0uMiAxOC42LTUuNCA0LTQuOCA0LjgtNy44IDQuOC0xOS4yIDAtMTQuNCA1LjYtMzkuNiAxMS4yLTUwLjYgNC4yLTguNCAyOS4yLTM0LjIgMzkuOC00MS40IDcuOC01LjQgMzUuNi0xNiA1Mi0yMCAxNC4yLTMuNiAzMi42LTEuMiA1Mi40IDYuOHoiLz48L3N2Zz4=);
+    }
+    
+    
+    .footer-sns-gplus {
+        background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0OCIgaGVpZ2h0PSI0OCIgY2xhc3M9Imljb24iIHZpZXdCb3g9IjAgMCAxMDI0IDEwMjQiPjxwYXRoIGQ9Ik0xMzguNiA3OGMtMjIuNCA1LjItNTUuOCA0MC4yLTYwLjYgNjMuNC0xLjQgNi40LTIgMTI5LjgtMS42IDM2Ny42LjYgMjk4LjYgMSAzNTguOCAzLjQgMzYzIDExIDIwLjIgMjEuNiAzMi40IDM3LjIgNDMgMTUgMTAuMiAxNy40IDExLjIgMzMgMTMgMTEuMiAxLjQgMTM2IDIgMzY1IDEuNiAzMTQtLjYgMzQ4LjYtMSAzNTUtMy44IDE1LjgtNy4yIDMzLjgtMjIgNDMuMi0zNS40IDUuMi03LjQgMTAuOC0xNi42IDEyLjYtMjAuNCAyLjgtNi40IDMuMi00MC44IDMuOC0zNTQgLjQtMjIzLS4yLTM1My40LTEuNC0zNjUtMi0xNy0yLjYtMTguNi0xMy0zNC04LjYtMTIuNi0xNC4yLTE4LjQtMjUuMi0yNS44LTcuOC01LjQtMTcuNC0xMS0yMS42LTEyLjQtNi0yLjItNzIuOC0yLjYtMzY1LjQtMi42LTE5Ni44LjItMzYxIC44LTM2NC40IDEuOHpNNDMwIDI5NS40YzQwLjYgMTUuNCA1Ni42IDIzLjggNzIuNiAzOC40IDYuOCA2LjIgNy4yIDE1LjIgMSAyMy40LTYuMiA4LTMzLjYgMzMuOC0zOSAzNi42LTUuNiAyLjgtMTcuNiAyLjgtMjMuMi0uMi0yLjQtMS4yLTguMi01LjItMTMtOC44LTExLjItOC42LTI0LjYtMTEuMi01NS4yLTExLjItMjcuNCAwLTQwLjYgMi42LTUyLjIgMTAuNC00LjQgMi44LTEyLjIgNy42LTE3LjIgMTAuNi0yMyAxMy4yLTUxLjQgNTUtNTUuOCA4Mi40LTIuNiAxNS42LTIuNCAzNC44LjIgNTEgMi44IDE3LjQgMTkuOCA0OC44IDM1LjIgNjUuMiAxNiAxNi42IDQ1IDMzLjYgNjIuOCAzNi42IDI2LjggNC40IDY1LjggMS42IDc5LjQtNS44IDIwLjYtMTEuNCAzMS0xOSA0MS0zMC40IDE4LjgtMjEuNiAyMy40LTM0LjIgMTUuNi00My44LTMuOC00LjgtNC40LTQuOC01MS01LjgtNjAuOC0xLjItNTYuMiAyLjItNTYuMi00My4yIDAtMzIuNC4yLTMzLjIgNC44LTM3IDQuNC0zLjYgOS0zLjggOTItMy44IDc5IDAgODcuOC40IDk0LjIgMy42IDExLjIgNS42IDEzIDExLjQgMTIuOCA0My40IDAgMjUuNC0uOCAzMC44LTcuNiA1OC00IDE2LjYtOS44IDM0LTEyLjYgMzktMi44IDUtOC4yIDE0LjItMTEuNiAyMC42LTguNCAxNS40LTI3LjIgMzYuOC00MC44IDQ2LjYtNS44IDQuNC0xMy44IDEwLjItMTcuNiAxMy4yLTMuOCAzLTExIDctMTYuMiA4LjgtNS4yIDEuOC0xNi4yIDYuNC0yNC40IDEwLTIyLjQgOS42LTM0LjggMTEuNi03MyAxMS42LTM3LjYuMi00Ny0xLjQtNzEtMTItOC4yLTMuNi0xNy42LTcuMi0yMC44LTgtMTUuOC0zLjgtNjctNDUuMi03Ny44LTYyLjgtMi4yLTMuOC03LjYtMTEuNi0xMS44LTE3LjItNC4yLTUuNC05LTE0LTEwLjYtMTktMS44LTQuOC02LjItMTYtMTAtMjQuOC0zLjYtOC44LTcuOC0yMi4yLTkuMi0yOS42LTMuMi0xOC44LTEuNC03OS40IDIuOC05MS40IDEzLjgtNDAuNiAzNS42LTc4IDU4LjgtMTAwLjIgMTQtMTMuNiA0Ny4yLTM2LjQgNTgtMzkuOCA0LjItMS40IDEzLjQtNS4yIDIwLjYtOC40IDIyLTEwIDMyLjgtMTEuNiA3Ni0xMSAzMy44LjYgNDAuNCAxLjIgNTAgNC44em0zNDAuOCA4MC44YzggMy42IDkuNiAxMS4yIDkuMiAzOS4yLS42IDM0LjQtLjYgMzQgNSAzOS42IDQuOCA1IDUuNCA1IDM3LjYgNSA0My40IDAgNDQuNC44IDQzLjIgMzYuMi0uOCAxNy0xLjIgMTguNC02LjQgMjMtNS40IDQuNi02LjYgNC44LTM3LjYgNC44LTMxLjIgMC0zMiAuMi0zNi44IDUtNS42IDUuNC01LjYgNC40LTUgNDEuMi40IDI2LjQuMiAyNy40LTQuNiAzMy00LjggNS42LTYgNS44LTI0LjQgNi40LTIwLjguOC0yOS42LTEuNC0zMy40LTguNC0xLjQtMi42LTItMTUuNi0xLjgtMzUuNi40LTMxLjIuNC0zMS42LTQuNi0zNi42cy01LjYtNS0zNi01Yy0xOC44IDAtMzMtLjgtMzYtMi4yLTcuNi0zLjYtOS42LTExLjItOC44LTMzLjguOC0yOC4yLjQtMjggNDEtMjggNDUuNCAwIDQ1LjQgMCA0NC42LTQyLjYtLjYtMzMtLjYtMzMgNS0zOC40IDQuNC00LjYgNi4yLTUgMjQuOC01IDExIDAgMjIuMiAxIDI1IDIuMnoiLz48L3N2Zz4=);
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</style>
+
+        
+        <!-- Config CSS -->
+
+<!-- Other Styles -->
+<style>
+  body, html {
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+  }
+
+  a {
+    color: #00838F;
+  }
+
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: #0097A7 !important;
+  }
+
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: #0097A7 !important;
+  }
+
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: #0097A7 !important;
+  }
+
+  .toTop {
+    background: #757575 !important;
+  }
+
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: #757575;
+  }
+
+  #scheme-Paradox .MD-burger-layer {
+    background-color: #757575;
+  }
+
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: #757575;
+  }
+
+  .post-toc a:hover {
+    color: #00838F;
+    text-decoration: underline;
+  }
+
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+      body{
+        background-color: #F5F5F5;
+      }
+
+      /* blog_info bottom background */
+      #scheme-Paradox .material-layout .something-else .mdl-card__supporting-text{
+        background-color: #fff;
+      }
+    </style>
 
 
 
-  <link rel="canonical" href="http://yoursite.com/page/3/"/>
+
+<!-- Fade Effect -->
+
+    <style>
+      .fade {
+        transition: all 800ms linear;
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+        opacity: 1;
+      }
+
+      .fade.out{
+        opacity: 0;
+      }
+    </style>
 
 
+<!-- Import Font -->
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
 
 
+        <script>lsloader.load("js/jquery.min.js","/js/jquery.min.js?qcusAULNeBksqffqUM2+Ig==")</script>
+    
+    
+    <script>function Queue(){this.dataStore=[];this.offer=b;this.poll=d;this.execNext=a;this.debug=false;this.startDebug=c;function b(e){if(this.debug){console.log("Offered a Queued Function.")}if(typeof e==="function"){this.dataStore.push(e)}else{console.log("You must offer a function.")}}function d(){if(this.debug){console.log("Polled a Queued Function.")}return this.dataStore.shift()}function a(){var e=this.poll();if(e!==undefined){if(this.debug){console.log("Run a Queued Function.")}e()}}function c(){this.debug=true}}var queue=new Queue();</script>
 
-  <title> Mr.Z's Blog </title>
+    <!-- Analytics -->
+    
+
+    <!-- Custom Head -->
+    
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
     
-  
+        <body id="scheme-Paradox" class="lazy">
+            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
 
-  <div class="container one-collumn sidebar-position-left 
-   page-home 
- ">
-    <div class="headband"></div>
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
 
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
+
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span class="MD-burger-layer"></span>
+                        </button>
+                    
+
+                    <!-- Index Module -->
+<div class="material-index mdl-grid">
+    
+    <div class="locate-thumbnail-symbol"></div>
+
+    <!-- Pin on top -->
     
 
-    <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Mr.Z's Blog</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
+    <!-- Normal Post -->
+    
+        
+            
+                <!-- Paradox Thumbnail -->
+                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
+    <!-- Post Thumbnail -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+        
+    
+
+        <!-- Post Title -->
+        <p class="article-headline-p"><a href="/2017/08/11/修改EditText下划线颜色样式/">修改EditText下划线颜色样式</a></p>
     </div>
-      
-        <p class="site-subtitle"></p>
-      
-  </div>
 
-  <div class="site-nav-toggle">
-    <button>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
-  </div>
+    <!-- Post Excerpt -->
+    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
+        
+            
+        
+        &nbsp;&nbsp;&nbsp;
+        <span>
+            <a href="/2017/08/11/修改EditText下划线颜色样式/" target="_self">Weiterlesen</a>
+        </span>
+    </div>
+    <!-- Post_entry Info-->
+    <div id="post_entry-info">
+        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
+            <!-- Author Avatar -->
+            <div id="author-avatar">
+                <img src="/img/avatar.png" width="44px" height="44px" alt="Zhu Yuexin's avatar">
+            </div>
+            <div>
+                <strong>Zhu Yuexin</strong>
+                <span>Aug 11, 2017</span>
+            </div>
+        </div>
+        <div id="post_entry-right-info">
+            <!-- Category -->
+            <span class="post_entry-category">
+                <a class="post_category-link" href="/categories/Android碎片/">Android碎片</a>
+            </span>
+
+            
+
+            
+
+            <!-- Post Views -->
+            <span class="post_entry-views">
+            </span>
+        </div>
+    </div>
 </div>
 
-<nav class="site-nav">
-  
-
-  
-    <ul id="menu" class="menu">
-      
+            
+            
         
-        <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
-            
-            首页
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-categories">
-          <a href="/categories" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
-            
-            分类
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-archives">
-          <a href="/archives" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
-            
-            归档
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-tags">
-          <a href="/tags" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
-            
-            标签
-          </a>
-        </li>
-      
-
-      
-    </ul>
-  
-
-  
-</nav>
-
-
-
- </div>
-    </header>
-
-    <main id="main" class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          <div id="content" class="content">
-            
-  <section id="posts" class="posts-expand">
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/11/修改EditText下划线颜色样式/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Zhu Yuexin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://i4.buimg.com/567571/fbb0ec60f25374c4.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Mr.Z's Blog">
-    </span>
-
+        
+            
+                <!-- Paradox Thumbnail -->
+                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
+    <!-- Post Thumbnail -->
     
-      <header class="post-header">
-
         
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
         
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/08/11/修改EditText下划线颜色样式/" itemprop="url">
-                  修改EditText下划线颜色样式
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-11T18:02:00+08:00">
-                2017-08-11
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Android碎片/" itemprop="url" rel="index">
-                    <span itemprop="name">Android碎片</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
     
 
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="在build-gradle中添加最新的appcompat库"><a href="#在build-gradle中添加最新的appcompat库" class="headerlink" title="在build.gradle中添加最新的appcompat库"></a>在build.gradle中添加最新的appcompat库</h1><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">dependencies &#123;</div><div class="line">compile 'com.android.support:appcompat-v7:X.X.X' // X.X.X 为最新的版本号</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h1 id="让activity继承android-support-v7-app-AppCompatActivity"><a href="#让activity继承android-support-v7-app-AppCompatActivity" class="headerlink" title="让activity继承android.support.v7.app.AppCompatActivity"></a>让activity继承android.support.v7.app.AppCompatActivity</h1><h1 id="在styles-xml文件中自定义样式"><a href="#在styles-xml文件中自定义样式" class="headerlink" title="在styles.xml文件中自定义样式"></a>在styles.xml文件中自定义样式</h1><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">name</span>=<span class="string">"EditTextTheme"</span> <span class="attr">parent</span>=<span class="string">"Theme.AppCompat.Light"</span>&gt;</span><span class="xml"></span></div><div class="line">    <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"colorControlNormal"</span>&gt;</span>@color/gray_ccc<span class="tag">&lt;/<span class="name">item</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"colorControlActivated"</span>&gt;</span>@color/colorAccent<span class="tag">&lt;/<span class="name">item</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:textColorHint"</span>&gt;</span>@color/gray_ccc<span class="tag">&lt;/<span class="name">item</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div></pre></td></tr></table></figure>
-<h1 id="通过”android-theme”属性将自定义的样式应用于EditText"><a href="#通过”android-theme”属性将自定义的样式应用于EditText" class="headerlink" title="通过”android:theme”属性将自定义的样式应用于EditText"></a>通过”android:theme”属性将自定义的样式应用于EditText</h1><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">EditText</span></span></div><div class="line"><span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></div><div class="line"><span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></div><div class="line"><span class="attr">android:hint</span>=<span class="string">"Hint text"</span></div><div class="line"><span class="attr">android:theme</span>=<span class="string">"@style/EditTextTheme"</span>/&gt;</div></pre></td></tr></table></figure>
-<h1 id="如果是在-lt-android-support-design-widget-TextInputLayout-gt-下的EditText或者TextInputEditText，则需要在TextInputLayout上应用样式"><a href="#如果是在-lt-android-support-design-widget-TextInputLayout-gt-下的EditText或者TextInputEditText，则需要在TextInputLayout上应用样式" class="headerlink" title="如果是在&lt;android.support.design.widget.TextInputLayout&gt;下的EditText或者TextInputEditText，则需要在TextInputLayout上应用样式"></a>如果是在<code>&lt;android.support.design.widget.TextInputLayout&gt;</code>下的EditText或者TextInputEditText，则需要在TextInputLayout上应用样式</h1><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">android.support.design.widget.TextInputLayout</span></span></div><div class="line">    <span class="attr">app:theme</span>=<span class="string">"@style/EditTextTheme"</span></div><div class="line">    <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></div><div class="line">    <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span>&gt;</div><div class="line">    <span class="tag">&lt;<span class="name">android.support.design.widget.TextInputEditText</span></span></div><div class="line">        <span class="attr">android:id</span>=<span class="string">"@+id/register_pass"</span></div><div class="line">        <span class="attr">android:hint</span>=<span class="string">"@string/password"</span></div><div class="line">        <span class="attr">android:digits</span>=<span class="string">"@string/password_limit"</span></div><div class="line">        <span class="attr">android:inputType</span>=<span class="string">"textPassword"</span></div><div class="line">        <span class="attr">android:layout_marginTop</span>=<span class="string">"20dp"</span></div><div class="line">        <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></div><div class="line">        <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span> /&gt;</div><div class="line"><span class="tag">&lt;/<span class="name">android.support.design.widget.TextInputLayout</span>&gt;</span></div></pre></td></tr></table></figure>
-
-          
-        
-      
+        <!-- Post Title -->
+        <p class="article-headline-p"><a href="/2017/08/11/常见用户设置页面布局/">常见用户设置页面布局</a></p>
     </div>
 
-    <div>
-      
+    <!-- Post Excerpt -->
+    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
+        
+            写了一个用户设置页面，这里做一个记录，作为以后的参考。布局的参数设置抽取出来写在了style文件里。
+
+        
+        &nbsp;&nbsp;&nbsp;
+        <span>
+            <a href="/2017/08/11/常见用户设置页面布局/" target="_self">Weiterlesen</a>
+        </span>
     </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/11/常见用户设置页面布局/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Zhu Yuexin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://i4.buimg.com/567571/fbb0ec60f25374c4.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Mr.Z's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/08/11/常见用户设置页面布局/" itemprop="url">
-                  常见用户设置页面布局
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-11T17:48:00+08:00">
-                2017-08-11
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Android碎片/" itemprop="url" rel="index">
-                    <span itemprop="name">Android碎片</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>写了一个用户设置页面，这里做一个记录，作为以后的参考。布局的参数设置抽取出来写在了style文件里。</p>
-<h1 id="布局文件"><a href="#布局文件" class="headerlink" title="布局文件"></a>布局文件</h1><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version="1.0" encoding="utf-8"?&gt;</div><div class="line"><span class="tag">&lt;<span class="name">android.support.v7.widget.LinearLayoutCompat</span> <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span></span></div><div class="line">  <span class="attr">xmlns:app</span>=<span class="string">"http://schemas.android.com/apk/res-auto"</span></div><div class="line">  <span class="attr">xmlns:tools</span>=<span class="string">"http://schemas.android.com/tools"</span></div><div class="line">  <span class="attr">android:orientation</span>=<span class="string">"vertical"</span></div><div class="line">  <span class="attr">android:background</span>=<span class="string">"@color/gray_f2"</span></div><div class="line">  <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></div><div class="line">  <span class="attr">android:layout_height</span>=<span class="string">"match_parent"</span></div><div class="line">  <span class="attr">tools:context</span>=<span class="string">"com.example.lollipop.makeupapp.ui.activity.SettingActivity"</span>&gt;</div><div class="line"></div><div class="line">  <span class="tag">&lt;<span class="name">android.support.v7.widget.Toolbar</span></span></div><div class="line">  <span class="attr">android:id</span>=<span class="string">"@+id/toolbar"</span></div><div class="line">  <span class="attr">android:background</span>=<span class="string">"@color/white"</span></div><div class="line">  <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></div><div class="line">  <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span>&gt;</div><div class="line">  <span class="tag">&lt;<span class="name">FrameLayout</span></span></div><div class="line">  <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></div><div class="line">  <span class="attr">android:layout_height</span>=<span class="string">"match_parent"</span>&gt;</div><div class="line">  <span class="tag">&lt;<span class="name">android.support.v7.widget.LinearLayoutCompat</span></span></div><div class="line">  <span class="attr">android:layout_gravity</span>=<span class="string">"center_vertical"</span></div><div class="line">  <span class="attr">android:orientation</span>=<span class="string">"horizontal"</span></div><div class="line">  <span class="attr">android:gravity</span>=<span class="string">"center"</span></div><div class="line">  <span class="attr">android:layout_width</span>=<span class="string">"wrap_content"</span></div><div class="line">  <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span>&gt;</div><div class="line">  <span class="tag">&lt;<span class="name">android.support.v7.widget.AppCompatImageView</span></span></div><div class="line">  <span class="attr">app:srcCompat</span>=<span class="string">"@drawable/ic_back"</span></div><div class="line">  <span class="attr">android:layout_width</span>=<span class="string">"wrap_content"</span></div><div class="line">  <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span> /&gt;</div><div class="line">  <span class="tag">&lt;<span class="name">android.support.v7.widget.AppCompatTextView</span></span></div><div class="line">  <span class="attr">android:text</span>=<span class="string">"@string/me"</span></div><div class="line">  <span class="attr">android:layout_width</span>=<span class="string">"wrap_content"</span></div><div class="line">  <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span> /&gt;</div><div class="line">  <span class="tag">&lt;/<span class="name">android.support.v7.widget.LinearLayoutCompat</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">android.support.v7.widget.AppCompatTextView</span></span></div><div class="line">  <span class="attr">android:gravity</span>=<span class="string">"center"</span></div><div class="line">  <span class="attr">android:text</span>=<span class="string">"@string/setting"</span></div><div class="line">  <span class="attr">android:textSize</span>=<span class="string">"20sp"</span></div><div class="line">  <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></div><div class="line">  <span class="attr">android:layout_height</span>=<span class="string">"match_parent"</span> /&gt;</div><div class="line">  <span class="tag">&lt;/<span class="name">FrameLayout</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">android.support.v7.widget.Toolbar</span>&gt;</span></div><div class="line"></div><div class="line">  <span class="tag">&lt;<span class="name">android.support.v4.widget.NestedScrollView</span></span></div><div class="line">  <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></div><div class="line">  <span class="attr">android:layout_height</span>=<span class="string">"match_parent"</span>&gt;</div><div class="line">  <span class="tag">&lt;<span class="name">android.support.v7.widget.LinearLayoutCompat</span></span></div><div class="line">  <span class="attr">android:orientation</span>=<span class="string">"vertical"</span></div><div class="line">  <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></div><div class="line">  <span class="attr">android:layout_height</span>=<span class="string">"match_parent"</span>&gt;</div><div class="line">  <span class="tag">&lt;<span class="name">RelativeLayout</span> <span class="attr">android:id</span>=<span class="string">"@+id/account_manage"</span> <span class="attr">style</span>=<span class="string">"@style/wrap_layout"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">android.support.v7.widget.AppCompatTextView</span></span></div><div class="line">  <span class="attr">android:text</span>=<span class="string">"@string/account_manage"</span></div><div class="line">  <span class="attr">style</span>=<span class="string">"@style/text_style"</span> /&gt;</div><div class="line">  <span class="tag">&lt;<span class="name">android.support.v7.widget.AppCompatImageView</span> <span class="attr">style</span>=<span class="string">"@style/img_style"</span>/&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">RelativeLayout</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">RelativeLayout</span> <span class="attr">android:id</span>=<span class="string">"@+id/personal_info"</span> <span class="attr">style</span>=<span class="string">"@style/bottom_layout"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">android.support.v7.widget.AppCompatTextView</span></span></div><div class="line">  <span class="attr">android:text</span>=<span class="string">"@string/personal_info"</span></div><div class="line">  <span class="attr">style</span>=<span class="string">"@style/text_style"</span> /&gt;</div><div class="line">  <span class="tag">&lt;<span class="name">android.support.v7.widget.AppCompatImageView</span> <span class="attr">style</span>=<span class="string">"@style/img_style"</span>/&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">RelativeLayout</span>&gt;</span></div><div class="line"></div><div class="line">  <span class="tag">&lt;<span class="name">RelativeLayout</span></span></div><div class="line">  <span class="attr">android:id</span>=<span class="string">"@+id/dress_up"</span></div><div class="line">  <span class="attr">style</span>=<span class="string">"@style/wrap_layout"</span>&gt;</div><div class="line">  <span class="tag">&lt;<span class="name">android.support.v7.widget.AppCompatTextView</span></span></div><div class="line">  <span class="attr">android:text</span>=<span class="string">"@string/dress_up"</span></div><div class="line">  <span class="attr">style</span>=<span class="string">"@style/text_style"</span> /&gt;</div><div class="line">  <span class="tag">&lt;<span class="name">android.support.v7.widget.AppCompatImageView</span> <span class="attr">style</span>=<span class="string">"@style/img_style"</span>/&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">RelativeLayout</span>&gt;</span></div><div class="line"></div><div class="line">  <span class="tag">&lt;<span class="name">RelativeLayout</span> <span class="attr">android:id</span>=<span class="string">"@+id/clean_cache"</span> <span class="attr">style</span>=<span class="string">"@style/wrap_layout"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">android.support.v7.widget.AppCompatTextView</span></span></div><div class="line">  <span class="attr">android:text</span>=<span class="string">"@string/clean_cache"</span></div><div class="line">  <span class="attr">style</span>=<span class="string">"@style/text_style"</span> /&gt;</div><div class="line">  <span class="tag">&lt;<span class="name">android.support.v7.widget.AppCompatImageView</span></span></div><div class="line">  <span class="attr">android:id</span>=<span class="string">"@+id/img"</span></div><div class="line">  <span class="attr">style</span>=<span class="string">"@style/img_style"</span> /&gt;</div><div class="line">  <span class="tag">&lt;<span class="name">TextView</span></span></div><div class="line">  <span class="attr">android:id</span>=<span class="string">"@+id/cache"</span></div><div class="line">  <span class="attr">android:text</span>=<span class="string">"@string/cache_test"</span></div><div class="line">  <span class="attr">android:layout_centerVertical</span>=<span class="string">"true"</span></div><div class="line">  <span class="attr">android:layout_toStartOf</span>=<span class="string">"@id/img"</span></div><div class="line">  <span class="attr">android:layout_width</span>=<span class="string">"wrap_content"</span></div><div class="line">  <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span> /&gt;</div><div class="line">  <span class="tag">&lt;/<span class="name">RelativeLayout</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">RelativeLayout</span> <span class="attr">android:id</span>=<span class="string">"@+id/advice"</span> <span class="attr">style</span>=<span class="string">"@style/mid_layout"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">android.support.v7.widget.AppCompatTextView</span></span></div><div class="line">  <span class="attr">android:text</span>=<span class="string">"@string/advice"</span></div><div class="line">  <span class="attr">style</span>=<span class="string">"@style/text_style"</span> /&gt;</div><div class="line">  <span class="tag">&lt;<span class="name">android.support.v7.widget.AppCompatImageView</span> <span class="attr">style</span>=<span class="string">"@style/img_style"</span>/&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">RelativeLayout</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">RelativeLayout</span> <span class="attr">android:id</span>=<span class="string">"@+id/about_us"</span> <span class="attr">style</span>=<span class="string">"@style/bottom_layout"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">android.support.v7.widget.AppCompatTextView</span></span></div><div class="line">  <span class="attr">android:text</span>=<span class="string">"@string/account_manage"</span></div><div class="line">  <span class="attr">style</span>=<span class="string">"@style/text_style"</span> /&gt;</div><div class="line">  <span class="tag">&lt;<span class="name">android.support.v7.widget.AppCompatImageView</span> <span class="attr">style</span>=<span class="string">"@style/img_style"</span>/&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">RelativeLayout</span>&gt;</span></div><div class="line"></div><div class="line">  <span class="tag">&lt;<span class="name">android.support.v7.widget.AppCompatButton</span></span></div><div class="line">  <span class="attr">android:text</span>=<span class="string">"@string/exit_current_account"</span></div><div class="line">  <span class="attr">android:textColor</span>=<span class="string">"@color/red"</span></div><div class="line">  <span class="attr">android:layout_marginTop</span>=<span class="string">"40dp"</span></div><div class="line">  <span class="attr">app:theme</span>=<span class="string">"@style/LogoutButton"</span></div><div class="line">  <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></div><div class="line">  <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span> /&gt;</div><div class="line">  <span class="tag">&lt;/<span class="name">android.support.v7.widget.LinearLayoutCompat</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">android.support.v4.widget.NestedScrollView</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">android.support.v7.widget.LinearLayoutCompat</span>&gt;</span></div></pre></td></tr></table></figure>
-<h1 id="样式文件"><a href="#样式文件" class="headerlink" title="样式文件"></a>样式文件</h1><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!-- 共用样式 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">name</span>=<span class="string">"base_layout"</span>&gt;</span><span class="xml"></span></div><div class="line">  <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:clickable"</span>&gt;</span>true<span class="tag">&lt;/<span class="name">item</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:background"</span>&gt;</span>@drawable/item_click_selector<span class="tag">&lt;/<span class="name">item</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:layout_width"</span>&gt;</span>match_parent<span class="tag">&lt;/<span class="name">item</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:layout_height"</span>&gt;</span>wrap_content<span class="tag">&lt;/<span class="name">item</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:paddingStart"</span>&gt;</span>10dp<span class="tag">&lt;/<span class="name">item</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:paddingEnd"</span>&gt;</span>10dp<span class="tag">&lt;/<span class="name">item</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:paddingTop"</span>&gt;</span>10dp<span class="tag">&lt;/<span class="name">item</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:paddingBottom"</span>&gt;</span>10dp<span class="tag">&lt;/<span class="name">item</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line"><span class="comment">&lt;!-- 外层样式 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">name</span>=<span class="string">"wrap_layout"</span> <span class="attr">parent</span>=<span class="string">"base_layout"</span>&gt;</span><span class="xml"></span></div><div class="line">  <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:layout_marginTop"</span>&gt;</span>20dp<span class="tag">&lt;/<span class="name">item</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:layout_marginBottom"</span>&gt;</span>0.5dp<span class="tag">&lt;/<span class="name">item</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line"><span class="comment">&lt;!-- 中间层样式 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">name</span>=<span class="string">"mid_layout"</span> <span class="attr">parent</span>=<span class="string">"base_layout"</span>&gt;</span><span class="xml"></span></div><div class="line">  <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:layout_marginBottom"</span>&gt;</span>0.5dp<span class="tag">&lt;/<span class="name">item</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line"><span class="comment">&lt;!-- 底层样式 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">name</span>=<span class="string">"bottom_layout"</span> <span class="attr">parent</span>=<span class="string">"base_layout"</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line"><span class="comment">&lt;!-- 文本样式 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">name</span>=<span class="string">"text_style"</span>&gt;</span><span class="xml"></span></div><div class="line">  <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:layout_width"</span>&gt;</span>wrap_content<span class="tag">&lt;/<span class="name">item</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:layout_height"</span>&gt;</span>wrap_content<span class="tag">&lt;/<span class="name">item</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:textSize"</span>&gt;</span>18sp<span class="tag">&lt;/<span class="name">item</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:layout_alignParentStart"</span>&gt;</span>true<span class="tag">&lt;/<span class="name">item</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:layout_centerVertical"</span>&gt;</span>true<span class="tag">&lt;/<span class="name">item</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line"><span class="comment">&lt;!-- 图标样式 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">name</span>=<span class="string">"img_style"</span>&gt;</span><span class="xml"></span></div><div class="line">  <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:layout_width"</span>&gt;</span>wrap_content<span class="tag">&lt;/<span class="name">item</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:layout_height"</span>&gt;</span>wrap_content<span class="tag">&lt;/<span class="name">item</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:layout_alignParentEnd"</span>&gt;</span>true<span class="tag">&lt;/<span class="name">item</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:layout_centerVertical"</span>&gt;</span>true<span class="tag">&lt;/<span class="name">item</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:src"</span>&gt;</span>@drawable/ic_next<span class="tag">&lt;/<span class="name">item</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div></pre></td></tr></table></figure>
-<h1 id="点击效果"><a href="#点击效果" class="headerlink" title="点击效果"></a>点击效果</h1><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version="1.0" encoding="utf-8"?&gt;</div><div class="line"><span class="tag">&lt;<span class="name">selector</span> <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">item</span> <span class="attr">android:drawable</span>=<span class="string">"@color/white"</span> <span class="attr">android:state_pressed</span>=<span class="string">"false"</span>/&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">item</span> <span class="attr">android:drawable</span>=<span class="string">"@color/gray_f2"</span> <span class="attr">android:state_pressed</span>=<span class="string">"true"</span> /&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">selector</span>&gt;</span></div></pre></td></tr></table></figure>
-<h1 id="页面预览"><a href="#页面预览" class="headerlink" title="页面预览"></a>页面预览</h1><p><img src="https://ws1.sinaimg.cn/large/e3417548gy1fifxomg9sqj20u01hc0vo.jpg" alt=""></p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/11/在Fragment中嵌套ViewPager时，内部Fragment不显示且滑动不流畅/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Zhu Yuexin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://i4.buimg.com/567571/fbb0ec60f25374c4.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Mr.Z's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/08/11/在Fragment中嵌套ViewPager时，内部Fragment不显示且滑动不流畅/" itemprop="url">
-                  在Fragment中嵌套ViewPager时，内部Fragment不显示且滑动不流畅
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-11T17:23:00+08:00">
-                2017-08-11
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Android错误解决/" itemprop="url" rel="index">
-                    <span itemprop="name">Android错误解决</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="遇到的问题"><a href="#遇到的问题" class="headerlink" title="遇到的问题"></a>遇到的问题</h1><p>我在开发过程中用到了ViewPager和Fragment配合使用的情况，在ViewPager下的一个Fragment里又有情况需要用到ViewPager+Fragment，出现了ViewPager的嵌套，这时里层ViewPager的滑动显得十分不流畅，而且里层Fragment的内容不显示出来。</p>
-<h1 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h1><p>我的里层ViewPager获取Fragment Manager的代码如下：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">MyFragmentStatePagerAdapter adapter = <span class="keyword">new</span> MyFragmentStatePagerAdapter(getActivity().getSupportFragmentManager(), fragments, Arrays.asList(TITLES));</div></pre></td></tr></table></figure>
-<p>这里的<code>getActivity().getSupportFragmentManager()</code>方法获取到的是父级的FragmentManager，于是出现了里层ViewPager与外层共用一个FragmentManager的情况，导致问题出现。</p>
-<h1 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h1><p>修改适配器获取FragmentManager的方法：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">MyFragmentStatePagerAdapter adapter = <span class="keyword">new</span> MyFragmentStatePagerAdapter(getChildFragmentManager(), fragments, Arrays.asList(TITLES));</div></pre></td></tr></table></figure>
-<p>使用<code>getChildFragmentManager()</code>代替<code>getActivity().getSupportFragmentManager()</code>方法。</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/11/修改ToolBar溢出菜单字体颜色（即MenuItem字体颜色）/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Zhu Yuexin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://i4.buimg.com/567571/fbb0ec60f25374c4.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Mr.Z's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/08/11/修改ToolBar溢出菜单字体颜色（即MenuItem字体颜色）/" itemprop="url">
-                  修改ToolBar溢出菜单字体颜色（即MenuItem字体颜色）
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-11T17:18:00+08:00">
-                2017-08-11
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Android碎片/" itemprop="url" rel="index">
-                    <span itemprop="name">Android碎片</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="更改溢出菜单栏里的字体颜色"><a href="#更改溢出菜单栏里的字体颜色" class="headerlink" title="更改溢出菜单栏里的字体颜色"></a>更改溢出菜单栏里的字体颜色</h1><p>默认情况下，ToolBar溢出菜单的字体颜色是黑色的。如果要更改溢出菜单的文字颜色，需要为ToolBar添加一个主题，在styles.xml文件中新建：</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">name</span>=<span class="string">"ToolBarThemeWhite"</span> <span class="attr">parent</span>=<span class="string">"Theme.AppCompat.Light"</span>&gt;</span><span class="xml"></span></div><div class="line">    <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:textColor"</span>&gt;</span>@color/white<span class="tag">&lt;/<span class="name">item</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:textSize"</span>&gt;</span>25sp<span class="tag">&lt;/<span class="name">item</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div></pre></td></tr></table></figure>
-<h1 id="更改显示在ToolBar上的菜单文字颜色"><a href="#更改显示在ToolBar上的菜单文字颜色" class="headerlink" title="更改显示在ToolBar上的菜单文字颜色"></a>更改显示在ToolBar上的菜单文字颜色</h1><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">name</span>=<span class="string">"ToolBarThemeWhite"</span> <span class="attr">parent</span>=<span class="string">"Theme.AppCompat.Light"</span>&gt;</span><span class="xml"></span></div><div class="line">    <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"actionMenuTextColor"</span>&gt;</span>@color/white<span class="tag">&lt;/<span class="name">item</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:textSize"</span>&gt;</span>20sp<span class="tag">&lt;/<span class="name">item</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div></pre></td></tr></table></figure>
-<h1 id="在ToolBar中应用新建的主题"><a href="#在ToolBar中应用新建的主题" class="headerlink" title="在ToolBar中应用新建的主题"></a>在ToolBar中应用新建的主题</h1><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">android.support.v7.widget.Toolbar</span></span></div><div class="line">    <span class="attr">android:id</span>=<span class="string">"@+id/toolbar"</span></div><div class="line">    <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></div><div class="line">    <span class="attr">android:layout_height</span>=<span class="string">"?attr/actionBarSize"</span></div><div class="line">    <span class="attr">app:theme</span>=<span class="string">"@style/ToolBarThemeWhite"</span></div><div class="line">    <span class="attr">app:titleTextColor</span>=<span class="string">"@color/white"</span></div><div class="line">    <span class="attr">app:layout_collapseMode</span>=<span class="string">"pin"</span></div><div class="line">    <span class="attr">app:navigationIcon</span>=<span class="string">"@drawable/ic_back_white"</span> /&gt;</div></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/11/getResource().getColor()方法废弃，其他获取颜色的方法/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Zhu Yuexin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://i4.buimg.com/567571/fbb0ec60f25374c4.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Mr.Z's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/08/11/getResource().getColor()方法废弃，其他获取颜色的方法/" itemprop="url">
-                  getResource().getColor()方法废弃，其他获取颜色的方法
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-11T17:15:00+08:00">
-                2017-08-11
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Android碎片/" itemprop="url" rel="index">
-                    <span itemprop="name">Android碎片</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p><code>getResouce().getColor(int id)</code>在API 23以上版本时被废弃了，替换为方法<code>getResource().getColor(int id, Theme theme)</code>，但这个方法要求API&gt;=23。</p>
-<p>当前同时兼容高低版本的方法是：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ContextCompat.getColor(Context context, <span class="keyword">int</span> id);</div></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/11/LinearLayout中的所有子控件均匀分布/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Zhu Yuexin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://i4.buimg.com/567571/fbb0ec60f25374c4.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Mr.Z's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/08/11/LinearLayout中的所有子控件均匀分布/" itemprop="url">
-                  LinearLayout中的所有子控件均匀分布
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-11T17:10:00+08:00">
-                2017-08-11
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Android碎片/" itemprop="url" rel="index">
-                    <span itemprop="name">Android碎片</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>在设置LinearLayout的orientation为horizontal的时候，每个横向子控件如果想要大小一样的话，设置他们的”layout_weight”等于1即可。</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">LinearLayout</span></span></div><div class="line"></div><div class="line">	<span class="attr">android:layout_width</span>=<span class="string">"fill_parent"</span></div><div class="line"></div><div class="line">	<span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></div><div class="line"></div><div class="line">	<span class="attr">android:layout_alignParentTop</span>=<span class="string">"true"</span></div><div class="line"></div><div class="line">	<span class="attr">android:layout_centerHorizontal</span>=<span class="string">"true"</span></div><div class="line"></div><div class="line">	<span class="attr">android:layout_marginTop</span>=<span class="string">"98dp"</span></div><div class="line"></div><div class="line">	<span class="attr">android:orientation</span>=<span class="string">"horizontal"</span> &gt;</div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">Button</span></span></div><div class="line"></div><div class="line">        <span class="attr">android:id</span>=<span class="string">"@+id/button1"</span></div><div class="line"></div><div class="line">        <span class="attr">android:layout_width</span>=<span class="string">"fill_parent"</span></div><div class="line"></div><div class="line">        <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></div><div class="line"></div><div class="line">        <span class="attr">android:layout_weight</span>=<span class="string">"1"</span> /&gt;</div><div class="line"></div><div class="line">	<span class="tag">&lt;<span class="name">Button</span></span></div><div class="line"></div><div class="line">        <span class="attr">android:id</span>=<span class="string">"@+id/button2"</span></div><div class="line"></div><div class="line">        <span class="attr">android:layout_width</span>=<span class="string">"fill_parent"</span></div><div class="line"></div><div class="line">        <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></div><div class="line"></div><div class="line">        <span class="attr">android:layout_weight</span>=<span class="string">"1"</span> /&gt;</div><div class="line"></div><div class="line"><span class="tag">&lt;/<span class="name">LinearLayout</span>&gt;</span></div></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/11/TextView单行显示，并且文字过多显示省略号/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Zhu Yuexin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://i4.buimg.com/567571/fbb0ec60f25374c4.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Mr.Z's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/08/11/TextView单行显示，并且文字过多显示省略号/" itemprop="url">
-                  TextView单行显示，并且文字过多显示省略号
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-11T17:05:00+08:00">
-                2017-08-11
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Android碎片/" itemprop="url" rel="index">
-                    <span itemprop="name">Android碎片</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>单行显示使用如下属性：</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">android:maxLines="1"</div></pre></td></tr></table></figure>
-<p>当文字显示不下时，使用ellipsize属性：</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">android:ellipsize="start"     //省略号在开头</div><div class="line">android:ellipsize="middle"     //省略号在中间</div><div class="line">android:ellipsize="end"     //省略号在结尾</div><div class="line">android:ellipsize="marquee"     //跑马灯显示</div></pre></td></tr></table></figure>
-<p><strong>注意</strong></p>
-<p>使用ellipsize属性时必须设置以下属性：</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">android:layou_width="wrap_content"</div></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/11/设置双击退出的方法/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Zhu Yuexin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://i4.buimg.com/567571/fbb0ec60f25374c4.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Mr.Z's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/08/11/设置双击退出的方法/" itemprop="url">
-                  设置双击退出的方法
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-11T17:00:00+08:00">
-                2017-08-11
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Android碎片/" itemprop="url" rel="index">
-                    <span itemprop="name">Android碎片</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h1><p>设置一个mPressedTime变量和一个mNowTime变量，通过重写onBackPressed()方法，计算两个时间的差值设置双击退出。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//点击返回键时的时间，用于控制双击退出</span></div><div class="line"><span class="keyword">private</span> <span class="keyword">long</span> mPressedTime = <span class="number">0</span>;</div><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line">* 重写onBackPressed()方法，设置双击退出，时间差500毫秒</div><div class="line">*/</div><div class="line"><span class="meta">@Override</span></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onBackPressed</span><span class="params">()</span> </span>&#123;</div><div class="line">    <span class="keyword">long</span> mNowTime = System.currentTimeMillis();</div><div class="line">    <span class="keyword">if</span> (mNowTime - mPressedTime &gt; <span class="number">500</span>)&#123;</div><div class="line">        Toast.makeText(<span class="keyword">this</span>, <span class="string">"再次点击退出"</span>, Toast.LENGTH_SHORT).show();</div><div class="line">        mPressedTime = mNowTime;</div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">        <span class="comment">//做一些退出操作</span></div><div class="line">        <span class="keyword">this</span>.finish();</div><div class="line">        System.exit(<span class="number">0</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/11/底部导航栏BottomNavigationView的使用/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Zhu Yuexin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://i4.buimg.com/567571/fbb0ec60f25374c4.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Mr.Z's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/08/11/底部导航栏BottomNavigationView的使用/" itemprop="url">
-                  底部导航栏BottomNavigationView的使用
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-11T16:39:00+08:00">
-                2017-08-11
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Android碎片/" itemprop="url" rel="index">
-                    <span itemprop="name">Android碎片</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h1><h2 id="在build-gradle文件中添加依赖"><a href="#在build-gradle文件中添加依赖" class="headerlink" title="在build.gradle文件中添加依赖"></a>在build.gradle文件中添加依赖</h2><p><code>compile &#39;com.android.support:design:25.3.1&#39;</code></p>
-<h2 id="添加布局文件"><a href="#添加布局文件" class="headerlink" title="添加布局文件"></a>添加布局文件</h2><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">RelativeLayout</span> <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span></span></div><div class="line">  <span class="attr">xmlns:app</span>=<span class="string">"http://schemas.android.com/apk/res-auto"</span></div><div class="line">  <span class="attr">xmlns:tools</span>=<span class="string">"http://schemas.android.com/tools"</span></div><div class="line">  <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></div><div class="line">  <span class="attr">android:layout_height</span>=<span class="string">"match_parent"</span>&gt;</div><div class="line"></div><div class="line">  <span class="tag">&lt;<span class="name">android.support.v4.view.ViewPager</span></span></div><div class="line">  <span class="attr">android:id</span>=<span class="string">"@+id/view_pager"</span></div><div class="line">  <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></div><div class="line">  <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span>/&gt;</div><div class="line"></div><div class="line">  <span class="tag">&lt;<span class="name">android.support.design.widget.BottomNavigationView</span></span></div><div class="line">  <span class="attr">android:id</span>=<span class="string">"@+id/bottom_navigation"</span></div><div class="line">  <span class="attr">android:layout_alignParentBottom</span>=<span class="string">"true"</span></div><div class="line">  <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></div><div class="line">  <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></div><div class="line">  <span class="attr">app:itemTextColor</span>=<span class="string">"@drawable/navigation_selector"</span></div><div class="line">  <span class="attr">app:itemIconTint</span>=<span class="string">"@drawable/navigation_selector"</span></div><div class="line">  <span class="attr">app:itemBackground</span>=<span class="string">"@color/white"</span></div><div class="line">  <span class="attr">app:menu</span>=<span class="string">"@menu/navigation_item"</span>/&gt;</div><div class="line"><span class="tag">&lt;/<span class="name">RelativeLayout</span>&gt;</span></div></pre></td></tr></table></figure>
-<h2 id="在res目录下新建menu文件夹，新建navigation-item-xml文件"><a href="#在res目录下新建menu文件夹，新建navigation-item-xml文件" class="headerlink" title="在res目录下新建menu文件夹，新建navigation_item.xml文件"></a>在res目录下新建menu文件夹，新建navigation_item.xml文件</h2><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version="1.0" encoding="utf-8" ?&gt;</div><div class="line"><span class="tag">&lt;<span class="name">menu</span> <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">item</span></span></div><div class="line">        <span class="attr">android:id</span>=<span class="string">"@+id/community"</span></div><div class="line">        <span class="attr">android:icon</span>=<span class="string">"@drawable/ic_home"</span></div><div class="line">        <span class="attr">android:title</span>=<span class="string">"@string/community"</span>/&gt;</div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">item</span></span></div><div class="line">        <span class="attr">android:id</span>=<span class="string">"@+id/message"</span></div><div class="line">        <span class="attr">android:icon</span>=<span class="string">"@drawable/ic_schedule"</span></div><div class="line">        <span class="attr">android:title</span>=<span class="string">"@string/schedule_table"</span>/&gt;</div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">item</span></span></div><div class="line">        <span class="attr">android:id</span>=<span class="string">"@+id/mine"</span></div><div class="line">        <span class="attr">android:icon</span>=<span class="string">"@drawable/ic_mine"</span></div><div class="line">        <span class="attr">android:title</span>=<span class="string">"@string/me"</span>/&gt;</div><div class="line"><span class="tag">&lt;/<span class="name">menu</span>&gt;</span></div></pre></td></tr></table></figure>
-<p>这个文件对应于BottomNavigationView的”app:menu”属性，指定了导航栏的菜单图标与标题</p>
-<h2 id="在drawable文件夹下新建navigation-selector-xml文件"><a href="#在drawable文件夹下新建navigation-selector-xml文件" class="headerlink" title="在drawable文件夹下新建navigation_selector.xml文件"></a>在drawable文件夹下新建navigation_selector.xml文件</h2><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version="1.0" encoding="utf-8"?&gt;</div><div class="line"><span class="tag">&lt;<span class="name">selector</span> <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">item</span> <span class="attr">android:color</span>=<span class="string">"@color/gray_35"</span> <span class="attr">android:state_checked</span>=<span class="string">"false"</span>/&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">item</span> <span class="attr">android:color</span>=<span class="string">"@color/colorAccent"</span> <span class="attr">android:state_checked</span>=<span class="string">"true"</span>/&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">selector</span>&gt;</span></div></pre></td></tr></table></figure>
-<p>这个文件可用于BottomNavigationView的背景、字体、图标颜色等的显示。</p>
-<h1 id="与ViewPager交互使用"><a href="#与ViewPager交互使用" class="headerlink" title="与ViewPager交互使用"></a>与ViewPager交互使用</h1><h2 id="新建MyFragmentPagerAdapter继承自FragmentPagerAdapter"><a href="#新建MyFragmentPagerAdapter继承自FragmentPagerAdapter" class="headerlink" title="新建MyFragmentPagerAdapter继承自FragmentPagerAdapter"></a>新建MyFragmentPagerAdapter继承自FragmentPagerAdapter</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyFragmentPagerAdapter</span> <span class="keyword">extends</span> <span class="title">FragmentPagerAdapter</span> </span>&#123;</div><div class="line">    <span class="keyword">private</span> List&lt;Fragment&gt; fragmentList;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">MyFragmentPagerAdapter</span><span class="params">(FragmentManager fm, List&lt;Fragment&gt; fragmentList)</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>(fm);</div><div class="line">        <span class="keyword">this</span>.fragmentList = fragmentList;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getCount</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> fragmentList.size();</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> Fragment <span class="title">getItem</span><span class="params">(<span class="keyword">int</span> position)</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> fragmentList.get(position);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">long</span> <span class="title">getItemId</span><span class="params">(<span class="keyword">int</span> position)</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> position;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h2 id="在Activity中引用"><a href="#在Activity中引用" class="headerlink" title="在Activity中引用"></a>在Activity中引用</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MainActivity</span> <span class="keyword">extends</span> <span class="title">AppCompatActivity</span> </span>&#123;</div><div class="line">    <span class="keyword">private</span> List&lt;Fragment&gt; fragmentList = <span class="keyword">new</span> ArrayList&lt;&gt;();</div><div class="line">    <span class="keyword">private</span> FragmentPagerAdapter fragmentPagerAdapter;</div><div class="line">    <span class="keyword">private</span> MenuItem menuItem;</div><div class="line"></div><div class="line">    <span class="comment">//三个Fragment</span></div><div class="line">    <span class="keyword">private</span> CommunityFragment communityFragment;</div><div class="line">    <span class="keyword">private</span> HomeFragment homeFragment;</div><div class="line">    <span class="keyword">private</span> ScheduleFragment scheduleFragment;</div><div class="line"></div><div class="line">    <span class="meta">@BindView</span>(R.id.view_pager)</div><div class="line">    ViewPager viewPager;</div><div class="line">    <span class="meta">@BindView</span>(R.id.bottom_navigation)</div><div class="line">    BottomNavigationView bottomNavigationView;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);</div><div class="line">        setContentView(R.layout.activity_main);</div><div class="line">        ButterKnife.bind(<span class="keyword">this</span>);</div><div class="line"></div><div class="line">        communityFragment = <span class="keyword">new</span> CommunityFragment();</div><div class="line">        homeFragment = <span class="keyword">new</span> HomeFragment();</div><div class="line">        scheduleFragment = <span class="keyword">new</span> ScheduleFragment();</div><div class="line">        fragmentList.add(communityFragment);</div><div class="line">        fragmentList.add(homeFragment);</div><div class="line">        fragmentList.add(scheduleFragment);</div><div class="line"></div><div class="line">        fragmentPagerAdapter = <span class="keyword">new</span> MyFragmentPagerAdapter(getSupportFragmentManager(), fragmentList);</div><div class="line">        viewPager.setAdapter(fragmentPagerAdapter);</div><div class="line"></div><div class="line">        bottomNavigationView.setOnNavigationItemSelectedListener(<span class="keyword">new</span> BottomNavigationView.OnNavigationItemSelectedListener() &#123;</div><div class="line">            <span class="meta">@Override</span></div><div class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">onNavigationItemSelected</span><span class="params">(@NonNull MenuItem item)</span> </span>&#123;</div><div class="line">                <span class="keyword">switch</span> (item.getItemId())&#123;</div><div class="line">                    <span class="keyword">case</span> R.id.community:</div><div class="line">                        viewPager.setCurrentItem(<span class="number">0</span>);</div><div class="line">                        <span class="keyword">break</span>;</div><div class="line">                    <span class="keyword">case</span> R.id.schedule:</div><div class="line">                        viewPager.setCurrentItem(<span class="number">1</span>);</div><div class="line">                        <span class="keyword">break</span>;</div><div class="line">                    <span class="keyword">case</span> R.id.me:</div><div class="line">                        viewPager.setCurrentItem(<span class="number">2</span>);</div><div class="line">                        <span class="keyword">break</span>;</div><div class="line">                &#125;</div><div class="line">                <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">            &#125;</div><div class="line">        &#125;);</div><div class="line"></div><div class="line">        viewPager.addOnPageChangeListener(<span class="keyword">new</span> ViewPager.OnPageChangeListener() &#123;</div><div class="line">            <span class="meta">@Override</span></div><div class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onPageScrolled</span><span class="params">(<span class="keyword">int</span> position, <span class="keyword">float</span> positionOffset, <span class="keyword">int</span> positionOffsetPixels)</span> </span>&#123;</div><div class="line"></div><div class="line">            &#125;</div><div class="line"></div><div class="line">            <span class="meta">@Override</span></div><div class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onPageSelected</span><span class="params">(<span class="keyword">int</span> position)</span> </span>&#123;</div><div class="line">                <span class="keyword">if</span> (menuItem != <span class="keyword">null</span>)&#123;</div><div class="line">                    menuItem.setChecked(<span class="keyword">false</span>);</div><div class="line">                &#125;<span class="keyword">else</span> &#123;</div><div class="line">                    menuItem = bottomNavigationView.getMenu().getItem(<span class="number">0</span>).setChecked(<span class="keyword">false</span>);</div><div class="line">                &#125;</div><div class="line">                menuItem = bottomNavigationView.getMenu().getItem(position).setChecked(<span class="keyword">true</span>);</div><div class="line">            &#125;</div><div class="line"></div><div class="line">            <span class="meta">@Override</span></div><div class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onPageScrollStateChanged</span><span class="params">(<span class="keyword">int</span> state)</span> </span>&#123;</div><div class="line"></div><div class="line">            &#125;</div><div class="line">        &#125;);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h1 id="效果如下"><a href="#效果如下" class="headerlink" title="效果如下"></a>效果如下</h1><p><img src="https://ws1.sinaimg.cn/large/e3417548gy1fifw0m0rwpg20go0tnwmm.jpg" alt=""></p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/11/v7修改Button颜色并保持默认点击效果/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Zhu Yuexin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://i4.buimg.com/567571/fbb0ec60f25374c4.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Mr.Z's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/08/11/v7修改Button颜色并保持默认点击效果/" itemprop="url">
-                  v7修改Button颜色并保持默认点击效果
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-11T16:28:00+08:00">
-                2017-08-11
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Android碎片/" itemprop="url" rel="index">
-                    <span itemprop="name">Android碎片</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>通常我们修改Button的颜色会通过修改”android:background”属性来修改Button的背景颜色，但是这样做会丢失Button默认的点击效果，尤其是5.0以上的系统中的点击涟漪效果等。虽然我们可以通过使用selector来实现点击效果，但工作量很大，而且5.0自带的涟漪效果是很不错的。</p>
-<p><strong>修改方法</strong></p>
-<p>我们可以通过Style修改Button的颜色。AppCompat中提供的按钮有5中Style：</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">name</span>=<span class="string">"Widget.AppCompat.Button"</span> <span class="attr">parent</span>=<span class="string">"Base.Widget.AppCompat.Button"</span>/&gt;</span><span class="xml"></span></div><div class="line">    默认的状态  背景颜色属性：colorButtonNormal 文字颜色属性:黑色</div><div class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">name</span>=<span class="string">"Widget.AppCompat.Button.Colored"</span> <span class="attr">parent</span>=<span class="string">"Base.Widget.AppCompat.Button.Colored"</span>/&gt;</span><span class="xml"></span></div><div class="line">    背景颜色属性:colorAccent 文字颜色属性:白色</div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">name</span>=<span class="string">"Widget.AppCompat.Button.Borderless"</span> <span class="attr">parent</span>=<span class="string">"Base.Widget.AppCompat.Button.Borderless"</span>/&gt;</span><span class="xml"></span></div><div class="line">    背景颜色属性：透明  文字颜色属性：白色</div><div class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">name</span>=<span class="string">"Widget.AppCompat.Button.Borderless.Colored"</span> <span class="attr">parent</span>=<span class="string">"Base.Widget.AppCompat.Button.Borderless.Colored"</span>/&gt;</span><span class="xml"></span></div><div class="line">   背景颜色属性：透明 文字颜色属性：colorAccent</div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">name</span>=<span class="string">"Widget.AppCompat.Button.Small"</span> <span class="attr">parent</span>=<span class="string">"Base.Widget.AppCompat.Button.Small"</span>/&gt;</span><span class="undefined"></span></div><div class="line">      背景颜色属性：colorButtonNormal 文字颜色属性:黑色</div></pre></td></tr></table></figure>
-<p>我们可以在styles.xml文件中新建style，设置”buttonStyle”属性，通过相应的其他属性修改Button的背景色或文字颜色，然后在layout文件中需要修改的Button中通过”android:theme”属性引用新建的style。</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">name</span>=<span class="string">"ButtonTheme"</span> <span class="attr">parent</span>=<span class="string">"AppTheme"</span>&gt;</span><span class="xml"></span></div><div class="line">     <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"buttonStyle"</span>&gt;</span>@style/Widget.AppCompat.Button<span class="tag">&lt;/<span class="name">item</span>&gt;</span></div><div class="line">     <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"colorButtonNormal"</span>&gt;</span>@color/blue<span class="tag">&lt;/<span class="name">item</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div></pre></td></tr></table></figure>
-<p>然后在layout文件中引用：</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">Button</span></span></div><div class="line">    <span class="attr">android:layout_width</span>=<span class="string">"wrap_content"</span></div><div class="line">    <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></div><div class="line">    <span class="attr">android:text</span>=<span class="string">"login"</span></div><div class="line">    <span class="attr">android:theme</span>=<span class="string">"@style/ButtonTheme"</span> /&gt;</div></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-  </section>
-
-  
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right"></i></a>
-  </nav>
-
-
-          
-          </div>
-          
-
-
-          
-
-        </div>
-        
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
-  </div>
-
-  <aside id="sidebar" class="sidebar">
-    <div class="sidebar-inner">
-
-      
-
-      
-
-      <section class="site-overview sidebar-panel sidebar-panel-active">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image"
-               src="http://i4.buimg.com/567571/fbb0ec60f25374c4.png"
-               alt="Zhu Yuexin" />
-          <p class="site-author-name" itemprop="name">Zhu Yuexin</p>
-           
-              <p class="site-description motion-element" itemprop="description">呀！发现一只会写代码的猪！</p>
-          
-        </div>
-        <nav class="site-state motion-element">
-        
-          
-            <div class="site-state-item site-state-posts">
-              <a href="/archives">
-                <span class="site-state-item-count">38</span>
-                <span class="site-state-item-name">日志</span>
-              </a>
+    <!-- Post_entry Info-->
+    <div id="post_entry-info">
+        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
+            <!-- Author Avatar -->
+            <div id="author-avatar">
+                <img src="/img/avatar.png" width="44px" height="44px" alt="Zhu Yuexin's avatar">
             </div>
-          
-
-          
-            <div class="site-state-item site-state-categories">
-              <a href="/categories">
-                <span class="site-state-item-count">10</span>
-                <span class="site-state-item-name">分类</span>
-              </a>
+            <div>
+                <strong>Zhu Yuexin</strong>
+                <span>Aug 11, 2017</span>
             </div>
-          
+        </div>
+        <div id="post_entry-right-info">
+            <!-- Category -->
+            <span class="post_entry-category">
+                <a class="post_category-link" href="/categories/Android碎片/">Android碎片</a>
+            </span>
 
-          
-            <div class="site-state-item site-state-tags">
-              <a href="/tags">
-                <span class="site-state-item-count">20</span>
-                <span class="site-state-item-name">标签</span>
-              </a>
+            
+
+            
+
+            <!-- Post Views -->
+            <span class="post_entry-views">
+            </span>
+        </div>
+    </div>
+</div>
+
+            
+            
+        
+    
+        
+            
+                <!-- Paradox Thumbnail -->
+                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
+    <!-- Post Thumbnail -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+        
+    
+
+        <!-- Post Title -->
+        <p class="article-headline-p"><a href="/2017/08/11/在Fragment中嵌套ViewPager时，内部Fragment不显示且滑动不流畅/">在Fragment中嵌套ViewPager时，内部Fragment不显示且滑动不流畅</a></p>
+    </div>
+
+    <!-- Post Excerpt -->
+    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
+        
+            遇到的问题
+        
+        &nbsp;&nbsp;&nbsp;
+        <span>
+            <a href="/2017/08/11/在Fragment中嵌套ViewPager时，内部Fragment不显示且滑动不流畅/" target="_self">Weiterlesen</a>
+        </span>
+    </div>
+    <!-- Post_entry Info-->
+    <div id="post_entry-info">
+        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
+            <!-- Author Avatar -->
+            <div id="author-avatar">
+                <img src="/img/avatar.png" width="44px" height="44px" alt="Zhu Yuexin's avatar">
             </div>
-          
+            <div>
+                <strong>Zhu Yuexin</strong>
+                <span>Aug 11, 2017</span>
+            </div>
+        </div>
+        <div id="post_entry-right-info">
+            <!-- Category -->
+            <span class="post_entry-category">
+                <a class="post_category-link" href="/categories/Android错误解决/">Android错误解决</a>
+            </span>
 
+            
+
+            
+
+            <!-- Post Views -->
+            <span class="post_entry-views">
+            </span>
+        </div>
+    </div>
+</div>
+
+            
+            
+        
+    
+        
+            
+                <!-- Paradox Thumbnail -->
+                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
+    <!-- Post Thumbnail -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+        
+    
+
+        <!-- Post Title -->
+        <p class="article-headline-p"><a href="/2017/08/11/修改ToolBar溢出菜单字体颜色（即MenuItem字体颜色）/">修改ToolBar溢出菜单字体颜色（即MenuItem字体颜色）</a></p>
+    </div>
+
+    <!-- Post Excerpt -->
+    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
+        
+            
+        
+        &nbsp;&nbsp;&nbsp;
+        <span>
+            <a href="/2017/08/11/修改ToolBar溢出菜单字体颜色（即MenuItem字体颜色）/" target="_self">Weiterlesen</a>
+        </span>
+    </div>
+    <!-- Post_entry Info-->
+    <div id="post_entry-info">
+        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
+            <!-- Author Avatar -->
+            <div id="author-avatar">
+                <img src="/img/avatar.png" width="44px" height="44px" alt="Zhu Yuexin's avatar">
+            </div>
+            <div>
+                <strong>Zhu Yuexin</strong>
+                <span>Aug 11, 2017</span>
+            </div>
+        </div>
+        <div id="post_entry-right-info">
+            <!-- Category -->
+            <span class="post_entry-category">
+                <a class="post_category-link" href="/categories/Android碎片/">Android碎片</a>
+            </span>
+
+            
+
+            
+
+            <!-- Post Views -->
+            <span class="post_entry-views">
+            </span>
+        </div>
+    </div>
+</div>
+
+            
+            
+        
+    
+        
+            
+                <!-- Paradox Thumbnail -->
+                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
+    <!-- Post Thumbnail -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+        
+    
+
+        <!-- Post Title -->
+        <p class="article-headline-p"><a href="/2017/08/11/getResource().getColor()方法废弃，其他获取颜色的方法/">getResource().getColor()方法废弃，其他获取颜色的方法</a></p>
+    </div>
+
+    <!-- Post Excerpt -->
+    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
+        
+            getResouce().getColor(int id)在API 23以上版本时被废弃了，替换为方法getR...
+        
+        &nbsp;&nbsp;&nbsp;
+        <span>
+            <a href="/2017/08/11/getResource().getColor()方法废弃，其他获取颜色的方法/" target="_self">Weiterlesen</a>
+        </span>
+    </div>
+    <!-- Post_entry Info-->
+    <div id="post_entry-info">
+        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
+            <!-- Author Avatar -->
+            <div id="author-avatar">
+                <img src="/img/avatar.png" width="44px" height="44px" alt="Zhu Yuexin's avatar">
+            </div>
+            <div>
+                <strong>Zhu Yuexin</strong>
+                <span>Aug 11, 2017</span>
+            </div>
+        </div>
+        <div id="post_entry-right-info">
+            <!-- Category -->
+            <span class="post_entry-category">
+                <a class="post_category-link" href="/categories/Android碎片/">Android碎片</a>
+            </span>
+
+            
+
+            
+
+            <!-- Post Views -->
+            <span class="post_entry-views">
+            </span>
+        </div>
+    </div>
+</div>
+
+            
+            
+        
+    
+        
+            
+                <!-- Paradox Thumbnail -->
+                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
+    <!-- Post Thumbnail -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+        
+    
+
+        <!-- Post Title -->
+        <p class="article-headline-p"><a href="/2017/08/11/LinearLayout中的所有子控件均匀分布/">LinearLayout中的所有子控件均匀分布</a></p>
+    </div>
+
+    <!-- Post Excerpt -->
+    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
+        
+            在设置LinearLayout的orientation为horizontal的时候，每个横向子控件如果想要大小一样的话，设置他们的”layout_w...
+        
+        &nbsp;&nbsp;&nbsp;
+        <span>
+            <a href="/2017/08/11/LinearLayout中的所有子控件均匀分布/" target="_self">Weiterlesen</a>
+        </span>
+    </div>
+    <!-- Post_entry Info-->
+    <div id="post_entry-info">
+        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
+            <!-- Author Avatar -->
+            <div id="author-avatar">
+                <img src="/img/avatar.png" width="44px" height="44px" alt="Zhu Yuexin's avatar">
+            </div>
+            <div>
+                <strong>Zhu Yuexin</strong>
+                <span>Aug 11, 2017</span>
+            </div>
+        </div>
+        <div id="post_entry-right-info">
+            <!-- Category -->
+            <span class="post_entry-category">
+                <a class="post_category-link" href="/categories/Android碎片/">Android碎片</a>
+            </span>
+
+            
+
+            
+
+            <!-- Post Views -->
+            <span class="post_entry-views">
+            </span>
+        </div>
+    </div>
+</div>
+
+            
+            
+        
+    
+        
+            
+                <!-- Paradox Thumbnail -->
+                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
+    <!-- Post Thumbnail -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+        
+    
+
+        <!-- Post Title -->
+        <p class="article-headline-p"><a href="/2017/08/11/TextView单行显示，并且文字过多显示省略号/">TextView单行显示，并且文字过多显示省略号</a></p>
+    </div>
+
+    <!-- Post Excerpt -->
+    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
+        
+            单行显示使用如下属性：
+
+        
+        &nbsp;&nbsp;&nbsp;
+        <span>
+            <a href="/2017/08/11/TextView单行显示，并且文字过多显示省略号/" target="_self">Weiterlesen</a>
+        </span>
+    </div>
+    <!-- Post_entry Info-->
+    <div id="post_entry-info">
+        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
+            <!-- Author Avatar -->
+            <div id="author-avatar">
+                <img src="/img/avatar.png" width="44px" height="44px" alt="Zhu Yuexin's avatar">
+            </div>
+            <div>
+                <strong>Zhu Yuexin</strong>
+                <span>Aug 11, 2017</span>
+            </div>
+        </div>
+        <div id="post_entry-right-info">
+            <!-- Category -->
+            <span class="post_entry-category">
+                <a class="post_category-link" href="/categories/Android碎片/">Android碎片</a>
+            </span>
+
+            
+
+            
+
+            <!-- Post Views -->
+            <span class="post_entry-views">
+            </span>
+        </div>
+    </div>
+</div>
+
+            
+            
+        
+    
+        
+            
+                <!-- Paradox Thumbnail -->
+                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
+    <!-- Post Thumbnail -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+        
+    
+
+        <!-- Post Title -->
+        <p class="article-headline-p"><a href="/2017/08/11/设置双击退出的方法/">设置双击退出的方法</a></p>
+    </div>
+
+    <!-- Post Excerpt -->
+    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
+        
+            方法一设置一...
+        
+        &nbsp;&nbsp;&nbsp;
+        <span>
+            <a href="/2017/08/11/设置双击退出的方法/" target="_self">Weiterlesen</a>
+        </span>
+    </div>
+    <!-- Post_entry Info-->
+    <div id="post_entry-info">
+        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
+            <!-- Author Avatar -->
+            <div id="author-avatar">
+                <img src="/img/avatar.png" width="44px" height="44px" alt="Zhu Yuexin's avatar">
+            </div>
+            <div>
+                <strong>Zhu Yuexin</strong>
+                <span>Aug 11, 2017</span>
+            </div>
+        </div>
+        <div id="post_entry-right-info">
+            <!-- Category -->
+            <span class="post_entry-category">
+                <a class="post_category-link" href="/categories/Android碎片/">Android碎片</a>
+            </span>
+
+            
+
+            
+
+            <!-- Post Views -->
+            <span class="post_entry-views">
+            </span>
+        </div>
+    </div>
+</div>
+
+            
+            
+        
+    
+        
+            
+                <!-- Paradox Thumbnail -->
+                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
+    <!-- Post Thumbnail -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+        
+    
+
+        <!-- Post Title -->
+        <p class="article-headline-p"><a href="/2017/08/11/底部导航栏BottomNavigationView的使用/">底部导航栏BottomNavigationView的使用</a></p>
+    </div>
+
+    <!-- Post Excerpt -->
+    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
+        
+            准备工作
+        
+        &nbsp;&nbsp;&nbsp;
+        <span>
+            <a href="/2017/08/11/底部导航栏BottomNavigationView的使用/" target="_self">Weiterlesen</a>
+        </span>
+    </div>
+    <!-- Post_entry Info-->
+    <div id="post_entry-info">
+        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
+            <!-- Author Avatar -->
+            <div id="author-avatar">
+                <img src="/img/avatar.png" width="44px" height="44px" alt="Zhu Yuexin's avatar">
+            </div>
+            <div>
+                <strong>Zhu Yuexin</strong>
+                <span>Aug 11, 2017</span>
+            </div>
+        </div>
+        <div id="post_entry-right-info">
+            <!-- Category -->
+            <span class="post_entry-category">
+                <a class="post_category-link" href="/categories/Android碎片/">Android碎片</a>
+            </span>
+
+            
+
+            
+
+            <!-- Post Views -->
+            <span class="post_entry-views">
+            </span>
+        </div>
+    </div>
+</div>
+
+            
+            
+        
+    
+        
+            
+                <!-- Paradox Thumbnail -->
+                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
+    <!-- Post Thumbnail -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+        
+    
+
+        <!-- Post Title -->
+        <p class="article-headline-p"><a href="/2017/08/11/v7修改Button颜色并保持默认点击效果/">v7修改Button颜色并保持默认点击效果</a></p>
+    </div>
+
+    <!-- Post Excerpt -->
+    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
+        
+            通常我们修改Button的颜色会通过修改”android:background”属性来修改Button的背景颜色，但是这样做会丢失Button默认的...
+        
+        &nbsp;&nbsp;&nbsp;
+        <span>
+            <a href="/2017/08/11/v7修改Button颜色并保持默认点击效果/" target="_self">Weiterlesen</a>
+        </span>
+    </div>
+    <!-- Post_entry Info-->
+    <div id="post_entry-info">
+        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
+            <!-- Author Avatar -->
+            <div id="author-avatar">
+                <img src="/img/avatar.png" width="44px" height="44px" alt="Zhu Yuexin's avatar">
+            </div>
+            <div>
+                <strong>Zhu Yuexin</strong>
+                <span>Aug 11, 2017</span>
+            </div>
+        </div>
+        <div id="post_entry-right-info">
+            <!-- Category -->
+            <span class="post_entry-category">
+                <a class="post_category-link" href="/categories/Android碎片/">Android碎片</a>
+            </span>
+
+            
+
+            
+
+            <!-- Post Views -->
+            <span class="post_entry-views">
+            </span>
+        </div>
+    </div>
+</div>
+
+            
+            
+        
+    
+
+    
+    <!-- Index nav -->
+        <nav class="material-nav mdl-cell mdl-cell--12-col">
+            <a class="extend prev" rel="prev" href="/page/2/"><button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"><i class="material-icons" role="presentation">arrow_back</i></button></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/4/"><button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"><i class="material-icons" role="presentation">arrow_forward</i></button></a>
         </nav>
+    
 
+    
+        <script type="text/ls-javascript" id="thumbnail-script">
+    var randomNum;
+
+    var locatePost = $('.locate-thumbnail-symbol').next();
+    for(var i = 0; i < 10; i++) {
+        randomNum = Math.floor(Math.random() * 19 + 1);
+
+        locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
+        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').addClass('lazy');
+
+        locatePost = locatePost.next();
+    }
+</script>
+
+    
+</div>
+
+
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(/img/sidebar_header.png);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="/img/avatar.png" alt="Zhu Yuexin's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        youremail@email.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="#" target="_blank" title="Email Me">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        
+                        Email Me
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    
+        <li id="sidebar-first-li">
+            <a href="/">
+                
+                    <i class="material-icons sidebar-material-icons">home</i>
+                
+                Home
+            </a>
+        </li>
         
+    
 
-        <div class="links-of-author motion-element">
-          
+    <!-- Archives  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">inbox</i>
+                
+                    Archive
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+            <li>
+                <a class="sidebar_archives-link" href="/archives/2017/12/">December 2017<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/11/">November 2017<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/10/">October 2017<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/08/">August 2017<span class="sidebar_archives-count">15</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/03/">March 2017<span class="sidebar_archives-count">8</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Categories  -->
+    
+
+    <!-- Pages  -->
+    
+
+    <!-- Article Number  -->
+    
+</ul>
+
+
+        <!-- Sidebar Footer -->
+        <!--
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :)
+-->
+
+<!-- Sidebar Divider -->
+
+    <div class="sidebar-divider"></div>
+
+
+<!-- Theme Material -->
+
+    <a href="https://github.com/viosey/hexo-theme-material"  class="sidebar-footer-text-a" target="_blank">
+        <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+            Theme - Material
+            <span class="sidebar-badge badge-circle">i</span>
         </div>
-
-        
-        
-
-        
-        
-
-        
+    </a>
 
 
-      </section>
+<!-- Help & Support -->
+<!--
 
-      
+-->
 
-      
+<!-- Feedback -->
+<!--
+
+-->
+
+<!-- About Theme -->
+<!--
+
+-->
 
     </div>
-  </aside>
 
+    <!-- Sidebar Image -->
+    
 
-        
-      </div>
-    </main>
+</aside>
 
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright" >
-  
-  &copy; 
-  <span itemprop="copyrightYear">2017</span>
-  <span class="with-love">
-    <i class="fa fa-heart"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">Zhu Yuexin</span>
+                    
+
+                    
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+    
+        <!-- Paradox Footer Left Section -->
+        <div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+        <a href="https://twitter.com/twitter" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-twitter">
+                <span class="visuallyhidden">Twitter</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Facebook -->
+    
+        <a href="https://www.facebook.com/facebook" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-facebook">
+                <span class="visuallyhidden">Facebook</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Google + -->
+    
+        <a href="https://www.google.com/" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-gplus">
+                <span class="visuallyhidden">Google Plus</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Weibo -->
+    
+
+    <!-- Instagram -->
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+
+    <!-- LinkedIn -->
+    
+
+    <!-- Zhihu -->
+    
+
+    <!-- Bilibili -->
+    
+
+    <!-- Telegram -->
+    
 </div>
 
 
-<div class="powered-by">
-  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
-</div>
+        <!--Copyright-->
+        <div id="copyright">
+            Copyright&nbsp;©<script type="text/javascript">var fd = new Date();document.write("&nbsp;" + fd.getFullYear() + "&nbsp;");</script>Mr.Z's Blog
+        </div>
 
-<div class="theme-info">
-  主题 -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Mist
-  </a>
-</div>
+        <!-- Paradox Footer Right Section -->
 
+        <!--
+        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+        It will not impact the appearance and can give developers a lot of support :)
 
-        
+        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+        它不会影响美观并可以给开发者很大的支持。 :)
+        -->
 
-        
-      </div>
-    </footer>
-
+        <div class="mdl-mini-footer--right-section">
+            <div>
+                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
+                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+            </div>
+        </div>
     
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
-    
-    
-  </div>
+</footer>
 
-  
 
-<script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
-  }
+                    <!-- Import File -->
+
+
+    <script>lsloader.load("js/lazyload.min.js","/js/lazyload.min.js?1BcfzuNXqV+ntF6gq+5X3Q==")</script>
+    <script>lsloader.load("js/js.min.js","/js/js.min.js?oAl/+lvaqTFV31JXTmbrNA==")</script>
+
+
+
+    <script>lsloader.load("js/nprogress.js","/js/nprogress.js?pl3Qhb9lvqR1FlyLUna1Yw==")</script>
+
+
+<script type="text/ls-javascript" id="NProgress-script">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    $('#nprogress .bar').css({
+        'background': '#29d'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#29d',
+        'border-left-color': '#29d'
+    });
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
 </script>
 
 
@@ -1852,95 +1180,62 @@
 
 
 
-  
 
 
 
 
-  
-  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+<!-- UC Browser Compatible -->
+<script>
+	var agent = navigator.userAgent.toLowerCase();
+	if(agent.indexOf('ucbrowser')>0) {
+		document.write('<link rel="stylesheet" href="/css/uc.css">');
+	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+	}
+</script>
 
-  
-  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+<!-- Window Load-->
+<script type="text/ls-javascript" id="window-load">
+    $(window).on('load', function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+</script>
 
-  
-  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+<!-- MathJax Load-->
 
-  
-  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+<script type="text/ls-javascript" id="lazy-load">
+    // Offer LazyLoad
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
 
-  
-  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+    // Start Queue
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script>
 
-  
-  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
-
-
-
-  
-  
-
-  
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
-
+<!-- Bing Background -->
 
 
-  
+<script>
+    (function(){
+        var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
 
+        for (var i = 0; i < scriptList.length; ++i) {
+            var item = scriptList[i];
+            lsloader.runInlineScript(item.id,item.id);
+        }
+    })()
+console.log('\n %c © Material Theme | Version: 1.4.0 | https://github.com/viosey/hexo-theme-material %c \n', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;');
+</script>
 
-
-  
-
-
-
-
-	
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-
-
-  
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-</body>
+                </main>
+            </div>
+        </body>
+    
 </html>
