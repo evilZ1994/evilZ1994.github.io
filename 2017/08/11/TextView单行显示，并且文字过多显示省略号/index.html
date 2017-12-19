@@ -287,7 +287,7 @@
 
     <!-- Custom Head -->
     
-</head>
+<link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
 
 
     
@@ -484,12 +484,18 @@
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
         <p>单行显示使用如下属性：</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">android:maxLines="1"</div></pre></td></tr></table></figure>
+<pre class=" language-xml"><code class="language-xml">android:maxLines="1"
+</code></pre>
 <p>当文字显示不下时，使用ellipsize属性：</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">android:ellipsize="start"     //省略号在开头</div><div class="line">android:ellipsize="middle"     //省略号在中间</div><div class="line">android:ellipsize="end"     //省略号在结尾</div><div class="line">android:ellipsize="marquee"     //跑马灯显示</div></pre></td></tr></table></figure>
+<pre class=" language-xml"><code class="language-xml">android:ellipsize="start"     //省略号在开头
+android:ellipsize="middle"     //省略号在中间
+android:ellipsize="end"     //省略号在结尾
+android:ellipsize="marquee"     //跑马灯显示
+</code></pre>
 <p><strong>注意</strong></p>
 <p>使用ellipsize属性时必须设置以下属性：</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">android:layou_width="wrap_content"</div></pre></td></tr></table></figure>
+<pre class=" language-xml"><code class="language-xml">android:layou_width="wrap_content"
+</code></pre>
 
     
 

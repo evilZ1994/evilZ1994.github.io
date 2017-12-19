@@ -287,7 +287,7 @@
 
     <!-- Custom Head -->
     
-</head>
+<link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
 
 
     
@@ -484,37 +484,82 @@
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
         <h1 id="条件判断"><a href="#条件判断" class="headerlink" title="条件判断"></a>条件判断</h1><p>Python中条件判断用<code>if</code>实现，多重判断用<code>elif</code>、<code>else</code>。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">i_score = input(<span class="string">"Score:"</span>)</div><div class="line">score = int(i_score)</div><div class="line"><span class="keyword">if</span> score&gt;=<span class="number">90</span>:</div><div class="line">    print(<span class="string">"Great!"</span>)</div><div class="line"><span class="keyword">elif</span> score&gt;=<span class="number">60</span>:</div><div class="line">    print(<span class="string">"Pass!"</span>)</div><div class="line"><span class="keyword">else</span>:</div><div class="line">    print(<span class="string">"Bad!"</span>)</div></pre></td></tr></table></figure>
+<pre class=" language-python"><code class="language-python">i_score <span class="token operator">=</span> input<span class="token punctuation">(</span><span class="token string">"Score:"</span><span class="token punctuation">)</span>
+score <span class="token operator">=</span> int<span class="token punctuation">(</span>i_score<span class="token punctuation">)</span>
+<span class="token keyword">if</span> score<span class="token operator">>=</span><span class="token number">90</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Great!"</span><span class="token punctuation">)</span>
+<span class="token keyword">elif</span> score<span class="token operator">>=</span><span class="token number">60</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Pass!"</span><span class="token punctuation">)</span>
+<span class="token keyword">else</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Bad!"</span><span class="token punctuation">)</span>
+</code></pre>
 <p>outputs:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Score:99</div><div class="line">Great!</div></pre></td></tr></table></figure>
-<p><code>if</code>条件判断可以简写，比如：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> x:</div><div class="line">    print(<span class="string">'True'</span>)</div></pre></td></tr></table></figure>
+<pre><code>Score:99
+Great!
+</code></pre><p><code>if</code>条件判断可以简写，比如：</p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">if</span> x<span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'True'</span><span class="token punctuation">)</span>
+</code></pre>
 <p>只要<code>x</code>为非零数值、非空字符串、非空<code>list</code>等，就判断为<code>True</code>，否则为<code>False</code>。</p>
 <h1 id="循环"><a href="#循环" class="headerlink" title="循环"></a>循环</h1><h2 id="for-…-in-…-循环"><a href="#for-…-in-…-循环" class="headerlink" title="for … in … 循环"></a>for … in … 循环</h2><p><code>for ... in ...</code>循环迭代<code>list</code>或者<code>tuple</code>中的每个元素</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">countries = [<span class="string">"China"</span>, <span class="string">"America"</span>, <span class="string">"Canada"</span>]</div><div class="line"><span class="keyword">for</span> c <span class="keyword">in</span> countries:</div><div class="line">    print(c)</div></pre></td></tr></table></figure>
+<pre class=" language-Python"><code class="language-Python">countries = ["China", "America", "Canada"]
+for c in countries:
+    print(c)
+</code></pre>
 <p>outputs:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">China</div><div class="line">America</div><div class="line">Canada</div></pre></td></tr></table></figure>
-<p>字符串可以看作是一个字符序列，所以可以迭代字符串中的字符</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> s <span class="keyword">in</span> <span class="string">"hello"</span>:</div><div class="line">    print(s)</div></pre></td></tr></table></figure>
+<pre><code>China
+America
+Canada
+</code></pre><p>字符串可以看作是一个字符序列，所以可以迭代字符串中的字符</p>
+<pre class=" language-Python"><code class="language-Python">for s in "hello":
+    print(s)
+</code></pre>
 <p>outputs:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">h</div><div class="line">e</div><div class="line">l</div><div class="line">l</div><div class="line">o</div></pre></td></tr></table></figure>
-<p>要使用指定循环次数的<code>for</code>循环，需要用到<code>range()</code>函数，<code>range()</code>函数可以生成一个整数序列，可以用<code>list()</code>函数将生成的整数序列转换为<code>list</code>。比如<code>range(5)</code>生成一个大于等于0，小于5的整数序列。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">li = list(range(<span class="number">5</span>))</div><div class="line">print(li)</div></pre></td></tr></table></figure>
+<pre><code>h
+e
+l
+l
+o
+</code></pre><p>要使用指定循环次数的<code>for</code>循环，需要用到<code>range()</code>函数，<code>range()</code>函数可以生成一个整数序列，可以用<code>list()</code>函数将生成的整数序列转换为<code>list</code>。比如<code>range(5)</code>生成一个大于等于0，小于5的整数序列。</p>
+<pre class=" language-Python"><code class="language-Python">li = list(range(5))
+print(li)
+</code></pre>
 <p>outputs:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[0, 1, 2, 3, 4]</div></pre></td></tr></table></figure>
-<p>如果希望<code>for</code>循环3次，可以这样：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">3</span>):</div><div class="line">    print(i)</div></pre></td></tr></table></figure>
+<pre><code>[0, 1, 2, 3, 4]
+</code></pre><p>如果希望<code>for</code>循环3次，可以这样：</p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span>
+</code></pre>
 <p>outputs:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">0</div><div class="line">1</div><div class="line">2</div></pre></td></tr></table></figure>
-<h2 id="While循环"><a href="#While循环" class="headerlink" title="While循环"></a>While循环</h2><p><code>while</code>循环，只要条件满足，就不断循环。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">sum = <span class="number">0</span></div><div class="line">n = <span class="number">100</span></div><div class="line"><span class="keyword">while</span> n&gt;<span class="number">0</span>:</div><div class="line">    sum = sum + n</div><div class="line">    n = n - <span class="number">1</span></div><div class="line">print(sum)</div></pre></td></tr></table></figure>
+<pre><code>0
+1
+2
+</code></pre><h2 id="While循环"><a href="#While循环" class="headerlink" title="While循环"></a>While循环</h2><p><code>while</code>循环，只要条件满足，就不断循环。</p>
+<pre class=" language-Python"><code class="language-Python">sum = 0
+n = 100
+while n>0:
+    sum = sum + n
+    n = n - 1
+print(sum)
+</code></pre>
 <p>outputs:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">5050</div></pre></td></tr></table></figure>
-<p><code>while</code>循环中可以使用<code>else</code>语句，在<code>while ... else ...</code>语句中，当<code>while</code>条件语句为<code>False</code>时，执行<code>else</code>中的语句</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">count = <span class="number">0</span></div><div class="line"><span class="keyword">while</span> count &lt; <span class="number">5</span>:</div><div class="line">    <span class="keyword">print</span> (count, <span class="string">" 小于 5"</span>)</div><div class="line">    count = count + <span class="number">1</span></div><div class="line"><span class="keyword">else</span>:</div><div class="line">    <span class="keyword">print</span> (count, <span class="string">" 大于或等于 5"</span>)</div></pre></td></tr></table></figure>
+<pre><code>5050
+</code></pre><p><code>while</code>循环中可以使用<code>else</code>语句，在<code>while ... else ...</code>语句中，当<code>while</code>条件语句为<code>False</code>时，执行<code>else</code>中的语句</p>
+<pre class=" language-Python"><code class="language-Python">count = 0
+while count < 5:
+    print (count, " 小于 5")
+    count = count + 1
+else:
+    print (count, " 大于或等于 5")
+</code></pre>
 <p>outputs:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">0  小于 5</div><div class="line">1  小于 5</div><div class="line">2  小于 5</div><div class="line">3  小于 5</div><div class="line">4  小于 5</div><div class="line">5  大于或等于 5</div></pre></td></tr></table></figure>
-<h2 id="终止语句"><a href="#终止语句" class="headerlink" title="终止语句"></a>终止语句</h2><p>在Python中也可以使用<code>break</code>、<code>continue</code>来终止或控制循环。</p>
+<pre><code>0  小于 5
+1  小于 5
+2  小于 5
+3  小于 5
+4  小于 5
+5  大于或等于 5
+</code></pre><h2 id="终止语句"><a href="#终止语句" class="headerlink" title="终止语句"></a>终止语句</h2><p>在Python中也可以使用<code>break</code>、<code>continue</code>来终止或控制循环。</p>
 
     
 

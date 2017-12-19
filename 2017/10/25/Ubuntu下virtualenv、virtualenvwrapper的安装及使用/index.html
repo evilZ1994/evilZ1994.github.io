@@ -36,7 +36,7 @@
     <meta name="theme-color" content="#0097A7">
     <meta name="author" content="Zhu Yuexin">
     <meta name="description" itemprop="description" content="呀！发现一只会写代码的猪！">
-    <meta name="keywords" content="null,ubuntu,python,virtualenv">
+    <meta name="keywords" content="null,python,ubuntu,virtualenv">
 
     <!-- Site Verification -->
     
@@ -68,7 +68,7 @@
     <meta property="og:title" content="Ubuntu下virtualenv、virtualenvwrapper的安装及使用 | Mr.Z&#39;s Blog">
     <meta property="og:image" content="/img/favicon.png" />
     <meta property="og:description" content="呀！发现一只会写代码的猪！">
-    <meta property="og:article:tag" content="ubuntu"> <meta property="og:article:tag" content="python"> <meta property="og:article:tag" content="virtualenv"> 
+    <meta property="og:article:tag" content="python"> <meta property="og:article:tag" content="ubuntu"> <meta property="og:article:tag" content="virtualenv"> 
 
     
         <meta property="article:published_time" content="Oct 25, 2017" />
@@ -287,7 +287,7 @@
 
     <!-- Custom Head -->
     
-</head>
+<link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
 
 
     
@@ -491,28 +491,37 @@
 </ul>
 <h1 id="virtualenv安装"><a href="#virtualenv安装" class="headerlink" title="virtualenv安装"></a>virtualenv安装</h1><ul>
 <li><p>执行命令</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install python-virtualenv</div></pre></td></tr></table></figure>
+<pre class=" language-shell"><code class="language-shell">sudo apt-get install python-virtualenv
+</code></pre>
 </li>
 <li><p>使用方法</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">virtualenv [虚拟环境名称-也是目录名称]</div></pre></td></tr></table></figure>
+<pre class=" language-shell"><code class="language-shell">virtualenv [虚拟环境名称-也是目录名称]
+</code></pre>
 <p>比如：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">virtualenv ENV</div></pre></td></tr></table></figure>
+<pre class=" language-shell"><code class="language-shell">virtualenv ENV
+</code></pre>
 <p>创建了一个名为ENV的虚拟环境</p>
 </li>
 <li><p>启动环境</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cd ENV</div><div class="line">source ./bin/activate</div></pre></td></tr></table></figure>
+<pre class=" language-shell"><code class="language-shell">cd ENV
+source ./bin/activate
+</code></pre>
 <p>ENV为虚拟环境名称，接下来所有模块都只会安装到该目录中去。</p>
 <p>默认情况下，虚拟环境会依赖系统环境中的site packages，如果不想依赖这些package，那么可以加上参数 –no-site-packages建立虚拟环境：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">virtualenv --no-site-packages [虚拟环境名称]</div></pre></td></tr></table></figure>
+<pre class=" language-shell"><code class="language-shell">virtualenv --no-site-packages [虚拟环境名称]
+</code></pre>
 </li>
 <li><p>退出</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">deactivate</div></pre></td></tr></table></figure>
+<pre class=" language-shell"><code class="language-shell">deactivate
+</code></pre>
 </li>
 </ul>
 <p>如果没有启动虚拟环境，系统也安装了pip工具，那么套件将被安装在系统环境中，为了避免发生此事，可以在~/.bashrc文件中加上：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">export PIP_REQUIRE_VIRTUALENV=true</div></pre></td></tr></table></figure>
+<pre class=" language-shell"><code class="language-shell">export PIP_REQUIRE_VIRTUALENV=true
+</code></pre>
 <p>或者让在执行pip的时候让系统自动开启虚拟环境：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">export PIP_RESPECT_VIRTUALENV=true</div></pre></td></tr></table></figure>
+<pre class=" language-shell"><code class="language-shell">export PIP_RESPECT_VIRTUALENV=true
+</code></pre>
 <h1 id="virtualenvwrapper"><a href="#virtualenvwrapper" class="headerlink" title="virtualenvwrapper"></a>virtualenvwrapper</h1><p>Virtaulenvwrapper是virtualenv的扩展包，用于更方便管理虚拟环境，它可以做：</p>
 <ol>
 <li>将所有虚拟环境整合在一个目录下</li>
@@ -522,13 +531,17 @@
 </ol>
 <h2 id="安装方法"><a href="#安装方法" class="headerlink" title="安装方法"></a>安装方法</h2><ul>
 <li><p>运行</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pip install virtualenvwrapper</div></pre></td></tr></table></figure>
+<pre class=" language-shell"><code class="language-shell">pip install virtualenvwrapper
+</code></pre>
 </li>
 <li><p>创建目录用来存放虚拟环境</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mkdir ~/.virtualenvs</div></pre></td></tr></table></figure>
+<pre class=" language-shell"><code class="language-shell">mkdir ~/.virtualenvs
+</code></pre>
 </li>
 <li><p>在.bashrc中添加</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">export WORKON_HOME=~/.virtualenvs</div><div class="line">source /usr/local/bin/virtualenvwrapper.sh</div></pre></td></tr></table></figure>
+<pre class=" language-shell"><code class="language-shell">export WORKON_HOME=~/.virtualenvs
+source /usr/local/bin/virtualenvwrapper.sh
+</code></pre>
 </li>
 <li><p>运行： <code>source ~/.bashrc</code></p>
 </li>

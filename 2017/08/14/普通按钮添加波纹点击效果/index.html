@@ -287,7 +287,7 @@
 
     <!-- Custom Head -->
     
-</head>
+<link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
 
 
     
@@ -485,13 +485,28 @@
     
         <p>Android 5.0以后新增了按钮的波纹点击效果，AppCompatButton是自带波纹效果的，但是如果项目中有需要动态改变按钮的颜色，就会丢失波纹效果（如果只需要改变一次的话，可以通过新建样式style解决），这个时候我们可以利用5.0新增的ripple类型来自定义波纹点击效果。</p>
 <h1 id="自定义ripple文件"><a href="#自定义ripple文件" class="headerlink" title="自定义ripple文件"></a>自定义ripple文件</h1><p>button_ripple_login.xml:</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version="1.0" encoding="utf-8"?&gt;</div><div class="line"><span class="tag">&lt;<span class="name">ripple</span> <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span></span></div><div class="line">    <span class="attr">android:color</span>=<span class="string">"#FF818181"</span>&gt;</div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">item</span> <span class="attr">android:drawable</span>=<span class="string">"@drawable/button_bg"</span> /&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;/<span class="name">ripple</span>&gt;</span></div></pre></td></tr></table></figure>
+<pre class=" language-xml"><code class="language-xml"><span class="token prolog">&lt;?xml version="1.0" encoding="utf-8"?></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ripple</span> <span class="token attr-name"><span class="token namespace">xmlns:</span>android</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>http://schemas.android.com/apk/res/android<span class="token punctuation">"</span></span>
+    <span class="token attr-name"><span class="token namespace">android:</span>color</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>#FF818181<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>item</span> <span class="token attr-name"><span class="token namespace">android:</span>drawable</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>@drawable/button_bg<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ripple</span><span class="token punctuation">></span></span>
+</code></pre>
 <p>ripple相当于layer-list层叠效果，ripple元素的color属性即指定了波纹效果的颜色，但必须是8位颜色代码值，前两位指定了波纹的透明度，后六位即波纹颜色，以黑色000000及白色FFFFFF效果最为明显。而<code>&lt;item android:drawable=&quot;@drawable/button_bg&quot; /&gt;</code>即指定了按钮的正常状态的显示效果。</p>
 <h1 id="根据按钮可点击状态，动态改变按钮颜色"><a href="#根据按钮可点击状态，动态改变按钮颜色" class="headerlink" title="根据按钮可点击状态，动态改变按钮颜色"></a>根据按钮可点击状态，动态改变按钮颜色</h1><p>login_button_selector.xml:</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version="1.0" encoding="utf-8"?&gt;</div><div class="line"><span class="tag">&lt;<span class="name">selector</span> <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">item</span> <span class="attr">android:drawable</span>=<span class="string">"@drawable/button_ripple_login"</span> <span class="attr">android:state_enabled</span>=<span class="string">"true"</span> /&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">item</span> <span class="attr">android:drawable</span>=<span class="string">"@color/loginBtn1"</span> <span class="attr">android:state_enabled</span>=<span class="string">"false"</span> /&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">selector</span>&gt;</span></div></pre></td></tr></table></figure>
+<pre class=" language-xml"><code class="language-xml"><span class="token prolog">&lt;?xml version="1.0" encoding="utf-8"?></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>selector</span> <span class="token attr-name"><span class="token namespace">xmlns:</span>android</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>http://schemas.android.com/apk/res/android<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>item</span> <span class="token attr-name"><span class="token namespace">android:</span>drawable</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>@drawable/button_ripple_login<span class="token punctuation">"</span></span> <span class="token attr-name"><span class="token namespace">android:</span>state_enabled</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>true<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>item</span> <span class="token attr-name"><span class="token namespace">android:</span>drawable</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>@color/loginBtn1<span class="token punctuation">"</span></span> <span class="token attr-name"><span class="token namespace">android:</span>state_enabled</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>false<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>selector</span><span class="token punctuation">></span></span>
+</code></pre>
 <p>这样既能动态改变按钮背景颜色，也可以有波纹点击效果了。</p>
 <h1 id="其他设置"><a href="#其他设置" class="headerlink" title="其他设置"></a>其他设置</h1><p>可以通过如下代码设置波纹的背景：</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">android:background="?android:attr/selectableItemBackground" 波纹有边界</div><div class="line"></div><div class="line">android:background="?android:attr/selectableItemBackgroundBorderless" 波纹超出边界</div></pre></td></tr></table></figure>
+<pre class=" language-xml"><code class="language-xml">android:background="?android:attr/selectableItemBackground" 波纹有边界
+
+android:background="?android:attr/selectableItemBackgroundBorderless" 波纹超出边界
+</code></pre>
 
     
 

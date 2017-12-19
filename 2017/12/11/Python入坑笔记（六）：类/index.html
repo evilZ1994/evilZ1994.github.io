@@ -287,7 +287,7 @@
 
     <!-- Custom Head -->
     
-</head>
+<link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
 
 
     
@@ -484,7 +484,27 @@
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
         <h1 id="类的创建和使用"><a href="#类的创建和使用" class="headerlink" title="类的创建和使用"></a>类的创建和使用</h1><p>举个栗子：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Dog</span><span class="params">()</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, name, age)</span>:</span></div><div class="line">        <span class="string">"""初始化属性name和age"""</span></div><div class="line">        self.name = name</div><div class="line">        self.age = age</div><div class="line">    </div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">sit</span><span class="params">(self)</span>:</span></div><div class="line">        <span class="string">"""模拟小狗蹲下"""</span></div><div class="line">        print(self.name.title() + <span class="string">" is now sitting."</span>)</div><div class="line">        </div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">roll</span><span class="params">(self)</span>:</span></div><div class="line">        <span class="string">"""模拟小狗打滚"""</span></div><div class="line">        print(self.name.title() + <span class="string">" rolled over!"</span>)</div><div class="line"></div><div class="line"><span class="comment">#创建实例</span></div><div class="line">my_dog = Dog(<span class="string">"Whillie"</span>, <span class="number">6</span>)</div><div class="line"></div><div class="line">print(<span class="string">"My dog's name is "</span> + my_dog.name.title())</div><div class="line">print(<span class="string">"My dog is "</span> + str(my_dog.age) + <span class="string">" years old"</span>)</div><div class="line">my_dog.roll()</div></pre></td></tr></table></figure>
+<pre class=" language-Python"><code class="language-Python">class Dog():
+    def __init__(self, name, age):
+        """初始化属性name和age"""
+        self.name = name
+        self.age = age
+
+    def sit(self):
+        """模拟小狗蹲下"""
+        print(self.name.title() + " is now sitting.")
+
+    def roll(self):
+        """模拟小狗打滚"""
+        print(self.name.title() + " rolled over!")
+
+#创建实例
+my_dog = Dog("Whillie", 6)
+
+print("My dog's name is " + my_dog.name.title())
+print("My dog is " + str(my_dog.age) + " years old")
+my_dog.roll()
+</code></pre>
 <p>以上创建了一个Dog类（类名首字母大写），类属性有<code>name</code>和<code>age</code>，类方法有<code>sit()</code>和<code>roll()</code>。</p>
 <ul>
 <li>方法<code>__init__()</code>是一个特殊的方法，类似于Java中的构造函数，每当根据Dog类创建新实例时，Python都会自动运行它，做一些初始化操作。</li>

@@ -287,7 +287,7 @@
 
     <!-- Custom Head -->
     
-</head>
+<link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
 
 
     
@@ -485,7 +485,8 @@
     
         <p><code>getResouce().getColor(int id)</code>在API 23以上版本时被废弃了，替换为方法<code>getResource().getColor(int id, Theme theme)</code>，但这个方法要求API&gt;=23。</p>
 <p>当前同时兼容高低版本的方法是：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ContextCompat.getColor(Context context, <span class="keyword">int</span> id);</div></pre></td></tr></table></figure>
+<pre class=" language-java"><code class="language-java">ContextCompat<span class="token punctuation">.</span><span class="token function">getColor</span><span class="token punctuation">(</span>Context context<span class="token punctuation">,</span> <span class="token keyword">int</span> id<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
 
     
 

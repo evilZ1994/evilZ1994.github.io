@@ -287,7 +287,7 @@
 
     <!-- Custom Head -->
     
-</head>
+<link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
 
 
     
@@ -494,32 +494,46 @@
 </blockquote>
 <h1 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h1><p>Java没有内置的字符串类型，而是在标准Java类库中提供了一个预定义类：String。</p>
 <h2 id="字串"><a href="#字串" class="headerlink" title="字串"></a>字串</h2><p>String类的substring方法可以用于提取字串：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">String greeting = <span class="string">"Hello"</span>;</div><div class="line">String s = greeting.substring(<span class="number">0</span>, <span class="number">3</span>);</div></pre></td></tr></table></figure>
+<pre class=" language-java"><code class="language-java">String greeting <span class="token operator">=</span> <span class="token string">"Hello"</span><span class="token punctuation">;</span>
+String s <span class="token operator">=</span> greeting<span class="token punctuation">.</span><span class="token function">substring</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
 <h2 id="拼接"><a href="#拼接" class="headerlink" title="拼接"></a>拼接</h2><p>Java使用+号拼接两个字符串</p>
 <p>如果需要把多个字符串放在一起，用一个界定符分隔，可以使用静态join方法：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">String all = String.join(<span class="string">"/"</span>, <span class="string">"S"</span>, <span class="string">"M"</span>, <span class="string">"L"</span>, <span class="string">"XL"</span>);	<span class="comment">//all is the string "S/M/L/XL"</span></div></pre></td></tr></table></figure>
+<pre class=" language-java"><code class="language-java">String all <span class="token operator">=</span> String<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token string">"/"</span><span class="token punctuation">,</span> <span class="token string">"S"</span><span class="token punctuation">,</span> <span class="token string">"M"</span><span class="token punctuation">,</span> <span class="token string">"L"</span><span class="token punctuation">,</span> <span class="token string">"XL"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment" spellcheck="true">//all is the string "S/M/L/XL"</span>
+</code></pre>
 <h2 id="不可变字符串"><a href="#不可变字符串" class="headerlink" title="不可变字符串"></a>不可变字符串</h2><p>String类中没有提供用于修改字符串的方法，在Java文档中将String类对象称为不可变字符串。</p>
 <h2 id="检测字符串是否相等"><a href="#检测字符串是否相等" class="headerlink" title="检测字符串是否相等"></a>检测字符串是否相等</h2><p>使用equals方法检测两个字符串是否相等：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">s.equals(t);</div><div class="line"><span class="string">"Hello"</span>.equalsIgnoreCase(<span class="string">"Hello"</span>); <span class="comment">//不区分大小写</span></div></pre></td></tr></table></figure>
+<pre class=" language-java"><code class="language-java">s<span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span>t<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token string">"Hello"</span><span class="token punctuation">.</span><span class="token function">equalsIgnoreCase</span><span class="token punctuation">(</span><span class="token string">"Hello"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//不区分大小写</span>
+</code></pre>
 <p><strong>注意</strong>：不要使用 == 运算符检测两个字符串是否相等，这个运算符只能够确定两个字符串是否放置在同一个位置上。</p>
 <h2 id="空串与Null串"><a href="#空串与Null串" class="headerlink" title="空串与Null串"></a>空串与Null串</h2><p>空串“”是长度为0的字符串。可以用以下代码检查一个字符串是否为空：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span>(str.length() == <span class="number">0</span>)</div></pre></td></tr></table></figure>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">if</span><span class="token punctuation">(</span>str<span class="token punctuation">.</span><span class="token function">length</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span>
+</code></pre>
 <p>或</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span>(str.equals(<span class="string">""</span>))</div></pre></td></tr></table></figure>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">if</span><span class="token punctuation">(</span>str<span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span><span class="token string">""</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre>
 <p><strong>注意</strong>：空串是一个Java对象，有自己的串长度（0）和内容（空）。</p>
 <p>String变量还可以存放一个特殊值，null。这表示目前没有任何对象与该变量关联。</p>
 <p>检测字符串是否为null：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span>(str == <span class="keyword">null</span>)</div></pre></td></tr></table></figure>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">if</span><span class="token punctuation">(</span>str <span class="token operator">==</span> null<span class="token punctuation">)</span>
+</code></pre>
 <h1 id="输入输出"><a href="#输入输出" class="headerlink" title="输入输出"></a>输入输出</h1><h2 id="标准输入流"><a href="#标准输入流" class="headerlink" title="标准输入流"></a>标准输入流</h2><p>读取“标准输入流”System.in，需要先构造一个Scanner对象，并与“标准输入流”System.in关联</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Scanner in = <span class="keyword">new</span> Scanner(System.in);</div></pre></td></tr></table></figure>
+<pre class=" language-java"><code class="language-java">Scanner in <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Scanner</span><span class="token punctuation">(</span>System<span class="token punctuation">.</span>in<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
 <p><strong>Console类:</strong> 适用于从控制台读取密码</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">Console cons = System.console();</div><div class="line">String username = cons.readLine(<span class="string">"User name: "</span>);</div><div class="line"><span class="comment">//安全起见，返回密码存放在一维字符数组中。对密码进行处理后，马上用一个填充值覆盖数组元素</span></div><div class="line"><span class="keyword">char</span>[] passwd = cons.readPassword(<span class="string">"Password: "</span>);</div></pre></td></tr></table></figure>
+<pre class=" language-java"><code class="language-java">Console cons <span class="token operator">=</span> System<span class="token punctuation">.</span><span class="token function">console</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+String username <span class="token operator">=</span> cons<span class="token punctuation">.</span><span class="token function">readLine</span><span class="token punctuation">(</span><span class="token string">"User name: "</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">//安全起见，返回密码存放在一维字符数组中。对密码进行处理后，马上用一个填充值覆盖数组元素</span>
+<span class="token keyword">char</span><span class="token punctuation">[</span><span class="token punctuation">]</span> passwd <span class="token operator">=</span> cons<span class="token punctuation">.</span><span class="token function">readPassword</span><span class="token punctuation">(</span><span class="token string">"Password: "</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
 <h2 id="格式化输出"><a href="#格式化输出" class="headerlink" title="格式化输出"></a>格式化输出</h2><p>Java SE 5.0 沿用了C语言库函数中的printf方法。例如，调用：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">System.out.printf(&quot;%8.2f&quot;, x);</div></pre></td></tr></table></figure>
-<p>可以用8个字符的宽度和小数点后两个字符的精度打印x。例如：</p>
+<pre><code>System.out.printf(&quot;%8.2f&quot;, x);
+</code></pre><p>可以用8个字符的宽度和小数点后两个字符的精度打印x。例如：</p>
 <p>3333.33</p>
 <p>在printf中，每一个以%字符开始的格式说明符都用相应的参数替换。格式说明符尾部的转换符将指示被格式化的数值类型。例如：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">System.out.printf(<span class="string">"Hello, %s. Next year, you'll be %d"</span>, name, age);</div></pre></td></tr></table></figure>
+<pre class=" language-java"><code class="language-java">System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"Hello, %s. Next year, you'll be %d"</span><span class="token punctuation">,</span> name<span class="token punctuation">,</span> age<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
 <p><strong>用于printf的转换符</strong></p>
 <table>
 <thead>
@@ -598,21 +612,39 @@
 </tbody>
 </table>
 <h2 id="文件输入与输出"><a href="#文件输入与输出" class="headerlink" title="文件输入与输出"></a>文件输入与输出</h2><h3 id="读取文件"><a href="#读取文件" class="headerlink" title="读取文件"></a>读取文件</h3><p>要对文件进行读取，需要用File对象构造一个Scanner对象，如：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Scanner in = <span class="keyword">new</span> Scanner(Paths.get(<span class="string">"myFile.txt"</span>), <span class="string">"UTF-8"</span>);</div></pre></td></tr></table></figure>
+<pre class=" language-java"><code class="language-java">Scanner in <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Scanner</span><span class="token punctuation">(</span>Paths<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">"myFile.txt"</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">"UTF-8"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
 <p>如果文件名中包含反斜杠符号，就要在每个反斜杠之前再加一个额外的反斜杠：</p>
 <p>“c:\\mydirectory\\myFile.txt”</p>
 <h3 id="写入文件"><a href="#写入文件" class="headerlink" title="写入文件"></a>写入文件</h3><p>写入文件需要构造一个PrintWriter对象。在构造器中，提供文件名：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">PrintWriter out = <span class="keyword">new</span> PrintWriter(<span class="string">"myFile.txt"</span>, <span class="string">"UTF-8"</span>);</div></pre></td></tr></table></figure>
+<pre class=" language-java"><code class="language-java">PrintWriter out <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">PrintWriter</span><span class="token punctuation">(</span><span class="token string">"myFile.txt"</span><span class="token punctuation">,</span> <span class="token string">"UTF-8"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
 <p>如果该文件不存在，则会创建该文件。可以像输出到System.out一样使用print, println 以及 printf 命令。</p>
 <h1 id="控制流程"><a href="#控制流程" class="headerlink" title="控制流程"></a>控制流程</h1><p>if, while, for….</p>
 <p><strong>带标签</strong>的<strong>break</strong>语句：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">Scanner in = <span class="keyword">new</span> Scanner(System.in);</div><div class="line"><span class="keyword">int</span> n;</div><div class="line">read_data: <span class="comment">//这是标签，放在需要跳出的循环的最外层</span></div><div class="line"><span class="keyword">while</span>(...)&#123;</div><div class="line">    ...</div><div class="line">    <span class="keyword">for</span>(...)&#123;</div><div class="line">      System.out.print(<span class="string">"Enter a number &gt;= 0:"</span>);</div><div class="line">      n = in.nextInt();</div><div class="line">      <span class="keyword">if</span>(n&lt;<span class="number">0</span>)&#123;</div><div class="line">        <span class="keyword">break</span> read_data; <span class="comment">//跳出循环</span></div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<pre class=" language-java"><code class="language-java">Scanner in <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Scanner</span><span class="token punctuation">(</span>System<span class="token punctuation">.</span>in<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span> n<span class="token punctuation">;</span>
+read_data<span class="token operator">:</span> <span class="token comment" spellcheck="true">//这是标签，放在需要跳出的循环的最外层</span>
+<span class="token keyword">while</span><span class="token punctuation">(</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+      System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"Enter a number >= 0:"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      n <span class="token operator">=</span> in<span class="token punctuation">.</span><span class="token function">nextInt</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">if</span><span class="token punctuation">(</span>n<span class="token operator">&lt;</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">break</span> read_data<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//跳出循环</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
 <h1 id="大数值"><a href="#大数值" class="headerlink" title="大数值"></a>大数值</h1><p>如果基本的整数和浮点数的精度不能够满足需求，则可以使用java.math包中的<strong>BigInteger</strong>和<strong>BigDecimal</strong>。</p>
 <p><strong>BigInteger</strong>实现了任意精度的整数运算，<strong>BigDecimal</strong>实现了任意精度的浮点数运算。</p>
 <p>可以使用静态的valueOf方法将普通的数值转换为大数值：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">BigInteger a = BigInteger.valueOf(<span class="number">100</span>);</div></pre></td></tr></table></figure>
+<pre class=" language-java"><code class="language-java">BigInteger a <span class="token operator">=</span> BigInteger<span class="token punctuation">.</span><span class="token function">valueOf</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
 <p>不能使用算术运算符（+,-,*,/）处理大数值。需要使用大数值类中的add,multiply方法等：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">BigInteger c = a.add(b);</div><div class="line">BigInteger d = c.multiply(b.add(BigInteger.valueOf(<span class="number">2</span>))); <span class="comment">//d=c*(b+2)</span></div></pre></td></tr></table></figure>
+<pre class=" language-java"><code class="language-java">BigInteger c <span class="token operator">=</span> a<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span><span class="token punctuation">;</span>
+BigInteger d <span class="token operator">=</span> c<span class="token punctuation">.</span><span class="token function">multiply</span><span class="token punctuation">(</span>b<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>BigInteger<span class="token punctuation">.</span><span class="token function">valueOf</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//d=c*(b+2)</span>
+</code></pre>
 <blockquote>
 <p><strong>API</strong> java.math.BigInteger 1.1</p>
 </blockquote>
@@ -658,25 +690,38 @@
 </li>
 </ul>
 <h1 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h1><p>声明数组：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span>[] a;</div></pre></td></tr></table></figure>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> a<span class="token punctuation">;</span>
+</code></pre>
 <p>创建数组：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span>[] a = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">100</span>];</div></pre></td></tr></table></figure>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> a <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">int</span><span class="token punctuation">[</span><span class="token number">100</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+</code></pre>
 <p>创建一个数字数组时，所有元素都初始化为0；boolean数组的元素会初始化为false；对象数组的元素会初始化为特殊值null，表示这些元素还未存放任何对象。</p>
 <h2 id="for-each循环"><a href="#for-each循环" class="headerlink" title="for each循环"></a>for each循环</h2><p>增强for循环：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> (variable : collection) statement</div></pre></td></tr></table></figure>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">for</span> <span class="token punctuation">(</span>variable <span class="token operator">:</span> collection<span class="token punctuation">)</span> statement
+</code></pre>
 <p>collection这一集合表达式必须是一个数组或者是一个实现了Iterable接口的类对象（例如ArrayList）</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span>[] a = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">100</span>];</div><div class="line">...</div><div class="line"><span class="keyword">for</span> (<span class="keyword">int</span> element : a)&#123;</div><div class="line">  System.out.println(element);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> a <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">int</span><span class="token punctuation">[</span><span class="token number">100</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> element <span class="token operator">:</span> a<span class="token punctuation">)</span><span class="token punctuation">{</span>
+  System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>element<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
 <h2 id="数组初始化及匿名数组"><a href="#数组初始化及匿名数组" class="headerlink" title="数组初始化及匿名数组"></a>数组初始化及匿名数组</h2><p>创建数组对象并同时赋予初始值：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span>[] smallPrimes = &#123; <span class="number">2</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">7</span>, <span class="number">11</span>, <span class="number">13</span>&#125;;</div></pre></td></tr></table></figure>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> smallPrimes <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">11</span><span class="token punctuation">,</span> <span class="token number">13</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre>
 <p>初始化一个匿名数组：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">new</span> <span class="keyword">int</span>[] &#123; <span class="number">17</span>, <span class="number">19</span>, <span class="number">21</span>, <span class="number">27</span>&#125;;</div></pre></td></tr></table></figure>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">new</span> <span class="token class-name">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token punctuation">{</span> <span class="token number">17</span><span class="token punctuation">,</span> <span class="token number">19</span><span class="token punctuation">,</span> <span class="token number">21</span><span class="token punctuation">,</span> <span class="token number">27</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre>
 <p>这种语法可以在不创建新的变量的情况下重新初始化一个数组：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">smallPrimes = <span class="keyword">new</span> <span class="keyword">int</span>[] &#123; <span class="number">17</span>, <span class="number">19</span>, <span class="number">21</span>, <span class="number">27</span>&#125;;</div></pre></td></tr></table></figure>
+<pre class=" language-java"><code class="language-java">smallPrimes <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token punctuation">{</span> <span class="token number">17</span><span class="token punctuation">,</span> <span class="token number">19</span><span class="token punctuation">,</span> <span class="token number">21</span><span class="token punctuation">,</span> <span class="token number">27</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre>
 <h2 id="数组拷贝"><a href="#数组拷贝" class="headerlink" title="数组拷贝"></a>数组拷贝</h2><p>将一个数组变量拷贝给另一个数组变量，两个变量将引用同一个数组。</p>
 <p>如果希望将一个数组的所有值拷贝到一个新的数组中去，使用Arrays类的copyOf方法：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span>[] copiedLuckyNumbers = Arrays.copyOf(luckNumbers, luckyNumbers.length);</div></pre></td></tr></table></figure>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> copiedLuckyNumbers <span class="token operator">=</span> Arrays<span class="token punctuation">.</span><span class="token function">copyOf</span><span class="token punctuation">(</span>luckNumbers<span class="token punctuation">,</span> luckyNumbers<span class="token punctuation">.</span>length<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
 <p>第2个参数是新数组的长度。这个方法通常用来增加数组的大小：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">luckNumbers = Arrays.copyOf(luckNumbers, luckyNumbers.length*<span class="number">2</span>);</div></pre></td></tr></table></figure>
+<pre class=" language-java"><code class="language-java">luckNumbers <span class="token operator">=</span> Arrays<span class="token punctuation">.</span><span class="token function">copyOf</span><span class="token punctuation">(</span>luckNumbers<span class="token punctuation">,</span> luckyNumbers<span class="token punctuation">.</span>length<span class="token operator">*</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
 <p>如果数组元素是数值型，多余元素将被赋值为0；布尔型，将赋值为false。相反，如果长度小于原始长度，则只拷贝最前面的元素。</p>
 <blockquote>
 <p><strong>API</strong> java.util.Arrays 1.2</p>
@@ -707,14 +752,28 @@
 </li>
 </ul>
 <h2 id="多维数组"><a href="#多维数组" class="headerlink" title="多维数组"></a>多维数组</h2><p>声明：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">double</span>[][] balances;</div></pre></td></tr></table></figure>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">double</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token punctuation">]</span> balances<span class="token punctuation">;</span>
+</code></pre>
 <p>初始化：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">balances = <span class="keyword">new</span> <span class="keyword">double</span>[NYEARS][NRATES];</div></pre></td></tr></table></figure>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span>[][] magicSquare =</div><div class="line">&#123;</div><div class="line">  &#123;<span class="number">16</span>, <span class="number">18</span>, <span class="number">2</span>, <span class="number">13</span>&#125;,</div><div class="line">  &#123;<span class="number">28</span>, <span class="number">12</span>, <span class="number">32</span>, <span class="number">12</span>&#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<pre class=" language-java"><code class="language-java">balances <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">double</span><span class="token punctuation">[</span>NYEARS<span class="token punctuation">]</span><span class="token punctuation">[</span>NRATES<span class="token punctuation">]</span><span class="token punctuation">;</span>
+</code></pre>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token punctuation">]</span> magicSquare <span class="token operator">=</span>
+<span class="token punctuation">{</span>
+  <span class="token punctuation">{</span><span class="token number">16</span><span class="token punctuation">,</span> <span class="token number">18</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">13</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span><span class="token number">28</span><span class="token punctuation">,</span> <span class="token number">12</span><span class="token punctuation">,</span> <span class="token number">32</span><span class="token punctuation">,</span> <span class="token number">12</span><span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre>
 <p>快速打印二维数组元素列表，使用Arrays.deepToString()方法：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">System.out.println(Arrays.deepToString(a));</div></pre></td></tr></table></figure>
+<pre class=" language-java"><code class="language-java">System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>Arrays<span class="token punctuation">.</span><span class="token function">deepToString</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
 <h2 id="不规则数组"><a href="#不规则数组" class="headerlink" title="不规则数组"></a>不规则数组</h2><p>java实际上没有多维数组，只有一维数组。多维数组被解释为“数组的数组”。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span>[][] odds =</div><div class="line">&#123;</div><div class="line">  &#123;<span class="number">1</span>&#125;,</div><div class="line">  &#123;<span class="number">1</span>, <span class="number">2</span>&#125;,</div><div class="line">  &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>&#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token punctuation">]</span> odds <span class="token operator">=</span>
+<span class="token punctuation">{</span>
+  <span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre>
 
     
 
