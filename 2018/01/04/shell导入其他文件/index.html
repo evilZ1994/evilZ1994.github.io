@@ -485,43 +485,43 @@
     
         <p>我在网上找到三种shell导入外部文件的方法。</p>
 <p><strong>test1.sh</strong>:</p>
-<pre><code class="shell">#!/bin/bash
-echo &quot;this is test1&quot;
+<pre class=" language-shell"><code class="language-shell">#!/bin/bash
+echo "this is test1"
 </code></pre>
 <h1 id="通过-导入"><a href="#通过-导入" class="headerlink" title="通过.导入"></a>通过<code>.</code>导入</h1><p>通过<code>. filename</code>的方式导入。</p>
 <p><strong>test2.sh</strong>:</p>
-<pre><code class="shell">#!/bin/bash
+<pre class=" language-shell"><code class="language-shell">#!/bin/bash
 
 . test1.sh
 
-echo &quot;this is test2&quot;
+echo "this is test2"
 </code></pre>
 <p>执行<strong>test2.sh</strong>的结果：</p>
-<pre><code class="shell">this is test1
+<pre class=" language-shell"><code class="language-shell">this is test1
 this is test2
 </code></pre>
 <h2 id="通过source导入"><a href="#通过source导入" class="headerlink" title="通过source导入"></a>通过<code>source</code>导入</h2><p>通过<code>source filename</code>的方式导入。</p>
 <p><strong>test2.sh</strong>:</p>
-<pre><code class="shell">#!/bin/bash
+<pre class=" language-shell"><code class="language-shell">#!/bin/bash
 
 source test1.sh
 
-echo &quot;this is test2&quot;
+echo "this is test2"
 </code></pre>
 <p>执行<strong>test2.sh</strong>的结果：</p>
-<pre><code class="shell">this is test1
+<pre class=" language-shell"><code class="language-shell">this is test1
 this is test2
 </code></pre>
 <h2 id="通过sh导入"><a href="#通过sh导入" class="headerlink" title="通过sh导入"></a>通过<code>sh</code>导入</h2><p>通过<code>sh filename</code>的方式导入。</p>
 <p><strong>test2.sh</strong>:</p>
-<pre><code class="shell">#!/bin/bash
+<pre class=" language-shell"><code class="language-shell">#!/bin/bash
 
 sh test1.sh
 
-echo &quot;this is test2&quot;
+echo "this is test2"
 </code></pre>
 <p>执行<strong>test2.sh</strong>的结果：</p>
-<pre><code class="shell">this is test1
+<pre class=" language-shell"><code class="language-shell">this is test1
 this is test2
 </code></pre>
 <h1 id="Note"><a href="#Note" class="headerlink" title="Note"></a>Note</h1><p>导入文件时，如果只是指定文件名，如<code>. test1.sh</code>，那么导入的是本文件同级目录下的文件。</p>

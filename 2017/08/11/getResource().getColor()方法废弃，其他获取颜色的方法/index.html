@@ -485,7 +485,7 @@
     
         <p><code>getResouce().getColor(int id)</code>在API 23以上版本时被废弃了，替换为方法<code>getResource().getColor(int id, Theme theme)</code>，但这个方法要求API&gt;=23。</p>
 <p>当前同时兼容高低版本的方法是：</p>
-<pre><code class="java">ContextCompat.getColor(Context context, int id);
+<pre class=" language-java"><code class="language-java">ContextCompat<span class="token punctuation">.</span><span class="token function">getColor</span><span class="token punctuation">(</span>Context context<span class="token punctuation">,</span> <span class="token keyword">int</span> id<span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
 
     

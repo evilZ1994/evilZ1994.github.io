@@ -486,7 +486,7 @@
         <p>在Android开发中，应该尽量将UI中的字符串存放在资源文件中（<em>res/values/strings.xml</em>）。</p>
 <h1 id="支持不同语言"><a href="#支持不同语言" class="headerlink" title="支持不同语言"></a>支持不同语言</h1><p>如果需要添加对更多语言的支持，需要在res下创建额外的values目录，并在目录名称末尾加上连字符和ISO语言代码。例如，<em>values-es/</em>目录包含的简单资源用于语言代码为”es”的语言区域。Android根据运行时设备的语言区域设置加载相应的资源。</p>
 <p>一旦决定了为哪些语言提供支持，便可创建资源子目录和字符串资源文件。例如：</p>
-<pre><code class="android">MyProject/
+<pre class=" language-android"><code class="language-android">MyProject/
     res/
        values/
            strings.xml
@@ -496,25 +496,25 @@
            strings.xml
 </code></pre>
 <p>英语（默认语言区域），<code>/values/strings.xml</code>：</p>
-<pre><code class="xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
-&lt;resources&gt;
-    &lt;string name=&quot;title&quot;&gt;My Application&lt;/string&gt;
-    &lt;string name=&quot;hello_world&quot;&gt;Hello World!&lt;/string&gt;
-&lt;/resources&gt;
+<pre class=" language-xml"><code class="language-xml"><span class="token prolog">&lt;?xml version="1.0" encoding="utf-8"?></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>resources</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>string</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>title<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>My Application<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>string</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>string</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>hello_world<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Hello World!<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>string</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>resources</span><span class="token punctuation">></span></span>
 </code></pre>
 <p>西班牙语，<code>/values-es/strings.xml</code>：</p>
-<pre><code class="xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
-&lt;resources&gt;
-    &lt;string name=&quot;title&quot;&gt;Mi Aplicación&lt;/string&gt;
-    &lt;string name=&quot;hello_world&quot;&gt;Hola Mundo!&lt;/string&gt;
-&lt;/resources&gt;
+<pre class=" language-xml"><code class="language-xml"><span class="token prolog">&lt;?xml version="1.0" encoding="utf-8"?></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>resources</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>string</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>title<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Mi Aplicación<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>string</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>string</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>hello_world<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Hola Mundo!<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>string</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>resources</span><span class="token punctuation">></span></span>
 </code></pre>
 <p>法语，<code>/values-fr/strings.xml</code>：</p>
-<pre><code class="xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
-&lt;resources&gt;
-    &lt;string name=&quot;title&quot;&gt;Mon Application&lt;/string&gt;
-    &lt;string name=&quot;hello_world&quot;&gt;Bonjour le monde !&lt;/string&gt;
-&lt;/resources&gt;
+<pre class=" language-xml"><code class="language-xml"><span class="token prolog">&lt;?xml version="1.0" encoding="utf-8"?></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>resources</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>string</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>title<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Mon Application<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>string</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>string</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>hello_world<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Bonjour le monde !<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>string</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>resources</span><span class="token punctuation">></span></span>
 </code></pre>
 
     

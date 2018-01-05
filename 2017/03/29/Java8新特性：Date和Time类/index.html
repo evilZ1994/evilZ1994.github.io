@@ -490,132 +490,132 @@
 <p><strong>领域模型驱动设计方法</strong></p>
 <p>新的日期和时间的类别遵循“域驱动设计”。对于开发者来说，理解方法和类的功能是很容易的。</p>
 <h2 id="接下来让我们来看看新Date和Time-API"><a href="#接下来让我们来看看新Date和Time-API" class="headerlink" title="接下来让我们来看看新Date和Time API:"></a>接下来让我们来看看新Date和Time API:</h2><h2 id="java-time-LocalDate"><a href="#java-time-LocalDate" class="headerlink" title="java.time.LocalDate:"></a>java.time.LocalDate:</h2><p>LocalDate只提供日期不提供时间信息。它是不可变类且线程安全的。</p>
-<pre><code class="java">package org.smarttechie;
-import java.time.LocalDate;
-import java.time.temporal.ChronoUnit;
-/**
+<pre class=" language-java"><code class="language-java"><span class="token keyword">package</span> org<span class="token punctuation">.</span>smarttechie<span class="token punctuation">;</span>
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>time<span class="token punctuation">.</span>LocalDate<span class="token punctuation">;</span>
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>time<span class="token punctuation">.</span>temporal<span class="token punctuation">.</span>ChronoUnit<span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">/**
 * This class demonstrates JAVA 8 data and time API
 * @author Siva Prasad Rao Janapati
-* */
-public class DateTimeDemonstration {
-/**
+* */</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">DateTimeDemonstration</span> <span class="token punctuation">{</span>
+<span class="token comment" spellcheck="true">/**
 * @param args
-*/
-public static void main(String[] args) {
-  //Create date LocalDate 
-  localDate = LocalDate.now();
-  System.out.println(&quot;The local date is :: &quot; + localDate); 
-  //Find the length of the month. That is, how many days are there for this month.
-  System.out.println(&quot;The number of days available for this month:: &quot; +         localDate.lengthOfMonth()); 
-   //Know the month name
-   System.out.println(&quot;What is the month name? :: &quot; + localDate.getMonth().name()); 
-   //add 2 days to the today&#39;s date.
-   System.out.println(localDate.plus(2, ChronoUnit.DAYS)); 
-   //substract 2 days from today
-   System.out.println(localDate.minus(2, ChronoUnit.DAYS)); 
-   //Convert the string to date
-   System.out.println(localDate.parse(&quot;2017-04-07&quot;));
-  }
-}
+*/</span>
+<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment" spellcheck="true">//Create date LocalDate </span>
+  localDate <span class="token operator">=</span> LocalDate<span class="token punctuation">.</span><span class="token function">now</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"The local date is :: "</span> <span class="token operator">+</span> localDate<span class="token punctuation">)</span><span class="token punctuation">;</span> 
+  <span class="token comment" spellcheck="true">//Find the length of the month. That is, how many days are there for this month.</span>
+  System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"The number of days available for this month:: "</span> <span class="token operator">+</span>         localDate<span class="token punctuation">.</span><span class="token function">lengthOfMonth</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+   <span class="token comment" spellcheck="true">//Know the month name</span>
+   System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"What is the month name? :: "</span> <span class="token operator">+</span> localDate<span class="token punctuation">.</span><span class="token function">getMonth</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">name</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+   <span class="token comment" spellcheck="true">//add 2 days to the today's date.</span>
+   System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>localDate<span class="token punctuation">.</span><span class="token function">plus</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> ChronoUnit<span class="token punctuation">.</span>DAYS<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+   <span class="token comment" spellcheck="true">//substract 2 days from today</span>
+   System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>localDate<span class="token punctuation">.</span><span class="token function">minus</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> ChronoUnit<span class="token punctuation">.</span>DAYS<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+   <span class="token comment" spellcheck="true">//Convert the string to date</span>
+   System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>localDate<span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span><span class="token string">"2017-04-07"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <h2 id="java-time-LocalTime"><a href="#java-time-LocalTime" class="headerlink" title="java.time.LocalTime:"></a>java.time.LocalTime:</h2><p>LocalTime只提供时间而不提供日期信息，它是不可变类且线程安全的。</p>
-<pre><code class="java">package org.smarttechie;
-import java.time.LocalTime;
-import java.time.temporal.ChronoUnit;
-/**
+<pre class=" language-java"><code class="language-java"><span class="token keyword">package</span> org<span class="token punctuation">.</span>smarttechie<span class="token punctuation">;</span>
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>time<span class="token punctuation">.</span>LocalTime<span class="token punctuation">;</span>
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>time<span class="token punctuation">.</span>temporal<span class="token punctuation">.</span>ChronoUnit<span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">/**
 * This class demonstrates JAVA 8 data and time API
 * @author Siva Prasad Rao Janapati
-* */
-public class DateTimeDemonstration {
-/**
+* */</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">DateTimeDemonstration</span> <span class="token punctuation">{</span>
+<span class="token comment" spellcheck="true">/**
 * @param args
-*/
-public static void main(String[] args) {
-   //Get local time
-   LocalTime localTime = LocalTime.now();
-   System.out.println(localTime);
-  //Get the hour of the day
-  System.out.println(&quot;The hour of the day:: &quot; + localTime.getHour());
-  //add 2 hours to the time.
-  System.out.println(localTime.plus(2, ChronoUnit.HOURS));
-  //add 6 minutes to the time.
-  System.out.println(localTime.plusMinutes(6));
-  //substract 2 hours from current time
-  System.out.println(localTime.minus(2, ChronoUnit.HOURS));
- }
-}
+*/</span>
+<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   <span class="token comment" spellcheck="true">//Get local time</span>
+   LocalTime localTime <span class="token operator">=</span> LocalTime<span class="token punctuation">.</span><span class="token function">now</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>localTime<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token comment" spellcheck="true">//Get the hour of the day</span>
+  System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"The hour of the day:: "</span> <span class="token operator">+</span> localTime<span class="token punctuation">.</span><span class="token function">getHour</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token comment" spellcheck="true">//add 2 hours to the time.</span>
+  System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>localTime<span class="token punctuation">.</span><span class="token function">plus</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> ChronoUnit<span class="token punctuation">.</span>HOURS<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token comment" spellcheck="true">//add 6 minutes to the time.</span>
+  System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>localTime<span class="token punctuation">.</span><span class="token function">plusMinutes</span><span class="token punctuation">(</span><span class="token number">6</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token comment" spellcheck="true">//substract 2 hours from current time</span>
+  System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>localTime<span class="token punctuation">.</span><span class="token function">minus</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> ChronoUnit<span class="token punctuation">.</span>HOURS<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+ <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <h2 id="java-time-LocalDateTime"><a href="#java-time-LocalDateTime" class="headerlink" title="java.time.LocalDateTime:"></a>java.time.LocalDateTime:</h2><p>LocalDateTime提供时间和日期的信息，它是不可变类且线程安全的</p>
-<pre><code class="java">package orr.smarttechie;
-import java.time.LocalDateTime;
-import java.time.temporal.ChronoUnit;
-/**
+<pre class=" language-java"><code class="language-java"><span class="token keyword">package</span> orr<span class="token punctuation">.</span>smarttechie<span class="token punctuation">;</span>
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>time<span class="token punctuation">.</span>LocalDateTime<span class="token punctuation">;</span>
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>time<span class="token punctuation">.</span>temporal<span class="token punctuation">.</span>ChronoUnit<span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">/**
 * This class demonstrates JAVA 8 data and time API
 * @author Siva Prasad Rao Janapati
 *
-*/
-public class DateTimeDemonstration {
-/**
+*/</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">DateTimeDemonstration</span> <span class="token punctuation">{</span>
+<span class="token comment" spellcheck="true">/**
 * @param args
-*/
-public static void main(String[] args) {
-    //Get LocalDateTime object
-    LocalDateTime localDateTime = LocalDateTime.now();
-    System.out.println(localDateTime);
-    //Find the length of month. That is, how many days are there for this month.
-    System.out.println(&quot;The number of days available for this month:: &quot; + localDateTime.getMonth().length(true));
-    //Know the month name
-    System.out.println(&quot;What is the month name? :: &quot; + localDateTime.getMonth().name());
-    //add 2 days to today&#39;s date.
-    System.out.println(localDateTime.plus(2, ChronoUnit.DAYS));
-    //substract 2 days from today
-    System.out.println(localDateTime.minus(2, ChronoUnit.DAYS));
-  }
-}
+*/</span>
+<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">//Get LocalDateTime object</span>
+    LocalDateTime localDateTime <span class="token operator">=</span> LocalDateTime<span class="token punctuation">.</span><span class="token function">now</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>localDateTime<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">//Find the length of month. That is, how many days are there for this month.</span>
+    System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"The number of days available for this month:: "</span> <span class="token operator">+</span> localDateTime<span class="token punctuation">.</span><span class="token function">getMonth</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">length</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">//Know the month name</span>
+    System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"What is the month name? :: "</span> <span class="token operator">+</span> localDateTime<span class="token punctuation">.</span><span class="token function">getMonth</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">name</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">//add 2 days to today's date.</span>
+    System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>localDateTime<span class="token punctuation">.</span><span class="token function">plus</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> ChronoUnit<span class="token punctuation">.</span>DAYS<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">//substract 2 days from today</span>
+    System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>localDateTime<span class="token punctuation">.</span><span class="token function">minus</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> ChronoUnit<span class="token punctuation">.</span>DAYS<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <h2 id="java-time-Year"><a href="#java-time-Year" class="headerlink" title="java.time.Year:"></a>java.time.Year:</h2><p>Year提供年的信息，它是不可变类且线程安全的。</p>
-<pre><code class="java">package orr.smarttechie;
-import java.time.Year;
-import java.time.temporal.ChronoUnit;
-/**
+<pre class=" language-java"><code class="language-java"><span class="token keyword">package</span> orr<span class="token punctuation">.</span>smarttechie<span class="token punctuation">;</span>
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>time<span class="token punctuation">.</span>Year<span class="token punctuation">;</span>
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>time<span class="token punctuation">.</span>temporal<span class="token punctuation">.</span>ChronoUnit<span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">/**
 * This class demonstrates JAVA 8 data and time API
 * @author Siva Prasad Rao Janapati
 *
-*/
-public class DateTimeDemonstration {
-/**
+*/</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">DateTimeDemonstration</span> <span class="token punctuation">{</span>
+<span class="token comment" spellcheck="true">/**
 * @param args
-*/
-public static void main(String[] args) {
-   //Get year
-   Year year = Year.now();
-   System.out.println(&quot;Year ::&quot; + year);
-   //know the year is leap year or not
-   System.out.println(&quot;Is year[&quot; +year+&quot;] leap year?&quot;+ year.isLeap());
-  }
-}
+*/</span>
+<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   <span class="token comment" spellcheck="true">//Get year</span>
+   Year year <span class="token operator">=</span> Year<span class="token punctuation">.</span><span class="token function">now</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Year ::"</span> <span class="token operator">+</span> year<span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token comment" spellcheck="true">//know the year is leap year or not</span>
+   System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Is year["</span> <span class="token operator">+</span>year<span class="token operator">+</span><span class="token string">"] leap year?"</span><span class="token operator">+</span> year<span class="token punctuation">.</span><span class="token function">isLeap</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <h2 id="java-time-Duration"><a href="#java-time-Duration" class="headerlink" title="java.time.Duration:"></a>java.time.Duration:</h2><p>Duration是用来计算两个给定的日期之间包含多少秒，多少毫秒，它是不可变类且线程安全的</p>
 <h2 id="java-time-Period"><a href="#java-time-Period" class="headerlink" title="java.time.Period:"></a>java.time.Period:</h2><p>Period是用来计算两个给定的日期之间包含多少天，多少月或者多少年，它是不可变类且线程安全的</p>
-<pre><code class="java">package orr.smarttechie;
-import java.time.LocalDate;
-import java.time.Period;
-import java.time.temporal.ChronoUnit;
-/**
+<pre class=" language-java"><code class="language-java"><span class="token keyword">package</span> orr<span class="token punctuation">.</span>smarttechie<span class="token punctuation">;</span>
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>time<span class="token punctuation">.</span>LocalDate<span class="token punctuation">;</span>
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>time<span class="token punctuation">.</span>Period<span class="token punctuation">;</span>
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>time<span class="token punctuation">.</span>temporal<span class="token punctuation">.</span>ChronoUnit<span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">/**
 * This class demonstrates JAVA 8 data and time API
 * @author Siva Prasad Rao Janapati
 *
-*/
-public class DateTimeDemonstration {
-/**
+*/</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">DateTimeDemonstration</span> <span class="token punctuation">{</span>
+<span class="token comment" spellcheck="true">/**
 * @param args
-*/
-public static void main(String[] args) {
-   LocalDate localDate = LocalDate.now();
-   Period period = Period.between(localDate, localDate.plus(2, ChronoUnit.DAYS));
-   System.out.println(period.getDays());
-  }
-}
+*/</span>
+<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   LocalDate localDate <span class="token operator">=</span> LocalDate<span class="token punctuation">.</span><span class="token function">now</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   Period period <span class="token operator">=</span> Period<span class="token punctuation">.</span><span class="token function">between</span><span class="token punctuation">(</span>localDate<span class="token punctuation">,</span> localDate<span class="token punctuation">.</span><span class="token function">plus</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> ChronoUnit<span class="token punctuation">.</span>DAYS<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>period<span class="token punctuation">.</span><span class="token function">getDays</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 </code></pre>
 
     

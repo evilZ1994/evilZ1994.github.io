@@ -485,7 +485,7 @@
     
         <p>在我的Ubuntu17.04更新到17.10并使用X.Org进入桌面后，在系统设置中找不到触摸板的禁用／启用项，无法禁用触摸板。在网上搜索后发现可以在命令行中禁用，以下是解决办法：</p>
 <h1 id="使用命令行"><a href="#使用命令行" class="headerlink" title="使用命令行"></a>使用命令行</h1><p>命令<code>xinput</code>可以查看touchpad的设备ID：</p>
-<pre><code class="shell">zyx@zyx-ThundeRobot:~$ xinput
+<pre class=" language-shell"><code class="language-shell">zyx@zyx-ThundeRobot:~$ xinput
 ⎡ Virtual core pointer                        id=2    [master pointer  (3)]
 ⎜   ↳ Virtual core XTEST pointer                  id=4    [slave  pointer  (2)]
 ⎜   ↳ Razer Razer Abyssus                         id=12    [slave  pointer  (2)]
@@ -501,13 +501,13 @@
     ↳ AT Translated Set 2 keyboard                id=13    [slave  keyboard (3)]
 </code></pre>
 <p>可以看到这里的触摸板设备ID是<strong>14</strong>，知道ID后就可以执行命令禁用设备：</p>
-<pre><code class="shell">xinput disable 14
+<pre class=" language-shell"><code class="language-shell">xinput disable 14
 </code></pre>
 <p>同样可以使用命令启用设备：</p>
-<pre><code class="shell">xinput enable 14
+<pre class=" language-shell"><code class="language-shell">xinput enable 14
 </code></pre>
 <h1 id="脚本"><a href="#脚本" class="headerlink" title="脚本"></a>脚本</h1><p>使用命令比较麻烦的话，可以写个脚本touchpad_set.sh：</p>
-<pre><code class="shell">#!/bin/bash
+<pre class=" language-shell"><code class="language-shell">#!/bin/bash
 ##################################################
 #this script is used to disable/enable the touchpad
 ##################################################
@@ -516,7 +516,7 @@
 
 output=$(xinput list-props 14)
 
-if [[ &quot;$output&quot; =~ Device.Enabled.\(171\):.1 ]]
+if [[ "$output" =~ Device.Enabled.\(171\):.1 ]]
 then
     xinput disable 14
 else

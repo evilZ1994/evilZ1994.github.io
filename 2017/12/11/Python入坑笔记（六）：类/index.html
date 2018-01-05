@@ -484,25 +484,25 @@
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
         <h1 id="类的创建和使用"><a href="#类的创建和使用" class="headerlink" title="类的创建和使用"></a>类的创建和使用</h1><p>举个栗子：</p>
-<pre><code class="Python">class Dog():
+<pre class=" language-Python"><code class="language-Python">class Dog():
     def __init__(self, name, age):
-        &quot;&quot;&quot;初始化属性name和age&quot;&quot;&quot;
+        """初始化属性name和age"""
         self.name = name
         self.age = age
 
     def sit(self):
-        &quot;&quot;&quot;模拟小狗蹲下&quot;&quot;&quot;
-        print(self.name.title() + &quot; is now sitting.&quot;)
+        """模拟小狗蹲下"""
+        print(self.name.title() + " is now sitting.")
 
     def roll(self):
-        &quot;&quot;&quot;模拟小狗打滚&quot;&quot;&quot;
-        print(self.name.title() + &quot; rolled over!&quot;)
+        """模拟小狗打滚"""
+        print(self.name.title() + " rolled over!")
 
 #创建实例
-my_dog = Dog(&quot;Whillie&quot;, 6)
+my_dog = Dog("Whillie", 6)
 
-print(&quot;My dog&#39;s name is &quot; + my_dog.name.title())
-print(&quot;My dog is &quot; + str(my_dog.age) + &quot; years old&quot;)
+print("My dog's name is " + my_dog.name.title())
+print("My dog is " + str(my_dog.age) + " years old")
 my_dog.roll()
 </code></pre>
 <p>以上创建了一个Dog类（类名首字母大写），类属性有<code>name</code>和<code>age</code>，类方法有<code>sit()</code>和<code>roll()</code>。</p>
