@@ -287,7 +287,7 @@
 
     <!-- Custom Head -->
     
-<link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
+</head>
 
 
     
@@ -485,32 +485,32 @@
     
         <p>Python中的字典和Java中的集合很类似，字典保存的是一系列<strong>键值对</strong>(key-value)，每个键与一个值关联。字典可存储的容量几乎不受限制，且可将任何Python对象作为字典的值。</p>
 <h1 id="简单使用"><a href="#简单使用" class="headerlink" title="简单使用"></a>简单使用</h1><p>字典用<code>{</code> <code>}</code> 包裹，键与值用<code>:</code>分隔，键值对之间用逗号<code>,</code>分隔，如下：</p>
-<pre class=" language-python"><code class="language-python">user <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">"name"</span> <span class="token punctuation">:</span> <span class="token string">"Tom"</span><span class="token punctuation">,</span> <span class="token string">"age"</span> <span class="token punctuation">:</span> <span class="token number">20</span><span class="token punctuation">}</span>
+<pre><code class="python">user = {&quot;name&quot; : &quot;Tom&quot;, &quot;age&quot; : 20}
 </code></pre>
 <h2 id="访问字典内容"><a href="#访问字典内容" class="headerlink" title="访问字典内容"></a>访问字典内容</h2><p>获取与键对应的值，将键放入字典名后的<code>[</code> <code>]</code>中：</p>
-<pre class=" language-python"><code class="language-python">alien_0 <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">"color"</span><span class="token punctuation">:</span><span class="token string">"green"</span><span class="token punctuation">,</span> <span class="token string">"points"</span><span class="token punctuation">:</span><span class="token number">5</span><span class="token punctuation">}</span>
+<pre><code class="python">alien_0 = {&quot;color&quot;:&quot;green&quot;, &quot;points&quot;:5}
 
-<span class="token keyword">print</span><span class="token punctuation">(</span>alien_0<span class="token punctuation">[</span><span class="token string">"color"</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+print(alien_0[&quot;color&quot;])
 </code></pre>
 <p>outputs:</p>
 <pre><code>green
 </code></pre><h2 id="修改和添加内容"><a href="#修改和添加内容" class="headerlink" title="修改和添加内容"></a>修改和添加内容</h2><p>指定字典名和方括号括起来的键，然后赋值。如果键在字典中已存在，那它对应的值就会被修改；如果键不存在，则新的键值对就会存入字典中：</p>
-<pre class=" language-python"><code class="language-python">alien_0 <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">"color"</span><span class="token punctuation">:</span><span class="token string">"green"</span><span class="token punctuation">,</span> <span class="token string">"points"</span><span class="token punctuation">:</span><span class="token number">5</span><span class="token punctuation">}</span>
-<span class="token comment" spellcheck="true">#修改color对应的值</span>
-alien_0<span class="token punctuation">[</span><span class="token string">"color"</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">"red"</span>
-<span class="token comment" spellcheck="true">#添加新的键和值</span>
-alien_0<span class="token punctuation">[</span><span class="token string">"name"</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">"Tom"</span>
+<pre><code class="python">alien_0 = {&quot;color&quot;:&quot;green&quot;, &quot;points&quot;:5}
+#修改color对应的值
+alien_0[&quot;color&quot;] = &quot;red&quot;
+#添加新的键和值
+alien_0[&quot;name&quot;] = &quot;Tom&quot;
 
-<span class="token keyword">print</span><span class="token punctuation">(</span>alien_0<span class="token punctuation">)</span>
+print(alien_0)
 </code></pre>
 <p>outputs:</p>
 <pre><code>{&#39;color&#39;: &#39;red&#39;, &#39;points&#39;: 5, &#39;name&#39;: &#39;Tom&#39;}
 </code></pre><h2 id="删除内容"><a href="#删除内容" class="headerlink" title="删除内容"></a>删除内容</h2><p>使用<code>del</code>，然后指定字典名和方括号中的键：</p>
-<pre class=" language-python"><code class="language-python">alien_0 <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">"color"</span><span class="token punctuation">:</span><span class="token string">"green"</span><span class="token punctuation">,</span> <span class="token string">"points"</span><span class="token punctuation">:</span><span class="token number">5</span><span class="token punctuation">}</span>
-<span class="token comment" spellcheck="true">#删除points和它对应的值</span>
-<span class="token keyword">del</span> alien_0<span class="token punctuation">[</span><span class="token string">"points"</span><span class="token punctuation">]</span>
+<pre><code class="python">alien_0 = {&quot;color&quot;:&quot;green&quot;, &quot;points&quot;:5}
+#删除points和它对应的值
+del alien_0[&quot;points&quot;]
 
-<span class="token keyword">print</span><span class="token punctuation">(</span>alien_0<span class="token punctuation">)</span>
+print(alien_0)
 </code></pre>
 <p>outputs:</p>
 <pre><code>{&#39;color&#39;: &#39;green&#39;}
@@ -521,45 +521,45 @@ alien_0<span class="token punctuation">[</span><span class="token string">"name"
 <li><p>以整洁的方式打印每个词汇及其含义。 为此， 你可以先打印词汇， 在它后面加上一个冒号， 再打印词汇的含义； 也可在一行打印词汇， 再使用换行符（\n ） 插入一个空行， 然后在下一行以缩进的方式打印词汇的含义。 </p>
 </li>
 </ul>
-<h3 id="Answer"><a href="#Answer" class="headerlink" title="Answer"></a>Answer</h3><pre class=" language-python"><code class="language-python">word_dict <span class="token operator">=</span> <span class="token punctuation">{</span>
-    <span class="token string">"OOP"</span> <span class="token punctuation">:</span> <span class="token string">"面向对象编程（Object Oriented Programming，OOP，面向对象程序设计）是一种计算机编程架构"</span><span class="token punctuation">,</span>
-    <span class="token string">"Polymorphism"</span> <span class="token punctuation">:</span> <span class="token string">"在面向对象语言中，接口的多种不同的实现方式即为多态"</span><span class="token punctuation">,</span>
-    <span class="token string">"Regular Expression"</span> <span class="token punctuation">:</span> <span class="token string">"正则表达式，又称规则表达式"</span><span class="token punctuation">,</span>
-    <span class="token string">"binary tree"</span> <span class="token punctuation">:</span> <span class="token string">"二叉树"</span><span class="token punctuation">,</span>
-    <span class="token string">"zero-shot learning"</span> <span class="token punctuation">:</span> <span class="token string">"一次学习"</span>
-<span class="token punctuation">}</span>
+<h3 id="Answer"><a href="#Answer" class="headerlink" title="Answer"></a>Answer</h3><pre><code class="python">word_dict = {
+    &quot;OOP&quot; : &quot;面向对象编程（Object Oriented Programming，OOP，面向对象程序设计）是一种计算机编程架构&quot;,
+    &quot;Polymorphism&quot; : &quot;在面向对象语言中，接口的多种不同的实现方式即为多态&quot;,
+    &quot;Regular Expression&quot; : &quot;正则表达式，又称规则表达式&quot;,
+    &quot;binary tree&quot; : &quot;二叉树&quot;,
+    &quot;zero-shot learning&quot; : &quot;一次学习&quot;
+}
 
-choose <span class="token operator">=</span> input<span class="token punctuation">(</span><span class="token string">"请输入你要查询的内容："</span><span class="token punctuation">)</span>
-result <span class="token operator">=</span> word_dict<span class="token punctuation">[</span>choose<span class="token punctuation">]</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>choose<span class="token operator">+</span><span class="token string">":"</span><span class="token operator">+</span>result<span class="token punctuation">)</span>
+choose = input(&quot;请输入你要查询的内容：&quot;)
+result = word_dict[choose]
+print(choose+&quot;:&quot;+result)
 </code></pre>
 <p>outputs:</p>
 <pre><code>请输入你要查询的内容：OOP
 OOP:面向对象编程（Object Oriented Programming，OOP，面向对象程序设计）是一种计算机编程架构
 </code></pre><h1 id="遍历字典"><a href="#遍历字典" class="headerlink" title="遍历字典"></a>遍历字典</h1><h2 id="遍历所有的键值对"><a href="#遍历所有的键值对" class="headerlink" title="遍历所有的键值对"></a>遍历所有的键值对</h2><p>可以使用字典的<code>items()</code>方法获取字典中所有的键值对：</p>
-<pre class=" language-python"><code class="language-python">user <span class="token operator">=</span> <span class="token punctuation">{</span>
-    <span class="token string">"name"</span> <span class="token punctuation">:</span> <span class="token string">"Tom"</span><span class="token punctuation">,</span>
-    <span class="token string">"age"</span> <span class="token punctuation">:</span> <span class="token number">20</span><span class="token punctuation">,</span>
-    <span class="token string">"height"</span> <span class="token punctuation">:</span> <span class="token number">170</span><span class="token punctuation">,</span>
-    <span class="token string">"weight"</span> <span class="token punctuation">:</span> <span class="token number">60</span>
-<span class="token punctuation">}</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>user<span class="token punctuation">.</span>items<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-<span class="token comment" spellcheck="true">#转换为list再输出</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>list<span class="token punctuation">(</span>user<span class="token punctuation">.</span>items<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<pre><code class="python">user = {
+    &quot;name&quot; : &quot;Tom&quot;,
+    &quot;age&quot; : 20,
+    &quot;height&quot; : 170,
+    &quot;weight&quot; : 60
+}
+print(user.items())
+#转换为list再输出
+print(list(user.items()))
 </code></pre>
 <p>outputs:</p>
 <pre><code>dict_items([(&#39;name&#39;, &#39;Tom&#39;), (&#39;age&#39;, 20), (&#39;height&#39;, 170), (&#39;weight&#39;, 60)])
 [(&#39;name&#39;, &#39;Tom&#39;), (&#39;age&#39;, 20), (&#39;height&#39;, 170), (&#39;weight&#39;, 60)]
 </code></pre><p>然后可以用<code>for</code>循环，依次获取字典中的键和值：</p>
-<pre class=" language-python"><code class="language-python">user <span class="token operator">=</span> <span class="token punctuation">{</span>
-    <span class="token string">"name"</span> <span class="token punctuation">:</span> <span class="token string">"Tom"</span><span class="token punctuation">,</span>
-    <span class="token string">"age"</span> <span class="token punctuation">:</span> <span class="token number">20</span><span class="token punctuation">,</span>
-    <span class="token string">"height"</span> <span class="token punctuation">:</span> <span class="token number">170</span><span class="token punctuation">,</span>
-    <span class="token string">"weight"</span> <span class="token punctuation">:</span> <span class="token number">60</span>
-<span class="token punctuation">}</span>
+<pre><code class="python">user = {
+    &quot;name&quot; : &quot;Tom&quot;,
+    &quot;age&quot; : 20,
+    &quot;height&quot; : 170,
+    &quot;weight&quot; : 60
+}
 
-<span class="token keyword">for</span> key<span class="token punctuation">,</span>value <span class="token keyword">in</span> user<span class="token punctuation">.</span>items<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span>key<span class="token operator">+</span><span class="token string">":"</span><span class="token operator">+</span>str<span class="token punctuation">(</span>value<span class="token punctuation">)</span><span class="token punctuation">)</span>
+for key,value in user.items():
+    print(key+&quot;:&quot;+str(value))
 </code></pre>
 <p>outputs:</p>
 <pre><code>name:Tom
@@ -567,15 +567,15 @@ age:20
 height:170
 weight:60
 </code></pre><h2 id="遍历所有的键"><a href="#遍历所有的键" class="headerlink" title="遍历所有的键"></a>遍历所有的键</h2><p>可以用字典的<code>keys()</code>方法获取字典中所有的键，然后用<code>for</code>循环遍历：</p>
-<pre class=" language-python"><code class="language-python">user <span class="token operator">=</span> <span class="token punctuation">{</span>
-    <span class="token string">"name"</span> <span class="token punctuation">:</span> <span class="token string">"Tom"</span><span class="token punctuation">,</span>
-    <span class="token string">"age"</span> <span class="token punctuation">:</span> <span class="token number">20</span><span class="token punctuation">,</span>
-    <span class="token string">"height"</span> <span class="token punctuation">:</span> <span class="token number">170</span><span class="token punctuation">,</span>
-    <span class="token string">"weight"</span> <span class="token punctuation">:</span> <span class="token number">60</span>
-<span class="token punctuation">}</span>
+<pre><code class="python">user = {
+    &quot;name&quot; : &quot;Tom&quot;,
+    &quot;age&quot; : 20,
+    &quot;height&quot; : 170,
+    &quot;weight&quot; : 60
+}
 
-<span class="token keyword">for</span> info <span class="token keyword">in</span> user<span class="token punctuation">.</span>keys<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span>info<span class="token punctuation">)</span>
+for info in user.keys():
+    print(info)
 </code></pre>
 <p>outputs:</p>
 <pre><code>name
@@ -583,30 +583,30 @@ age
 height
 weight
 </code></pre><p>默认获取到的键的顺序都是不可预测的。如果获取特定顺序的键，可以用<code>sorted()</code>函数来获得按特定顺序排列的键列表的副本：</p>
-<pre class=" language-python"><code class="language-python">users <span class="token operator">=</span> <span class="token punctuation">{</span>
-    <span class="token string">"Tom"</span> <span class="token punctuation">:</span> <span class="token string">"America"</span><span class="token punctuation">,</span>
-    <span class="token string">"Edward"</span> <span class="token punctuation">:</span> <span class="token string">"Canada"</span><span class="token punctuation">,</span>
-    <span class="token string">"JackieChan"</span> <span class="token punctuation">:</span> <span class="token string">"China"</span><span class="token punctuation">,</span>
-    <span class="token string">"Brank"</span> <span class="token punctuation">:</span> <span class="token string">"British"</span><span class="token punctuation">,</span>
-<span class="token punctuation">}</span>
-sorted_names <span class="token operator">=</span> sorted<span class="token punctuation">(</span>users<span class="token punctuation">.</span>keys<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>sorted_names<span class="token punctuation">)</span>
+<pre><code class="python">users = {
+    &quot;Tom&quot; : &quot;America&quot;,
+    &quot;Edward&quot; : &quot;Canada&quot;,
+    &quot;JackieChan&quot; : &quot;China&quot;,
+    &quot;Brank&quot; : &quot;British&quot;,
+}
+sorted_names = sorted(users.keys())
+print(sorted_names)
 </code></pre>
 <p>outputs:</p>
 <pre><code>[&#39;Brank&#39;, &#39;Edward&#39;, &#39;JackieChan&#39;, &#39;Tom&#39;]
 </code></pre><h2 id="遍历所有的值"><a href="#遍历所有的值" class="headerlink" title="遍历所有的值"></a>遍历所有的值</h2><p>如果想获取字典中所有的值，可以用字典的<code>values()</code>方法，获取一个仅包含值的列表。使用<code>set</code>集合还可以剔除其中的重复项，因为集合中的元素都是唯一的。</p>
-<pre class=" language-python"><code class="language-python">users <span class="token operator">=</span> <span class="token punctuation">{</span>
-    <span class="token string">"Tom"</span> <span class="token punctuation">:</span> <span class="token string">"America"</span><span class="token punctuation">,</span>
-    <span class="token string">"Edward"</span> <span class="token punctuation">:</span> <span class="token string">"Canada"</span><span class="token punctuation">,</span>
-    <span class="token string">"JackieChan"</span> <span class="token punctuation">:</span> <span class="token string">"China"</span><span class="token punctuation">,</span>
-    <span class="token string">"Brank"</span> <span class="token punctuation">:</span> <span class="token string">"British"</span><span class="token punctuation">,</span>
-    <span class="token string">"David"</span> <span class="token punctuation">:</span> <span class="token string">"British"</span><span class="token punctuation">,</span>
-<span class="token punctuation">}</span>
-countries <span class="token operator">=</span> list<span class="token punctuation">(</span>users<span class="token punctuation">.</span>values<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>countries<span class="token punctuation">)</span>
-<span class="token comment" spellcheck="true">#使用set集合剔除重复项</span>
-countries_2 <span class="token operator">=</span> set<span class="token punctuation">(</span>users<span class="token punctuation">.</span>values<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>countries_2<span class="token punctuation">)</span>
+<pre><code class="python">users = {
+    &quot;Tom&quot; : &quot;America&quot;,
+    &quot;Edward&quot; : &quot;Canada&quot;,
+    &quot;JackieChan&quot; : &quot;China&quot;,
+    &quot;Brank&quot; : &quot;British&quot;,
+    &quot;David&quot; : &quot;British&quot;,
+}
+countries = list(users.values())
+print(countries)
+#使用set集合剔除重复项
+countries_2 = set(users.values())
+print(countries_2)
 </code></pre>
 <p>outputs:</p>
 <pre><code>[&#39;America&#39;, &#39;Canada&#39;, &#39;China&#39;, &#39;British&#39;, &#39;British&#39;]
@@ -614,17 +614,17 @@ countries_2 <span class="token operator">=</span> set<span class="token punctuat
 </code></pre><h1 id="嵌套"><a href="#嵌套" class="headerlink" title="嵌套"></a>嵌套</h1><p>字典和列表、字典和字典间可以嵌套保存，如下：</p>
 <ul>
 <li><p>字典存放在列表中</p>
-<pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true">#字典列表</span>
-<span class="token comment" spellcheck="true">#创建一个存储外星人的空列表</span>
-aliens <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
-<span class="token comment" spellcheck="true">#创建30个绿色的外星人</span>
-<span class="token keyword">for</span> alien_number <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">30</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    new_alien <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">"color"</span><span class="token punctuation">:</span><span class="token string">"green"</span><span class="token punctuation">,</span> <span class="token string">"points"</span><span class="token punctuation">:</span><span class="token number">5</span><span class="token punctuation">,</span> <span class="token string">"speed"</span><span class="token punctuation">:</span><span class="token string">"slow"</span><span class="token punctuation">}</span>
-    aliens<span class="token punctuation">.</span>append<span class="token punctuation">(</span>new_alien<span class="token punctuation">)</span>
-<span class="token comment" spellcheck="true">#显示前三个外星人</span>
-<span class="token keyword">for</span> alien <span class="token keyword">in</span> aliens<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span>alien<span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Total number of aliens: "</span><span class="token operator">+</span>str<span class="token punctuation">(</span>len<span class="token punctuation">(</span>aliens<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<pre><code class="python">#字典列表
+#创建一个存储外星人的空列表
+aliens = []
+#创建30个绿色的外星人
+for alien_number in range(30):
+    new_alien = {&quot;color&quot;:&quot;green&quot;, &quot;points&quot;:5, &quot;speed&quot;:&quot;slow&quot;}
+    aliens.append(new_alien)
+#显示前三个外星人
+for alien in aliens[:3]:
+    print(alien)
+print(&quot;Total number of aliens: &quot;+str(len(aliens)))
 </code></pre>
 <p>outputs:</p>
 <pre><code>{&#39;color&#39;: &#39;green&#39;, &#39;points&#39;: 5, &#39;speed&#39;: &#39;slow&#39;}
@@ -633,17 +633,17 @@ aliens <span class="token operator">=</span> <span class="token punctuation">[</
 Total number of aliens: 30
 </code></pre></li>
 <li><p>字典中存储列表</p>
-<pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true">#字典中存储列表</span>
-favorite_languages <span class="token operator">=</span> <span class="token punctuation">{</span>
-    <span class="token string">"jen"</span> <span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">"python"</span><span class="token punctuation">,</span> <span class="token string">"ruby"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
-    <span class="token string">"sarah"</span> <span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">"c"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
-    <span class="token string">"edward"</span> <span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">"ruby"</span><span class="token punctuation">,</span> <span class="token string">"go"</span><span class="token punctuation">]</span>
-<span class="token punctuation">}</span>
+<pre><code class="python">#字典中存储列表
+favorite_languages = {
+    &quot;jen&quot; : [&quot;python&quot;, &quot;ruby&quot;],
+    &quot;sarah&quot; : [&quot;c&quot;],
+    &quot;edward&quot; : [&quot;ruby&quot;, &quot;go&quot;]
+}
 
-<span class="token keyword">for</span> name<span class="token punctuation">,</span> languages <span class="token keyword">in</span> favorite_languages<span class="token punctuation">.</span>items<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span>name<span class="token punctuation">.</span>title<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">+</span><span class="token string">"'s favorite languages are:"</span><span class="token punctuation">)</span>
-    <span class="token keyword">for</span> language <span class="token keyword">in</span> languages<span class="token punctuation">:</span>
-        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"\t"</span><span class="token operator">+</span>language<span class="token punctuation">.</span>title<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+for name, languages in favorite_languages.items():
+    print(name.title()+&quot;&#39;s favorite languages are:&quot;)
+    for language in languages:
+        print(&quot;\t&quot;+language.title())
 </code></pre>
 <p>outputs:</p>
 <pre><code>Jen&#39;s favorite languages are:
@@ -656,22 +656,22 @@ Edward&#39;s favorite languages are:
     Go
 </code></pre></li>
 <li><p>字典中存储字典</p>
-<pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true">#字典中存储字典</span>
-users <span class="token operator">=</span> <span class="token punctuation">{</span>
-    <span class="token string">'aeinstein'</span> <span class="token punctuation">:</span> <span class="token punctuation">{</span>
-        <span class="token string">'first'</span> <span class="token punctuation">:</span> <span class="token string">'albert'</span><span class="token punctuation">,</span>
-        <span class="token string">'last'</span> <span class="token punctuation">:</span> <span class="token string">'aeinstein'</span><span class="token punctuation">,</span>
-        <span class="token string">'location'</span> <span class="token punctuation">:</span> <span class="token string">'princeton'</span>
-    <span class="token punctuation">}</span><span class="token punctuation">,</span>
-    <span class="token string">'mcurie'</span> <span class="token punctuation">:</span> <span class="token punctuation">{</span>
-        <span class="token string">'first'</span> <span class="token punctuation">:</span> <span class="token string">'marie'</span><span class="token punctuation">,</span>
-        <span class="token string">'last'</span> <span class="token punctuation">:</span> <span class="token string">'curie'</span><span class="token punctuation">,</span>
-        <span class="token string">'location'</span> <span class="token punctuation">:</span> <span class="token string">'paris'</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-<span class="token keyword">for</span> username<span class="token punctuation">,</span> user_info <span class="token keyword">in</span> users<span class="token punctuation">.</span>items<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"\nUsername: "</span><span class="token operator">+</span>username<span class="token punctuation">)</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span>user_info<span class="token punctuation">[</span><span class="token string">'first'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>title<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">+</span><span class="token string">" "</span><span class="token operator">+</span>user_info<span class="token punctuation">[</span><span class="token string">'last'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>title<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">+</span><span class="token string">" lived in "</span><span class="token operator">+</span>user_info<span class="token punctuation">[</span><span class="token string">'location'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<pre><code class="python">#字典中存储字典
+users = {
+    &#39;aeinstein&#39; : {
+        &#39;first&#39; : &#39;albert&#39;,
+        &#39;last&#39; : &#39;aeinstein&#39;,
+        &#39;location&#39; : &#39;princeton&#39;
+    },
+    &#39;mcurie&#39; : {
+        &#39;first&#39; : &#39;marie&#39;,
+        &#39;last&#39; : &#39;curie&#39;,
+        &#39;location&#39; : &#39;paris&#39;
+    }
+}
+for username, user_info in users.items():
+    print(&quot;\nUsername: &quot;+username)
+    print(user_info[&#39;first&#39;].title()+&quot; &quot;+user_info[&#39;last&#39;].title()+&quot; lived in &quot;+user_info[&#39;location&#39;])
 </code></pre>
 <p>outputs:</p>
 <pre><code>Username: aeinstein
@@ -807,7 +807,7 @@ Marie Curie lived in paris
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/archives/2017/12/">December 2017<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/11/">November 2017<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/10/">October 2017<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/08/">August 2017<span class="sidebar_archives-count">15</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/03/">March 2017<span class="sidebar_archives-count">8</span></a>
+                <a class="sidebar_archives-link" href="/archives/2018/01/">January 2018<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/12/">December 2017<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/11/">November 2017<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/10/">October 2017<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/08/">August 2017<span class="sidebar_archives-count">15</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/03/">March 2017<span class="sidebar_archives-count">8</span></a>
             </ul>
         </li>
         
@@ -825,7 +825,7 @@ Marie Curie lived in paris
             </a>
             <ul class="dropdown-menu">
                 <li>
-                <a class="sidebar_archives-link" href="/categories/Android碎片/">Android碎片<span class="sidebar_archives-count">16</span></a></li><li><a class="sidebar_archives-link" href="/categories/Android错误解决/">Android错误解决<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Java笔记/">Java笔记<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/Python/">Python<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/categories/Ubuntu/">Ubuntu<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/机器学习/">机器学习<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/杂记/">杂记<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/皮皮夏/">皮皮夏<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/皮皮夏的奇葩日记/">皮皮夏的奇葩日记<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/论文笔记/">论文笔记<span class="sidebar_archives-count">2</span></a>
+                <a class="sidebar_archives-link" href="/categories/Android碎片/">Android碎片<span class="sidebar_archives-count">16</span></a></li><li><a class="sidebar_archives-link" href="/categories/Android错误解决/">Android错误解决<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Java笔记/">Java笔记<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/Python/">Python<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/categories/Shell/">Shell<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/Ubuntu/">Ubuntu<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/categories/hexo/">hexo<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/机器学习/">机器学习<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/杂记/">杂记<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/皮皮夏/">皮皮夏<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/皮皮夏的奇葩日记/">皮皮夏的奇葩日记<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/论文笔记/">论文笔记<span class="sidebar_archives-count">2</span></a>
             </ul>
         </li>
         
@@ -861,7 +861,7 @@ Marie Curie lived in paris
         <li>
             <a href="/archives">
                 Number of articles
-                <span class="sidebar-badge">38</span>
+                <span class="sidebar-badge">45</span>
             </a>
         </li>
         

@@ -287,7 +287,7 @@
 
     <!-- Custom Head -->
     
-<link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
+</head>
 
 
     
@@ -484,24 +484,24 @@
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
         <h1 id="更改溢出菜单栏里的字体颜色"><a href="#更改溢出菜单栏里的字体颜色" class="headerlink" title="更改溢出菜单栏里的字体颜色"></a>更改溢出菜单栏里的字体颜色</h1><p>默认情况下，ToolBar溢出菜单的字体颜色是黑色的。如果要更改溢出菜单的文字颜色，需要为ToolBar添加一个主题，在styles.xml文件中新建：</p>
-<pre class=" language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>ToolBarThemeWhite<span class="token punctuation">"</span></span> <span class="token attr-name">parent</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Theme.AppCompat.Light<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token style language-css">
-    &lt;item name=<span class="token string">"android:textColor"</span>>@color/white&lt;/item>
-    &lt;item name=<span class="token string">"android:textSize"</span>><span class="token number">25</span>sp&lt;/item>
-</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span>
+<pre><code class="xml">&lt;style name=&quot;ToolBarThemeWhite&quot; parent=&quot;Theme.AppCompat.Light&quot;&gt;
+    &lt;item name=&quot;android:textColor&quot;&gt;@color/white&lt;/item&gt;
+    &lt;item name=&quot;android:textSize&quot;&gt;25sp&lt;/item&gt;
+&lt;/style&gt;
 </code></pre>
-<h1 id="更改显示在ToolBar上的菜单文字颜色"><a href="#更改显示在ToolBar上的菜单文字颜色" class="headerlink" title="更改显示在ToolBar上的菜单文字颜色"></a>更改显示在ToolBar上的菜单文字颜色</h1><pre class=" language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>ToolBarThemeWhite<span class="token punctuation">"</span></span> <span class="token attr-name">parent</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Theme.AppCompat.Light<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token style language-css">
-    &lt;item name=<span class="token string">"actionMenuTextColor"</span>>@color/white&lt;/item>
-    &lt;item name=<span class="token string">"android:textSize"</span>><span class="token number">20</span>sp&lt;/item>
-</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span>
+<h1 id="更改显示在ToolBar上的菜单文字颜色"><a href="#更改显示在ToolBar上的菜单文字颜色" class="headerlink" title="更改显示在ToolBar上的菜单文字颜色"></a>更改显示在ToolBar上的菜单文字颜色</h1><pre><code class="xml">&lt;style name=&quot;ToolBarThemeWhite&quot; parent=&quot;Theme.AppCompat.Light&quot;&gt;
+    &lt;item name=&quot;actionMenuTextColor&quot;&gt;@color/white&lt;/item&gt;
+    &lt;item name=&quot;android:textSize&quot;&gt;20sp&lt;/item&gt;
+&lt;/style&gt;
 </code></pre>
-<h1 id="在ToolBar中应用新建的主题"><a href="#在ToolBar中应用新建的主题" class="headerlink" title="在ToolBar中应用新建的主题"></a>在ToolBar中应用新建的主题</h1><pre class=" language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>android.support.v7.widget.Toolbar</span>
-    <span class="token attr-name"><span class="token namespace">android:</span>id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>@+id/toolbar<span class="token punctuation">"</span></span>
-    <span class="token attr-name"><span class="token namespace">android:</span>layout_width</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>match_parent<span class="token punctuation">"</span></span>
-    <span class="token attr-name"><span class="token namespace">android:</span>layout_height</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>?attr/actionBarSize<span class="token punctuation">"</span></span>
-    <span class="token attr-name"><span class="token namespace">app:</span>theme</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>@style/ToolBarThemeWhite<span class="token punctuation">"</span></span>
-    <span class="token attr-name"><span class="token namespace">app:</span>titleTextColor</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>@color/white<span class="token punctuation">"</span></span>
-    <span class="token attr-name"><span class="token namespace">app:</span>layout_collapseMode</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>pin<span class="token punctuation">"</span></span>
-    <span class="token attr-name"><span class="token namespace">app:</span>navigationIcon</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>@drawable/ic_back_white<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+<h1 id="在ToolBar中应用新建的主题"><a href="#在ToolBar中应用新建的主题" class="headerlink" title="在ToolBar中应用新建的主题"></a>在ToolBar中应用新建的主题</h1><pre><code class="xml">&lt;android.support.v7.widget.Toolbar
+    android:id=&quot;@+id/toolbar&quot;
+    android:layout_width=&quot;match_parent&quot;
+    android:layout_height=&quot;?attr/actionBarSize&quot;
+    app:theme=&quot;@style/ToolBarThemeWhite&quot;
+    app:titleTextColor=&quot;@color/white&quot;
+    app:layout_collapseMode=&quot;pin&quot;
+    app:navigationIcon=&quot;@drawable/ic_back_white&quot; /&gt;
 </code></pre>
 
     
@@ -628,7 +628,7 @@
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/archives/2017/12/">December 2017<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/11/">November 2017<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/10/">October 2017<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/08/">August 2017<span class="sidebar_archives-count">15</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/03/">March 2017<span class="sidebar_archives-count">8</span></a>
+                <a class="sidebar_archives-link" href="/archives/2018/01/">January 2018<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/12/">December 2017<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/11/">November 2017<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/10/">October 2017<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/08/">August 2017<span class="sidebar_archives-count">15</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/03/">March 2017<span class="sidebar_archives-count">8</span></a>
             </ul>
         </li>
         
@@ -646,7 +646,7 @@
             </a>
             <ul class="dropdown-menu">
                 <li>
-                <a class="sidebar_archives-link" href="/categories/Android碎片/">Android碎片<span class="sidebar_archives-count">16</span></a></li><li><a class="sidebar_archives-link" href="/categories/Android错误解决/">Android错误解决<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Java笔记/">Java笔记<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/Python/">Python<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/categories/Ubuntu/">Ubuntu<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/机器学习/">机器学习<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/杂记/">杂记<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/皮皮夏/">皮皮夏<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/皮皮夏的奇葩日记/">皮皮夏的奇葩日记<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/论文笔记/">论文笔记<span class="sidebar_archives-count">2</span></a>
+                <a class="sidebar_archives-link" href="/categories/Android碎片/">Android碎片<span class="sidebar_archives-count">16</span></a></li><li><a class="sidebar_archives-link" href="/categories/Android错误解决/">Android错误解决<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Java笔记/">Java笔记<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/Python/">Python<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/categories/Shell/">Shell<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/Ubuntu/">Ubuntu<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/categories/hexo/">hexo<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/机器学习/">机器学习<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/杂记/">杂记<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/皮皮夏/">皮皮夏<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/皮皮夏的奇葩日记/">皮皮夏的奇葩日记<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/论文笔记/">论文笔记<span class="sidebar_archives-count">2</span></a>
             </ul>
         </li>
         
@@ -682,7 +682,7 @@
         <li>
             <a href="/archives">
                 Number of articles
-                <span class="sidebar-badge">38</span>
+                <span class="sidebar-badge">45</span>
             </a>
         </li>
         

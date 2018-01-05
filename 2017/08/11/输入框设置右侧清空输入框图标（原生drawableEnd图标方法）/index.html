@@ -287,7 +287,7 @@
 
     <!-- Custom Head -->
     
-<link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
+</head>
 
 
     
@@ -491,178 +491,178 @@
 </ul>
 <h1 id="实现过程"><a href="#实现过程" class="headerlink" title="实现过程"></a>实现过程</h1><p>原生EditText有自带drawableEnd属性，即可以设置一个右侧图标（其实有drawableStart, drawableTop, drawableEnd, drawableBottom四种属性，分别对应左、上、右、下侧图标）。但是Google并没有对drawableEnd图标提供相应的点击事件，点击图标无法执行相关操作。</p>
 <p>针对上面的需求，大多数人都选择自定义EditText实现，但个人觉得比较麻烦。一番搜索之后发现一个方法，可以通过判断EditText的点击位置，即如果是图标所在位置，就执行相关操作，以此来实现上述需求。</p>
-<h2 id="EditText点击位置监听"><a href="#EditText点击位置监听" class="headerlink" title="EditText点击位置监听"></a>EditText点击位置监听</h2><pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">InputClearOnTouchListener</span> <span class="token keyword">implements</span> <span class="token class-name">View<span class="token punctuation">.</span>OnTouchListener</span> <span class="token punctuation">{</span>
-    <span class="token keyword">private</span> EditText editText<span class="token punctuation">;</span>
+<h2 id="EditText点击位置监听"><a href="#EditText点击位置监听" class="headerlink" title="EditText点击位置监听"></a>EditText点击位置监听</h2><pre><code class="java">public class InputClearOnTouchListener implements View.OnTouchListener {
+    private EditText editText;
 
-    <span class="token keyword">public</span> <span class="token function">InputClearOnTouchListener</span><span class="token punctuation">(</span>EditText editText<span class="token punctuation">)</span><span class="token punctuation">{</span>
-        <span class="token keyword">this</span><span class="token punctuation">.</span>editText <span class="token operator">=</span> editText<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
+    public InputClearOnTouchListener(EditText editText){
+        this.editText = editText;
+    }
 
-    <span class="token annotation punctuation">@Override</span>
-    <span class="token keyword">public</span> <span class="token keyword">boolean</span> <span class="token function">onTouch</span><span class="token punctuation">(</span>View view<span class="token punctuation">,</span> MotionEvent motionEvent<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token comment" spellcheck="true">//获取右侧图标</span>
-        Drawable drawableRight <span class="token operator">=</span> editText<span class="token punctuation">.</span><span class="token function">getCompoundDrawables</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-        <span class="token comment" spellcheck="true">//如果右侧没有图标，则不做处理</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>drawableRight <span class="token operator">==</span> null<span class="token punctuation">)</span><span class="token punctuation">{</span>
-            <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span><span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>motionEvent<span class="token punctuation">.</span><span class="token function">getAction</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">!=</span> MotionEvent<span class="token punctuation">.</span>ACTION_UP<span class="token punctuation">)</span><span class="token punctuation">{</span>
-            <span class="token comment" spellcheck="true">//如果不是按下事件，不做处理</span>
-            <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span><span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>motionEvent<span class="token punctuation">.</span><span class="token function">getX</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">></span> editText<span class="token punctuation">.</span><span class="token function">getWidth</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">-</span>editText<span class="token punctuation">.</span><span class="token function">getPaddingEnd</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">-</span>drawableRight<span class="token punctuation">.</span><span class="token function">getIntrinsicWidth</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-            <span class="token comment" spellcheck="true">//如果点击的位置在右侧图标处，则清空输入框</span>
-            editText<span class="token punctuation">.</span><span class="token function">setText</span><span class="token punctuation">(</span><span class="token string">""</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-        <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
+    @Override
+    public boolean onTouch(View view, MotionEvent motionEvent) {
+        //获取右侧图标
+        Drawable drawableRight = editText.getCompoundDrawables()[2];
+        //如果右侧没有图标，则不做处理
+        if (drawableRight == null){
+            return false;
+        }else if (motionEvent.getAction() != MotionEvent.ACTION_UP){
+            //如果不是按下事件，不做处理
+            return false;
+        }else if (motionEvent.getX() &gt; editText.getWidth()-editText.getPaddingEnd()-drawableRight.getIntrinsicWidth()){
+            //如果点击的位置在右侧图标处，则清空输入框
+            editText.setText(&quot;&quot;);
+        }
+        return false;
+    }
+}
 </code></pre>
 <p>上面的代码实现了需求4，针对需求1，2可以通过监听EditText的输入来实现。在此之前，有一个地方需要注意，就是通过代码设置EditText的右侧图标：</p>
-<pre class=" language-java"><code class="language-java">editText<span class="token punctuation">.</span><span class="token function">setCompoundDrawablesRelativeWithIntrinsicBounds</span><span class="token punctuation">(</span>null<span class="token punctuation">,</span> null<span class="token punctuation">,</span> context<span class="token punctuation">.</span><span class="token function">getDrawable</span><span class="token punctuation">(</span>R<span class="token punctuation">.</span>drawable<span class="token punctuation">.</span>ic_cancel<span class="token punctuation">)</span><span class="token punctuation">,</span> null<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<pre><code class="java">editText.setCompoundDrawablesRelativeWithIntrinsicBounds(null, null, context.getDrawable(R.drawable.ic_cancel), null);
 或者
-editText<span class="token punctuation">.</span><span class="token function">setCompoundDrawablesWithIntrinsicBounds</span><span class="token punctuation">(</span>null<span class="token punctuation">,</span> null<span class="token punctuation">,</span> context<span class="token punctuation">.</span><span class="token function">getDrawable</span><span class="token punctuation">(</span>R<span class="token punctuation">.</span>drawable<span class="token punctuation">.</span>ic_cancel<span class="token punctuation">)</span><span class="token punctuation">,</span> null<span class="token punctuation">)</span><span class="token punctuation">;</span>
+editText.setCompoundDrawablesWithIntrinsicBounds(null, null, context.getDrawable(R.drawable.ic_cancel), null);
 </code></pre>
 <p>其他几个方法似乎无法设置图标：</p>
-<pre class=" language-java"><code class="language-java">editText<span class="token punctuation">.</span><span class="token function">setCompoundDrawables</span><span class="token punctuation">(</span>Drawable left<span class="token punctuation">,</span> Drawable top<span class="token punctuation">,</span> Drawable right<span class="token punctuation">,</span> Drawable bottom<span class="token punctuation">)</span><span class="token punctuation">;</span>
-editText<span class="token punctuation">.</span><span class="token function">setCompoundDrawablesRelative</span><span class="token punctuation">(</span>Drawable start<span class="token punctuation">,</span> Drawable top<span class="token punctuation">,</span> Drawable end<span class="token punctuation">,</span> Drawable bottom<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<pre><code class="java">editText.setCompoundDrawables(Drawable left, Drawable top, Drawable right, Drawable bottom);
+editText.setCompoundDrawablesRelative(Drawable start, Drawable top, Drawable end, Drawable bottom);
 </code></pre>
 <p>具体原因暂时没有深入探究。</p>
-<h2 id="EditText输入监听"><a href="#EditText输入监听" class="headerlink" title="EditText输入监听"></a>EditText输入监听</h2><pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">InputClearOnTextChangedListener</span> <span class="token keyword">implements</span> <span class="token class-name">TextWatcher</span> <span class="token punctuation">{</span>
-    <span class="token keyword">private</span> Context context<span class="token punctuation">;</span>
-    <span class="token keyword">private</span> EditText editText<span class="token punctuation">;</span>
+<h2 id="EditText输入监听"><a href="#EditText输入监听" class="headerlink" title="EditText输入监听"></a>EditText输入监听</h2><pre><code class="java">public class InputClearOnTextChangedListener implements TextWatcher {
+    private Context context;
+    private EditText editText;
 
-    <span class="token keyword">public</span> <span class="token function">InputClearOnTextChangedListener</span><span class="token punctuation">(</span>Context context<span class="token punctuation">,</span> EditText editText<span class="token punctuation">)</span><span class="token punctuation">{</span>
-        <span class="token keyword">this</span><span class="token punctuation">.</span>context <span class="token operator">=</span> context<span class="token punctuation">;</span>
-        <span class="token keyword">this</span><span class="token punctuation">.</span>editText <span class="token operator">=</span> editText<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
+    public InputClearOnTextChangedListener(Context context, EditText editText){
+        this.context = context;
+        this.editText = editText;
+    }
 
-    <span class="token annotation punctuation">@Override</span>
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">beforeTextChanged</span><span class="token punctuation">(</span>CharSequence charSequence<span class="token punctuation">,</span> <span class="token keyword">int</span> i<span class="token punctuation">,</span> <span class="token keyword">int</span> i1<span class="token punctuation">,</span> <span class="token keyword">int</span> i2<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    @Override
+    public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
 
-    <span class="token punctuation">}</span>
+    }
 
-    <span class="token annotation punctuation">@Override</span>
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">onTextChanged</span><span class="token punctuation">(</span>CharSequence charSequence<span class="token punctuation">,</span> <span class="token keyword">int</span> i<span class="token punctuation">,</span> <span class="token keyword">int</span> i1<span class="token punctuation">,</span> <span class="token keyword">int</span> i2<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    @Override
+    public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
 
-    <span class="token punctuation">}</span>
+    }
 
-    <span class="token annotation punctuation">@Override</span>
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">afterTextChanged</span><span class="token punctuation">(</span>Editable editable<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token comment" spellcheck="true">//当输入框有字符输入时，显示清除图标，没有字符时隐藏清除图标</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>editable<span class="token punctuation">.</span><span class="token function">length</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">></span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-            editText<span class="token punctuation">.</span><span class="token function">setCompoundDrawablesRelativeWithIntrinsicBounds</span><span class="token punctuation">(</span>null<span class="token punctuation">,</span> null<span class="token punctuation">,</span> context<span class="token punctuation">.</span><span class="token function">getDrawable</span><span class="token punctuation">(</span>R<span class="token punctuation">.</span>drawable<span class="token punctuation">.</span>ic_cancel<span class="token punctuation">)</span><span class="token punctuation">,</span> null<span class="token punctuation">)</span><span class="token punctuation">;</span>
-            <span class="token comment" spellcheck="true">//editText.setCompoundDrawablesWithIntrinsicBounds(null, null, context.getDrawable(R.drawable.ic_cancel), null);</span>
-        <span class="token punctuation">}</span><span class="token keyword">else</span> <span class="token punctuation">{</span>
-            editText<span class="token punctuation">.</span><span class="token function">setCompoundDrawablesRelativeWithIntrinsicBounds</span><span class="token punctuation">(</span>null<span class="token punctuation">,</span> null<span class="token punctuation">,</span> null<span class="token punctuation">,</span> null<span class="token punctuation">)</span><span class="token punctuation">;</span>
-            <span class="token comment" spellcheck="true">//editText.setCompoundDrawablesWithIntrinsicBounds(null, null, null, null);</span>
-        <span class="token punctuation">}</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
+    @Override
+    public void afterTextChanged(Editable editable) {
+        //当输入框有字符输入时，显示清除图标，没有字符时隐藏清除图标
+        if (editable.length()&gt;0){
+            editText.setCompoundDrawablesRelativeWithIntrinsicBounds(null, null, context.getDrawable(R.drawable.ic_cancel), null);
+            //editText.setCompoundDrawablesWithIntrinsicBounds(null, null, context.getDrawable(R.drawable.ic_cancel), null);
+        }else {
+            editText.setCompoundDrawablesRelativeWithIntrinsicBounds(null, null, null, null);
+            //editText.setCompoundDrawablesWithIntrinsicBounds(null, null, null, null);
+        }
+    }
+}
 </code></pre>
 <p>对于需求3，可以监听EditText的焦点来实现</p>
-<h2 id="EditText焦点监听"><a href="#EditText焦点监听" class="headerlink" title="EditText焦点监听"></a>EditText焦点监听</h2><pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">InputClearOnFocusChangeListener</span> <span class="token keyword">implements</span> <span class="token class-name">View<span class="token punctuation">.</span>OnFocusChangeListener</span> <span class="token punctuation">{</span>
-    <span class="token keyword">private</span> Context context<span class="token punctuation">;</span>
-    <span class="token keyword">private</span> EditText editText<span class="token punctuation">;</span>
+<h2 id="EditText焦点监听"><a href="#EditText焦点监听" class="headerlink" title="EditText焦点监听"></a>EditText焦点监听</h2><pre><code class="java">public class InputClearOnFocusChangeListener implements View.OnFocusChangeListener {
+    private Context context;
+    private EditText editText;
 
-    <span class="token keyword">public</span> <span class="token function">InputClearOnFocusChangeListener</span><span class="token punctuation">(</span>Context context<span class="token punctuation">,</span> EditText editText<span class="token punctuation">)</span><span class="token punctuation">{</span>
-        <span class="token keyword">this</span><span class="token punctuation">.</span>context <span class="token operator">=</span> context<span class="token punctuation">;</span>
-        <span class="token keyword">this</span><span class="token punctuation">.</span>editText <span class="token operator">=</span> editText<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
+    public InputClearOnFocusChangeListener(Context context, EditText editText){
+        this.context = context;
+        this.editText = editText;
+    }
 
-    <span class="token annotation punctuation">@Override</span>
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">onFocusChange</span><span class="token punctuation">(</span>View view<span class="token punctuation">,</span> <span class="token keyword">boolean</span> hasFocus<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token comment" spellcheck="true">//失去焦点时隐藏图标，取得焦点且输入框中有字符时，显示图标</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>hasFocus <span class="token operator">&amp;&amp;</span> editText<span class="token punctuation">.</span><span class="token function">getText</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">length</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">></span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-            editText<span class="token punctuation">.</span><span class="token function">setCompoundDrawablesRelativeWithIntrinsicBounds</span><span class="token punctuation">(</span>null<span class="token punctuation">,</span> null<span class="token punctuation">,</span> context<span class="token punctuation">.</span><span class="token function">getDrawable</span><span class="token punctuation">(</span>R<span class="token punctuation">.</span>drawable<span class="token punctuation">.</span>ic_cancel<span class="token punctuation">)</span><span class="token punctuation">,</span> null<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span><span class="token keyword">else</span> <span class="token punctuation">{</span>
-            editText<span class="token punctuation">.</span><span class="token function">setCompoundDrawablesRelativeWithIntrinsicBounds</span><span class="token punctuation">(</span>null<span class="token punctuation">,</span> null<span class="token punctuation">,</span> null<span class="token punctuation">,</span> null<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
+    @Override
+    public void onFocusChange(View view, boolean hasFocus) {
+        //失去焦点时隐藏图标，取得焦点且输入框中有字符时，显示图标
+        if (hasFocus &amp;&amp; editText.getText().length()&gt;0){
+            editText.setCompoundDrawablesRelativeWithIntrinsicBounds(null, null, context.getDrawable(R.drawable.ic_cancel), null);
+        }else {
+            editText.setCompoundDrawablesRelativeWithIntrinsicBounds(null, null, null, null);
+        }
+    }
+}
 </code></pre>
-<h2 id="在Activity中对相应的EditText绑定监听器"><a href="#在Activity中对相应的EditText绑定监听器" class="headerlink" title="在Activity中对相应的EditText绑定监听器"></a>在Activity中对相应的EditText绑定监听器</h2><pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//当输入框有字符输入时，显示清除图标，没有字符时隐藏清除图标</span>
-usernameInput<span class="token punctuation">.</span><span class="token function">addTextChangedListener</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">InputClearOnTextChangedListener</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">,</span> usernameInput<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">//根据点击位置设置清除图标的功能（drawableRight没有点击事件）</span>
-usernameInput<span class="token punctuation">.</span><span class="token function">setOnTouchListener</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">InputClearOnTouchListener</span><span class="token punctuation">(</span>usernameInput<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">//失去焦点时隐藏图标，取得焦点且输入框中有字符时，显示图标</span>
-usernameInput<span class="token punctuation">.</span><span class="token function">setOnFocusChangeListener</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">InputClearOnFocusChangeListener</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">,</span> usernameInput<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-passInput<span class="token punctuation">.</span><span class="token function">addTextChangedListener</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">InputClearOnTextChangedListener</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">,</span> passInput<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-passInput<span class="token punctuation">.</span><span class="token function">setOnTouchListener</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">InputClearOnTouchListener</span><span class="token punctuation">(</span>passInput<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-passInput<span class="token punctuation">.</span><span class="token function">setOnFocusChangeListener</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">InputClearOnFocusChangeListener</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">,</span> passInput<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<h2 id="在Activity中对相应的EditText绑定监听器"><a href="#在Activity中对相应的EditText绑定监听器" class="headerlink" title="在Activity中对相应的EditText绑定监听器"></a>在Activity中对相应的EditText绑定监听器</h2><pre><code class="java">//当输入框有字符输入时，显示清除图标，没有字符时隐藏清除图标
+usernameInput.addTextChangedListener(new InputClearOnTextChangedListener(this, usernameInput));
+//根据点击位置设置清除图标的功能（drawableRight没有点击事件）
+usernameInput.setOnTouchListener(new InputClearOnTouchListener(usernameInput));
+//失去焦点时隐藏图标，取得焦点且输入框中有字符时，显示图标
+usernameInput.setOnFocusChangeListener(new InputClearOnFocusChangeListener(this, usernameInput));
+passInput.addTextChangedListener(new InputClearOnTextChangedListener(this, passInput));
+passInput.setOnTouchListener(new InputClearOnTouchListener(passInput));
+passInput.setOnFocusChangeListener(new InputClearOnFocusChangeListener(this, passInput));
 </code></pre>
 <h1 id="实现效果"><a href="#实现效果" class="headerlink" title="实现效果"></a>实现效果</h1><p><img src="https://ws1.sinaimg.cn/large/e3417548gy1fifympn3b9g20go0tn7he.jpg" alt=""></p>
-<h1 id="代码改进"><a href="#代码改进" class="headerlink" title="代码改进"></a>代码改进</h1><h2 id="将三个监听器的代码写在一个类里，并且提供一个静态方法绑定监听器，减少代码量"><a href="#将三个监听器的代码写在一个类里，并且提供一个静态方法绑定监听器，减少代码量" class="headerlink" title="将三个监听器的代码写在一个类里，并且提供一个静态方法绑定监听器，减少代码量"></a>将三个监听器的代码写在一个类里，并且提供一个静态方法绑定监听器，减少代码量</h2><pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">InputClearListener</span> <span class="token keyword">implements</span> <span class="token class-name">View<span class="token punctuation">.</span>OnTouchListener</span><span class="token punctuation">,</span> TextWatcher<span class="token punctuation">,</span> View<span class="token punctuation">.</span>OnFocusChangeListener <span class="token punctuation">{</span>
-    <span class="token keyword">private</span> Context context<span class="token punctuation">;</span>
-    <span class="token keyword">private</span> EditText editText<span class="token punctuation">;</span>
+<h1 id="代码改进"><a href="#代码改进" class="headerlink" title="代码改进"></a>代码改进</h1><h2 id="将三个监听器的代码写在一个类里，并且提供一个静态方法绑定监听器，减少代码量"><a href="#将三个监听器的代码写在一个类里，并且提供一个静态方法绑定监听器，减少代码量" class="headerlink" title="将三个监听器的代码写在一个类里，并且提供一个静态方法绑定监听器，减少代码量"></a>将三个监听器的代码写在一个类里，并且提供一个静态方法绑定监听器，减少代码量</h2><pre><code class="java">public class InputClearListener implements View.OnTouchListener, TextWatcher, View.OnFocusChangeListener {
+    private Context context;
+    private EditText editText;
 
-    <span class="token keyword">public</span> <span class="token function">InputClearListener</span><span class="token punctuation">(</span>Context context<span class="token punctuation">,</span> EditText editText<span class="token punctuation">)</span><span class="token punctuation">{</span>
-        <span class="token keyword">this</span><span class="token punctuation">.</span>context <span class="token operator">=</span> context<span class="token punctuation">;</span>
-        <span class="token keyword">this</span><span class="token punctuation">.</span>editText <span class="token operator">=</span> editText<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
+    public InputClearListener(Context context, EditText editText){
+        this.context = context;
+        this.editText = editText;
+    }
 
-    <span class="token annotation punctuation">@Override</span>
-    <span class="token keyword">public</span> <span class="token keyword">boolean</span> <span class="token function">onTouch</span><span class="token punctuation">(</span>View view<span class="token punctuation">,</span> MotionEvent motionEvent<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token comment" spellcheck="true">//获取右侧图标</span>
-        Drawable drawableRight <span class="token operator">=</span> editText<span class="token punctuation">.</span><span class="token function">getCompoundDrawables</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-        <span class="token comment" spellcheck="true">//如果右侧没有图标，则不做处理</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>drawableRight <span class="token operator">==</span> null<span class="token punctuation">)</span><span class="token punctuation">{</span>
-            <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span><span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>motionEvent<span class="token punctuation">.</span><span class="token function">getAction</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">!=</span> MotionEvent<span class="token punctuation">.</span>ACTION_UP<span class="token punctuation">)</span><span class="token punctuation">{</span>
-            <span class="token comment" spellcheck="true">//如果不是按下事件，不做处理</span>
-            <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span><span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>motionEvent<span class="token punctuation">.</span><span class="token function">getX</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">></span> editText<span class="token punctuation">.</span><span class="token function">getWidth</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">-</span>editText<span class="token punctuation">.</span><span class="token function">getPaddingEnd</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">-</span>drawableRight<span class="token punctuation">.</span><span class="token function">getIntrinsicWidth</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-            <span class="token comment" spellcheck="true">//如果点击的位置在右侧图标处，则清空输入框</span>
-            editText<span class="token punctuation">.</span><span class="token function">setText</span><span class="token punctuation">(</span><span class="token string">""</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-        <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
+    @Override
+    public boolean onTouch(View view, MotionEvent motionEvent) {
+        //获取右侧图标
+        Drawable drawableRight = editText.getCompoundDrawables()[2];
+        //如果右侧没有图标，则不做处理
+        if (drawableRight == null){
+            return false;
+        }else if (motionEvent.getAction() != MotionEvent.ACTION_UP){
+            //如果不是按下事件，不做处理
+            return false;
+        }else if (motionEvent.getX() &gt; editText.getWidth()-editText.getPaddingEnd()-drawableRight.getIntrinsicWidth()){
+            //如果点击的位置在右侧图标处，则清空输入框
+            editText.setText(&quot;&quot;);
+        }
+        return false;
+    }
 
-    <span class="token annotation punctuation">@Override</span>
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">beforeTextChanged</span><span class="token punctuation">(</span>CharSequence charSequence<span class="token punctuation">,</span> <span class="token keyword">int</span> i<span class="token punctuation">,</span> <span class="token keyword">int</span> i1<span class="token punctuation">,</span> <span class="token keyword">int</span> i2<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    @Override
+    public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
 
-    <span class="token punctuation">}</span>
+    }
 
-    <span class="token annotation punctuation">@Override</span>
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">onTextChanged</span><span class="token punctuation">(</span>CharSequence charSequence<span class="token punctuation">,</span> <span class="token keyword">int</span> i<span class="token punctuation">,</span> <span class="token keyword">int</span> i1<span class="token punctuation">,</span> <span class="token keyword">int</span> i2<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    @Override
+    public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
 
-    <span class="token punctuation">}</span>
+    }
 
-    <span class="token annotation punctuation">@Override</span>
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">afterTextChanged</span><span class="token punctuation">(</span>Editable editable<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token comment" spellcheck="true">//当输入框有字符输入时，显示清除图标，没有字符时隐藏清除图标</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>editable<span class="token punctuation">.</span><span class="token function">length</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">></span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-            editText<span class="token punctuation">.</span><span class="token function">setCompoundDrawablesRelativeWithIntrinsicBounds</span><span class="token punctuation">(</span>null<span class="token punctuation">,</span> null<span class="token punctuation">,</span> context<span class="token punctuation">.</span><span class="token function">getDrawable</span><span class="token punctuation">(</span>R<span class="token punctuation">.</span>drawable<span class="token punctuation">.</span>ic_cancel<span class="token punctuation">)</span><span class="token punctuation">,</span> null<span class="token punctuation">)</span><span class="token punctuation">;</span>
-            <span class="token comment" spellcheck="true">//editText.setCompoundDrawablesWithIntrinsicBounds(null, null, context.getDrawable(R.drawable.ic_cancel), null);</span>
-        <span class="token punctuation">}</span><span class="token keyword">else</span> <span class="token punctuation">{</span>
-            editText<span class="token punctuation">.</span><span class="token function">setCompoundDrawablesRelativeWithIntrinsicBounds</span><span class="token punctuation">(</span>null<span class="token punctuation">,</span> null<span class="token punctuation">,</span> null<span class="token punctuation">,</span> null<span class="token punctuation">)</span><span class="token punctuation">;</span>
-            <span class="token comment" spellcheck="true">//editText.setCompoundDrawablesWithIntrinsicBounds(null, null, null, null);</span>
-        <span class="token punctuation">}</span>
-    <span class="token punctuation">}</span>
+    @Override
+    public void afterTextChanged(Editable editable) {
+        //当输入框有字符输入时，显示清除图标，没有字符时隐藏清除图标
+        if (editable.length()&gt;0){
+            editText.setCompoundDrawablesRelativeWithIntrinsicBounds(null, null, context.getDrawable(R.drawable.ic_cancel), null);
+            //editText.setCompoundDrawablesWithIntrinsicBounds(null, null, context.getDrawable(R.drawable.ic_cancel), null);
+        }else {
+            editText.setCompoundDrawablesRelativeWithIntrinsicBounds(null, null, null, null);
+            //editText.setCompoundDrawablesWithIntrinsicBounds(null, null, null, null);
+        }
+    }
 
-    <span class="token annotation punctuation">@Override</span>
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">onFocusChange</span><span class="token punctuation">(</span>View view<span class="token punctuation">,</span> <span class="token keyword">boolean</span> hasFocus<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token comment" spellcheck="true">//失去焦点时隐藏图标，取得焦点且输入框中有字符时，显示图标</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>hasFocus <span class="token operator">&amp;&amp;</span> editText<span class="token punctuation">.</span><span class="token function">getText</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">length</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">></span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-            editText<span class="token punctuation">.</span><span class="token function">setCompoundDrawablesRelativeWithIntrinsicBounds</span><span class="token punctuation">(</span>null<span class="token punctuation">,</span> null<span class="token punctuation">,</span> context<span class="token punctuation">.</span><span class="token function">getDrawable</span><span class="token punctuation">(</span>R<span class="token punctuation">.</span>drawable<span class="token punctuation">.</span>ic_cancel<span class="token punctuation">)</span><span class="token punctuation">,</span> null<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span><span class="token keyword">else</span> <span class="token punctuation">{</span>
-            editText<span class="token punctuation">.</span><span class="token function">setCompoundDrawablesRelativeWithIntrinsicBounds</span><span class="token punctuation">(</span>null<span class="token punctuation">,</span> null<span class="token punctuation">,</span> null<span class="token punctuation">,</span> null<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-    <span class="token punctuation">}</span>
+    @Override
+    public void onFocusChange(View view, boolean hasFocus) {
+        //失去焦点时隐藏图标，取得焦点且输入框中有字符时，显示图标
+        if (hasFocus &amp;&amp; editText.getText().length()&gt;0){
+            editText.setCompoundDrawablesRelativeWithIntrinsicBounds(null, null, context.getDrawable(R.drawable.ic_cancel), null);
+        }else {
+            editText.setCompoundDrawablesRelativeWithIntrinsicBounds(null, null, null, null);
+        }
+    }
 
-    <span class="token comment" spellcheck="true">/**
+    /**
      * 给EditText对象绑定监听器
      * @param context EditText所在的activity
      * @param editText 需要绑定监听器的EditText
-     */</span>
-    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">addListener</span><span class="token punctuation">(</span>Context context<span class="token punctuation">,</span> EditText editText<span class="token punctuation">)</span><span class="token punctuation">{</span>
-        InputClearListener listener <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">InputClearListener</span><span class="token punctuation">(</span>context<span class="token punctuation">,</span> editText<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        editText<span class="token punctuation">.</span><span class="token function">addTextChangedListener</span><span class="token punctuation">(</span>listener<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        editText<span class="token punctuation">.</span><span class="token function">setOnTouchListener</span><span class="token punctuation">(</span>listener<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        editText<span class="token punctuation">.</span><span class="token function">setOnFocusChangeListener</span><span class="token punctuation">(</span>listener<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
+     */
+    public static void addListener(Context context, EditText editText){
+        InputClearListener listener = new InputClearListener(context, editText);
+        editText.addTextChangedListener(listener);
+        editText.setOnTouchListener(listener);
+        editText.setOnFocusChangeListener(listener);
+    }
+}
 </code></pre>
-<h2 id="修改Activity中绑定监听器的代码"><a href="#修改Activity中绑定监听器的代码" class="headerlink" title="修改Activity中绑定监听器的代码"></a>修改Activity中绑定监听器的代码</h2><pre class=" language-java"><code class="language-java">InputClearListener<span class="token punctuation">.</span><span class="token function">addListener</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">,</span> usernameInput<span class="token punctuation">)</span><span class="token punctuation">;</span>
-InputClearListener<span class="token punctuation">.</span><span class="token function">addListener</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">,</span> passInput<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<h2 id="修改Activity中绑定监听器的代码"><a href="#修改Activity中绑定监听器的代码" class="headerlink" title="修改Activity中绑定监听器的代码"></a>修改Activity中绑定监听器的代码</h2><pre><code class="java">InputClearListener.addListener(this, usernameInput);
+InputClearListener.addListener(this, passInput);
 </code></pre>
 <p>代码看起来比以前的简洁了不少。</p>
 
@@ -790,7 +790,7 @@ InputClearListener<span class="token punctuation">.</span><span class="token fun
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/archives/2017/12/">December 2017<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/11/">November 2017<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/10/">October 2017<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/08/">August 2017<span class="sidebar_archives-count">15</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/03/">March 2017<span class="sidebar_archives-count">8</span></a>
+                <a class="sidebar_archives-link" href="/archives/2018/01/">January 2018<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/12/">December 2017<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/11/">November 2017<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/10/">October 2017<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/08/">August 2017<span class="sidebar_archives-count">15</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/03/">March 2017<span class="sidebar_archives-count">8</span></a>
             </ul>
         </li>
         
@@ -808,7 +808,7 @@ InputClearListener<span class="token punctuation">.</span><span class="token fun
             </a>
             <ul class="dropdown-menu">
                 <li>
-                <a class="sidebar_archives-link" href="/categories/Android碎片/">Android碎片<span class="sidebar_archives-count">16</span></a></li><li><a class="sidebar_archives-link" href="/categories/Android错误解决/">Android错误解决<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Java笔记/">Java笔记<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/Python/">Python<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/categories/Ubuntu/">Ubuntu<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/机器学习/">机器学习<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/杂记/">杂记<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/皮皮夏/">皮皮夏<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/皮皮夏的奇葩日记/">皮皮夏的奇葩日记<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/论文笔记/">论文笔记<span class="sidebar_archives-count">2</span></a>
+                <a class="sidebar_archives-link" href="/categories/Android碎片/">Android碎片<span class="sidebar_archives-count">16</span></a></li><li><a class="sidebar_archives-link" href="/categories/Android错误解决/">Android错误解决<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Java笔记/">Java笔记<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/Python/">Python<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/categories/Shell/">Shell<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/Ubuntu/">Ubuntu<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/categories/hexo/">hexo<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/机器学习/">机器学习<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/杂记/">杂记<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/皮皮夏/">皮皮夏<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/皮皮夏的奇葩日记/">皮皮夏的奇葩日记<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/论文笔记/">论文笔记<span class="sidebar_archives-count">2</span></a>
             </ul>
         </li>
         
@@ -844,7 +844,7 @@ InputClearListener<span class="token punctuation">.</span><span class="token fun
         <li>
             <a href="/archives">
                 Number of articles
-                <span class="sidebar-badge">38</span>
+                <span class="sidebar-badge">45</span>
             </a>
         </li>
         

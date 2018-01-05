@@ -287,7 +287,7 @@
 
     <!-- Custom Head -->
     
-<link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
+</head>
 
 
     
@@ -484,161 +484,161 @@
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
         <p>写了一个用户设置页面，这里做一个记录，作为以后的参考。布局的参数设置抽取出来写在了style文件里。</p>
-<h1 id="布局文件"><a href="#布局文件" class="headerlink" title="布局文件"></a>布局文件</h1><pre class=" language-xml"><code class="language-xml"><span class="token prolog">&lt;?xml version="1.0" encoding="utf-8"?></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>android.support.v7.widget.LinearLayoutCompat</span> <span class="token attr-name"><span class="token namespace">xmlns:</span>android</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>http://schemas.android.com/apk/res/android<span class="token punctuation">"</span></span>
-  <span class="token attr-name"><span class="token namespace">xmlns:</span>app</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>http://schemas.android.com/apk/res-auto<span class="token punctuation">"</span></span>
-  <span class="token attr-name"><span class="token namespace">xmlns:</span>tools</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>http://schemas.android.com/tools<span class="token punctuation">"</span></span>
-  <span class="token attr-name"><span class="token namespace">android:</span>orientation</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>vertical<span class="token punctuation">"</span></span>
-  <span class="token attr-name"><span class="token namespace">android:</span>background</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>@color/gray_f2<span class="token punctuation">"</span></span>
-  <span class="token attr-name"><span class="token namespace">android:</span>layout_width</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>match_parent<span class="token punctuation">"</span></span>
-  <span class="token attr-name"><span class="token namespace">android:</span>layout_height</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>match_parent<span class="token punctuation">"</span></span>
-  <span class="token attr-name"><span class="token namespace">tools:</span>context</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>com.example.lollipop.makeupapp.ui.activity.SettingActivity<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<h1 id="布局文件"><a href="#布局文件" class="headerlink" title="布局文件"></a>布局文件</h1><pre><code class="xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;android.support.v7.widget.LinearLayoutCompat xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+  xmlns:app=&quot;http://schemas.android.com/apk/res-auto&quot;
+  xmlns:tools=&quot;http://schemas.android.com/tools&quot;
+  android:orientation=&quot;vertical&quot;
+  android:background=&quot;@color/gray_f2&quot;
+  android:layout_width=&quot;match_parent&quot;
+  android:layout_height=&quot;match_parent&quot;
+  tools:context=&quot;com.example.lollipop.makeupapp.ui.activity.SettingActivity&quot;&gt;
 
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>android.support.v7.widget.Toolbar</span>
-  <span class="token attr-name"><span class="token namespace">android:</span>id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>@+id/toolbar<span class="token punctuation">"</span></span>
-  <span class="token attr-name"><span class="token namespace">android:</span>background</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>@color/white<span class="token punctuation">"</span></span>
-  <span class="token attr-name"><span class="token namespace">android:</span>layout_width</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>match_parent<span class="token punctuation">"</span></span>
-  <span class="token attr-name"><span class="token namespace">android:</span>layout_height</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>wrap_content<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>FrameLayout</span>
-  <span class="token attr-name"><span class="token namespace">android:</span>layout_width</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>match_parent<span class="token punctuation">"</span></span>
-  <span class="token attr-name"><span class="token namespace">android:</span>layout_height</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>match_parent<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>android.support.v7.widget.LinearLayoutCompat</span>
-  <span class="token attr-name"><span class="token namespace">android:</span>layout_gravity</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>center_vertical<span class="token punctuation">"</span></span>
-  <span class="token attr-name"><span class="token namespace">android:</span>orientation</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>horizontal<span class="token punctuation">"</span></span>
-  <span class="token attr-name"><span class="token namespace">android:</span>gravity</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>center<span class="token punctuation">"</span></span>
-  <span class="token attr-name"><span class="token namespace">android:</span>layout_width</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>wrap_content<span class="token punctuation">"</span></span>
-  <span class="token attr-name"><span class="token namespace">android:</span>layout_height</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>wrap_content<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>android.support.v7.widget.AppCompatImageView</span>
-  <span class="token attr-name"><span class="token namespace">app:</span>srcCompat</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>@drawable/ic_back<span class="token punctuation">"</span></span>
-  <span class="token attr-name"><span class="token namespace">android:</span>layout_width</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>wrap_content<span class="token punctuation">"</span></span>
-  <span class="token attr-name"><span class="token namespace">android:</span>layout_height</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>wrap_content<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>android.support.v7.widget.AppCompatTextView</span>
-  <span class="token attr-name"><span class="token namespace">android:</span>text</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>@string/me<span class="token punctuation">"</span></span>
-  <span class="token attr-name"><span class="token namespace">android:</span>layout_width</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>wrap_content<span class="token punctuation">"</span></span>
-  <span class="token attr-name"><span class="token namespace">android:</span>layout_height</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>wrap_content<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>android.support.v7.widget.LinearLayoutCompat</span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>android.support.v7.widget.AppCompatTextView</span>
-  <span class="token attr-name"><span class="token namespace">android:</span>gravity</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>center<span class="token punctuation">"</span></span>
-  <span class="token attr-name"><span class="token namespace">android:</span>text</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>@string/setting<span class="token punctuation">"</span></span>
-  <span class="token attr-name"><span class="token namespace">android:</span>textSize</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>20sp<span class="token punctuation">"</span></span>
-  <span class="token attr-name"><span class="token namespace">android:</span>layout_width</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>match_parent<span class="token punctuation">"</span></span>
-  <span class="token attr-name"><span class="token namespace">android:</span>layout_height</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>match_parent<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>FrameLayout</span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>android.support.v7.widget.Toolbar</span><span class="token punctuation">></span></span>
+  &lt;android.support.v7.widget.Toolbar
+  android:id=&quot;@+id/toolbar&quot;
+  android:background=&quot;@color/white&quot;
+  android:layout_width=&quot;match_parent&quot;
+  android:layout_height=&quot;wrap_content&quot;&gt;
+  &lt;FrameLayout
+  android:layout_width=&quot;match_parent&quot;
+  android:layout_height=&quot;match_parent&quot;&gt;
+  &lt;android.support.v7.widget.LinearLayoutCompat
+  android:layout_gravity=&quot;center_vertical&quot;
+  android:orientation=&quot;horizontal&quot;
+  android:gravity=&quot;center&quot;
+  android:layout_width=&quot;wrap_content&quot;
+  android:layout_height=&quot;wrap_content&quot;&gt;
+  &lt;android.support.v7.widget.AppCompatImageView
+  app:srcCompat=&quot;@drawable/ic_back&quot;
+  android:layout_width=&quot;wrap_content&quot;
+  android:layout_height=&quot;wrap_content&quot; /&gt;
+  &lt;android.support.v7.widget.AppCompatTextView
+  android:text=&quot;@string/me&quot;
+  android:layout_width=&quot;wrap_content&quot;
+  android:layout_height=&quot;wrap_content&quot; /&gt;
+  &lt;/android.support.v7.widget.LinearLayoutCompat&gt;
+  &lt;android.support.v7.widget.AppCompatTextView
+  android:gravity=&quot;center&quot;
+  android:text=&quot;@string/setting&quot;
+  android:textSize=&quot;20sp&quot;
+  android:layout_width=&quot;match_parent&quot;
+  android:layout_height=&quot;match_parent&quot; /&gt;
+  &lt;/FrameLayout&gt;
+  &lt;/android.support.v7.widget.Toolbar&gt;
 
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>android.support.v4.widget.NestedScrollView</span>
-  <span class="token attr-name"><span class="token namespace">android:</span>layout_width</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>match_parent<span class="token punctuation">"</span></span>
-  <span class="token attr-name"><span class="token namespace">android:</span>layout_height</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>match_parent<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>android.support.v7.widget.LinearLayoutCompat</span>
-  <span class="token attr-name"><span class="token namespace">android:</span>orientation</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>vertical<span class="token punctuation">"</span></span>
-  <span class="token attr-name"><span class="token namespace">android:</span>layout_width</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>match_parent<span class="token punctuation">"</span></span>
-  <span class="token attr-name"><span class="token namespace">android:</span>layout_height</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>match_parent<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>RelativeLayout</span> <span class="token attr-name"><span class="token namespace">android:</span>id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>@+id/account_manage<span class="token punctuation">"</span></span><span class="token style-attr language-css"><span class="token attr-name"> <span class="token attr-name">style</span></span><span class="token punctuation">="</span><span class="token attr-value">@style/wrap_layout</span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>android.support.v7.widget.AppCompatTextView</span>
-  <span class="token attr-name"><span class="token namespace">android:</span>text</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>@string/account_manage<span class="token punctuation">"</span></span><span class="token style-attr language-css"><span class="token attr-name">
-  <span class="token attr-name">style</span></span><span class="token punctuation">="</span><span class="token attr-value">@style/text_style</span><span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>android.support.v7.widget.AppCompatImageView</span><span class="token style-attr language-css"><span class="token attr-name"> <span class="token attr-name">style</span></span><span class="token punctuation">="</span><span class="token attr-value">@style/img_style</span><span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>RelativeLayout</span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>RelativeLayout</span> <span class="token attr-name"><span class="token namespace">android:</span>id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>@+id/personal_info<span class="token punctuation">"</span></span><span class="token style-attr language-css"><span class="token attr-name"> <span class="token attr-name">style</span></span><span class="token punctuation">="</span><span class="token attr-value">@style/bottom_layout</span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>android.support.v7.widget.AppCompatTextView</span>
-  <span class="token attr-name"><span class="token namespace">android:</span>text</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>@string/personal_info<span class="token punctuation">"</span></span><span class="token style-attr language-css"><span class="token attr-name">
-  <span class="token attr-name">style</span></span><span class="token punctuation">="</span><span class="token attr-value">@style/text_style</span><span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>android.support.v7.widget.AppCompatImageView</span><span class="token style-attr language-css"><span class="token attr-name"> <span class="token attr-name">style</span></span><span class="token punctuation">="</span><span class="token attr-value">@style/img_style</span><span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>RelativeLayout</span><span class="token punctuation">></span></span>
+  &lt;android.support.v4.widget.NestedScrollView
+  android:layout_width=&quot;match_parent&quot;
+  android:layout_height=&quot;match_parent&quot;&gt;
+  &lt;android.support.v7.widget.LinearLayoutCompat
+  android:orientation=&quot;vertical&quot;
+  android:layout_width=&quot;match_parent&quot;
+  android:layout_height=&quot;match_parent&quot;&gt;
+  &lt;RelativeLayout android:id=&quot;@+id/account_manage&quot; style=&quot;@style/wrap_layout&quot;&gt;
+  &lt;android.support.v7.widget.AppCompatTextView
+  android:text=&quot;@string/account_manage&quot;
+  style=&quot;@style/text_style&quot; /&gt;
+  &lt;android.support.v7.widget.AppCompatImageView style=&quot;@style/img_style&quot;/&gt;
+  &lt;/RelativeLayout&gt;
+  &lt;RelativeLayout android:id=&quot;@+id/personal_info&quot; style=&quot;@style/bottom_layout&quot;&gt;
+  &lt;android.support.v7.widget.AppCompatTextView
+  android:text=&quot;@string/personal_info&quot;
+  style=&quot;@style/text_style&quot; /&gt;
+  &lt;android.support.v7.widget.AppCompatImageView style=&quot;@style/img_style&quot;/&gt;
+  &lt;/RelativeLayout&gt;
 
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>RelativeLayout</span>
-  <span class="token attr-name"><span class="token namespace">android:</span>id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>@+id/dress_up<span class="token punctuation">"</span></span><span class="token style-attr language-css"><span class="token attr-name">
-  <span class="token attr-name">style</span></span><span class="token punctuation">="</span><span class="token attr-value">@style/wrap_layout</span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>android.support.v7.widget.AppCompatTextView</span>
-  <span class="token attr-name"><span class="token namespace">android:</span>text</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>@string/dress_up<span class="token punctuation">"</span></span><span class="token style-attr language-css"><span class="token attr-name">
-  <span class="token attr-name">style</span></span><span class="token punctuation">="</span><span class="token attr-value">@style/text_style</span><span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>android.support.v7.widget.AppCompatImageView</span><span class="token style-attr language-css"><span class="token attr-name"> <span class="token attr-name">style</span></span><span class="token punctuation">="</span><span class="token attr-value">@style/img_style</span><span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>RelativeLayout</span><span class="token punctuation">></span></span>
+  &lt;RelativeLayout
+  android:id=&quot;@+id/dress_up&quot;
+  style=&quot;@style/wrap_layout&quot;&gt;
+  &lt;android.support.v7.widget.AppCompatTextView
+  android:text=&quot;@string/dress_up&quot;
+  style=&quot;@style/text_style&quot; /&gt;
+  &lt;android.support.v7.widget.AppCompatImageView style=&quot;@style/img_style&quot;/&gt;
+  &lt;/RelativeLayout&gt;
 
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>RelativeLayout</span> <span class="token attr-name"><span class="token namespace">android:</span>id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>@+id/clean_cache<span class="token punctuation">"</span></span><span class="token style-attr language-css"><span class="token attr-name"> <span class="token attr-name">style</span></span><span class="token punctuation">="</span><span class="token attr-value">@style/wrap_layout</span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>android.support.v7.widget.AppCompatTextView</span>
-  <span class="token attr-name"><span class="token namespace">android:</span>text</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>@string/clean_cache<span class="token punctuation">"</span></span><span class="token style-attr language-css"><span class="token attr-name">
-  <span class="token attr-name">style</span></span><span class="token punctuation">="</span><span class="token attr-value">@style/text_style</span><span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>android.support.v7.widget.AppCompatImageView</span>
-  <span class="token attr-name"><span class="token namespace">android:</span>id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>@+id/img<span class="token punctuation">"</span></span><span class="token style-attr language-css"><span class="token attr-name">
-  <span class="token attr-name">style</span></span><span class="token punctuation">="</span><span class="token attr-value">@style/img_style</span><span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>TextView</span>
-  <span class="token attr-name"><span class="token namespace">android:</span>id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>@+id/cache<span class="token punctuation">"</span></span>
-  <span class="token attr-name"><span class="token namespace">android:</span>text</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>@string/cache_test<span class="token punctuation">"</span></span>
-  <span class="token attr-name"><span class="token namespace">android:</span>layout_centerVertical</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>true<span class="token punctuation">"</span></span>
-  <span class="token attr-name"><span class="token namespace">android:</span>layout_toStartOf</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>@id/img<span class="token punctuation">"</span></span>
-  <span class="token attr-name"><span class="token namespace">android:</span>layout_width</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>wrap_content<span class="token punctuation">"</span></span>
-  <span class="token attr-name"><span class="token namespace">android:</span>layout_height</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>wrap_content<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>RelativeLayout</span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>RelativeLayout</span> <span class="token attr-name"><span class="token namespace">android:</span>id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>@+id/advice<span class="token punctuation">"</span></span><span class="token style-attr language-css"><span class="token attr-name"> <span class="token attr-name">style</span></span><span class="token punctuation">="</span><span class="token attr-value">@style/mid_layout</span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>android.support.v7.widget.AppCompatTextView</span>
-  <span class="token attr-name"><span class="token namespace">android:</span>text</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>@string/advice<span class="token punctuation">"</span></span><span class="token style-attr language-css"><span class="token attr-name">
-  <span class="token attr-name">style</span></span><span class="token punctuation">="</span><span class="token attr-value">@style/text_style</span><span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>android.support.v7.widget.AppCompatImageView</span><span class="token style-attr language-css"><span class="token attr-name"> <span class="token attr-name">style</span></span><span class="token punctuation">="</span><span class="token attr-value">@style/img_style</span><span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>RelativeLayout</span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>RelativeLayout</span> <span class="token attr-name"><span class="token namespace">android:</span>id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>@+id/about_us<span class="token punctuation">"</span></span><span class="token style-attr language-css"><span class="token attr-name"> <span class="token attr-name">style</span></span><span class="token punctuation">="</span><span class="token attr-value">@style/bottom_layout</span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>android.support.v7.widget.AppCompatTextView</span>
-  <span class="token attr-name"><span class="token namespace">android:</span>text</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>@string/account_manage<span class="token punctuation">"</span></span><span class="token style-attr language-css"><span class="token attr-name">
-  <span class="token attr-name">style</span></span><span class="token punctuation">="</span><span class="token attr-value">@style/text_style</span><span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>android.support.v7.widget.AppCompatImageView</span><span class="token style-attr language-css"><span class="token attr-name"> <span class="token attr-name">style</span></span><span class="token punctuation">="</span><span class="token attr-value">@style/img_style</span><span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>RelativeLayout</span><span class="token punctuation">></span></span>
+  &lt;RelativeLayout android:id=&quot;@+id/clean_cache&quot; style=&quot;@style/wrap_layout&quot;&gt;
+  &lt;android.support.v7.widget.AppCompatTextView
+  android:text=&quot;@string/clean_cache&quot;
+  style=&quot;@style/text_style&quot; /&gt;
+  &lt;android.support.v7.widget.AppCompatImageView
+  android:id=&quot;@+id/img&quot;
+  style=&quot;@style/img_style&quot; /&gt;
+  &lt;TextView
+  android:id=&quot;@+id/cache&quot;
+  android:text=&quot;@string/cache_test&quot;
+  android:layout_centerVertical=&quot;true&quot;
+  android:layout_toStartOf=&quot;@id/img&quot;
+  android:layout_width=&quot;wrap_content&quot;
+  android:layout_height=&quot;wrap_content&quot; /&gt;
+  &lt;/RelativeLayout&gt;
+  &lt;RelativeLayout android:id=&quot;@+id/advice&quot; style=&quot;@style/mid_layout&quot;&gt;
+  &lt;android.support.v7.widget.AppCompatTextView
+  android:text=&quot;@string/advice&quot;
+  style=&quot;@style/text_style&quot; /&gt;
+  &lt;android.support.v7.widget.AppCompatImageView style=&quot;@style/img_style&quot;/&gt;
+  &lt;/RelativeLayout&gt;
+  &lt;RelativeLayout android:id=&quot;@+id/about_us&quot; style=&quot;@style/bottom_layout&quot;&gt;
+  &lt;android.support.v7.widget.AppCompatTextView
+  android:text=&quot;@string/account_manage&quot;
+  style=&quot;@style/text_style&quot; /&gt;
+  &lt;android.support.v7.widget.AppCompatImageView style=&quot;@style/img_style&quot;/&gt;
+  &lt;/RelativeLayout&gt;
 
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>android.support.v7.widget.AppCompatButton</span>
-  <span class="token attr-name"><span class="token namespace">android:</span>text</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>@string/exit_current_account<span class="token punctuation">"</span></span>
-  <span class="token attr-name"><span class="token namespace">android:</span>textColor</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>@color/red<span class="token punctuation">"</span></span>
-  <span class="token attr-name"><span class="token namespace">android:</span>layout_marginTop</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>40dp<span class="token punctuation">"</span></span>
-  <span class="token attr-name"><span class="token namespace">app:</span>theme</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>@style/LogoutButton<span class="token punctuation">"</span></span>
-  <span class="token attr-name"><span class="token namespace">android:</span>layout_width</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>match_parent<span class="token punctuation">"</span></span>
-  <span class="token attr-name"><span class="token namespace">android:</span>layout_height</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>wrap_content<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>android.support.v7.widget.LinearLayoutCompat</span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>android.support.v4.widget.NestedScrollView</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>android.support.v7.widget.LinearLayoutCompat</span><span class="token punctuation">></span></span>
+  &lt;android.support.v7.widget.AppCompatButton
+  android:text=&quot;@string/exit_current_account&quot;
+  android:textColor=&quot;@color/red&quot;
+  android:layout_marginTop=&quot;40dp&quot;
+  app:theme=&quot;@style/LogoutButton&quot;
+  android:layout_width=&quot;match_parent&quot;
+  android:layout_height=&quot;wrap_content&quot; /&gt;
+  &lt;/android.support.v7.widget.LinearLayoutCompat&gt;
+  &lt;/android.support.v4.widget.NestedScrollView&gt;
+&lt;/android.support.v7.widget.LinearLayoutCompat&gt;
 </code></pre>
-<h1 id="样式文件"><a href="#样式文件" class="headerlink" title="样式文件"></a>样式文件</h1><pre class=" language-xml"><code class="language-xml"><span class="token comment" spellcheck="true">&lt;!-- 共用样式 --></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>base_layout<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token style language-css">
-  &lt;item name=<span class="token string">"android:clickable"</span>>true&lt;/item>
-  &lt;item name=<span class="token string">"android:background"</span>>@drawable/item_click_selector&lt;/item>
-  &lt;item name=<span class="token string">"android:layout_width"</span>>match_parent&lt;/item>
-  &lt;item name=<span class="token string">"android:layout_height"</span>>wrap_content&lt;/item>
-  &lt;item name=<span class="token string">"android:paddingStart"</span>><span class="token number">10</span>dp&lt;/item>
-  &lt;item name=<span class="token string">"android:paddingEnd"</span>><span class="token number">10</span>dp&lt;/item>
-  &lt;item name=<span class="token string">"android:paddingTop"</span>><span class="token number">10</span>dp&lt;/item>
-  &lt;item name=<span class="token string">"android:paddingBottom"</span>><span class="token number">10</span>dp&lt;/item>
-</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span>
-<span class="token comment" spellcheck="true">&lt;!-- 外层样式 --></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>wrap_layout<span class="token punctuation">"</span></span> <span class="token attr-name">parent</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>base_layout<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token style language-css">
-  &lt;item name=<span class="token string">"android:layout_marginTop"</span>><span class="token number">20</span>dp&lt;/item>
-  &lt;item name=<span class="token string">"android:layout_marginBottom"</span>><span class="token number">0.5</span>dp&lt;/item>
-</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span>
-<span class="token comment" spellcheck="true">&lt;!-- 中间层样式 --></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>mid_layout<span class="token punctuation">"</span></span> <span class="token attr-name">parent</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>base_layout<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token style language-css">
-  &lt;item name=<span class="token string">"android:layout_marginBottom"</span>><span class="token number">0.5</span>dp&lt;/item>
-</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span>
-<span class="token comment" spellcheck="true">&lt;!-- 底层样式 --></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>bottom_layout<span class="token punctuation">"</span></span> <span class="token attr-name">parent</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>base_layout<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token style language-css">
-</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span>
-<span class="token comment" spellcheck="true">&lt;!-- 文本样式 --></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text_style<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token style language-css">
-  &lt;item name=<span class="token string">"android:layout_width"</span>>wrap_content&lt;/item>
-  &lt;item name=<span class="token string">"android:layout_height"</span>>wrap_content&lt;/item>
-  &lt;item name=<span class="token string">"android:textSize"</span>><span class="token number">18</span>sp&lt;/item>
-  &lt;item name=<span class="token string">"android:layout_alignParentStart"</span>>true&lt;/item>
-  &lt;item name=<span class="token string">"android:layout_centerVertical"</span>>true&lt;/item>
-</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span>
-<span class="token comment" spellcheck="true">&lt;!-- 图标样式 --></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>img_style<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token style language-css">
-  &lt;item name=<span class="token string">"android:layout_width"</span>>wrap_content&lt;/item>
-  &lt;item name=<span class="token string">"android:layout_height"</span>>wrap_content&lt;/item>
-  &lt;item name=<span class="token string">"android:layout_alignParentEnd"</span>>true&lt;/item>
-  &lt;item name=<span class="token string">"android:layout_centerVertical"</span>>true&lt;/item>
-  &lt;item name=<span class="token string">"android:src"</span>>@drawable/ic_next&lt;/item>
-</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span>
+<h1 id="样式文件"><a href="#样式文件" class="headerlink" title="样式文件"></a>样式文件</h1><pre><code class="xml">&lt;!-- 共用样式 --&gt;
+&lt;style name=&quot;base_layout&quot;&gt;
+  &lt;item name=&quot;android:clickable&quot;&gt;true&lt;/item&gt;
+  &lt;item name=&quot;android:background&quot;&gt;@drawable/item_click_selector&lt;/item&gt;
+  &lt;item name=&quot;android:layout_width&quot;&gt;match_parent&lt;/item&gt;
+  &lt;item name=&quot;android:layout_height&quot;&gt;wrap_content&lt;/item&gt;
+  &lt;item name=&quot;android:paddingStart&quot;&gt;10dp&lt;/item&gt;
+  &lt;item name=&quot;android:paddingEnd&quot;&gt;10dp&lt;/item&gt;
+  &lt;item name=&quot;android:paddingTop&quot;&gt;10dp&lt;/item&gt;
+  &lt;item name=&quot;android:paddingBottom&quot;&gt;10dp&lt;/item&gt;
+&lt;/style&gt;
+&lt;!-- 外层样式 --&gt;
+&lt;style name=&quot;wrap_layout&quot; parent=&quot;base_layout&quot;&gt;
+  &lt;item name=&quot;android:layout_marginTop&quot;&gt;20dp&lt;/item&gt;
+  &lt;item name=&quot;android:layout_marginBottom&quot;&gt;0.5dp&lt;/item&gt;
+&lt;/style&gt;
+&lt;!-- 中间层样式 --&gt;
+&lt;style name=&quot;mid_layout&quot; parent=&quot;base_layout&quot;&gt;
+  &lt;item name=&quot;android:layout_marginBottom&quot;&gt;0.5dp&lt;/item&gt;
+&lt;/style&gt;
+&lt;!-- 底层样式 --&gt;
+&lt;style name=&quot;bottom_layout&quot; parent=&quot;base_layout&quot;&gt;
+&lt;/style&gt;
+&lt;!-- 文本样式 --&gt;
+&lt;style name=&quot;text_style&quot;&gt;
+  &lt;item name=&quot;android:layout_width&quot;&gt;wrap_content&lt;/item&gt;
+  &lt;item name=&quot;android:layout_height&quot;&gt;wrap_content&lt;/item&gt;
+  &lt;item name=&quot;android:textSize&quot;&gt;18sp&lt;/item&gt;
+  &lt;item name=&quot;android:layout_alignParentStart&quot;&gt;true&lt;/item&gt;
+  &lt;item name=&quot;android:layout_centerVertical&quot;&gt;true&lt;/item&gt;
+&lt;/style&gt;
+&lt;!-- 图标样式 --&gt;
+&lt;style name=&quot;img_style&quot;&gt;
+  &lt;item name=&quot;android:layout_width&quot;&gt;wrap_content&lt;/item&gt;
+  &lt;item name=&quot;android:layout_height&quot;&gt;wrap_content&lt;/item&gt;
+  &lt;item name=&quot;android:layout_alignParentEnd&quot;&gt;true&lt;/item&gt;
+  &lt;item name=&quot;android:layout_centerVertical&quot;&gt;true&lt;/item&gt;
+  &lt;item name=&quot;android:src&quot;&gt;@drawable/ic_next&lt;/item&gt;
+&lt;/style&gt;
 </code></pre>
-<h1 id="点击效果"><a href="#点击效果" class="headerlink" title="点击效果"></a>点击效果</h1><pre class=" language-xml"><code class="language-xml"><span class="token prolog">&lt;?xml version="1.0" encoding="utf-8"?></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>selector</span> <span class="token attr-name"><span class="token namespace">xmlns:</span>android</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>http://schemas.android.com/apk/res/android<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>item</span> <span class="token attr-name"><span class="token namespace">android:</span>drawable</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>@color/white<span class="token punctuation">"</span></span> <span class="token attr-name"><span class="token namespace">android:</span>state_pressed</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>false<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>item</span> <span class="token attr-name"><span class="token namespace">android:</span>drawable</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>@color/gray_f2<span class="token punctuation">"</span></span> <span class="token attr-name"><span class="token namespace">android:</span>state_pressed</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>true<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>selector</span><span class="token punctuation">></span></span>
+<h1 id="点击效果"><a href="#点击效果" class="headerlink" title="点击效果"></a>点击效果</h1><pre><code class="xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;selector xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;&gt;
+  &lt;item android:drawable=&quot;@color/white&quot; android:state_pressed=&quot;false&quot;/&gt;
+  &lt;item android:drawable=&quot;@color/gray_f2&quot; android:state_pressed=&quot;true&quot; /&gt;
+&lt;/selector&gt;
 </code></pre>
 <h1 id="页面预览"><a href="#页面预览" class="headerlink" title="页面预览"></a>页面预览</h1><p><img src="https://ws1.sinaimg.cn/large/e3417548gy1fifxomg9sqj20u01hc0vo.jpg" alt=""></p>
 
@@ -766,7 +766,7 @@
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/archives/2017/12/">December 2017<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/11/">November 2017<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/10/">October 2017<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/08/">August 2017<span class="sidebar_archives-count">15</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/03/">March 2017<span class="sidebar_archives-count">8</span></a>
+                <a class="sidebar_archives-link" href="/archives/2018/01/">January 2018<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/12/">December 2017<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/11/">November 2017<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/10/">October 2017<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/08/">August 2017<span class="sidebar_archives-count">15</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/03/">March 2017<span class="sidebar_archives-count">8</span></a>
             </ul>
         </li>
         
@@ -784,7 +784,7 @@
             </a>
             <ul class="dropdown-menu">
                 <li>
-                <a class="sidebar_archives-link" href="/categories/Android碎片/">Android碎片<span class="sidebar_archives-count">16</span></a></li><li><a class="sidebar_archives-link" href="/categories/Android错误解决/">Android错误解决<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Java笔记/">Java笔记<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/Python/">Python<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/categories/Ubuntu/">Ubuntu<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/机器学习/">机器学习<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/杂记/">杂记<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/皮皮夏/">皮皮夏<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/皮皮夏的奇葩日记/">皮皮夏的奇葩日记<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/论文笔记/">论文笔记<span class="sidebar_archives-count">2</span></a>
+                <a class="sidebar_archives-link" href="/categories/Android碎片/">Android碎片<span class="sidebar_archives-count">16</span></a></li><li><a class="sidebar_archives-link" href="/categories/Android错误解决/">Android错误解决<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Java笔记/">Java笔记<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/Python/">Python<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/categories/Shell/">Shell<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/Ubuntu/">Ubuntu<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/categories/hexo/">hexo<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/机器学习/">机器学习<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/杂记/">杂记<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/皮皮夏/">皮皮夏<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/皮皮夏的奇葩日记/">皮皮夏的奇葩日记<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/论文笔记/">论文笔记<span class="sidebar_archives-count">2</span></a>
             </ul>
         </li>
         
@@ -820,7 +820,7 @@
         <li>
             <a href="/archives">
                 Number of articles
-                <span class="sidebar-badge">38</span>
+                <span class="sidebar-badge">45</span>
             </a>
         </li>
         

@@ -287,7 +287,7 @@
 
     <!-- Custom Head -->
     
-<link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
+</head>
 
 
     
@@ -483,90 +483,90 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <h1 id="整形"><a href="#整形" class="headerlink" title="整形"></a>整形</h1><pre class=" language-python"><code class="language-python">days_1 <span class="token operator">=</span> <span class="token number">365</span>
-days_2 <span class="token operator">=</span> <span class="token number">366</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>days_1<span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>type<span class="token punctuation">(</span>days_1<span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <h1 id="整形"><a href="#整形" class="headerlink" title="整形"></a>整形</h1><pre><code class="python">days_1 = 365
+days_2 = 366
+print(days_1)
+print(type(days_1))
 </code></pre>
 <p>outputs:</p>
 <pre><code>365
 &lt;class &#39;int&#39;&gt;
 </code></pre><p><code>type</code>函数可以查看变量的数据类型</p>
 <h1 id="浮点型"><a href="#浮点型" class="headerlink" title="浮点型"></a>浮点型</h1><p>浮点数可以用数学写法，如<code>1.23</code>，<code>3.14</code>，<code>-9.01</code>，等等。但是对于很大或很小的浮点数，就必须用科学计数法表示，把10用e替代，1.23x109就是<code>1.23e9</code>，或者<code>12.3e8</code>，0.000012可以写成<code>1.2e-5</code>，等等。</p>
-<pre class=" language-python"><code class="language-python">f1 <span class="token operator">=</span> <span class="token number">1.23e9</span>
-f2 <span class="token operator">=</span> <span class="token number">1.23e-5</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>f1<span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>f2<span class="token punctuation">)</span>
+<pre><code class="python">f1 = 1.23e9
+f2 = 1.23e-5
+print(f1)
+print(f2)
 </code></pre>
 <p>outputs:</p>
 <pre><code>1230000000.0
 1.23e-05
 </code></pre><h1 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h1><p>字符串用单引号<code>&#39;</code>或双引号<code>&quot;</code>括起来，如<code>&#39;hi&#39;</code>、<code>&quot;hello&quot;</code>。</p>
 <p>如果字符串内部包含<code>&#39;</code>或者<code>&quot;</code>，可以使用转义符<code>\</code>进行转义。</p>
-<pre class=" language-python"><code class="language-python"><span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Are you \"ok\""</span><span class="token punctuation">)</span>
+<pre><code class="python">print(&quot;Are you \&quot;ok\&quot;&quot;)
 </code></pre>
 <p>outputs:</p>
 <pre><code>Are you &quot;ok&quot;
 </code></pre><p>Python允许使用<code>r&#39;&#39;</code>或者<code>r&quot;&quot;</code>表示<code>&#39;&#39;</code>或<code>&quot;&quot;</code>内部的字符串默认不转义</p>
-<pre class=" language-python"><code class="language-python"><span class="token keyword">print</span><span class="token punctuation">(</span>r<span class="token string">"Are you \"ok\""</span><span class="token punctuation">)</span>
+<pre><code class="python">print(r&quot;Are you \&quot;ok\&quot;&quot;)
 </code></pre>
 <p>outputs:</p>
 <pre><code>Are you \&quot;ok\&quot;
 </code></pre><p>如果字符串有多行，可以用<code>&#39;&#39;&#39;...&#39;&#39;&#39;</code>的格式表示多行内容</p>
-<pre class=" language-python"><code class="language-python"><span class="token keyword">print</span><span class="token punctuation">(</span><span class="token triple-quoted-string string">'''line1
+<pre><code class="python">print(&#39;&#39;&#39;line1
 line2
-line3'''</span><span class="token punctuation">)</span>
+line3&#39;&#39;&#39;)
 </code></pre>
 <p>outputs:</p>
 <pre><code>line1
 line2
 line3
 </code></pre><p><code>len</code>函数可以查看字符串的长度（也就是字符串的字符数）</p>
-<pre class=" language-python"><code class="language-python">s <span class="token operator">=</span> <span class="token string">"hello"</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>len<span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<pre><code class="python">s = &quot;hello&quot;
+print(len(s))
 </code></pre>
 <p>outputs:</p>
 <pre><code>5
 </code></pre><p>Python中<strong>格式化</strong>输出字符串和C语言类似，用<code>%</code>实现，不同的是，Python中也用<code>%</code>连接要格式化的内容，而不是逗号。<code>%s</code>表示字符串替换，<code>%d</code>表示整数替换，<code>%f</code>表示浮点数替换，<code>%x</code>表示十六进制整数。</p>
-<pre class=" language-python"><code class="language-python">name <span class="token operator">=</span> <span class="token string">"Tom"</span>
-age <span class="token operator">=</span> <span class="token number">20</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"hello %s! Your age is %d"</span> <span class="token operator">%</span> <span class="token punctuation">(</span>name<span class="token punctuation">,</span> age<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<pre><code class="python">name = &quot;Tom&quot;
+age = 20
+print(&quot;hello %s! Your age is %d&quot; % (name, age))
 </code></pre>
 <p>outputs:</p>
 <pre><code>hello Tom! Your age is 20
 </code></pre><h1 id="布尔值"><a href="#布尔值" class="headerlink" title="布尔值"></a>布尔值</h1><p>只有<code>True</code>、<code>False</code>两种值</p>
-<pre class=" language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> <span class="token boolean">True</span>
-<span class="token boolean">True</span>
-<span class="token operator">>></span><span class="token operator">></span> <span class="token boolean">False</span>
-<span class="token boolean">False</span>
-<span class="token operator">>></span><span class="token operator">></span> <span class="token number">3</span> <span class="token operator">></span> <span class="token number">2</span>
-<span class="token boolean">True</span>
-<span class="token operator">>></span><span class="token operator">></span> <span class="token number">3</span> <span class="token operator">></span> <span class="token number">5</span>
-<span class="token boolean">False</span>
+<pre><code class="python">&gt;&gt;&gt; True
+True
+&gt;&gt;&gt; False
+False
+&gt;&gt;&gt; 3 &gt; 2
+True
+&gt;&gt;&gt; 3 &gt; 5
+False
 </code></pre>
 <p>布尔值的运算：<code>and</code>、<code>or</code>、<code>not</code></p>
 <h1 id="空值"><a href="#空值" class="headerlink" title="空值"></a>空值</h1><p>在Java语言里用<code>null</code>表示空值，而在Python里，空值用<code>None</code>表示</p>
-<h1 id="数据类型转换"><a href="#数据类型转换" class="headerlink" title="数据类型转换"></a>数据类型转换</h1><h2 id="转字符串"><a href="#转字符串" class="headerlink" title="转字符串"></a>转字符串</h2><pre class=" language-python"><code class="language-python">num <span class="token operator">=</span> <span class="token number">10</span>
-f_num <span class="token operator">=</span> <span class="token number">10.002</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>str<span class="token punctuation">(</span>num<span class="token punctuation">)</span><span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>str<span class="token punctuation">(</span>f_num<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<h1 id="数据类型转换"><a href="#数据类型转换" class="headerlink" title="数据类型转换"></a>数据类型转换</h1><h2 id="转字符串"><a href="#转字符串" class="headerlink" title="转字符串"></a>转字符串</h2><pre><code class="python">num = 10
+f_num = 10.002
+print(str(num))
+print(str(f_num))
 </code></pre>
 <p>outputs:</p>
 <pre><code>10
 10.002
-</code></pre><h2 id="转整形"><a href="#转整形" class="headerlink" title="转整形"></a>转整形</h2><pre class=" language-python"><code class="language-python">s <span class="token operator">=</span> <span class="token string">'123'</span>
-f_num <span class="token operator">=</span> <span class="token number">10.002</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>int<span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>int<span class="token punctuation">(</span>f_num<span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre><h2 id="转整形"><a href="#转整形" class="headerlink" title="转整形"></a>转整形</h2><pre><code class="python">s = &#39;123&#39;
+f_num = 10.002
+print(int(s))
+print(int(f_num))
 </code></pre>
 <p>outputs:</p>
 <pre><code>123
 10
 </code></pre><p>##转浮点型</p>
-<pre class=" language-python"><code class="language-python">s <span class="token operator">=</span> <span class="token string">'123.432'</span>
-num <span class="token operator">=</span> <span class="token number">10</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>float<span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>float<span class="token punctuation">(</span>num<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<pre><code class="python">s = &#39;123.432&#39;
+num = 10
+print(float(s))
+print(float(num))
 </code></pre>
 <p>outputs:</p>
 <pre><code>123.432
@@ -590,7 +590,7 @@ num <span class="token operator">=</span> <span class="token number">10</span>
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/2017/10/27/Python入坑笔记（三）：条件判断和循环/" id="post_nav-newer" class="prev-content">
+        <a href="/2017/10/27/Python入坑笔记（二）：list和tuple/" id="post_nav-newer" class="prev-content">
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
                 <i class="material-icons">arrow_back</i>
             </button>
@@ -696,7 +696,7 @@ num <span class="token operator">=</span> <span class="token number">10</span>
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/archives/2017/12/">December 2017<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/11/">November 2017<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/10/">October 2017<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/08/">August 2017<span class="sidebar_archives-count">15</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/03/">March 2017<span class="sidebar_archives-count">8</span></a>
+                <a class="sidebar_archives-link" href="/archives/2018/01/">January 2018<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/12/">December 2017<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/11/">November 2017<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/10/">October 2017<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/08/">August 2017<span class="sidebar_archives-count">15</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/03/">March 2017<span class="sidebar_archives-count">8</span></a>
             </ul>
         </li>
         
@@ -714,7 +714,7 @@ num <span class="token operator">=</span> <span class="token number">10</span>
             </a>
             <ul class="dropdown-menu">
                 <li>
-                <a class="sidebar_archives-link" href="/categories/Android碎片/">Android碎片<span class="sidebar_archives-count">16</span></a></li><li><a class="sidebar_archives-link" href="/categories/Android错误解决/">Android错误解决<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Java笔记/">Java笔记<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/Python/">Python<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/categories/Ubuntu/">Ubuntu<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/机器学习/">机器学习<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/杂记/">杂记<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/皮皮夏/">皮皮夏<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/皮皮夏的奇葩日记/">皮皮夏的奇葩日记<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/论文笔记/">论文笔记<span class="sidebar_archives-count">2</span></a>
+                <a class="sidebar_archives-link" href="/categories/Android碎片/">Android碎片<span class="sidebar_archives-count">16</span></a></li><li><a class="sidebar_archives-link" href="/categories/Android错误解决/">Android错误解决<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Java笔记/">Java笔记<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/Python/">Python<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/categories/Shell/">Shell<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/Ubuntu/">Ubuntu<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/categories/hexo/">hexo<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/机器学习/">机器学习<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/杂记/">杂记<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/皮皮夏/">皮皮夏<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/皮皮夏的奇葩日记/">皮皮夏的奇葩日记<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/论文笔记/">论文笔记<span class="sidebar_archives-count">2</span></a>
             </ul>
         </li>
         
@@ -750,7 +750,7 @@ num <span class="token operator">=</span> <span class="token number">10</span>
         <li>
             <a href="/archives">
                 Number of articles
-                <span class="sidebar-badge">38</span>
+                <span class="sidebar-badge">45</span>
             </a>
         </li>
         

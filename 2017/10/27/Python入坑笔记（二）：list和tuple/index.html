@@ -287,7 +287,7 @@
 
     <!-- Custom Head -->
     
-<link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
+</head>
 
 
     
@@ -485,46 +485,46 @@
     
         <h1 id="list"><a href="#list" class="headerlink" title="list"></a>list</h1><p>Python中的<code>list</code>有点类似其它语言的数组，也和Java的<code>List</code>很像，是一种有序的集合，不同的是Python的<code>list</code>可以接受不同类型的数据。</p>
 <h2 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h2><p><code>list</code>用<code>[]</code>符号包裹起来</p>
-<pre class=" language-python"><code class="language-python">months <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>type<span class="token punctuation">(</span>months<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<pre><code class="python">months = []
+print(type(months))
 </code></pre>
 <p>outputs:</p>
 <pre><code>&lt;class &#39;list&#39;&gt;
 </code></pre><p>可以初始化一个包含多个元素的<code>list</code>，元素之间用<code>,</code>隔开。可以用<code>len</code>函数获取<code>list</code>的长度。</p>
-<pre class=" language-python"><code class="language-python">months <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"January"</span><span class="token punctuation">,</span> <span class="token string">"February"</span><span class="token punctuation">]</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>months<span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"length:"</span><span class="token punctuation">,</span> len<span class="token punctuation">(</span>months<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<pre><code class="python">months = [&quot;January&quot;, &quot;February&quot;]
+print(months)
+print(&quot;length:&quot;, len(months))
 </code></pre>
 <p>outputs:</p>
 <pre><code>[&#39;January&#39;, &#39;February&#39;]
 length: 2
 </code></pre><p>一个<code>list</code>中还可以包含另一个<code>list</code>，就是<code>list</code>相互嵌套</p>
-<pre class=" language-python"><code class="language-python">months <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'January'</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">'February'</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">,</span> <span class="token number">99.99</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token string">'March'</span><span class="token punctuation">]</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>months<span class="token punctuation">)</span>
+<pre><code class="python">months = [&#39;January&#39;, [&#39;February&#39;, 20, 99.99], &#39;March&#39;]
+print(months)
 </code></pre>
 <p>outputs:</p>
 <pre><code>[&#39;January&#39;, [&#39;February&#39;, 20, 99.99], &#39;March&#39;]
 </code></pre><h2 id="添加和删除元素"><a href="#添加和删除元素" class="headerlink" title="添加和删除元素"></a>添加和删除元素</h2><p><code>append</code>函数可以在<code>list</code>末尾添加一个元素；<code>insert(i, element)</code>函数可以把元素插入到指定位置（<code>i</code>是索引）</p>
-<pre class=" language-python"><code class="language-python">months <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"January"</span><span class="token punctuation">,</span> <span class="token string">"February"</span><span class="token punctuation">]</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>months<span class="token punctuation">)</span>
-months<span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token string">"March"</span><span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>months<span class="token punctuation">)</span>
-months<span class="token punctuation">.</span>insert<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">99.99</span><span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>months<span class="token punctuation">)</span>
+<pre><code class="python">months = [&quot;January&quot;, &quot;February&quot;]
+print(months)
+months.append(&quot;March&quot;)
+print(months)
+months.insert(1, 99.99)
+print(months)
 </code></pre>
 <p>outputs:</p>
 <pre><code>[&#39;January&#39;, &#39;February&#39;]
 [&#39;January&#39;, &#39;February&#39;, &#39;March&#39;]
 [&#39;January&#39;, 99.99, &#39;February&#39;, &#39;March&#39;]
 </code></pre><p><code>pop</code>函数可以删除<code>list</code>末尾的元素，<code>pop(i)</code>可以删除索引位置为<code>i</code>的元素</p>
-<pre class=" language-python"><code class="language-python">months <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'January'</span><span class="token punctuation">,</span> <span class="token string">'February'</span><span class="token punctuation">,</span> <span class="token string">'March'</span><span class="token punctuation">]</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>months<span class="token punctuation">)</span>
-month <span class="token operator">=</span> months<span class="token punctuation">.</span>pop<span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>months<span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"删除了："</span> <span class="token operator">+</span> month<span class="token punctuation">)</span>
-month <span class="token operator">=</span> months<span class="token punctuation">.</span>pop<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>months<span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"删除了："</span> <span class="token operator">+</span> month<span class="token punctuation">)</span>
+<pre><code class="python">months = [&#39;January&#39;, &#39;February&#39;, &#39;March&#39;]
+print(months)
+month = months.pop()
+print(months)
+print(&quot;删除了：&quot; + month)
+month = months.pop(1)
+print(months)
+print(&quot;删除了：&quot; + month)
 </code></pre>
 <p>outputs:</p>
 <pre><code>[&#39;January&#39;, &#39;February&#39;, &#39;March&#39;]
@@ -534,63 +534,63 @@ month <span class="token operator">=</span> months<span class="token punctuation
 删除了：February
 </code></pre><h2 id="访问和替换元素"><a href="#访问和替换元素" class="headerlink" title="访问和替换元素"></a>访问和替换元素</h2><p>要访问<code>list</code>中的元素，可以像数组一样用下标来获取对应索引的元素，从<code>0</code>开始。</p>
 <p>索引可以为负数，来获取倒数第1个、倒数第二个…元素</p>
-<pre class=" language-python"><code class="language-python">months <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'January'</span><span class="token punctuation">,</span> <span class="token number">99.99</span><span class="token punctuation">,</span> <span class="token string">'February'</span><span class="token punctuation">,</span> <span class="token string">'March'</span><span class="token punctuation">]</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>months<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>months<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>months<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<pre><code class="python">months = [&#39;January&#39;, 99.99, &#39;February&#39;, &#39;March&#39;]
+print(months[2])
+print(months[-1])
+print(months[-4])
 </code></pre>
 <p>outputs:</p>
 <pre><code>February
 March
 January
 </code></pre><p>要替换<code>list</code>中的某个元素，只需要直接赋值给对应的索引位置</p>
-<pre class=" language-python"><code class="language-python">months <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'January'</span><span class="token punctuation">,</span> <span class="token number">99.99</span><span class="token punctuation">,</span> <span class="token string">'March'</span><span class="token punctuation">]</span>
-months<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">"February"</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>months<span class="token punctuation">)</span>
+<pre><code class="python">months = [&#39;January&#39;, 99.99, &#39;March&#39;]
+months[1] = &quot;February&quot;
+print(months)
 </code></pre>
 <p>outputs:</p>
 <pre><code>[&#39;January&#39;, &#39;February&#39;, &#39;March&#39;]
 </code></pre><p>对于嵌套的<code>list</code>，访问和替换可以用两个下标，也就是像二维数组一样</p>
-<pre class=" language-python"><code class="language-python">months <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'January'</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">'February'</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">,</span> <span class="token number">99.99</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token string">'March'</span><span class="token punctuation">]</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>months<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
-months<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">"hi"</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>months<span class="token punctuation">)</span>
+<pre><code class="python">months = [&#39;January&#39;, [&#39;February&#39;, 20, 99.99], &#39;March&#39;]
+print(months[1][0])
+months[1][2] = &quot;hi&quot;
+print(months)
 </code></pre>
 <p>outputs:</p>
 <pre><code>February
 [&#39;January&#39;, [&#39;February&#39;, 20, &#39;hi&#39;], &#39;March&#39;]
 </code></pre><h1 id="tuple"><a href="#tuple" class="headerlink" title="tuple"></a>tuple</h1><p><code>tuple</code>是另一种有序列表，叫做元组。<code>tuple</code>和<code>list</code>非常类似，不同的是<code>tuple</code>一旦初始化就不能修改。</p>
 <p><code>tuple</code>用<code>()</code>包裹，如果要定义一个空的<code>tuple</code>可以写成<code>()</code>，如果要定义只有1个元素的<code>tuple</code>，必须加一个逗号<code>,</code>来消除歧义（括号<code>()</code>既可以表示<code>tuple</code>又可以表示数学公式中的小括号），比如<code>(1,)</code></p>
-<pre class=" language-python"><code class="language-python">t <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span>
-t_none <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span>
-t_1 <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>t<span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>t_none<span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>t_1<span class="token punctuation">)</span>
+<pre><code class="python">t = (1, 2)
+t_none = ()
+t_1 = (1,)
+print(t)
+print(t_none)
+print(t_1)
 </code></pre>
 <p>outputs:</p>
 <pre><code>(1, 2)
 ()
 (1,)
 </code></pre><p>访问<code>tuple</code>中的元素，可以像<code>list</code>一样使用下标，但是没有<code>append</code>等可以改变它的方法，而且给<code>tuple</code>中的元素重新赋值也会报错。</p>
-<pre class=" language-python"><code class="language-python">t <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token string">"hi"</span><span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>t<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
-t<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">2</span>
+<pre><code class="python">t = (1, 2, &quot;hi&quot;)
+print(t[2])
+t[0] = 2
 </code></pre>
 <p>outputs:</p>
-<pre class=" language-python"><code class="language-python">hi
+<pre><code class="python">hi
 
-TypeError<span class="token punctuation">:</span> <span class="token string">'tuple'</span> object does <span class="token operator">not</span> support item assignment
+TypeError: &#39;tuple&#39; object does not support item assignment
 </code></pre>
 <p>因为<code>tuple</code>是不可变的，所以它相对<code>list</code>更加安全，在能用<code>tuple</code>处理的情况下，尽量不要使用<code>list</code>。</p>
 <p>这里也有一种办法让<code>tuple</code>看起来像是可变的，就是在<code>tuple</code>中存入一个<code>list</code>，<code>list</code>内部是可变的，可以指向任意元素，所以这里的<code>tuple</code>看起来像是可变的。事实上，<code>tuple</code>中存入<code>list</code>只是指向了这个<code>list</code>，如果让它指向其它的<code>list</code>就会报错，因为<code>tuple</code>本身还是不可变的。</p>
-<pre class=" language-python"><code class="language-python">li <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"Tom"</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">]</span>
-t <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token string">"hello"</span><span class="token punctuation">,</span> li<span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>t<span class="token punctuation">)</span>
-li<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">"Jerry"</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"after change:"</span><span class="token punctuation">,</span> t<span class="token punctuation">)</span>
-li_2 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"Jack"</span><span class="token punctuation">,</span> <span class="token number">18</span><span class="token punctuation">]</span>
-t<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> li_2
+<pre><code class="python">li = [&quot;Tom&quot;, 20]
+t = (&quot;hello&quot;, li)
+print(t)
+li[0] = &quot;Jerry&quot;
+print(&quot;after change:&quot;, t)
+li_2 = [&quot;Jack&quot;, 18]
+t[1] = li_2
 </code></pre>
 <p>outputs:</p>
 <pre><code>(&#39;hello&#39;, [&#39;Tom&#39;, 20])
@@ -616,7 +616,7 @@ TypeError: &#39;tuple&#39; object does not support item assignment
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/2017/11/21/论文笔记：Multi-Label Learning with Label Enhancement/" id="post_nav-newer" class="prev-content">
+        <a href="/2017/10/27/Python入坑笔记（三）：条件判断和循环/" id="post_nav-newer" class="prev-content">
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
                 <i class="material-icons">arrow_back</i>
             </button>
@@ -630,7 +630,7 @@ TypeError: &#39;tuple&#39; object does not support item assignment
 
     <!-- Next Nav -->
     
-        <a href="/2017/10/27/Python入坑笔记（三）：条件判断和循环/" id="post_nav-older" class="next-content">
+        <a href="/2017/10/27/Python入坑笔记（一）：基本数据类型/" id="post_nav-older" class="next-content">
             Older
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
@@ -722,7 +722,7 @@ TypeError: &#39;tuple&#39; object does not support item assignment
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/archives/2017/12/">December 2017<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/11/">November 2017<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/10/">October 2017<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/08/">August 2017<span class="sidebar_archives-count">15</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/03/">March 2017<span class="sidebar_archives-count">8</span></a>
+                <a class="sidebar_archives-link" href="/archives/2018/01/">January 2018<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/12/">December 2017<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/11/">November 2017<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/10/">October 2017<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/08/">August 2017<span class="sidebar_archives-count">15</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/03/">March 2017<span class="sidebar_archives-count">8</span></a>
             </ul>
         </li>
         
@@ -740,7 +740,7 @@ TypeError: &#39;tuple&#39; object does not support item assignment
             </a>
             <ul class="dropdown-menu">
                 <li>
-                <a class="sidebar_archives-link" href="/categories/Android碎片/">Android碎片<span class="sidebar_archives-count">16</span></a></li><li><a class="sidebar_archives-link" href="/categories/Android错误解决/">Android错误解决<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Java笔记/">Java笔记<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/Python/">Python<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/categories/Ubuntu/">Ubuntu<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/机器学习/">机器学习<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/杂记/">杂记<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/皮皮夏/">皮皮夏<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/皮皮夏的奇葩日记/">皮皮夏的奇葩日记<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/论文笔记/">论文笔记<span class="sidebar_archives-count">2</span></a>
+                <a class="sidebar_archives-link" href="/categories/Android碎片/">Android碎片<span class="sidebar_archives-count">16</span></a></li><li><a class="sidebar_archives-link" href="/categories/Android错误解决/">Android错误解决<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Java笔记/">Java笔记<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/Python/">Python<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/categories/Shell/">Shell<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/Ubuntu/">Ubuntu<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/categories/hexo/">hexo<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/机器学习/">机器学习<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/杂记/">杂记<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/皮皮夏/">皮皮夏<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/皮皮夏的奇葩日记/">皮皮夏的奇葩日记<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/论文笔记/">论文笔记<span class="sidebar_archives-count">2</span></a>
             </ul>
         </li>
         
@@ -776,7 +776,7 @@ TypeError: &#39;tuple&#39; object does not support item assignment
         <li>
             <a href="/archives">
                 Number of articles
-                <span class="sidebar-badge">38</span>
+                <span class="sidebar-badge">45</span>
             </a>
         </li>
         

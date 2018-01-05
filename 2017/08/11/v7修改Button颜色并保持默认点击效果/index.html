@@ -287,7 +287,7 @@
 
     <!-- Custom Head -->
     
-<link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
+</head>
 
 
     
@@ -486,31 +486,31 @@
         <p>通常我们修改Button的颜色会通过修改”android:background”属性来修改Button的背景颜色，但是这样做会丢失Button默认的点击效果，尤其是5.0以上的系统中的点击涟漪效果等。虽然我们可以通过使用selector来实现点击效果，但工作量很大，而且5.0自带的涟漪效果是很不错的。</p>
 <p><strong>修改方法</strong></p>
 <p>我们可以通过Style修改Button的颜色。AppCompat中提供的按钮有5中Style：</p>
-<pre class=" language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Widget.AppCompat.Button<span class="token punctuation">"</span></span> <span class="token attr-name">parent</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Base.Widget.AppCompat.Button<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
+<pre><code class="xml">&lt;style name=&quot;Widget.AppCompat.Button&quot; parent=&quot;Base.Widget.AppCompat.Button&quot;/&gt;
     默认的状态  背景颜色属性：colorButtonNormal 文字颜色属性:黑色
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Widget.AppCompat.Button.Colored<span class="token punctuation">"</span></span> <span class="token attr-name">parent</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Base.Widget.AppCompat.Button.Colored<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
+&lt;style name=&quot;Widget.AppCompat.Button.Colored&quot; parent=&quot;Base.Widget.AppCompat.Button.Colored&quot;/&gt;
     背景颜色属性:colorAccent 文字颜色属性:白色
 
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Widget.AppCompat.Button.Borderless<span class="token punctuation">"</span></span> <span class="token attr-name">parent</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Base.Widget.AppCompat.Button.Borderless<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
+&lt;style name=&quot;Widget.AppCompat.Button.Borderless&quot; parent=&quot;Base.Widget.AppCompat.Button.Borderless&quot;/&gt;
     背景颜色属性：透明  文字颜色属性：白色
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Widget.AppCompat.Button.Borderless.Colored<span class="token punctuation">"</span></span> <span class="token attr-name">parent</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Base.Widget.AppCompat.Button.Borderless.Colored<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
+&lt;style name=&quot;Widget.AppCompat.Button.Borderless.Colored&quot; parent=&quot;Base.Widget.AppCompat.Button.Borderless.Colored&quot;/&gt;
    背景颜色属性：透明 文字颜色属性：colorAccent
 
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Widget.AppCompat.Button.Small<span class="token punctuation">"</span></span> <span class="token attr-name">parent</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Base.Widget.AppCompat.Button.Small<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
+&lt;style name=&quot;Widget.AppCompat.Button.Small&quot; parent=&quot;Base.Widget.AppCompat.Button.Small&quot;/&gt;
       背景颜色属性：colorButtonNormal 文字颜色属性:黑色
 </code></pre>
 <p>我们可以在styles.xml文件中新建style，设置”buttonStyle”属性，通过相应的其他属性修改Button的背景色或文字颜色，然后在layout文件中需要修改的Button中通过”android:theme”属性引用新建的style。</p>
-<pre class=" language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>ButtonTheme<span class="token punctuation">"</span></span> <span class="token attr-name">parent</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>AppTheme<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token style language-css">
-     &lt;item name=<span class="token string">"buttonStyle"</span>>@style/Widget<span class="token number">.</span>AppCompat<span class="token number">.</span>Button&lt;/item>
-     &lt;item name=<span class="token string">"colorButtonNormal"</span>>@color/blue&lt;/item>
-</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span>
+<pre><code class="xml">&lt;style name=&quot;ButtonTheme&quot; parent=&quot;AppTheme&quot;&gt;
+     &lt;item name=&quot;buttonStyle&quot;&gt;@style/Widget.AppCompat.Button&lt;/item&gt;
+     &lt;item name=&quot;colorButtonNormal&quot;&gt;@color/blue&lt;/item&gt;
+&lt;/style&gt;
 </code></pre>
 <p>然后在layout文件中引用：</p>
-<pre class=" language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Button</span>
-    <span class="token attr-name"><span class="token namespace">android:</span>layout_width</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>wrap_content<span class="token punctuation">"</span></span>
-    <span class="token attr-name"><span class="token namespace">android:</span>layout_height</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>wrap_content<span class="token punctuation">"</span></span>
-    <span class="token attr-name"><span class="token namespace">android:</span>text</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>login<span class="token punctuation">"</span></span>
-    <span class="token attr-name"><span class="token namespace">android:</span>theme</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>@style/ButtonTheme<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+<pre><code class="xml">&lt;Button
+    android:layout_width=&quot;wrap_content&quot;
+    android:layout_height=&quot;wrap_content&quot;
+    android:text=&quot;login&quot;
+    android:theme=&quot;@style/ButtonTheme&quot; /&gt;
 </code></pre>
 
     
@@ -637,7 +637,7 @@
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/archives/2017/12/">December 2017<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/11/">November 2017<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/10/">October 2017<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/08/">August 2017<span class="sidebar_archives-count">15</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/03/">March 2017<span class="sidebar_archives-count">8</span></a>
+                <a class="sidebar_archives-link" href="/archives/2018/01/">January 2018<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/12/">December 2017<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/11/">November 2017<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/10/">October 2017<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/08/">August 2017<span class="sidebar_archives-count">15</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/03/">March 2017<span class="sidebar_archives-count">8</span></a>
             </ul>
         </li>
         
@@ -655,7 +655,7 @@
             </a>
             <ul class="dropdown-menu">
                 <li>
-                <a class="sidebar_archives-link" href="/categories/Android碎片/">Android碎片<span class="sidebar_archives-count">16</span></a></li><li><a class="sidebar_archives-link" href="/categories/Android错误解决/">Android错误解决<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Java笔记/">Java笔记<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/Python/">Python<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/categories/Ubuntu/">Ubuntu<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/机器学习/">机器学习<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/杂记/">杂记<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/皮皮夏/">皮皮夏<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/皮皮夏的奇葩日记/">皮皮夏的奇葩日记<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/论文笔记/">论文笔记<span class="sidebar_archives-count">2</span></a>
+                <a class="sidebar_archives-link" href="/categories/Android碎片/">Android碎片<span class="sidebar_archives-count">16</span></a></li><li><a class="sidebar_archives-link" href="/categories/Android错误解决/">Android错误解决<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Java笔记/">Java笔记<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/Python/">Python<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/categories/Shell/">Shell<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/Ubuntu/">Ubuntu<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/categories/hexo/">hexo<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/机器学习/">机器学习<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/杂记/">杂记<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/皮皮夏/">皮皮夏<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/皮皮夏的奇葩日记/">皮皮夏的奇葩日记<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/论文笔记/">论文笔记<span class="sidebar_archives-count">2</span></a>
             </ul>
         </li>
         
@@ -691,7 +691,7 @@
         <li>
             <a href="/archives">
                 Number of articles
-                <span class="sidebar-badge">38</span>
+                <span class="sidebar-badge">45</span>
             </a>
         </li>
         

@@ -287,7 +287,7 @@
 
     <!-- Custom Head -->
     
-<link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
+</head>
 
 
     
@@ -484,150 +484,150 @@
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
         <h1 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h1><h2 id="在build-gradle文件中添加依赖"><a href="#在build-gradle文件中添加依赖" class="headerlink" title="在build.gradle文件中添加依赖"></a>在build.gradle文件中添加依赖</h2><p><code>compile &#39;com.android.support:design:25.3.1&#39;</code></p>
-<h2 id="添加布局文件"><a href="#添加布局文件" class="headerlink" title="添加布局文件"></a>添加布局文件</h2><pre class=" language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>RelativeLayout</span> <span class="token attr-name"><span class="token namespace">xmlns:</span>android</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>http://schemas.android.com/apk/res/android<span class="token punctuation">"</span></span>
-  <span class="token attr-name"><span class="token namespace">xmlns:</span>app</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>http://schemas.android.com/apk/res-auto<span class="token punctuation">"</span></span>
-  <span class="token attr-name"><span class="token namespace">xmlns:</span>tools</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>http://schemas.android.com/tools<span class="token punctuation">"</span></span>
-  <span class="token attr-name"><span class="token namespace">android:</span>layout_width</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>match_parent<span class="token punctuation">"</span></span>
-  <span class="token attr-name"><span class="token namespace">android:</span>layout_height</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>match_parent<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<h2 id="添加布局文件"><a href="#添加布局文件" class="headerlink" title="添加布局文件"></a>添加布局文件</h2><pre><code class="xml">&lt;RelativeLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+  xmlns:app=&quot;http://schemas.android.com/apk/res-auto&quot;
+  xmlns:tools=&quot;http://schemas.android.com/tools&quot;
+  android:layout_width=&quot;match_parent&quot;
+  android:layout_height=&quot;match_parent&quot;&gt;
 
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>android.support.v4.view.ViewPager</span>
-  <span class="token attr-name"><span class="token namespace">android:</span>id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>@+id/view_pager<span class="token punctuation">"</span></span>
-  <span class="token attr-name"><span class="token namespace">android:</span>layout_width</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>match_parent<span class="token punctuation">"</span></span>
-  <span class="token attr-name"><span class="token namespace">android:</span>layout_height</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>wrap_content<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
+  &lt;android.support.v4.view.ViewPager
+  android:id=&quot;@+id/view_pager&quot;
+  android:layout_width=&quot;match_parent&quot;
+  android:layout_height=&quot;wrap_content&quot;/&gt;
 
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>android.support.design.widget.BottomNavigationView</span>
-  <span class="token attr-name"><span class="token namespace">android:</span>id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>@+id/bottom_navigation<span class="token punctuation">"</span></span>
-  <span class="token attr-name"><span class="token namespace">android:</span>layout_alignParentBottom</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>true<span class="token punctuation">"</span></span>
-  <span class="token attr-name"><span class="token namespace">android:</span>layout_width</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>match_parent<span class="token punctuation">"</span></span>
-  <span class="token attr-name"><span class="token namespace">android:</span>layout_height</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>wrap_content<span class="token punctuation">"</span></span>
-  <span class="token attr-name"><span class="token namespace">app:</span>itemTextColor</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>@drawable/navigation_selector<span class="token punctuation">"</span></span>
-  <span class="token attr-name"><span class="token namespace">app:</span>itemIconTint</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>@drawable/navigation_selector<span class="token punctuation">"</span></span>
-  <span class="token attr-name"><span class="token namespace">app:</span>itemBackground</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>@color/white<span class="token punctuation">"</span></span>
-  <span class="token attr-name"><span class="token namespace">app:</span>menu</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>@menu/navigation_item<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>RelativeLayout</span><span class="token punctuation">></span></span>
+  &lt;android.support.design.widget.BottomNavigationView
+  android:id=&quot;@+id/bottom_navigation&quot;
+  android:layout_alignParentBottom=&quot;true&quot;
+  android:layout_width=&quot;match_parent&quot;
+  android:layout_height=&quot;wrap_content&quot;
+  app:itemTextColor=&quot;@drawable/navigation_selector&quot;
+  app:itemIconTint=&quot;@drawable/navigation_selector&quot;
+  app:itemBackground=&quot;@color/white&quot;
+  app:menu=&quot;@menu/navigation_item&quot;/&gt;
+&lt;/RelativeLayout&gt;
 </code></pre>
-<h2 id="在res目录下新建menu文件夹，新建navigation-item-xml文件"><a href="#在res目录下新建menu文件夹，新建navigation-item-xml文件" class="headerlink" title="在res目录下新建menu文件夹，新建navigation_item.xml文件"></a>在res目录下新建menu文件夹，新建navigation_item.xml文件</h2><pre class=" language-xml"><code class="language-xml"><span class="token prolog">&lt;?xml version="1.0" encoding="utf-8" ?></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>menu</span> <span class="token attr-name"><span class="token namespace">xmlns:</span>android</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>http://schemas.android.com/apk/res/android<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>item</span>
-        <span class="token attr-name"><span class="token namespace">android:</span>id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>@+id/community<span class="token punctuation">"</span></span>
-        <span class="token attr-name"><span class="token namespace">android:</span>icon</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>@drawable/ic_home<span class="token punctuation">"</span></span>
-        <span class="token attr-name"><span class="token namespace">android:</span>title</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>@string/community<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
+<h2 id="在res目录下新建menu文件夹，新建navigation-item-xml文件"><a href="#在res目录下新建menu文件夹，新建navigation-item-xml文件" class="headerlink" title="在res目录下新建menu文件夹，新建navigation_item.xml文件"></a>在res目录下新建menu文件夹，新建navigation_item.xml文件</h2><pre><code class="xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; ?&gt;
+&lt;menu xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;&gt;
+    &lt;item
+        android:id=&quot;@+id/community&quot;
+        android:icon=&quot;@drawable/ic_home&quot;
+        android:title=&quot;@string/community&quot;/&gt;
 
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>item</span>
-        <span class="token attr-name"><span class="token namespace">android:</span>id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>@+id/message<span class="token punctuation">"</span></span>
-        <span class="token attr-name"><span class="token namespace">android:</span>icon</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>@drawable/ic_schedule<span class="token punctuation">"</span></span>
-        <span class="token attr-name"><span class="token namespace">android:</span>title</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>@string/schedule_table<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
+    &lt;item
+        android:id=&quot;@+id/message&quot;
+        android:icon=&quot;@drawable/ic_schedule&quot;
+        android:title=&quot;@string/schedule_table&quot;/&gt;
 
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>item</span>
-        <span class="token attr-name"><span class="token namespace">android:</span>id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>@+id/mine<span class="token punctuation">"</span></span>
-        <span class="token attr-name"><span class="token namespace">android:</span>icon</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>@drawable/ic_mine<span class="token punctuation">"</span></span>
-        <span class="token attr-name"><span class="token namespace">android:</span>title</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>@string/me<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>menu</span><span class="token punctuation">></span></span>
+    &lt;item
+        android:id=&quot;@+id/mine&quot;
+        android:icon=&quot;@drawable/ic_mine&quot;
+        android:title=&quot;@string/me&quot;/&gt;
+&lt;/menu&gt;
 </code></pre>
 <p>这个文件对应于BottomNavigationView的”app:menu”属性，指定了导航栏的菜单图标与标题</p>
-<h2 id="在drawable文件夹下新建navigation-selector-xml文件"><a href="#在drawable文件夹下新建navigation-selector-xml文件" class="headerlink" title="在drawable文件夹下新建navigation_selector.xml文件"></a>在drawable文件夹下新建navigation_selector.xml文件</h2><pre class=" language-xml"><code class="language-xml"><span class="token prolog">&lt;?xml version="1.0" encoding="utf-8"?></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>selector</span> <span class="token attr-name"><span class="token namespace">xmlns:</span>android</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>http://schemas.android.com/apk/res/android<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>item</span> <span class="token attr-name"><span class="token namespace">android:</span>color</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>@color/gray_35<span class="token punctuation">"</span></span> <span class="token attr-name"><span class="token namespace">android:</span>state_checked</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>false<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>item</span> <span class="token attr-name"><span class="token namespace">android:</span>color</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>@color/colorAccent<span class="token punctuation">"</span></span> <span class="token attr-name"><span class="token namespace">android:</span>state_checked</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>true<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>selector</span><span class="token punctuation">></span></span>
+<h2 id="在drawable文件夹下新建navigation-selector-xml文件"><a href="#在drawable文件夹下新建navigation-selector-xml文件" class="headerlink" title="在drawable文件夹下新建navigation_selector.xml文件"></a>在drawable文件夹下新建navigation_selector.xml文件</h2><pre><code class="xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;selector xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;&gt;
+    &lt;item android:color=&quot;@color/gray_35&quot; android:state_checked=&quot;false&quot;/&gt;
+    &lt;item android:color=&quot;@color/colorAccent&quot; android:state_checked=&quot;true&quot;/&gt;
+&lt;/selector&gt;
 </code></pre>
 <p>这个文件可用于BottomNavigationView的背景、字体、图标颜色等的显示。</p>
-<h1 id="与ViewPager交互使用"><a href="#与ViewPager交互使用" class="headerlink" title="与ViewPager交互使用"></a>与ViewPager交互使用</h1><h2 id="新建MyFragmentPagerAdapter继承自FragmentPagerAdapter"><a href="#新建MyFragmentPagerAdapter继承自FragmentPagerAdapter" class="headerlink" title="新建MyFragmentPagerAdapter继承自FragmentPagerAdapter"></a>新建MyFragmentPagerAdapter继承自FragmentPagerAdapter</h2><pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MyFragmentPagerAdapter</span> <span class="token keyword">extends</span> <span class="token class-name">FragmentPagerAdapter</span> <span class="token punctuation">{</span>
-    <span class="token keyword">private</span> List<span class="token operator">&lt;</span>Fragment<span class="token operator">></span> fragmentList<span class="token punctuation">;</span>
+<h1 id="与ViewPager交互使用"><a href="#与ViewPager交互使用" class="headerlink" title="与ViewPager交互使用"></a>与ViewPager交互使用</h1><h2 id="新建MyFragmentPagerAdapter继承自FragmentPagerAdapter"><a href="#新建MyFragmentPagerAdapter继承自FragmentPagerAdapter" class="headerlink" title="新建MyFragmentPagerAdapter继承自FragmentPagerAdapter"></a>新建MyFragmentPagerAdapter继承自FragmentPagerAdapter</h2><pre><code class="java">public class MyFragmentPagerAdapter extends FragmentPagerAdapter {
+    private List&lt;Fragment&gt; fragmentList;
 
-    <span class="token keyword">public</span> <span class="token function">MyFragmentPagerAdapter</span><span class="token punctuation">(</span>FragmentManager fm<span class="token punctuation">,</span> List<span class="token operator">&lt;</span>Fragment<span class="token operator">></span> fragmentList<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">super</span><span class="token punctuation">(</span>fm<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">this</span><span class="token punctuation">.</span>fragmentList <span class="token operator">=</span> fragmentList<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
+    public MyFragmentPagerAdapter(FragmentManager fm, List&lt;Fragment&gt; fragmentList) {
+        super(fm);
+        this.fragmentList = fragmentList;
+    }
 
-    <span class="token annotation punctuation">@Override</span>
-    <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">getCount</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">return</span> fragmentList<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
+    @Override
+    public int getCount() {
+        return fragmentList.size();
+    }
 
-    <span class="token annotation punctuation">@Override</span>
-    <span class="token keyword">public</span> Fragment <span class="token function">getItem</span><span class="token punctuation">(</span><span class="token keyword">int</span> position<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">return</span> fragmentList<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>position<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
+    @Override
+    public Fragment getItem(int position) {
+        return fragmentList.get(position);
+    }
 
-    <span class="token annotation punctuation">@Override</span>
-    <span class="token keyword">public</span> <span class="token keyword">long</span> <span class="token function">getItemId</span><span class="token punctuation">(</span><span class="token keyword">int</span> position<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">return</span> position<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
+    @Override
+    public long getItemId(int position) {
+        return position;
+    }
+}
 </code></pre>
-<h2 id="在Activity中引用"><a href="#在Activity中引用" class="headerlink" title="在Activity中引用"></a>在Activity中引用</h2><pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MainActivity</span> <span class="token keyword">extends</span> <span class="token class-name">AppCompatActivity</span> <span class="token punctuation">{</span>
-    <span class="token keyword">private</span> List<span class="token operator">&lt;</span>Fragment<span class="token operator">></span> fragmentList <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">private</span> FragmentPagerAdapter fragmentPagerAdapter<span class="token punctuation">;</span>
-    <span class="token keyword">private</span> MenuItem menuItem<span class="token punctuation">;</span>
+<h2 id="在Activity中引用"><a href="#在Activity中引用" class="headerlink" title="在Activity中引用"></a>在Activity中引用</h2><pre><code class="java">public class MainActivity extends AppCompatActivity {
+    private List&lt;Fragment&gt; fragmentList = new ArrayList&lt;&gt;();
+    private FragmentPagerAdapter fragmentPagerAdapter;
+    private MenuItem menuItem;
 
-    <span class="token comment" spellcheck="true">//三个Fragment</span>
-    <span class="token keyword">private</span> CommunityFragment communityFragment<span class="token punctuation">;</span>
-    <span class="token keyword">private</span> HomeFragment homeFragment<span class="token punctuation">;</span>
-    <span class="token keyword">private</span> ScheduleFragment scheduleFragment<span class="token punctuation">;</span>
+    //三个Fragment
+    private CommunityFragment communityFragment;
+    private HomeFragment homeFragment;
+    private ScheduleFragment scheduleFragment;
 
-    <span class="token annotation punctuation">@BindView</span><span class="token punctuation">(</span>R<span class="token punctuation">.</span>id<span class="token punctuation">.</span>view_pager<span class="token punctuation">)</span>
-    ViewPager viewPager<span class="token punctuation">;</span>
-    <span class="token annotation punctuation">@BindView</span><span class="token punctuation">(</span>R<span class="token punctuation">.</span>id<span class="token punctuation">.</span>bottom_navigation<span class="token punctuation">)</span>
-    BottomNavigationView bottomNavigationView<span class="token punctuation">;</span>
+    @BindView(R.id.view_pager)
+    ViewPager viewPager;
+    @BindView(R.id.bottom_navigation)
+    BottomNavigationView bottomNavigationView;
 
-    <span class="token annotation punctuation">@Override</span>
-    <span class="token keyword">protected</span> <span class="token keyword">void</span> <span class="token function">onCreate</span><span class="token punctuation">(</span>Bundle savedInstanceState<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">super</span><span class="token punctuation">.</span><span class="token function">onCreate</span><span class="token punctuation">(</span>savedInstanceState<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token function">setContentView</span><span class="token punctuation">(</span>R<span class="token punctuation">.</span>layout<span class="token punctuation">.</span>activity_main<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        ButterKnife<span class="token punctuation">.</span><span class="token function">bind</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        ButterKnife.bind(this);
 
-        communityFragment <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">CommunityFragment</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        homeFragment <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">HomeFragment</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        scheduleFragment <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ScheduleFragment</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        fragmentList<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>communityFragment<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        fragmentList<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>homeFragment<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        fragmentList<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>scheduleFragment<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        communityFragment = new CommunityFragment();
+        homeFragment = new HomeFragment();
+        scheduleFragment = new ScheduleFragment();
+        fragmentList.add(communityFragment);
+        fragmentList.add(homeFragment);
+        fragmentList.add(scheduleFragment);
 
-        fragmentPagerAdapter <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">MyFragmentPagerAdapter</span><span class="token punctuation">(</span><span class="token function">getSupportFragmentManager</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> fragmentList<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        viewPager<span class="token punctuation">.</span><span class="token function">setAdapter</span><span class="token punctuation">(</span>fragmentPagerAdapter<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        fragmentPagerAdapter = new MyFragmentPagerAdapter(getSupportFragmentManager(), fragmentList);
+        viewPager.setAdapter(fragmentPagerAdapter);
 
-        bottomNavigationView<span class="token punctuation">.</span><span class="token function">setOnNavigationItemSelectedListener</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">BottomNavigationView<span class="token punctuation">.</span>OnNavigationItemSelectedListener</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            <span class="token annotation punctuation">@Override</span>
-            <span class="token keyword">public</span> <span class="token keyword">boolean</span> <span class="token function">onNavigationItemSelected</span><span class="token punctuation">(</span><span class="token annotation punctuation">@NonNull</span> MenuItem item<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-                <span class="token keyword">switch</span> <span class="token punctuation">(</span>item<span class="token punctuation">.</span><span class="token function">getItemId</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-                    <span class="token keyword">case</span> R<span class="token punctuation">.</span>id<span class="token punctuation">.</span>community<span class="token operator">:</span>
-                        viewPager<span class="token punctuation">.</span><span class="token function">setCurrentItem</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-                        <span class="token keyword">break</span><span class="token punctuation">;</span>
-                    <span class="token keyword">case</span> R<span class="token punctuation">.</span>id<span class="token punctuation">.</span>schedule<span class="token operator">:</span>
-                        viewPager<span class="token punctuation">.</span><span class="token function">setCurrentItem</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-                        <span class="token keyword">break</span><span class="token punctuation">;</span>
-                    <span class="token keyword">case</span> R<span class="token punctuation">.</span>id<span class="token punctuation">.</span>me<span class="token operator">:</span>
-                        viewPager<span class="token punctuation">.</span><span class="token function">setCurrentItem</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-                        <span class="token keyword">break</span><span class="token punctuation">;</span>
-                <span class="token punctuation">}</span>
-                <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
-            <span class="token punctuation">}</span>
-        <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()){
+                    case R.id.community:
+                        viewPager.setCurrentItem(0);
+                        break;
+                    case R.id.schedule:
+                        viewPager.setCurrentItem(1);
+                        break;
+                    case R.id.me:
+                        viewPager.setCurrentItem(2);
+                        break;
+                }
+                return false;
+            }
+        });
 
-        viewPager<span class="token punctuation">.</span><span class="token function">addOnPageChangeListener</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">ViewPager<span class="token punctuation">.</span>OnPageChangeListener</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            <span class="token annotation punctuation">@Override</span>
-            <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">onPageScrolled</span><span class="token punctuation">(</span><span class="token keyword">int</span> position<span class="token punctuation">,</span> <span class="token keyword">float</span> positionOffset<span class="token punctuation">,</span> <span class="token keyword">int</span> positionOffsetPixels<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
 
-            <span class="token punctuation">}</span>
+            }
 
-            <span class="token annotation punctuation">@Override</span>
-            <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">onPageSelected</span><span class="token punctuation">(</span><span class="token keyword">int</span> position<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-                <span class="token keyword">if</span> <span class="token punctuation">(</span>menuItem <span class="token operator">!=</span> null<span class="token punctuation">)</span><span class="token punctuation">{</span>
-                    menuItem<span class="token punctuation">.</span><span class="token function">setChecked</span><span class="token punctuation">(</span><span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-                <span class="token punctuation">}</span><span class="token keyword">else</span> <span class="token punctuation">{</span>
-                    menuItem <span class="token operator">=</span> bottomNavigationView<span class="token punctuation">.</span><span class="token function">getMenu</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getItem</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">setChecked</span><span class="token punctuation">(</span><span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-                <span class="token punctuation">}</span>
-                menuItem <span class="token operator">=</span> bottomNavigationView<span class="token punctuation">.</span><span class="token function">getMenu</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getItem</span><span class="token punctuation">(</span>position<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">setChecked</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            <span class="token punctuation">}</span>
+            @Override
+            public void onPageSelected(int position) {
+                if (menuItem != null){
+                    menuItem.setChecked(false);
+                }else {
+                    menuItem = bottomNavigationView.getMenu().getItem(0).setChecked(false);
+                }
+                menuItem = bottomNavigationView.getMenu().getItem(position).setChecked(true);
+            }
 
-            <span class="token annotation punctuation">@Override</span>
-            <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">onPageScrollStateChanged</span><span class="token punctuation">(</span><span class="token keyword">int</span> state<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            @Override
+            public void onPageScrollStateChanged(int state) {
 
-            <span class="token punctuation">}</span>
-        <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
+            }
+        });
+    }
+}
 </code></pre>
 <h1 id="效果如下"><a href="#效果如下" class="headerlink" title="效果如下"></a>效果如下</h1><p><img src="https://ws1.sinaimg.cn/large/e3417548gy1fifw0m0rwpg20go0tnwmm.jpg" alt=""></p>
 
@@ -755,7 +755,7 @@
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/archives/2017/12/">December 2017<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/11/">November 2017<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/10/">October 2017<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/08/">August 2017<span class="sidebar_archives-count">15</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/03/">March 2017<span class="sidebar_archives-count">8</span></a>
+                <a class="sidebar_archives-link" href="/archives/2018/01/">January 2018<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/12/">December 2017<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/11/">November 2017<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/10/">October 2017<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/08/">August 2017<span class="sidebar_archives-count">15</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/03/">March 2017<span class="sidebar_archives-count">8</span></a>
             </ul>
         </li>
         
@@ -773,7 +773,7 @@
             </a>
             <ul class="dropdown-menu">
                 <li>
-                <a class="sidebar_archives-link" href="/categories/Android碎片/">Android碎片<span class="sidebar_archives-count">16</span></a></li><li><a class="sidebar_archives-link" href="/categories/Android错误解决/">Android错误解决<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Java笔记/">Java笔记<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/Python/">Python<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/categories/Ubuntu/">Ubuntu<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/机器学习/">机器学习<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/杂记/">杂记<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/皮皮夏/">皮皮夏<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/皮皮夏的奇葩日记/">皮皮夏的奇葩日记<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/论文笔记/">论文笔记<span class="sidebar_archives-count">2</span></a>
+                <a class="sidebar_archives-link" href="/categories/Android碎片/">Android碎片<span class="sidebar_archives-count">16</span></a></li><li><a class="sidebar_archives-link" href="/categories/Android错误解决/">Android错误解决<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Java笔记/">Java笔记<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/Python/">Python<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/categories/Shell/">Shell<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/Ubuntu/">Ubuntu<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/categories/hexo/">hexo<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/机器学习/">机器学习<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/杂记/">杂记<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/皮皮夏/">皮皮夏<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/皮皮夏的奇葩日记/">皮皮夏的奇葩日记<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/论文笔记/">论文笔记<span class="sidebar_archives-count">2</span></a>
             </ul>
         </li>
         
@@ -809,7 +809,7 @@
         <li>
             <a href="/archives">
                 Number of articles
-                <span class="sidebar-badge">38</span>
+                <span class="sidebar-badge">45</span>
             </a>
         </li>
         
