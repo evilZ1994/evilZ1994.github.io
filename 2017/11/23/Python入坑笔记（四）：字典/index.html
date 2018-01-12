@@ -43,9 +43,9 @@
     
 
     <!-- Favicons -->
-    <link rel="icon shortcut" type="image/ico" href="/img/favicon.png">
-    <link rel="icon" sizes="192x192" href="/img/favicon.png">
-    <link rel="apple-touch-icon" href="/img/favicon.png">
+    <link rel="icon shortcut" type="image/ico" href="/img/favicon.ico">
+    <link rel="icon" sizes="192x192" href="/img/favicon.ico">
+    <link rel="apple-touch-icon" href="/img/favicon.ico">
 
     <!--iOS -->
     <meta name="apple-mobile-web-app-title" content="Title">
@@ -66,7 +66,7 @@
     <meta property="og:url" content="http://yoursite.com">
     <meta property="og:type" content="blog">
     <meta property="og:title" content="Python入坑笔记（四）：字典 | Mr.Z&#39;s Blog">
-    <meta property="og:image" content="/img/favicon.png" />
+    <meta property="og:image" content="/img/favicon.ico" />
     <meta property="og:description" content="呀！发现一只会写代码的猪！">
     <meta property="og:article:tag" content="python"> 
 
@@ -78,7 +78,7 @@
     <!-- The Twitter Card protocol -->
     <meta name="twitter:title" content="Python入坑笔记（四）：字典 | Mr.Z&#39;s Blog">
     <meta name="twitter:description" content="呀！发现一只会写代码的猪！">
-    <meta name="twitter:image" content="/img/favicon.png">
+    <meta name="twitter:image" content="/img/favicon.ico">
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:url" content="http://yoursite.com" />
 
@@ -99,14 +99,14 @@
     "publisher": {
         "@type": "Organization",
         "name": "Mr.Z&#39;s Blog",
-        "logo": "/img/favicon.png"
+        "logo": "/img/favicon.ico"
     },
     "author": {
         "@type": "Person",
         "name": "Zhu Yuexin",
         "image": {
             "@type": "ImageObject",
-            "url": "/img/favicon.png"
+            "url": "/img/favicon.ico"
         },
         "description": "Hi, nice to meet you"
     },
@@ -286,6 +286,196 @@
     
 
     <!-- Custom Head -->
+    
+        
+            <style>
+  canvas {
+    width: 100%;
+    background: white;
+    position: fixed;
+    z-index: -1;
+    
+    }
+  </style>
+  <script>
+    //var autoplay = getURLParameter('autoplay');
+    var autoplay = true;
+    var lastError = "";
+    var playing = !!autoplay;
+    function receiveMessage(event){
+      var origin = event.origin || event.originalEvent.origin;
+      console.log("Received message from " + origin);
+      if(origin !== "http://dwitter.localhost:8000"
+        && origin !== "http://localhost:8000"
+        && origin !== "https://localhost:8000"
+        && origin !== "https://www.dwitter.net"
+        && origin !== "https://dwitter.net"){
+          return;
+        }
+      console.log("Message was: " + event.data);
+
+      switch (event.data) {
+        case "toggle":
+          playing ? pauseDemo() : playDemo();
+          break;
+        case "play":
+          playDemo();
+          break;
+        case "pause":
+          pauseDemo();
+          break;
+        case "showStats":
+          setStatsVisibility(true);
+          break;
+        case "hideStats":
+          setStatsVisibility(false);
+          break;
+      }
+
+      if(event.data.substring(0, 4) == "code"){
+        var code = event.data.substring(5,event.data.length);
+        newCode(code);
+      }
+    }
+
+    function displayError(e) {
+      if(lastError != e){
+        lastError = e;
+        parent.postMessage({
+          'type': 'error',
+          'error': ""+e,
+          'location': window.location.href
+        },"*");
+      }
+    }
+
+    function newCode(code) {
+        try {
+          eval("u = function(t){"+code+"\n};");
+        } catch (e) {
+          u = function(t){
+            throw e;
+          };
+          throw e;
+        }
+        displayError("");
+        reset();
+    }
+
+    function pauseDemo(){
+      if(!playing){
+        return;
+      }
+
+      pauseTime = +new Date();
+
+      playing = false;
+    }
+
+    function playDemo(){
+      if(playing){
+        return
+      }
+
+      playing = true;
+      requestAnimationFrame(loop);
+    }
+    var timeOffset = 0;
+
+    window.addEventListener("message", receiveMessage, false);
+
+    function getURLParameter(name) {
+      return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search)||[,""])[1].replace(/\+/g, '%20'))||null
+    }
+
+    function setStatsVisibility(visible) {
+      document.getElementById('stats').style.visibility = visible ? 'visible' : 'hidden';
+    }
+  </script>
+  
+  
+  <script type="text/javascript">
+    (function(f,e){"object"===typeof exports&&"undefined"!==typeof module?module.exports=e():"function"===typeof define&&define.amd?define(e):f.Stats=e()})(this,function(){var f=function(){function e(a){c.appendChild(a.dom);return a}function u(a){for(var d=0;d<c.children.length;d++)c.children[d].style.display=d===a?"block":"none";l=a}var l=0,c=document.createElement("div");c.style.cssText="position:fixed;top:0;right:0;opacity:0.9;z-index:10000";var k=(performance||Date).now(),g=k,a=0,r=e(new f.Panel("FPS","#0ff","#002")),h=e(new f.Panel("MS","#0f0","#020"));if(self.performance&&self.performance.memory)var t=e(new f.Panel("MB","#f08","#201"));u(0);return{REVISION:16,dom:c,addPanel:e,showPanel:u,begin:function(){k=(performance||Date).now()},end:function(){a++;var c=(performance||Date).now();h.update(c-k,200);if(c>g+1E3&&(r.update(1E3*a/(c-g),100),g=c,a=0,t)){var d=performance.memory;t.update(d.usedJSHeapSize/1048576,d.jsHeapSizeLimit/1048576)}return c},update:function(){k=this.end()},domElement:c,setMode:u}};f.Panel=function(e,f,l){var c=Infinity,k=0,g=Math.round,a=g(window.devicePixelRatio||1),r=80*a,h=48*a,t=3*a,v=2*a,d=3*a,m=15*a,n=74*a,p=30*a,q=document.createElement("canvas");q.width=r;q.height=h;q.style.cssText="width:80px;height:48px";var b=q.getContext("2d");b.font="bold "+9*a+"px Helvetica,Arial,sans-serif";b.textBaseline="top";b.fillStyle=l;b.fillRect(0,0,r,h);b.fillStyle=f;b.fillText(e,t,v);b.fillRect(d,m,n,p);b.fillStyle=l;b.globalAlpha=.9;b.fillRect(d,m,n,p);return{dom:q,update:function(h,w){c=Math.min(c,h);k=Math.max(k,h);b.fillStyle=l;b.globalAlpha=1;b.fillRect(0,0,r,m);b.fillStyle=f;b.fillText(g(h)+" "+e+" ("+g(c)+"-"+g(k)+")",t,v);b.drawImage(q,d+a,m,n-a,p,d,m,n-a,p);b.fillRect(d+n-a,m,a,p);b.fillStyle=l;b.globalAlpha=.9;b.fillRect(d+n-a,m,a,g((1-h/w)*p))}}};return f});
+  </script>
+
+        
+            <canvas id="c" width="2000" height="1080"></canvas>
+<script>
+  function createStats() {
+    var stats = new Stats();
+    stats.showPanel(0);
+    stats.dom.setAttribute('id', 'stats');
+    document.body.appendChild(stats.dom);
+    return stats;
+  }
+
+  var stats = createStats();
+  setStatsVisibility(false);
+
+  var c = document.querySelector("#c");
+  c.width = 1920;
+  c.height = 1080;
+  var S = Math.sin;
+  var C = Math.cos;
+  var T = Math.tan;
+  function R(r,g,b,a) {
+    a = a === undefined ? 1 : a;
+    return "rgba("+(r|0)+","+(g|0)+","+(b|0)+","+a+")";
+    };
+  var x = c.getContext("2d");
+  var time = 0;
+  var frame = 0;
+  function u(t) {
+     x.fillRect(0,0,i=w=c.width=2e3,w);
+     x.fillStyle="#FFFFFF";
+     x.fillRect(0,0,w,w);
+     x.fillStyle="#03A9F4";
+     for(;i--;)T=t*99,z=w*99/(i-T%1),a=i+T-T%1,x.fillRect(C(a*a)*z+1e3,C(a*w)*z+500,w/i,w/i)
+    }
+  function loop() {
+    stats = stats || createStats();
+
+    if (playing){
+      requestAnimationFrame(loop);
+    }
+    time = frame/60;
+    if(time * 60 | 0 == frame - 1){
+      time += 0.000001;
+    }
+    frame++;
+
+    try {
+      stats.begin();
+      u(time);
+      stats.end();
+      displayError("");
+    } catch (e) {
+      displayError(e);
+      throw e;
+    }
+  }
+  if(autoplay) {
+      loop();
+  }
+
+  function reset(){
+    c = document.querySelector("#c");
+    c.width = 1920;
+    c.height = 1080;
+    S = Math.sin;
+    C = Math.cos;
+    T = Math.tan;
+    R = function(r,g,b,a) {
+      a = a === undefined ? 1 : a;
+      return "rgba("+(r|0)+","+(g|0)+","+(b|0)+","+a+")";
+    };
+    x = c.getContext("2d");
+    time = 0;
+    frame = 0;
+  }
+  </script>
+
+        
     
 <link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
 
@@ -771,7 +961,7 @@ Marie Curie lived in paris
         <ul id="settings-dropdown" class="dropdown-menu">
             
                 <li>
-                    <a href="yuexinzh@gmail.com" target="_blank" title="Email Me">
+                    <a href="mailto: yuexinzh@gmail.com" target="_blank" title="Email Me">
                         
                             <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
                         
@@ -807,7 +997,7 @@ Marie Curie lived in paris
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/archives/2018/01/">January 2018<span class="sidebar_archives-count">10</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/12/">December 2017<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/11/">November 2017<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/10/">October 2017<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/08/">August 2017<span class="sidebar_archives-count">15</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/03/">March 2017<span class="sidebar_archives-count">6</span></a>
+                <a class="sidebar_archives-link" href="/archives/2018/01/">January 2018<span class="sidebar_archives-count">8</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/12/">December 2017<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/11/">November 2017<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/10/">October 2017<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/08/">August 2017<span class="sidebar_archives-count">15</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/03/">March 2017<span class="sidebar_archives-count">7</span></a>
             </ul>
         </li>
         
