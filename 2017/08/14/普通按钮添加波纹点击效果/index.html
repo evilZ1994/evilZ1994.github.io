@@ -108,7 +108,7 @@
             "@type": "ImageObject",
             "url": "/img/favicon.ico"
         },
-        "description": "Hi, nice to meet you"
+        "description": "The keyboard is typing on my fingertip,<br>The code is writing me,<br>My eyes are flashing in the cursor, and you are missing me."
     },
     "headline": "普通按钮添加波纹点击效果",
     "url": "http://yoursite.com/2017/08/14/普通按钮添加波纹点击效果/index.html",
@@ -426,11 +426,48 @@
   var time = 0;
   var frame = 0;
   function u(t) {
-     x.fillRect(0,0,i=w=c.width=2e3,w);
+     /*x.fillRect(0,0,i=w=c.width=2e3,w);
      x.fillStyle="#FFFFFF";
      x.fillRect(0,0,w,w);
      x.fillStyle="#03A9F4";
-     for(;i--;)T=t*99,z=w*99/(i-T%1),a=i+T-T%1,x.fillRect(C(a*a)*z+1e3,C(a*w)*z+500,w/i,w/i)
+     for(;i--;)T=t*99,z=w*99/(i-T%1),a=i+T-T%1,x.fillRect(C(a*a)*z+1e3,C(a*w)*z+500,w/i,w/i)*/
+
+     x.fillStyle="#FFFFFF";
+      x.fillRect(0,0,2e3,2e3);
+      x.fillStyle="#03A9F4";
+      x.font="30px Cursive";
+      for(i=100;i--;){
+        Z=130-(t*10+i)%130;
+        s=280/Z;
+        var str_index=i%7;
+        var love_words;
+        switch(str_index) {
+          case 0:
+            love_words="I ♥ 皮皮夏";
+            break;
+          case 1:
+            love_words="Do you love me ?"
+            break;
+          case 2:
+            love_words="I love you";
+            break;
+          case 3:
+            love_words="You are so pretty !";
+            break;
+          case 4:
+            love_words="I ♥ you";
+            break;
+          case 5:
+            love_words="Love You Forever";
+            break;
+          case 6:
+            love_words="♥";
+            break;
+          default:
+            love_words="♥";
+        }
+        x.fillText(love_words,960+1/Z*(-99+i*6e72%199)*700,540+(-70+i*8e61%140)/Z*700);
+      }
     }
   function loop() {
     stats = stats || createStats();
