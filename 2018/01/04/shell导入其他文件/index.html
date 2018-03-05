@@ -36,7 +36,7 @@
     <meta name="theme-color" content="#0097A7">
     <meta name="author" content="Zhu Yuexin">
     <meta name="description" itemprop="description" content="呀！发现一只会写代码的猪！">
-    <meta name="keywords" content="null,ubuntu,linux,shell">
+    <meta name="keywords" content="null,ubuntu,shell,linux">
 
     <!-- Site Verification -->
     
@@ -68,7 +68,7 @@
     <meta property="og:title" content="shell导入其他文件 | Mr.Z&#39;s Blog">
     <meta property="og:image" content="/img/favicon.ico" />
     <meta property="og:description" content="呀！发现一只会写代码的猪！">
-    <meta property="og:article:tag" content="ubuntu"> <meta property="og:article:tag" content="linux"> <meta property="og:article:tag" content="shell"> 
+    <meta property="og:article:tag" content="ubuntu"> <meta property="og:article:tag" content="shell"> <meta property="og:article:tag" content="linux"> 
 
     
         <meta property="article:published_time" content="Jan 04, 2018" />
@@ -401,115 +401,117 @@
         
             <canvas id="c" width="2000" height="1080"></canvas>
 <script>
-  function createStats() {
-    var stats = new Stats();
-    stats.showPanel(0);
-    stats.dom.setAttribute('id', 'stats');
-    document.body.appendChild(stats.dom);
-    return stats;
-  }
+  # function createStats() {
+  #   var stats = new Stats();
+  #   stats.showPanel(0);
+  #   stats.dom.setAttribute('id', 'stats');
+  #   document.body.appendChild(stats.dom);
+  #   return stats;
+  # }
 
-  var stats = createStats();
-  setStatsVisibility(false);
+  # var stats = createStats();
+  # setStatsVisibility(false);
 
-  var c = document.querySelector("#c");
-  c.width = 1920;
-  c.height = 1080;
-  var S = Math.sin;
-  var C = Math.cos;
-  var T = Math.tan;
-  function R(r,g,b,a) {
-    a = a === undefined ? 1 : a;
-    return "rgba("+(r|0)+","+(g|0)+","+(b|0)+","+a+")";
-    };
-  var x = c.getContext("2d");
-  var time = 0;
-  var frame = 0;
-  function u(t) {
-     /*x.fillRect(0,0,i=w=c.width=2e3,w);
-     x.fillStyle="#FFFFFF";
-     x.fillRect(0,0,w,w);
-     x.fillStyle="#03A9F4";
-     for(;i--;)T=t*99,z=w*99/(i-T%1),a=i+T-T%1,x.fillRect(C(a*a)*z+1e3,C(a*w)*z+500,w/i,w/i)*/
+  # var c = document.querySelector("#c");
+  # c.width = 1920;
+  # c.height = 1080;
+  # var S = Math.sin;
+  # var C = Math.cos;
+  # var T = Math.tan;
+  # function R(r,g,b,a) {
+  #   a = a === undefined ? 1 : a;
+  #   return "rgba("+(r|0)+","+(g|0)+","+(b|0)+","+a+")";
+  #   };
+  # var x = c.getContext("2d");
+  # var time = 0;
+  # var frame = 0;
+  # function u(t) {
+  #    /*x.fillRect(0,0,i=w=c.width=2e3,w);
+  #    x.fillStyle="#FFFFFF";
+  #    x.fillRect(0,0,w,w);
+  #    x.fillStyle="#03A9F4";
+  #    for(;i--;)T=t*99,z=w*99/(i-T%1),a=i+T-T%1,x.fillRect(C(a*a)*z+1e3,C(a*w)*z+500,w/i,w/i)*/
 
-     x.fillStyle="#FFFFFF";
-      x.fillRect(0,0,2e3,2e3);
-      x.fillStyle="#03A9F4";
-      x.font="20px Comic Sans MS";
-      for(i=100;i--;){
-        Z=130-(t*10+i)%130;
-        s=280/Z;
-        var str_index=i%7;
-        var love_words;
-        switch(str_index) {
-          case 0:
-            love_words="I ♥ 皮皮夏";
-            break;
-          case 1:
-            love_words="Do you love me ?"
-            break;
-          case 2:
-            love_words="I love you";
-            break;
-          case 3:
-            love_words="You are so pretty !";
-            break;
-          case 4:
-            love_words="I ♥ you";
-            break;
-          case 5:
-            love_words="Love You Forever";
-            break;
-          case 6:
-            love_words="♥";
-            break;
-          default:
-            love_words="♥";
-        }
-        x.fillText(love_words,960+1/Z*(-99+i*6e72%199)*700,540+(-70+i*8e61%140)/Z*700);
-      }
-    }
-  function loop() {
-    stats = stats || createStats();
+  #    x.fillStyle="#FFFFFF";
+  #     x.fillRect(0,0,2e3,2e3);
+  #     x.fillStyle="#03A9F4";
+  #     x.font="20px Comic Sans MS";
+  #     for(i=100;i--;){
+  #       Z=130-(t*10+i)%130;
+  #       s=280/Z;
+  #       var str_index=i%7;
+  #       var love_words;
+  #       switch(str_index) {
+  #         case 0:
+  #           love_words="I ♥ 皮皮夏";
+  #           break;
+  #         case 1:
+  #           love_words="Do you love me ?"
+  #           break;
+  #         case 2:
+  #           love_words="I love you";
+  #           break;
+  #         case 3:
+  #           love_words="You are so pretty !";
+  #           break;
+  #         case 4:
+  #           love_words="I ♥ you";
+  #           break;
+  #         case 5:
+  #           love_words="Love You Forever";
+  #           break;
+  #         case 6:
+  #           love_words="♥";
+  #           break;
+  #         default:
+  #           love_words="♥";
+  #       }
+  #       x.fillText(love_words,960+1/Z*(-99+i*6e72%199)*700,540+(-70+i*8e61%140)/Z*700);
+  #     }
+  #   }
+  # function loop() {
+  #   stats = stats || createStats();
 
-    if (playing){
-      requestAnimationFrame(loop);
-    }
-    time = frame/60;
-    if(time * 60 | 0 == frame - 1){
-      time += 0.000001;
-    }
-    frame++;
+  #   if (playing){
+  #     requestAnimationFrame(loop);
+  #   }
+  #   time = frame/60;
+  #   if(time * 60 | 0 == frame - 1){
+  #     time += 0.000001;
+  #   }
+  #   frame++;
 
-    try {
-      stats.begin();
-      u(time);
-      stats.end();
-      displayError("");
-    } catch (e) {
-      displayError(e);
-      throw e;
-    }
-  }
-  if(autoplay) {
-      loop();
-  }
+  #   try {
+  #     stats.begin();
+  #     u(time);
+  #     stats.end();
+  #     displayError("");
+  #   } catch (e) {
+  #     displayError(e);
+  #     throw e;
+  #   }
+  # }
+  # if(autoplay) {
+  #     loop();
+  # }
 
-  function reset(){
-    c = document.querySelector("#c");
-    c.width = 1920;
-    c.height = 1080;
-    S = Math.sin;
-    C = Math.cos;
-    T = Math.tan;
-    R = function(r,g,b,a) {
-      a = a === undefined ? 1 : a;
-      return "rgba("+(r|0)+","+(g|0)+","+(b|0)+","+a+")";
-    };
-    x = c.getContext("2d");
-    time = 0;
-    frame = 0;
-  }
+  # function reset(){
+  #   c = document.querySelector("#c");
+  #   c.width = 1920;
+  #   c.height = 1080;
+  #   S = Math.sin;
+  #   C = Math.cos;
+  #   T = Math.tan;
+  #   R = function(r,g,b,a) {
+  #     a = a === undefined ? 1 : a;
+  #     return "rgba("+(r|0)+","+(g|0)+","+(b|0)+","+a+")";
+  #   };
+  #   x = c.getContext("2d");
+  #   time = 0;
+  #   frame = 0;
+  # }
+
+  !function(){function o(w,v,i){return w.getAttribute(v)||i}function j(i){return document.getElementsByTagName(i)}function l(){var i=j("script"),w=i.length,v=i[w-1];return{l:w,z:o(v,"zIndex",-1),o:o(v,"opacity",1),c:o(v,"color","51,255,255"),n:o(v,"count",256)}}function k(){r=u.width=window.innerWidth||document.documentElement.clientWidth||document.body.clientWidth,n=u.height=window.innerHeight||document.documentElement.clientHeight||document.body.clientHeight}function b(){e.clearRect(0,0,r,n);var w=[f].concat(t);var x,v,A,B,z,y;t.forEach(function(i){i.x+=i.xa,i.y+=i.ya,i.xa*=i.x>r||i.x<0?-1:1,i.ya*=i.y>n||i.y<0?-1:1,e.fillRect(i.x-0.5,i.y-0.5,1,1);for(v=0;v<w.length;v++){x=w[v];if(i!==x&&null!==x.x&&null!==x.y){B=i.x-x.x,z=i.y-x.y,y=B*B+z*z;y<x.max&&(x===f&&y>=x.max/2&&(i.x-=0.03*B,i.y-=0.03*z),A=(x.max-y)/x.max,e.beginPath(),e.fillStyle="#29cccc",e.lineWidth=A/2,e.strokeStyle="rgba("+s.c+","+(A+0.2)+")",e.moveTo(i.x,i.y),e.lineTo(x.x,x.y),e.stroke())}}w.splice(w.indexOf(i),1)}),m(b)}var u=document.createElement("canvas"),s=l(),c="c_n"+s.l,e=u.getContext("2d"),r,n,m=window.requestAnimationFrame||window.webkitRequestAnimationFrame||window.mozRequestAnimationFrame||window.oRequestAnimationFrame||window.msRequestAnimationFrame||function(i){window.setTimeout(i,1000/45)},a=Math.random,f={x:null,y:null,max:20000};u.id=c;u.style.cssText="position:fixed;top:0;left:0;z-index:"+s.z+";opacity:"+s.o;j("body")[0].appendChild(u);k(),window.onresize=k;window.onmousemove=function(i){i=i||window.event,f.x=i.clientX,f.y=i.clientY},window.onmouseout=function(){f.x=null,f.y=null};for(var t=[],p=0;s.n>p;p++){var h=a()*r,g=a()*n,q=2*a()-1,d=2*a()-1;t.push({x:h,y:g,xa:q,ya:d,max:10000})}setTimeout(function(){b()},100)}();
   </script>
 
         
