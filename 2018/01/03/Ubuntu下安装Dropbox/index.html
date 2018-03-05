@@ -715,13 +715,13 @@
 <p>原以为Dropbox的界面启动需要这个守护程序，其实这个守护程序可以独立作为Dropbox程序运行，并且从结果来看，是有图形界面的。</p>
 <p>因为Dropbox官网的安装教程里把守护程序的安装称为”<strong>通过命令行安装无外设模式的 Dropbox</strong>“，并提供了一个python脚本来控制，我以为这是无用户界面的，其实在桌面系统中，是有图形界面的，在服务器上运行自然是没有的。</p>
 <h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><h2 id="通过命令行安装无外设模式的-Dropbox"><a href="#通过命令行安装无外设模式的-Dropbox" class="headerlink" title="通过命令行安装无外设模式的 Dropbox"></a>通过命令行安装无外设模式的 Dropbox</h2><p>32-bit:</p>
-<pre class=" language-shell"><code class="language-shell">cd ~ && wget -O - "https://www.dropbox.com/download?plat=lnx.x86" | tar xzf -
+<pre class=" language-lang-shell"><code class="language-lang-shell">cd ~ && wget -O - "https://www.dropbox.com/download?plat=lnx.x86" | tar xzf -
 </code></pre>
 <p>64-bit:</p>
-<pre class=" language-shell"><code class="language-shell">cd ~ && wget -O - "https://www.dropbox.com/download?plat=lnx.x86_64" | tar xzf -
+<pre class=" language-lang-shell"><code class="language-lang-shell">cd ~ && wget -O - "https://www.dropbox.com/download?plat=lnx.x86_64" | tar xzf -
 </code></pre>
 <p>接着，从新建的 <code>.dropbox-dist</code> 文件夹运行 Dropbox 守护程序。</p>
-<pre class=" language-shell"><code class="language-shell">~/.dropbox-dist/dropboxd
+<pre class=" language-lang-shell"><code class="language-lang-shell">~/.dropbox-dist/dropboxd
 </code></pre>
 <p>如果是首次在服务器上运行 Dropbox，系统会要求您将链接复制并粘贴到运行的浏览器中，以便创建一个新的帐户或将服务器附加到现有帐户上。操作完成后，系统会在您的主目录中创建 Dropbox 文件夹。下载这个 <a href="https://www.dropbox.com/download?dl=packages/dropbox.py" target="_blank" rel="external">Python 脚本</a>，通过命令行控制 Dropbox。为了方便访问，请在 PATH 中的任何地方放入此脚本的符号链接。</p>
 <p>如果不能科学上网，可在这里下载<a href="http://upyun.nidhogg.cn/files/dropbox.py" target="_blank" rel="external">Python脚本</a>.</p>

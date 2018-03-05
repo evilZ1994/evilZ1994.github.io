@@ -711,7 +711,7 @@
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
         <p>有时候我们需要用<code>while</code>循环和<code>read</code>命令读取文件内容，那么这时候在循环中也需要从控制台读取输入怎么办呢？如下面这段代码：</p>
-<pre class=" language-shell"><code class="language-shell">#!/bin/bash
+<pre class=" language-lang-shell"><code class="language-lang-shell">#!/bin/bash
 while read line
 do
     echo $line
@@ -733,7 +733,7 @@ tom
 delete it? y/n
 </code></pre><p>并没有从控制台读取输入，并且<code>hi</code>没有打印出来。从这里可以看出，<code>read key</code>这里把<code>hi</code>读入了<code>key</code>中，根据条件判断并不符合，所以代码继续执行下去了。</p>
 <p>那么怎么解决呢？这里要用到文件描述符fd，代码修改如下：</p>
-<pre class=" language-shell"><code class="language-shell">#!/bin/bash
+<pre class=" language-lang-shell"><code class="language-lang-shell">#!/bin/bash
 while read -u 2 line
 do
     echo $line
@@ -745,7 +745,7 @@ do
 done 2< ./demo.txt
 </code></pre>
 <p>运行结果：</p>
-<pre class=" language-shell"><code class="language-shell">$ ./test1.sh 
+<pre class=" language-lang-shell"><code class="language-lang-shell">$ ./test1.sh 
 hello
 delete it? y/n
 y
@@ -762,7 +762,7 @@ tom
 <p><code>2&lt; ./demo.txt</code>表示<code>demo.txt</code>文件重定向到2号fd中</p>
 <p><code>read -u 2</code>这里<code>-u</code>参数表示从文件描述符中读入，该文件描述符可以是exec新开启的</p>
 <p>下面的代码也是可行的：</p>
-<pre class=" language-shell"><code class="language-shell">#!/bin/bash
+<pre class=" language-lang-shell"><code class="language-lang-shell">#!/bin/bash
 exec 2< ./demo.txt
 while read -u 2 line
 do

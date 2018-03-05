@@ -715,106 +715,106 @@
 </blockquote>
 <h1 id="设置SublimeText3支持中文输入"><a href="#设置SublimeText3支持中文输入" class="headerlink" title="设置SublimeText3支持中文输入"></a>设置SublimeText3支持中文输入</h1><ul>
 <li><p>复制如下的代码为sublime_imfix.c文件并放到sublime_text的安装目录下，默认为/opt/sublime_text</p>
-<pre class=" language-c"><code class="language-c"><span class="token comment" spellcheck="true">/*
+<pre class=" language-lang-c"><code class="language-lang-c">/*
     sublime_imfix.c
     Use LD_PRELOAD to interpose some function to fix sublime input method support for linux.
-    By Cjacker Huang &lt;jianzhong.huang at i-soft.com.cn>
+    By Cjacker Huang <jianzhong.huang at i-soft.com.cn>
 
     gcc -shared -o libsublime-imfix.so sublime_imfix.c  `pkg-config --libs --cflags gtk+-2.0` -fPIC
     LD_PRELOAD=./libsublime-imfix.so sublime_text
-    */</span>
-    <span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;gtk/gtk.h></span></span>
-    <span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;gdk/gdkx.h></span></span>
-    <span class="token keyword">typedef</span> GdkSegment GdkRegionBox<span class="token punctuation">;</span>
+    */
+    #include <gtk/gtk.h>
+    #include <gdk/gdkx.h>
+    typedef GdkSegment GdkRegionBox;
 
-    <span class="token keyword">struct</span> _GdkRegion
-    <span class="token punctuation">{</span>
-      <span class="token keyword">long</span> size<span class="token punctuation">;</span>
-      <span class="token keyword">long</span> numRects<span class="token punctuation">;</span>
-      GdkRegionBox <span class="token operator">*</span>rects<span class="token punctuation">;</span>
-      GdkRegionBox extents<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+    struct _GdkRegion
+    {
+      long size;
+      long numRects;
+      GdkRegionBox *rects;
+      GdkRegionBox extents;
+    };
 
-    GtkIMContext <span class="token operator">*</span>local_context<span class="token punctuation">;</span>
+    GtkIMContext *local_context;
 
-    <span class="token keyword">void</span> <span class="token function">gdk_region_get_clipbox</span> <span class="token punctuation">(</span><span class="token keyword">const</span> GdkRegion <span class="token operator">*</span>region<span class="token punctuation">,</span>
-                GdkRectangle    <span class="token operator">*</span>rectangle<span class="token punctuation">)</span>
-    <span class="token punctuation">{</span>
-      <span class="token function">g_return_if_fail</span> <span class="token punctuation">(</span>region <span class="token operator">!=</span> <span class="token constant">NULL</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-      <span class="token function">g_return_if_fail</span> <span class="token punctuation">(</span>rectangle <span class="token operator">!=</span> <span class="token constant">NULL</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    void gdk_region_get_clipbox (const GdkRegion *region,
+                GdkRectangle    *rectangle)
+    {
+      g_return_if_fail (region != NULL);
+      g_return_if_fail (rectangle != NULL);
 
-      rectangle<span class="token operator">-></span>x <span class="token operator">=</span> region<span class="token operator">-></span>extents<span class="token punctuation">.</span>x1<span class="token punctuation">;</span>
-      rectangle<span class="token operator">-></span>y <span class="token operator">=</span> region<span class="token operator">-></span>extents<span class="token punctuation">.</span>y1<span class="token punctuation">;</span>
-      rectangle<span class="token operator">-></span>width <span class="token operator">=</span> region<span class="token operator">-></span>extents<span class="token punctuation">.</span>x2 <span class="token operator">-</span> region<span class="token operator">-></span>extents<span class="token punctuation">.</span>x1<span class="token punctuation">;</span>
-      rectangle<span class="token operator">-></span>height <span class="token operator">=</span> region<span class="token operator">-></span>extents<span class="token punctuation">.</span>y2 <span class="token operator">-</span> region<span class="token operator">-></span>extents<span class="token punctuation">.</span>y1<span class="token punctuation">;</span>
-      GdkRectangle rect<span class="token punctuation">;</span>
-      rect<span class="token punctuation">.</span>x <span class="token operator">=</span> rectangle<span class="token operator">-></span>x<span class="token punctuation">;</span>
-      rect<span class="token punctuation">.</span>y <span class="token operator">=</span> rectangle<span class="token operator">-></span>y<span class="token punctuation">;</span>
-      rect<span class="token punctuation">.</span>width <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-      rect<span class="token punctuation">.</span>height <span class="token operator">=</span> rectangle<span class="token operator">-></span>height<span class="token punctuation">;</span>
-      <span class="token comment" spellcheck="true">//The caret width is 2;</span>
-      <span class="token comment" spellcheck="true">//Maybe sometimes we will make a mistake, but for most of the time, it should be the caret.</span>
-      <span class="token keyword">if</span><span class="token punctuation">(</span>rectangle<span class="token operator">-></span>width <span class="token operator">==</span> <span class="token number">2</span> <span class="token operator">&amp;&amp;</span> <span class="token function">GTK_IS_IM_CONTEXT</span><span class="token punctuation">(</span>local_context<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            <span class="token function">gtk_im_context_set_cursor_location</span><span class="token punctuation">(</span>local_context<span class="token punctuation">,</span> rectangle<span class="token punctuation">)</span><span class="token punctuation">;</span>
-      <span class="token punctuation">}</span>
-    <span class="token punctuation">}</span>
+      rectangle->x = region->extents.x1;
+      rectangle->y = region->extents.y1;
+      rectangle->width = region->extents.x2 - region->extents.x1;
+      rectangle->height = region->extents.y2 - region->extents.y1;
+      GdkRectangle rect;
+      rect.x = rectangle->x;
+      rect.y = rectangle->y;
+      rect.width = 0;
+      rect.height = rectangle->height;
+      //The caret width is 2;
+      //Maybe sometimes we will make a mistake, but for most of the time, it should be the caret.
+      if(rectangle->width == 2 && GTK_IS_IM_CONTEXT(local_context)) {
+            gtk_im_context_set_cursor_location(local_context, rectangle);
+      }
+    }
 
-    <span class="token comment" spellcheck="true">//this is needed, for example, if you input something in file dialog and return back the edit area</span>
-    <span class="token comment" spellcheck="true">//context will lost, so here we set it again.</span>
+    //this is needed, for example, if you input something in file dialog and return back the edit area
+    //context will lost, so here we set it again.
 
-    <span class="token keyword">static</span> GdkFilterReturn <span class="token function">event_filter</span> <span class="token punctuation">(</span>GdkXEvent <span class="token operator">*</span>xevent<span class="token punctuation">,</span> GdkEvent <span class="token operator">*</span>event<span class="token punctuation">,</span> gpointer im_context<span class="token punctuation">)</span>
-    <span class="token punctuation">{</span>
-        XEvent <span class="token operator">*</span>xev <span class="token operator">=</span> <span class="token punctuation">(</span>XEvent <span class="token operator">*</span><span class="token punctuation">)</span>xevent<span class="token punctuation">;</span>
-        <span class="token keyword">if</span><span class="token punctuation">(</span>xev<span class="token operator">-></span>type <span class="token operator">==</span> KeyRelease <span class="token operator">&amp;&amp;</span> <span class="token function">GTK_IS_IM_CONTEXT</span><span class="token punctuation">(</span>im_context<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-           GdkWindow <span class="token operator">*</span> win <span class="token operator">=</span> <span class="token function">g_object_get_data</span><span class="token punctuation">(</span><span class="token function">G_OBJECT</span><span class="token punctuation">(</span>im_context<span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token string">"window"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-           <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token function">GDK_IS_WINDOW</span><span class="token punctuation">(</span>win<span class="token punctuation">)</span><span class="token punctuation">)</span>
-             <span class="token function">gtk_im_context_set_client_window</span><span class="token punctuation">(</span>im_context<span class="token punctuation">,</span> win<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-        <span class="token keyword">return</span> GDK_FILTER_CONTINUE<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
+    static GdkFilterReturn event_filter (GdkXEvent *xevent, GdkEvent *event, gpointer im_context)
+    {
+        XEvent *xev = (XEvent *)xevent;
+        if(xev->type == KeyRelease && GTK_IS_IM_CONTEXT(im_context)) {
+           GdkWindow * win = g_object_get_data(G_OBJECT(im_context),"window");
+           if(GDK_IS_WINDOW(win))
+             gtk_im_context_set_client_window(im_context, win);
+        }
+        return GDK_FILTER_CONTINUE;
+    }
 
-    <span class="token keyword">void</span> <span class="token function">gtk_im_context_set_client_window</span> <span class="token punctuation">(</span>GtkIMContext <span class="token operator">*</span>context<span class="token punctuation">,</span>
-              GdkWindow    <span class="token operator">*</span>window<span class="token punctuation">)</span>
-    <span class="token punctuation">{</span>
-      GtkIMContextClass <span class="token operator">*</span>klass<span class="token punctuation">;</span>
-      <span class="token function">g_return_if_fail</span> <span class="token punctuation">(</span><span class="token function">GTK_IS_IM_CONTEXT</span> <span class="token punctuation">(</span>context<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-      klass <span class="token operator">=</span> <span class="token function">GTK_IM_CONTEXT_GET_CLASS</span> <span class="token punctuation">(</span>context<span class="token punctuation">)</span><span class="token punctuation">;</span>
-      <span class="token keyword">if</span> <span class="token punctuation">(</span>klass<span class="token operator">-></span>set_client_window<span class="token punctuation">)</span>
-        klass<span class="token operator">-></span><span class="token function">set_client_window</span> <span class="token punctuation">(</span>context<span class="token punctuation">,</span> window<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    void gtk_im_context_set_client_window (GtkIMContext *context,
+              GdkWindow    *window)
+    {
+      GtkIMContextClass *klass;
+      g_return_if_fail (GTK_IS_IM_CONTEXT (context));
+      klass = GTK_IM_CONTEXT_GET_CLASS (context);
+      if (klass->set_client_window)
+        klass->set_client_window (context, window);
 
-      <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span><span class="token function">GDK_IS_WINDOW</span> <span class="token punctuation">(</span>window<span class="token punctuation">)</span><span class="token punctuation">)</span>
-        <span class="token keyword">return</span><span class="token punctuation">;</span>
-      <span class="token function">g_object_set_data</span><span class="token punctuation">(</span><span class="token function">G_OBJECT</span><span class="token punctuation">(</span>context<span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token string">"window"</span><span class="token punctuation">,</span>window<span class="token punctuation">)</span><span class="token punctuation">;</span>
-      <span class="token keyword">int</span> width <span class="token operator">=</span> <span class="token function">gdk_window_get_width</span><span class="token punctuation">(</span>window<span class="token punctuation">)</span><span class="token punctuation">;</span>
-      <span class="token keyword">int</span> height <span class="token operator">=</span> <span class="token function">gdk_window_get_height</span><span class="token punctuation">(</span>window<span class="token punctuation">)</span><span class="token punctuation">;</span>
-      <span class="token keyword">if</span><span class="token punctuation">(</span>width <span class="token operator">!=</span> <span class="token number">0</span> <span class="token operator">&amp;&amp;</span> height <span class="token operator">!=</span><span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token function">gtk_im_context_focus_in</span><span class="token punctuation">(</span>context<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        local_context <span class="token operator">=</span> context<span class="token punctuation">;</span>
-      <span class="token punctuation">}</span>
-      <span class="token function">gdk_window_add_filter</span> <span class="token punctuation">(</span>window<span class="token punctuation">,</span> event_filter<span class="token punctuation">,</span> context<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
+      if(!GDK_IS_WINDOW (window))
+        return;
+      g_object_set_data(G_OBJECT(context),"window",window);
+      int width = gdk_window_get_width(window);
+      int height = gdk_window_get_height(window);
+      if(width != 0 && height !=0) {
+        gtk_im_context_focus_in(context);
+        local_context = context;
+      }
+      gdk_window_add_filter (window, event_filter, context);
+    }
 </code></pre>
 </li>
 <li><p>安装编译所需的工具，如果已经安装则跳过</p>
-<pre class=" language-shell"><code class="language-shell">sudo apt-get install build-essential  
+<pre class=" language-lang-shell"><code class="language-lang-shell">sudo apt-get install build-essential  
 sudo apt-get install libgtk2.0-dev
 </code></pre>
 </li>
 <li><p>安装完成后，进入sublime_text的安装目录，在命令行下编译，生成-o之后的文件，记住它的位置：</p>
 </li>
 </ul>
-<pre class=" language-shell"><code class="language-shell">  gcc -shared -o libsublime-imfix.so sublime_imfix.c  `pkg-config --libs --cflags gtk+-2.0` -fPIC
+<pre class=" language-lang-shell"><code class="language-lang-shell">  gcc -shared -o libsublime-imfix.so sublime_imfix.c  `pkg-config --libs --cflags gtk+-2.0` -fPIC
 </code></pre>
 <ul>
 <li><p>命令行中进入/usr/share/applications目录下，用subl打开sublime_text.desktop文件，即sublime_text的类似于快捷方式的文件，可能名字会有不一样，可先用ls查看一下文件名字</p>
-<pre class=" language-shell"><code class="language-shell">sudo subl sublime_text.desktop
+<pre class=" language-lang-shell"><code class="language-lang-shell">sudo subl sublime_text.desktop
 </code></pre>
 <p>然后将三个对应Exec更改为如下所示：</p>
 <p>```shell<br>Exec=bash -c “LD_PRELOAD=/opt/sublime_text/libsublime-imfix.so /opt/sublime_text/sublime_text %F”</p>
 </li>
 </ul>
 <p>  Exec=bash -c “LD_PRELOAD=/opt/sublime_text/libsublime-imfix.so /opt/sublime_text/sublime_text -n”</p>
-<p>  Exec=bash -c “LD_PRELOAD=/opt/sublime_text/libsublime-imfix.so /opt/sublime_text/sublime_text –command new_file”</p>
+<p>  Exec=bash -c “LD_PRELOAD=/opt/sublime_text/libsublime-imfix.so /opt/sublime_text/sublime_text —command new_file”</p>
 <pre><code>
   **注意这里一定要是双引号**，因为用单引号会出现只弹出Sublime_text，不打开文件等情况。网上好多教程在这一步都是单引号，可能是版本已经不适用,保存文件，现在用subl打开文本已经支持中文。 
 

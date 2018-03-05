@@ -711,18 +711,18 @@
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
         <h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p>git的安装很简单</p>
-<pre class=" language-shell"><code class="language-shell">sudo apt-get install git
+<pre class=" language-lang-shell"><code class="language-lang-shell">sudo apt-get install git
 </code></pre>
 <h1 id="配置身份标识"><a href="#配置身份标识" class="headerlink" title="配置身份标识"></a>配置身份标识</h1><p>配置用户名和邮箱</p>
-<pre class=" language-shell"><code class="language-shell">git config --global user.email "you@example.com"
+<pre class=" language-lang-shell"><code class="language-lang-shell">git config --global user.email "you@example.com"
 git config --global user.name "Your Name"
 </code></pre>
-<p>如果仅在本仓库设置身份标识，则省略 –global 参数。</p>
+<p>如果仅在本仓库设置身份标识，则省略 —global 参数。</p>
 <h1 id="配置ssh公钥"><a href="#配置ssh公钥" class="headerlink" title="配置ssh公钥"></a>配置ssh公钥</h1><p>首先查看系统是否有<code>id_rsa.pub</code></p>
-<pre class=" language-shell"><code class="language-shell">cat ~/.ssh/id_rsa.pub
+<pre class=" language-lang-shell"><code class="language-lang-shell">cat ~/.ssh/id_rsa.pub
 </code></pre>
 <p>如果没有的话则用<code>ssh-keygen</code>创建</p>
-<pre class=" language-shell"><code class="language-shell">ssh-keygen -C 'your@email.com' -t rsa
+<pre class=" language-lang-shell"><code class="language-lang-shell">ssh-keygen -C 'your@email.com' -t rsa
 </code></pre>
 <p>然后会在<code>~/.ssh/</code>下生成相应的密钥文件：</p>
 <pre><code>Generating public/private rsa key pair.
@@ -748,10 +748,10 @@ The key&#39;s randomart image is:
 </code></pre><p>然后上传公钥到github。首先复制<code>~/.ssh/id_rsa.pub</code>文件中的内容，然后进入Github，在<code>settings-&gt;SSH and GPG keys</code>，点击<code>New SSH key</code>，在<code>Title</code>处填写任意内容，在<code>key</code>内填写复制的<code>id_rsa.pub</code>文件中的内容。</p>
 <h1 id="解决一些问题"><a href="#解决一些问题" class="headerlink" title="解决一些问题"></a>解决一些问题</h1><p>警告：Warning: Permanently added the RSA host key for IP address ‘192.30.255.112’ to the list of known hosts.</p>
 <p>修改<code>/etc/hosts/</code>文件</p>
-<pre class=" language-shell"><code class="language-shell">sudo vim /etc/hosts
+<pre class=" language-lang-shell"><code class="language-lang-shell">sudo vim /etc/hosts
 </code></pre>
 <p>添加一行：</p>
-<pre class=" language-properties"><code class="language-properties"><span class="token attr-name">192.30.255.112</span> <span class="token attr-value">github.com</span>
+<pre class=" language-lang-properties"><code class="language-lang-properties">192.30.255.112 github.com
 </code></pre>
 
     

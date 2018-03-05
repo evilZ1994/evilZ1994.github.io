@@ -714,16 +714,17 @@
 <ul>
 <li>如果只是简单的限定为数字的话，可以使用一下属性：</li>
 </ul>
-<pre class=" language-xml"><code class="language-xml">android:inputType="numberPassword"
+<pre class=" language-lang-xml"><code class="language-lang-xml">android:inputType="numberPassword"
 </code></pre>
 <ul>
 <li>如果要求只能输入数字或者英文字母的话，可以使用digits属性手动指定只能输入的字符：</li>
 </ul>
-<pre class=" language-xml"><code class="language-xml">android:digits="@string/password_limit"
+<pre class=" language-lang-xml"><code class="language-lang-xml">android:digits="@string/password_limit"
 ...
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>string</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>password_limit<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>0123456789qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>string</span><span class="token punctuation">></span></span>
+<string name="password_limit">0123456789qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM</string>
 </code></pre>
 <p>digits属性可以限制输入的字符，但是不能限制弹出的软键盘类型。EditText提供了一个android:inputType属性来设置输入框的类型，其中几个类型如下：</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -766,6 +767,7 @@
 </tr>
 </tbody>
 </table>
+</div>
 <p>当inputType属性设置为number或者numberPassword时，输入法开启时会自动切换到数字键盘；当inputType属性设置为以上其他类型时，输入法会自动切换到英文键盘。</p>
 
     

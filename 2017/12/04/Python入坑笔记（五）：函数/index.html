@@ -711,63 +711,63 @@
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
         <h1 id="函数定义"><a href="#函数定义" class="headerlink" title="函数定义"></a>函数定义</h1><p>使用<code>def</code>定义一个函数：</p>
-<pre class=" language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">greet</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"hello"</span><span class="token punctuation">)</span>
+<pre class=" language-lang-python"><code class="language-lang-python">def greet():
+    print("hello")
 
-greet<span class="token punctuation">(</span><span class="token punctuation">)</span>
+greet()
 </code></pre>
 <p>outputs:</p>
 <pre><code>hello
 </code></pre><h1 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h1><p>python向函数传递参数的方式有很多种，有位置实参、关键字实参，还可以传递列表和字典。</p>
 <h2 id="位置实参"><a href="#位置实参" class="headerlink" title="位置实参"></a>位置实参</h2><p>基于实参的顺序，每个实参与对应的形参关联，这样的方式叫做位置实参。</p>
-<pre class=" language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">pets</span><span class="token punctuation">(</span>type<span class="token punctuation">,</span> name<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"I hava a "</span> <span class="token operator">+</span> type<span class="token punctuation">)</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"It's name is "</span> <span class="token operator">+</span> name<span class="token punctuation">)</span>
+<pre class=" language-lang-python"><code class="language-lang-python">def pets(type, name):
+    print("I hava a " + type)
+    print("It's name is " + name)
 
-pets<span class="token punctuation">(</span><span class="token string">"pig"</span><span class="token punctuation">,</span><span class="token string">"Peggy"</span><span class="token punctuation">)</span>
+pets("pig","Peggy")
 </code></pre>
 <p>outputs:</p>
 <pre><code>I hava a pig
 It&#39;s name is Peggy
 </code></pre><p>根据传入实参的顺序，通过形参获取到传入的值。</p>
 <h2 id="关键字实参"><a href="#关键字实参" class="headerlink" title="关键字实参"></a>关键字实参</h2><p><strong>关键字实参</strong>将<strong>名称-值</strong>这样的参数对传递给函数，名称与值直接关联，因此不必考虑传入的顺序。</p>
-<pre class=" language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">pets</span><span class="token punctuation">(</span>type<span class="token punctuation">,</span> name<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"I hava a "</span> <span class="token operator">+</span> type<span class="token punctuation">)</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"It's name is "</span> <span class="token operator">+</span> name<span class="token punctuation">)</span>
+<pre class=" language-lang-python"><code class="language-lang-python">def pets(type, name):
+    print("I hava a " + type)
+    print("It's name is " + name)
 
-pets<span class="token punctuation">(</span>name<span class="token operator">=</span><span class="token string">"Peggy"</span><span class="token punctuation">,</span>type<span class="token operator">=</span><span class="token string">"pig"</span><span class="token punctuation">)</span>
+pets(name="Peggy",type="pig")
 </code></pre>
 <p>outputs:</p>
 <pre><code>I hava a pig
 It&#39;s name is Peggy
 </code></pre><h2 id="参数默认值"><a href="#参数默认值" class="headerlink" title="参数默认值"></a>参数默认值</h2><p>在函数定义中，可以给每个形参指定<strong>默认值</strong>，如果在调用函数时传入了对应的实参，则函数中会使用传入的实参值，否则，使用该参数的默认值。</p>
-<pre class=" language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">pets</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span> type<span class="token operator">=</span><span class="token string">"dog"</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"I hava a "</span> <span class="token operator">+</span> type<span class="token punctuation">)</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"It's name is "</span> <span class="token operator">+</span> name<span class="token punctuation">)</span>
+<pre class=" language-lang-python"><code class="language-lang-python">def pets(name, type="dog"):
+    print("I hava a " + type)
+    print("It's name is " + name)
 
-pets<span class="token punctuation">(</span><span class="token string">"Peggy"</span><span class="token punctuation">)</span>
+pets("Peggy")
 </code></pre>
 <p>outputs:</p>
 <pre><code>I hava a dog
 It&#39;s name is Peggy
 </code></pre><p><strong>注意：</strong>参数定义中，有默认值的参数的位置必须在无默认值的参数之后。默认参数必须指向不变对象！</p>
 <h2 id="传递任意数量的实参"><a href="#传递任意数量的实参" class="headerlink" title="传递任意数量的实参"></a>传递任意数量的实参</h2><p>如果预先不知道函数需要接受多少个实参，Python允许函数从调用语句中接收任意数量的实参。在形参定义时前面加一个<code>*</code>号，它会创建一个空元组，用来接收所有的参数值。比如<code>def fun(*params)</code>，会创建一个名为<code>params</code>的 空元组，将接收到的所有值封装进去。</p>
-<pre class=" language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">pets</span><span class="token punctuation">(</span><span class="token operator">*</span>types<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">for</span> pet <span class="token keyword">in</span> types<span class="token punctuation">:</span>
-        <span class="token keyword">print</span><span class="token punctuation">(</span>pet<span class="token punctuation">)</span>
+<pre class=" language-lang-python"><code class="language-lang-python">def pets(*types):
+    for pet in types:
+        print(pet)
 
-pets<span class="token punctuation">(</span><span class="token string">"dog"</span><span class="token punctuation">,</span> <span class="token string">"cat"</span><span class="token punctuation">,</span> <span class="token string">"monkey"</span><span class="token punctuation">)</span>
+pets("dog", "cat", "monkey")
 </code></pre>
 <p>outputs:</p>
 <pre><code>dog
 cat
 monkey
 </code></pre><h2 id="传递任意数量的关键字实参"><a href="#传递任意数量的关键字实参" class="headerlink" title="传递任意数量的关键字实参"></a>传递任意数量的关键字实参</h2><p>Python函数还可以接收任意数量的关键字实参，即任意数量的键值对。任意数量的关键字实参用<code>**</code>定义，Python会创建一个字典保存所接收到的所有关键字实参。比如<code>def func(**kvs)</code>，会创建一个名为<code>kvs</code>的字典，接收所有的关键字实参。</p>
-<pre class=" language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">user_info</span><span class="token punctuation">(</span><span class="token operator">**</span>info<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">for</span> k<span class="token punctuation">,</span>v <span class="token keyword">in</span> info<span class="token punctuation">.</span>items<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-        <span class="token keyword">print</span><span class="token punctuation">(</span>k <span class="token operator">+</span> <span class="token string">" is "</span> <span class="token operator">+</span> str<span class="token punctuation">(</span>v<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<pre class=" language-lang-python"><code class="language-lang-python">def user_info(**info):
+    for k,v in info.items():
+        print(k + " is " + str(v))
 
-user_info<span class="token punctuation">(</span>name<span class="token operator">=</span><span class="token string">'Tom'</span><span class="token punctuation">,</span> age<span class="token operator">=</span><span class="token number">21</span><span class="token punctuation">,</span> location<span class="token operator">=</span><span class="token string">'Chongqing'</span><span class="token punctuation">)</span>
+user_info(name='Tom', age=21, location='Chongqing')
 </code></pre>
 <p>outputs:</p>
 <pre><code>name is Tom
@@ -779,23 +779,23 @@ location is Chongqing
 <li>给形参指定默认值时，等号两边不要有空格</li>
 </ul>
 <h1 id="返回值"><a href="#返回值" class="headerlink" title="返回值"></a>返回值</h1><p>函数可返回任何类型的值，包括列表和字典等较复杂的数据结构。用<code>return</code>语句返回。</p>
-<pre class=" language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">get_sum</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">return</span> a<span class="token operator">+</span>b
+<pre class=" language-lang-python"><code class="language-lang-python">def get_sum(a, b):
+    return a+b
 
-sum <span class="token operator">=</span> get_sum<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>sum<span class="token punctuation">)</span>
+sum = get_sum(1,2)
+print(sum)
 </code></pre>
 <p>output:</p>
 <pre><code>3
 </code></pre><h1 id="传递列表"><a href="#传递列表" class="headerlink" title="传递列表"></a>传递列表</h1><p>有时候需要将列表作为参数传递给函数，更方便的操作列表。列表传递给函数后，函数能直接访问它的内容，<strong>注意</strong>，函数中对列表的修改是永久性的。</p>
-<pre class=" language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">check</span><span class="token punctuation">(</span>users<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">while</span> users<span class="token punctuation">:</span>
-        user <span class="token operator">=</span> users<span class="token punctuation">.</span>pop<span class="token punctuation">(</span><span class="token punctuation">)</span>
-        <span class="token keyword">print</span><span class="token punctuation">(</span>user<span class="token operator">+</span><span class="token string">" checked!"</span><span class="token punctuation">)</span>
+<pre class=" language-lang-python"><code class="language-lang-python">def check(users):
+    while users:
+        user = users.pop()
+        print(user+" checked!")
 
-users <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"Tom"</span><span class="token punctuation">,</span> <span class="token string">"Jhon"</span><span class="token punctuation">,</span> <span class="token string">"Edward"</span><span class="token punctuation">]</span>
-check<span class="token punctuation">(</span>users<span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"last: "</span><span class="token operator">+</span> str<span class="token punctuation">(</span>len<span class="token punctuation">(</span>users<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+users = ["Tom", "Jhon", "Edward"]
+check(users)
+print("last: "+ str(len(users)))
 </code></pre>
 <p>outputs:</p>
 <pre><code>Edward checked!
@@ -804,16 +804,16 @@ Tom checked!
 last: 0
 </code></pre><h2 id="禁止函数修改列表"><a href="#禁止函数修改列表" class="headerlink" title="禁止函数修改列表"></a>禁止函数修改列表</h2><p>Python提供了对列表的<strong>切片</strong>操作符<code>:</code>，比如有一个列表<code>L</code>，那么<code>L[0:3]</code>表示，在列表<code>L</code>中从索引<code>0</code>开始，取到索引<code>3</code>但不包括索引<code>3</code>，取出包含这三个元素的列表副本。</p>
 <p>在传入函数的实参列表，这样使用切片<code>[:]</code>，就可以将列表的完整副本传入函数中，这样函数对列表的操作就不会影响到原始列表。</p>
-<pre class=" language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">check</span><span class="token punctuation">(</span>users<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">while</span> users<span class="token punctuation">:</span>
-        user <span class="token operator">=</span> users<span class="token punctuation">.</span>pop<span class="token punctuation">(</span><span class="token punctuation">)</span>
-        <span class="token keyword">print</span><span class="token punctuation">(</span>user<span class="token operator">+</span><span class="token string">" checked!"</span><span class="token punctuation">)</span>
+<pre class=" language-lang-python"><code class="language-lang-python">def check(users):
+    while users:
+        user = users.pop()
+        print(user+" checked!")
 
-users <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"Tom"</span><span class="token punctuation">,</span> <span class="token string">"Jhon"</span><span class="token punctuation">,</span> <span class="token string">"Edward"</span><span class="token punctuation">]</span>
+users = ["Tom", "Jhon", "Edward"]
 
-check<span class="token punctuation">(</span>users<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+check(users[:])
 
-<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"last: "</span><span class="token operator">+</span> str<span class="token punctuation">(</span>len<span class="token punctuation">(</span>users<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+print("last: "+ str(len(users)))
 </code></pre>
 <p>outputs:</p>
 <pre><code>Edward checked!

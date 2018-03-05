@@ -711,24 +711,24 @@
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
         <h1 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h1><p>设置一个mPressedTime变量和一个mNowTime变量，通过重写onBackPressed()方法，计算两个时间的差值设置双击退出。</p>
-<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//点击返回键时的时间，用于控制双击退出</span>
-<span class="token keyword">private</span> <span class="token keyword">long</span> mPressedTime <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<pre class=" language-lang-java"><code class="language-lang-java">//点击返回键时的时间，用于控制双击退出
+private long mPressedTime = 0;
 
-<span class="token comment" spellcheck="true">/**
+/**
 * 重写onBackPressed()方法，设置双击退出，时间差500毫秒
-*/</span>
-<span class="token annotation punctuation">@Override</span>
-<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">onBackPressed</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">long</span> mNowTime <span class="token operator">=</span> System<span class="token punctuation">.</span><span class="token function">currentTimeMillis</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span>mNowTime <span class="token operator">-</span> mPressedTime <span class="token operator">></span> <span class="token number">500</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-        Toast<span class="token punctuation">.</span><span class="token function">makeText</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">,</span> <span class="token string">"再次点击退出"</span><span class="token punctuation">,</span> Toast<span class="token punctuation">.</span>LENGTH_SHORT<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">show</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        mPressedTime <span class="token operator">=</span> mNowTime<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
-        <span class="token comment" spellcheck="true">//做一些退出操作</span>
-        <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">finish</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        System<span class="token punctuation">.</span><span class="token function">exit</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
+*/
+@Override
+public void onBackPressed() {
+    long mNowTime = System.currentTimeMillis();
+    if (mNowTime - mPressedTime > 500){
+        Toast.makeText(this, "再次点击退出", Toast.LENGTH_SHORT).show();
+        mPressedTime = mNowTime;
+    } else {
+        //做一些退出操作
+        this.finish();
+        System.exit(0);
+    }
+}
 </code></pre>
 
     

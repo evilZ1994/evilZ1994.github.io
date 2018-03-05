@@ -711,25 +711,25 @@
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
         <h1 id="条件判断"><a href="#条件判断" class="headerlink" title="条件判断"></a>条件判断</h1><p>Python中条件判断用<code>if</code>实现，多重判断用<code>elif</code>、<code>else</code>。</p>
-<pre class=" language-python"><code class="language-python">i_score <span class="token operator">=</span> input<span class="token punctuation">(</span><span class="token string">"Score:"</span><span class="token punctuation">)</span>
-score <span class="token operator">=</span> int<span class="token punctuation">(</span>i_score<span class="token punctuation">)</span>
-<span class="token keyword">if</span> score<span class="token operator">>=</span><span class="token number">90</span><span class="token punctuation">:</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Great!"</span><span class="token punctuation">)</span>
-<span class="token keyword">elif</span> score<span class="token operator">>=</span><span class="token number">60</span><span class="token punctuation">:</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Pass!"</span><span class="token punctuation">)</span>
-<span class="token keyword">else</span><span class="token punctuation">:</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Bad!"</span><span class="token punctuation">)</span>
+<pre class=" language-lang-python"><code class="language-lang-python">i_score = input("Score:")
+score = int(i_score)
+if score>=90:
+    print("Great!")
+elif score>=60:
+    print("Pass!")
+else:
+    print("Bad!")
 </code></pre>
 <p>outputs:</p>
 <pre><code>Score:99
 Great!
 </code></pre><p><code>if</code>条件判断可以简写，比如：</p>
-<pre class=" language-python"><code class="language-python"><span class="token keyword">if</span> x<span class="token punctuation">:</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'True'</span><span class="token punctuation">)</span>
+<pre class=" language-lang-python"><code class="language-lang-python">if x:
+    print('True')
 </code></pre>
 <p>只要<code>x</code>为非零数值、非空字符串、非空<code>list</code>等，就判断为<code>True</code>，否则为<code>False</code>。</p>
 <h1 id="循环"><a href="#循环" class="headerlink" title="循环"></a>循环</h1><h2 id="for-…-in-…-循环"><a href="#for-…-in-…-循环" class="headerlink" title="for … in … 循环"></a>for … in … 循环</h2><p><code>for ... in ...</code>循环迭代<code>list</code>或者<code>tuple</code>中的每个元素</p>
-<pre class=" language-Python"><code class="language-Python">countries = ["China", "America", "Canada"]
+<pre class=" language-lang-Python"><code class="language-lang-Python">countries = ["China", "America", "Canada"]
 for c in countries:
     print(c)
 </code></pre>
@@ -738,7 +738,7 @@ for c in countries:
 America
 Canada
 </code></pre><p>字符串可以看作是一个字符序列，所以可以迭代字符串中的字符</p>
-<pre class=" language-Python"><code class="language-Python">for s in "hello":
+<pre class=" language-lang-Python"><code class="language-lang-Python">for s in "hello":
     print(s)
 </code></pre>
 <p>outputs:</p>
@@ -748,21 +748,21 @@ l
 l
 o
 </code></pre><p>要使用指定循环次数的<code>for</code>循环，需要用到<code>range()</code>函数，<code>range()</code>函数可以生成一个整数序列，可以用<code>list()</code>函数将生成的整数序列转换为<code>list</code>。比如<code>range(5)</code>生成一个大于等于0，小于5的整数序列。</p>
-<pre class=" language-Python"><code class="language-Python">li = list(range(5))
+<pre class=" language-lang-Python"><code class="language-lang-Python">li = list(range(5))
 print(li)
 </code></pre>
 <p>outputs:</p>
 <pre><code>[0, 1, 2, 3, 4]
 </code></pre><p>如果希望<code>for</code>循环3次，可以这样：</p>
-<pre class=" language-python"><code class="language-python"><span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span>
+<pre class=" language-lang-python"><code class="language-lang-python">for i in range(3):
+    print(i)
 </code></pre>
 <p>outputs:</p>
 <pre><code>0
 1
 2
 </code></pre><h2 id="While循环"><a href="#While循环" class="headerlink" title="While循环"></a>While循环</h2><p><code>while</code>循环，只要条件满足，就不断循环。</p>
-<pre class=" language-Python"><code class="language-Python">sum = 0
+<pre class=" language-lang-Python"><code class="language-lang-Python">sum = 0
 n = 100
 while n>0:
     sum = sum + n
@@ -772,7 +772,7 @@ print(sum)
 <p>outputs:</p>
 <pre><code>5050
 </code></pre><p><code>while</code>循环中可以使用<code>else</code>语句，在<code>while ... else ...</code>语句中，当<code>while</code>条件语句为<code>False</code>时，执行<code>else</code>中的语句</p>
-<pre class=" language-Python"><code class="language-Python">count = 0
+<pre class=" language-lang-Python"><code class="language-lang-Python">count = 0
 while count < 5:
     print (count, " 小于 5")
     count = count + 1
@@ -806,7 +806,7 @@ else:
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/2017/11/21/论文笔记：Multi-Label Learning with Label Enhancement/" id="post_nav-newer" class="prev-content">
+        <a href="/2017/10/27/Python入坑笔记（二）：list和tuple/" id="post_nav-newer" class="prev-content">
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
                 <i class="material-icons">arrow_back</i>
             </button>
@@ -820,7 +820,7 @@ else:
 
     <!-- Next Nav -->
     
-        <a href="/2017/10/27/Python入坑笔记（二）：list和tuple/" id="post_nav-older" class="next-content">
+        <a href="/2017/10/27/Python入坑笔记（一）：基本数据类型/" id="post_nav-older" class="next-content">
             Older
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">

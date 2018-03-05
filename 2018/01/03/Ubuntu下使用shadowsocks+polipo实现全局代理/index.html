@@ -711,40 +711,40 @@
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
         <p>在用shadowsocksr后，目前只能实现浏览器上网，系统其他程序还是无法上网。使用polipo可实现全局代理。</p>
-<h1 id="安装polipo"><a href="#安装polipo" class="headerlink" title="安装polipo"></a>安装polipo</h1><pre class=" language-shell"><code class="language-shell">sudo apt-get install polipo
+<h1 id="安装polipo"><a href="#安装polipo" class="headerlink" title="安装polipo"></a>安装polipo</h1><pre class=" language-lang-shell"><code class="language-lang-shell">sudo apt-get install polipo
 </code></pre>
-<h1 id="编辑配置文件"><a href="#编辑配置文件" class="headerlink" title="编辑配置文件"></a>编辑配置文件</h1><pre class=" language-shell"><code class="language-shell">sudo vim /etc/polipo/config
+<h1 id="编辑配置文件"><a href="#编辑配置文件" class="headerlink" title="编辑配置文件"></a>编辑配置文件</h1><pre class=" language-lang-shell"><code class="language-lang-shell">sudo vim /etc/polipo/config
 </code></pre>
 <p>proxyPort的端口号默认是8123</p>
-<pre class=" language-properties"><code class="language-properties"><span class="token comment" spellcheck="true"># This file only needs to list configuration variables that deviate</span>
-<span class="token comment" spellcheck="true"># from the default values.  See /usr/share/doc/polipo/examples/config.sample</span>
-<span class="token comment" spellcheck="true"># and "polipo -v" for variables you can tweak and further information.</span>
+<pre class=" language-lang-properties"><code class="language-lang-properties"># This file only needs to list configuration variables that deviate
+# from the default values.  See /usr/share/doc/polipo/examples/config.sample
+# and "polipo -v" for variables you can tweak and further information.
 
-<span class="token attr-name">logSyslog</span> <span class="token punctuation">=</span> <span class="token attr-value">true</span>
-<span class="token attr-name">logFile</span> <span class="token punctuation">=</span> <span class="token attr-value">/var/log/polipo/polipo.log</span>
+logSyslog = true
+logFile = /var/log/polipo/polipo.log
 
-<span class="token attr-name">proxyAddress</span> <span class="token punctuation">=</span> <span class="token attr-value">"0.0.0.0" </span>
-<span class="token attr-name">proxyPort</span> <span class="token punctuation">=</span> <span class="token attr-value">8123 </span>
+proxyAddress = "0.0.0.0" 
+proxyPort = 8123 
 
-<span class="token attr-name">socksParentProxy</span> <span class="token punctuation">=</span> <span class="token attr-value">"127.0.0.1:1080"  </span>
-<span class="token attr-name">socksProxyType</span> <span class="token punctuation">=</span> <span class="token attr-value">socks5  </span>
+socksParentProxy = "127.0.0.1:1080"  
+socksProxyType = socks5  
 
-<span class="token attr-name">chunkHighMark</span> <span class="token punctuation">=</span> <span class="token attr-value">50331648  </span>
-<span class="token attr-name">objectHighMark</span> <span class="token punctuation">=</span> <span class="token attr-value">16384  </span>
+chunkHighMark = 50331648  
+objectHighMark = 16384  
 
-<span class="token attr-name">serverMaxSlots</span> <span class="token punctuation">=</span> <span class="token attr-value">64  </span>
-<span class="token attr-name">serverSlots</span> <span class="token punctuation">=</span> <span class="token attr-value">16  </span>
-<span class="token attr-name">serverSlots1</span> <span class="token punctuation">=</span> <span class="token attr-value">32</span>
+serverMaxSlots = 64  
+serverSlots = 16  
+serverSlots1 = 32
 </code></pre>
-<h1 id="重启polipo服务"><a href="#重启polipo服务" class="headerlink" title="重启polipo服务"></a>重启polipo服务</h1><pre class=" language-shell"><code class="language-shell">sudo service polipo restart
+<h1 id="重启polipo服务"><a href="#重启polipo服务" class="headerlink" title="重启polipo服务"></a>重启polipo服务</h1><pre class=" language-lang-shell"><code class="language-lang-shell">sudo service polipo restart
 </code></pre>
-<h1 id="设置环境变量"><a href="#设置环境变量" class="headerlink" title="设置环境变量"></a>设置环境变量</h1><pre class=" language-shell"><code class="language-shell">export http_proxy="http://127.0.0.1:8123"  
+<h1 id="设置环境变量"><a href="#设置环境变量" class="headerlink" title="设置环境变量"></a>设置环境变量</h1><pre class=" language-lang-shell"><code class="language-lang-shell">export http_proxy="http://127.0.0.1:8123"  
 export https_proxy="https://127.0.0.1:8123"
 </code></pre>
 <p>在命令行下执行设置临时环境变量。</p>
 <p>或者添加至<code>~/.bashrc</code>文件中使所有的shell均可实现全局SOCKS访问。</p>
 <p>或者添加至<code>/etc/profile</code>文件中使所有程序都实现全局SOCKS访问。</p>
-<h1 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h1><pre class=" language-shell"><code class="language-shell">curl www.google.com
+<h1 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h1><pre class=" language-lang-shell"><code class="language-lang-shell">curl www.google.com
 </code></pre>
 <p>如果可以获取到google主页，说明配置成功。</p>
 

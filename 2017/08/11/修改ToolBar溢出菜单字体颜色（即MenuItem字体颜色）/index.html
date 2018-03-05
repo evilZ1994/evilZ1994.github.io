@@ -711,24 +711,24 @@
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
         <h1 id="更改溢出菜单栏里的字体颜色"><a href="#更改溢出菜单栏里的字体颜色" class="headerlink" title="更改溢出菜单栏里的字体颜色"></a>更改溢出菜单栏里的字体颜色</h1><p>默认情况下，ToolBar溢出菜单的字体颜色是黑色的。如果要更改溢出菜单的文字颜色，需要为ToolBar添加一个主题，在styles.xml文件中新建：</p>
-<pre class=" language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>ToolBarThemeWhite<span class="token punctuation">"</span></span> <span class="token attr-name">parent</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Theme.AppCompat.Light<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token style language-css">
-    &lt;item name=<span class="token string">"android:textColor"</span>>@color/white&lt;/item>
-    &lt;item name=<span class="token string">"android:textSize"</span>><span class="token number">25</span>sp&lt;/item>
-</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span>
+<pre class=" language-lang-xml"><code class="language-lang-xml"><style name="ToolBarThemeWhite" parent="Theme.AppCompat.Light">
+    <item name="android:textColor">@color/white</item>
+    <item name="android:textSize">25sp</item>
+</style>
 </code></pre>
-<h1 id="更改显示在ToolBar上的菜单文字颜色"><a href="#更改显示在ToolBar上的菜单文字颜色" class="headerlink" title="更改显示在ToolBar上的菜单文字颜色"></a>更改显示在ToolBar上的菜单文字颜色</h1><pre class=" language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>ToolBarThemeWhite<span class="token punctuation">"</span></span> <span class="token attr-name">parent</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Theme.AppCompat.Light<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token style language-css">
-    &lt;item name=<span class="token string">"actionMenuTextColor"</span>>@color/white&lt;/item>
-    &lt;item name=<span class="token string">"android:textSize"</span>><span class="token number">20</span>sp&lt;/item>
-</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span>
+<h1 id="更改显示在ToolBar上的菜单文字颜色"><a href="#更改显示在ToolBar上的菜单文字颜色" class="headerlink" title="更改显示在ToolBar上的菜单文字颜色"></a>更改显示在ToolBar上的菜单文字颜色</h1><pre class=" language-lang-xml"><code class="language-lang-xml"><style name="ToolBarThemeWhite" parent="Theme.AppCompat.Light">
+    <item name="actionMenuTextColor">@color/white</item>
+    <item name="android:textSize">20sp</item>
+</style>
 </code></pre>
-<h1 id="在ToolBar中应用新建的主题"><a href="#在ToolBar中应用新建的主题" class="headerlink" title="在ToolBar中应用新建的主题"></a>在ToolBar中应用新建的主题</h1><pre class=" language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>android.support.v7.widget.Toolbar</span>
-    <span class="token attr-name"><span class="token namespace">android:</span>id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>@+id/toolbar<span class="token punctuation">"</span></span>
-    <span class="token attr-name"><span class="token namespace">android:</span>layout_width</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>match_parent<span class="token punctuation">"</span></span>
-    <span class="token attr-name"><span class="token namespace">android:</span>layout_height</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>?attr/actionBarSize<span class="token punctuation">"</span></span>
-    <span class="token attr-name"><span class="token namespace">app:</span>theme</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>@style/ToolBarThemeWhite<span class="token punctuation">"</span></span>
-    <span class="token attr-name"><span class="token namespace">app:</span>titleTextColor</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>@color/white<span class="token punctuation">"</span></span>
-    <span class="token attr-name"><span class="token namespace">app:</span>layout_collapseMode</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>pin<span class="token punctuation">"</span></span>
-    <span class="token attr-name"><span class="token namespace">app:</span>navigationIcon</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>@drawable/ic_back_white<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+<h1 id="在ToolBar中应用新建的主题"><a href="#在ToolBar中应用新建的主题" class="headerlink" title="在ToolBar中应用新建的主题"></a>在ToolBar中应用新建的主题</h1><pre class=" language-lang-xml"><code class="language-lang-xml"><android.support.v7.widget.Toolbar
+    android:id="@+id/toolbar"
+    android:layout_width="match_parent"
+    android:layout_height="?attr/actionBarSize"
+    app:theme="@style/ToolBarThemeWhite"
+    app:titleTextColor="@color/white"
+    app:layout_collapseMode="pin"
+    app:navigationIcon="@drawable/ic_back_white" />
 </code></pre>
 
     
