@@ -12,7 +12,7 @@
     
     <title>
         
-            Archives: 2017/8 | 
+            Android SQLite数据库升级解决方案 | 
         
         Mr.Z&#39;s Blog
     </title>
@@ -36,7 +36,7 @@
     <meta name="theme-color" content="#0097A7">
     <meta name="author" content="Zhu Yuexin">
     <meta name="description" itemprop="description" content="呀！发现一只会写代码的猪！">
-    <meta name="keywords" content="null">
+    <meta name="keywords" content="null,android,sqlite">
 
     <!-- Site Verification -->
     
@@ -65,15 +65,18 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://yoursite.com">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="Archives: 2017/8 | Mr.Z&#39;s Blog">
+    <meta property="og:title" content="Android SQLite数据库升级解决方案 | Mr.Z&#39;s Blog">
     <meta property="og:image" content="/img/favicon.ico" />
     <meta property="og:description" content="呀！发现一只会写代码的猪！">
-    
+    <meta property="og:article:tag" content="android"> <meta property="og:article:tag" content="sqlite"> 
 
+    
+        <meta property="article:published_time" content="Apr 01, 2018" />
+        <meta property="article:modified_time" content="Apr 01, 2018" />
     
 
     <!-- The Twitter Card protocol -->
-    <meta name="twitter:title" content="Archives: 2017/8 | Mr.Z&#39;s Blog">
+    <meta name="twitter:title" content="Android SQLite数据库升级解决方案 | Mr.Z&#39;s Blog">
     <meta name="twitter:description" content="呀！发现一只会写代码的猪！">
     <meta name="twitter:image" content="/img/favicon.ico">
     <meta name="twitter:card" content="summary_large_image" />
@@ -81,13 +84,43 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://yoursite.com/archives/2017/08/index.html" />
+        <link rel="canonical" href="http://yoursite.com/2018/04/01/Android SQLite数据库升级解决方案/index.html" />
     
 
     <!-- Structured-data for SEO -->
     
         
 
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Mr.Z&#39;s Blog",
+        "logo": "/img/favicon.ico"
+    },
+    "author": {
+        "@type": "Person",
+        "name": "Zhu Yuexin",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/favicon.ico"
+        },
+        "description": "The keyboard is typing on my fingertip,<br>The code is writing me,<br>My eyes are flashing in the cursor, and you are missing me."
+    },
+    "headline": "Android SQLite数据库升级解决方案",
+    "url": "http://yoursite.com/2018/04/01/Android SQLite数据库升级解决方案/index.html",
+    "datePublished": "Apr 01, 2018",
+    "dateModified": "Apr 01, 2018",
+    "description": "呀！发现一只会写代码的猪！",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://yoursite.com"
+    }
+}
+</script>
 
 
     
@@ -275,635 +308,374 @@
                         </button>
                     
 
-                    <!-- Index Module -->
-<div class="material-index mdl-grid">
-    
-    <div class="locate-thumbnail-symbol"></div>
+                    <!-- Post TOC -->
 
-    <!-- Pin on top -->
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+    <!-- Left aligned menu below button -->
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#举个栗子"><span class="post-toc-number">1.</span> <span class="post-toc-text">举个栗子</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#完整的示例"><span class="post-toc-number">2.</span> <span class="post-toc-text">完整的示例</span></a></li></ol>
+        <!--
+        <li class="mdl-menu__item">
+            Some Action
+        </li>
+        -->
+    </ul>
     
 
-    <!-- Normal Post -->
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
     
         
             <!-- Random Thumbnail -->
             <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
 
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/08/14/Activity统一堆栈管理/">Activity统一堆栈管理</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/08/14/Activity统一堆栈管理/" target="_self">Read more</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.gif" width="44px" height="44px" alt="Zhu Yuexin's avatar">
-            </div>
-            <div>
-                <strong>Zhu Yuexin</strong>
-                <span>Aug 14, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/Android碎片/">Android碎片</a>
-            </span>
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/08/14/普通按钮添加波纹点击效果/">普通按钮添加波纹点击效果</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            Android 5.0以后新增了按钮的波纹点击效果，AppCompatButton是自带波纹效果的，但是如果项目中有需要动态改变按钮的颜色，就会丢失...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/08/14/普通按钮添加波纹点击效果/" target="_self">Read more</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.gif" width="44px" height="44px" alt="Zhu Yuexin's avatar">
-            </div>
-            <div>
-                <strong>Zhu Yuexin</strong>
-                <span>Aug 14, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/Android碎片/">Android碎片</a>
-            </span>
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/08/14/设置Button不可点击/">设置Button不可点击</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            由于Button默认”android:clickable”属性是”true”，所以如果想设置Button不可点击的话，用这个属性是没有效果的。对于B...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/08/14/设置Button不可点击/" target="_self">Read more</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.gif" width="44px" height="44px" alt="Zhu Yuexin's avatar">
-            </div>
-            <div>
-                <strong>Zhu Yuexin</strong>
-                <span>Aug 14, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/Android碎片/">Android碎片</a>
-            </span>
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/08/11/输入框设置右侧清空输入框图标（原生drawableEnd图标方法）/">输入框设置右侧清空输入框图标（原生drawableEnd图标方法）</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            功能需求
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/08/11/输入框设置右侧清空输入框图标（原生drawableEnd图标方法）/" target="_self">Read more</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.gif" width="44px" height="44px" alt="Zhu Yuexin's avatar">
-            </div>
-            <div>
-                <strong>Zhu Yuexin</strong>
-                <span>Aug 11, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/Android碎片/">Android碎片</a>
-            </span>
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/08/11/密码输入框限定英文字符和数字输入/">密码输入框限定英文字符和数字输入</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            通常情况下，密码是不允许使用中文的，一般是用数字或者英文字符作为密码。
-
-如果只是简单的限定为数字的话，可以使用一下属性：
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/08/11/密码输入框限定英文字符和数字输入/" target="_self">Read more</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.gif" width="44px" height="44px" alt="Zhu Yuexin's avatar">
-            </div>
-            <div>
-                <strong>Zhu Yuexin</strong>
-                <span>Aug 11, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/Android碎片/">Android碎片</a>
-            </span>
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/08/11/修改EditText下划线颜色样式/">修改EditText下划线颜色样式</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/08/11/修改EditText下划线颜色样式/" target="_self">Read more</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.gif" width="44px" height="44px" alt="Zhu Yuexin's avatar">
-            </div>
-            <div>
-                <strong>Zhu Yuexin</strong>
-                <span>Aug 11, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/Android碎片/">Android碎片</a>
-            </span>
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/08/11/常见用户设置页面布局/">常见用户设置页面布局</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            写了一个用户设置页面，这里做一个记录，作为以后的参考。布局的参数设置抽取出来写在了style文件里。
-
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/08/11/常见用户设置页面布局/" target="_self">Read more</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.gif" width="44px" height="44px" alt="Zhu Yuexin's avatar">
-            </div>
-            <div>
-                <strong>Zhu Yuexin</strong>
-                <span>Aug 11, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/Android碎片/">Android碎片</a>
-            </span>
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/08/11/在Fragment中嵌套ViewPager时，内部Fragment不显示且滑动不流畅/">在Fragment中嵌套ViewPager时，内部Fragment不显示且滑动不流畅</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            遇到的问题
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/08/11/在Fragment中嵌套ViewPager时，内部Fragment不显示且滑动不流畅/" target="_self">Read more</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.gif" width="44px" height="44px" alt="Zhu Yuexin's avatar">
-            </div>
-            <div>
-                <strong>Zhu Yuexin</strong>
-                <span>Aug 11, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/Android错误解决/">Android错误解决</a>
-            </span>
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/08/11/修改ToolBar溢出菜单字体颜色（即MenuItem字体颜色）/">修改ToolBar溢出菜单字体颜色（即MenuItem字体颜色）</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/08/11/修改ToolBar溢出菜单字体颜色（即MenuItem字体颜色）/" target="_self">Read more</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.gif" width="44px" height="44px" alt="Zhu Yuexin's avatar">
-            </div>
-            <div>
-                <strong>Zhu Yuexin</strong>
-                <span>Aug 11, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/Android碎片/">Android碎片</a>
-            </span>
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/08/11/getResource().getColor()方法废弃，其他获取颜色的方法/">getResource().getColor()方法废弃，其他获取颜色的方法</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            getResouce().getColor(int id)在API 23以上版本时被废弃了，替换为方法getR...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/08/11/getResource().getColor()方法废弃，其他获取颜色的方法/" target="_self">Read more</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.gif" width="44px" height="44px" alt="Zhu Yuexin's avatar">
-            </div>
-            <div>
-                <strong>Zhu Yuexin</strong>
-                <span>Aug 11, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/Android碎片/">Android碎片</a>
-            </span>
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-
-    
-    <!-- Index nav -->
-        <nav class="material-nav mdl-cell mdl-cell--12-col">
-            <span class="page-number current">1</span><a class="page-number" href="/archives/2017/08/page/2/">2</a><a class="extend next" rel="next" href="/archives/2017/08/page/2/"><button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"><i class="material-icons" role="presentation">arrow_forward</i></button></a>
-        </nav>
-    
-
-    
-        <script type="text/ls-javascript" id="thumbnail-script">
-    var randomNum;
-
-    var locatePost = $('.locate-thumbnail-symbol').next();
-    for(var i = 0; i < 10; i++) {
-        randomNum = Math.floor(Math.random() * 19 + 1);
-
-        locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
-        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
     $('.post_thumbnail-random').addClass('lazy');
-
-        locatePost = locatePost.next();
-    }
 </script>
 
+        
+    
+            <p class="article-headline-p">
+                Android SQLite数据库升级解决方案
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.gif" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>Zhu Yuexin</strong>
+        <span>Apr 01, 2018</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/android/">android</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/sqlite/">sqlite</a>
+    </ul>
+    
+
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Android SQLite数据库升级解决方案&url=http://yoursite.com/2018/04/01/Android SQLite数据库升级解决方案/index.html&pic=&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                Share to Weibo
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Android SQLite数据库升级解决方案&url=http://yoursite.com/2018/04/01/Android SQLite数据库升级解决方案/index.html&via=Zhu Yuexin" target="_blank">
+            <li class="mdl-menu__item">
+                Share to Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/04/01/Android SQLite数据库升级解决方案/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                Share to Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com/2018/04/01/Android SQLite数据库升级解决方案/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                Share to Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <p>在使用SQLite数据库的时候，一般会有数据库版本的迭代。例如APP首次开发完成，数据库的版本是1.0版，然后需求增加，需要对数据库做改动，这时候数据库的版本就要更新为2.0。SQLite在遇见版本升级时会对比旧版本号和新版本号，执行<code>onUpgrade()</code>方法，需要自己在<code>onUpgrade()</code>方法中实现相应的逻辑。</p>
+<p>SQLite版本升级的逻辑是：如果设备是首次安装这个APP，那么只会执行<code>onCreate()</code>方法；如果设备中安装有这个APP的旧版本，在安装新版本时，不会执行<code>onCreate()</code>方法，而只会执行<code>onUpgrade()</code>方法。</p>
+<h1 id="举个栗子"><a href="#举个栗子" class="headerlink" title="举个栗子"></a>举个栗子</h1><p>在数据库第一个版本中，我们新建一个<code>people</code>表，数据库版本号为1，SQLiteHelper类如下：</p>
+<pre class=" language-lang-java"><code class="language-lang-java">public class SQLiteHelper extends SQLiteOpenHelper {
+    private static SQLiteHelper instance;
+    private static final String DATABASE_NAME = "local_db";
+      //初始版本号，固定不变
+    private static final int FIRST_VERSION = 1;
+
+    public static SQLiteHelper getInstance(Context context){
+        if (instance == null){
+            instance = new SQLiteHelper(context, DATABASE_NAME, null, NEW_VERSION);
+        }
+
+        return instance;
+    }
+
+    public SQLiteHelper(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
+        super(context, name, factory, version);
+    }
+
+    @Override
+    public void onCreate(SQLiteDatabase sqLiteDatabase) {
+        //初始化时新建people表
+        sqLiteDatabase.execSQL("create table if not exists people(" +
+                "name text not null)");
+    }
+
+    @Override
+    public void onUpgrade(SQLiteDatabase sqLiteDatabase, int oldVersion, int newVersion) {
+
+    }
+}
+</code></pre>
+<p>之后我们有了新的需求，需要再建一个<code>job</code>表，这时数据库的版本号升级为2，而且我们需要在<code>onUpgrade()</code>方法中加入相关代码。</p>
+<pre class=" language-lang-java"><code class="language-lang-java">public class SQLiteHelper extends SQLiteOpenHelper {
+    private static SQLiteHelper instance;
+    private static final String DATABASE_NAME = "local_db";
+      //初始版本号，固定不变
+    private static final int FIRST_VERSION = 1;
+      //新的版本号
+      private static final int NEW_VERSION = 2;
+
+    @Override
+    public void onCreate(SQLiteDatabase sqLiteDatabase) {
+        //初始化时新建people表
+        sqLiteDatabase.execSQL("create table if not exists people(" +
+                "name text not null)");
+    }
+
+    @Override
+    public void onUpgrade(SQLiteDatabase sqLiteDatabase, int oldVersion, int newVersion) {
+        if (oldVersion == 1){
+            sqLiteDatabase.execSQL("create table if not exists job(" +
+                    "title text)");
+        }
+    }
+}
+</code></pre>
+<p>在<code>onUpgrade()</code>方法中，我们判断旧版本号如果为1的话就执行新的建表语句。这样可以解决从版本1升级到版本2的问题，但是如果用户直接从版本2开始安装呢？首次安装是不会执行<code>onUpgrade()</code>方法的，所以新的建表语句无法被执行到。对于这个问题，我们可以在<code>onCreate()</code>方法中手动调用<code>onUpgrade()</code>方法，<code>oldVersion</code>传入初始版本号，<code>newVersion</code>传入当前最新版本号：</p>
+<pre class=" language-lang-java"><code class="language-lang-java">@Override
+    public void onCreate(SQLiteDatabase sqLiteDatabase) {
+        //初始化时新建people表
+        sqLiteDatabase.execSQL("create table if not exists people(" +
+                "name text not null)");
+
+        onUpgrade(sqLiteDatabase, FIRST_VERSION, NEW_VERSION);
+    }
+</code></pre>
+<p>现在APP的数据库版本为2，这时我们又有了新的需求，需要新建一个<code>company</code>表。首先考虑从版本2升级到版本3的问题，那么在<code>onUpgrade()</code>方法中这样添加：</p>
+<pre class=" language-lang-java"><code class="language-lang-java">@Override
+    public void onUpgrade(SQLiteDatabase sqLiteDatabase, int oldVersion, int newVersion) {
+        if (oldVersion == 1){
+            sqLiteDatabase.execSQL("create table if not exists job(" +
+                    "title text)");
+        }
+        if (oldVersion == 2){
+            sqLiteDatabase.execSQL("create table if not exists groups(" +
+                    "name text not null)");
+        }
+    }
+</code></pre>
+<p>这样如果<code>oldVersion</code>为2，就会执行新的建表语句。但是如果<code>oldVersion</code>是1呢，从1直接升级到3，目前只会执行<code>if(oldVersion == 1)</code>中的语句。对于这个问题，有些解决方案是添加多个判断，把所有情况考虑完，比如<code>1=&gt;2</code>、<code>1=&gt;3</code>、<code>2=&gt;3</code>，这3种情况下执行不同的操作，但是这样的话不仅麻烦，而且随着数据库版本的迭代，所要考虑的情况会越来越多。</p>
+<p>对于这种情况，我的解决办法是使用递归的方式，从当前最老的版本开始，每次只考虑1个版本的间隔，一级一级的升级：</p>
+<pre class=" language-lang-java"><code class="language-lang-java">@Override
+    public void onUpgrade(SQLiteDatabase sqLiteDatabase, int oldVersion, int newVersion) {
+        if (oldVersion == 1){
+            sqLiteDatabase.execSQL("create table if not exists job(" +
+                    "title text)");
+        }
+        if (oldVersion == 2){
+            sqLiteDatabase.execSQL("create table if not exists groups(" +
+                    "name text not null)");
+        }
+        //递归调用
+        if (newVersion-oldVersion > 1){
+            onUpgrade(sqLiteDatabase, oldVersion+1, newVersion);
+        }
+    }
+</code></pre>
+<p>在递归的过程中，旧版本不断的+1，一直到和新版本只相差1，完成所有的升级操作。</p>
+<h1 id="完整的示例"><a href="#完整的示例" class="headerlink" title="完整的示例"></a>完整的示例</h1><pre class=" language-lang-java"><code class="language-lang-java">public class SQLiteHelper extends SQLiteOpenHelper {
+    private static SQLiteHelper instance;
+    private static final String DATABASE_NAME = "local_db";
+    private static final int FIRST_VERSION = 1;
+    private static final int NEW_VERSION = 4;
+
+    public static SQLiteHelper getInstance(Context context){
+        if (instance == null){
+            instance = new SQLiteHelper(context, DATABASE_NAME, null, NEW_VERSION);
+        }
+
+        return instance;
+    }
+
+    public static SQLiteDatabase getWritableDatabase(Context context){
+        return getInstance(context).getWritableDatabase();
+    }
+
+    public static SQLiteDatabase getReadableDatabase(Context context){
+        return getInstance(context).getReadableDatabase();
+    }
+
+    public SQLiteHelper(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
+        super(context, name, factory, version);
+    }
+
+    @Override
+    public void onCreate(SQLiteDatabase sqLiteDatabase) {
+        sqLiteDatabase.execSQL("create table if not exists people(" +
+                "name text not null)");
+
+        onUpgrade(sqLiteDatabase, FIRST_VERSION, NEW_VERSION);
+    }
+
+    @Override
+    public void onUpgrade(SQLiteDatabase sqLiteDatabase, int oldVersion, int newVersion) {
+        if (oldVersion == 1){
+            sqLiteDatabase.execSQL("create table if not exists job(" +
+                    "title text)");
+        }
+        if (oldVersion == 2){
+            sqLiteDatabase.execSQL("create table if not exists groups(" +
+                    "name text not null)");
+        }
+        if (oldVersion == 3){
+            sqLiteDatabase.execSQL("create table if not exists company(" +
+                    "name text not null)");
+        }
+        if (newVersion-oldVersion > 1){
+            onUpgrade(sqLiteDatabase, oldVersion+1, newVersion);
+        }
+    }
+}
+</code></pre>
+
+    
+
     
 </div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2018/04/01/使用Stetho工具在浏览器上查看SQLite数据库/" id="post_nav-older" class="next-content">
+            Older
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
 
 
                     
