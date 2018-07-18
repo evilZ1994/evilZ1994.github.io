@@ -1088,7 +1088,7 @@ app_name = 'blog'
     <input type="submit" value="提交">
 </form>
 </code></pre>
-<p>其中用于防止跨站请求伪造，凡是用到<code>POST</code>的表单，都需要添加这样一句话。</p>
+<p>其中<code>csrf_token</code>用于防止跨站请求伪造，凡是用到<code>POST</code>的表单，都需要添加这样一句话。</p>
 <p>博客编写页面完成，可以为主页<code>index.html</code>的<code>新文章</code>链接添加一个超链接：</p>
 <pre class=" language-lang-html"><code class="language-lang-html"><h1><a href="{% url 'blog:edit_page' %}">新文章</a></h1>
 </code></pre>
