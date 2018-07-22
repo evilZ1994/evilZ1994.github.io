@@ -12,7 +12,7 @@
     
     <title>
         
-            Archives: 2017/11 | 
+            剑指Offer编程题-跳台阶 | 
         
         Mr.Z&#39;s Blog
     </title>
@@ -36,7 +36,7 @@
     <meta name="theme-color" content="#0097A7">
     <meta name="author" content="Zhu Yuexin">
     <meta name="description" itemprop="description" content="呀！发现一只会写代码的猪！">
-    <meta name="keywords" content="null">
+    <meta name="keywords" content="null,牛客网,剑指Offer,编程题">
 
     <!-- Site Verification -->
     
@@ -65,15 +65,18 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://yoursite.com">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="Archives: 2017/11 | Mr.Z&#39;s Blog">
+    <meta property="og:title" content="剑指Offer编程题-跳台阶 | Mr.Z&#39;s Blog">
     <meta property="og:image" content="/img/favicon.ico" />
     <meta property="og:description" content="呀！发现一只会写代码的猪！">
-    
+    <meta property="og:article:tag" content="牛客网"> <meta property="og:article:tag" content="剑指Offer"> <meta property="og:article:tag" content="编程题"> 
 
+    
+        <meta property="article:published_time" content="Jul 22, 2018" />
+        <meta property="article:modified_time" content="Jul 22, 2018" />
     
 
     <!-- The Twitter Card protocol -->
-    <meta name="twitter:title" content="Archives: 2017/11 | Mr.Z&#39;s Blog">
+    <meta name="twitter:title" content="剑指Offer编程题-跳台阶 | Mr.Z&#39;s Blog">
     <meta name="twitter:description" content="呀！发现一只会写代码的猪！">
     <meta name="twitter:image" content="/img/favicon.ico">
     <meta name="twitter:card" content="summary_large_image" />
@@ -81,13 +84,43 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://yoursite.com/archives/2017/11/index.html" />
+        <link rel="canonical" href="http://yoursite.com/2018/07/22/剑指Offer编程题-跳台阶/index.html" />
     
 
     <!-- Structured-data for SEO -->
     
         
 
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Mr.Z&#39;s Blog",
+        "logo": "/img/favicon.ico"
+    },
+    "author": {
+        "@type": "Person",
+        "name": "Zhu Yuexin",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/favicon.ico"
+        },
+        "description": "The keyboard is typing on my fingertip,<br>The code is writing me,<br>My eyes are flashing in the cursor, and you are missing me."
+    },
+    "headline": "剑指Offer编程题-跳台阶",
+    "url": "http://yoursite.com/2018/07/22/剑指Offer编程题-跳台阶/index.html",
+    "datePublished": "Jul 22, 2018",
+    "dateModified": "Jul 22, 2018",
+    "description": "呀！发现一只会写代码的猪！",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://yoursite.com"
+    }
+}
+</script>
 
 
     
@@ -502,217 +535,306 @@
                         </button>
                     
 
-                    <!-- Index Module -->
-<div class="material-index mdl-grid">
-    
-    <div class="locate-thumbnail-symbol"></div>
+                    <!-- Post TOC -->
 
-    <!-- Pin on top -->
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+    <!-- Left aligned menu below button -->
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#解题思路"><span class="post-toc-number">1.</span> <span class="post-toc-text">解题思路</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#实现"><span class="post-toc-number">2.</span> <span class="post-toc-text">实现</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#补充"><span class="post-toc-number">3.</span> <span class="post-toc-text">补充</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#解题思路-1"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">解题思路</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#实现-1"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">实现</span></a></li></ol></li></ol>
+        <!--
+        <li class="mdl-menu__item">
+            Some Action
+        </li>
+        -->
+    </ul>
     
 
-    <!-- Normal Post -->
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
     
         
             <!-- Random Thumbnail -->
             <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
 
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/11/23/Python入坑笔记（四）：字典/">Python入坑笔记（四）：字典</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            Python中的字典和Java中的集合很类似，字典保存的是一系列键值对(key-value)，每个键与一个值关联。...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/11/23/Python入坑笔记（四）：字典/" target="_self">Read more</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.gif" width="44px" height="44px" alt="Zhu Yuexin's avatar">
-            </div>
-            <div>
-                <strong>Zhu Yuexin</strong>
-                <span>Nov 23, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/Python/">Python</a>
-            </span>
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/11/23/论文笔记：Multi-label classification using hierarchical embedding/">Multi-label classification using hierarchical embedding</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
-2017.9发表在
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/11/23/论文笔记：Multi-label classification using hierarchical embedding/" target="_self">Read more</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.gif" width="44px" height="44px" alt="Zhu Yuexin's avatar">
-            </div>
-            <div>
-                <strong>Zhu Yuexin</strong>
-                <span>Nov 23, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/论文笔记/">论文笔记</a>
-            </span>
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/11/21/论文笔记：Multi-Label Learning with Label Enhancement/">Multi-Label Learning with Label Enhancement</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
-2017.6.26发表在Computer Vision and Pattern Recognition。
-作...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/11/21/论文笔记：Multi-Label Learning with Label Enhancement/" target="_self">Read more</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.gif" width="44px" height="44px" alt="Zhu Yuexin's avatar">
-            </div>
-            <div>
-                <strong>Zhu Yuexin</strong>
-                <span>Nov 21, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/论文笔记/">论文笔记</a>
-            </span>
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-
-    
-
-    
-        <script type="text/ls-javascript" id="thumbnail-script">
-    var randomNum;
-
-    var locatePost = $('.locate-thumbnail-symbol').next();
-    for(var i = 0; i < 10; i++) {
-        randomNum = Math.floor(Math.random() * 19 + 1);
-
-        locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
-        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
     $('.post_thumbnail-random').addClass('lazy');
-
-        locatePost = locatePost.next();
-    }
 </script>
 
+        
+    
+            <p class="article-headline-p">
+                剑指Offer编程题-跳台阶
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.gif" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>Zhu Yuexin</strong>
+        <span>Jul 22, 2018</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/剑指Offer/">剑指Offer</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/牛客网/">牛客网</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/编程题/">编程题</a>
+    </ul>
+    
+
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=剑指Offer编程题-跳台阶&url=http://yoursite.com/2018/07/22/剑指Offer编程题-跳台阶/index.html&pic=&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                Share to Weibo
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=剑指Offer编程题-跳台阶&url=http://yoursite.com/2018/07/22/剑指Offer编程题-跳台阶/index.html&via=Zhu Yuexin" target="_blank">
+            <li class="mdl-menu__item">
+                Share to Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/07/22/剑指Offer编程题-跳台阶/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                Share to Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com/2018/07/22/剑指Offer编程题-跳台阶/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                Share to Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <blockquote>
+<p>题目：<a href="https://www.nowcoder.com/practice/8c82a5b80378478f9484d87d1c5f12a4?tpId=13&amp;tqId=11161&amp;tPage=1&amp;rp=1&amp;ru=/ta/coding-interviews&amp;qru=/ta/coding-interviews/question-ranking" target="_blank" rel="external">跳台阶</a></p>
+<p>题目描述：一只青蛙一次可以跳上1级台阶，也可以跳上2级。求该青蛙跳上一个n级的台阶总共有多少种跳法（先后次序不同算不同的结果）。</p>
+</blockquote>
+<h1 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h1><ul>
+<li>首先想到这可能是一个排列组合的问题，青蛙每次只能跳1或者2级，假设跳2级的次数为a，那么当a=0时，只有1种跳法，当a=1时，某两个台阶合并为一次，其他台阶都跳一次，这就成了一个组合问题，此时的跳法有<code>C(n-1, 1)</code>种，当a=2时，跳法有<code>C(n-2, 2)</code>种。然后要考虑a有多少种取值，显然，<code>a = n/2</code>，然后就可以根据公式求解：<code>t = C(n, 0) + C(n-1, 1) + ... + C(n-a, a)</code></li>
+<li>青蛙每次只能跳1级或者2级，那么就只需要考虑两个可能：（1）第一次跳1级，那么剩下的就是<code>F(n-1)</code>种跳法；（2）第一次跳2级，那么剩下的就是<code>F(n-2)</code>种跳法。总的跳法<code>F(n) = F(n-1) + F(n-2)</code>，就是一个斐波那契数列。</li>
+</ul>
+<h1 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h1><blockquote>
+<p>python</p>
+</blockquote>
+<p>排列组合公式：</p>
+<pre class=" language-lang-python"><code class="language-lang-python"># -*- coding:utf-8 -*-
+class Solution:
+    def jumpFloor(self, number):
+        # write code here
+        num2 = int(number/2)
+        time = 1
+        for i in range(1, num2+1):
+            d = 1
+            n = 0
+            num = number - i
+            u = 1
+            while n<i:
+                n = n+1
+                d = d*n
+            while n>0:
+                u = u*num
+                num -= 1
+                n -= 1
+            time += int(u/d)
+        return time
+</code></pre>
+<p>斐波那契数列（和前面的斐波那契数列解法相同）：</p>
+<pre class=" language-lang-python"><code class="language-lang-python"># -*- coding:utf-8 -*-
+class Solution:
+    def jumpFloor(self, number):
+        # write code here
+        if number<=2:
+            return number
+        a = 1
+        b = 2
+        for i in range(number-2):
+            b = a + b
+            a = b - a
+        return b
+</code></pre>
+<h1 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h1><p>刚开始的时候看错了题目，看成了青蛙也可以跳n级，好不容易解出来发现结果不通过。虽然题目理解有误，但还是找出了解法，就当看作是扩展练习吧。</p>
+<p>题目的错误理解：一只青蛙一次可以跳上1级台阶，也可以跳上2级，… ，也可以跳上n级（也就是可以跳任意级）。求该青蛙跳上一个n级的台阶总共有多少种跳法（先后次序不同算不同的结果）。</p>
+<h2 id="解题思路-1"><a href="#解题思路-1" class="headerlink" title="解题思路"></a>解题思路</h2><ul>
+<li>青蛙第一次跳1阶，剩下的跳法就有<code>F(n-1)</code>种；青蛙第一次跳2阶，剩下有<code>F(n-2)</code>种跳法；…；青蛙第一次跳n-1阶，剩下有<code>F(1)</code>种跳法；最后青蛙一次跳n阶，剩下的跳法是<code>F(0)</code>。总的跳法<code>F(n) = F(n-1) + F(n-2) + ... + F(1) + F(0)</code>，可以用递归来实现（这种想法时间复杂度太高）。</li>
+<li>按上面的想法实现复杂度太高，然后想了一下，<code>F(n) = F(n-1) + F(n-2) + ... + F(0)</code>，<code>F(n-1) = F(n-2) + ... + F(0)</code>，发现<code>F(n) = F(n-1) * 2</code>，问题一下就简单多了。</li>
+</ul>
+<h2 id="实现-1"><a href="#实现-1" class="headerlink" title="实现"></a>实现</h2><blockquote>
+<p>Python</p>
+</blockquote>
+<p>方法一（复杂度高）：</p>
+<pre class=" language-lang-python"><code class="language-lang-python"># -*- coding:utf-8 -*-
+class Solution:
+    def jumpFloor(self, number):
+        # write code here
+        if number == 0:
+            return 1
+        time = 0
+        n = number
+        while n:
+            n -= 1
+            time += self.jumpFloor(n)
+        return time
+</code></pre>
+<p>方法二：</p>
+<pre class=" language-lang-python"><code class="language-lang-python"># -*- coding:utf-8 -*-
+class Solution:
+    def jumpFloor(self, number):
+        # write code here
+        if number <= 1:
+            return 1
+        return self.jumpFloor(number-1)*2
+</code></pre>
+
+    
+
     
 </div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+        <a href="/2018/07/22/剑指Offer编程题-变态跳台阶/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            Newer
+        </a>
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2018/07/21/剑指Offer编程题-斐波那契数列/" id="post_nav-older" class="next-content">
+            Older
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
 
 
                     
