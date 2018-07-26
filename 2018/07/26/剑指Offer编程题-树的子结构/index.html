@@ -12,7 +12,7 @@
     
     <title>
         
-            Categories: Java笔记 | 
+            剑指Offer编程题-树的子结构 | 
         
         Mr.Z&#39;s Blog
     </title>
@@ -36,7 +36,7 @@
     <meta name="theme-color" content="#0097A7">
     <meta name="author" content="Zhu Yuexin">
     <meta name="description" itemprop="description" content="呀！发现一只会写代码的猪！">
-    <meta name="keywords" content="null">
+    <meta name="keywords" content="null,牛客网,剑指Offer,编程题">
 
     <!-- Site Verification -->
     
@@ -65,15 +65,18 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://yoursite.com">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="Categories: Java笔记 | Mr.Z&#39;s Blog">
+    <meta property="og:title" content="剑指Offer编程题-树的子结构 | Mr.Z&#39;s Blog">
     <meta property="og:image" content="/img/favicon.ico" />
     <meta property="og:description" content="呀！发现一只会写代码的猪！">
-    
+    <meta property="og:article:tag" content="牛客网"> <meta property="og:article:tag" content="剑指Offer"> <meta property="og:article:tag" content="编程题"> 
 
+    
+        <meta property="article:published_time" content="Jul 26, 2018" />
+        <meta property="article:modified_time" content="Jul 26, 2018" />
     
 
     <!-- The Twitter Card protocol -->
-    <meta name="twitter:title" content="Categories: Java笔记 | Mr.Z&#39;s Blog">
+    <meta name="twitter:title" content="剑指Offer编程题-树的子结构 | Mr.Z&#39;s Blog">
     <meta name="twitter:description" content="呀！发现一只会写代码的猪！">
     <meta name="twitter:image" content="/img/favicon.ico">
     <meta name="twitter:card" content="summary_large_image" />
@@ -81,13 +84,43 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://yoursite.com/categories/Java笔记/index.html" />
+        <link rel="canonical" href="http://yoursite.com/2018/07/26/剑指Offer编程题-树的子结构/index.html" />
     
 
     <!-- Structured-data for SEO -->
     
         
 
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Mr.Z&#39;s Blog",
+        "logo": "/img/favicon.ico"
+    },
+    "author": {
+        "@type": "Person",
+        "name": "Zhu Yuexin",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/favicon.ico"
+        },
+        "description": "The keyboard is typing on my fingertip,<br>The code is writing me,<br>My eyes are flashing in the cursor, and you are missing me."
+    },
+    "headline": "剑指Offer编程题-树的子结构",
+    "url": "http://yoursite.com/2018/07/26/剑指Offer编程题-树的子结构/index.html",
+    "datePublished": "Jul 26, 2018",
+    "dateModified": "Jul 26, 2018",
+    "description": "呀！发现一只会写代码的猪！",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://yoursite.com"
+    }
+}
+</script>
 
 
     
@@ -502,226 +535,292 @@
                         </button>
                     
 
-                    <!-- Index Module -->
-<div class="material-index mdl-grid">
-    
-    <div class="locate-thumbnail-symbol"></div>
+                    <!-- Post TOC -->
 
-    <!-- Pin on top -->
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+    <!-- Left aligned menu below button -->
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#解题思路"><span class="post-toc-number">1.</span> <span class="post-toc-text">解题思路</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#实现"><span class="post-toc-number">2.</span> <span class="post-toc-text">实现</span></a></li></ol>
+        <!--
+        <li class="mdl-menu__item">
+            Some Action
+        </li>
+        -->
+    </ul>
     
 
-    <!-- Normal Post -->
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
     
         
             <!-- Random Thumbnail -->
             <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
 
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/03/29/Java8新特性：Date和Time类/">Java8新特性：Date和Time类（LocalDate, LocalTime, LocalDateTime）</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            这篇文章主要是java8中新的Date和Time API的实战。新的Date和Time类是java开发者社区千呼万唤始出来的。Java8 之前存在的...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/03/29/Java8新特性：Date和Time类/" target="_self">Read more</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.gif" width="44px" height="44px" alt="Zhu Yuexin's avatar">
-            </div>
-            <div>
-                <strong>Zhu Yuexin</strong>
-                <span>Mar 29, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/Java笔记/">Java笔记</a>
-            </span>
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/03/24/Java笔记（二）--Java的基本程序设计结构（二）/">Java笔记（二）--Java的基本程序设计结构（二）</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
-
-字符串
-输入输出
-控制流程
-大数值
-数...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/03/24/Java笔记（二）--Java的基本程序设计结构（二）/" target="_self">Read more</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.gif" width="44px" height="44px" alt="Zhu Yuexin's avatar">
-            </div>
-            <div>
-                <strong>Zhu Yuexin</strong>
-                <span>Mar 24, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/Java笔记/">Java笔记</a>
-            </span>
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/03/23/Java笔记（一）--Java的基本程序设计结构（一）/">Java笔记（一）--Java的基本程序设计结构（一）</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
-
-类命名规范
-注释
-数据类型
-变量和常量
-
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/03/23/Java笔记（一）--Java的基本程序设计结构（一）/" target="_self">Read more</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.gif" width="44px" height="44px" alt="Zhu Yuexin's avatar">
-            </div>
-            <div>
-                <strong>Zhu Yuexin</strong>
-                <span>Mar 23, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/Java笔记/">Java笔记</a>
-            </span>
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-
-    
-
-    
-        <script type="text/ls-javascript" id="thumbnail-script">
-    var randomNum;
-
-    var locatePost = $('.locate-thumbnail-symbol').next();
-    for(var i = 0; i < 10; i++) {
-        randomNum = Math.floor(Math.random() * 19 + 1);
-
-        locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
-        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
     $('.post_thumbnail-random').addClass('lazy');
-
-        locatePost = locatePost.next();
-    }
 </script>
 
+        
+    
+            <p class="article-headline-p">
+                剑指Offer编程题-树的子结构
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.gif" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>Zhu Yuexin</strong>
+        <span>Jul 26, 2018</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/剑指Offer/">剑指Offer</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/牛客网/">牛客网</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/编程题/">编程题</a>
+    </ul>
+    
+
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=剑指Offer编程题-树的子结构&url=http://yoursite.com/2018/07/26/剑指Offer编程题-树的子结构/index.html&pic=&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                Share to Weibo
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=剑指Offer编程题-树的子结构&url=http://yoursite.com/2018/07/26/剑指Offer编程题-树的子结构/index.html&via=Zhu Yuexin" target="_blank">
+            <li class="mdl-menu__item">
+                Share to Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/07/26/剑指Offer编程题-树的子结构/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                Share to Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com/2018/07/26/剑指Offer编程题-树的子结构/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                Share to Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <blockquote>
+<p>题目：<a href="https://www.nowcoder.com/practice/6e196c44c7004d15b1610b9afca8bd88?tpId=13&amp;tqId=11170&amp;tPage=1&amp;rp=1&amp;ru=/ta/coding-interviews&amp;qru=/ta/coding-interviews/question-ranking" target="_blank" rel="external">树的子结构</a></p>
+<p>题目描述：输入两棵二叉树A，B，判断B是不是A的子结构。（ps：我们约定空树不是任意一个树的子结构）</p>
+</blockquote>
+<h1 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h1><ul>
+<li>单递归：先判断<code>pRoot1</code>和<code>pRoot2</code>如果不相等的话，递归调用使<code>pRoot1</code>的左结点和右结点分别与<code>pRoot2</code>比较，两者的返回结果任意一个为<code>True</code>即可。如果<code>pRoot1</code>和<code>pRoot2</code>相等，就再次判断<code>pRoot2</code>是否左右子结点都为空，（1）如果都为空，则说明此时<code>pRoot2</code>已经都比较过了，直接返回<code>True</code>；（2）如果都不为空，那么递归调用使<code>pRoot1</code>左结点与<code>pRoot2</code>左结点、<code>pRoot1</code>右结点与<code>pRoot2</code>右结点比较（这两者的返回结果要同时为<code>True</code>，设为<code>result1</code>），或者<code>pRoot1</code>的左结点和右结点分别再与<code>pRoot2</code>比较（设结果为<code>result2</code>、<code>result3</code>），那么这三个结果满足其一即可，即<code>result1 or result2 or result3</code>；（3）如果<code>pRoot2</code>左结点为空，那么需要比较<code>pRoot1</code>和<code>pRoot2</code>的右结点；（4）如果<code>pRoot2</code>右结点为空，那么需要比较<code>pRoot1</code>和<code>pRoot2</code>的左结点。（文字描述比较麻烦，结合代码看）</li>
+<li>双递归：定义一个新方法<code>func2(root1, root2)</code>用来判断<code>root2</code>是否等于<code>root1</code>并且是其子树，具体方法是先判断<code>root2</code>是否为空，如果为空说明<code>root2</code>已经比较完了，直接返回<code>True</code>。再判断<code>root1</code>是否为空，此时<code>root2</code>已经确定非空，如果<code>root1</code>为空的话说明<code>root1</code>和<code>root2</code>已经有了差异，直接返回<code>False</code>。然后比较<code>root1</code>和<code>root2</code>是否相等，如果相等的话，递归调用比较<code>root1</code>的左结点与<code>root2</code>的左结点、<code>root1</code>的右结点与<code>root2</code>的右结点，两者的比较结果要同时为<code>True</code>；如果<code>root1</code>和<code>root2</code>不相等，直接返回<code>False</code>。在原方法中，先调用<code>func2</code>方法判断此时<code>pRoot2</code>是否等于<code>pRoot1</code>并且是它的子树，如果不满足，则递归调用原方法，再次使<code>pRoot1</code>的左结点和右结点分别与<code>pRoot2</code>比较，两者结果任意满足其一即可。（这个方法相当于把方法一的递归拆成了两部分，更容易理解）</li>
+</ul>
+<h1 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h1><blockquote>
+<p>python</p>
+</blockquote>
+<p>单递归：</p>
+<pre class=" language-lang-python"><code class="language-lang-python"># -*- coding:utf-8 -*-
+# class TreeNode:
+#     def __init__(self, x):
+#         self.val = x
+#         self.left = None
+#         self.right = None
+class Solution:
+    def HasSubtree(self, pRoot1, pRoot2):
+        # write code here
+        if not pRoot1 or not pRoot2:
+            return False
+        if pRoot1.val != pRoot2.val:
+            return self.HasSubtree(pRoot1.left, pRoot2) or self.HasSubtree(pRoot1.right, pRoot2)
+        elif not pRoot2.left and not pRoot2.right:
+            return True
+        elif pRoot2.left and pRoot2.right:
+            return (self.HasSubtree(pRoot1.left, pRoot2.left) and self.HasSubtree(pRoot1.right, pRoot2.right)) or self.HasSubtree(pRoot1.left, pRoot2) or self.HasSubtree(pRoot1.right, pRoot2)
+        elif not pRoot2.right:
+            return self.HasSubtree(pRoot1.left, pRoot2.left)
+        else:
+            return self.HasSubtree(pRoot1.right, pRoot2.right)
+</code></pre>
+<blockquote>
+<p>python</p>
+</blockquote>
+<p>双递归：</p>
+<pre class=" language-lang-python"><code class="language-lang-python"># -*- coding:utf-8 -*-
+# class TreeNode:
+#     def __init__(self, x):
+#         self.val = x
+#         self.left = None
+#         self.right = None
+class Solution:
+    def HasSubtree(self, pRoot1, pRoot2):
+        # write code here
+        if not pRoot1 or not pRoot2:
+            return False
+        if self.isTree2in1(pRoot1, pRoot2):
+            return True
+        else:
+            return self.HasSubtree(pRoot1.left, pRoot2) or self.HasSubtree(pRoot1.right, pRoot2)
+
+
+    def isTree2in1(self, pRoot1, pRoot2):
+        if not pRoot2:
+            return True
+        if not pRoot1:
+            return False
+        if pRoot1.val == pRoot2.val:
+            return self.isTree2in1(pRoot1.left, pRoot2.left) and self.isTree2in1(pRoot1.right, pRoot2.right)
+        else:
+            return False
+</code></pre>
+
+    
+
     
 </div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+        <a href="/2018/07/26/剑指Offer编程题-二叉树的镜像/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            Newer
+        </a>
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2018/07/25/剑指Offer编程题-合并两个排序的链表/" id="post_nav-older" class="next-content">
+            Older
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
 
 
                     
