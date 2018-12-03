@@ -1,0 +1,1632 @@
+<!DOCTYPE html>
+<html style="display: none;" lang="en">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.4.0 -->
+    <script>window.materialVersion = "1.4.0"</script>
+
+    <!-- Title -->
+    
+    <title>
+        
+            c#基础知识 | 
+        
+        Mr.Z&#39;s Blog
+    </title>
+
+    <!-- dns prefetch -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    <!-- Meta & Info -->
+    <meta http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="theme-color" content="#0097A7">
+    <meta name="author" content="Zhu Yuexin">
+    <meta name="description" itemprop="description" content="呀！发现一只会写代码的猪！">
+    <meta name="keywords" content="null,c#">
+
+    <!-- Site Verification -->
+    
+    
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/favicon.ico">
+    <link rel="icon" sizes="192x192" href="/img/favicon.ico">
+    <link rel="apple-touch-icon" href="/img/favicon.ico">
+
+    <!--iOS -->
+    <meta name="apple-mobile-web-app-title" content="Title">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="480">
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Mr.Z&#39;s Blog">
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="http://yoursite.com">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="c#基础知识 | Mr.Z&#39;s Blog">
+    <meta property="og:image" content="/img/favicon.ico" />
+    <meta property="og:description" content="呀！发现一只会写代码的猪！">
+    <meta property="og:article:tag" content="c#"> 
+
+    
+        <meta property="article:published_time" content="Dec 03, 2018" />
+        <meta property="article:modified_time" content="Dec 03, 2018" />
+    
+
+    <!-- The Twitter Card protocol -->
+    <meta name="twitter:title" content="c#基础知识 | Mr.Z&#39;s Blog">
+    <meta name="twitter:description" content="呀！发现一只会写代码的猪！">
+    <meta name="twitter:image" content="/img/favicon.ico">
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="http://yoursite.com" />
+
+    <!-- Add canonical link for SEO -->
+    
+        <link rel="canonical" href="http://yoursite.com/2018/12/03/c#基础知识/index.html" />
+    
+
+    <!-- Structured-data for SEO -->
+    
+        
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Mr.Z&#39;s Blog",
+        "logo": "/img/favicon.ico"
+    },
+    "author": {
+        "@type": "Person",
+        "name": "Zhu Yuexin",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/favicon.ico"
+        },
+        "description": "The keyboard is typing on my fingertip,<br>The code is writing me,<br>My eyes are flashing in the cursor, and you are missing me."
+    },
+    "headline": "c#基础知识",
+    "url": "http://yoursite.com/2018/12/03/c#基础知识/index.html",
+    "datePublished": "Dec 03, 2018",
+    "dateModified": "Dec 03, 2018",
+    "description": "呀！发现一只会写代码的猪！",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://yoursite.com"
+    }
+}
+</script>
+
+
+    
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+
+        
+            <script src="/js/ie-blocker.en.js"></script>
+        
+    <![endif]-->
+
+    <!-- Import lsloader -->
+    <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(key){try{localStorage.removeItem(key)}catch(e){}};lsloader.setLS=function(key,val){try{localStorage.setItem(key,val)}catch(e){}};lsloader.getLS=function(key){var val="";try{val=localStorage.getItem(key)}catch(e){val=""}return val};versionString="/*"+materialVersion+"*/";lsloader.clean=function(){try{var keys=[];for(var i=0;i<localStorage.length;i++){keys.push(localStorage.key(i))}keys.forEach(function(key){var data=lsloader.getLS(key);if(data&&data.indexOf(versionString)===-1){lsloader.removeLS(key)}})}catch(e){}};lsloader.clean();lsloader.load=function(jsname,jspath,cssonload){cssonload=cssonload||function(){};var code;code=this.getLS(jsname);if(code&&code.indexOf(versionString)===-1){this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload);return}if(code){var versionNumber=code.split(versionString)[0];if(versionNumber!=jspath){console.log("reload:"+jspath);this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload);return}code=code.split(versionString)[1];if(/\.js?.+$/.test(versionNumber)){this.jsRunSequence.push({name:jsname,code:code});this.runjs(jspath,jsname,code)}else{document.getElementById(jsname).appendChild(document.createTextNode(code));cssonload()}}else{this.requestResource(jsname,jspath,cssonload)}};lsloader.requestResource=function(name,path,cssonload){var that=this;if(/\.js?.+$/.test(path)){this.iojs(path,name,function(path,name,code){that.setLS(name,path+versionString+code);that.runjs(path,name,code)})}else if(/\.css?.+$/.test(path)){this.iocss(path,name,function(code){document.getElementById(name).appendChild(document.createTextNode(code));that.setLS(name,path+versionString+code)},cssonload)}};lsloader.iojs=function(path,jsname,callback){var that=this;that.jsRunSequence.push({name:jsname,code:""});try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(path,jsname,xhr.response);return}}that.jsfallback(path,jsname)}};xhr.send(null)}catch(e){that.jsfallback(path,jsname)}};lsloader.iocss=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.iofonts=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.runjs=function(path,name,code){if(!!name&&!!code){for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code=code}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var script=document.createElement("script");script.appendChild(document.createTextNode(this.jsRunSequence[0].code));script.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(script);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var that=this;var script=document.createElement("script");script.src=this.jsRunSequence[0].path;script.type="text/javascript";this.jsRunSequence[0].status="loading";script.onload=function(){that.jsRunSequence.shift();if(that.jsRunSequence.length>0){that.runjs()}};document.body.appendChild(script)}};lsloader.tagLoad=function(path,name){this.jsRunSequence.push({name:name,code:"",path:path,status:"failed"});this.runjs()};lsloader.jsfallback=function(path,name){if(!!this.jsnamemap[name]){return}else{this.jsnamemap[name]=name}for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code="";this.jsRunSequence[k].status="failed";this.jsRunSequence[k].path=path}}this.runjs()};lsloader.cssfallback=function(path,name,cssonload){if(!!this.cssnamemap[name]){return}else{this.cssnamemap[name]=1}var link=document.createElement("link");link.type="text/css";link.href=path;link.rel="stylesheet";link.onload=link.onerror=cssonload;var root=document.getElementsByTagName("script")[0];root.parentNode.insertBefore(link,root)};lsloader.runInlineScript=function(scriptId,codeId){var code=document.getElementById(codeId).innerText;this.jsRunSequence.push({name:scriptId,code:code});this.runjs()};lsloader.loadCombo=function(jslist){var updateList="";var requestingModules={};for(var k in jslist){var LS=this.getLS(jslist[k].name);if(!!LS){var version=LS.split(versionString)[0];var code=LS.split(versionString)[1]}else{var version=""}if(version==jslist[k].path){this.jsRunSequence.push({name:jslist[k].name,code:code,path:jslist[k].path})}else{this.jsRunSequence.push({name:jslist[k].name,code:null,path:jslist[k].path,status:"comboloading"});requestingModules[jslist[k].name]=true;updateList+=(updateList==""?"":";")+jslist[k].path}}var that=this;if(!!updateList){var xhr=new XMLHttpRequest;xhr.open("get",combo+updateList,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){that.runCombo(xhr.response,requestingModules);return}}else{for(var i in that.jsRunSequence){if(requestingModules[that.jsRunSequence[i].name]){that.jsRunSequence[i].status="failed"}}that.runjs()}}};xhr.send(null)}this.runjs()};lsloader.runCombo=function(comboCode,requestingModules){comboCode=comboCode.split("/*combojs*/");comboCode.shift();for(var k in this.jsRunSequence){if(!!requestingModules[this.jsRunSequence[k].name]&&!!comboCode[0]){this.jsRunSequence[k].status="comboJS";this.jsRunSequence[k].code=comboCode[0];this.setLS(this.jsRunSequence[k].name,this.jsRunSequence[k].path+versionString+comboCode[0]);comboCode.shift()}}this.runjs()}})();</script>
+
+    <!-- Import CSS & jQuery -->
+    
+        <style id="css/material.min.css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("css/material.min.css","/css/material.min.css?fJTiM/K1J3dWIruo3pxtAw==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";})</script>
+        <style id="css/style.min.css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("css/style.min.css","/css/style.min.css?oCSEO3ST+aEypEwttTDI9g==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";})</script>
+        
+        
+            <style>
+    
+    .footer-sns-facebook {
+        background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0OCIgaGVpZ2h0PSI0OCIgY2xhc3M9Imljb24iIHZpZXdCb3g9IjAgMCAxMDI0IDEwMjQiPjxwYXRoIGQ9Ik0xMzguNiA3OGMtMjIuNCA1LjItNTUuOCA0MC4yLTYwLjYgNjMuNC0xLjQgNi40LTIgMTI5LjgtMS42IDM2Ny42LjYgMjk4LjYgMSAzNTguOCAzLjQgMzYzIDExIDIwLjIgMjEuNiAzMi40IDM3LjIgNDMgMTUgMTAuMiAxNy40IDExLjIgMzMgMTMgMTEuMiAxLjQgMTM2IDIgMzY1IDEuNiAzMTQtLjYgMzQ4LjYtMSAzNTUtMy44IDE1LjgtNy4yIDMzLjgtMjIgNDMuMi0zNS40IDUuMi03LjQgMTAuOC0xNi42IDEyLjYtMjAuNCAyLjgtNi40IDMuMi00MC44IDMuOC0zNTQgLjQtMjIzLS4yLTM1My40LTEuNC0zNjUtMi0xNy0yLjYtMTguNi0xMy0zNC04LjYtMTIuNi0xNC4yLTE4LjQtMjUuMi0yNS44LTcuOC01LjQtMTcuNC0xMS0yMS42LTEyLjQtNi0yLjItNzIuOC0yLjYtMzY1LjQtMi42LTE5Ni44LjItMzYxIC44LTM2NC40IDEuOHptNjU3LjYgODcuOGw0LjggMy44djU1LjJjMCA1NC42IDAgNTUuMi00LjYgNTkuNi00LjQgNC40LTYgNC42LTUwLjIgNS42bC00NS42IDEtNy4yIDUuNmMtMTAuNCA4LTE2LjggMTcuMi0xOS4yIDI3LjQtMSA1LTEuOCAyNC44LTEuOCA0NCAuMiAzOCAxLjYgNDQuNiAxMC44IDQ4IDIuOCAxLjIgMjguNCAyIDU2LjggMiA0Ny44IDAgNTIgLjIgNTYuMiAzLjhsNC44IDMuOHY1NS4yYzAgNTQuNiAwIDU1LjItNC42IDU5LjYtNC40IDQuNi01LjQgNC42LTU3IDUuMi0yOC44LjItNTQuNC44LTU2LjggMS40LTIuNC42LTUuNiAzLTYuOCA1LjQtMS44IDMuMi0yLjQgNDEuNC0yLjYgMTQzLjJsLS4yIDEzOC44LTUuNiA0LjgtNS42IDQuOEg2MDljLTUyLjQgMC01Mi44IDAtNTguMi00LjZsLTUuNC00LjYtLjItMTQwLjYtLjItMTQwLjYtNC44LTMuOGMtNC4yLTMuNC04LTMuOC0zNS42LTMuOC0zMi44IDAtNDEtMS44LTQzLjYtMTAtLjYtMi4yLTEuMi0yNS40LTEuMi01MS40IDAtNjAuOC0uMi01NyAzLjQtNjEuNiAyLjgtMy42IDYtNCAzNy44LTUgMzMtMSAzNS4yLTEuMiAzOS40LTUuNiA0LjYtNC40IDQuNi01LjIgNS44LTcxIDEuMi03My40LjItNjcuMiAxNi42LTk5LjQgOC0xNS44IDEyLjgtMjIgMjgtMzcgMTUuMi0xNS4yIDIxLjQtMTkuNiAzOC4yLTI4IDExLTUuNCAyNC0xMSAyOS0xMi4yIDYuMi0xLjggMjguNi0yLjYgNzEuMi0yLjYgNTguNi0uMiA2Mi42IDAgNjcgMy42eiIvPjwvc3ZnPg==);
+    }
+    
+    
+    .footer-sns-twitter {
+        background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0OCIgaGVpZ2h0PSI0OCIgY2xhc3M9Imljb24iIHZpZXdCb3g9IjAgMCAxMDI0IDEwMjQiPjxwYXRoIGQ9Ik0xMzguNiA3OGMtMjIuNCA1LjItNTUuOCA0MC4yLTYwLjYgNjMuNC0xLjQgNi40LTIgMTI5LjgtMS42IDM2Ny42LjYgMjk4LjYgMSAzNTguOCAzLjQgMzYzIDExIDIwLjIgMjEuNiAzMi40IDM3LjIgNDMgMTUgMTAuMiAxNy40IDExLjIgMzMgMTMgMTEuMiAxLjQgMTM2IDIgMzY1IDEuNiAzMTQtLjYgMzQ4LjYtMSAzNTUtMy44IDE1LjgtNy4yIDMzLjgtMjIgNDMuMi0zNS40IDUuMi03LjQgMTAuOC0xNi42IDEyLjYtMjAuNCAyLjgtNi40IDMuMi00MC44IDMuOC0zNTQgLjQtMjIzLS4yLTM1My40LTEuNC0zNjUtMi0xNy0yLjYtMTguNi0xMy0zNC04LjYtMTIuNi0xNC4yLTE4LjQtMjUuMi0yNS44LTcuOC01LjQtMTcuNC0xMS0yMS42LTEyLjQtNi0yLjItNzIuOC0yLjYtMzY1LjQtMi42LTE5Ni44LjItMzYxIC44LTM2NC40IDEuOHptNTMyLjggMjA1YzEwIDQgMjMgMTAuOCAyOC44IDE1LjIgMTIuNiA5LjIgMTYuNiAxMC42IDI5LjQgOS40IDYuNi0uNiAxMy0zLjIgMjAuNC04LjIgMTEuMi03LjYgMTkuNC05LjIgMjMuNi01IDMuNiAzLjYgMi44IDktMi44IDE4LjYtNy4yIDEyLjQtNiAxOC44IDQuMiAyNC4yIDQuNCAyLjIgOC4yIDUuNiA4LjYgNy40IDEgNC44LTEyLjYgMjQuMi0yMiAzMS44LTExLjggOS4yLTE3LjIgMjIuNi0xOS42IDQ3LjgtNC44IDUwLjQtNy44IDY2LjYtMTYuNCA4NS40LTMgNy03IDE3LjgtOC44IDI0LTEuOCA2LjQtNSAxNC42LTcuNCAxOC40LTIuMiAzLjgtNy40IDEzLTExLjQgMjAuNC0xNy4yIDMwLjgtNDMuNCA2MS40LTcxLjQgODMuOC0yNS42IDIwLjQtNDYgMzMuMi02NC4yIDQwLjItOC40IDMuMi0xOCA3LjYtMjEuNCA5LjYtNy40IDQuNi0yMi40IDguNi01Ny4yIDE1LTYyLjIgMTEuNi03OS4yIDExLjQtMTM1LjYtMS0zMi40LTctMzguNi05LTUyLTE2LjgtMjEuNC0xMi42LTI0LjItMTQuOC0yNC4yLTE5LjQgMC02LjIgMTAuMi05LjIgMzUtMTAuNCAyMi40LTEgMjguNi0yLjYgNTctMTQuMiAyMy44LTkuOCAyOS40LTEyLjggMzAuNC0xNi44IDIuMi04LjItMy0xMy4yLTI2LjgtMjUuNC0yNS44LTEzLjItMzIuMi0xOC40LTQzLjgtMzUuOC05LTEzLjYtMTAtMjEuMi0zLjYtMzMuNiA1LjQtMTAuOCAzLjYtMTUtMTEuOC0yNS40LTktNi0xNC0xMS42LTIwLjgtMjIuNi0yMy40LTM3LjgtMjUtNTAuOC03LjItNTkuOCA0LjgtMi40IDkuNC01LjQgMTAuMi02LjYgMi44LTQuMi0uNC0xNS42LTguNC0yOS0xMS42LTE5LjYtMTMuMi0yNS44LTEzLjItNTUuMiAwLTI4LjggMi42LTM3LjggMTItNDAuMiA5LTIuMiAxNC44IDEgMzUuNiAyMC4yIDI0LjggMjIuOCA0My42IDM2LjYgNjIuOCA0NS44IDggMy44IDE3LjggOS4yIDIyIDEyIDQuMiAyLjggMTQuOCA3IDIzLjQgOS4yIDguNiAyLjIgMjQuMiA2LjggMzQuOCAxMC4yIDEzLjQgNC40IDIzLjYgNi40IDMzIDYuNiAxMi44LjIgMTQuMi0uMiAxOC42LTUuNCA0LTQuOCA0LjgtNy44IDQuOC0xOS4yIDAtMTQuNCA1LjYtMzkuNiAxMS4yLTUwLjYgNC4yLTguNCAyOS4yLTM0LjIgMzkuOC00MS40IDcuOC01LjQgMzUuNi0xNiA1Mi0yMCAxNC4yLTMuNiAzMi42LTEuMiA1Mi40IDYuOHoiLz48L3N2Zz4=);
+    }
+    
+    
+    .footer-sns-gplus {
+        background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0OCIgaGVpZ2h0PSI0OCIgY2xhc3M9Imljb24iIHZpZXdCb3g9IjAgMCAxMDI0IDEwMjQiPjxwYXRoIGQ9Ik0xMzguNiA3OGMtMjIuNCA1LjItNTUuOCA0MC4yLTYwLjYgNjMuNC0xLjQgNi40LTIgMTI5LjgtMS42IDM2Ny42LjYgMjk4LjYgMSAzNTguOCAzLjQgMzYzIDExIDIwLjIgMjEuNiAzMi40IDM3LjIgNDMgMTUgMTAuMiAxNy40IDExLjIgMzMgMTMgMTEuMiAxLjQgMTM2IDIgMzY1IDEuNiAzMTQtLjYgMzQ4LjYtMSAzNTUtMy44IDE1LjgtNy4yIDMzLjgtMjIgNDMuMi0zNS40IDUuMi03LjQgMTAuOC0xNi42IDEyLjYtMjAuNCAyLjgtNi40IDMuMi00MC44IDMuOC0zNTQgLjQtMjIzLS4yLTM1My40LTEuNC0zNjUtMi0xNy0yLjYtMTguNi0xMy0zNC04LjYtMTIuNi0xNC4yLTE4LjQtMjUuMi0yNS44LTcuOC01LjQtMTcuNC0xMS0yMS42LTEyLjQtNi0yLjItNzIuOC0yLjYtMzY1LjQtMi42LTE5Ni44LjItMzYxIC44LTM2NC40IDEuOHpNNDMwIDI5NS40YzQwLjYgMTUuNCA1Ni42IDIzLjggNzIuNiAzOC40IDYuOCA2LjIgNy4yIDE1LjIgMSAyMy40LTYuMiA4LTMzLjYgMzMuOC0zOSAzNi42LTUuNiAyLjgtMTcuNiAyLjgtMjMuMi0uMi0yLjQtMS4yLTguMi01LjItMTMtOC44LTExLjItOC42LTI0LjYtMTEuMi01NS4yLTExLjItMjcuNCAwLTQwLjYgMi42LTUyLjIgMTAuNC00LjQgMi44LTEyLjIgNy42LTE3LjIgMTAuNi0yMyAxMy4yLTUxLjQgNTUtNTUuOCA4Mi40LTIuNiAxNS42LTIuNCAzNC44LjIgNTEgMi44IDE3LjQgMTkuOCA0OC44IDM1LjIgNjUuMiAxNiAxNi42IDQ1IDMzLjYgNjIuOCAzNi42IDI2LjggNC40IDY1LjggMS42IDc5LjQtNS44IDIwLjYtMTEuNCAzMS0xOSA0MS0zMC40IDE4LjgtMjEuNiAyMy40LTM0LjIgMTUuNi00My44LTMuOC00LjgtNC40LTQuOC01MS01LjgtNjAuOC0xLjItNTYuMiAyLjItNTYuMi00My4yIDAtMzIuNC4yLTMzLjIgNC44LTM3IDQuNC0zLjYgOS0zLjggOTItMy44IDc5IDAgODcuOC40IDk0LjIgMy42IDExLjIgNS42IDEzIDExLjQgMTIuOCA0My40IDAgMjUuNC0uOCAzMC44LTcuNiA1OC00IDE2LjYtOS44IDM0LTEyLjYgMzktMi44IDUtOC4yIDE0LjItMTEuNiAyMC42LTguNCAxNS40LTI3LjIgMzYuOC00MC44IDQ2LjYtNS44IDQuNC0xMy44IDEwLjItMTcuNiAxMy4yLTMuOCAzLTExIDctMTYuMiA4LjgtNS4yIDEuOC0xNi4yIDYuNC0yNC40IDEwLTIyLjQgOS42LTM0LjggMTEuNi03MyAxMS42LTM3LjYuMi00Ny0xLjQtNzEtMTItOC4yLTMuNi0xNy42LTcuMi0yMC44LTgtMTUuOC0zLjgtNjctNDUuMi03Ny44LTYyLjgtMi4yLTMuOC03LjYtMTEuNi0xMS44LTE3LjItNC4yLTUuNC05LTE0LTEwLjYtMTktMS44LTQuOC02LjItMTYtMTAtMjQuOC0zLjYtOC44LTcuOC0yMi4yLTkuMi0yOS42LTMuMi0xOC44LTEuNC03OS40IDIuOC05MS40IDEzLjgtNDAuNiAzNS42LTc4IDU4LjgtMTAwLjIgMTQtMTMuNiA0Ny4yLTM2LjQgNTgtMzkuOCA0LjItMS40IDEzLjQtNS4yIDIwLjYtOC40IDIyLTEwIDMyLjgtMTEuNiA3Ni0xMSAzMy44LjYgNDAuNCAxLjIgNTAgNC44em0zNDAuOCA4MC44YzggMy42IDkuNiAxMS4yIDkuMiAzOS4yLS42IDM0LjQtLjYgMzQgNSAzOS42IDQuOCA1IDUuNCA1IDM3LjYgNSA0My40IDAgNDQuNC44IDQzLjIgMzYuMi0uOCAxNy0xLjIgMTguNC02LjQgMjMtNS40IDQuNi02LjYgNC44LTM3LjYgNC44LTMxLjIgMC0zMiAuMi0zNi44IDUtNS42IDUuNC01LjYgNC40LTUgNDEuMi40IDI2LjQuMiAyNy40LTQuNiAzMy00LjggNS42LTYgNS44LTI0LjQgNi40LTIwLjguOC0yOS42LTEuNC0zMy40LTguNC0xLjQtMi42LTItMTUuNi0xLjgtMzUuNi40LTMxLjIuNC0zMS42LTQuNi0zNi42cy01LjYtNS0zNi01Yy0xOC44IDAtMzMtLjgtMzYtMi4yLTcuNi0zLjYtOS42LTExLjItOC44LTMzLjguOC0yOC4yLjQtMjggNDEtMjggNDUuNCAwIDQ1LjQgMCA0NC42LTQyLjYtLjYtMzMtLjYtMzMgNS0zOC40IDQuNC00LjYgNi4yLTUgMjQuOC01IDExIDAgMjIuMiAxIDI1IDIuMnoiLz48L3N2Zz4=);
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</style>
+
+        
+        <!-- Config CSS -->
+
+<!-- Other Styles -->
+<style>
+  body, html {
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+  }
+
+  a {
+    color: #00838F;
+  }
+
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: #0097A7 !important;
+  }
+
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: #0097A7 !important;
+  }
+
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: #0097A7 !important;
+  }
+
+  .toTop {
+    background: #757575 !important;
+  }
+
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: #757575;
+  }
+
+  #scheme-Paradox .MD-burger-layer {
+    background-color: #757575;
+  }
+
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: #757575;
+  }
+
+  .post-toc a:hover {
+    color: #00838F;
+    text-decoration: underline;
+  }
+
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+      body{
+        background-color: #F5F5F5;
+      }
+
+      /* blog_info bottom background */
+      #scheme-Paradox .material-layout .something-else .mdl-card__supporting-text{
+        background-color: #fff;
+      }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+    <style>
+      .fade {
+        transition: all 800ms linear;
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+        opacity: 1;
+      }
+
+      .fade.out{
+        opacity: 0;
+      }
+    </style>
+
+
+<!-- Import Font -->
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
+
+
+        <script>lsloader.load("js/jquery.min.js","/js/jquery.min.js?qcusAULNeBksqffqUM2+Ig==")</script>
+    
+    
+    <script>function Queue(){this.dataStore=[];this.offer=b;this.poll=d;this.execNext=a;this.debug=false;this.startDebug=c;function b(e){if(this.debug){console.log("Offered a Queued Function.")}if(typeof e==="function"){this.dataStore.push(e)}else{console.log("You must offer a function.")}}function d(){if(this.debug){console.log("Polled a Queued Function.")}return this.dataStore.shift()}function a(){var e=this.poll();if(e!==undefined){if(this.debug){console.log("Run a Queued Function.")}e()}}function c(){this.debug=true}}var queue=new Queue();</script>
+
+    <!-- Analytics -->
+    
+
+    <!-- Custom Head -->
+    
+        
+            <style>
+  canvas {
+    width: 100%;
+    background: white;
+    position: fixed;
+    z-index: -1;
+    
+    }
+  </style>
+  <script>
+    //var autoplay = getURLParameter('autoplay');
+    var autoplay = true;
+    var lastError = "";
+    var playing = !!autoplay;
+    function receiveMessage(event){
+      var origin = event.origin || event.originalEvent.origin;
+      console.log("Received message from " + origin);
+      if(origin !== "http://dwitter.localhost:8000"
+        && origin !== "http://localhost:8000"
+        && origin !== "https://localhost:8000"
+        && origin !== "https://www.dwitter.net"
+        && origin !== "https://dwitter.net"){
+          return;
+        }
+      console.log("Message was: " + event.data);
+
+      switch (event.data) {
+        case "toggle":
+          playing ? pauseDemo() : playDemo();
+          break;
+        case "play":
+          playDemo();
+          break;
+        case "pause":
+          pauseDemo();
+          break;
+        case "showStats":
+          setStatsVisibility(true);
+          break;
+        case "hideStats":
+          setStatsVisibility(false);
+          break;
+      }
+
+      if(event.data.substring(0, 4) == "code"){
+        var code = event.data.substring(5,event.data.length);
+        newCode(code);
+      }
+    }
+
+    function displayError(e) {
+      if(lastError != e){
+        lastError = e;
+        parent.postMessage({
+          'type': 'error',
+          'error': ""+e,
+          'location': window.location.href
+        },"*");
+      }
+    }
+
+    function newCode(code) {
+        try {
+          eval("u = function(t){"+code+"\n};");
+        } catch (e) {
+          u = function(t){
+            throw e;
+          };
+          throw e;
+        }
+        displayError("");
+        reset();
+    }
+
+    function pauseDemo(){
+      if(!playing){
+        return;
+      }
+
+      pauseTime = +new Date();
+
+      playing = false;
+    }
+
+    function playDemo(){
+      if(playing){
+        return
+      }
+
+      playing = true;
+      requestAnimationFrame(loop);
+    }
+    var timeOffset = 0;
+
+    window.addEventListener("message", receiveMessage, false);
+
+    function getURLParameter(name) {
+      return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search)||[,""])[1].replace(/\+/g, '%20'))||null
+    }
+
+    function setStatsVisibility(visible) {
+      document.getElementById('stats').style.visibility = visible ? 'visible' : 'hidden';
+    }
+  </script>
+  
+  
+  <script type="text/javascript">
+    (function(f,e){"object"===typeof exports&&"undefined"!==typeof module?module.exports=e():"function"===typeof define&&define.amd?define(e):f.Stats=e()})(this,function(){var f=function(){function e(a){c.appendChild(a.dom);return a}function u(a){for(var d=0;d<c.children.length;d++)c.children[d].style.display=d===a?"block":"none";l=a}var l=0,c=document.createElement("div");c.style.cssText="position:fixed;top:0;right:0;opacity:0.9;z-index:10000";var k=(performance||Date).now(),g=k,a=0,r=e(new f.Panel("FPS","#0ff","#002")),h=e(new f.Panel("MS","#0f0","#020"));if(self.performance&&self.performance.memory)var t=e(new f.Panel("MB","#f08","#201"));u(0);return{REVISION:16,dom:c,addPanel:e,showPanel:u,begin:function(){k=(performance||Date).now()},end:function(){a++;var c=(performance||Date).now();h.update(c-k,200);if(c>g+1E3&&(r.update(1E3*a/(c-g),100),g=c,a=0,t)){var d=performance.memory;t.update(d.usedJSHeapSize/1048576,d.jsHeapSizeLimit/1048576)}return c},update:function(){k=this.end()},domElement:c,setMode:u}};f.Panel=function(e,f,l){var c=Infinity,k=0,g=Math.round,a=g(window.devicePixelRatio||1),r=80*a,h=48*a,t=3*a,v=2*a,d=3*a,m=15*a,n=74*a,p=30*a,q=document.createElement("canvas");q.width=r;q.height=h;q.style.cssText="width:80px;height:48px";var b=q.getContext("2d");b.font="bold "+9*a+"px Helvetica,Arial,sans-serif";b.textBaseline="top";b.fillStyle=l;b.fillRect(0,0,r,h);b.fillStyle=f;b.fillText(e,t,v);b.fillRect(d,m,n,p);b.fillStyle=l;b.globalAlpha=.9;b.fillRect(d,m,n,p);return{dom:q,update:function(h,w){c=Math.min(c,h);k=Math.max(k,h);b.fillStyle=l;b.globalAlpha=1;b.fillRect(0,0,r,m);b.fillStyle=f;b.fillText(g(h)+" "+e+" ("+g(c)+"-"+g(k)+")",t,v);b.drawImage(q,d+a,m,n-a,p,d,m,n-a,p);b.fillRect(d+n-a,m,a,p);b.fillStyle=l;b.globalAlpha=.9;b.fillRect(d+n-a,m,a,g((1-h/w)*p))}}};return f});
+  </script>
+
+        
+            <canvas id="c" width="2000" height="1080"></canvas>
+<script>
+  function createStats() {
+    var stats = new Stats();
+    stats.showPanel(0);
+    stats.dom.setAttribute('id', 'stats');
+    document.body.appendChild(stats.dom);
+    return stats;
+  }
+
+  var stats = createStats();
+  setStatsVisibility(false);
+
+  var c = document.querySelector("#c");
+  c.width = 1920;
+  c.height = 1080;
+  var S = Math.sin;
+  var C = Math.cos;
+  var T = Math.tan;
+  function R(r,g,b,a) {
+    a = a === undefined ? 1 : a;
+    return "rgba("+(r|0)+","+(g|0)+","+(b|0)+","+a+")";
+    };
+  var x = c.getContext("2d");
+  var time = 0;
+  var frame = 0;
+  function u(t) {
+     x.fillRect(0,0,i=w=c.width=2e3,w);
+     x.fillStyle="#FFFFFF";
+     x.fillRect(0,0,w,w);
+     x.fillStyle="#03A9F4";
+     for(;i--;)T=t*99,z=w*99/(i-T%1),a=i+T-T%1,x.fillRect(C(a*a)*z+1e3,C(a*w)*z+500,w/i,w/i)
+
+     /*x.fillStyle="#FFFFFF";
+      x.fillRect(0,0,2e3,2e3);
+      x.fillStyle="#03A9F4";
+      x.font="20px Comic Sans MS";
+      for(i=100;i--;){
+        Z=130-(t*10+i)%130;
+        s=280/Z;
+        var str_index=i%7;
+        var love_words;
+        switch(str_index) {
+          case 0:
+            love_words="I ♥ 皮皮夏";
+            break;
+          case 1:
+            love_words="Do you love me ?"
+            break;
+          case 2:
+            love_words="I love you";
+            break;
+          case 3:
+            love_words="You are so pretty !";
+            break;
+          case 4:
+            love_words="I ♥ you";
+            break;
+          case 5:
+            love_words="Love You Forever";
+            break;
+          case 6:
+            love_words="♥";
+            break;
+          default:
+            love_words="♥";
+        }
+        x.fillText(love_words,960+1/Z*(-99+i*6e72%199)*700,540+(-70+i*8e61%140)/Z*700);
+      }*/
+    }
+  function loop() {
+    stats = stats || createStats();
+
+    if (playing){
+      requestAnimationFrame(loop);
+    }
+    time = frame/60;
+    if(time * 60 | 0 == frame - 1){
+      time += 0.000001;
+    }
+    frame++;
+
+    try {
+      stats.begin();
+      u(time);
+      stats.end();
+      displayError("");
+    } catch (e) {
+      displayError(e);
+      throw e;
+    }
+  }
+  if(autoplay) {
+      loop();
+  }
+
+  function reset(){
+    c = document.querySelector("#c");
+    c.width = 1920;
+    c.height = 1080;
+    S = Math.sin;
+    C = Math.cos;
+    T = Math.tan;
+    R = function(r,g,b,a) {
+      a = a === undefined ? 1 : a;
+      return "rgba("+(r|0)+","+(g|0)+","+(b|0)+","+a+")";
+    };
+    x = c.getContext("2d");
+    time = 0;
+    frame = 0;
+  }
+  </script>
+
+        
+    
+<link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
+
+
+    
+        <body id="scheme-Paradox" class="lazy">
+            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
+
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
+
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
+
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span class="MD-burger-layer"></span>
+                        </button>
+                    
+
+                    <!-- Post TOC -->
+
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+    <!-- Left aligned menu below button -->
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Hello-World"><span class="post-toc-number">1.</span> <span class="post-toc-text">Hello World</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#关键字"><span class="post-toc-number">2.</span> <span class="post-toc-text">关键字</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#注释"><span class="post-toc-number">3.</span> <span class="post-toc-text">注释</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#常量"><span class="post-toc-number">4.</span> <span class="post-toc-text">常量</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#常用数据类型"><span class="post-toc-number">5.</span> <span class="post-toc-text">常用数据类型</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#类型转换"><span class="post-toc-number">5.1.</span> <span class="post-toc-text">类型转换</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#标识符命名规则"><span class="post-toc-number">6.</span> <span class="post-toc-text">标识符命名规则</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#运算符"><span class="post-toc-number">7.</span> <span class="post-toc-text">运算符</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#赋值运算符"><span class="post-toc-number">7.1.</span> <span class="post-toc-text">赋值运算符</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#算术运算符"><span class="post-toc-number">7.2.</span> <span class="post-toc-text">算术运算符</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#比较运算符"><span class="post-toc-number">7.3.</span> <span class="post-toc-text">比较运算符</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#逻辑运算符"><span class="post-toc-number">7.4.</span> <span class="post-toc-text">逻辑运算符</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#运算符优先级"><span class="post-toc-number">7.5.</span> <span class="post-toc-text">运算符优先级</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#条件控制结构"><span class="post-toc-number">8.</span> <span class="post-toc-text">条件控制结构</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#if-else结构"><span class="post-toc-number">8.1.</span> <span class="post-toc-text">if-else结构</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#三元条件运算符"><span class="post-toc-number">8.2.</span> <span class="post-toc-text">三元条件运算符</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#switch结构"><span class="post-toc-number">8.3.</span> <span class="post-toc-text">switch结构</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#循环结构"><span class="post-toc-number">9.</span> <span class="post-toc-text">循环结构</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#while循环"><span class="post-toc-number">9.1.</span> <span class="post-toc-text">while循环</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#do…while循环"><span class="post-toc-number">9.1.1.</span> <span class="post-toc-text">do…while循环</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#for循环"><span class="post-toc-number">9.2.</span> <span class="post-toc-text">for循环</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#continue和break"><span class="post-toc-number">9.3.</span> <span class="post-toc-text">continue和break</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#数组"><span class="post-toc-number">10.</span> <span class="post-toc-text">数组</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#foreach循环"><span class="post-toc-number">10.1.</span> <span class="post-toc-text">foreach循环</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#二维数组"><span class="post-toc-number">10.2.</span> <span class="post-toc-text">二维数组</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#控制台接收输入"><span class="post-toc-number">11.</span> <span class="post-toc-text">控制台接收输入</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#断点调试"><span class="post-toc-number">11.1.</span> <span class="post-toc-text">断点调试</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#面向对象"><span class="post-toc-number">12.</span> <span class="post-toc-text">面向对象</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#类定义"><span class="post-toc-number">12.1.</span> <span class="post-toc-text">类定义</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#实例化对象"><span class="post-toc-number">12.2.</span> <span class="post-toc-text">实例化对象</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#访问修饰符"><span class="post-toc-number">12.3.</span> <span class="post-toc-text">访问修饰符</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#封装"><span class="post-toc-number">12.4.</span> <span class="post-toc-text">封装</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#通过set块约束属性赋值"><span class="post-toc-number">12.4.1.</span> <span class="post-toc-text">通过set块约束属性赋值</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#方法重载"><span class="post-toc-number">12.5.</span> <span class="post-toc-text">方法重载</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#构造方法"><span class="post-toc-number">12.6.</span> <span class="post-toc-text">构造方法</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#this关键字"><span class="post-toc-number">12.7.</span> <span class="post-toc-text">this关键字</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#对象初始化器"><span class="post-toc-number">12.8.</span> <span class="post-toc-text">对象初始化器</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#值类型和引用类型"><span class="post-toc-number">13.</span> <span class="post-toc-text">值类型和引用类型</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#值类型"><span class="post-toc-number">13.1.</span> <span class="post-toc-text">值类型</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#引用类型"><span class="post-toc-number">14.</span> <span class="post-toc-text">引用类型</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#结构"><span class="post-toc-number">15.</span> <span class="post-toc-text">结构</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#枚举类型"><span class="post-toc-number">16.</span> <span class="post-toc-text">枚举类型</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#ref关键字"><span class="post-toc-number">17.</span> <span class="post-toc-text">ref关键字</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#out关键字"><span class="post-toc-number">18.</span> <span class="post-toc-text">out关键字</span></a></li></ol>
+        <!--
+        <li class="mdl-menu__item">
+            Some Action
+        </li>
+        -->
+    </ul>
+    
+
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
+
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').addClass('lazy');
+</script>
+
+        
+    
+            <p class="article-headline-p">
+                c#基础知识
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.gif" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>Zhu Yuexin</strong>
+        <span>Dec 03, 2018</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/c/">c#</a>
+    </ul>
+    
+
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=c#基础知识&url=http://yoursite.com/2018/12/03/c#基础知识/index.html&pic=&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                Share to Weibo
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=c#基础知识&url=http://yoursite.com/2018/12/03/c#基础知识/index.html&via=Zhu Yuexin" target="_blank">
+            <li class="mdl-menu__item">
+                Share to Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/12/03/c#基础知识/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                Share to Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com/2018/12/03/c#基础知识/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                Share to Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <h1 id="Hello-World"><a href="#Hello-World" class="headerlink" title="Hello World"></a>Hello World</h1><pre class=" language-lang-c#"><code class="language-lang-c#">using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text.RegularExpressions
+
+ //Compiler version 4.0, .NET Framework 4.5
+
+
+ namespace Hello
+ {
+     public class HelloWorld
+     {
+         public static void Main(string[] args)
+         {
+             Console.WriteLine("Hello, World!");
+         }
+     }
+ }
+</code></pre>
+<p><code>using</code>表示使用命名空间，类似于Java中的导包，<code>using System;</code>之后就可以使用命名空间<code>System</code>中的所有类了。<br>在创建类的时候，需要指定类所属的命名空间，比如此处指定命名空间为<code>Hello</code>。<br><code>Main</code>函数即主函数，是程序的入口函数，可以看出和Java是很类似的。<br>示例程序中简单打印了一条<code>Hello,World!</code>语句，用到了<code>Console</code>类的<code>WriteLine()</code>方法，即在控制台打印一行语句，自动换行。这里的<code>Console</code>类属于命名空间<code>System</code>。</p>
+<blockquote>
+<p>在用Visual Studio新建类文件时，默认的命名空间是当前文件所在的目录，比如<code>TestProject.Hello</code>。事实上，命名空间和文件目录没有必然的联系，但为了不引起不必要的混淆，Visual Studio会将文件所在目录作为命名空间。</p>
+</blockquote>
+<h1 id="关键字"><a href="#关键字" class="headerlink" title="关键字"></a>关键字</h1><p>示例程序中如<code>using</code>，<code>namespace</code>，<code>public</code>，<code>class</code>，<code>static</code>，<code>void</code>，<code>string</code>等都属于c#的关键字，变量的命名不能和关键字冲突。c#中的关键字都是小写的，而且c#是大小写敏感的。</p>
+<h1 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h1><ul>
+<li>单行注释:用两条斜线<code>//</code>表示。</li>
+<li>多行注释:以<code>/*</code>开始，以<code>*/</code>结束，比如<br>```<br>/*</li>
+</ul>
+<ul>
+<li>第一行注释</li>
+<li>第二行注释<br>*/<br>```</li>
+</ul>
+<ul>
+<li>文档注释:写在类、方法或属性的前面，用三条斜线<code>///</code>表示，比如<pre class=" language-lang-c#"><code class="language-lang-c#">/// <summary>
+/// 这是一个测试类
+/// </summary>
+class Test
+{…}
+</code></pre>
+</li>
+</ul>
+<h1 id="常量"><a href="#常量" class="headerlink" title="常量"></a>常量</h1><p>c#中用关键字<code>const</code>定义常量，比如：</p>
+<pre class=" language-lang-c#"><code class="language-lang-c#">const double PI = 3.141592653
+</code></pre>
+<h1 id="常用数据类型"><a href="#常用数据类型" class="headerlink" title="常用数据类型"></a>常用数据类型</h1><ul>
+<li><p>字符类型：char</p>
+</li>
+<li><p>字符串类型：string</p>
+</li>
+<li><p>整数类型：int</p>
+</li>
+<li><p>双精度浮点型：double</p>
+</li>
+</ul>
+<blockquote>
+<p>c#的float类型需要在数值后面加上后缀<code>f</code>或<code>F</code>，如<code>float x = 3.5F;</code>。否则会因为尝试将一个double类型数值存储到float类型中而发生编译错误。</p>
+</blockquote>
+<h2 id="类型转换"><a href="#类型转换" class="headerlink" title="类型转换"></a>类型转换</h2><ul>
+<li>自动类型转换：2中不同类型的数值运算，低精度类型会自动转换为高精度类型。比如<code>8+2.4</code>，int型数值会自动转换为double类型，再相加运算。</li>
+<li>强制类型转换：比如<code>int i = (int)3.0;</code></li>
+</ul>
+<h1 id="标识符命名规则"><a href="#标识符命名规则" class="headerlink" title="标识符命名规则"></a>标识符命名规则</h1><p>程序中的变量名、常量名、类名、方法名，都叫做<strong>标识符</strong>。C#有一套标识符的命名规则，如果命名时不遵守规则，就会出错。这套规则简单说有下面三条：</p>
+<ul>
+<li><strong>标识符只能由英文字母、数字和下划线组成，不能包含空格和其他字符。</strong></li>
+<li><strong>变量名不能用数字开头。</strong></li>
+<li><strong>不能用关键字当变量名。</strong></li>
+</ul>
+<h1 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h1><h2 id="赋值运算符"><a href="#赋值运算符" class="headerlink" title="赋值运算符"></a>赋值运算符</h2><p><code>=</code>、<code>+=</code>、<code>-=</code>、<code>*=</code>、<code>/=</code>、<code>%=</code></p>
+<p>连续赋值，如<code>x = y = 2;</code></p>
+<h2 id="算术运算符"><a href="#算术运算符" class="headerlink" title="算术运算符"></a>算术运算符</h2><p>基本的加<code>+</code>、减<code>-</code>、乘<code>*</code>、除<code>/</code>、求余<code>%</code></p>
+<p><code>+</code>运算符还可以起到字符串连接作用，比如<code>&quot;my age is &quot; + 18</code></p>
+<p>自增<code>++</code>、自减<code>--</code></p>
+<h2 id="比较运算符"><a href="#比较运算符" class="headerlink" title="比较运算符"></a>比较运算符</h2><p><code>=</code>、<code>!=</code>、<code>&gt;</code>、<code>&lt;</code>、<code>&gt;=</code>、<code>&lt;=</code></p>
+<p>比较运算的结果，都是布尔类型<code>bool</code>，取值为<code>true</code>和<code>false</code>。(打印时是<code>True</code>、<code>False</code>)</p>
+<h2 id="逻辑运算符"><a href="#逻辑运算符" class="headerlink" title="逻辑运算符"></a>逻辑运算符</h2><p><strong>逻辑运算符</strong>用来连接多个<code>bool</code>类型的表达式，实现多个条件的复合判断。包括：<strong>逻辑非<code>!</code></strong>、<strong>逻辑与<code>&amp;&amp;</code></strong>、<strong>逻辑或<code>||</code></strong></p>
+<h2 id="运算符优先级"><a href="#运算符优先级" class="headerlink" title="运算符优先级"></a>运算符优先级</h2><p>运算符优先级顺序：</p>
+<ol>
+<li><strong>括号</strong></li>
+<li><strong>一元运算符</strong>：<code>++</code>、<code>--</code>、<code>!</code></li>
+<li><strong><code>*</code>、<code>/</code>、<code>%</code></strong></li>
+<li><strong><code>+</code>、<code>-</code></strong></li>
+<li><strong><code>&gt;</code>、<code>&lt;</code>、<code>&gt;=</code>、<code>&lt;=</code></strong></li>
+<li><strong><code>==</code>、<code>!=</code></strong></li>
+<li><strong><code>&amp;&amp;</code></strong></li>
+<li><strong><code>||</code></strong></li>
+<li><strong>赋值运算符</strong></li>
+</ol>
+<h1 id="条件控制结构"><a href="#条件控制结构" class="headerlink" title="条件控制结构"></a>条件控制结构</h1><h2 id="if-else结构"><a href="#if-else结构" class="headerlink" title="if-else结构"></a>if-else结构</h2><p><code>if...else</code>结构：</p>
+<pre class=" language-lang-c#"><code class="language-lang-c#">if (a > 0)
+{
+    Console.WriteLine('Right');
+}
+else
+{
+    Console.WriteLine('Wrong');
+}
+</code></pre>
+<p><code>if...else if...else</code>结构：</p>
+<pre class=" language-lang-c#"><code class="language-lang-c#">if (a > 0)
+{
+    Console.WriteLine('Right');
+}
+else if (a == 0)
+{
+    Console.WriteLine('Wait');
+}
+else
+{
+    Console.WriteLine('Wrong');
+}
+</code></pre>
+<p>如果条件分支中<strong>只包含一条命令</strong>，那么可以<strong>省略大括号</strong>，比如：</p>
+<pre class=" language-lang-c#"><code class="language-lang-c#">if (a > 0)
+    Console.WriteLine('Right');
+else if (a == 0)
+    Console.WriteLine('Wait');
+else
+    Console.WriteLine('Wrong');
+</code></pre>
+<p>当出现多个 <strong>if</strong> 和 <strong>else</strong> ，又没有{}来界定范围时，请参考下面2条原则：</p>
+<ul>
+<li><strong>每一个 else 与前面离它最近的 if 配对</strong>。</li>
+<li><strong>多个 else 都与同一个 if 相近时，最内层的 else 优先配对</strong>。</li>
+</ul>
+<h2 id="三元条件运算符"><a href="#三元条件运算符" class="headerlink" title="三元条件运算符"></a>三元条件运算符</h2><pre class=" language-lang-c#"><code class="language-lang-c#">条件表达式 ? 分支1 : 分支2
+</code></pre>
+<p>当条件表达式为<code>true</code>时，执行分支1，为<code>false</code>时，执行分支2。</p>
+<pre class=" language-lang-c#"><code class="language-lang-c#">remark = age >= 18 ? "成年人" : "未成年人";
+</code></pre>
+<h2 id="switch结构"><a href="#switch结构" class="headerlink" title="switch结构"></a>switch结构</h2><pre class=" language-lang-c#"><code class="language-lang-c#">int n1 = 3, n2 = 6;
+char oper = '*';
+switch(oper)
+{
+    case '+': Console.Write(n1 + n2); break;
+    case '-': Console.Write(n1 - n2); break;
+    case '*': Console.Write(n1 * n2); break;
+    case '/': Console.Write(n1 / n2); break;
+    default: Console.Write("运算符错误"); break;
+}
+</code></pre>
+<p>switch中的变量只能是3中类型：int、char、string</p>
+<h1 id="循环结构"><a href="#循环结构" class="headerlink" title="循环结构"></a>循环结构</h1><h2 id="while循环"><a href="#while循环" class="headerlink" title="while循环"></a>while循环</h2><pre class=" language-lang-c#"><code class="language-lang-c#">int y = 5;
+while (y > 0)
+{
+    Console.Write(y+" ");
+    y--;
+}
+</code></pre>
+<h3 id="do…while循环"><a href="#do…while循环" class="headerlink" title="do…while循环"></a>do…while循环</h3><pre class=" language-lang-c#"><code class="language-lang-c#">int y = 5;
+do
+{
+    Console.Write(y+" ");
+    y--;
+}
+while (y > 0);
+</code></pre>
+<h2 id="for循环"><a href="#for循环" class="headerlink" title="for循环"></a>for循环</h2><pre class=" language-lang-c#"><code class="language-lang-c#">for (int y=5; y>0; y--){
+    Console.Write(y+" ");
+    y--;
+}
+</code></pre>
+<h2 id="continue和break"><a href="#continue和break" class="headerlink" title="continue和break"></a>continue和break</h2><p><code>continue</code>关键字可以跳过本次循环，直接进入下次循环</p>
+<pre class=" language-lang-c#"><code class="language-lang-c#">for (int x = 1; x < 10; x++)
+{
+    // 只打印奇数
+    if (x % 2 == 0)
+        continue;
+    Console.Write(x);
+}
+</code></pre>
+<p><code>break</code>关键字可以直接结束整个循环</p>
+<pre class=" language-lang-c#"><code class="language-lang-c#">int x = 1;
+while(true):
+{
+    Console.Write(x);
+    x++;
+    if (x > 5)
+        break;
+}
+</code></pre>
+<h1 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h1><p>声明：</p>
+<pre><code>数据类型[ ] 数组名 = new 数据类型[长度];
+</code></pre><p>多种初始化方式：</p>
+<pre class=" language-lang-c#"><code class="language-lang-c#">char[] a = new char[3];
+char[] b = new char[]{'A', 'B', 'C'};
+char[] c = {'A', 'B', 'C'};
+char[] d = new char[3]{'A', 'B', 'C'};  //三行语句等效
+</code></pre>
+<p>数组通过    <code>Length</code>属性返回数组长度：</p>
+<pre class=" language-lang-c#"><code class="language-lang-c#">string[] names = new string[3]{"Tom", "Bob", "John"};
+for(int i=0; i<names.Length; i++)
+{
+    Console.Write(names[i]+"");
+}
+</code></pre>
+<h2 id="foreach循环"><a href="#foreach循环" class="headerlink" title="foreach循环"></a>foreach循环</h2><pre class=" language-lang-c#"><code class="language-lang-c#">string[] t =new  string[]{"C","Sh","a","rp"};
+foreach (string x in t)
+{
+    Console.Write(x);
+}
+</code></pre>
+<h2 id="二维数组"><a href="#二维数组" class="headerlink" title="二维数组"></a>二维数组</h2><p>二维数组的声明：</p>
+<pre class=" language-lang-c#"><code class="language-lang-c#">int[,] arr = new int[2, 3];
+</code></pre>
+<p>二维数组的赋值和取值：</p>
+<pre class=" language-lang-c#"><code class="language-lang-c#">arr[1, 0] = 28;
+Console.Write(arr[1, 0]);
+</code></pre>
+<h1 id="控制台接收输入"><a href="#控制台接收输入" class="headerlink" title="控制台接收输入"></a>控制台接收输入</h1><pre class=" language-lang-c#"><code class="language-lang-c#">string name = Console.ReadLine();
+int age = int.Parse(Console.ReadLine());
+</code></pre>
+<h2 id="断点调试"><a href="#断点调试" class="headerlink" title="断点调试"></a>断点调试</h2><p>打断点：快捷键<code>F9</code>或者在要打断点的行左边双击。</p>
+<p><code>F5</code>调试程序，<code>F10</code>单步执行，<code>F11</code>进入执行的代码（属性内部，方法内部）。</p>
+<h1 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a>面向对象</h1><h2 id="类定义"><a href="#类定义" class="headerlink" title="类定义"></a>类定义</h2><pre class=" language-lang-c#"><code class="language-lang-c#">class Child
+{
+    public string _name;
+    public string _sex;
+    public int _age;
+    public int _height;
+
+    public void PlayBall()
+    {
+        Console.Write("Play football!");
+    }
+}
+</code></pre>
+<h2 id="实例化对象"><a href="#实例化对象" class="headerlink" title="实例化对象"></a>实例化对象</h2><pre class=" language-lang-c#"><code class="language-lang-c#">Child xiaoMing = new Child();
+xiaoMing._name = "小明";
+xiaoMing._sex = "男";
+xiaoMing._age = 6;
+xiaoMing._height = 120;
+Console.WriteLine("我叫" + xiaoMing._name);
+xiaoMing.PlayBall();
+</code></pre>
+<h2 id="访问修饰符"><a href="#访问修饰符" class="headerlink" title="访问修饰符"></a>访问修饰符</h2><ul>
+<li>public：公共</li>
+<li>private：私有</li>
+</ul>
+<h2 id="封装"><a href="#封装" class="headerlink" title="封装"></a>封装</h2><p>当有些字段不应该被直接访问时，就可以使用封装的手段隐藏该字段，但是会提供访问该字段的接口，也就是访问器。c#中使用<strong>属性</strong>用于字段的公开访问：</p>
+<pre class=" language-lang-c#"><code class="language-lang-c#">class Child
+{
+    private string _sex;  //隐藏字段
+    public string Sex  //公开属性（访问器）
+    {
+        get{return _sex;}  //读
+        set{_sex = value;}  //写（如果不提供写方法，那么这个属性就是只读属性）
+    }
+}
+</code></pre>
+<p>属性的类型应该和它对应的字段相同，属性的命名规范应该尽可能和它对应的字段名相近，但是首字母需要大写。</p>
+<p>VS中封装的快捷键，选中某个字段，然后点击：<code>CTRL + R + E</code></p>
+<p>利用属性赋值和取值：</p>
+<pre class=" language-lang-c#"><code class="language-lang-c#">Child xiaoMing = new Child();
+xiaoMing.Sex = "男";
+Console.Write(xiaoMing.Sex);
+</code></pre>
+<h3 id="通过set块约束属性赋值"><a href="#通过set块约束属性赋值" class="headerlink" title="通过set块约束属性赋值"></a>通过set块约束属性赋值</h3><pre class=" language-lang-c#"><code class="language-lang-c#">class Child
+{
+    private int _age;
+
+    public int Age
+    {
+        get{return _age;}
+        set
+        {
+            //年龄限制为3-7岁
+            if(value>=3 && value<=7)
+                age = value;
+        }
+    }
+}
+</code></pre>
+<h2 id="方法重载"><a href="#方法重载" class="headerlink" title="方法重载"></a>方法重载</h2><pre class=" language-lang-c#"><code class="language-lang-c#">/// <summary>
+/// 吃糖
+/// </summary>
+/// <param name="sugar">糖的名称</param>
+public void EagSugar(string sugar)
+{
+    Console.WriteLine("Eat " + sugar);
+}
+/// <summary>
+/// 吃糖. 同一个类中，多个方法名字相同但参数（类型或数量）不同
+/// </summary>
+/// <param name="count">糖的数量</param>
+public void EatSugar(int count)
+{
+    if(count > 3)
+    {
+        Console.WriteLine("Eat too much!");
+    }
+}
+</code></pre>
+<h2 id="构造方法"><a href="#构造方法" class="headerlink" title="构造方法"></a>构造方法</h2><p>如果没有显示定义构造方法，则会有一个默认的无参数的构造方法</p>
+<p>如果显示定义了构造方法，默认的无参构造方法就没有了。类中一定包含一个无参构造方法，所以如果定义了其他构造方法，需要显式的写一个无参构造方法。</p>
+<p>可以存在多个参数不同的重载构造方法。</p>
+<pre class=" language-lang-c#"><code class="language-lang-c#">class Child
+{
+    private string _name;
+    private string _sex;
+    private int _age;
+    private int _height;
+       // 构造方法
+    public Child()
+    {
+
+    }
+    public Child(string name)
+    {
+        Name = name;
+    }
+
+    public string Name
+    {
+        get{return _name;}
+        set{_name = value;}
+    }
+}
+</code></pre>
+<h2 id="this关键字"><a href="#this关键字" class="headerlink" title="this关键字"></a>this关键字</h2><pre class=" language-lang-c#"><code class="language-lang-c#">class Child
+{
+    private string name;
+    private string sex;
+    private int age;
+    private int height;
+       // 构造方法
+    public Child()
+    {
+
+    }
+    public Child(string name, age)
+    {
+        Name = name;
+        this.age = age;
+    }
+
+    public string Name
+    {
+        get{return name;}
+        set{name = value;}
+    }
+}
+</code></pre>
+<h2 id="对象初始化器"><a href="#对象初始化器" class="headerlink" title="对象初始化器"></a>对象初始化器</h2><pre class=" language-lang-c#"><code class="language-lang-c#">Child xiaoMing = new Child(){Name = "小明", Sex = "男"};  //其实调用的无参构造方法
+</code></pre>
+<h1 id="值类型和引用类型"><a href="#值类型和引用类型" class="headerlink" title="值类型和引用类型"></a>值类型和引用类型</h1><ul>
+<li>值类型：int、char、double、bool</li>
+<li>引用类型：类、数组、接口</li>
+</ul>
+<p>需要注意的是，<code>string</code>属于<code>类</code></p>
+<h2 id="值类型"><a href="#值类型" class="headerlink" title="值类型"></a>值类型</h2><p>值类型变量存储对象的值，赋值时会创建值的副本。修改任何一个副本，不会影响其他的副本。</p>
+<p>比如：</p>
+<pre class=" language-lang-c#"><code class="language-lang-c#">int x = 5;
+int y = x;
+y--;
+</code></pre>
+<p>此时运算后的结果为：</p>
+<pre class=" language-lang-c#"><code class="language-lang-c#">x=5; y=4;
+</code></pre>
+<p>y的改变不会影响到x</p>
+<h1 id="引用类型"><a href="#引用类型" class="headerlink" title="引用类型"></a>引用类型</h1><p>引用类型变量持有的是对象的引用，持有该对象引用的变量对该对象进行修改，也会影响到持有其引用的其他变量。</p>
+<p>比如：</p>
+<pre class=" language-lang-c#"><code class="language-lang-c#">Child c1 = new Child();
+c1.Name = "小明";
+Child c2 = c1;
+c2.Name = "小卡";
+Console.WriteLine(c1.Name);
+Console.WriteLine(c2.Name);
+</code></pre>
+<p>此时的输出结果为：</p>
+<pre><code>小明
+小卡
+</code></pre><p><code>c1</code>和<code>c2</code>两个变量都持有同一个对象引用，他们所做的操作直接影响到对象。</p>
+<h1 id="结构"><a href="#结构" class="headerlink" title="结构"></a>结构</h1><p>值类型（int, char, double, bool …)都属于<code>结构</code>类型（<code>struct</code>），也具有 字段、属性和方法。</p>
+<p>结构<code>struct</code>的定义：</p>
+<pre class=" language-lang-c#"><code class="language-lang-c#">struct Dog
+{
+    string _name;
+
+    public string Name
+    {
+        get{return _name;}
+        set{_name = value;}
+    }
+
+    public void Sing()
+    {
+        Console.WriteLine("Wang~");
+    }
+}
+</code></pre>
+<p>结构<code>struct</code>的实例化：</p>
+<pre class=" language-lang-c#"><code class="language-lang-c#">Dog dog = new Dog();
+dog.Name = "小白";
+dog.Sing();
+</code></pre>
+<p>结构也可以不用实例化：</p>
+<pre class=" language-lang-c#"><code class="language-lang-c#">Dog dog;
+dog.Name = "小白";
+dog.Sing();
+</code></pre>
+<p>结构<code>struct</code>总结：</p>
+<ul>
+<li>结构是值类型（类是引用类型）</li>
+<li><p>结构中可以定义字段、属性和方法</p>
+</li>
+<li><p>结构中的字段不能赋初始值</p>
+</li>
+<li>结构中不能显示定义无参构造方法</li>
+<li>结构类型的对象可以不实例化</li>
+</ul>
+<h1 id="枚举类型"><a href="#枚举类型" class="headerlink" title="枚举类型"></a>枚举类型</h1><pre class=" language-lang-c#"><code class="language-lang-c#">enum Gender
+{
+    男, 女
+}
+</code></pre>
+<p>使用：</p>
+<pre class=" language-lang-c#"><code class="language-lang-c#">Child c1 = new Child("小明", Gender.男, 6);
+Child c2 = new Child("小华", (Gender)0, 5);  //用枚举值转换
+</code></pre>
+<ul>
+<li>枚举是值类型</li>
+<li>枚举中不能定义字段属性和方法</li>
+<li>枚举值是从0递增的整数</li>
+</ul>
+<h1 id="ref关键字"><a href="#ref关键字" class="headerlink" title="ref关键字"></a>ref关键字</h1><p>值类型和引用类型在方法中的调用：</p>
+<pre class=" language-lang-c#"><code class="language-lang-c#">static void Main(string[] args)
+{
+    Child c1 = new Child("小明", 5);
+    Growth(c1);  //按引用传参，方法修改形参，通常实参也会被修改
+    Console.Write(c1.Age);
+    Growth(c1.Age);  //按值传参，方法修改形参，实参不会被修改
+    Console.Write(c1.Age);
+}
+
+static void Growth(Child child) //引用类型参数，按引用传参
+{
+    child.Age++;
+}
+
+static void Growth(int age) //值类型参数，按值传参
+{
+    age++;
+}
+</code></pre>
+<p>上面的代码可以看出，在按值传参时，参数传递的是变量的值，方法中对形参的改变不会影响到实参。</p>
+<p><code>ref</code>关键字可以让值类型参数按引用传参:</p>
+<pre class=" language-lang-c#"><code class="language-lang-c#">static void Main(string[] args)
+{
+    int age = 3;
+    Growth(ref age); //传递引用
+    Console.Write(age);
+}
+
+static void Growth(ref int age) //值类型参数，按引用传参
+{
+    age++;
+}
+</code></pre>
+<h1 id="out关键字"><a href="#out关键字" class="headerlink" title="out关键字"></a>out关键字</h1><p><code>out</code>关键字也是按引用传递，可以用来处理多个方法返回值：</p>
+<pre class=" language-lang-c#"><code class="language-lang-c#">static void Main(string[] args)
+{
+    int age = 3;
+    Growth(ref age);
+    Console.Write(age);
+}
+
+static void Growth(int age)
+{
+    age++;
+}
+</code></pre>
+
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+        <a href="/2018/12/03/c#面向对象编程/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            Newer
+        </a>
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2018/11/16/pyinstaller打包带资源文件的程序/" id="post_nav-older" class="next-content">
+            Older
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
+
+
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(/img/sidebar_header.png);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="/img/avatar.gif" alt="Zhu Yuexin's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        yuexinzh@gmail.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="mailto: yuexinzh@gmail.com" target="_blank" title="Email Me">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        
+                        Email Me
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    
+        <li id="sidebar-first-li">
+            <a href="/">
+                
+                    <i class="material-icons sidebar-material-icons">home</i>
+                
+                Home
+            </a>
+        </li>
+        
+    
+
+    <!-- Archives  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">inbox</i>
+                
+                    Archives
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+            <li>
+                <a class="sidebar_archives-link" href="/archives/2018/12/">December 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/11/">November 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/07/">July 2018<span class="sidebar_archives-count">23</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/06/">June 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/04/">April 2018<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/03/">March 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/01/">January 2018<span class="sidebar_archives-count">9</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/12/">December 2017<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/11/">November 2017<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/10/">October 2017<span class="sidebar_archives-count">8</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/08/">August 2017<span class="sidebar_archives-count">15</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/04/">April 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/03/">March 2017<span class="sidebar_archives-count">7</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Categories  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">chrome_reader_mode</i>
+                
+                Categories
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+                <li>
+                <a class="sidebar_archives-link" href="/categories/Android/">Android<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/Android碎片/">Android碎片<span class="sidebar_archives-count">16</span></a></li><li><a class="sidebar_archives-link" href="/categories/Android错误解决/">Android错误解决<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/C/">C#<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/Django/">Django<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Git/">Git<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Hexo/">Hexo<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/Java笔记/">Java笔记<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/Python/">Python<span class="sidebar_archives-count">8</span></a></li><li><a class="sidebar_archives-link" href="/categories/Shell/">Shell<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/Ubuntu/">Ubuntu<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/categories/剑指Offer编程题/">剑指Offer编程题<span class="sidebar_archives-count">22</span></a></li><li><a class="sidebar_archives-link" href="/categories/小技能/">小技能<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/机器学习/">机器学习<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/杂记/">杂记<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/游戏/">游戏<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/皮皮夏/">皮皮夏<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/皮皮夏的奇葩日记/">皮皮夏的奇葩日记<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/categories/论文笔记/">论文笔记<span class="sidebar_archives-count">2</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Pages  -->
+    
+        <li>
+            <a href="/tags" title="Tags">
+                
+                    <i class="material-icons sidebar-material-icons">sort</i>
+                
+                Tags
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/timeline" title="Timeline">
+                
+                    <i class="material-icons sidebar-material-icons">timeline</i>
+                
+                Timeline
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/links" title="Links">
+                
+                    <i class="material-icons sidebar-material-icons">link</i>
+                
+                Links
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/about" title="About">
+                
+                    <i class="material-icons sidebar-material-icons">person</i>
+                
+                About
+            </a>
+        </li>
+        
+            <li class="divider"></li>
+        
+    
+
+    <!-- Article Number  -->
+    
+        <li>
+            <a href="/archives">
+                Number of articles
+                <span class="sidebar-badge">81</span>
+            </a>
+        </li>
+        
+    
+</ul>
+
+
+        <!-- Sidebar Footer -->
+        <!--
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :)
+-->
+
+<!-- Sidebar Divider -->
+
+    <div class="sidebar-divider"></div>
+
+
+<!-- Theme Material -->
+
+    <a href="https://github.com/viosey/hexo-theme-material"  class="sidebar-footer-text-a" target="_blank">
+        <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+            Theme - Material
+            <span class="sidebar-badge badge-circle">i</span>
+        </div>
+    </a>
+
+
+<!-- Help & Support -->
+<!--
+
+-->
+
+<!-- Feedback -->
+<!--
+
+-->
+
+<!-- About Theme -->
+<!--
+
+-->
+
+    </div>
+
+    <!-- Sidebar Image -->
+    
+
+</aside>
+
+                    
+
+                    
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+    
+        <!-- Paradox Footer Left Section -->
+        <div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+        <a href="https://twitter.com/twitter" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-twitter">
+                <span class="visuallyhidden">Twitter</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Facebook -->
+    
+        <a href="https://www.facebook.com/facebook" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-facebook">
+                <span class="visuallyhidden">Facebook</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Google + -->
+    
+        <a href="https://www.google.com/" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-gplus">
+                <span class="visuallyhidden">Google Plus</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Weibo -->
+    
+
+    <!-- Instagram -->
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+
+    <!-- LinkedIn -->
+    
+
+    <!-- Zhihu -->
+    
+
+    <!-- Bilibili -->
+    
+
+    <!-- Telegram -->
+    
+</div>
+
+
+        <!--Copyright-->
+        <div id="copyright">
+            Copyright&nbsp;©<script type="text/javascript">var fd = new Date();document.write("&nbsp;" + fd.getFullYear() + "&nbsp;");</script>Mr.Z's Blog
+        </div>
+
+        <!-- Paradox Footer Right Section -->
+
+        <!--
+        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+        It will not impact the appearance and can give developers a lot of support :)
+
+        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+        它不会影响美观并可以给开发者很大的支持。 :)
+        -->
+
+        <div class="mdl-mini-footer--right-section">
+            <div>
+                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
+                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+            </div>
+        </div>
+    
+</footer>
+
+
+                    <!-- Import File -->
+
+
+    <script>lsloader.load("js/lazyload.min.js","/js/lazyload.min.js?1BcfzuNXqV+ntF6gq+5X3Q==")</script>
+    <script>lsloader.load("js/js.min.js","/js/js.min.js?oAl/+lvaqTFV31JXTmbrNA==")</script>
+
+
+
+    <script>lsloader.load("js/nprogress.js","/js/nprogress.js?pl3Qhb9lvqR1FlyLUna1Yw==")</script>
+
+
+<script type="text/ls-javascript" id="NProgress-script">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    $('#nprogress .bar').css({
+        'background': '#29d'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#29d',
+        'border-left-color': '#29d'
+    });
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- UC Browser Compatible -->
+<script>
+	var agent = navigator.userAgent.toLowerCase();
+	if(agent.indexOf('ucbrowser')>0) {
+		document.write('<link rel="stylesheet" href="/css/uc.css">');
+	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+	}
+</script>
+
+<!-- Window Load-->
+<script type="text/ls-javascript" id="window-load">
+    $(window).on('load', function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+</script>
+
+<!-- MathJax Load-->
+
+<script type="text/ls-javascript" id="lazy-load">
+    // Offer LazyLoad
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    // Start Queue
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script>
+
+<!-- Bing Background -->
+
+
+<script>
+    (function(){
+        var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
+
+        for (var i = 0; i < scriptList.length; ++i) {
+            var item = scriptList[i];
+            lsloader.runInlineScript(item.id,item.id);
+        }
+    })()
+console.log('\n %c © Material Theme | Version: 1.4.0 | https://github.com/viosey/hexo-theme-material %c \n', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;');
+</script>
+
+                </main>
+            </div>
+        </body>
+    
+</html>
