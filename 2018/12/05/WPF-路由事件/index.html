@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html style="display: none;" lang="en">
-    <head>
+    <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
     <!--
         © Material Theme
@@ -66,25 +66,25 @@
     <meta property="og:url" content="http://yoursite.com">
     <meta property="og:type" content="blog">
     <meta property="og:title" content="WPF-路由事件 | Mr.Z&#39;s Blog">
-    <meta property="og:image" content="/img/favicon.ico" />
+    <meta property="og:image" content="/img/favicon.ico">
     <meta property="og:description" content="呀！发现一只会写代码的猪！">
     <meta property="og:article:tag" content="wpf"> <meta property="og:article:tag" content="逻辑树与可视树"> <meta property="og:article:tag" content="路由事件"> <meta property="og:article:tag" content="附加事件"> 
 
     
-        <meta property="article:published_time" content="Dec 05, 2018" />
-        <meta property="article:modified_time" content="Apr 15, 2019" />
+        <meta property="article:published_time" content="Dec 05, 2018">
+        <meta property="article:modified_time" content="Apr 15, 2019">
     
 
     <!-- The Twitter Card protocol -->
     <meta name="twitter:title" content="WPF-路由事件 | Mr.Z&#39;s Blog">
     <meta name="twitter:description" content="呀！发现一只会写代码的猪！">
     <meta name="twitter:image" content="/img/favicon.ico">
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:url" content="http://yoursite.com" />
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="http://yoursite.com">
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://yoursite.com/2018/12/05/WPF-路由事件/index.html" />
+        <link rel="canonical" href="http://yoursite.com/2018/12/05/WPF-路由事件/index.html">
     
 
     <!-- Structured-data for SEO -->
@@ -274,7 +274,7 @@
 <!-- Import Font -->
 
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 
         <script>lsloader.load("js/jquery.min.js","/js/jquery.min.js?qcusAULNeBksqffqUM2+Ig==")</script>
@@ -555,8 +555,7 @@
     -->
 
     <!-- Left aligned menu below button -->
-    <button id="post-toc-trigger-btn"
-        class="mdl-button mdl-js-button mdl-button--icon">
+    <button id="post-toc-trigger-btn" class="mdl-button mdl-js-button mdl-button--icon">
         <i class="material-icons">format_list_numbered</i>
     </button>
 
@@ -614,7 +613,7 @@
 
     <!-- Author Avatar -->
     <div id="author-avatar">
-        <img src="/img/avatar.gif" width="44px" height="44px" alt="Author Avatar"/>
+        <img src="/img/avatar.gif" width="44px" height="44px" alt="Author Avatar">
     </div>
     <!-- Author Name & Date -->
     <div>
@@ -644,7 +643,7 @@
     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
         <li class="mdl-menu__item">
         <a class="post_tag-link" href="/tags/wpf/">wpf</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/路由事件/">路由事件</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/逻辑树与可视树/">逻辑树与可视树</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/附加事件/">附加事件</a>
-    </ul>
+    </li></ul>
     
 
     <!-- Share -->
@@ -712,20 +711,13 @@
     
         <h1 id="逻辑树与可视树"><a href="#逻辑树与可视树" class="headerlink" title="逻辑树与可视树"></a>逻辑树与可视树</h1><h2 id="逻辑树"><a href="#逻辑树" class="headerlink" title="逻辑树"></a>逻辑树</h2><p>描述WPF界面元素的实际结构，XAML中所有的UI元素组成</p>
 <p>如：</p>
-<pre class=" language-lang-xaml"><code class="language-lang-xaml"><Window x:Class="RoutedEventDemo.MainWindow"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:RoutedEventDemo"
-        mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        <DockPanel>
-            <TextBlock></TextBlock>
-        </DockPanel>
-    </Grid>
-</Window>
+<pre class=" language-lang-xaml"><code class="language-lang-xaml"><window x:class="RoutedEventDemo.MainWindow" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:local="clr-namespace:RoutedEventDemo" mc:ignorable="d" title="MainWindow" height="450" width="800">
+    <grid>
+        <dockpanel>
+            <textblock></textblock>
+        </dockpanel>
+    </grid>
+</window>
 </code></pre>
 <p>其中<code>Window</code>,<code>Grid</code>,<code>DockPanel</code>就是逻辑树</p>
 <h2 id="可视树"><a href="#可视树" class="headerlink" title="可视树"></a>可视树</h2><ul>
@@ -737,25 +729,25 @@
 <li><code>VisualTreeHelper</code>：遍历可视树</li>
 </ul>
 <h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><p>新建一个项目，在视图文件中定义两个<code>TreeView</code>控件来展示逻辑树和可视树：</p>
-<pre class=" language-lang-xaml"><code class="language-lang-xaml"><Grid>
-    <DockPanel>
-        <Button DockPanel.Dock="Top" Click="Button_Click" Margin="20">获取逻辑树与可视树</Button>
-        <Grid>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
-            </Grid.ColumnDefinitions>
-            <DockPanel>
-                <TextBlock DockPanel.Dock="Top">逻辑树</TextBlock>
-                <TreeView Name="tvLogicTree"></TreeView>
-            </DockPanel>
-            <DockPanel Grid.Column="1">
-                <TextBlock DockPanel.Dock="Top">可视树</TextBlock>
-                <TreeView Name="tvVisualTree"></TreeView>
-            </DockPanel>
-        </Grid>
-    </DockPanel>
-</Grid>
+<pre class=" language-lang-xaml"><code class="language-lang-xaml"><grid>
+    <dockpanel>
+        <button dockpanel.dock="Top" click="Button_Click" margin="20">获取逻辑树与可视树</button>
+        <grid>
+            <grid.columndefinitions>
+                <columndefinition></columndefinition>
+                <columndefinition></columndefinition>
+            </grid.columndefinitions>
+            <dockpanel>
+                <textblock dockpanel.dock="Top">逻辑树</textblock>
+                <treeview name="tvLogicTree"></treeview>
+            </dockpanel>
+            <dockpanel grid.column="1">
+                <textblock dockpanel.dock="Top">可视树</textblock>
+                <treeview name="tvVisualTree"></treeview>
+            </dockpanel>
+        </grid>
+    </dockpanel>
+</grid>
 </code></pre>
 <p>然后我们新建一个类<code>WPFTreeHelper</code>来实现两个静态方法，获取可视树和逻辑树：</p>
 <pre class=" language-lang-c#"><code class="language-lang-c#">using System;
@@ -803,20 +795,7 @@ namespace RoutedEventDemo
                 return null;
             }
             var treeItem = new TreeViewItem { Header = GetTypeDescription(dobj), IsExpanded = true };
-            for(int i=0; i<VisualTreeHelper.GetChildrenCount(dobj); i++)
-            {
-                var child = VisualTreeHelper.GetChild(dobj, i);
-                var item = GetVisualTree(child); //递归调用
-                if (item != null)
-                {
-                    treeItem.Items.Add(item);
-                }
-            }
-            return treeItem;
-        }
-    }
-}
-</code></pre>
+            for(int i=0; i<visualtreehelper.getchildrencount(dobj); i++) { var child="VisualTreeHelper.GetChild(dobj," i); item="GetVisualTree(child);" 递归调用 if (item !="null)" treeitem.items.add(item); } return treeitem; < code></visualtreehelper.getchildrencount(dobj);></code></pre>
 <p>有了这两个静态方法就可以获取可视树和逻辑树了。然后我们在<code>Button</code>的点击事件中将获取到的逻辑树与可视树传入两个<code>TreeView</code>控件中展示：</p>
 <pre class=" language-lang-c#"><code class="language-lang-c#">namespace RoutedEventDemo
 {
@@ -839,7 +818,7 @@ namespace RoutedEventDemo
 }
 </code></pre>
 <p>显示结果：</p>
-<p><img src="http://upyun.nidhogg.cn/img/WPF20181205100819.png" alt=""></p>
+<p><img src="http://upyun.nidhogg.cn/img/WPF20181205100819.png" alt></p>
 <p>可以看到逻辑树就和我们在<code>xaml</code>文件中看到的一样，可视树则更丰富一些，把所有可见的元素都显示了出来。</p>
 <h1 id="路由事件"><a href="#路由事件" class="headerlink" title="路由事件"></a>路由事件</h1><h2 id="什么是路由事件"><a href="#什么是路由事件" class="headerlink" title="什么是路由事件"></a>什么是路由事件</h2><ul>
 <li>对元素树中多个侦听器调用处理的事件</li>
@@ -855,9 +834,9 @@ namespace RoutedEventDemo
 <li>产生传递事件</li>
 </ul>
 <h2 id="示例-1"><a href="#示例-1" class="headerlink" title="示例"></a>示例</h2><p>新建一个用户控件<code>RoutedEventControl</code>：</p>
-<pre class=" language-lang-xaml"><code class="language-lang-xaml"><Grid>
-    <Button Click="Button_Click">传递路由事件</Button>
-</Grid>
+<pre class=" language-lang-xaml"><code class="language-lang-xaml"><grid>
+    <button click="Button_Click">传递路由事件</button>
+</grid>
 </code></pre>
 <p>在控件的<code>cs</code>文件自定义路由事件，并且在按钮点击时传递路由事件：</p>
 <pre class=" language-lang-c#"><code class="language-lang-c#">namespace RoutedEventDemo
@@ -896,9 +875,9 @@ namespace RoutedEventDemo
 }
 </code></pre>
 <p>在<code>MainWindow</code>中引入用户控件<code>RoutedEventControl</code>：</p>
-<pre class=" language-lang-xaml"><code class="language-lang-xaml">    <Grid>
-        <local:RoutedEventControl MyClick="RoutedEventControl_MyClick" Margin="20"></local:RoutedEventControl>
-    </Grid>
+<pre class=" language-lang-xaml"><code class="language-lang-xaml">    <grid>
+        <local:routedeventcontrol myclick="RoutedEventControl_MyClick" margin="20"></local:routedeventcontrol>
+    </grid>
 </code></pre>
 <p><code>MyClick</code>就是我们定义的路由事件，我们再去<code>MainWindow.xaml.cs</code>中实现这个事件的处理方法：</p>
 <pre class=" language-lang-c#"><code class="language-lang-c#">private void RoutedEventControl_MyClick(object sender, RoutedEventArgs e)
@@ -908,7 +887,7 @@ namespace RoutedEventDemo
 }
 </code></pre>
 <p>完成后，点击按钮的显示结果：</p>
-<p><img src="http://upyun.nidhogg.cn/img/WPF20181205105118.png" alt=""></p>
+<p><img src="http://upyun.nidhogg.cn/img/WPF20181205105118.png" alt></p>
 <p>同样的，我们也可以注册隧道事件：</p>
 <pre class=" language-lang-c#"><code class="language-lang-c#">// 注册隧道事件
 // 隧道事件命名规则：在名称前面加上'Preview'
@@ -930,9 +909,9 @@ public event RoutedEventHandler PreviewMyClick
 <li>引发附加事件</li>
 </ul>
 <h2 id="示例-2"><a href="#示例-2" class="headerlink" title="示例"></a>示例</h2><p>新建一个用户控件<code>AttachedEventControl</code>：</p>
-<pre class=" language-lang-xaml"><code class="language-lang-xaml"><Grid>
-    <Button>引发附加事件</Button>
-</Grid>
+<pre class=" language-lang-xaml"><code class="language-lang-xaml"><grid>
+    <button>引发附加事件</button>
+</grid>
 </code></pre>
 <p>在<code>cs</code>代码中定义我们的附加事件：</p>
 <pre class=" language-lang-c#"><code class="language-lang-c#">namespace RoutedEventDemo
@@ -982,9 +961,9 @@ public event RoutedEventHandler PreviewMyClick
 }
 </code></pre>
 <p>在<code>MainWindow</code>中引入用户控件<code>AttachedEventControl</code>：</p>
-<pre class=" language-lang-xaml"><code class="language-lang-xaml"><Grid>
-    <local:AttachedEventControl Margin="20"></local:AttachedEventControl>
-</Grid>
+<pre class=" language-lang-xaml"><code class="language-lang-xaml"><grid>
+    <local:attachedeventcontrol margin="20"></local:attachedeventcontrol>
+</grid>
 </code></pre>
 <p>在<code>MainWindow.xaml.cs</code>文件中添加我们定义的附加事件：</p>
 <pre class=" language-lang-c#"><code class="language-lang-c#">namespace RoutedEventDemo
@@ -1009,7 +988,7 @@ public event RoutedEventHandler PreviewMyClick
 }
 </code></pre>
 <p>实现效果：</p>
-<p><img src="http://upyun.nidhogg.cn/img/WPF20181205111829.png" alt=""></p>
+<p><img src="http://upyun.nidhogg.cn/img/WPF20181205111829.png" alt></p>
 
     
 
@@ -1135,8 +1114,8 @@ public event RoutedEventHandler PreviewMyClick
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/archives/2019/05/">May 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/04/">April 2019<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/12/">December 2018<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/11/">November 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/07/">July 2018<span class="sidebar_archives-count">23</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/06/">June 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/04/">April 2018<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/03/">March 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/01/">January 2018<span class="sidebar_archives-count">9</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/12/">December 2017<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/11/">November 2017<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/10/">October 2017<span class="sidebar_archives-count">8</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/08/">August 2017<span class="sidebar_archives-count">15</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/03/">March 2017<span class="sidebar_archives-count">6</span></a>
-            </ul>
+                <a class="sidebar_archives-link" href="/archives/2019/04/">April 2019<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/12/">December 2018<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/11/">November 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/07/">July 2018<span class="sidebar_archives-count">23</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/06/">June 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/04/">April 2018<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/03/">March 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/01/">January 2018<span class="sidebar_archives-count">9</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/12/">December 2017<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/11/">November 2017<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/10/">October 2017<span class="sidebar_archives-count">8</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/08/">August 2017<span class="sidebar_archives-count">15</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/03/">March 2017<span class="sidebar_archives-count">6</span></a>
+            </li></ul>
         </li>
         
     
@@ -1154,7 +1133,7 @@ public event RoutedEventHandler PreviewMyClick
             <ul class="dropdown-menu">
                 <li>
                 <a class="sidebar_archives-link" href="/categories/Android/">Android<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/Android碎片/">Android碎片<span class="sidebar_archives-count">16</span></a></li><li><a class="sidebar_archives-link" href="/categories/Android错误解决/">Android错误解决<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/C/">C#<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/Django/">Django<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Git/">Git<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Hexo/">Hexo<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/Java/">Java<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Java笔记/">Java笔记<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/Linux/">Linux<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/Maven/">Maven<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/Python/">Python<span class="sidebar_archives-count">8</span></a></li><li><a class="sidebar_archives-link" href="/categories/Shell/">Shell<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/SpringBoot/">SpringBoot<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/Ubuntu/">Ubuntu<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/categories/WPF/">WPF<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/剑指Offer编程题/">剑指Offer编程题<span class="sidebar_archives-count">22</span></a></li><li><a class="sidebar_archives-link" href="/categories/小技能/">小技能<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/机器学习/">机器学习<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/杂记/">杂记<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/游戏/">游戏<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/皮皮夏/">皮皮夏<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/皮皮夏的奇葩日记/">皮皮夏的奇葩日记<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/论文笔记/">论文笔记<span class="sidebar_archives-count">2</span></a>
-            </ul>
+            </li></ul>
         </li>
         
     
@@ -1235,7 +1214,7 @@ It will not impact the appearance and can give developers a lot of support :)
 
 <!-- Theme Material -->
 
-    <a href="https://github.com/viosey/hexo-theme-material"  class="sidebar-footer-text-a" target="_blank">
+    <a href="https://github.com/viosey/hexo-theme-material" class="sidebar-footer-text-a" target="_blank">
         <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
             Theme - Material
             <span class="sidebar-badge badge-circle">i</span>
