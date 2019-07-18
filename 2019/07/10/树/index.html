@@ -1,0 +1,3255 @@
+<!DOCTYPE html>
+<html style="display: none;" lang="en">
+    <head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <!--
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.4.0 -->
+    <script>window.materialVersion = "1.4.0"</script>
+
+    <!-- Title -->
+    
+    <title>
+        
+            树 | 
+        
+        Mr.Z&#39;s Blog
+    </title>
+
+    <!-- dns prefetch -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    <!-- Meta & Info -->
+    <meta http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="theme-color" content="#0097A7">
+    <meta name="author" content="Zhu Yuexin">
+    <meta name="description" itemprop="description" content="呀！发现一只会写代码的猪！">
+    <meta name="keywords" content="null,数据结构,树,二叉树,线索二叉树,赫夫曼树,二叉搜索树,AVL树,红黑树,B树,B+树">
+
+    <!-- Site Verification -->
+    
+    
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/favicon.ico">
+    <link rel="icon" sizes="192x192" href="/img/favicon.ico">
+    <link rel="apple-touch-icon" href="/img/favicon.ico">
+
+    <!--iOS -->
+    <meta name="apple-mobile-web-app-title" content="Title">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="480">
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Mr.Z&#39;s Blog">
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="http://yoursite.com">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="树 | Mr.Z&#39;s Blog">
+    <meta property="og:image" content="/img/favicon.ico">
+    <meta property="og:description" content="呀！发现一只会写代码的猪！">
+    <meta property="og:article:tag" content="数据结构"> <meta property="og:article:tag" content="树"> <meta property="og:article:tag" content="二叉树"> <meta property="og:article:tag" content="线索二叉树"> <meta property="og:article:tag" content="赫夫曼树"> <meta property="og:article:tag" content="二叉搜索树"> <meta property="og:article:tag" content="AVL树"> <meta property="og:article:tag" content="红黑树"> <meta property="og:article:tag" content="B树"> <meta property="og:article:tag" content="B+树"> 
+
+    
+        <meta property="article:published_time" content="Jul 10, 2019">
+        <meta property="article:modified_time" content="Jul 18, 2019">
+    
+
+    <!-- The Twitter Card protocol -->
+    <meta name="twitter:title" content="树 | Mr.Z&#39;s Blog">
+    <meta name="twitter:description" content="呀！发现一只会写代码的猪！">
+    <meta name="twitter:image" content="/img/favicon.ico">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="http://yoursite.com">
+
+    <!-- Add canonical link for SEO -->
+    
+        <link rel="canonical" href="http://yoursite.com/2019/07/10/树/index.html">
+    
+
+    <!-- Structured-data for SEO -->
+    
+        
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Mr.Z&#39;s Blog",
+        "logo": "/img/favicon.ico"
+    },
+    "author": {
+        "@type": "Person",
+        "name": "Zhu Yuexin",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/favicon.ico"
+        },
+        "description": "The keyboard is typing on my fingertip,<br>The code is writing me,<br>My eyes are flashing in the cursor, and you are missing me."
+    },
+    "headline": "树",
+    "url": "http://yoursite.com/2019/07/10/树/index.html",
+    "datePublished": "Jul 10, 2019",
+    "dateModified": "Jul 18, 2019",
+    "description": "呀！发现一只会写代码的猪！",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://yoursite.com"
+    }
+}
+</script>
+
+
+    
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+
+        
+            <script src="/js/ie-blocker.en.js"></script>
+        
+    <![endif]-->
+
+    <!-- Import lsloader -->
+    <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(key){try{localStorage.removeItem(key)}catch(e){}};lsloader.setLS=function(key,val){try{localStorage.setItem(key,val)}catch(e){}};lsloader.getLS=function(key){var val="";try{val=localStorage.getItem(key)}catch(e){val=""}return val};versionString="/*"+materialVersion+"*/";lsloader.clean=function(){try{var keys=[];for(var i=0;i<localStorage.length;i++){keys.push(localStorage.key(i))}keys.forEach(function(key){var data=lsloader.getLS(key);if(data&&data.indexOf(versionString)===-1){lsloader.removeLS(key)}})}catch(e){}};lsloader.clean();lsloader.load=function(jsname,jspath,cssonload){cssonload=cssonload||function(){};var code;code=this.getLS(jsname);if(code&&code.indexOf(versionString)===-1){this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload);return}if(code){var versionNumber=code.split(versionString)[0];if(versionNumber!=jspath){console.log("reload:"+jspath);this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload);return}code=code.split(versionString)[1];if(/\.js?.+$/.test(versionNumber)){this.jsRunSequence.push({name:jsname,code:code});this.runjs(jspath,jsname,code)}else{document.getElementById(jsname).appendChild(document.createTextNode(code));cssonload()}}else{this.requestResource(jsname,jspath,cssonload)}};lsloader.requestResource=function(name,path,cssonload){var that=this;if(/\.js?.+$/.test(path)){this.iojs(path,name,function(path,name,code){that.setLS(name,path+versionString+code);that.runjs(path,name,code)})}else if(/\.css?.+$/.test(path)){this.iocss(path,name,function(code){document.getElementById(name).appendChild(document.createTextNode(code));that.setLS(name,path+versionString+code)},cssonload)}};lsloader.iojs=function(path,jsname,callback){var that=this;that.jsRunSequence.push({name:jsname,code:""});try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(path,jsname,xhr.response);return}}that.jsfallback(path,jsname)}};xhr.send(null)}catch(e){that.jsfallback(path,jsname)}};lsloader.iocss=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.iofonts=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.runjs=function(path,name,code){if(!!name&&!!code){for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code=code}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var script=document.createElement("script");script.appendChild(document.createTextNode(this.jsRunSequence[0].code));script.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(script);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var that=this;var script=document.createElement("script");script.src=this.jsRunSequence[0].path;script.type="text/javascript";this.jsRunSequence[0].status="loading";script.onload=function(){that.jsRunSequence.shift();if(that.jsRunSequence.length>0){that.runjs()}};document.body.appendChild(script)}};lsloader.tagLoad=function(path,name){this.jsRunSequence.push({name:name,code:"",path:path,status:"failed"});this.runjs()};lsloader.jsfallback=function(path,name){if(!!this.jsnamemap[name]){return}else{this.jsnamemap[name]=name}for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code="";this.jsRunSequence[k].status="failed";this.jsRunSequence[k].path=path}}this.runjs()};lsloader.cssfallback=function(path,name,cssonload){if(!!this.cssnamemap[name]){return}else{this.cssnamemap[name]=1}var link=document.createElement("link");link.type="text/css";link.href=path;link.rel="stylesheet";link.onload=link.onerror=cssonload;var root=document.getElementsByTagName("script")[0];root.parentNode.insertBefore(link,root)};lsloader.runInlineScript=function(scriptId,codeId){var code=document.getElementById(codeId).innerText;this.jsRunSequence.push({name:scriptId,code:code});this.runjs()};lsloader.loadCombo=function(jslist){var updateList="";var requestingModules={};for(var k in jslist){var LS=this.getLS(jslist[k].name);if(!!LS){var version=LS.split(versionString)[0];var code=LS.split(versionString)[1]}else{var version=""}if(version==jslist[k].path){this.jsRunSequence.push({name:jslist[k].name,code:code,path:jslist[k].path})}else{this.jsRunSequence.push({name:jslist[k].name,code:null,path:jslist[k].path,status:"comboloading"});requestingModules[jslist[k].name]=true;updateList+=(updateList==""?"":";")+jslist[k].path}}var that=this;if(!!updateList){var xhr=new XMLHttpRequest;xhr.open("get",combo+updateList,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){that.runCombo(xhr.response,requestingModules);return}}else{for(var i in that.jsRunSequence){if(requestingModules[that.jsRunSequence[i].name]){that.jsRunSequence[i].status="failed"}}that.runjs()}}};xhr.send(null)}this.runjs()};lsloader.runCombo=function(comboCode,requestingModules){comboCode=comboCode.split("/*combojs*/");comboCode.shift();for(var k in this.jsRunSequence){if(!!requestingModules[this.jsRunSequence[k].name]&&!!comboCode[0]){this.jsRunSequence[k].status="comboJS";this.jsRunSequence[k].code=comboCode[0];this.setLS(this.jsRunSequence[k].name,this.jsRunSequence[k].path+versionString+comboCode[0]);comboCode.shift()}}this.runjs()}})();</script>
+
+    <!-- Import CSS & jQuery -->
+    
+        <style id="css/material.min.css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("css/material.min.css","/css/material.min.css?fJTiM/K1J3dWIruo3pxtAw==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";})</script>
+        <style id="css/style.min.css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("css/style.min.css","/css/style.min.css?oCSEO3ST+aEypEwttTDI9g==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";})</script>
+        
+        
+            <style>
+    
+    .footer-sns-facebook {
+        background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0OCIgaGVpZ2h0PSI0OCIgY2xhc3M9Imljb24iIHZpZXdCb3g9IjAgMCAxMDI0IDEwMjQiPjxwYXRoIGQ9Ik0xMzguNiA3OGMtMjIuNCA1LjItNTUuOCA0MC4yLTYwLjYgNjMuNC0xLjQgNi40LTIgMTI5LjgtMS42IDM2Ny42LjYgMjk4LjYgMSAzNTguOCAzLjQgMzYzIDExIDIwLjIgMjEuNiAzMi40IDM3LjIgNDMgMTUgMTAuMiAxNy40IDExLjIgMzMgMTMgMTEuMiAxLjQgMTM2IDIgMzY1IDEuNiAzMTQtLjYgMzQ4LjYtMSAzNTUtMy44IDE1LjgtNy4yIDMzLjgtMjIgNDMuMi0zNS40IDUuMi03LjQgMTAuOC0xNi42IDEyLjYtMjAuNCAyLjgtNi40IDMuMi00MC44IDMuOC0zNTQgLjQtMjIzLS4yLTM1My40LTEuNC0zNjUtMi0xNy0yLjYtMTguNi0xMy0zNC04LjYtMTIuNi0xNC4yLTE4LjQtMjUuMi0yNS44LTcuOC01LjQtMTcuNC0xMS0yMS42LTEyLjQtNi0yLjItNzIuOC0yLjYtMzY1LjQtMi42LTE5Ni44LjItMzYxIC44LTM2NC40IDEuOHptNjU3LjYgODcuOGw0LjggMy44djU1LjJjMCA1NC42IDAgNTUuMi00LjYgNTkuNi00LjQgNC40LTYgNC42LTUwLjIgNS42bC00NS42IDEtNy4yIDUuNmMtMTAuNCA4LTE2LjggMTcuMi0xOS4yIDI3LjQtMSA1LTEuOCAyNC44LTEuOCA0NCAuMiAzOCAxLjYgNDQuNiAxMC44IDQ4IDIuOCAxLjIgMjguNCAyIDU2LjggMiA0Ny44IDAgNTIgLjIgNTYuMiAzLjhsNC44IDMuOHY1NS4yYzAgNTQuNiAwIDU1LjItNC42IDU5LjYtNC40IDQuNi01LjQgNC42LTU3IDUuMi0yOC44LjItNTQuNC44LTU2LjggMS40LTIuNC42LTUuNiAzLTYuOCA1LjQtMS44IDMuMi0yLjQgNDEuNC0yLjYgMTQzLjJsLS4yIDEzOC44LTUuNiA0LjgtNS42IDQuOEg2MDljLTUyLjQgMC01Mi44IDAtNTguMi00LjZsLTUuNC00LjYtLjItMTQwLjYtLjItMTQwLjYtNC44LTMuOGMtNC4yLTMuNC04LTMuOC0zNS42LTMuOC0zMi44IDAtNDEtMS44LTQzLjYtMTAtLjYtMi4yLTEuMi0yNS40LTEuMi01MS40IDAtNjAuOC0uMi01NyAzLjQtNjEuNiAyLjgtMy42IDYtNCAzNy44LTUgMzMtMSAzNS4yLTEuMiAzOS40LTUuNiA0LjYtNC40IDQuNi01LjIgNS44LTcxIDEuMi03My40LjItNjcuMiAxNi42LTk5LjQgOC0xNS44IDEyLjgtMjIgMjgtMzcgMTUuMi0xNS4yIDIxLjQtMTkuNiAzOC4yLTI4IDExLTUuNCAyNC0xMSAyOS0xMi4yIDYuMi0xLjggMjguNi0yLjYgNzEuMi0yLjYgNTguNi0uMiA2Mi42IDAgNjcgMy42eiIvPjwvc3ZnPg==);
+    }
+    
+    
+    .footer-sns-twitter {
+        background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0OCIgaGVpZ2h0PSI0OCIgY2xhc3M9Imljb24iIHZpZXdCb3g9IjAgMCAxMDI0IDEwMjQiPjxwYXRoIGQ9Ik0xMzguNiA3OGMtMjIuNCA1LjItNTUuOCA0MC4yLTYwLjYgNjMuNC0xLjQgNi40LTIgMTI5LjgtMS42IDM2Ny42LjYgMjk4LjYgMSAzNTguOCAzLjQgMzYzIDExIDIwLjIgMjEuNiAzMi40IDM3LjIgNDMgMTUgMTAuMiAxNy40IDExLjIgMzMgMTMgMTEuMiAxLjQgMTM2IDIgMzY1IDEuNiAzMTQtLjYgMzQ4LjYtMSAzNTUtMy44IDE1LjgtNy4yIDMzLjgtMjIgNDMuMi0zNS40IDUuMi03LjQgMTAuOC0xNi42IDEyLjYtMjAuNCAyLjgtNi40IDMuMi00MC44IDMuOC0zNTQgLjQtMjIzLS4yLTM1My40LTEuNC0zNjUtMi0xNy0yLjYtMTguNi0xMy0zNC04LjYtMTIuNi0xNC4yLTE4LjQtMjUuMi0yNS44LTcuOC01LjQtMTcuNC0xMS0yMS42LTEyLjQtNi0yLjItNzIuOC0yLjYtMzY1LjQtMi42LTE5Ni44LjItMzYxIC44LTM2NC40IDEuOHptNTMyLjggMjA1YzEwIDQgMjMgMTAuOCAyOC44IDE1LjIgMTIuNiA5LjIgMTYuNiAxMC42IDI5LjQgOS40IDYuNi0uNiAxMy0zLjIgMjAuNC04LjIgMTEuMi03LjYgMTkuNC05LjIgMjMuNi01IDMuNiAzLjYgMi44IDktMi44IDE4LjYtNy4yIDEyLjQtNiAxOC44IDQuMiAyNC4yIDQuNCAyLjIgOC4yIDUuNiA4LjYgNy40IDEgNC44LTEyLjYgMjQuMi0yMiAzMS44LTExLjggOS4yLTE3LjIgMjIuNi0xOS42IDQ3LjgtNC44IDUwLjQtNy44IDY2LjYtMTYuNCA4NS40LTMgNy03IDE3LjgtOC44IDI0LTEuOCA2LjQtNSAxNC42LTcuNCAxOC40LTIuMiAzLjgtNy40IDEzLTExLjQgMjAuNC0xNy4yIDMwLjgtNDMuNCA2MS40LTcxLjQgODMuOC0yNS42IDIwLjQtNDYgMzMuMi02NC4yIDQwLjItOC40IDMuMi0xOCA3LjYtMjEuNCA5LjYtNy40IDQuNi0yMi40IDguNi01Ny4yIDE1LTYyLjIgMTEuNi03OS4yIDExLjQtMTM1LjYtMS0zMi40LTctMzguNi05LTUyLTE2LjgtMjEuNC0xMi42LTI0LjItMTQuOC0yNC4yLTE5LjQgMC02LjIgMTAuMi05LjIgMzUtMTAuNCAyMi40LTEgMjguNi0yLjYgNTctMTQuMiAyMy44LTkuOCAyOS40LTEyLjggMzAuNC0xNi44IDIuMi04LjItMy0xMy4yLTI2LjgtMjUuNC0yNS44LTEzLjItMzIuMi0xOC40LTQzLjgtMzUuOC05LTEzLjYtMTAtMjEuMi0zLjYtMzMuNiA1LjQtMTAuOCAzLjYtMTUtMTEuOC0yNS40LTktNi0xNC0xMS42LTIwLjgtMjIuNi0yMy40LTM3LjgtMjUtNTAuOC03LjItNTkuOCA0LjgtMi40IDkuNC01LjQgMTAuMi02LjYgMi44LTQuMi0uNC0xNS42LTguNC0yOS0xMS42LTE5LjYtMTMuMi0yNS44LTEzLjItNTUuMiAwLTI4LjggMi42LTM3LjggMTItNDAuMiA5LTIuMiAxNC44IDEgMzUuNiAyMC4yIDI0LjggMjIuOCA0My42IDM2LjYgNjIuOCA0NS44IDggMy44IDE3LjggOS4yIDIyIDEyIDQuMiAyLjggMTQuOCA3IDIzLjQgOS4yIDguNiAyLjIgMjQuMiA2LjggMzQuOCAxMC4yIDEzLjQgNC40IDIzLjYgNi40IDMzIDYuNiAxMi44LjIgMTQuMi0uMiAxOC42LTUuNCA0LTQuOCA0LjgtNy44IDQuOC0xOS4yIDAtMTQuNCA1LjYtMzkuNiAxMS4yLTUwLjYgNC4yLTguNCAyOS4yLTM0LjIgMzkuOC00MS40IDcuOC01LjQgMzUuNi0xNiA1Mi0yMCAxNC4yLTMuNiAzMi42LTEuMiA1Mi40IDYuOHoiLz48L3N2Zz4=);
+    }
+    
+    
+    .footer-sns-gplus {
+        background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0OCIgaGVpZ2h0PSI0OCIgY2xhc3M9Imljb24iIHZpZXdCb3g9IjAgMCAxMDI0IDEwMjQiPjxwYXRoIGQ9Ik0xMzguNiA3OGMtMjIuNCA1LjItNTUuOCA0MC4yLTYwLjYgNjMuNC0xLjQgNi40LTIgMTI5LjgtMS42IDM2Ny42LjYgMjk4LjYgMSAzNTguOCAzLjQgMzYzIDExIDIwLjIgMjEuNiAzMi40IDM3LjIgNDMgMTUgMTAuMiAxNy40IDExLjIgMzMgMTMgMTEuMiAxLjQgMTM2IDIgMzY1IDEuNiAzMTQtLjYgMzQ4LjYtMSAzNTUtMy44IDE1LjgtNy4yIDMzLjgtMjIgNDMuMi0zNS40IDUuMi03LjQgMTAuOC0xNi42IDEyLjYtMjAuNCAyLjgtNi40IDMuMi00MC44IDMuOC0zNTQgLjQtMjIzLS4yLTM1My40LTEuNC0zNjUtMi0xNy0yLjYtMTguNi0xMy0zNC04LjYtMTIuNi0xNC4yLTE4LjQtMjUuMi0yNS44LTcuOC01LjQtMTcuNC0xMS0yMS42LTEyLjQtNi0yLjItNzIuOC0yLjYtMzY1LjQtMi42LTE5Ni44LjItMzYxIC44LTM2NC40IDEuOHpNNDMwIDI5NS40YzQwLjYgMTUuNCA1Ni42IDIzLjggNzIuNiAzOC40IDYuOCA2LjIgNy4yIDE1LjIgMSAyMy40LTYuMiA4LTMzLjYgMzMuOC0zOSAzNi42LTUuNiAyLjgtMTcuNiAyLjgtMjMuMi0uMi0yLjQtMS4yLTguMi01LjItMTMtOC44LTExLjItOC42LTI0LjYtMTEuMi01NS4yLTExLjItMjcuNCAwLTQwLjYgMi42LTUyLjIgMTAuNC00LjQgMi44LTEyLjIgNy42LTE3LjIgMTAuNi0yMyAxMy4yLTUxLjQgNTUtNTUuOCA4Mi40LTIuNiAxNS42LTIuNCAzNC44LjIgNTEgMi44IDE3LjQgMTkuOCA0OC44IDM1LjIgNjUuMiAxNiAxNi42IDQ1IDMzLjYgNjIuOCAzNi42IDI2LjggNC40IDY1LjggMS42IDc5LjQtNS44IDIwLjYtMTEuNCAzMS0xOSA0MS0zMC40IDE4LjgtMjEuNiAyMy40LTM0LjIgMTUuNi00My44LTMuOC00LjgtNC40LTQuOC01MS01LjgtNjAuOC0xLjItNTYuMiAyLjItNTYuMi00My4yIDAtMzIuNC4yLTMzLjIgNC44LTM3IDQuNC0zLjYgOS0zLjggOTItMy44IDc5IDAgODcuOC40IDk0LjIgMy42IDExLjIgNS42IDEzIDExLjQgMTIuOCA0My40IDAgMjUuNC0uOCAzMC44LTcuNiA1OC00IDE2LjYtOS44IDM0LTEyLjYgMzktMi44IDUtOC4yIDE0LjItMTEuNiAyMC42LTguNCAxNS40LTI3LjIgMzYuOC00MC44IDQ2LjYtNS44IDQuNC0xMy44IDEwLjItMTcuNiAxMy4yLTMuOCAzLTExIDctMTYuMiA4LjgtNS4yIDEuOC0xNi4yIDYuNC0yNC40IDEwLTIyLjQgOS42LTM0LjggMTEuNi03MyAxMS42LTM3LjYuMi00Ny0xLjQtNzEtMTItOC4yLTMuNi0xNy42LTcuMi0yMC44LTgtMTUuOC0zLjgtNjctNDUuMi03Ny44LTYyLjgtMi4yLTMuOC03LjYtMTEuNi0xMS44LTE3LjItNC4yLTUuNC05LTE0LTEwLjYtMTktMS44LTQuOC02LjItMTYtMTAtMjQuOC0zLjYtOC44LTcuOC0yMi4yLTkuMi0yOS42LTMuMi0xOC44LTEuNC03OS40IDIuOC05MS40IDEzLjgtNDAuNiAzNS42LTc4IDU4LjgtMTAwLjIgMTQtMTMuNiA0Ny4yLTM2LjQgNTgtMzkuOCA0LjItMS40IDEzLjQtNS4yIDIwLjYtOC40IDIyLTEwIDMyLjgtMTEuNiA3Ni0xMSAzMy44LjYgNDAuNCAxLjIgNTAgNC44em0zNDAuOCA4MC44YzggMy42IDkuNiAxMS4yIDkuMiAzOS4yLS42IDM0LjQtLjYgMzQgNSAzOS42IDQuOCA1IDUuNCA1IDM3LjYgNSA0My40IDAgNDQuNC44IDQzLjIgMzYuMi0uOCAxNy0xLjIgMTguNC02LjQgMjMtNS40IDQuNi02LjYgNC44LTM3LjYgNC44LTMxLjIgMC0zMiAuMi0zNi44IDUtNS42IDUuNC01LjYgNC40LTUgNDEuMi40IDI2LjQuMiAyNy40LTQuNiAzMy00LjggNS42LTYgNS44LTI0LjQgNi40LTIwLjguOC0yOS42LTEuNC0zMy40LTguNC0xLjQtMi42LTItMTUuNi0xLjgtMzUuNi40LTMxLjIuNC0zMS42LTQuNi0zNi42cy01LjYtNS0zNi01Yy0xOC44IDAtMzMtLjgtMzYtMi4yLTcuNi0zLjYtOS42LTExLjItOC44LTMzLjguOC0yOC4yLjQtMjggNDEtMjggNDUuNCAwIDQ1LjQgMCA0NC42LTQyLjYtLjYtMzMtLjYtMzMgNS0zOC40IDQuNC00LjYgNi4yLTUgMjQuOC01IDExIDAgMjIuMiAxIDI1IDIuMnoiLz48L3N2Zz4=);
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</style>
+
+        
+        <!-- Config CSS -->
+
+<!-- Other Styles -->
+<style>
+  body, html {
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+  }
+
+  a {
+    color: #00838F;
+  }
+
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: #0097A7 !important;
+  }
+
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: #0097A7 !important;
+  }
+
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: #0097A7 !important;
+  }
+
+  .toTop {
+    background: #757575 !important;
+  }
+
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: #757575;
+  }
+
+  #scheme-Paradox .MD-burger-layer {
+    background-color: #757575;
+  }
+
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: #757575;
+  }
+
+  .post-toc a:hover {
+    color: #00838F;
+    text-decoration: underline;
+  }
+
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+      body{
+        background-color: #F5F5F5;
+      }
+
+      /* blog_info bottom background */
+      #scheme-Paradox .material-layout .something-else .mdl-card__supporting-text{
+        background-color: #fff;
+      }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+    <style>
+      .fade {
+        transition: all 800ms linear;
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+        opacity: 1;
+      }
+
+      .fade.out{
+        opacity: 0;
+      }
+    </style>
+
+
+<!-- Import Font -->
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+        <script>lsloader.load("js/jquery.min.js","/js/jquery.min.js?qcusAULNeBksqffqUM2+Ig==")</script>
+    
+    
+    <script>function Queue(){this.dataStore=[];this.offer=b;this.poll=d;this.execNext=a;this.debug=false;this.startDebug=c;function b(e){if(this.debug){console.log("Offered a Queued Function.")}if(typeof e==="function"){this.dataStore.push(e)}else{console.log("You must offer a function.")}}function d(){if(this.debug){console.log("Polled a Queued Function.")}return this.dataStore.shift()}function a(){var e=this.poll();if(e!==undefined){if(this.debug){console.log("Run a Queued Function.")}e()}}function c(){this.debug=true}}var queue=new Queue();</script>
+
+    <!-- Analytics -->
+    
+
+    <!-- Custom Head -->
+    
+        
+            <style>
+  canvas {
+    width: 100%;
+    background: white;
+    position: fixed;
+    z-index: -1;
+    
+    }
+  </style>
+  <script>
+    //var autoplay = getURLParameter('autoplay');
+    var autoplay = true;
+    var lastError = "";
+    var playing = !!autoplay;
+    function receiveMessage(event){
+      var origin = event.origin || event.originalEvent.origin;
+      console.log("Received message from " + origin);
+      if(origin !== "http://dwitter.localhost:8000"
+        && origin !== "http://localhost:8000"
+        && origin !== "https://localhost:8000"
+        && origin !== "https://www.dwitter.net"
+        && origin !== "https://dwitter.net"){
+          return;
+        }
+      console.log("Message was: " + event.data);
+
+      switch (event.data) {
+        case "toggle":
+          playing ? pauseDemo() : playDemo();
+          break;
+        case "play":
+          playDemo();
+          break;
+        case "pause":
+          pauseDemo();
+          break;
+        case "showStats":
+          setStatsVisibility(true);
+          break;
+        case "hideStats":
+          setStatsVisibility(false);
+          break;
+      }
+
+      if(event.data.substring(0, 4) == "code"){
+        var code = event.data.substring(5,event.data.length);
+        newCode(code);
+      }
+    }
+
+    function displayError(e) {
+      if(lastError != e){
+        lastError = e;
+        parent.postMessage({
+          'type': 'error',
+          'error': ""+e,
+          'location': window.location.href
+        },"*");
+      }
+    }
+
+    function newCode(code) {
+        try {
+          eval("u = function(t){"+code+"\n};");
+        } catch (e) {
+          u = function(t){
+            throw e;
+          };
+          throw e;
+        }
+        displayError("");
+        reset();
+    }
+
+    function pauseDemo(){
+      if(!playing){
+        return;
+      }
+
+      pauseTime = +new Date();
+
+      playing = false;
+    }
+
+    function playDemo(){
+      if(playing){
+        return
+      }
+
+      playing = true;
+      requestAnimationFrame(loop);
+    }
+    var timeOffset = 0;
+
+    window.addEventListener("message", receiveMessage, false);
+
+    function getURLParameter(name) {
+      return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search)||[,""])[1].replace(/\+/g, '%20'))||null
+    }
+
+    function setStatsVisibility(visible) {
+      document.getElementById('stats').style.visibility = visible ? 'visible' : 'hidden';
+    }
+  </script>
+  
+  
+  <script type="text/javascript">
+    (function(f,e){"object"===typeof exports&&"undefined"!==typeof module?module.exports=e():"function"===typeof define&&define.amd?define(e):f.Stats=e()})(this,function(){var f=function(){function e(a){c.appendChild(a.dom);return a}function u(a){for(var d=0;d<c.children.length;d++)c.children[d].style.display=d===a?"block":"none";l=a}var l=0,c=document.createElement("div");c.style.cssText="position:fixed;top:0;right:0;opacity:0.9;z-index:10000";var k=(performance||Date).now(),g=k,a=0,r=e(new f.Panel("FPS","#0ff","#002")),h=e(new f.Panel("MS","#0f0","#020"));if(self.performance&&self.performance.memory)var t=e(new f.Panel("MB","#f08","#201"));u(0);return{REVISION:16,dom:c,addPanel:e,showPanel:u,begin:function(){k=(performance||Date).now()},end:function(){a++;var c=(performance||Date).now();h.update(c-k,200);if(c>g+1E3&&(r.update(1E3*a/(c-g),100),g=c,a=0,t)){var d=performance.memory;t.update(d.usedJSHeapSize/1048576,d.jsHeapSizeLimit/1048576)}return c},update:function(){k=this.end()},domElement:c,setMode:u}};f.Panel=function(e,f,l){var c=Infinity,k=0,g=Math.round,a=g(window.devicePixelRatio||1),r=80*a,h=48*a,t=3*a,v=2*a,d=3*a,m=15*a,n=74*a,p=30*a,q=document.createElement("canvas");q.width=r;q.height=h;q.style.cssText="width:80px;height:48px";var b=q.getContext("2d");b.font="bold "+9*a+"px Helvetica,Arial,sans-serif";b.textBaseline="top";b.fillStyle=l;b.fillRect(0,0,r,h);b.fillStyle=f;b.fillText(e,t,v);b.fillRect(d,m,n,p);b.fillStyle=l;b.globalAlpha=.9;b.fillRect(d,m,n,p);return{dom:q,update:function(h,w){c=Math.min(c,h);k=Math.max(k,h);b.fillStyle=l;b.globalAlpha=1;b.fillRect(0,0,r,m);b.fillStyle=f;b.fillText(g(h)+" "+e+" ("+g(c)+"-"+g(k)+")",t,v);b.drawImage(q,d+a,m,n-a,p,d,m,n-a,p);b.fillRect(d+n-a,m,a,p);b.fillStyle=l;b.globalAlpha=.9;b.fillRect(d+n-a,m,a,g((1-h/w)*p))}}};return f});
+  </script>
+
+        
+            <canvas id="c" width="2000" height="1080"></canvas>
+<script>
+  function createStats() {
+    var stats = new Stats();
+    stats.showPanel(0);
+    stats.dom.setAttribute('id', 'stats');
+    document.body.appendChild(stats.dom);
+    return stats;
+  }
+
+  var stats = createStats();
+  setStatsVisibility(false);
+
+  var c = document.querySelector("#c");
+  c.width = 1920;
+  c.height = 1080;
+  var S = Math.sin;
+  var C = Math.cos;
+  var T = Math.tan;
+  function R(r,g,b,a) {
+    a = a === undefined ? 1 : a;
+    return "rgba("+(r|0)+","+(g|0)+","+(b|0)+","+a+")";
+    };
+  var x = c.getContext("2d");
+  var time = 0;
+  var frame = 0;
+  function u(t) {
+     x.fillRect(0,0,i=w=c.width=2e3,w);
+     x.fillStyle="#FFFFFF";
+     x.fillRect(0,0,w,w);
+     x.fillStyle="#03A9F4";
+     for(;i--;)T=t*99,z=w*99/(i-T%1),a=i+T-T%1,x.fillRect(C(a*a)*z+1e3,C(a*w)*z+500,w/i,w/i)
+
+     /*x.fillStyle="#FFFFFF";
+      x.fillRect(0,0,2e3,2e3);
+      x.fillStyle="#03A9F4";
+      x.font="20px Comic Sans MS";
+      for(i=100;i--;){
+        Z=130-(t*10+i)%130;
+        s=280/Z;
+        var str_index=i%7;
+        var love_words;
+        switch(str_index) {
+          case 0:
+            love_words="I ♥ 皮皮夏";
+            break;
+          case 1:
+            love_words="Do you love me ?"
+            break;
+          case 2:
+            love_words="I love you";
+            break;
+          case 3:
+            love_words="You are so pretty !";
+            break;
+          case 4:
+            love_words="I ♥ you";
+            break;
+          case 5:
+            love_words="Love You Forever";
+            break;
+          case 6:
+            love_words="♥";
+            break;
+          default:
+            love_words="♥";
+        }
+        x.fillText(love_words,960+1/Z*(-99+i*6e72%199)*700,540+(-70+i*8e61%140)/Z*700);
+      }*/
+    }
+  function loop() {
+    stats = stats || createStats();
+
+    if (playing){
+      requestAnimationFrame(loop);
+    }
+    time = frame/60;
+    if(time * 60 | 0 == frame - 1){
+      time += 0.000001;
+    }
+    frame++;
+
+    try {
+      stats.begin();
+      u(time);
+      stats.end();
+      displayError("");
+    } catch (e) {
+      displayError(e);
+      throw e;
+    }
+  }
+  if(autoplay) {
+      loop();
+  }
+
+  function reset(){
+    c = document.querySelector("#c");
+    c.width = 1920;
+    c.height = 1080;
+    S = Math.sin;
+    C = Math.cos;
+    T = Math.tan;
+    R = function(r,g,b,a) {
+      a = a === undefined ? 1 : a;
+      return "rgba("+(r|0)+","+(g|0)+","+(b|0)+","+a+")";
+    };
+    x = c.getContext("2d");
+    time = 0;
+    frame = 0;
+  }
+  </script>
+
+        
+    
+<link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
+
+
+    
+        <body id="scheme-Paradox" class="lazy">
+            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
+
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
+
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
+
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span class="MD-burger-layer"></span>
+                        </button>
+                    
+
+                    <!-- Post TOC -->
+
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+    <!-- Left aligned menu below button -->
+    <button id="post-toc-trigger-btn" class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#树-概述"><span class="post-toc-number">1.</span> <span class="post-toc-text">树-概述</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#二叉树"><span class="post-toc-number">2.</span> <span class="post-toc-text">二叉树</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#满二叉树"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">满二叉树</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#完全二叉树"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">完全二叉树</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#创建和遍历二叉树"><span class="post-toc-number">3.</span> <span class="post-toc-text">创建和遍历二叉树</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#链式存储"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">链式存储</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#遍历二叉树"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">遍历二叉树</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#查找"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">查找</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#删除子树"><span class="post-toc-number">3.4.</span> <span class="post-toc-text">删除子树</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#顺序存储"><span class="post-toc-number">3.5.</span> <span class="post-toc-text">顺序存储</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#堆排序"><span class="post-toc-number">3.6.</span> <span class="post-toc-text">堆排序</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#线索二叉树"><span class="post-toc-number">4.</span> <span class="post-toc-text">线索二叉树</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#线索化二叉树"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">线索化二叉树</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#代码实现"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">代码实现</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#赫夫曼树"><span class="post-toc-number">5.</span> <span class="post-toc-text">赫夫曼树</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#概述"><span class="post-toc-number">5.1.</span> <span class="post-toc-text">概述</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#构建赫夫曼树"><span class="post-toc-number">5.2.</span> <span class="post-toc-text">构建赫夫曼树</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#代码实现-1"><span class="post-toc-number">5.3.</span> <span class="post-toc-text">代码实现</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#赫夫曼编码"><span class="post-toc-number">5.4.</span> <span class="post-toc-text">赫夫曼编码</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#数据压缩"><span class="post-toc-number">5.5.</span> <span class="post-toc-text">数据压缩</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#二叉排序树-二叉查找树"><span class="post-toc-number">6.</span> <span class="post-toc-text">二叉排序树/二叉查找树</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#添加节点"><span class="post-toc-number">6.1.</span> <span class="post-toc-text">添加节点</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#代码"><span class="post-toc-number">6.1.1.</span> <span class="post-toc-text">代码</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#查找节点"><span class="post-toc-number">6.2.</span> <span class="post-toc-text">查找节点</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#代码-1"><span class="post-toc-number">6.2.1.</span> <span class="post-toc-text">代码</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#删除节点"><span class="post-toc-number">6.3.</span> <span class="post-toc-text">删除节点</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#代码-2"><span class="post-toc-number">6.3.1.</span> <span class="post-toc-text">代码</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#平衡二叉树（AVL树）"><span class="post-toc-number">7.</span> <span class="post-toc-text">平衡二叉树（AVL树）</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#二叉排序树的缺点"><span class="post-toc-number">7.1.</span> <span class="post-toc-text">二叉排序树的缺点</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#平衡二叉搜索树"><span class="post-toc-number">7.2.</span> <span class="post-toc-text">平衡二叉搜索树</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#构建平衡二叉树"><span class="post-toc-number">7.3.</span> <span class="post-toc-text">构建平衡二叉树</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#代码实现-2"><span class="post-toc-number">7.4.</span> <span class="post-toc-text">代码实现</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#红黑树"><span class="post-toc-number">8.</span> <span class="post-toc-text">红黑树</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#左旋和右旋"><span class="post-toc-number">8.1.</span> <span class="post-toc-text">左旋和右旋</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#构建红黑树"><span class="post-toc-number">8.2.</span> <span class="post-toc-text">构建红黑树</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#代码实现-3"><span class="post-toc-number">8.3.</span> <span class="post-toc-text">代码实现</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#多路查找树"><span class="post-toc-number">9.</span> <span class="post-toc-text">多路查找树</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-3树"><span class="post-toc-number">9.1.</span> <span class="post-toc-text">2-3树</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-3-4树"><span class="post-toc-number">9.2.</span> <span class="post-toc-text">2-3-4树</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#B树"><span class="post-toc-number">9.3.</span> <span class="post-toc-text">B树</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#B-树"><span class="post-toc-number">9.4.</span> <span class="post-toc-text">B+树</span></a></li></ol></li></ol>
+        <!--
+        <li class="mdl-menu__item">
+            Some Action
+        </li>
+        -->
+    </ul>
+    
+
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
+
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').addClass('lazy');
+</script>
+
+        
+    
+            <p class="article-headline-p">
+                树
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.gif" width="44px" height="44px" alt="Author Avatar">
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>Zhu Yuexin</strong>
+        <span>Jul 10, 2019</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/AVL树/">AVL树</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/B-树/">B+树</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/B树/">B树</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/二叉搜索树/">二叉搜索树</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/二叉树/">二叉树</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/数据结构/">数据结构</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/树/">树</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/红黑树/">红黑树</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/线索二叉树/">线索二叉树</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/赫夫曼树/">赫夫曼树</a>
+    </li></ul>
+    
+
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=树&url=http://yoursite.com/2019/07/10/树/index.html&pic=&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                Share to Weibo
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=树&url=http://yoursite.com/2019/07/10/树/index.html&via=Zhu Yuexin" target="_blank">
+            <li class="mdl-menu__item">
+                Share to Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/07/10/树/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                Share to Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com/2019/07/10/树/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                Share to Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <blockquote>
+<p>代码地址：<a href="https://github.com/evilZ1994/JavaNotes/tree/master/src/DataStructure/Tree" target="_blank" rel="noopener">https://github.com/evilZ1994/JavaNotes/tree/master/src/DataStructure/Tree</a></p>
+</blockquote>
+<h1 id="树-概述"><a href="#树-概述" class="headerlink" title="树-概述"></a>树-概述</h1><p><img src="http://upyun.ishavanti.top/img/Tree.jpg" alt></p>
+<p>结构概述：</p>
+<ul>
+<li><p>根节点：树的顶点（图中”28”）</p>
+</li>
+<li><p>双亲节点：如”28”是”16”和”30”的双亲节点</p>
+</li>
+<li><p>子节点：如”16”和”30”是”28”的子节点</p>
+</li>
+<li><p>路径：从根节点访问其他节点所要经过的节点，如”28-&gt;16-&gt;22”</p>
+</li>
+<li><p>节点的度：即这个节点有多少个子节点，如节点”28”的度为2，节点”16”的度为0</p>
+</li>
+<li><p>节点的权：即节点所对应的值，如节点”28”的权为28</p>
+</li>
+<li><p>叶子节点：没有子节点的节点，如”13”, “22”, “29”, “42”</p>
+</li>
+<li><p>子树：如(16, 13, 22)为一颗子树</p>
+</li>
+<li><p>层：树可以被分为多层，如根节点28的层为1，（16，30）两个节点的层为2，剩余节点的层为3</p>
+</li>
+<li><p>树的高度：即树的最大层数，此树的高度为3</p>
+</li>
+<li><p>森林：多棵树组成森林</p>
+</li>
+</ul>
+<h1 id="二叉树"><a href="#二叉树" class="headerlink" title="二叉树"></a>二叉树</h1><ul>
+<li><p>任何一个节点的子节点的数量不超过2</p>
+</li>
+<li><p>二叉树的子节点分为左节点和右节点</p>
+</li>
+</ul>
+<h2 id="满二叉树"><a href="#满二叉树" class="headerlink" title="满二叉树"></a>满二叉树</h2><ul>
+<li>所有叶子节点都在最后一层</li>
+<li>节点总数为：2^n - 1 (n是树的高度)</li>
+</ul>
+<p><img src="http://upyun.ishavanti.top/img/FullBinaryTree.png" alt></p>
+<h2 id="完全二叉树"><a href="#完全二叉树" class="headerlink" title="完全二叉树"></a>完全二叉树</h2><ul>
+<li>所有叶子节点都在最后一层，或倒数第二层</li>
+<li>最后一层的叶子节点在左边连续，倒数第二层的叶子节点在右边连续</li>
+</ul>
+<p><img src="http://upyun.ishavanti.top/img/CompleteBinaryTree.png" alt></p>
+<h1 id="创建和遍历二叉树"><a href="#创建和遍历二叉树" class="headerlink" title="创建和遍历二叉树"></a>创建和遍历二叉树</h1><h2 id="链式存储"><a href="#链式存储" class="headerlink" title="链式存储"></a>链式存储</h2><p><strong>TreeNode.class:</strong></p>
+<pre class=" language-lang-java"><code class="language-lang-java">public class TreeNode {
+    // 节点的权
+    private int value;
+    // 左节点
+    private TreeNode left;
+    // 右节点
+    private TreeNode right;
+
+    public int getValue() {
+        return value;
+    }
+
+    public void setValue(int value) {
+        this.value = value;
+    }
+
+    public TreeNode(int value) {
+        this.value = value;
+    }
+
+    public TreeNode getLeft() {
+        return left;
+    }
+
+    public void setLeft(TreeNode left) {
+        this.left = left;
+    }
+
+    public TreeNode getRight() {
+        return right;
+    }
+
+    public void setRight(TreeNode right) {
+        this.right = right;
+    }
+}
+</code></pre>
+<p><strong>BinaryTree.class:</strong></p>
+<pre class=" language-lang-java"><code class="language-lang-java">public class BinaryTree {
+    // 根节点
+    private TreeNode root;
+
+    public void setRoot(TreeNode root) {
+        this.root = root;
+    }
+
+    public TreeNode getRoot() {
+        return root;
+    }
+}
+</code></pre>
+<p><strong>TestBinaryTree.class</strong></p>
+<pre class=" language-lang-java"><code class="language-lang-java">public class TestBinaryTree {
+    public static void main(String[] args) {
+        BinaryTree tree = new BinaryTree();
+        // 设置根节点
+        tree.setRoot(new TreeNode(1));
+        // 设置根节点的左节点
+        tree.getRoot().setLeft(new TreeNode(2));
+        // 设置根节点的右节点
+        tree.getRoot().setRight(new TreeNode(3));
+
+        tree.getRoot().getLeft().setLeft(new TreeNode(4));
+        tree.getRoot().getLeft().setRight(new TreeNode(5));
+
+        tree.getRoot().getRight().setLeft(new TreeNode(6));
+        tree.getRoot().getRight().setRight(new TreeNode(7));
+    }
+}
+</code></pre>
+<h2 id="遍历二叉树"><a href="#遍历二叉树" class="headerlink" title="遍历二叉树"></a>遍历二叉树</h2><p><img src="http://upyun.ishavanti.top/img/BinaryTree2.png" alt></p>
+<ul>
+<li>前序遍历：<strong>根 - 左 - 右</strong> 的遍历顺序（1, 2, 4, 5, 3, 6, 7）</li>
+<li>中序遍历：<strong>左 - 根 - 右</strong> 的遍历顺序（4, 2, 5, 1, 6, 3, 7）</li>
+<li>后序遍历：<strong>左 - 右 - 根</strong> 的遍历顺序（4, 5, 2, 6, 7, 3, 1）</li>
+</ul>
+<p><strong>TreeNode.class</strong></p>
+<pre class=" language-lang-java"><code class="language-lang-java">public class TreeNode {
+    // .....
+
+    // 前序遍历
+    public void frontShow() {
+        // 先打印自己的值
+        System.out.println(this.value);
+        // 然后打印左节点
+        if (left != null) {
+            left.frontShow();
+        }
+        // 最后打印右节点
+        if (right != null) {
+            right.frontShow();
+        }
+    }
+
+    // 中序遍历
+    public void middleShow() {
+        // 先打印左节点
+        if (left != null) {
+            left.middleShow();
+        }
+        // 然后打印自己
+        System.out.println(this.value);
+        // 最后打印右节点
+        if (right != null) {
+            right.middleShow();
+        }
+    }
+
+    // 后序遍历
+    public void afterShow() {
+        // 先打印左节点
+        if (left != null) {
+            left.afterShow();
+        }
+        // 然后打印右节点
+        if (right != null) {
+            right.afterShow();
+        }
+        // 最后打印自己
+        System.out.println(this.value);
+    }
+}
+</code></pre>
+<p><strong>BinaryTree.class</strong></p>
+<pre class=" language-lang-java"><code class="language-lang-java">public class BinaryTree {
+    // 前序遍历
+    public void frontShow() {
+        if (root != null) {
+            this.root.frontShow();
+        }
+    }
+
+    // 中序遍历
+    public void middleShow() {
+        if (root != null) {
+            this.root.middleShow();
+        }
+    }
+
+    // 后序遍历
+    public void afterShow() {
+        if (root != null) {
+            this.root.afterShow();
+        }
+    }
+}
+</code></pre>
+<p><strong>TestBinaryTree.class</strong></p>
+<pre class=" language-lang-java"><code class="language-lang-java">public class TestBinaryTree {
+    public static void main(String[] args) {
+        // .....
+        System.out.println("前序遍历");
+        tree.frontShow();
+        System.out.println("=========");
+
+        System.out.println("中序遍历");
+        tree.middleShow();
+        System.out.println("=========");
+
+        System.out.println("后序遍历");
+        tree.afterShow();
+        System.out.println("=========");
+    }
+}
+</code></pre>
+<h2 id="查找"><a href="#查找" class="headerlink" title="查找"></a>查找</h2><p>前序查找，中序查找，后序查找</p>
+<p><strong>TreeNode.class</strong></p>
+<pre class=" language-lang-java"><code class="language-lang-java">public class TreeNode {
+    // .....
+
+    // 前序查找
+    public TreeNode frontSearch(int value) {
+        // 先判断自己是不是
+        if (this.value == value) {
+            return this;
+        }
+        TreeNode target = null;
+        // 查找左节点
+        if (left != null) {
+            target = left.frontSearch(value);
+        }
+        // 如果左节点没有，查找右节点
+        if (target == null && right != null) {
+            target = right.frontSearch(value);
+        }
+        return target;
+    }
+
+    // 中序查找
+    public TreeNode middleSearch(int value) {
+        // 先查找左节点
+        TreeNode target = null;
+        if (left != null) {
+            target = left.middleSearch(value);
+        }
+        // 如果左节点没有，判断是否是自己
+        if (target == null && this.value == value) {
+            return this;
+        }
+        // 查找右节点
+        if (target == null && right != null) {
+            target = right.middleSearch(value);
+        }
+        return target;
+    }
+
+    // 后序查找
+    public TreeNode afterSearch(int value) {
+        // 先查找左节点
+        TreeNode target = null;
+        if (left != null) {
+            target = left.afterSearch(value);
+        }
+        // 左节点没有，查找右节点
+        if (target == null && right != null) {
+            target = right.afterSearch(value);
+        }
+        // 左右都没有，判断是否是自己
+        return this.value == value ? this : target;
+    }
+}
+</code></pre>
+<p><strong>BinaryTree.class</strong></p>
+<pre class=" language-lang-java"><code class="language-lang-java">public class BinaryTree {
+    // .....
+
+    // 前序查找
+    public TreeNode frontSearch(int value) {
+        if (root == null) {
+            return null;
+        }
+        return this.root.frontSearch(value);
+    }
+
+    // 中序查找
+    public TreeNode middleSearch(int value) {
+        if (root == null) {
+            return null;
+        }
+        return this.root.middleSearch(value);
+    }
+
+    // 后序查找
+    public TreeNode afterSearch(int value) {
+        if (root == null) {
+            return null;
+        }
+        return this.root.afterSearch(value);
+    }
+}
+</code></pre>
+<p><strong>TestBinaryTree.class</strong></p>
+<pre class=" language-lang-java"><code class="language-lang-java">public class TestBinaryTree {
+    public static void main(String[] args) {
+                // .....
+
+        // 查找
+        System.out.println(tree.frontSearch(5));
+        System.out.println(tree.middleSearch(5));
+        System.out.println(tree.afterSearch(5));
+    }
+}
+</code></pre>
+<h2 id="删除子树"><a href="#删除子树" class="headerlink" title="删除子树"></a>删除子树</h2><p><strong>TreeNode.class</strong></p>
+<pre class=" language-lang-java"><code class="language-lang-java">public class TreeNode {
+    // .....
+
+    // 删除子树
+    public void delete(int value) {
+        if (this.left != null) {
+            if (this.left.getValue() == value) {
+                this.left = null;
+                return;
+            }
+            this.left.delete(value);
+        }
+        if (this.right != null) {
+            if (this.right.getValue() == value) {
+                this.right = null;
+                return;
+            }
+            this.right.delete(value);
+        }
+    }
+}
+</code></pre>
+<p><strong>BinaryTree.class</strong></p>
+<pre class=" language-lang-java"><code class="language-lang-java">public class BinaryTree {
+    // .....
+
+    // 删除子树
+    public void delete(int value) {
+        if (this.root != null) {
+            if (this.root.getValue() == value) {
+                this.root = null;
+            } else {
+                this.root.delete(value);
+            }
+        }
+    }
+}
+</code></pre>
+<p><strong>TestBinaryTree.class</strong></p>
+<pre class=" language-lang-java"><code class="language-lang-java">public class TestBinaryTree {
+    public static void main(String[] args) {
+                // .....
+
+        // 删除子树
+        tree.delete(2);
+        tree.frontShow();
+    }
+}
+</code></pre>
+<h2 id="顺序存储"><a href="#顺序存储" class="headerlink" title="顺序存储"></a>顺序存储</h2><p>用顺序结构（数组）按层顺序存储。</p>
+<p><img src="http://upyun.ishavanti.top/img/BinaryTree3.png" alt></p>
+<ul>
+<li>顺序存储的二叉树通常只考虑<a href="#完全二叉树">完全二叉树</a></li>
+<li>第n个元素的左子节点为：2*n + 1</li>
+<li>第n个元素的右子节点为：2*n + 2</li>
+<li>第n个元素的父节点为：(n - 1) / 2</li>
+</ul>
+<p><strong>ArrayBinaryTree.class</strong></p>
+<pre class=" language-lang-java"><code class="language-lang-java">public class ArrayBinaryTree {
+    int[] value;
+
+    public ArrayBinaryTree(int[] value) {
+        this.value = value;
+    }
+
+    public void frontShow() {
+        this.frontShow(0);
+    }
+
+    // 前序遍历
+    public void frontShow(int index) {
+        if (value == null || value.length == 0) {
+            return;
+        }
+        // 先打印自己
+        System.out.println(value[index]);
+        // 遍历左节点 2*index + 1
+        if (2*index + 1 < value.length) {
+            frontShow(2*index + 1);
+        }
+        // 遍历右节点 2*index + 2
+        if (2*index + 2 < value.length) {
+            frontShow(2*index + 2);
+        }
+    }
+
+    public void middleShow() {
+        this.middleShow(0);
+    }
+
+    // 中序遍历
+    public void middleShow(int index) {
+        if (value == null || value.length == 0) {
+            return;
+        }
+        // 先遍历左节点
+        if (2*index + 1 < value.length) {
+            middleShow(2*index + 1);
+        }
+        // 打印自己
+        System.out.println(value[index]);
+        // 遍历右节点
+        if (2*index + 2 < value.length) {
+            middleShow(2*index + 2);
+        }
+    }
+
+    public void afterShow() {
+        this.afterShow(0);
+    }
+
+    // 后序遍历
+    public void afterShow(int index) {
+        // 先遍历左节点
+        if (index*2 + 1 < value.length) {
+            afterShow(index*2 + 1);
+        }
+        // 遍历右节点
+        if (index*2 + 2 < value.length) {
+            afterShow(index*2 + 2);
+        }
+        // 打印自己
+        System.out.println(value[index]);
+    }
+}
+</code></pre>
+<p><strong>TestArrayBinary.class</strong></p>
+<pre class=" language-lang-java"><code class="language-lang-java">public class TestArrayBinary {
+    public static void main(String[] args) {
+        int[] arr = new int[] {1, 2, 3, 4, 5, 6, 7};
+        ArrayBinaryTree tree = new ArrayBinaryTree(arr);
+
+        System.out.println("前序遍历");
+        tree.frontShow();
+        System.out.println("===========");
+
+        System.out.println("中序遍历");
+        tree.middleShow();
+        System.out.println("===========");
+
+        System.out.println("后序遍历");
+        tree.afterShow();
+        System.out.println("===========");
+    }
+}
+</code></pre>
+<h2 id="堆排序"><a href="#堆排序" class="headerlink" title="堆排序"></a>堆排序</h2><p><strong>堆</strong>：对于任意一颗子树，它的父节点都大于（或者小于）子节点。</p>
+<p><strong>大顶堆</strong>：父节点的值大于子节点</p>
+<p><strong>小顶堆</strong>：父节点的值小于子节点</p>
+<p><img src="http://upyun.ishavanti.top/img/HeapSort.gif" alt></p>
+<pre class=" language-lang-java"><code class="language-lang-java">public class HeapSort {
+    /**
+     * 调整为大顶堆
+     * @param arr 数组
+     * @param size 需要调整的大小
+     * @param index 最后一个叶子节点的父节点位置
+     */
+    public static void maxHeap(int[] arr, int size, int index) {
+        // 左节点位置
+        int left = index * 2 + 1;
+        // 右节点位置
+        int right = index * 2 + 2;
+        // 记录最大值
+        int maxIndex = index;
+        // 寻找最大值的节点
+        if (left < size && arr[left] > arr[maxIndex]) {
+            maxIndex = left;
+        }
+        if (right < size && arr[right] > arr[maxIndex]) {
+            maxIndex = right;
+        }
+        // 将最大值交换到当前节点
+        if (index != maxIndex) {
+            int temp = arr[index];
+            arr[index] = arr[maxIndex];
+            arr[maxIndex] = temp;
+            // 交换后可能影响到之前的堆
+            maxHeap(arr, size, maxIndex);
+        }
+    }
+
+    /**
+     * 堆排序
+     */
+    public static void heapSort(int[] arr) {
+        // 将数组调整为大顶堆 (arr.length - 2)/2 为数组中最后一个节点的父节点位置，第n个节点的父节点计算：(n-1)/2
+        for (int i=(arr.length - 2) / 2; i>=0; i--) {
+            maxHeap(arr, arr.length, i);
+        }
+        // 交换顶点和待排数组中最后一个节点，然后将最后一个节点隔离后，将剩余数组调整为大顶堆
+        for (int i=arr.length-1; i>0; i--) {
+            int temp = arr[0];
+            arr[0] = arr[i];
+            arr[i] = temp;
+            maxHeap(arr, i, 0);
+        }
+    }
+}
+</code></pre>
+<h1 id="线索二叉树"><a href="#线索二叉树" class="headerlink" title="线索二叉树"></a>线索二叉树</h1><p><img src="http://upyun.ishavanti.top/img/BinaryTree4.png" alt></p>
+<p>普通的二叉树如图，左右两个指针分别指向左子节点和右子节点。</p>
+<p>存在两个问题：</p>
+<ul>
+<li>在遍历节点时，无法直接知道一个节点的前一个节点或者后一个节点</li>
+<li>叶子节点的左右指针空闲</li>
+</ul>
+<h2 id="线索化二叉树"><a href="#线索化二叉树" class="headerlink" title="线索化二叉树"></a>线索化二叉树</h2><p><img src="http://upyun.ishavanti.top/img/MiddleThreadedBinaryTree.png" alt></p>
+<p>如图为<strong>“中序线索化二叉树”</strong>（同理，还有<strong>“前序线索化二叉树”</strong>，<strong>“后序线索化二叉树”</strong>，实现方式类似）</p>
+<p>在中序线索化二叉树时，将叶子节点空闲的左节点指向其前一个节点，将空闲的右节点指向其后一个节点。比如节点<strong>7</strong>在中序序列中的前一个节点为<strong>5</strong>，后一个节点为<strong>8</strong>。</p>
+<p>然后我们需要知道指针指向的到底是左右子节点，还是前后节点。于是对于左右指针，各增加一个标识变量，<strong>0</strong>表示指向左右子节点，<strong>1</strong>表示指向前后节点。</p>
+<h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><p><strong>ThreadedTreeNode.class</strong></p>
+<pre class=" language-lang-java"><code class="language-lang-java">public class ThreadedTreeNode {
+    // 节点的权
+    private int value;
+    // 左节点
+    private ThreadedTreeNode left;
+    // 右节点
+    private ThreadedTreeNode right;
+    // 标识指针类型（默认为0）
+    private int leftType;
+    private int rightType;
+
+    public ThreadedTreeNode(int value) {
+        this.value = value;
+    }
+
+    public int getValue() {
+        return value;
+    }
+
+    public void setValue(int value) {
+        this.value = value;
+    }
+
+    public ThreadedTreeNode getLeft() {
+        return left;
+    }
+
+    public void setLeft(ThreadedTreeNode left) {
+        this.left = left;
+    }
+
+    public ThreadedTreeNode getRight() {
+        return right;
+    }
+
+    public void setRight(ThreadedTreeNode right) {
+        this.right = right;
+    }
+
+    public int getLeftType() {
+        return leftType;
+    }
+
+    public void setLeftType(int leftType) {
+        this.leftType = leftType;
+    }
+
+    public int getRightType() {
+        return rightType;
+    }
+
+    public void setRightType(int rightType) {
+        this.rightType = rightType;
+    }
+
+    // 前序遍历
+    public void frontShow() {
+        // 先打印自己的值
+        System.out.println(this.value);
+        // 然后打印左节点
+        if (left != null && leftType == 0) {
+            left.frontShow();
+        }
+        // 最后打印右节点
+        if (right != null && rightType == 0) {
+            right.frontShow();
+        }
+    }
+
+    // 中序遍历
+    public void middleShow() {
+        // 先打印左节点
+        if (left != null && leftType == 0) {
+            left.middleShow();
+        }
+        // 然后打印自己
+        System.out.println(this.value);
+        // 最后打印右节点
+        if (right != null && rightType == 0) {
+            right.middleShow();
+        }
+    }
+
+    // 后序遍历
+    public void afterShow() {
+        // 先打印左节点
+        if (left != null && leftType == 0) {
+            left.afterShow();
+        }
+        // 然后打印右节点
+        if (right != null && rightType == 0) {
+            right.afterShow();
+        }
+        // 最后打印自己
+        System.out.println(this.value);
+    }
+
+    // 前序查找
+    public ThreadedTreeNode frontSearch(int value) {
+        // 先判断自己是不是
+        if (this.value == value) {
+            return this;
+        }
+        ThreadedTreeNode target = null;
+        // 查找左节点
+        if (left != null && leftType == 0) {
+            target = left.frontSearch(value);
+        }
+        // 如果左节点没有，查找右节点
+        if (target == null && right != null && rightType == 0) {
+            target = right.frontSearch(value);
+        }
+        return target;
+    }
+
+    // 中序查找
+    public ThreadedTreeNode middleSearch(int value) {
+        // 先查找左节点
+        ThreadedTreeNode target = null;
+        if (left != null && leftType == 0) {
+            target = left.middleSearch(value);
+        }
+        // 如果左节点没有，判断是否是自己
+        if (target == null && this.value == value) {
+            return this;
+        }
+        // 查找右节点
+        if (target == null && right != null && rightType == 0) {
+            target = right.middleSearch(value);
+        }
+        return target;
+    }
+
+    // 后序查找
+    public ThreadedTreeNode afterSearch(int value) {
+        // 先查找左节点
+        ThreadedTreeNode target = null;
+        if (left != null && leftType == 0) {
+            target = left.afterSearch(value);
+        }
+        // 左节点没有，查找右节点
+        if (target == null && right != null && rightType == 0) {
+            target = right.afterSearch(value);
+        }
+        // 左右都没有，判断是否是自己
+        return this.value == value ? this : target;
+    }
+
+    // 删除子树
+    public void delete(int value) {
+        if (this.left != null && leftType == 0) {
+            if (this.left.getValue() == value) {
+                this.left = null;
+                return;
+            }
+            this.left.delete(value);
+        }
+        if (this.right != null && rightType == 0) {
+            if (this.right.getValue() == value) {
+                this.right = null;
+                return;
+            }
+            this.right.delete(value);
+        }
+    }
+}
+</code></pre>
+<p><strong>ThreadedBinaryTree.class</strong></p>
+<pre class=" language-lang-java"><code class="language-lang-java">/**
+ * 线索二叉树
+ */
+public class ThreadedBinaryTree {
+    ThreadedTreeNode root;
+    // 临时存储前驱节点
+    ThreadedTreeNode pre = null;
+
+    // 设置根节点
+    public void setRoot(ThreadedTreeNode root) {
+        this.root = root;
+    }
+
+    // 获取根节点
+    public ThreadedTreeNode getRoot() {
+        return root;
+    }
+
+    // 中序线索化二叉树
+    public void middleThreadNodes() {
+        this.middleThreadNodes(root);
+    }
+
+      // 中序线索化二叉树
+    public void middleThreadNodes(ThreadedTreeNode node) {
+        if (node == null) {
+            return;
+        }
+        // 处理左子树
+        middleThreadNodes(node.getLeft());
+        // 处理前驱节点
+        if (node.getLeft() == null) {
+            // 让当前节点的左指针指向前驱节点
+            node.setLeft(pre);
+            // 改变当前节点左指针的类型
+            node.setLeftType(1);
+        }
+        // 处理前驱节点的右指针，如果前驱节点的右指针是null（没有右子树）
+        if (pre != null && pre.getRight() == null) {
+            // 让前驱节点的右指针指向当前节点
+            pre.setRight(node);
+            // 改变前驱节点的右指针类型
+            pre.setRightType(1);
+        }
+        // 每处理一个节点，当前节点是下一个节点的前驱节点
+        pre = node;
+        // 处理右子树
+        middleThreadNodes(node.getRight());
+    }
+
+    // 线索二叉树的中序遍历
+    public void threadedMiddleShow() {
+        // 用于存储当前遍历节点
+        ThreadedTreeNode node = root;
+        while (node != null) {
+            // 循环找到最开始的节点
+            while (node.getLeftType() == 0) {
+                node = node.getLeft();
+            }
+            // 打印
+            System.out.println(node.getValue());
+            // 如果当前节点的右指针是后继节点，则直接往后找
+            while (node.getRightType() == 1) {
+                node = node.getRight();
+                System.out.println(node.getValue());
+            }
+            // 此时node的右指针不是后继节点
+            // 根据中序遍历规则，node的左子树已经遍历完了，
+            // 且node的值也在上个循环中打印出来了。接下来需要遍历node的右子树
+            node = node.getRight();
+        }
+    }
+
+    // 前序遍历
+    public void frontShow() {
+        if (root != null) {
+            this.root.frontShow();
+        }
+    }
+
+    // 中序遍历
+    public void middleShow() {
+        if (root != null) {
+            this.root.middleShow();
+        }
+    }
+
+    // 后序遍历
+    public void afterShow() {
+        if (root != null) {
+            this.root.afterShow();
+        }
+    }
+
+    // 前序查找
+    public ThreadedTreeNode frontSearch(int value) {
+        if (root == null) {
+            return null;
+        }
+        return this.root.frontSearch(value);
+    }
+
+    // 中序查找
+    public ThreadedTreeNode middleSearch(int value) {
+        if (root == null) {
+            return null;
+        }
+        return this.root.middleSearch(value);
+    }
+
+    // 后序查找
+    public ThreadedTreeNode afterSearch(int value) {
+        if (root == null) {
+            return null;
+        }
+        return this.root.afterSearch(value);
+    }
+
+    // 删除子树
+    public void delete(int value) {
+        if (this.root != null) {
+            if (this.root.getValue() == value) {
+                this.root = null;
+            } else {
+                this.root.delete(value);
+            }
+        }
+    }
+}
+</code></pre>
+<p><strong>TestThreadedTree.class</strong></p>
+<pre class=" language-lang-java"><code class="language-lang-java">public class TestThreadedTree {
+    public static void main(String[] args) {
+        ThreadedBinaryTree tree = new ThreadedBinaryTree();
+        tree.setRoot(new ThreadedTreeNode(1));
+        tree.getRoot().setLeft(new ThreadedTreeNode(2));
+        tree.getRoot().setRight(new ThreadedTreeNode(3));
+
+        tree.getRoot().getLeft().setLeft(new ThreadedTreeNode(4));
+        tree.getRoot().getLeft().setRight(new ThreadedTreeNode(5));
+
+        tree.getRoot().getRight().setLeft(new ThreadedTreeNode(6));
+        tree.getRoot().getRight().setLeft(new ThreadedTreeNode(7));
+
+        // 中序线索化二叉树
+        tree.middleThreadNodes();
+        System.out.println("中序遍历");
+        tree.middleShow();
+        System.out.println("=========");
+        ThreadedTreeNode node = tree.middleSearch(5);
+        System.out.println("节点" + node.getValue() +
+                " 前一个节点为：" + node.getLeft().getValue() +
+                " 后一个节点为：" + node.getRight().getValue());
+        System.out.println("线索化中序遍历");
+        tree.threadedMiddleShow();
+    }
+}
+</code></pre>
+<p>前序线索化和后序线索化实现方式类似。</p>
+<h1 id="赫夫曼树"><a href="#赫夫曼树" class="headerlink" title="赫夫曼树"></a>赫夫曼树</h1><p>给定n个权值作为n个叶子结点，构造一棵二叉树，若该树的带权路径长度达到最小，称这样的二叉树为最优二叉树，也称为哈夫曼树(Huffman Tree)。哈夫曼树是带权路径长度最短的树，权值较大的结点离根较近。</p>
+<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>A，B，C，D四个叶子节点可排列出若干种二叉树，图中为其中3种：</p>
+<p><img src="http://upyun.ishavanti.top/img/HuffmanTree.png" alt></p>
+<ul>
+<li>最优二叉树：它是n个带权叶子节点构成的所有二叉树中，带权路径长度最小的二叉树</li>
+<li>叶节点的带权路径长度：从根节点到该节点经过的节点数乘以该节点的权值。如图(a)节点A的带权路径为：2*9=18，节点B的带权路径为8</li>
+<li>树的带权路径长度WPL(weighted path length)：树中所有叶子节点的带权路径长度之和</li>
+</ul>
+<p>图中三颗树的WPL：</p>
+<ul>
+<li>(a): WPL = 9*2 + 4*2 + 5*2 + 2*2 = 40</li>
+<li>(b): WPL = 9*1 + 5*2 + 4*3 + 2*3 = 37</li>
+<li>(c): WPL = 4*1 + 2*2 + 5*3 + 9*3 = 50</li>
+</ul>
+<p>WPL最小的树称为<strong>最优二叉树</strong>，也叫<strong>赫夫曼树（哈夫曼树）</strong></p>
+<h2 id="构建赫夫曼树"><a href="#构建赫夫曼树" class="headerlink" title="构建赫夫曼树"></a>构建赫夫曼树</h2><p><img src="http://upyun.ishavanti.top/img/HuffmanTree.gif" alt></p>
+<p>给定一组权值，构建赫夫曼树的步骤如下：</p>
+<ul>
+<li>对数组排序</li>
+<li>找出最小的两个节点权值</li>
+<li>为这两个节点构建一个父节点，权值为这两个最小的权值相加</li>
+<li>将这两个最小权值节点从数组移除，将其父节点添加到数组中</li>
+<li>重复以上步骤</li>
+</ul>
+<h2 id="代码实现-1"><a href="#代码实现-1" class="headerlink" title="代码实现"></a>代码实现</h2><p><strong>Node.class</strong></p>
+<pre class=" language-lang-java"><code class="language-lang-java">public class Node {
+    private int value;
+    private Node left;
+    private Node right;
+
+    public Node(int value) {
+        this.value = value;
+    }
+
+    public int getValue() {
+        return value;
+    }
+
+    public void setValue(int value) {
+        this.value = value;
+    }
+
+    public Node getLeft() {
+        return left;
+    }
+
+    public void setLeft(Node left) {
+        this.left = left;
+    }
+
+    public Node getRight() {
+        return right;
+    }
+
+    public void setRight(Node right) {
+        this.right = right;
+    }
+}
+</code></pre>
+<p><strong>HuffmanTree.class</strong></p>
+<pre class=" language-lang-java"><code class="language-lang-java">public class HuffmanTree {
+    private Node root;
+
+    public HuffmanTree(int[] arr) {
+        this.root = this.createHuffmanTree(arr);
+    }
+
+    /**
+     * 根据传入数组创建赫夫曼树
+     */
+    private Node createHuffmanTree(int[] arr) {
+        // 先根据传入的数组元素，创建若干个节点
+        Node[] nodes = new Node[arr.length];
+        for (int i=0; i<arr.length; i++) { nodes[i]="new" node(arr[i]); } 记录数组中剩余的节点 int num="arr.length;" while (num> 1) {
+            // 当数组中的元素多于两个时，用两轮冒泡排序，将最小的两个节点放到数组最后
+            for (int i = 0; i < 2 && num > 2; i++) {
+                for (int j = 0; j < num-1; j++) {
+                    if (nodes[j].getValue() < nodes[j + 1].getValue()) {
+                        Node temp = nodes[j];
+                        nodes[j] = nodes[j + 1];
+                        nodes[j + 1] = temp;
+                    }
+                }
+            }
+            // 产生新的节点，为这两个节点的父节点，且权值为这两个节点之和
+            Node parent = new Node(nodes[num - 2].getValue() + nodes[num-1].getValue());
+            parent.setLeft(nodes[num - 2]);
+            parent.setRight(nodes[num - 1]);
+            // 将parent节点与剩余节点一起重新排序，重复以上操作
+            nodes[num - 2] = parent;
+            num--;
+        }
+        // num=1，数组中第0个元素为根节点
+        return nodes[0];
+    }
+
+    public Node getRoot() {
+        return root;
+    }
+}
+</arr.length;></code></pre>
+<h2 id="赫夫曼编码"><a href="#赫夫曼编码" class="headerlink" title="赫夫曼编码"></a>赫夫曼编码</h2><p>举个🌰：</p>
+<p>假如我们要传输一句话：<strong>can you can a can as a canner can can a can.</strong></p>
+<p>如果采用定长编码，每个字符对应的ASCII码都采用8位的二进制表示，那么：</p>
+<p><img src="http://upyun.ishavanti.top/img/HuffmanCode.png" alt></p>
+<p>传输的将是很长的一段二进制编码（原本是没有空格的，图中的空格只是为了显示方便）</p>
+<p>采用<strong>赫夫曼编码</strong>：</p>
+<p><img src="http://upyun.ishavanti.top/img/HuffmanCode2.png" alt></p>
+<p>首先是统计出每个字符出现的次数，然后构建一颗赫夫曼树（左路径为0，右路径为1），出现次数最多的字符距离根节点最近，出现次数最少的字符距离根节点最远。根据这个赫夫曼树的编码规则，出现次数多的字符采用较少的位数，能够有效节省传输内容。而且，由于每个字符都是叶子节点，它对应的编码都是唯一的，不会出现冲突。</p>
+<h2 id="数据压缩"><a href="#数据压缩" class="headerlink" title="数据压缩"></a>数据压缩</h2><p>步骤：</p>
+<ul>
+<li>统计字符出现的次数</li>
+<li>创建一颗赫夫曼树</li>
+<li>创建一个赫夫曼编码表</li>
+<li>编码</li>
+</ul>
+<p>以下代码实现数据压缩，解压缩，文件压缩和文件解压：</p>
+<p><strong>HuffmanCoding.class</strong></p>
+<pre class=" language-lang-java"><code class="language-lang-java">package DataStructure.Tree.HuffmanTree.HuffmanCoding;
+
+import java.io.*;
+import java.util.*;
+
+public class HuffmanCoding {
+    // 原始byte数组
+    private byte[] bytes;
+    // 赫夫曼树的根节点
+    private Node root;
+    // 压缩后的byte数组
+    private byte[] encodedBytes;
+    // 保存编码表
+    private Map<byte, string> huffCodes = new HashMap<>();
+
+    /**
+     * 压缩byte数组
+     */
+    public HuffmanCoding(byte[] bytes) {
+        this.bytes = bytes;
+    }
+
+    /**
+     * 压缩文件
+     * @param file 文件路径
+     */
+    public HuffmanCoding(String file) {
+        try {
+            // 创建一个输入流
+            InputStream is = new FileInputStream(file);
+            // 初始化bytes数组，和输入流指向的文件大小一样
+            bytes = new byte[is.available()];
+            // 读取文件内容
+            is.read(bytes);
+            is.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * 进行赫夫曼压缩的方法
+     * @return 压缩后的字节数组
+     */
+    public byte[] huffmanCoding() {
+        if (this.encodedBytes != null) {
+            return encodedBytes;
+        }
+        // 先统计每一个byte出现的次数，并存入一个集合中
+        List<node> nodes = getNodes(bytes);
+        // 创建一颗赫夫曼树
+        this.root = createHuffmanTree(nodes);
+        // 创建一个赫夫曼编码表，保存在huffCodes中
+        getCodes();
+        // 编码
+        zip();
+        return this.encodedBytes;
+    }
+
+    /**
+     * 输出到文件
+     */
+    public void out2file(String file) {
+        try {
+            byte[] bytes = huffmanCoding();
+            // 输出流
+            OutputStream os = new FileOutputStream(file);
+            ObjectOutputStream oos = new ObjectOutputStream(os);
+            // 把压缩后的byte数组写入文件
+            oos.writeObject(bytes);
+            // 把赫夫曼编码表写入文件
+            oos.writeObject(this.huffCodes);
+            oos.close();
+            os.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * 解码文件
+     * @param out 输出文件的路径
+     */
+    public void decodeFile(String file, String out) {
+        try {
+            // 读取文件数据
+            InputStream is = new FileInputStream(file);
+            ObjectInputStream ois = new ObjectInputStream(is);
+            // 读取byte数组
+            byte[] b = (byte[]) ois.readObject();
+            // 读取赫夫曼编码表
+            Map<byte, string> codes = (Map<byte, string>) ois.readObject();
+            ois.close();
+            is.close();
+            // 解码
+            byte[] bytes = huffmanDecoding(b, codes);
+            // 创建一个输出流
+            OutputStream os = new FileOutputStream(out);
+            os.write(bytes);
+            os.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * 解码
+     * @param bytes
+     * @return
+     */
+    public byte[] huffmanDecoding(byte[] bytes, Map<byte, string> huffCodes) {
+        StringBuilder sb = new StringBuilder();
+        // 把byte数组转为一个二进制的字符串
+        for (int i=0; i<bytes.length; i++) { byte b="bytes[i];" 最后一个数不用补0 boolean flag="!(i" =="bytes.length" - 1); sb.append(byte2bitstr(b, flag)); } 把字符串按照指定的赫夫曼编码进行解码 把赫夫曼编码表的键值对进行调换 map<string,> map = new HashMap<>();
+        for (Map.Entry<byte, string> entry : huffCodes.entrySet()) {
+            map.put(entry.getValue(), entry.getKey());
+        }
+        // 由于新的byte数组长度不确定，用一个list集合保存byte
+        List<byte> decodedList = new ArrayList<>();
+        // 处理字符串
+        for (int i=0; i<sb.length();) 256 { int count="1;" while (true) string key="sb.substring(i," i + count); byte b="map.get(key);" if (b !="null)" decodedlist.add(b); break; } count++; 把集合转为数组 byte[] decodedbytes="new" byte[decodedlist.size()]; for (int i<decodedbytes.length; i++) decodedbytes[i]="decodedList.get(i);" return decodedbytes; ** * 将字节转为8位二进制的字符串 对于负数，取最后8位，对于正数，前面几位要补0 @param flag 是否补0（最后一个数不用补0） private byte2bitstr( b, boolean flag) temp="b;" (flag) 按位或 |="256;" s="Integer.toBinaryString(temp);" s.substring(s.length() - 8); s; 进行赫夫曼编码 void zip() stringbuilder sb="new" stringbuilder(); 把需要压缩的byte数组处理成一个二进制的字符串 (byte : this.bytes) sb.append(this.huffcodes.get(b)); 定义长度 len="(int)Math.ceil(sb.length()" 8.0); 初始化encodedbytes encodedbytes="new" byte[len]; index="0;" i<sb.length(); i+="8)" strbyte; (i+8> sb.length()) {
+                strByte = sb.substring(i);
+            } else {
+                strByte = sb.substring(i, i + 8);
+            }
+            byte byt = (byte) Integer.parseInt(strByte, 2);
+            encodedBytes[index++] = byt;
+        }
+    }
+
+    /**
+     * 创建赫夫曼编码表
+     * @return
+     */
+    private void getCodes() {
+        if (this.root == null) {
+            return;
+        }
+        StringBuilder sb = new StringBuilder();
+        getCodes(this.root.getLeft(), "0", sb);
+        getCodes(this.root.getRight(), "1", sb);
+    }
+
+    private void getCodes(Node node, String code, StringBuilder sb) {
+        StringBuilder sb2 = new StringBuilder(sb);
+        sb2.append(code);
+        if (node.getData() == null) {
+            getCodes(node.getLeft(), "0", sb2);
+            getCodes(node.getRight(), "1", sb2);
+        } else {
+            huffCodes.put(node.getData(), sb2.toString());
+        }
+    }
+
+    /**
+     * 创建赫夫曼树
+     * @param nodes
+     * @return
+     */
+    private static Node createHuffmanTree(List<node> nodes) {
+        while (nodes.size() > 1) {
+            // 排序
+            Collections.sort(nodes);
+            // 取出两个权值最低的二叉树
+            Node left = nodes.get(nodes.size() - 1);
+            Node right = nodes.get(nodes.size() - 2);
+            // 创建一棵新的二叉树
+            Node parent = new Node(null, left.getWeight() + right.getWeight());
+            // 把之前取出来的两棵二叉树设置为新创建的二叉树的子树
+            parent.setLeft(left);
+            parent.setRight(right);
+            // 把之前取出来的两棵二叉树删除
+            nodes.remove(left);
+            nodes.remove(right);
+            // 把新创建的二叉树放入集合中
+            nodes.add(parent);
+        }
+        return nodes.get(0);
+    }
+
+    /**
+     * 把byte数组转为node集合
+     * @param bytes
+     * @return
+     */
+    private static List<node> getNodes(byte[] bytes) {
+        List<node> nodes = new ArrayList<>();
+        Map<byte, integer> counts = new HashMap<>();
+        // 统计每一个byte出现的次数
+        for (byte b : bytes) {
+            Integer count = counts.get(b);
+            if (count == null) {
+                counts.put(b, 1);
+            } else {
+                counts.put(b, count+1);
+            }
+            // 以上代码在1.8中的实现
+            // 参数1是key值，参数2是新的value值，参数3是value更新的函数
+            // 参数3的函数有两个参数，第一个参数为旧value值（如果key不存在则直接赋予新value值），第二个参数为新value值
+            // counts.merge(b, 1, (a, a2) -> a + 1);
+        }
+        // 把每一个键值对转换为node对象
+        for (Map.Entry<byte, integer> entry : counts.entrySet()) {
+            nodes.add(new Node(entry.getKey(), entry.getValue()));
+        }
+        return nodes;
+    }
+
+    public byte[] getBytes() {
+        return bytes;
+    }
+
+    public Node getRoot() {
+        return root;
+    }
+
+    public Map<byte, string> getHuffCodes() {
+        return huffCodes;
+    }
+}
+</byte,></byte,></byte,></node></node></node></sb.length();)></byte></byte,></bytes.length;></byte,></byte,></byte,></node></byte,></code></pre>
+<p><strong>TestHuffmanCoding.class</strong></p>
+<pre class=" language-lang-java"><code class="language-lang-java">package DataStructure.Tree.HuffmanTree.HuffmanCoding;
+
+import java.util.Arrays;
+
+public class TestHuffmanCoding {
+    public static void main(String[] args) {
+        // {32=11, 97=11, 114=1, 99=7, 115=1, 117=1, 101=1, 121=1, 110=8, 111=1}
+        String msg = "can you can a can as a can canner can a can";
+        byte[] bytes = msg.getBytes();
+
+        // 进行赫夫曼编码
+        HuffmanCoding tree = new HuffmanCoding(bytes);
+        byte[] encodedBytes = tree.huffmanCoding();
+        System.out.println(Arrays.toString(tree.getBytes()));
+        System.out.println(Arrays.toString(tree.huffmanDecoding(encodedBytes, tree.getHuffCodes())));
+        System.out.println(new String(tree.huffmanDecoding(encodedBytes, tree.getHuffCodes())));
+
+        // 测试文件压缩
+        String path = "src/DataStructure/Tree/HuffmanTree/HuffmanCoding/";
+        HuffmanCoding fileTree = new HuffmanCoding(path + "test.jpg");
+        // 压缩后图片变大了？因为编码表内容也比较多？
+        // 图片越复杂压缩率越低，越单一的图片压缩率越高
+        fileTree.out2file(path + "encoded.jpg");
+        System.out.println(fileTree.getBytes().length);
+        System.out.println(fileTree.huffmanCoding().length);
+        // 解压缩文件
+        fileTree.decodeFile(path + "encoded.jpg", path + "decoded.jpg");
+    }
+}
+</code></pre>
+<h1 id="二叉排序树-二叉查找树"><a href="#二叉排序树-二叉查找树" class="headerlink" title="二叉排序树/二叉查找树"></a>二叉排序树/二叉查找树</h1><p><strong>二叉排序树</strong>也叫<strong>二叉查找树</strong>，<strong>二叉搜索树</strong>，<strong>BST(Binary Search Tree)</strong></p>
+<p>对于二叉树中的任何一个非叶子节点，要求左子节点权值比当前节点权值小，右子节点权值比当前节点权值大。</p>
+<p>二叉排序树的优点是查找速度快，插入和删除类似链表，速度也比较快</p>
+<p><img src="http://upyun.ishavanti.top/img/BinarySearchTree.png" alt></p>
+<h2 id="添加节点"><a href="#添加节点" class="headerlink" title="添加节点"></a>添加节点</h2><ul>
+<li>判断传入节点的值比当前节点的值大还是小</li>
+<li>如果比当前节点小，判断左子节点是否为空，如果为空则将传入节点设置为左子节点；如果不为空，则继续往左子树遍历</li>
+<li>如果比当前节点大，判断右子节点是否为空，如果为空则将传入节点设置为右子节点；如果不为空，则继续往右子树遍历</li>
+</ul>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><p><strong>Node.class</strong></p>
+<pre class=" language-lang-java"><code class="language-lang-java">package DataStructure.Tree.BinarySearchTree;
+
+public class Node {
+    private int value;
+    private Node left;
+    private Node right;
+
+    public Node(int value) {
+        this.value = value;
+    }
+
+    /**
+     * 向子树中添加节点
+     * @param node
+     */
+    public void add(Node node) {
+        if (node == null) {
+            return;
+        }
+        // 判读传入的节点的值比当前子树的根节点的值大还是小
+        if (node.value < this.value) {
+            // 往左节点添加
+            // 如果左节点为空
+            if (this.left == null) {
+                this.left = node;
+            } else {
+                this.left.add(node);
+            }
+        } else {
+            // 往右节点添加
+            // 如果右节点为空
+            if (this.right == null) {
+                this.right = node;
+            } else {
+                this.right.add(node);
+            }
+        }
+    }
+
+    /**
+     * 中序遍历
+     * 遍历结果由大到小
+     */
+    public void middleShow() {
+        if (this.left != null) {
+            this.left.middleShow();
+        }
+        System.out.println(this.value);
+        if (this.right != null) {
+            this.right.middleShow();
+        }
+    }
+
+    public int getValue() {
+        return value;
+    }
+
+    public void setValue(int value) {
+        this.value = value;
+    }
+
+    public Node getLeft() {
+        return left;
+    }
+
+    public void setLeft(Node left) {
+        this.left = left;
+    }
+
+    public Node getRight() {
+        return right;
+    }
+
+    public void setRight(Node right) {
+        this.right = right;
+    }
+}
+</code></pre>
+<p><strong>BinarySearchTree.class</strong></p>
+<pre class=" language-lang-java"><code class="language-lang-java">package DataStructure.Tree.BinarySearchTree;
+
+public class BinarySearchTree {
+    private Node root;
+
+    /**
+     * 向二叉查找树中添加节点
+     * @param node
+     */
+    public void addNode(Node node) {
+        if (root == null) {
+            root = node;
+        } else {
+            this.root.add(node);
+        }
+    }
+
+    /**
+     * 中序遍历（遍历结果是从小到大）
+     */
+    public void middleShow() {
+        if (root != null) {
+            root.middleShow();
+        }
+    }
+
+    public Node getRoot() {
+        return root;
+    }
+}
+</code></pre>
+<p><strong>TestBST.class</strong></p>
+<pre class=" language-lang-java"><code class="language-lang-java">package DataStructure.Tree.BinarySearchTree;
+
+public class TestBST {
+    public static void main(String[] args) {
+        int[] arr = new int[] {7, 3, 10, 12, 5, 1, 9};
+        // 循环添加
+        BinarySearchTree bst = new BinarySearchTree();
+        for (int v : arr) {
+            bst.addNode(new Node(v));
+        }
+        // 中序遍历（按从小到大的顺序输出）
+        bst.middleShow();
+    }
+}
+</code></pre>
+<h2 id="查找节点"><a href="#查找节点" class="headerlink" title="查找节点"></a>查找节点</h2><ul>
+<li>先比较当前节点值与目标节点值</li>
+<li>相等，直接返回当前节点</li>
+<li>大于目标节点值，如果左子节点不为空，往左子树递归；为空则返回空</li>
+<li>小于目标节点值，如果右子节点不为空，往左子树递归；为空则返回空</li>
+</ul>
+<h3 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h3><p><strong>Node.class</strong></p>
+<pre class=" language-lang-java"><code class="language-lang-java">package DataStructure.Tree.BinarySearchTree;
+
+public class Node {
+        // ......
+
+    /**
+     * 查找节点
+     * @param value
+     * @return
+     */
+    public Node search(int value) {
+        if (this.value == value) {
+            return this;
+        }
+        if (value < this.value) {
+            return this.left == null ? null : this.left.search(value);
+        } else {
+            return this.right == null ? null : this.right.search(value);
+        }
+    }
+
+        // ......
+}
+</code></pre>
+<p><strong>BinarySearchTree.class</strong></p>
+<pre class=" language-lang-java"><code class="language-lang-java">package DataStructure.Tree.BinarySearchTree;
+
+public class BinarySearchTree {
+    /**
+     * 查找节点
+     * @param value
+     */
+    public Node search(int value) {
+        if (root == null) {
+            return null;
+        }
+        return root.search(value);
+    }
+}
+</code></pre>
+<p><strong>TestBST.class</strong></p>
+<pre class=" language-lang-java"><code class="language-lang-java">package DataStructure.Tree.BinarySearchTree;
+
+public class TestBST {
+    public static void main(String[] args) {
+        int[] arr = new int[] {7, 3, 10, 12, 5, 1, 9};
+        // 循环添加
+        BinarySearchTree bst = new BinarySearchTree();
+        for (int v : arr) {
+            bst.addNode(new Node(v));
+        }
+        // 中序遍历（按从小到大的顺序输出）
+        bst.middleShow();
+
+          System.out.println("============");
+        // 测试查找节点
+        System.out.println(bst.search(3));
+    }
+}
+</code></pre>
+<h2 id="删除节点"><a href="#删除节点" class="headerlink" title="删除节点"></a>删除节点</h2><p>删除节点分为3种情况：</p>
+<ol>
+<li>要删除的节点为叶子节点：<ul>
+<li>找到目标节点的父节点</li>
+<li>判断目标节点是其父节点的左子节点或右子节点</li>
+<li>将父节点的左子节点或右子节点设为null</li>
+</ul>
+</li>
+<li>要删除的节点有两个子节点：<ul>
+<li>找到目标节点的父节点</li>
+<li>找到目标节点的后继节点，即右子树中最小的节点</li>
+<li>删除后继节点，并将目标节点替换为后继节点的值</li>
+</ul>
+</li>
+<li>要删除的节点只有一个左子节点或右子节点：<ul>
+<li>找到目标节点的父节点</li>
+<li>找到目标节点的子节点</li>
+<li>判断目标节点是其父节点的左子节点或右子节点</li>
+<li>将父节点的左子节点或右子节点设为其子节点</li>
+</ul>
+</li>
+</ol>
+<h3 id="代码-2"><a href="#代码-2" class="headerlink" title="代码"></a>代码</h3><p><strong>Node.class</strong></p>
+<pre class=" language-lang-java"><code class="language-lang-java">package DataStructure.Tree.BinarySearchTree;
+
+public class Node {
+    // ......
+
+    /**
+     * 寻找父节点
+     * @param value
+     * @return
+     */
+    public Node searchParent(int value) {
+        if ((this.left != null && this.left.value == value) || (this.right != null && this.right.value == value)) {
+            return this;
+        }
+        if (this.value > value && this.left != null) {
+            return this.left.searchParent(value);
+        }
+        if (this.value < value && this.right != null) {
+            return this.right.searchParent(value);
+        }
+        return null;
+    }
+
+      // ......
+}
+</code></pre>
+<p><strong>BinarySearchTree.class</strong></p>
+<pre class=" language-lang-java"><code class="language-lang-java">package DataStructure.Tree.BinarySearchTree;
+
+public class BinarySearchTree {
+    // ......
+
+    /**
+     * 删除节点
+     * @param value
+     */
+    public void delete(int value) {
+        if (root == null) {
+            return;
+        }
+        // 找到这个节点
+        Node target = search(value);
+        if (target == null) {
+            return;
+        }
+        // 找到它的父节点
+        Node parent = searchParent(value);
+        // 要删除的节点是叶节点
+        if (target.getLeft() == null && target.getRight() == null) {
+            // 要删除的节点是父节点的左节点
+            if (parent.getLeft() != null && parent.getLeft().getValue() == value) {
+                parent.setLeft(null);
+            } else {
+                // 要删除右节点
+                parent.setRight(null);
+            }
+        } else if (target.getLeft() != null && target.getRight() != null) {
+            // 要删除的节点有两个子节点
+            // 找到目标节点的后继节点，即右子树中最小的节点，删除后继节点，并将目标节点替换为后继节点的值即可
+            // 找到右子树最小节点
+            Node rightMin = target.getRight();
+            while (rightMin.getLeft() != null) {
+                rightMin = rightMin.getLeft();
+            }
+            // 递归调用，删除右子树最小节点
+            delete(rightMin.getValue());
+            // 替换目标节点的值
+            target.setValue(rightMin.getValue());
+        } else {
+            // 要删除的节点只有一个左子节点或右子节点
+            Node child = target.getLeft() != null ? target.getLeft() : target.getRight();
+            if (parent.getLeft() != null && parent.getLeft().getValue() == value) {
+                // 要删除的节点是父节点的左子节点
+                parent.setLeft(child);
+            } else {
+                // 要删除的节点是父节点的右子节点
+                parent.setRight(child);
+            }
+        }
+    }
+
+    /**
+     * 搜索父节点
+     * @param value
+     * @return
+     */
+    public Node searchParent(int value) {
+        if (this.root == null) {
+            return null;
+        }
+        return this.root.searchParent(value);
+    }
+
+      // .....
+}
+</code></pre>
+<p><strong>TestBST.class</strong></p>
+<pre class=" language-lang-java"><code class="language-lang-java">package DataStructure.Tree.BinarySearchTree;
+
+public class TestBST {
+    public static void main(String[] args) {
+        int[] arr = new int[] {7, 3, 10, 12, 5, 1, 9};
+        // 循环添加
+        BinarySearchTree bst = new BinarySearchTree();
+        for (int v : arr) {
+            bst.addNode(new Node(v));
+        }
+        // 中序遍历（按从小到大的顺序输出）
+        bst.middleShow();
+
+        System.out.println("============");
+        // 测试查找父节点
+        System.out.println(bst.searchParent(1).getValue());
+
+        System.out.println("============");
+        // 测试删除叶子节点
+        bst.delete(5);
+        bst.middleShow();
+
+        System.out.println("============");
+        // 测试删除只有一个子节点的节点
+        bst.delete(3);
+        bst.middleShow();
+
+        System.out.println("============");
+        // 测试删除有两个子节点的节点
+        bst.delete(7);
+        bst.middleShow();
+    }
+}
+</code></pre>
+<h1 id="平衡二叉树（AVL树）"><a href="#平衡二叉树（AVL树）" class="headerlink" title="平衡二叉树（AVL树）"></a>平衡二叉树（AVL树）</h1><h2 id="二叉排序树的缺点"><a href="#二叉排序树的缺点" class="headerlink" title="二叉排序树的缺点"></a>二叉排序树的缺点</h2><p>对于一个有序的序列，如<strong>[1, 2, 3, 4, 5]</strong>，构造出的二叉排序树</p>
+<p><img src="http://upyun.ishavanti.top/img/AVLTree1.png" alt></p>
+<p>这样的二叉排序树和普通的单链表并没有太大区别，性能反而会更差一些，查找速度也并没有提升。</p>
+<h2 id="平衡二叉搜索树"><a href="#平衡二叉搜索树" class="headerlink" title="平衡二叉搜索树"></a>平衡二叉搜索树</h2><blockquote>
+<p>平衡二叉搜索树（Self-balancing binary search tree）又被称为AVL树（有别于AVL算法），且具有以下性质：它是一棵空树或它的左右两个子树的高度差的绝对值不超过1，并且左右两个子树都是一棵平衡二叉树。</p>
+<p>平衡二叉树的常用实现方法有<a href="https://baike.baidu.com/item/红黑树/2413209" target="_blank" rel="noopener">红黑树</a>、<a href="https://baike.baidu.com/item/AVL/7543015" target="_blank" rel="noopener">AVL</a>、<a href="https://baike.baidu.com/item/替罪羊树/13859070" target="_blank" rel="noopener">替罪羊树</a>、<a href="https://baike.baidu.com/item/Treap" target="_blank" rel="noopener">Treap</a>、<a href="https://baike.baidu.com/item/伸展树/7003945" target="_blank" rel="noopener">伸展树</a>等。 </p>
+<p>最小二叉平衡树的节点总数的公式如下 F(n)=F(n-1)+F(n-2)+1 这个类似于一个递归的<a href="https://baike.baidu.com/item/数列/731531" target="_blank" rel="noopener">数列</a>，可以参考Fibonacci(斐波那契)数列，1是根节点，F(n-1)是左子树的节点数量，F(n-2)是右子树的节点数量。</p>
+</blockquote>
+<h2 id="构建平衡二叉树"><a href="#构建平衡二叉树" class="headerlink" title="构建平衡二叉树"></a>构建平衡二叉树</h2><p><img src="http://upyun.ishavanti.top/img/AVLTree.gif" alt></p>
+<p>构建平衡二叉树有几种情况：单旋转（右旋转与左旋转），双旋转（先左后右，先右后左）</p>
+<ul>
+<li><p>单旋转：</p>
+<ul>
+<li><p>右旋转：</p>
+<ol>
+<li>创建一个新节点，值等于当前节点的值</li>
+<li>把新节点的右子树设置为当前节点的右子树</li>
+<li>把新节点的左子树设置为当前节点的左节点的右子树</li>
+<li>把当前节点的值设置为左子节点的值</li>
+<li>把当前节点的左子树设置为左子节点的左子树</li>
+<li>把当前节点的右子树设置为新节点</li>
+</ol>
+<p><img src="http://upyun.ishavanti.top/img/AVLTree2.png" alt></p>
+</li>
+<li><p>左旋转与右旋转的操作正好相反，可类推</p>
+</li>
+</ul>
+</li>
+<li><p>双旋转</p>
+<ul>
+<li>先左后右</li>
+</ul>
+<p><img src="http://upyun.ishavanti.top/img/AVLTree3.png" alt></p>
+<ul>
+<li>先右后左 与 先走后右的操作正好相反，可类推</li>
+</ul>
+</li>
+</ul>
+<h2 id="代码实现-2"><a href="#代码实现-2" class="headerlink" title="代码实现"></a>代码实现</h2><p><strong>Node.java</strong></p>
+<pre class=" language-lang-java"><code class="language-lang-java">package DataStructure.Tree.AVLTree;
+
+public class Node {
+    private int value;
+    private Node left;
+    private Node right;
+
+    public Node(int value) {
+        this.value = value;
+    }
+
+    /**
+     * 向子树中添加节点
+     * @param node
+     */
+    public void add(Node node) {
+        if (node == null) {
+            return;
+        }
+        // 判读传入的节点的值比当前子树的根节点的值大还是小
+        if (node.value < this.value) {
+            // 往左节点添加
+            // 如果左节点为空
+            if (this.left == null) {
+                this.left = node;
+            } else {
+                this.left.add(node);
+            }
+        } else {
+            // 往右节点添加
+            // 如果右节点为空
+            if (this.right == null) {
+                this.right = node;
+            } else {
+                this.right.add(node);
+            }
+        }
+        // 检查是否平衡
+        int leftHeight = this.left == null ? 0 : this.left.height();
+        int rightHeight = this.right == null ? 0 : this.right.height();
+        if (leftHeight - rightHeight > 1) {
+            // 左子树的左右子树高度
+            int leftLeftHeight = this.left.left == null ? 0 : this.left.left.height();
+            int leftRightHeight = this.left.right == null ? 0 : this.left.right.height();
+            // 如果左子树的左子树高度小于右子树高度，属于双旋转情况
+            if (leftLeftHeight < leftRightHeight) {
+                // 需要先对左子树进行左旋转
+                this.left.leftRotate();
+            }
+            // 进行右旋转
+            rightRotate();
+        } else if (rightHeight - leftHeight > 1){
+            // 右子树的左右子树高度
+            int rightLeftHeight = this.right.left == null ? 0 : this.right.left.height();
+            int rightRightHeight = this.right.right == null ? 0 : this.right.right.height();
+            // 双旋转情况
+            if (rightLeftHeight > rightRightHeight) {
+                // 需要先对右子树进行右旋转
+                this.right.rightRotate();
+            }
+            // 进行左旋转
+            leftRotate();
+        }
+    }
+
+    /**
+     * 右旋转
+     */
+    private void rightRotate() {
+        // 1. 创建一个新节点，值等于当前节点的值
+        Node newRight = new Node(this.value);
+        // 2. 把新节点的右子树设置为当前节点的右子树
+        newRight.right = this.right;
+        // 3. 把新节点的左子树设置为当前节点的左节点的右子树
+        newRight.left = this.left.right;
+        // 4. 把当前节点的值设置为左子节点的值
+        this.value = this.left.value;
+        // 5. 把当前节点的左子树设置为左子节点的左子树
+        this.left = this.left.left;
+        // 6. 把当前节点的右子树设置为新节点
+        this.right = newRight;
+    }
+
+    /**
+     * 左旋转
+     */
+    private void leftRotate() {
+        // 1. 创建一个新节点，值等于当前节点的值
+        Node newLeft = new Node(this.value);
+        // 2. 把新节点的右子树设置为当前节点的右子树
+        newLeft.left = this.left;
+        // 3. 把新节点的左子树设置为当前节点的左节点的右子树
+        newLeft.right = this.right.left;
+        // 4. 把当前节点的值设置为左子节点的值
+        this.value = this.right.value;
+        // 5. 把当前节点的左子树设置为左子节点的左子树
+        this.right = this.right.right;
+        // 6. 把当前节点的右子树设置为新节点
+        this.left = newLeft;
+    }
+
+    /**
+     * 返回当前节点的高度
+     * @return
+     */
+    public int height() {
+        return Math.max(this.left == null ? 0 : this.left.height(), this.right == null ? 0 : this.right.height()) + 1;
+    }
+
+    public int getValue() {
+        return value;
+    }
+
+    public void setValue(int value) {
+        this.value = value;
+    }
+
+    public Node getLeft() {
+        return left;
+    }
+
+    public void setLeft(Node left) {
+        this.left = left;
+    }
+
+    public Node getRight() {
+        return right;
+    }
+
+    public void setRight(Node right) {
+        this.right = right;
+    }
+}
+</code></pre>
+<p><strong>AVLTree.java</strong></p>
+<pre class=" language-lang-java"><code class="language-lang-java">package DataStructure.Tree.AVLTree;
+
+public class AVLTree {
+    private Node root;
+
+    /**
+     * 向平衡二叉树中添加节点
+     * @param node
+     */
+    public void addNode(Node node) {
+        if (root == null) {
+            root = node;
+        } else {
+            this.root.add(node);
+        }
+    }
+
+    public Node getRoot() {
+        return root;
+    }
+}
+</code></pre>
+<p><strong>TestAVLTree.java</strong></p>
+<pre class=" language-lang-java"><code class="language-lang-java">package DataStructure.Tree.AVLTree;
+
+public class TestAVLTree {
+    public static void main(String[] args) {
+        int[] arr = new int[] {1, 2, 3, 4, 5, 6, 7, 8};
+        // 创建一颗平衡二叉树
+        AVLTree avlTree = new AVLTree();
+        // 添加节点
+        for (int v : arr) {
+            avlTree.addNode(new Node(v));
+        }
+        // 查看高度
+        System.out.println(avlTree.getRoot().height());
+        System.out.println(avlTree.getRoot().getLeft().height());
+        System.out.println(avlTree.getRoot().getRight().height());
+    }
+}
+</code></pre>
+<h1 id="红黑树"><a href="#红黑树" class="headerlink" title="红黑树"></a>红黑树</h1><p><strong>红黑树</strong>是一种二叉查找树，但在每个节点增加一个存储位表示节点的颜色，可以是红或黑（非红即黑）。通过对任何一条从根到叶子的路径上各个节点着色的方式的限制，红黑树确保没有一条路径会比其它路径长出两倍，因此，红黑树是一种弱平衡二叉树（由于是弱平衡，可以看到，在相同的节点情况下，AVL树的高度低于红黑树），相对于要求严格的AVL树来说，它的旋转次数少，所以对于搜索，插入，删除操作较多的情况下，我们就用红黑树。</p>
+<p>与平衡二叉树比较：</p>
+<ul>
+<li>红黑树，旋转次数少，高度较高，适用于搜索少，插入和删除操作较多的情况</li>
+<li>AVL树，旋转次数多，高度较低，适用于搜索多，插入和删除操作较少的情况</li>
+</ul>
+<p><img src="http://upyun.ishavanti.top/img/RedBlackTree.jpg" alt></p>
+<p><strong>红-黑规则：</strong></p>
+<ul>
+<li><p>每个节点不是红色就是黑色的</p>
+</li>
+<li><p>根节点总是黑色的</p>
+</li>
+<li><p>如果节点是红色的，则它的子节点必须是黑色的（反之不一定）,(也就是从每个叶子到根的所有路径上不能有两个连续的红色节点)</p>
+</li>
+<li><p>从根节点到叶节点或空子节点的每条路径，必须包含相同数目的黑色节点（即相同的黑色高度）。</p>
+</li>
+</ul>
+<p>红黑树的修正方式：变色，左旋和右旋</p>
+<p><strong>左旋转</strong></p>
+<p><img src="http://upyun.ishavanti.top/img/LeftRotate.gif" alt></p>
+<p><strong>右旋转</strong></p>
+<p><img src="http://upyun.ishavanti.top/img/RightRotate.gif" alt></p>
+<h2 id="左旋和右旋"><a href="#左旋和右旋" class="headerlink" title="左旋和右旋"></a>左旋和右旋</h2><p><img src="http://upyun.ishavanti.top/img/RedBlackTreeRotate.png" alt></p>
+<h2 id="构建红黑树"><a href="#构建红黑树" class="headerlink" title="构建红黑树"></a>构建红黑树</h2><blockquote>
+<p>参考：<a href="https://www.cnblogs.com/ysocean/p/8004211.html" target="_blank" rel="noopener">https://www.cnblogs.com/ysocean/p/8004211.html</a></p>
+</blockquote>
+<ul>
+<li>默认插入节点为红色（因为红黑树中黑节点至少是红节点的两倍，因此插入节点的父节点为黑色的概率较大，而此时并不需要作任何调整，因此效率较高）</li>
+<li>首次插入时，直接将根节点变黑即可</li>
+<li>如果插入的节点的父节点是黑色，直接插入即可</li>
+<li>如果插入的节点的父节点是红色，那么此时违背了红黑树的规则，分为以下几种情况：<ul>
+<li>插入节点的父节点和叔叔节点（祖父节点的另一个子节点）都是红色</li>
+<li>插入节点的父节点是红色，叔叔节点是黑色，且插入节点为父节点的右子节点</li>
+<li>插入节点的父节点是红色，叔叔节点是黑色，且插入节点为父节点的左子节点</li>
+</ul>
+</li>
+</ul>
+<p>对于情况1：<strong>插入节点的父节点和其叔叔节点（祖父节点的另一个子节点）均为红色。</strong></p>
+<p><img src="http://upyun.ishavanti.top/img/RedBlackTree1.png" alt></p>
+<p>此时，肯定存在祖父节点，但是不知道父节点是其左子节点还是右子节点，但是由于对称性，我们只要讨论出一边的情况，另一种情况自然也与之对应。这里考虑父节点是其祖父节点的左子节点的情况。</p>
+<p>对于这种情况，我们要做的操作有：<strong>将当前节点(4) 的父节点(5) 和叔叔节点(8) 涂黑，将祖父节点(7)涂红。再将当前节点指向其祖父节点</strong>，再次从新的当前节点开始算法（具体看下面的步骤）。这样就变成情况2了。</p>
+<p><img src="http://upyun.ishavanti.top/img/RedBlackTree2.png" alt></p>
+<p>对于情况2：<strong>插入节点的父节点是红色的，叔叔节点是黑色的，且插入节点是其父节点的右子节点</strong>。我们要做的操作有：<strong>以当前节点(7)的父节点(2)为支点做左旋操作，然后将当前节点指向节点(2)</strong>。完成后就变成情况3了。</p>
+<p><img src="http://upyun.ishavanti.top/img/RedBlackTree3.png" alt></p>
+<p>对于情况3：<strong>插入节点的父节点是红色，叔叔节点是黑色，且插入节点是其父节点的左子节点</strong>。我们要做的操作有：<strong>将当前节点的父节点(7)涂黑，将祖父节点(11)涂红，以祖父节点为支点做右旋操作。将根节点涂黑。</strong>至此，插入操作完成，整个红-黑树重新恢复了平衡！</p>
+<p><img src="http://upyun.ishavanti.top/img/RedBlackTree4.png" alt></p>
+<h2 id="代码实现-3"><a href="#代码实现-3" class="headerlink" title="代码实现"></a>代码实现</h2><p><strong>Node.java</strong></p>
+<pre class=" language-lang-java"><code class="language-lang-java">package DataStructure.Tree.RedBlackTree;
+
+public class Node {
+
+    public enum Color {
+        RED, BLACK
+    }
+
+    private int value;
+    // 默认节点颜色为红色
+    private Color color = Color.RED;
+    private Node left;
+    private Node right;
+    private Node parent;
+
+    public Node(int value) {
+        this.value = value;
+    }
+
+    /**
+     * 中序遍历
+     */
+    public void InOrderTraversal() {
+        if (this.left != null) {
+            this.left.InOrderTraversal();
+        }
+        System.out.print(this.value + " ");
+        if (this.right != null) {
+            this.right.InOrderTraversal();
+        }
+    }
+
+    public int getValue() {
+        return value;
+    }
+
+    public void setValue(int value) {
+        this.value = value;
+    }
+
+    public Color getColor() {
+        return color;
+    }
+
+    public void setColor(Color color) {
+        this.color = color;
+    }
+
+    public Node getRight() {
+        return right;
+    }
+
+    public void setRight(Node right) {
+        this.right = right;
+    }
+
+    public Node getLeft() {
+        return left;
+    }
+
+    public void setLeft(Node left) {
+        this.left = left;
+    }
+
+    public Node getParent() {
+        return parent;
+    }
+
+    public void setParent(Node parent) {
+        this.parent = parent;
+    }
+}
+</code></pre>
+<p><strong>RedBlackTree.java</strong></p>
+<pre class=" language-lang-java"><code class="language-lang-java">package DataStructure.Tree.RedBlackTree;
+
+public class RedBlackTree {
+    private Node root;
+
+    /**
+     * 插入节点
+     */
+    public void insert(Node node) {
+        if (root == null) {
+            root = node;
+            root.setColor(Node.Color.BLACK);
+            return;
+        }
+        // 寻找插入点
+        Node parent = root;
+        Node tmp = root;
+        while (tmp != null) {
+            parent = tmp;
+            if (node.getValue() < tmp.getValue()) {
+                tmp = tmp.getLeft();
+            } else {
+                tmp = tmp.getRight();
+            }
+        }
+        // 插入节点
+        if (node.getValue() < parent.getValue()) {
+            parent.setLeft(node);
+            node.setParent(parent);
+        } else {
+            parent.setRight(node);
+            node.setParent(parent);
+        }
+        // 当前节点为插入节点
+        Node current = node;
+        // 如果插入节点的父节点是黑色，直接插入即可
+        // 如果插入节点的父节点是红色，则有以下处理
+        while (parent != null && parent.getColor() == Node.Color.RED) {
+            // 当前节点的父节点是红色，祖父节点一定存在
+            // 祖父节点
+            Node gParent = parent.getParent();
+            // 叔叔节点
+            Node uncle;
+            if (gParent.getLeft() == parent) {
+                // 父节点为祖父节点的左子节点
+                uncle = gParent.getRight();
+            } else {
+                // 父节点为祖父节点的右子节点
+                uncle = gParent.getLeft();
+            }
+            if (uncle != null && uncle.getColor() == Node.Color.RED) {
+                // 当前节点的叔叔节点（祖父节点的另一个子节点）也是红色
+                // 将当前节点的父节点和叔叔节点变黑，祖父节点变红
+                parent.setColor(Node.Color.BLACK);
+                uncle.setColor(Node.Color.BLACK);
+                gParent.setColor(Node.Color.RED);
+                // 当前节点指向祖父节点
+                current = gParent;
+                parent = current.getParent();
+            } else {
+                // 当前节点的叔叔节点是黑色的（或者为空）
+                if (gParent.getRight() == parent) {
+                    // 父节点是祖父节点的右节点
+                    if (parent.getLeft() == current) {
+                        // 当前节点是其父节点的左子节点
+                        // 以当前节点的父节点为支点，做右旋操作
+                        rightRotate(parent);
+                        // 当前节点指向原来的父节点
+                        current = parent;
+                        parent = current.getParent();
+                    }
+                    // 当前节点是其父节点的右子节点
+                    // 当前节点的父节点变黑，将祖父节点变红
+                    parent.setColor(Node.Color.BLACK);
+                    gParent.setColor(Node.Color.RED);
+                    // 以祖父节点为支点做左旋操作
+                    leftRotate(gParent);
+                } else {
+                    // 父节点是祖父节点的左节点
+                    if (parent.getRight() == current) {
+                        // 当前节点是其父节点的右子节点
+                        // 以当前节点的父节点为支点，做左旋操作
+                        leftRotate(parent);
+                        // 当前节点指向原来的父节点
+                        current = parent;
+                        parent = current.getParent();
+                    }
+                    // 当前节点是其父节点的左子节点
+                    // 当前节点的父节点变黑，将祖父节点变红
+                    parent.setColor(Node.Color.BLACK);
+                    gParent.setColor(Node.Color.RED);
+                    // 以祖父节点为支点做右旋操作
+                    rightRotate(gParent);
+                }
+            }
+        }
+        // 将根节点变黑
+        this.root.setColor(Node.Color.BLACK);
+    }
+
+    /**
+     * 右旋转
+     */
+    private void rightRotate(Node node) {
+        Node parent = node.getParent();
+        Node left = node.getLeft();
+        node.setLeft(left.getRight());
+        if (left.getRight() != null) {
+            left.getRight().setParent(node);
+        }
+        left.setRight(node);
+        node.setParent(left);
+        if (parent == null) {
+            this.root = left;
+            this.root.setParent(null);
+        } else if (parent.getLeft() == node) {
+            parent.setLeft(left);
+            left.setParent(parent);
+        } else {
+            parent.setRight(left);
+            left.setParent(parent);
+        }
+    }
+
+    /**
+     * 左旋转
+     */
+    private void leftRotate(Node node) {
+        Node parent = node.getParent();
+        Node right = node.getRight();
+        node.setRight(right.getLeft());
+        if (right.getLeft() != null) {
+            right.getLeft().setParent(node);
+        }
+        right.setLeft(node);
+        node.setParent(right);
+        if (parent == null) {
+            this.root = right;
+            this.root.setParent(null);
+        } else if (parent.getLeft() == node) {
+            parent.setLeft(right);
+            right.setParent(parent);
+        } else {
+            parent.setRight(right);
+            right.setParent(parent);
+        }
+    }
+
+    /**
+     * 中序遍历
+     */
+    public void InOrderTraversal() {
+        if (this.root == null) {
+            return;
+        }
+        this.root.InOrderTraversal();
+    }
+
+    public Node getRoot() {
+        return root;
+    }
+}
+</code></pre>
+<p><strong>TestRedBlackTree.java</strong></p>
+<pre class=" language-lang-java"><code class="language-lang-java">package DataStructure.Tree.RedBlackTree;
+
+import DataStructure.Sort.ArrayUtil;
+
+public class TestRedBlackTree {
+    public static void main(String[] args) {
+        int[] arr = ArrayUtil.genArray(30, 0, 500);
+        RedBlackTree tree = new RedBlackTree();
+        for (int v : arr) {
+            System.out.print(v+" ");
+            tree.insert(new Node(v));
+        }
+        System.out.println();
+        tree.InOrderTraversal();
+    }
+}
+</code></pre>
+<h1 id="多路查找树"><a href="#多路查找树" class="headerlink" title="多路查找树"></a>多路查找树</h1><p><strong>多路查找树(muitl-way search tree)</strong>，其每一个节点的孩子数可以多于两个，且每一个节点处可以存储多个元素。</p>
+<p>主要有4种特殊形式：<a href="#2-3树">2-3树</a>，<a href="#2-3-4树">2-3-4树</a>，<a href="#B树">B树</a>，<a href="#B+树">B+树</a></p>
+<p><strong>2-3树</strong>和<strong>2-3-4树</strong>都是<strong>B树</strong>的一种特例</p>
+<h2 id="2-3树"><a href="#2-3树" class="headerlink" title="2-3树"></a>2-3树</h2><h2 id="2-3-4树"><a href="#2-3-4树" class="headerlink" title="2-3-4树"></a>2-3-4树</h2><h2 id="B树"><a href="#B树" class="headerlink" title="B树"></a>B树</h2><p>一棵m阶B树(balanced tree of order m)是一棵平衡的m路搜索树。它或者是空树，或者是满足下列性质的树：</p>
+<p>1、根结点至少有两个子女；</p>
+<p>2、每个非根节点所包含的关键字个数 j 满足：⌈m/2⌉ - 1 &lt;= j &lt;= m - 1；</p>
+<p>3、除根结点以外的所有结点（不包括叶子结点）的度数正好是关键字总数加1，故<strong>内部子树</strong>个数 k 满足：⌈m/2⌉ &lt;= k &lt;= m ；（⌈⌉是向上取整）</p>
+<p>4、所有的叶子结点都位于同一层。</p>
+<h2 id="B-树"><a href="#B-树" class="headerlink" title="B+树"></a>B+树</h2>
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2019/07/03/排序算法/" id="post_nav-older" class="next-content">
+            Older
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
+
+
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(/img/sidebar_header.png);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="/img/avatar.gif" alt="Zhu Yuexin's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        yuexinzh@gmail.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="mailto: yuexinzh@gmail.com" target="_blank" title="Email Me">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        
+                        Email Me
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    
+        <li id="sidebar-first-li">
+            <a href="/">
+                
+                    <i class="material-icons sidebar-material-icons">home</i>
+                
+                Home
+            </a>
+        </li>
+        
+    
+
+    <!-- Archives  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">inbox</i>
+                
+                    Archives
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+            <li>
+                <a class="sidebar_archives-link" href="/archives/2019/07/">July 2019<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/05/">May 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/04/">April 2019<span class="sidebar_archives-count">9</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/12/">December 2018<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/11/">November 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/07/">July 2018<span class="sidebar_archives-count">23</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/06/">June 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/04/">April 2018<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/03/">March 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/01/">January 2018<span class="sidebar_archives-count">9</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/12/">December 2017<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/11/">November 2017<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/10/">October 2017<span class="sidebar_archives-count">8</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/08/">August 2017<span class="sidebar_archives-count">15</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/03/">March 2017<span class="sidebar_archives-count">6</span></a>
+            </li></ul>
+        </li>
+        
+    
+
+    <!-- Categories  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">chrome_reader_mode</i>
+                
+                Categories
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+                <li>
+                <a class="sidebar_archives-link" href="/categories/Android/">Android<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/Android碎片/">Android碎片<span class="sidebar_archives-count">16</span></a></li><li><a class="sidebar_archives-link" href="/categories/Android错误解决/">Android错误解决<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/C/">C#<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/Django/">Django<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Git/">Git<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Hexo/">Hexo<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/Java/">Java<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Java笔记/">Java笔记<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/Linux/">Linux<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/Maven/">Maven<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/Python/">Python<span class="sidebar_archives-count">9</span></a></li><li><a class="sidebar_archives-link" href="/categories/Shell/">Shell<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/SpringBoot/">SpringBoot<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/Ubuntu/">Ubuntu<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/categories/Vue/">Vue<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/WPF/">WPF<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/剑指Offer编程题/">剑指Offer编程题<span class="sidebar_archives-count">22</span></a></li><li><a class="sidebar_archives-link" href="/categories/小技能/">小技能<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/数据结构/">数据结构<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/数据结构与算法/">数据结构与算法<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/机器学习/">机器学习<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/杂记/">杂记<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/游戏/">游戏<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/皮皮夏/">皮皮夏<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/皮皮夏的奇葩日记/">皮皮夏的奇葩日记<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/论文笔记/">论文笔记<span class="sidebar_archives-count">2</span></a>
+            </li></ul>
+        </li>
+        
+    
+
+    <!-- Pages  -->
+    
+        <li>
+            <a href="/tags" title="Tags">
+                
+                    <i class="material-icons sidebar-material-icons">sort</i>
+                
+                Tags
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/timeline" title="Timeline">
+                
+                    <i class="material-icons sidebar-material-icons">timeline</i>
+                
+                Timeline
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/links" title="Links">
+                
+                    <i class="material-icons sidebar-material-icons">link</i>
+                
+                Links
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/about" title="About">
+                
+                    <i class="material-icons sidebar-material-icons">person</i>
+                
+                About
+            </a>
+        </li>
+        
+            <li class="divider"></li>
+        
+    
+
+    <!-- Article Number  -->
+    
+        <li>
+            <a href="/archives">
+                Number of articles
+                <span class="sidebar-badge">92</span>
+            </a>
+        </li>
+        
+    
+</ul>
+
+
+        <!-- Sidebar Footer -->
+        <!--
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :)
+-->
+
+<!-- Sidebar Divider -->
+
+    <div class="sidebar-divider"></div>
+
+
+<!-- Theme Material -->
+
+    <a href="https://github.com/viosey/hexo-theme-material" class="sidebar-footer-text-a" target="_blank">
+        <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+            Theme - Material
+            <span class="sidebar-badge badge-circle">i</span>
+        </div>
+    </a>
+
+
+<!-- Help & Support -->
+<!--
+
+-->
+
+<!-- Feedback -->
+<!--
+
+-->
+
+<!-- About Theme -->
+<!--
+
+-->
+
+    </div>
+
+    <!-- Sidebar Image -->
+    
+
+</aside>
+
+                    
+
+                    
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+    
+        <!-- Paradox Footer Left Section -->
+        <div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+        <a href="https://twitter.com/twitter" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-twitter">
+                <span class="visuallyhidden">Twitter</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Facebook -->
+    
+        <a href="https://www.facebook.com/facebook" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-facebook">
+                <span class="visuallyhidden">Facebook</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Google + -->
+    
+        <a href="https://www.google.com/" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-gplus">
+                <span class="visuallyhidden">Google Plus</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Weibo -->
+    
+
+    <!-- Instagram -->
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+
+    <!-- LinkedIn -->
+    
+
+    <!-- Zhihu -->
+    
+
+    <!-- Bilibili -->
+    
+
+    <!-- Telegram -->
+    
+</div>
+
+
+        <!--Copyright-->
+        <div id="copyright">
+            Copyright&nbsp;©<script type="text/javascript">var fd = new Date();document.write("&nbsp;" + fd.getFullYear() + "&nbsp;");</script>Mr.Z's Blog
+        </div>
+
+        <!-- Paradox Footer Right Section -->
+
+        <!--
+        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+        It will not impact the appearance and can give developers a lot of support :)
+
+        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+        它不会影响美观并可以给开发者很大的支持。 :)
+        -->
+
+        <div class="mdl-mini-footer--right-section">
+            <div>
+                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
+                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+            </div>
+        </div>
+    
+</footer>
+
+
+                    <!-- Import File -->
+
+
+    <script>lsloader.load("js/lazyload.min.js","/js/lazyload.min.js?1BcfzuNXqV+ntF6gq+5X3Q==")</script>
+    <script>lsloader.load("js/js.min.js","/js/js.min.js?oAl/+lvaqTFV31JXTmbrNA==")</script>
+
+
+
+    <script>lsloader.load("js/nprogress.js","/js/nprogress.js?pl3Qhb9lvqR1FlyLUna1Yw==")</script>
+
+
+<script type="text/ls-javascript" id="NProgress-script">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    $('#nprogress .bar').css({
+        'background': '#29d'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#29d',
+        'border-left-color': '#29d'
+    });
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- UC Browser Compatible -->
+<script>
+	var agent = navigator.userAgent.toLowerCase();
+	if(agent.indexOf('ucbrowser')>0) {
+		document.write('<link rel="stylesheet" href="/css/uc.css">');
+	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+	}
+</script>
+
+<!-- Window Load-->
+<script type="text/ls-javascript" id="window-load">
+    $(window).on('load', function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+</script>
+
+<!-- MathJax Load-->
+
+<script type="text/ls-javascript" id="lazy-load">
+    // Offer LazyLoad
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    // Start Queue
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script>
+
+<!-- Bing Background -->
+
+
+<script>
+    (function(){
+        var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
+
+        for (var i = 0; i < scriptList.length; ++i) {
+            var item = scriptList[i];
+            lsloader.runInlineScript(item.id,item.id);
+        }
+    })()
+console.log('\n %c © Material Theme | Version: 1.4.0 | https://github.com/viosey/hexo-theme-material %c \n', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;');
+</script>
+
+                </main>
+            </div>
+        </body>
+    
+</html>
