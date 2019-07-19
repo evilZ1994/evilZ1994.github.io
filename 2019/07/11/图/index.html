@@ -1,0 +1,1554 @@
+<!DOCTYPE html>
+<html style="display: none;" lang="en">
+    <head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <!--
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.4.0 -->
+    <script>window.materialVersion = "1.4.0"</script>
+
+    <!-- Title -->
+    
+    <title>
+        
+            图 | 
+        
+        Mr.Z&#39;s Blog
+    </title>
+
+    <!-- dns prefetch -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    <!-- Meta & Info -->
+    <meta http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="theme-color" content="#0097A7">
+    <meta name="author" content="Zhu Yuexin">
+    <meta name="description" itemprop="description" content="呀！发现一只会写代码的猪！">
+    <meta name="keywords" content="null,数据结构,图,深度优先搜索,dfs,广度优先搜索,bfs,邻接表,邻接矩阵">
+
+    <!-- Site Verification -->
+    
+    
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/favicon.ico">
+    <link rel="icon" sizes="192x192" href="/img/favicon.ico">
+    <link rel="apple-touch-icon" href="/img/favicon.ico">
+
+    <!--iOS -->
+    <meta name="apple-mobile-web-app-title" content="Title">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="480">
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Mr.Z&#39;s Blog">
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="http://yoursite.com">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="图 | Mr.Z&#39;s Blog">
+    <meta property="og:image" content="/img/favicon.ico">
+    <meta property="og:description" content="呀！发现一只会写代码的猪！">
+    <meta property="og:article:tag" content="数据结构"> <meta property="og:article:tag" content="图"> <meta property="og:article:tag" content="深度优先搜索"> <meta property="og:article:tag" content="dfs"> <meta property="og:article:tag" content="广度优先搜索"> <meta property="og:article:tag" content="bfs"> <meta property="og:article:tag" content="邻接表"> <meta property="og:article:tag" content="邻接矩阵"> 
+
+    
+        <meta property="article:published_time" content="Jul 11, 2019">
+        <meta property="article:modified_time" content="Jul 19, 2019">
+    
+
+    <!-- The Twitter Card protocol -->
+    <meta name="twitter:title" content="图 | Mr.Z&#39;s Blog">
+    <meta name="twitter:description" content="呀！发现一只会写代码的猪！">
+    <meta name="twitter:image" content="/img/favicon.ico">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="http://yoursite.com">
+
+    <!-- Add canonical link for SEO -->
+    
+        <link rel="canonical" href="http://yoursite.com/2019/07/11/图/index.html">
+    
+
+    <!-- Structured-data for SEO -->
+    
+        
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Mr.Z&#39;s Blog",
+        "logo": "/img/favicon.ico"
+    },
+    "author": {
+        "@type": "Person",
+        "name": "Zhu Yuexin",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/favicon.ico"
+        },
+        "description": "The keyboard is typing on my fingertip,<br>The code is writing me,<br>My eyes are flashing in the cursor, and you are missing me."
+    },
+    "headline": "图",
+    "url": "http://yoursite.com/2019/07/11/图/index.html",
+    "datePublished": "Jul 11, 2019",
+    "dateModified": "Jul 19, 2019",
+    "description": "呀！发现一只会写代码的猪！",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://yoursite.com"
+    }
+}
+</script>
+
+
+    
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+
+        
+            <script src="/js/ie-blocker.en.js"></script>
+        
+    <![endif]-->
+
+    <!-- Import lsloader -->
+    <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(key){try{localStorage.removeItem(key)}catch(e){}};lsloader.setLS=function(key,val){try{localStorage.setItem(key,val)}catch(e){}};lsloader.getLS=function(key){var val="";try{val=localStorage.getItem(key)}catch(e){val=""}return val};versionString="/*"+materialVersion+"*/";lsloader.clean=function(){try{var keys=[];for(var i=0;i<localStorage.length;i++){keys.push(localStorage.key(i))}keys.forEach(function(key){var data=lsloader.getLS(key);if(data&&data.indexOf(versionString)===-1){lsloader.removeLS(key)}})}catch(e){}};lsloader.clean();lsloader.load=function(jsname,jspath,cssonload){cssonload=cssonload||function(){};var code;code=this.getLS(jsname);if(code&&code.indexOf(versionString)===-1){this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload);return}if(code){var versionNumber=code.split(versionString)[0];if(versionNumber!=jspath){console.log("reload:"+jspath);this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload);return}code=code.split(versionString)[1];if(/\.js?.+$/.test(versionNumber)){this.jsRunSequence.push({name:jsname,code:code});this.runjs(jspath,jsname,code)}else{document.getElementById(jsname).appendChild(document.createTextNode(code));cssonload()}}else{this.requestResource(jsname,jspath,cssonload)}};lsloader.requestResource=function(name,path,cssonload){var that=this;if(/\.js?.+$/.test(path)){this.iojs(path,name,function(path,name,code){that.setLS(name,path+versionString+code);that.runjs(path,name,code)})}else if(/\.css?.+$/.test(path)){this.iocss(path,name,function(code){document.getElementById(name).appendChild(document.createTextNode(code));that.setLS(name,path+versionString+code)},cssonload)}};lsloader.iojs=function(path,jsname,callback){var that=this;that.jsRunSequence.push({name:jsname,code:""});try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(path,jsname,xhr.response);return}}that.jsfallback(path,jsname)}};xhr.send(null)}catch(e){that.jsfallback(path,jsname)}};lsloader.iocss=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.iofonts=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.runjs=function(path,name,code){if(!!name&&!!code){for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code=code}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var script=document.createElement("script");script.appendChild(document.createTextNode(this.jsRunSequence[0].code));script.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(script);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var that=this;var script=document.createElement("script");script.src=this.jsRunSequence[0].path;script.type="text/javascript";this.jsRunSequence[0].status="loading";script.onload=function(){that.jsRunSequence.shift();if(that.jsRunSequence.length>0){that.runjs()}};document.body.appendChild(script)}};lsloader.tagLoad=function(path,name){this.jsRunSequence.push({name:name,code:"",path:path,status:"failed"});this.runjs()};lsloader.jsfallback=function(path,name){if(!!this.jsnamemap[name]){return}else{this.jsnamemap[name]=name}for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code="";this.jsRunSequence[k].status="failed";this.jsRunSequence[k].path=path}}this.runjs()};lsloader.cssfallback=function(path,name,cssonload){if(!!this.cssnamemap[name]){return}else{this.cssnamemap[name]=1}var link=document.createElement("link");link.type="text/css";link.href=path;link.rel="stylesheet";link.onload=link.onerror=cssonload;var root=document.getElementsByTagName("script")[0];root.parentNode.insertBefore(link,root)};lsloader.runInlineScript=function(scriptId,codeId){var code=document.getElementById(codeId).innerText;this.jsRunSequence.push({name:scriptId,code:code});this.runjs()};lsloader.loadCombo=function(jslist){var updateList="";var requestingModules={};for(var k in jslist){var LS=this.getLS(jslist[k].name);if(!!LS){var version=LS.split(versionString)[0];var code=LS.split(versionString)[1]}else{var version=""}if(version==jslist[k].path){this.jsRunSequence.push({name:jslist[k].name,code:code,path:jslist[k].path})}else{this.jsRunSequence.push({name:jslist[k].name,code:null,path:jslist[k].path,status:"comboloading"});requestingModules[jslist[k].name]=true;updateList+=(updateList==""?"":";")+jslist[k].path}}var that=this;if(!!updateList){var xhr=new XMLHttpRequest;xhr.open("get",combo+updateList,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){that.runCombo(xhr.response,requestingModules);return}}else{for(var i in that.jsRunSequence){if(requestingModules[that.jsRunSequence[i].name]){that.jsRunSequence[i].status="failed"}}that.runjs()}}};xhr.send(null)}this.runjs()};lsloader.runCombo=function(comboCode,requestingModules){comboCode=comboCode.split("/*combojs*/");comboCode.shift();for(var k in this.jsRunSequence){if(!!requestingModules[this.jsRunSequence[k].name]&&!!comboCode[0]){this.jsRunSequence[k].status="comboJS";this.jsRunSequence[k].code=comboCode[0];this.setLS(this.jsRunSequence[k].name,this.jsRunSequence[k].path+versionString+comboCode[0]);comboCode.shift()}}this.runjs()}})();</script>
+
+    <!-- Import CSS & jQuery -->
+    
+        <style id="css/material.min.css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("css/material.min.css","/css/material.min.css?fJTiM/K1J3dWIruo3pxtAw==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";})</script>
+        <style id="css/style.min.css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("css/style.min.css","/css/style.min.css?oCSEO3ST+aEypEwttTDI9g==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";})</script>
+        
+        
+            <style>
+    
+    .footer-sns-facebook {
+        background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0OCIgaGVpZ2h0PSI0OCIgY2xhc3M9Imljb24iIHZpZXdCb3g9IjAgMCAxMDI0IDEwMjQiPjxwYXRoIGQ9Ik0xMzguNiA3OGMtMjIuNCA1LjItNTUuOCA0MC4yLTYwLjYgNjMuNC0xLjQgNi40LTIgMTI5LjgtMS42IDM2Ny42LjYgMjk4LjYgMSAzNTguOCAzLjQgMzYzIDExIDIwLjIgMjEuNiAzMi40IDM3LjIgNDMgMTUgMTAuMiAxNy40IDExLjIgMzMgMTMgMTEuMiAxLjQgMTM2IDIgMzY1IDEuNiAzMTQtLjYgMzQ4LjYtMSAzNTUtMy44IDE1LjgtNy4yIDMzLjgtMjIgNDMuMi0zNS40IDUuMi03LjQgMTAuOC0xNi42IDEyLjYtMjAuNCAyLjgtNi40IDMuMi00MC44IDMuOC0zNTQgLjQtMjIzLS4yLTM1My40LTEuNC0zNjUtMi0xNy0yLjYtMTguNi0xMy0zNC04LjYtMTIuNi0xNC4yLTE4LjQtMjUuMi0yNS44LTcuOC01LjQtMTcuNC0xMS0yMS42LTEyLjQtNi0yLjItNzIuOC0yLjYtMzY1LjQtMi42LTE5Ni44LjItMzYxIC44LTM2NC40IDEuOHptNjU3LjYgODcuOGw0LjggMy44djU1LjJjMCA1NC42IDAgNTUuMi00LjYgNTkuNi00LjQgNC40LTYgNC42LTUwLjIgNS42bC00NS42IDEtNy4yIDUuNmMtMTAuNCA4LTE2LjggMTcuMi0xOS4yIDI3LjQtMSA1LTEuOCAyNC44LTEuOCA0NCAuMiAzOCAxLjYgNDQuNiAxMC44IDQ4IDIuOCAxLjIgMjguNCAyIDU2LjggMiA0Ny44IDAgNTIgLjIgNTYuMiAzLjhsNC44IDMuOHY1NS4yYzAgNTQuNiAwIDU1LjItNC42IDU5LjYtNC40IDQuNi01LjQgNC42LTU3IDUuMi0yOC44LjItNTQuNC44LTU2LjggMS40LTIuNC42LTUuNiAzLTYuOCA1LjQtMS44IDMuMi0yLjQgNDEuNC0yLjYgMTQzLjJsLS4yIDEzOC44LTUuNiA0LjgtNS42IDQuOEg2MDljLTUyLjQgMC01Mi44IDAtNTguMi00LjZsLTUuNC00LjYtLjItMTQwLjYtLjItMTQwLjYtNC44LTMuOGMtNC4yLTMuNC04LTMuOC0zNS42LTMuOC0zMi44IDAtNDEtMS44LTQzLjYtMTAtLjYtMi4yLTEuMi0yNS40LTEuMi01MS40IDAtNjAuOC0uMi01NyAzLjQtNjEuNiAyLjgtMy42IDYtNCAzNy44LTUgMzMtMSAzNS4yLTEuMiAzOS40LTUuNiA0LjYtNC40IDQuNi01LjIgNS44LTcxIDEuMi03My40LjItNjcuMiAxNi42LTk5LjQgOC0xNS44IDEyLjgtMjIgMjgtMzcgMTUuMi0xNS4yIDIxLjQtMTkuNiAzOC4yLTI4IDExLTUuNCAyNC0xMSAyOS0xMi4yIDYuMi0xLjggMjguNi0yLjYgNzEuMi0yLjYgNTguNi0uMiA2Mi42IDAgNjcgMy42eiIvPjwvc3ZnPg==);
+    }
+    
+    
+    .footer-sns-twitter {
+        background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0OCIgaGVpZ2h0PSI0OCIgY2xhc3M9Imljb24iIHZpZXdCb3g9IjAgMCAxMDI0IDEwMjQiPjxwYXRoIGQ9Ik0xMzguNiA3OGMtMjIuNCA1LjItNTUuOCA0MC4yLTYwLjYgNjMuNC0xLjQgNi40LTIgMTI5LjgtMS42IDM2Ny42LjYgMjk4LjYgMSAzNTguOCAzLjQgMzYzIDExIDIwLjIgMjEuNiAzMi40IDM3LjIgNDMgMTUgMTAuMiAxNy40IDExLjIgMzMgMTMgMTEuMiAxLjQgMTM2IDIgMzY1IDEuNiAzMTQtLjYgMzQ4LjYtMSAzNTUtMy44IDE1LjgtNy4yIDMzLjgtMjIgNDMuMi0zNS40IDUuMi03LjQgMTAuOC0xNi42IDEyLjYtMjAuNCAyLjgtNi40IDMuMi00MC44IDMuOC0zNTQgLjQtMjIzLS4yLTM1My40LTEuNC0zNjUtMi0xNy0yLjYtMTguNi0xMy0zNC04LjYtMTIuNi0xNC4yLTE4LjQtMjUuMi0yNS44LTcuOC01LjQtMTcuNC0xMS0yMS42LTEyLjQtNi0yLjItNzIuOC0yLjYtMzY1LjQtMi42LTE5Ni44LjItMzYxIC44LTM2NC40IDEuOHptNTMyLjggMjA1YzEwIDQgMjMgMTAuOCAyOC44IDE1LjIgMTIuNiA5LjIgMTYuNiAxMC42IDI5LjQgOS40IDYuNi0uNiAxMy0zLjIgMjAuNC04LjIgMTEuMi03LjYgMTkuNC05LjIgMjMuNi01IDMuNiAzLjYgMi44IDktMi44IDE4LjYtNy4yIDEyLjQtNiAxOC44IDQuMiAyNC4yIDQuNCAyLjIgOC4yIDUuNiA4LjYgNy40IDEgNC44LTEyLjYgMjQuMi0yMiAzMS44LTExLjggOS4yLTE3LjIgMjIuNi0xOS42IDQ3LjgtNC44IDUwLjQtNy44IDY2LjYtMTYuNCA4NS40LTMgNy03IDE3LjgtOC44IDI0LTEuOCA2LjQtNSAxNC42LTcuNCAxOC40LTIuMiAzLjgtNy40IDEzLTExLjQgMjAuNC0xNy4yIDMwLjgtNDMuNCA2MS40LTcxLjQgODMuOC0yNS42IDIwLjQtNDYgMzMuMi02NC4yIDQwLjItOC40IDMuMi0xOCA3LjYtMjEuNCA5LjYtNy40IDQuNi0yMi40IDguNi01Ny4yIDE1LTYyLjIgMTEuNi03OS4yIDExLjQtMTM1LjYtMS0zMi40LTctMzguNi05LTUyLTE2LjgtMjEuNC0xMi42LTI0LjItMTQuOC0yNC4yLTE5LjQgMC02LjIgMTAuMi05LjIgMzUtMTAuNCAyMi40LTEgMjguNi0yLjYgNTctMTQuMiAyMy44LTkuOCAyOS40LTEyLjggMzAuNC0xNi44IDIuMi04LjItMy0xMy4yLTI2LjgtMjUuNC0yNS44LTEzLjItMzIuMi0xOC40LTQzLjgtMzUuOC05LTEzLjYtMTAtMjEuMi0zLjYtMzMuNiA1LjQtMTAuOCAzLjYtMTUtMTEuOC0yNS40LTktNi0xNC0xMS42LTIwLjgtMjIuNi0yMy40LTM3LjgtMjUtNTAuOC03LjItNTkuOCA0LjgtMi40IDkuNC01LjQgMTAuMi02LjYgMi44LTQuMi0uNC0xNS42LTguNC0yOS0xMS42LTE5LjYtMTMuMi0yNS44LTEzLjItNTUuMiAwLTI4LjggMi42LTM3LjggMTItNDAuMiA5LTIuMiAxNC44IDEgMzUuNiAyMC4yIDI0LjggMjIuOCA0My42IDM2LjYgNjIuOCA0NS44IDggMy44IDE3LjggOS4yIDIyIDEyIDQuMiAyLjggMTQuOCA3IDIzLjQgOS4yIDguNiAyLjIgMjQuMiA2LjggMzQuOCAxMC4yIDEzLjQgNC40IDIzLjYgNi40IDMzIDYuNiAxMi44LjIgMTQuMi0uMiAxOC42LTUuNCA0LTQuOCA0LjgtNy44IDQuOC0xOS4yIDAtMTQuNCA1LjYtMzkuNiAxMS4yLTUwLjYgNC4yLTguNCAyOS4yLTM0LjIgMzkuOC00MS40IDcuOC01LjQgMzUuNi0xNiA1Mi0yMCAxNC4yLTMuNiAzMi42LTEuMiA1Mi40IDYuOHoiLz48L3N2Zz4=);
+    }
+    
+    
+    .footer-sns-gplus {
+        background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0OCIgaGVpZ2h0PSI0OCIgY2xhc3M9Imljb24iIHZpZXdCb3g9IjAgMCAxMDI0IDEwMjQiPjxwYXRoIGQ9Ik0xMzguNiA3OGMtMjIuNCA1LjItNTUuOCA0MC4yLTYwLjYgNjMuNC0xLjQgNi40LTIgMTI5LjgtMS42IDM2Ny42LjYgMjk4LjYgMSAzNTguOCAzLjQgMzYzIDExIDIwLjIgMjEuNiAzMi40IDM3LjIgNDMgMTUgMTAuMiAxNy40IDExLjIgMzMgMTMgMTEuMiAxLjQgMTM2IDIgMzY1IDEuNiAzMTQtLjYgMzQ4LjYtMSAzNTUtMy44IDE1LjgtNy4yIDMzLjgtMjIgNDMuMi0zNS40IDUuMi03LjQgMTAuOC0xNi42IDEyLjYtMjAuNCAyLjgtNi40IDMuMi00MC44IDMuOC0zNTQgLjQtMjIzLS4yLTM1My40LTEuNC0zNjUtMi0xNy0yLjYtMTguNi0xMy0zNC04LjYtMTIuNi0xNC4yLTE4LjQtMjUuMi0yNS44LTcuOC01LjQtMTcuNC0xMS0yMS42LTEyLjQtNi0yLjItNzIuOC0yLjYtMzY1LjQtMi42LTE5Ni44LjItMzYxIC44LTM2NC40IDEuOHpNNDMwIDI5NS40YzQwLjYgMTUuNCA1Ni42IDIzLjggNzIuNiAzOC40IDYuOCA2LjIgNy4yIDE1LjIgMSAyMy40LTYuMiA4LTMzLjYgMzMuOC0zOSAzNi42LTUuNiAyLjgtMTcuNiAyLjgtMjMuMi0uMi0yLjQtMS4yLTguMi01LjItMTMtOC44LTExLjItOC42LTI0LjYtMTEuMi01NS4yLTExLjItMjcuNCAwLTQwLjYgMi42LTUyLjIgMTAuNC00LjQgMi44LTEyLjIgNy42LTE3LjIgMTAuNi0yMyAxMy4yLTUxLjQgNTUtNTUuOCA4Mi40LTIuNiAxNS42LTIuNCAzNC44LjIgNTEgMi44IDE3LjQgMTkuOCA0OC44IDM1LjIgNjUuMiAxNiAxNi42IDQ1IDMzLjYgNjIuOCAzNi42IDI2LjggNC40IDY1LjggMS42IDc5LjQtNS44IDIwLjYtMTEuNCAzMS0xOSA0MS0zMC40IDE4LjgtMjEuNiAyMy40LTM0LjIgMTUuNi00My44LTMuOC00LjgtNC40LTQuOC01MS01LjgtNjAuOC0xLjItNTYuMiAyLjItNTYuMi00My4yIDAtMzIuNC4yLTMzLjIgNC44LTM3IDQuNC0zLjYgOS0zLjggOTItMy44IDc5IDAgODcuOC40IDk0LjIgMy42IDExLjIgNS42IDEzIDExLjQgMTIuOCA0My40IDAgMjUuNC0uOCAzMC44LTcuNiA1OC00IDE2LjYtOS44IDM0LTEyLjYgMzktMi44IDUtOC4yIDE0LjItMTEuNiAyMC42LTguNCAxNS40LTI3LjIgMzYuOC00MC44IDQ2LjYtNS44IDQuNC0xMy44IDEwLjItMTcuNiAxMy4yLTMuOCAzLTExIDctMTYuMiA4LjgtNS4yIDEuOC0xNi4yIDYuNC0yNC40IDEwLTIyLjQgOS42LTM0LjggMTEuNi03MyAxMS42LTM3LjYuMi00Ny0xLjQtNzEtMTItOC4yLTMuNi0xNy42LTcuMi0yMC44LTgtMTUuOC0zLjgtNjctNDUuMi03Ny44LTYyLjgtMi4yLTMuOC03LjYtMTEuNi0xMS44LTE3LjItNC4yLTUuNC05LTE0LTEwLjYtMTktMS44LTQuOC02LjItMTYtMTAtMjQuOC0zLjYtOC44LTcuOC0yMi4yLTkuMi0yOS42LTMuMi0xOC44LTEuNC03OS40IDIuOC05MS40IDEzLjgtNDAuNiAzNS42LTc4IDU4LjgtMTAwLjIgMTQtMTMuNiA0Ny4yLTM2LjQgNTgtMzkuOCA0LjItMS40IDEzLjQtNS4yIDIwLjYtOC40IDIyLTEwIDMyLjgtMTEuNiA3Ni0xMSAzMy44LjYgNDAuNCAxLjIgNTAgNC44em0zNDAuOCA4MC44YzggMy42IDkuNiAxMS4yIDkuMiAzOS4yLS42IDM0LjQtLjYgMzQgNSAzOS42IDQuOCA1IDUuNCA1IDM3LjYgNSA0My40IDAgNDQuNC44IDQzLjIgMzYuMi0uOCAxNy0xLjIgMTguNC02LjQgMjMtNS40IDQuNi02LjYgNC44LTM3LjYgNC44LTMxLjIgMC0zMiAuMi0zNi44IDUtNS42IDUuNC01LjYgNC40LTUgNDEuMi40IDI2LjQuMiAyNy40LTQuNiAzMy00LjggNS42LTYgNS44LTI0LjQgNi40LTIwLjguOC0yOS42LTEuNC0zMy40LTguNC0xLjQtMi42LTItMTUuNi0xLjgtMzUuNi40LTMxLjIuNC0zMS42LTQuNi0zNi42cy01LjYtNS0zNi01Yy0xOC44IDAtMzMtLjgtMzYtMi4yLTcuNi0zLjYtOS42LTExLjItOC44LTMzLjguOC0yOC4yLjQtMjggNDEtMjggNDUuNCAwIDQ1LjQgMCA0NC42LTQyLjYtLjYtMzMtLjYtMzMgNS0zOC40IDQuNC00LjYgNi4yLTUgMjQuOC01IDExIDAgMjIuMiAxIDI1IDIuMnoiLz48L3N2Zz4=);
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</style>
+
+        
+        <!-- Config CSS -->
+
+<!-- Other Styles -->
+<style>
+  body, html {
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+  }
+
+  a {
+    color: #00838F;
+  }
+
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: #0097A7 !important;
+  }
+
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: #0097A7 !important;
+  }
+
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: #0097A7 !important;
+  }
+
+  .toTop {
+    background: #757575 !important;
+  }
+
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: #757575;
+  }
+
+  #scheme-Paradox .MD-burger-layer {
+    background-color: #757575;
+  }
+
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: #757575;
+  }
+
+  .post-toc a:hover {
+    color: #00838F;
+    text-decoration: underline;
+  }
+
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+      body{
+        background-color: #F5F5F5;
+      }
+
+      /* blog_info bottom background */
+      #scheme-Paradox .material-layout .something-else .mdl-card__supporting-text{
+        background-color: #fff;
+      }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+    <style>
+      .fade {
+        transition: all 800ms linear;
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+        opacity: 1;
+      }
+
+      .fade.out{
+        opacity: 0;
+      }
+    </style>
+
+
+<!-- Import Font -->
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+        <script>lsloader.load("js/jquery.min.js","/js/jquery.min.js?qcusAULNeBksqffqUM2+Ig==")</script>
+    
+    
+    <script>function Queue(){this.dataStore=[];this.offer=b;this.poll=d;this.execNext=a;this.debug=false;this.startDebug=c;function b(e){if(this.debug){console.log("Offered a Queued Function.")}if(typeof e==="function"){this.dataStore.push(e)}else{console.log("You must offer a function.")}}function d(){if(this.debug){console.log("Polled a Queued Function.")}return this.dataStore.shift()}function a(){var e=this.poll();if(e!==undefined){if(this.debug){console.log("Run a Queued Function.")}e()}}function c(){this.debug=true}}var queue=new Queue();</script>
+
+    <!-- Analytics -->
+    
+
+    <!-- Custom Head -->
+    
+        
+            <style>
+  canvas {
+    width: 100%;
+    background: white;
+    position: fixed;
+    z-index: -1;
+    
+    }
+  </style>
+  <script>
+    //var autoplay = getURLParameter('autoplay');
+    var autoplay = true;
+    var lastError = "";
+    var playing = !!autoplay;
+    function receiveMessage(event){
+      var origin = event.origin || event.originalEvent.origin;
+      console.log("Received message from " + origin);
+      if(origin !== "http://dwitter.localhost:8000"
+        && origin !== "http://localhost:8000"
+        && origin !== "https://localhost:8000"
+        && origin !== "https://www.dwitter.net"
+        && origin !== "https://dwitter.net"){
+          return;
+        }
+      console.log("Message was: " + event.data);
+
+      switch (event.data) {
+        case "toggle":
+          playing ? pauseDemo() : playDemo();
+          break;
+        case "play":
+          playDemo();
+          break;
+        case "pause":
+          pauseDemo();
+          break;
+        case "showStats":
+          setStatsVisibility(true);
+          break;
+        case "hideStats":
+          setStatsVisibility(false);
+          break;
+      }
+
+      if(event.data.substring(0, 4) == "code"){
+        var code = event.data.substring(5,event.data.length);
+        newCode(code);
+      }
+    }
+
+    function displayError(e) {
+      if(lastError != e){
+        lastError = e;
+        parent.postMessage({
+          'type': 'error',
+          'error': ""+e,
+          'location': window.location.href
+        },"*");
+      }
+    }
+
+    function newCode(code) {
+        try {
+          eval("u = function(t){"+code+"\n};");
+        } catch (e) {
+          u = function(t){
+            throw e;
+          };
+          throw e;
+        }
+        displayError("");
+        reset();
+    }
+
+    function pauseDemo(){
+      if(!playing){
+        return;
+      }
+
+      pauseTime = +new Date();
+
+      playing = false;
+    }
+
+    function playDemo(){
+      if(playing){
+        return
+      }
+
+      playing = true;
+      requestAnimationFrame(loop);
+    }
+    var timeOffset = 0;
+
+    window.addEventListener("message", receiveMessage, false);
+
+    function getURLParameter(name) {
+      return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search)||[,""])[1].replace(/\+/g, '%20'))||null
+    }
+
+    function setStatsVisibility(visible) {
+      document.getElementById('stats').style.visibility = visible ? 'visible' : 'hidden';
+    }
+  </script>
+  
+  
+  <script type="text/javascript">
+    (function(f,e){"object"===typeof exports&&"undefined"!==typeof module?module.exports=e():"function"===typeof define&&define.amd?define(e):f.Stats=e()})(this,function(){var f=function(){function e(a){c.appendChild(a.dom);return a}function u(a){for(var d=0;d<c.children.length;d++)c.children[d].style.display=d===a?"block":"none";l=a}var l=0,c=document.createElement("div");c.style.cssText="position:fixed;top:0;right:0;opacity:0.9;z-index:10000";var k=(performance||Date).now(),g=k,a=0,r=e(new f.Panel("FPS","#0ff","#002")),h=e(new f.Panel("MS","#0f0","#020"));if(self.performance&&self.performance.memory)var t=e(new f.Panel("MB","#f08","#201"));u(0);return{REVISION:16,dom:c,addPanel:e,showPanel:u,begin:function(){k=(performance||Date).now()},end:function(){a++;var c=(performance||Date).now();h.update(c-k,200);if(c>g+1E3&&(r.update(1E3*a/(c-g),100),g=c,a=0,t)){var d=performance.memory;t.update(d.usedJSHeapSize/1048576,d.jsHeapSizeLimit/1048576)}return c},update:function(){k=this.end()},domElement:c,setMode:u}};f.Panel=function(e,f,l){var c=Infinity,k=0,g=Math.round,a=g(window.devicePixelRatio||1),r=80*a,h=48*a,t=3*a,v=2*a,d=3*a,m=15*a,n=74*a,p=30*a,q=document.createElement("canvas");q.width=r;q.height=h;q.style.cssText="width:80px;height:48px";var b=q.getContext("2d");b.font="bold "+9*a+"px Helvetica,Arial,sans-serif";b.textBaseline="top";b.fillStyle=l;b.fillRect(0,0,r,h);b.fillStyle=f;b.fillText(e,t,v);b.fillRect(d,m,n,p);b.fillStyle=l;b.globalAlpha=.9;b.fillRect(d,m,n,p);return{dom:q,update:function(h,w){c=Math.min(c,h);k=Math.max(k,h);b.fillStyle=l;b.globalAlpha=1;b.fillRect(0,0,r,m);b.fillStyle=f;b.fillText(g(h)+" "+e+" ("+g(c)+"-"+g(k)+")",t,v);b.drawImage(q,d+a,m,n-a,p,d,m,n-a,p);b.fillRect(d+n-a,m,a,p);b.fillStyle=l;b.globalAlpha=.9;b.fillRect(d+n-a,m,a,g((1-h/w)*p))}}};return f});
+  </script>
+
+        
+            <canvas id="c" width="2000" height="1080"></canvas>
+<script>
+  function createStats() {
+    var stats = new Stats();
+    stats.showPanel(0);
+    stats.dom.setAttribute('id', 'stats');
+    document.body.appendChild(stats.dom);
+    return stats;
+  }
+
+  var stats = createStats();
+  setStatsVisibility(false);
+
+  var c = document.querySelector("#c");
+  c.width = 1920;
+  c.height = 1080;
+  var S = Math.sin;
+  var C = Math.cos;
+  var T = Math.tan;
+  function R(r,g,b,a) {
+    a = a === undefined ? 1 : a;
+    return "rgba("+(r|0)+","+(g|0)+","+(b|0)+","+a+")";
+    };
+  var x = c.getContext("2d");
+  var time = 0;
+  var frame = 0;
+  function u(t) {
+     x.fillRect(0,0,i=w=c.width=2e3,w);
+     x.fillStyle="#FFFFFF";
+     x.fillRect(0,0,w,w);
+     x.fillStyle="#03A9F4";
+     for(;i--;)T=t*99,z=w*99/(i-T%1),a=i+T-T%1,x.fillRect(C(a*a)*z+1e3,C(a*w)*z+500,w/i,w/i)
+
+     /*x.fillStyle="#FFFFFF";
+      x.fillRect(0,0,2e3,2e3);
+      x.fillStyle="#03A9F4";
+      x.font="20px Comic Sans MS";
+      for(i=100;i--;){
+        Z=130-(t*10+i)%130;
+        s=280/Z;
+        var str_index=i%7;
+        var love_words;
+        switch(str_index) {
+          case 0:
+            love_words="I ♥ 皮皮夏";
+            break;
+          case 1:
+            love_words="Do you love me ?"
+            break;
+          case 2:
+            love_words="I love you";
+            break;
+          case 3:
+            love_words="You are so pretty !";
+            break;
+          case 4:
+            love_words="I ♥ you";
+            break;
+          case 5:
+            love_words="Love You Forever";
+            break;
+          case 6:
+            love_words="♥";
+            break;
+          default:
+            love_words="♥";
+        }
+        x.fillText(love_words,960+1/Z*(-99+i*6e72%199)*700,540+(-70+i*8e61%140)/Z*700);
+      }*/
+    }
+  function loop() {
+    stats = stats || createStats();
+
+    if (playing){
+      requestAnimationFrame(loop);
+    }
+    time = frame/60;
+    if(time * 60 | 0 == frame - 1){
+      time += 0.000001;
+    }
+    frame++;
+
+    try {
+      stats.begin();
+      u(time);
+      stats.end();
+      displayError("");
+    } catch (e) {
+      displayError(e);
+      throw e;
+    }
+  }
+  if(autoplay) {
+      loop();
+  }
+
+  function reset(){
+    c = document.querySelector("#c");
+    c.width = 1920;
+    c.height = 1080;
+    S = Math.sin;
+    C = Math.cos;
+    T = Math.tan;
+    R = function(r,g,b,a) {
+      a = a === undefined ? 1 : a;
+      return "rgba("+(r|0)+","+(g|0)+","+(b|0)+","+a+")";
+    };
+    x = c.getContext("2d");
+    time = 0;
+    frame = 0;
+  }
+  </script>
+
+        
+    
+<link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
+
+
+    
+        <body id="scheme-Paradox" class="lazy">
+            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
+
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
+
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
+
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span class="MD-burger-layer"></span>
+                        </button>
+                    
+
+                    <!-- Post TOC -->
+
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+    <!-- Left aligned menu below button -->
+    <button id="post-toc-trigger-btn" class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#图-概述"><span class="post-toc-number">1.</span> <span class="post-toc-text">图-概述</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#图结构的实现"><span class="post-toc-number">2.</span> <span class="post-toc-text">图结构的实现</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#邻接表"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">邻接表</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#邻接矩阵"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">邻接矩阵</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#遍历"><span class="post-toc-number">3.</span> <span class="post-toc-text">遍历</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#深度优先搜索（DFS）"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">深度优先搜索（DFS）</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#广度优先搜索（BFS）"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">广度优先搜索（BFS）</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#代码实现"><span class="post-toc-number">4.</span> <span class="post-toc-text">代码实现</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#基于邻接表"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">基于邻接表</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#基于邻接矩阵"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">基于邻接矩阵</span></a></li></ol></li></ol>
+        <!--
+        <li class="mdl-menu__item">
+            Some Action
+        </li>
+        -->
+    </ul>
+    
+
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
+
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').addClass('lazy');
+</script>
+
+        
+    
+            <p class="article-headline-p">
+                图
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.gif" width="44px" height="44px" alt="Author Avatar">
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>Zhu Yuexin</strong>
+        <span>Jul 11, 2019</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/bfs/">bfs</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/dfs/">dfs</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/图/">图</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/广度优先搜索/">广度优先搜索</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/数据结构/">数据结构</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/深度优先搜索/">深度优先搜索</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/邻接矩阵/">邻接矩阵</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/邻接表/">邻接表</a>
+    </li></ul>
+    
+
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=图&url=http://yoursite.com/2019/07/11/图/index.html&pic=&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                Share to Weibo
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=图&url=http://yoursite.com/2019/07/11/图/index.html&via=Zhu Yuexin" target="_blank">
+            <li class="mdl-menu__item">
+                Share to Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/07/11/图/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                Share to Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com/2019/07/11/图/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                Share to Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <h1 id="图-概述"><a href="#图-概述" class="headerlink" title="图-概述"></a>图-概述</h1><p><img src="http://upyun.ishavanti.top/img/Graph1.png" alt></p>
+<ul>
+<li>邻接：两个顶点通过一条边相连</li>
+<li>路径：依次遍历顶点序列之间的边所形成的轨迹</li>
+<li>环：路径包含相同的顶点两次或两次以上</li>
+<li>联通性：连通性是图中的一个重要概念。对于无向图而言，如果它的每个顶点都能通过某条路径到达其他顶点，那么我们称它为连通的。如果该条件在有向图中同样成立，则称该图是强连通的。</li>
+</ul>
+<h1 id="图结构的实现"><a href="#图结构的实现" class="headerlink" title="图结构的实现"></a>图结构的实现</h1><p>图结构没办法像树那样直接用链表实现，因为每个顶点的边的数量不确定。</p>
+<p>通常我们使用一个数组保存图中的顶点数据，然后再用其他的方法保存顶点间的关系，即边的信息。保存顶点关系的常用的方法有：邻接表和邻接矩阵。</p>
+<h2 id="邻接表"><a href="#邻接表" class="headerlink" title="邻接表"></a>邻接表</h2><p><img src="/Users/xiajili/IdeaProjects/JavaNotes/src/DataStructure/Graph/List/AdjacencyList.png" alt></p>
+<p>将图中每个顶点作为头节点，分别建立一个链表，头节点指向其邻接节点，邻接节点指向头节点的另一个邻接节点（顶点和其所有的邻接点连成一个链表）</p>
+<h2 id="邻接矩阵"><a href="#邻接矩阵" class="headerlink" title="邻接矩阵"></a>邻接矩阵</h2><p><img src="http://upyun.ishavanti.top/img/AdjacentMatrix.jpeg" alt></p>
+<h1 id="遍历"><a href="#遍历" class="headerlink" title="遍历"></a>遍历</h1><h2 id="深度优先搜索（DFS）"><a href="#深度优先搜索（DFS）" class="headerlink" title="深度优先搜索（DFS）"></a>深度优先搜索（DFS）</h2><p>深度优先搜索属于图算法的一种，是一个针对图和树的遍历算法，英文缩写为DFS即Depth First Search。深度优先搜索是图论中的经典算法，利用深度优先搜索算法可以产生目标图的相应拓扑排序表，利用拓扑排序表可以方便的解决很多相关的图论问题，如最大路径问题等等。一般用堆数据结构来辅助实现DFS算法。其过程简要来说是对每一个可能的分支路径深入到不能再深入为止，而且每个节点只能访问一次。</p>
+<p>基本步骤：</p>
+<ol>
+<li>对于下面的树而言，DFS方法首先从根节点1开始，其搜索节点顺序是1,2,3,4,5,6,7,8（假定左分枝和右分枝中优先选择左分枝）。</li>
+</ol>
+<p><img src="http://upyun.ishavanti.top/img/DFS1.png" alt></p>
+<ol>
+<li><p>从stack中访问栈顶的点</p>
+<p><img src="http://upyun.ishavanti.top/img/DFS2.png" alt></p>
+</li>
+<li><p>找出与此点邻接的且尚未遍历的点，进行标记，然后放入stack中，依次进行</p>
+<p><img src="http://upyun.ishavanti.top/img/DFS3.png" alt></p>
+</li>
+<li><p>如果此点没有尚未遍历的邻接点，则将此点从stack中弹出，再按照（3）依次进行</p>
+<p><img src="http://upyun.ishavanti.top/img/DFS4.png" alt></p>
+<p><img src="http://upyun.ishavanti.top/img/DFS5.png" alt></p>
+</li>
+<li><p>直到遍历完整个树，stack里的元素都将弹出，最后栈为空，DFS遍历完成</p>
+<p><img src="http://upyun.ishavanti.top/img/DFS6.png" alt></p>
+<p><img src="http://upyun.ishavanti.top/img/DFS7.png" alt></p>
+</li>
+</ol>
+<h2 id="广度优先搜索（BFS）"><a href="#广度优先搜索（BFS）" class="headerlink" title="广度优先搜索（BFS）"></a>广度优先搜索（BFS）</h2><p>广度优先搜索（也称宽度优先搜索，缩写BFS，以下采用广度来描述）是连通图的一种遍历算法这一算法也是很多重要的图的算法的原型。Dijkstra单源最短路径算法和Prim最小生成树算法都采用了和宽度优先搜索类似的思想。其别名又叫BFS，属于一种盲目搜寻法，目的是系统地展开并检查图中的所有节点，以找寻结果。换句话说，它并不考虑结果的可能位置，彻底地搜索整张图，直到找到结果为止。基本过程，BFS是从根节点开始，沿着树(图)的宽度遍历树(图)的节点。如果所有节点均被访问，则算法中止。一般用队列数据结构来辅助实现BFS算法。</p>
+<p>基本步骤：</p>
+<ol>
+<li><p>给出一连通图，如图，初始化全是白色（未访问）</p>
+<p><img src="http://upyun.ishavanti.top/img/BFS1.png" alt></p>
+</li>
+<li><p>搜索起点V1（灰色）</p>
+<p><img src="http://upyun.ishavanti.top/img/BFS2.png" alt></p>
+</li>
+<li><p>已搜索V1（黑色），即将搜索V2，V3，V4（标灰）</p>
+<p><img src="http://upyun.ishavanti.top/img/BFS3.png" alt></p>
+</li>
+<li><p>对V2，V3，V4重复以上操作</p>
+<p><img src="http://upyun.ishavanti.top/img/BFS4.png" alt></p>
+</li>
+<li><p>直到终点V7被染灰，终止</p>
+<p><img src="http://upyun.ishavanti.top/img/BFS5.png" alt></p>
+</li>
+<li><p>最短路径为V1，V4，V7</p>
+</li>
+</ol>
+<h1 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h1><h2 id="基于邻接表"><a href="#基于邻接表" class="headerlink" title="基于邻接表"></a>基于邻接表</h2><p><strong>Vertex.java</strong></p>
+<pre class=" language-lang-java"><code class="language-lang-java">package DataStructure.Graph.List;
+
+public class Vertex {
+    private String value;
+    // 邻接节点
+    private NeighborVertex neighbor;
+    // 遍历时记录是否被访问过
+    private boolean visited = false;
+
+    public Vertex(String value) {
+        this.value = value;
+    }
+
+    /**
+     * 深度优先搜索(遍历)
+     * @param flag 标识节点已被访问过
+     */
+    public void dfs(boolean flag) {
+        // 设置当前顶点为已访问
+        visited = flag;
+        // 打印当前顶点的值
+        System.out.println(value);
+        // 遍历邻接节点
+        NeighborVertex next = neighbor;
+        while (next != null) {
+            if (next.getVertex().visited != flag) {
+                // 如果这个邻接节点未被访问过，则从这个顶点继续深度优先遍历
+                next.getVertex().dfs(flag);
+            }
+            next = next.getNext();
+        }
+    }
+
+    public String getValue() {
+        return value;
+    }
+
+    public void setValue(String value) {
+        this.value = value;
+    }
+
+    public NeighborVertex getNeighbor() {
+        return neighbor;
+    }
+
+    public void setNeighbor(NeighborVertex neighbor) {
+        this.neighbor = neighbor;
+    }
+
+    public boolean getVisited() {
+        return visited;
+    }
+
+    public void setVisited(boolean visited) {
+        this.visited = visited;
+    }
+}
+</code></pre>
+<p><strong>NeighborVertex.java</strong></p>
+<pre class=" language-lang-java"><code class="language-lang-java">package DataStructure.Graph.List;
+
+public class NeighborVertex {
+    // 权重
+    private int weight;
+    // 这个邻接节点所代表的顶点
+    private Vertex vertex;
+    // 下一个邻接节点
+    private NeighborVertex next;
+
+    public NeighborVertex(int weight, Vertex vertex) {
+        this.weight = weight;
+        this.vertex = vertex;
+    }
+
+    public int getWeight() {
+        return weight;
+    }
+
+    public void setWeight(int weight) {
+        this.weight = weight;
+    }
+
+    public Vertex getVertex() {
+        return vertex;
+    }
+
+    public void setVertex(Vertex vertex) {
+        this.vertex = vertex;
+    }
+
+    public NeighborVertex getNext() {
+        return next;
+    }
+
+    public void setNext(NeighborVertex next) {
+        this.next = next;
+    }
+}
+</code></pre>
+<p><strong>Graph.java</strong></p>
+<pre class=" language-lang-java"><code class="language-lang-java">package DataStructure.Graph.List;
+
+import java.util.Queue;
+import java.util.concurrent.LinkedBlockingQueue;
+
+/**
+ * 图
+ * 有向带权图
+ * 基于邻接表实现
+ */
+public class Graph {
+    // 所有顶点
+    private Vertex[] vertices;
+    private int currentSize = 0;
+    // 节点被访问过的标识
+    private boolean flag = true;
+
+    public Graph(int size) {
+        this.vertices = new Vertex[size];
+    }
+
+    /**
+     * 添加顶点
+     * @param vertex
+     */
+    public void addVertex(Vertex vertex) {
+        if (currentSize >= vertices.length) {
+            throw new NullPointerException();
+        }
+        vertices[currentSize++] = vertex;
+    }
+
+    /**
+     * 添加边
+     * @param from 边的起始顶点
+     * @param to 边的结束顶点
+     * @param weight 边的权重
+     */
+    public void addEdge(Vertex from, Vertex to, int weight) {
+        if (from.getNeighbor() == null) {
+            from.setNeighbor(new NeighborVertex(weight, to));
+            return;
+        }
+        NeighborVertex neighbor = from.getNeighbor();
+        while (neighbor.getNext() != null) {
+            if (neighbor.getVertex() == to) {
+                // 两顶点间已经存在边了，更新权重
+                neighbor.setWeight(weight);
+                return;
+            }
+            neighbor = neighbor.getNext();
+        }
+        // 找到结尾邻接点
+        if (neighbor.getVertex() == to) {
+            neighbor.setWeight(weight);
+        } else {
+            // 添加新的邻接点
+            neighbor.setNext(new NeighborVertex(weight, to));
+        }
+    }
+
+    /**
+     * 深度优先搜索，遍历图
+     */
+    public void dfs() {
+        if (vertices[0] != null) {
+            vertices[0].dfs(flag);
+            // 遍历一次后，节点中的访问标识被修改为flag，
+            // 所以每次遍历完都对flag取反，以便下一次遍历
+            flag = !flag;
+        }
+    }
+
+    /**
+     * 广度优先搜索，遍历图
+     */
+    public void bfs() {
+        if (vertices[0] == null) {
+            return;
+        }
+        Queue<vertex> queue = new LinkedBlockingQueue<>();
+        vertices[0].setVisited(flag);
+        System.out.println(vertices[0].getValue());
+        queue.add(vertices[0]);
+        while (!queue.isEmpty()) {
+            Vertex vertex = queue.poll();
+            NeighborVertex next = vertex.getNeighbor();
+            while (next != null) {
+                if (next.getVertex().getVisited() != flag) {
+                    next.getVertex().setVisited(flag);
+                    System.out.println(next.getVertex().getValue());
+                    queue.add(next.getVertex());
+                }
+                next = next.getNext();
+            }
+        }
+        flag = !flag;
+    }
+
+    public Vertex[] getVertices() {
+        return vertices;
+    }
+}
+</vertex></code></pre>
+<p><strong>TestGraph.java</strong></p>
+<pre class=" language-lang-java"><code class="language-lang-java">package DataStructure.Graph.List;
+
+public class TestGraph {
+    public static void main(String[] args) {
+        String[] values = new String[] {"0", "1", "2", "3", "4", "5"};
+        Graph graph = new Graph(values.length);
+        for (String v : values) {
+            graph.addVertex(new Vertex(v));
+        }
+        Vertex[] vertices = graph.getVertices();
+        graph.addEdge(vertices[0], vertices[1], 3);
+        graph.addEdge(vertices[0], vertices[2], 5);
+        graph.addEdge(vertices[1], vertices[3], 2);
+        graph.addEdge(vertices[2], vertices[3], 1);
+        graph.addEdge(vertices[3], vertices[4], 4);
+        graph.addEdge(vertices[3], vertices[5], 8);
+        graph.addEdge(vertices[4], vertices[5], 6);
+
+        // 深度优先遍历
+        graph.dfs();
+        System.out.println();
+        // 广度优先遍历
+        graph.bfs();
+    }
+}
+</code></pre>
+<h2 id="基于邻接矩阵"><a href="#基于邻接矩阵" class="headerlink" title="基于邻接矩阵"></a>基于邻接矩阵</h2><p>实现了一个无向图，且连接边权重仅为{0, 1}，1表示两顶点邻接，0表示不邻接</p>
+<p><strong>Vertex.java</strong></p>
+<pre class=" language-lang-java"><code class="language-lang-java">package DataStructure.Graph;
+
+public class Vertex {
+    private String value;
+    // 遍历时标记是否被访问过
+    private boolean visited = false;
+
+    public Vertex(String value) {
+        this.value = value;
+    }
+
+    public String getValue() {
+        return value;
+    }
+
+    public void setValue(String value) {
+        this.value = value;
+    }
+
+    public boolean getVisited() {
+        return visited;
+    }
+
+    public void setVisited(boolean visited) {
+        this.visited = visited;
+    }
+}
+</code></pre>
+<p><strong>Graph.java</strong></p>
+<pre class=" language-lang-java"><code class="language-lang-java">package DataStructure.Graph;
+
+import java.util.Queue;
+import java.util.Stack;
+import java.util.concurrent.LinkedBlockingQueue;
+
+/**
+ * 图
+ * 无向图，连接边仅用0-1表示连接关系
+ * 邻接矩阵实现
+ */
+public class Graph {
+    // 顶点数组
+    private Vertex[] vertices;
+    // 当前顶点数量
+    private int currentSize;
+    // 邻接矩阵
+    private int[][] adjacentMatrix;
+    // 遍历时，与节点比较判断节点是否被访问过。
+    // 每遍历一次，这个值就取反（因为节点的访问标识一旦被访问就被设置为这个值）
+    private boolean flag = true;
+    // 栈，用于深度优先搜索
+    Stack<integer> stack = new Stack<>();
+    // 队列，用于广度优先搜索
+    Queue<integer> queue = new LinkedBlockingQueue<>();
+
+    public Graph(int size) {
+        this.vertices = new Vertex[size];
+        this.adjacentMatrix = new int[size][size];
+    }
+
+    /**
+     * 向图中加入一个顶点
+     */
+    public void addVertex(Vertex vertex) {
+        this.vertices[this.currentSize++] = vertex;
+    }
+
+    /**
+     * 添加边
+     * @param v1 顶点1的值
+     * @param v2 顶点2的值
+     */
+    public void addEdge(String v1, String v2) {
+        int index1 = getIndex(v1);
+        int index2 = getIndex(v2);
+        if (index1 != -1 && index2 != -1) {
+            adjacentMatrix[index1][index2] = 1;
+            adjacentMatrix[index2][index1] = 1;
+        }
+    }
+
+    private int getIndex(String v) {
+        for (int i=0; i<vertices.length; 1 i++) { if (vertices[i].getvalue().equals(v)) return i; } -1; ** * 深度优先搜索dfs 遍历图 public void dfs() 从第0个顶点开始遍历 int currentindex="0;" 将第0个顶点设置为已访问 vertices[currentindex].setvisited(flag); 将第0个顶点入栈 stack.push(currentindex); system.out.println(vertices[currentindex].getvalue()); start="0;" while (!stack.isempty()) for (int i="start" + 1; i<vertices.length; (adjacentmatrix[currentindex][i]="=" && vertices[i].getvisited() !="flag)" 访问下一个元素，标记为已访问，并入栈 vertices[i].setvisited(flag); stack.push(i); system.out.println(vertices[i].getvalue()); 弹出栈顶元素（前一个元素再次遍历时，只需要接着这个元素的位置开始） 修改当前位置为栈顶元素位置 遍历完成，flag取反，以便下一次遍历 flag="!flag;" 广度优先搜索bfs bfs() 从第0个节点开始 将第0个节点设置为已访问 将第0个节点入队列 queue.add(currentindex); (!queue.isempty()) 将下一个元素设置为已访问，并入队列 queue.add(i); int[][] getadjacentmatrix() adjacentmatrix; < code></vertices.length;></integer></integer></code></pre>
+<p><strong>TestGraph.java</strong></p>
+<pre class=" language-lang-java"><code class="language-lang-java">package DataStructure.Graph;
+
+import java.util.Arrays;
+
+public class TestGraph {
+    public static void main(String[] args) {
+        String[] values = new String[] {"A", "B", "C", "D", "E"};
+        Graph graph = new Graph(values.length);
+        for (String v : values) {
+            graph.addVertex(new Vertex(v));
+        }
+        // 增加边
+        graph.addEdge("A", "C");
+        graph.addEdge("B", "C");
+        graph.addEdge("B", "D");
+        graph.addEdge("C", "E");
+
+        for (int[] a : graph.getAdjacentMatrix()) {
+            System.out.println(Arrays.toString(a));
+        }
+
+        // 深度优先搜索遍历
+        graph.dfs();
+        // 广度优先搜索遍历
+        System.out.println();
+        graph.bfs();
+    }
+}
+</code></pre>
+
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2019/07/10/树/" id="post_nav-older" class="next-content">
+            Older
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
+
+
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(/img/sidebar_header.png);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="/img/avatar.gif" alt="Zhu Yuexin's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        yuexinzh@gmail.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="mailto: yuexinzh@gmail.com" target="_blank" title="Email Me">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        
+                        Email Me
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    
+        <li id="sidebar-first-li">
+            <a href="/">
+                
+                    <i class="material-icons sidebar-material-icons">home</i>
+                
+                Home
+            </a>
+        </li>
+        
+    
+
+    <!-- Archives  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">inbox</i>
+                
+                    Archives
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+            <li>
+                <a class="sidebar_archives-link" href="/archives/2019/07/">July 2019<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/05/">May 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/04/">April 2019<span class="sidebar_archives-count">9</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/12/">December 2018<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/11/">November 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/07/">July 2018<span class="sidebar_archives-count">23</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/06/">June 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/04/">April 2018<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/03/">March 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/01/">January 2018<span class="sidebar_archives-count">9</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/12/">December 2017<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/11/">November 2017<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/10/">October 2017<span class="sidebar_archives-count">8</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/08/">August 2017<span class="sidebar_archives-count">15</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/03/">March 2017<span class="sidebar_archives-count">6</span></a>
+            </li></ul>
+        </li>
+        
+    
+
+    <!-- Categories  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">chrome_reader_mode</i>
+                
+                Categories
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+                <li>
+                <a class="sidebar_archives-link" href="/categories/Android/">Android<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/Android碎片/">Android碎片<span class="sidebar_archives-count">16</span></a></li><li><a class="sidebar_archives-link" href="/categories/Android错误解决/">Android错误解决<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/C/">C#<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/Django/">Django<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Git/">Git<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Hexo/">Hexo<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/Java/">Java<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Java笔记/">Java笔记<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/Linux/">Linux<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/Maven/">Maven<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/Python/">Python<span class="sidebar_archives-count">9</span></a></li><li><a class="sidebar_archives-link" href="/categories/Shell/">Shell<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/SpringBoot/">SpringBoot<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/Ubuntu/">Ubuntu<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/categories/Vue/">Vue<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/WPF/">WPF<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/剑指Offer编程题/">剑指Offer编程题<span class="sidebar_archives-count">22</span></a></li><li><a class="sidebar_archives-link" href="/categories/小技能/">小技能<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/数据结构与算法/">数据结构与算法<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/机器学习/">机器学习<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/杂记/">杂记<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/游戏/">游戏<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/皮皮夏/">皮皮夏<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/皮皮夏的奇葩日记/">皮皮夏的奇葩日记<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/论文笔记/">论文笔记<span class="sidebar_archives-count">2</span></a>
+            </li></ul>
+        </li>
+        
+    
+
+    <!-- Pages  -->
+    
+        <li>
+            <a href="/tags" title="Tags">
+                
+                    <i class="material-icons sidebar-material-icons">sort</i>
+                
+                Tags
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/timeline" title="Timeline">
+                
+                    <i class="material-icons sidebar-material-icons">timeline</i>
+                
+                Timeline
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/links" title="Links">
+                
+                    <i class="material-icons sidebar-material-icons">link</i>
+                
+                Links
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/about" title="About">
+                
+                    <i class="material-icons sidebar-material-icons">person</i>
+                
+                About
+            </a>
+        </li>
+        
+            <li class="divider"></li>
+        
+    
+
+    <!-- Article Number  -->
+    
+        <li>
+            <a href="/archives">
+                Number of articles
+                <span class="sidebar-badge">93</span>
+            </a>
+        </li>
+        
+    
+</ul>
+
+
+        <!-- Sidebar Footer -->
+        <!--
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :)
+-->
+
+<!-- Sidebar Divider -->
+
+    <div class="sidebar-divider"></div>
+
+
+<!-- Theme Material -->
+
+    <a href="https://github.com/viosey/hexo-theme-material" class="sidebar-footer-text-a" target="_blank">
+        <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+            Theme - Material
+            <span class="sidebar-badge badge-circle">i</span>
+        </div>
+    </a>
+
+
+<!-- Help & Support -->
+<!--
+
+-->
+
+<!-- Feedback -->
+<!--
+
+-->
+
+<!-- About Theme -->
+<!--
+
+-->
+
+    </div>
+
+    <!-- Sidebar Image -->
+    
+
+</aside>
+
+                    
+
+                    
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+    
+        <!-- Paradox Footer Left Section -->
+        <div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+        <a href="https://twitter.com/twitter" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-twitter">
+                <span class="visuallyhidden">Twitter</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Facebook -->
+    
+        <a href="https://www.facebook.com/facebook" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-facebook">
+                <span class="visuallyhidden">Facebook</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Google + -->
+    
+        <a href="https://www.google.com/" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-gplus">
+                <span class="visuallyhidden">Google Plus</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Weibo -->
+    
+
+    <!-- Instagram -->
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+
+    <!-- LinkedIn -->
+    
+
+    <!-- Zhihu -->
+    
+
+    <!-- Bilibili -->
+    
+
+    <!-- Telegram -->
+    
+</div>
+
+
+        <!--Copyright-->
+        <div id="copyright">
+            Copyright&nbsp;©<script type="text/javascript">var fd = new Date();document.write("&nbsp;" + fd.getFullYear() + "&nbsp;");</script>Mr.Z's Blog
+        </div>
+
+        <!-- Paradox Footer Right Section -->
+
+        <!--
+        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+        It will not impact the appearance and can give developers a lot of support :)
+
+        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+        它不会影响美观并可以给开发者很大的支持。 :)
+        -->
+
+        <div class="mdl-mini-footer--right-section">
+            <div>
+                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
+                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+            </div>
+        </div>
+    
+</footer>
+
+
+                    <!-- Import File -->
+
+
+    <script>lsloader.load("js/lazyload.min.js","/js/lazyload.min.js?1BcfzuNXqV+ntF6gq+5X3Q==")</script>
+    <script>lsloader.load("js/js.min.js","/js/js.min.js?oAl/+lvaqTFV31JXTmbrNA==")</script>
+
+
+
+    <script>lsloader.load("js/nprogress.js","/js/nprogress.js?pl3Qhb9lvqR1FlyLUna1Yw==")</script>
+
+
+<script type="text/ls-javascript" id="NProgress-script">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    $('#nprogress .bar').css({
+        'background': '#29d'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#29d',
+        'border-left-color': '#29d'
+    });
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- UC Browser Compatible -->
+<script>
+	var agent = navigator.userAgent.toLowerCase();
+	if(agent.indexOf('ucbrowser')>0) {
+		document.write('<link rel="stylesheet" href="/css/uc.css">');
+	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+	}
+</script>
+
+<!-- Window Load-->
+<script type="text/ls-javascript" id="window-load">
+    $(window).on('load', function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+</script>
+
+<!-- MathJax Load-->
+
+<script type="text/ls-javascript" id="lazy-load">
+    // Offer LazyLoad
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    // Start Queue
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script>
+
+<!-- Bing Background -->
+
+
+<script>
+    (function(){
+        var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
+
+        for (var i = 0; i < scriptList.length; ++i) {
+            var item = scriptList[i];
+            lsloader.runInlineScript(item.id,item.id);
+        }
+    })()
+console.log('\n %c © Material Theme | Version: 1.4.0 | https://github.com/viosey/hexo-theme-material %c \n', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;');
+</script>
+
+                </main>
+            </div>
+        </body>
+    
+</html>
