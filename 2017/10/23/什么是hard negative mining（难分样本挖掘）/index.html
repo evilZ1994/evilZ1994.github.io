@@ -514,7 +514,7 @@
 
         
     
-</head>
+<link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
 
 
     
@@ -714,7 +714,7 @@
 <p>A good way to start is to generate a bunch of random bounding boxes, and for each that doesn’t overlap with any of your positives, keep that new box as a negative.</p>
 <p>Ok, so you have positives and negatives, so you train a classifier, and to test it out, you run it on your training images again with a sliding window. But it turns out that your classifier isn’t very good, because it throws a bunch of false positives (people detected where there aren’t actually people).</p>
 <p>A hard negative is when you take that falsely detected patch, and explicitly create a negative example out of that patch, and add that negative to your training set. When you retrain your classifier, it should perform better with this extra knowledge, and not make as many false positives.</p>
-<p><a href="https://www.reddit.com/r/computervision/comments/2ggc5l/what_is_hard_negative_mining_and_how_is_it/" target="_blank" rel="external">https://www.reddit.com/r/computervision/comments/2ggc5l/what_is_hard_negative_mining_and_how_is_it/</a></p>
+<p><a href="https://www.reddit.com/r/computervision/comments/2ggc5l/what_is_hard_negative_mining_and_how_is_it/" target="_blank" rel="noopener">https://www.reddit.com/r/computervision/comments/2ggc5l/what_is_hard_negative_mining_and_how_is_it/</a></p>
 <h1 id="简单总结"><a href="#简单总结" class="headerlink" title="简单总结"></a>简单总结</h1><p>给定一堆包含一个或多个人的图像，给图像中每个人一个边框。</p>
 <p>通过查看边框来创建正例，但是负例呢？可以通过生成一堆随机边框，将其中不与正例边框重合的边框保留为负例，就得到了负例。</p>
 <p>有了正例和负例，就可以训练分类器，再一次利用<strong>滑动窗口</strong>在训练集上运行分类器去测试分类器。这个时候的分类器并不很好，因为它会抛出一堆假正例（没有与人重叠，但是被标记为正例）。</p>

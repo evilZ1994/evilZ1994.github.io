@@ -514,7 +514,7 @@
 
         
     
-</head>
+<link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
 
 
     
@@ -710,7 +710,7 @@
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
         <blockquote>
-<p>慕课网课程：<a href="https://www.imooc.com/learn/790" target="_blank" rel="external">django入门与实践</a>学习笔记</p>
+<p>慕课网课程：<a href="https://www.imooc.com/learn/790" target="_blank" rel="noopener">django入门与实践</a>学习笔记</p>
 </blockquote>
 <h1 id="安装Django"><a href="#安装Django" class="headerlink" title="安装Django"></a>安装Django</h1><pre class=" language-lang-shell"><code class="language-lang-shell">pip install Django
 </code></pre>
@@ -778,7 +778,7 @@ urlpatterns = [
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="UTF-8">
     <title>Title</title>
-</head>
+<link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
 <body>
     <h1>{{ hello }}</h1>
 </body>
@@ -802,7 +802,7 @@ class Article(models.Model):
     title = models.CharField(max_length=32, default='Title')
     content = models.TextField(null=True)
 </code></pre>
-<p>这里创建了一个<code>Article</code>类，包含两个字段<code>title</code>和<code>content</code>，<code>CharField</code>和<code>TextField</code>表示对应的数据类型，<code>default</code>可以传入一个默认值，<code>null=True</code>表示可以为空。<a href="https://docs.djangoproject.com/en/2.0/ref/models/fields/" target="_blank" rel="external">官方文档</a></p>
+<p>这里创建了一个<code>Article</code>类，包含两个字段<code>title</code>和<code>content</code>，<code>CharField</code>和<code>TextField</code>表示对应的数据类型，<code>default</code>可以传入一个默认值，<code>null=True</code>表示可以为空。<a href="https://docs.djangoproject.com/en/2.0/ref/models/fields/" target="_blank" rel="noopener">官方文档</a></p>
 <h2 id="生成数据表"><a href="#生成数据表" class="headerlink" title="生成数据表"></a>生成数据表</h2><p>生成数据迁移：</p>
 <pre class=" language-lang-shell"><code class="language-lang-shell">python manage.py makemigrations appName(可选)
 </code></pre>

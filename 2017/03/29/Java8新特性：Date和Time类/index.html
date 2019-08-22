@@ -514,7 +514,7 @@
 
         
     
-</head>
+<link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
 
 
     
@@ -709,7 +709,7 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <p>这篇文章主要是java8中新的Date和Time API的实战。新的Date和Time类是java开发者社区千呼万唤始出来的。Java8 之前存在的Date类一直都受人诟病，很多人都会选择使用第三方的date库<a href="http://www.joda.org/joda-time/" target="_blank" rel="external">joda-time</a>。Java8中的date和time api是jodatime的作者参与开发的，实现了JSR310的全部内容。这些新的api都在包java.time下。</p>
+        <p>这篇文章主要是java8中新的Date和Time API的实战。新的Date和Time类是java开发者社区千呼万唤始出来的。Java8 之前存在的Date类一直都受人诟病，很多人都会选择使用第三方的date库<a href="http://www.joda.org/joda-time/" target="_blank" rel="noopener">joda-time</a>。Java8中的date和time api是jodatime的作者参与开发的，实现了JSR310的全部内容。这些新的api都在包java.time下。</p>
 <p>既然第三方的joda-time,date4j都已经足够强大了，为什么java8还要重新实现他呢，一部分的原因是这些第三方的库是存在兼容问题的，比如标准的JSF日期转化器与joda-time api，就不兼容，每次使用都需要编写自己的转换器，所以标准化api是必须的，就有了JSR310，java8中就实现了他全部的规定内容。</p>
 <h2 id="新Date类和Time类背后的设计原则："><a href="#新Date类和Time类背后的设计原则：" class="headerlink" title="新Date类和Time类背后的设计原则："></a>新Date类和Time类背后的设计原则：</h2><p><strong>不可变类</strong></p>
 <p>java8之前，Date类都是可变类。当我们在多线程环境下使用它，编程人员应该确认Date对象的线程安全。Java8的Date和Time API提供了线程安全的不可变类。编程人员不用考虑并发的问题。</p>

@@ -514,7 +514,7 @@
 
         
     
-</head>
+<link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
 
 
     
@@ -710,7 +710,7 @@
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
         <blockquote>
-<p>题目：<a href="https://www.nowcoder.com/practice/d77d11405cc7470d82554cb392585106?tpId=13&amp;tqId=11174&amp;rp=1&amp;ru=/ta/coding-interviews&amp;qru=/ta/coding-interviews/question-ranking" target="_blank" rel="external">栈的压入、弹出序列</a></p>
+<p>题目：<a href="https://www.nowcoder.com/practice/d77d11405cc7470d82554cb392585106?tpId=13&amp;tqId=11174&amp;rp=1&amp;ru=/ta/coding-interviews&amp;qru=/ta/coding-interviews/question-ranking" target="_blank" rel="noopener">栈的压入、弹出序列</a></p>
 <p>题目描述：输入两个整数序列，第一个序列表示栈的压入顺序，请判断第二个序列是否可能为该栈的弹出顺序。假设压入栈的所有数字均不相等。例如序列1,2,3,4,5是某栈的压入顺序，序列4,5,3,2,1是该压栈序列对应的一个弹出序列，但4,3,5,1,2就不可能是该压栈序列的弹出序列。（注意：这两个序列的长度是相等的）</p>
 </blockquote>
 <h1 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h1><p><code>pushV</code>、<code>popV</code>分别是压入顺序、弹出顺序，将<code>pushV</code>中的元素按从前往后的顺序与<code>popV</code>中的元素按从后往前的顺序比较，如果两个元素相同，则将<code>popV</code>中这个元素<code>pop</code>掉，如果不相同，则<code>popV</code>不变，将<code>pushV</code>中这个元素<code>push</code>到另一个辅助列表中，然后剩下的继续与<code>popV</code>中元素比较，相当于将<code>pushV</code>中与<code>popV</code>对应不上的元素逆序存储到另一个列表中。当<code>pushV</code>中的元素比较完，如果辅助列表是空的，则说明<code>pushV</code>中所有元素都对应上了，直接返回<code>True</code>，否则将辅助列表与<code>popV</code>剩下的元素比较，一旦出现不相等的元素就返回<code>False</code>。</p>

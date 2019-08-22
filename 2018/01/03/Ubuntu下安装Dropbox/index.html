@@ -514,7 +514,7 @@
 
         
     
-</head>
+<link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
 
 
     
@@ -709,8 +709,8 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <h1 id="最早的尝试"><a href="#最早的尝试" class="headerlink" title="最早的尝试"></a>最早的尝试</h1><p>在<a href="https://www.dropbox.com/install" target="_blank" rel="external">Dropbox官网</a>下载对应的deb包，用dpkg命令安装。安装完后发现启动Dropbox后，提示继续下载，但是由于“网络”原因，并不能完成下载。尝试shadowsocksr，结果只能对浏览器有效；继续尝试实现全局代理，以失败告终。总之折腾了很久，最后终于找到解决办法。</p>
-<h1 id="新的尝试"><a href="#新的尝试" class="headerlink" title="新的尝试"></a>新的尝试</h1><p>参考了<a href="http://blog.csdn.net/Jarlinn/article/details/38867455" target="_blank" rel="external">在Ubuntu14.04中，安装Dropbox后怎么在没有连接vpn的情况下启动Dropbox</a>，下载了Dropbox的守护进程程序，启动后发现Dropbox能够运行起来，并且能看到图形界面，设置代理后就能够正常使用。</p>
+        <h1 id="最早的尝试"><a href="#最早的尝试" class="headerlink" title="最早的尝试"></a>最早的尝试</h1><p>在<a href="https://www.dropbox.com/install" target="_blank" rel="noopener">Dropbox官网</a>下载对应的deb包，用dpkg命令安装。安装完后发现启动Dropbox后，提示继续下载，但是由于“网络”原因，并不能完成下载。尝试shadowsocksr，结果只能对浏览器有效；继续尝试实现全局代理，以失败告终。总之折腾了很久，最后终于找到解决办法。</p>
+<h1 id="新的尝试"><a href="#新的尝试" class="headerlink" title="新的尝试"></a>新的尝试</h1><p>参考了<a href="http://blog.csdn.net/Jarlinn/article/details/38867455" target="_blank" rel="noopener">在Ubuntu14.04中，安装Dropbox后怎么在没有连接vpn的情况下启动Dropbox</a>，下载了Dropbox的守护进程程序，启动后发现Dropbox能够运行起来，并且能看到图形界面，设置代理后就能够正常使用。</p>
 <p>原以为Dropbox的界面启动需要这个守护程序，其实这个守护程序可以独立作为Dropbox程序运行，并且从结果来看，是有图形界面的。</p>
 <p>因为Dropbox官网的安装教程里把守护程序的安装称为”<strong>通过命令行安装无外设模式的 Dropbox</strong>“，并提供了一个python脚本来控制，我以为这是无用户界面的，其实在桌面系统中，是有图形界面的，在服务器上运行自然是没有的。</p>
 <h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><h2 id="通过命令行安装无外设模式的-Dropbox"><a href="#通过命令行安装无外设模式的-Dropbox" class="headerlink" title="通过命令行安装无外设模式的 Dropbox"></a>通过命令行安装无外设模式的 Dropbox</h2><p>32-bit:</p>
@@ -722,8 +722,8 @@
 <p>接着，从新建的 <code>.dropbox-dist</code> 文件夹运行 Dropbox 守护程序。</p>
 <pre class=" language-lang-shell"><code class="language-lang-shell">~/.dropbox-dist/dropboxd
 </code></pre>
-<p>如果是首次在服务器上运行 Dropbox，系统会要求您将链接复制并粘贴到运行的浏览器中，以便创建一个新的帐户或将服务器附加到现有帐户上。操作完成后，系统会在您的主目录中创建 Dropbox 文件夹。下载这个 <a href="https://www.dropbox.com/download?dl=packages/dropbox.py" target="_blank" rel="external">Python 脚本</a>，通过命令行控制 Dropbox。为了方便访问，请在 PATH 中的任何地方放入此脚本的符号链接。</p>
-<p>如果不能科学上网，可在这里下载<a href="http://upyun.nidhogg.cn/files/dropbox.py" target="_blank" rel="external">Python脚本</a>.</p>
+<p>如果是首次在服务器上运行 Dropbox，系统会要求您将链接复制并粘贴到运行的浏览器中，以便创建一个新的帐户或将服务器附加到现有帐户上。操作完成后，系统会在您的主目录中创建 Dropbox 文件夹。下载这个 <a href="https://www.dropbox.com/download?dl=packages/dropbox.py" target="_blank" rel="noopener">Python 脚本</a>，通过命令行控制 Dropbox。为了方便访问，请在 PATH 中的任何地方放入此脚本的符号链接。</p>
+<p>如果不能科学上网，可在这里下载<a href="http://upyun.nidhogg.cn/files/dropbox.py" target="_blank" rel="noopener">Python脚本</a>.</p>
 
     
 

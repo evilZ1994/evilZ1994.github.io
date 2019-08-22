@@ -514,7 +514,7 @@
 
         
     
-</head>
+<link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
 
 
     
@@ -710,7 +710,7 @@
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
         <blockquote>
-<p>题目：<a href="https://www.nowcoder.com/practice/8a19cbe657394eeaac2f6ea9b0f6fcf6?tpId=13&amp;tqId=11157&amp;tPage=1&amp;rp=1&amp;ru=/ta/coding-interviews&amp;qru=/ta/coding-interviews/question-ranking" target="_blank" rel="external">重建二叉树</a></p>
+<p>题目：<a href="https://www.nowcoder.com/practice/8a19cbe657394eeaac2f6ea9b0f6fcf6?tpId=13&amp;tqId=11157&amp;tPage=1&amp;rp=1&amp;ru=/ta/coding-interviews&amp;qru=/ta/coding-interviews/question-ranking" target="_blank" rel="noopener">重建二叉树</a></p>
 <p>题目描述：输入某二叉树的前序遍历和中序遍历的结果，请重建出该二叉树。假设输入的前序遍历和中序遍历的结果中都不含重复的数字。例如输入前序遍历序列{1,2,4,7,3,5,6,8}和中序遍历序列{4,7,2,1,5,3,8,6}，则重建二叉树并返回。</p>
 </blockquote>
 <h1 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h1><p>以先序<code>{1,2,4,7,3,5,6,8}</code>和中序<code>{4,7,2,1,5,3,8,6}</code>为例：先序遍历的顺序是根结点-&gt;左子树-&gt;右子树，那么对于每一个先序序列，序列的第一个数必然是这个树的根节点，此时根节点为<code>1</code>；中序遍历的顺序是左子树-&gt;根节点-&gt;右子树，那么对于每一个中序序列，其序列可被根节点划分为左右两部分，比如此时我们已经由先序序列得知<code>1</code>是根结点，在中序序列中，<code>{4,7,2}</code>和<code>{5,3,8,6}</code>是被根节点<code>1</code>划分的两个部分，且分别对应于整棵树的左子树和右子树。将左子树和右子树分别看作两棵完整的树，使用递归继续划分就可重建出整棵二叉树。</p>

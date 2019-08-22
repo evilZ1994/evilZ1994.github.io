@@ -514,7 +514,7 @@
 
         
     
-</head>
+<link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
 
 
     
@@ -710,7 +710,7 @@
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
         <blockquote>
-<p>题目：<a href="https://www.nowcoder.com/practice/75e878df47f24fdc9dc3e400ec6058ca?tpId=13&amp;tqId=11168&amp;rp=1&amp;ru=/ta/coding-interviews&amp;qru=/ta/coding-interviews/question-ranking" target="_blank" rel="external">反转链表</a></p>
+<p>题目：<a href="https://www.nowcoder.com/practice/75e878df47f24fdc9dc3e400ec6058ca?tpId=13&amp;tqId=11168&amp;rp=1&amp;ru=/ta/coding-interviews&amp;qru=/ta/coding-interviews/question-ranking" target="_blank" rel="noopener">反转链表</a></p>
 <p>题目描述：输入一个链表，反转链表后，输出新链表的表头。</p>
 </blockquote>
 <h1 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h1><p>遍历链表，开始结点为<code>head</code>，定义一个<code>point</code>变量指向当前要处理的结点，定义一个<code>temp</code>变量保存当前结点，然后当前结点<code>point</code>向前移动<code>point = point.next</code>，<code>temp.next = head</code>结点指向<code>head</code>成为头部，<code>head = temp</code>移动到头部。（结合代码）</p>

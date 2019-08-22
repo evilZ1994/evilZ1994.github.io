@@ -514,7 +514,7 @@
 
         
     
-</head>
+<link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
 
 
     
@@ -711,8 +711,8 @@
     
         <blockquote>
 <p>2017.6.26发表在Computer Vision and Pattern Recognition。</p>
-<p>作者：<a href="https://arxiv.org/find/cs/1/au:+Shao_R/0/1/0/all/0/1" target="_blank" rel="external">Ruifeng Shao</a>、<a href="https://arxiv.org/find/cs/1/au:+Geng_X/0/1/0/all/0/1" target="_blank" rel="external">Xin Geng</a>、<a href="https://arxiv.org/find/cs/1/au:+Xu_N/0/1/0/all/0/1" target="_blank" rel="external">Ning Xu</a></p>
-<p><a href="http://upyun.nidhogg.cn/paper/Multi-Label%20Learning%20with%20Label%20Enhancement.pdf" target="_blank" rel="external">Multi-Label Learning with Label Enhancement</a></p>
+<p>作者：<a href="https://arxiv.org/find/cs/1/au:+Shao_R/0/1/0/all/0/1" target="_blank" rel="noopener">Ruifeng Shao</a>、<a href="https://arxiv.org/find/cs/1/au:+Geng_X/0/1/0/all/0/1" target="_blank" rel="noopener">Xin Geng</a>、<a href="https://arxiv.org/find/cs/1/au:+Xu_N/0/1/0/all/0/1" target="_blank" rel="noopener">Ning Xu</a></p>
+<p><a href="http://upyun.nidhogg.cn/paper/Multi-Label%20Learning%20with%20Label%20Enhancement.pdf" target="_blank" rel="noopener">Multi-Label Learning with Label Enhancement</a></p>
 </blockquote>
 <h1 id="主要内容"><a href="#主要内容" class="headerlink" title="主要内容"></a>主要内容</h1><p>大多数多标记算法用明确的种类处理每个标记，对于一个示例，分为相关和无关标记，这样的标记称为逻辑标记(<em>logical label</em>)。相反，这篇论文假设在每个多标记示例背后有一个数字标记(<em>numerical label</em>)向量，这种数字标记可以用来判断相应的标记是相关的或是无关的，并且可以反映出隐藏标记的重要性。这种方法将多标记学习问题转换为关于数字标记的回归问题。</p>
 <p>探索数字标记的一个方法是通过从训练示例中挖掘隐藏标记的重要性，将标记空间扩展为欧几里得空间。</p>
@@ -723,7 +723,7 @@
 <li>数字标记应该遵循<strong>平滑性假设</strong>(<em>smoothness assumption</em>)，也就是说<em>彼此接近的点更像是共享一个标记</em>。从逻辑标记空间到欧几里得空间的延伸，可以很容易的发现局部拓扑结构可以从特征空间转移到数字标记空间。因此特征空间和标记空间应该共享相似的局部拓扑结构。</li>
 <li>数字标记应该足够平滑。</li>
 </ol>
-<h1 id="MLL-LE框架"><a href="#MLL-LE框架" class="headerlink" title="MLL-LE框架"></a>MLL-LE框架</h1><p>基于上述三个数字标记假设建立，目标是找出一个特征空间到数字标记空间的映射。详细内容见论文第四部分<a href="http://upyun.nidhogg.cn/paper/Multi-Label%20Learning%20with%20Label%20Enhancement.pdf" target="_blank" rel="external">Multi-Label Learning with Label Enhancement</a></p>
+<h1 id="MLL-LE框架"><a href="#MLL-LE框架" class="headerlink" title="MLL-LE框架"></a>MLL-LE框架</h1><p>基于上述三个数字标记假设建立，目标是找出一个特征空间到数字标记空间的映射。详细内容见论文第四部分<a href="http://upyun.nidhogg.cn/paper/Multi-Label%20Learning%20with%20Label%20Enhancement.pdf" target="_blank" rel="noopener">Multi-Label Learning with Label Enhancement</a></p>
 <h1 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h1><ul>
 <li>因为空间延伸，数字标记相比逻辑标记能带来更多描述示例的语义信息，并且训练示例的隐藏标记重要性可以从数字标记上反映出来。</li>
 <li>因为拓扑结构从特征空间的转移，它有助于探索标记之间的相关性。</li>
@@ -764,7 +764,7 @@
 
     <!-- Next Nav -->
     
-        <a href="/2017/10/27/Python入坑笔记（三）：条件判断和循环/" id="post_nav-older" class="next-content">
+        <a href="/2017/10/27/Python入坑笔记（二）：list和tuple/" id="post_nav-older" class="next-content">
             Older
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">

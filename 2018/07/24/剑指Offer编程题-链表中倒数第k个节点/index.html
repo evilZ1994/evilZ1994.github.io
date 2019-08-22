@@ -514,7 +514,7 @@
 
         
     
-</head>
+<link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
 
 
     
@@ -710,7 +710,7 @@
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
         <blockquote>
-<p>题目：<a href="https://www.nowcoder.com/practice/529d3ae5a407492994ad2a246518148a?tpId=13&amp;tqId=11167&amp;rp=1&amp;ru=/ta/coding-interviews&amp;qru=/ta/coding-interviews/question-ranking" target="_blank" rel="external">链表中倒数第k个节点</a></p>
+<p>题目：<a href="https://www.nowcoder.com/practice/529d3ae5a407492994ad2a246518148a?tpId=13&amp;tqId=11167&amp;rp=1&amp;ru=/ta/coding-interviews&amp;qru=/ta/coding-interviews/question-ranking" target="_blank" rel="noopener">链表中倒数第k个节点</a></p>
 <p>题目描述：输入一个链表，输出该链表中倒数第k个结点。</p>
 </blockquote>
 <h1 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h1><p>输入链表<code>head</code>和结点数<code>k</code>，定义一个结点<code>a = head</code>，<code>head</code>往后遍历<code>k</code>次之后，<code>a</code>也同时和<code>head</code>一起往后遍历，当<code>head</code>遍历完整个链表后，<code>a</code>指向的结点正好是倒数第k个结点。需要注意当<code>k</code>大于链表的结点数时要返回空值，我们通过<code>k</code>的自减控制<code>a</code>开始遍历的时间，正好在最后也可以通过<code>k</code>是否大于0判断<code>k</code>是否大于链表结点数。</p>
