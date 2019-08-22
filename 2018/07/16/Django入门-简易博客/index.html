@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html style="display: none;" lang="en">
-    <head><meta name="generator" content="Hexo 3.8.0">
+    <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
     <!--
         © Material Theme
@@ -36,7 +36,7 @@
     <meta name="theme-color" content="#0097A7">
     <meta name="author" content="Zhu Yuexin">
     <meta name="description" itemprop="description" content="呀！发现一只会写代码的猪！">
-    <meta name="keywords" content="null,django,python">
+    <meta name="keywords" content=",django,python">
 
     <!-- Site Verification -->
     
@@ -555,13 +555,14 @@
     -->
 
     <!-- Left aligned menu below button -->
-    <button id="post-toc-trigger-btn" class="mdl-button mdl-js-button mdl-button--icon">
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
         <i class="material-icons">format_list_numbered</i>
     </button>
 
     
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#安装Django"><span class="post-toc-number">1.</span> <span class="post-toc-text">安装Django</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#新建项目"><span class="post-toc-number">2.</span> <span class="post-toc-text">新建项目</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#新建app"><span class="post-toc-number">3.</span> <span class="post-toc-text">新建app</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#配置Url"><span class="post-toc-number">4.</span> <span class="post-toc-text">配置Url</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#方式一-直接添加"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">方式一 直接添加</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#方式二-通过include添加"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">方式二　通过include添加</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#创建Templates"><span class="post-toc-number">5.</span> <span class="post-toc-text">创建Templates</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#undefined"><span class="post-toc-number">6.</span> <span class="post-toc-text">{{ hello }}</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#创建Models"><span class="post-toc-number">7.</span> <span class="post-toc-text">创建Models</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#新建"><span class="post-toc-number">7.1.</span> <span class="post-toc-text">新建</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#生成数据表"><span class="post-toc-number">7.2.</span> <span class="post-toc-text">生成数据表</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Ubuntu下sqlite3的安装和使用"><span class="post-toc-number">7.3.</span> <span class="post-toc-text">Ubuntu下sqlite3的安装和使用</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#页面呈现数据"><span class="post-toc-number">7.4.</span> <span class="post-toc-text">页面呈现数据</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#undefined"><span class="post-toc-number">8.</span> <span class="post-toc-text">{{ article.title }}</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#undefined"><span class="post-toc-number">8.0.1.</span> <span class="post-toc-text">{{ article.content }}</span></a></li></ol></li></ol><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Admin"><span class="post-toc-number">9.</span> <span class="post-toc-text">Admin</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#配置Admin"><span class="post-toc-number">9.1.</span> <span class="post-toc-text">配置Admin</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#创建超级用户"><span class="post-toc-number">9.1.1.</span> <span class="post-toc-text">创建超级用户</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#配置应用"><span class="post-toc-number">9.1.2.</span> <span class="post-toc-text">配置应用</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#修改数据默认显示名称"><span class="post-toc-number">9.1.3.</span> <span class="post-toc-text">修改数据默认显示名称</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#博客主页面"><span class="post-toc-number">10.</span> <span class="post-toc-text">博客主页面</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#展示所有文章的列表"><span class="post-toc-number">10.1.</span> <span class="post-toc-text">展示所有文章的列表</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#undefined"><span class="post-toc-number">11.</span> <span class="post-toc-text">新文章</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#文章内容页面"><span class="post-toc-number">11.1.</span> <span class="post-toc-text">文章内容页面</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#undefined"><span class="post-toc-number">12.</span> <span class="post-toc-text">{{ article.title }}</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#undefined"><span class="post-toc-number">12.0.1.</span> <span class="post-toc-text">{{ article.content }}</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Django中的超链接"><span class="post-toc-number">12.1.</span> <span class="post-toc-text">Django中的超链接</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#undefined"><span class="post-toc-number">13.</span> <span class="post-toc-text">新文章</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#博客编写页面"><span class="post-toc-number">13.1.</span> <span class="post-toc-text">博客编写页面</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#undefined"><span class="post-toc-number">14.</span> <span class="post-toc-text">新文章</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#修改文章"><span class="post-toc-number">14.1.</span> <span class="post-toc-text">修改文章</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#undefined"><span class="post-toc-number">15.</span> <span class="post-toc-text">新文章</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#undefined"><span class="post-toc-number">16.</span> <span class="post-toc-text">{{ article.title }}</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#undefined"><span class="post-toc-number">16.0.1.</span> <span class="post-toc-text">{{ article.content }}</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#补充内容"><span class="post-toc-number">17.</span> <span class="post-toc-text">补充内容</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Templates过滤器"><span class="post-toc-number">17.1.</span> <span class="post-toc-text">Templates过滤器</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Django-Shell"><span class="post-toc-number">17.2.</span> <span class="post-toc-text">Django Shell</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Admin增强"><span class="post-toc-number">17.3.</span> <span class="post-toc-text">Admin增强</span></a></li></ol></li>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#安装Django"><span class="post-toc-number">1.</span> <span class="post-toc-text">安装Django</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#新建项目"><span class="post-toc-number">2.</span> <span class="post-toc-text">新建项目</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#新建app"><span class="post-toc-number">3.</span> <span class="post-toc-text">新建app</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#配置Url"><span class="post-toc-number">4.</span> <span class="post-toc-text">配置Url</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#方式一-直接添加"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">方式一 直接添加</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#方式二-通过include添加"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">方式二　通过include添加</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#创建Templates"><span class="post-toc-number">5.</span> <span class="post-toc-text">创建Templates</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#null"><span class="post-toc-number">6.</span> <span class="post-toc-text">{{ hello }}</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#创建Models"><span class="post-toc-number">7.</span> <span class="post-toc-text">创建Models</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#新建"><span class="post-toc-number">7.1.</span> <span class="post-toc-text">新建</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#生成数据表"><span class="post-toc-number">7.2.</span> <span class="post-toc-text">生成数据表</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Ubuntu下sqlite3的安装和使用"><span class="post-toc-number">7.3.</span> <span class="post-toc-text">Ubuntu下sqlite3的安装和使用</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#页面呈现数据"><span class="post-toc-number">7.4.</span> <span class="post-toc-text">页面呈现数据</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#null"><span class="post-toc-number">8.</span> <span class="post-toc-text">{{ article.title }}</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#null"><span class="post-toc-number">8.0.1.</span> <span class="post-toc-text">{{ article.content }}</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Admin"><span class="post-toc-number">9.</span> <span class="post-toc-text">Admin</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#配置Admin"><span class="post-toc-number">9.1.</span> <span class="post-toc-text">配置Admin</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#创建超级用户"><span class="post-toc-number">9.1.1.</span> <span class="post-toc-text">创建超级用户</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#配置应用"><span class="post-toc-number">9.1.2.</span> <span class="post-toc-text">配置应用</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#修改数据默认显示名称"><span class="post-toc-number">9.1.3.</span> <span class="post-toc-text">修改数据默认显示名称</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#博客主页面"><span class="post-toc-number">10.</span> <span class="post-toc-text">博客主页面</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#展示所有文章的列表"><span class="post-toc-number">10.1.</span> <span class="post-toc-text">展示所有文章的列表</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#null"><span class="post-toc-number">11.</span> <span class="post-toc-text">新文章</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#文章内容页面"><span class="post-toc-number">11.1.</span> <span class="post-toc-text">文章内容页面</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#null"><span class="post-toc-number">12.</span> <span class="post-toc-text">{{ article.title }}</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#null"><span class="post-toc-number">12.0.1.</span> <span class="post-toc-text">{{ article.content }}</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Django中的超链接"><span class="post-toc-number">12.1.</span> <span class="post-toc-text">Django中的超链接</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#null"><span class="post-toc-number">13.</span> <span class="post-toc-text">新文章</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#博客编写页面"><span class="post-toc-number">13.1.</span> <span class="post-toc-text">博客编写页面</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#null"><span class="post-toc-number">14.</span> <span class="post-toc-text">新文章</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#修改文章"><span class="post-toc-number">14.1.</span> <span class="post-toc-text">修改文章</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#null"><span class="post-toc-number">15.</span> <span class="post-toc-text">新文章</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#null"><span class="post-toc-number">16.</span> <span class="post-toc-text">{{ article.title }}</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#null"><span class="post-toc-number">16.0.1.</span> <span class="post-toc-text">{{ article.content }}</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#补充内容"><span class="post-toc-number">17.</span> <span class="post-toc-text">补充内容</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Templates过滤器"><span class="post-toc-number">17.1.</span> <span class="post-toc-text">Templates过滤器</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Django-Shell"><span class="post-toc-number">17.2.</span> <span class="post-toc-text">Django Shell</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Admin增强"><span class="post-toc-number">17.3.</span> <span class="post-toc-text">Admin增强</span></a></li></ol></li></ol>
         <!--
         <li class="mdl-menu__item">
             Some Action
@@ -613,7 +614,7 @@
 
     <!-- Author Avatar -->
     <div id="author-avatar">
-        <img src="/img/avatar.gif" width="44px" height="44px" alt="Author Avatar">
+        <img src="/img/avatar.gif" width="44px" height="44px" alt="Author Avatar"/>
     </div>
     <!-- Author Name & Date -->
     <div>
@@ -643,7 +644,7 @@
     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
         <li class="mdl-menu__item">
         <a class="post_tag-link" href="/tags/django/">django</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/python/">python</a>
-    </li></ul>
+    </ul>
     
 
     <!-- Share -->
@@ -775,7 +776,7 @@ urlpatterns = [
 <p>然后在<code>blog/templates/blog/</code>下新建模板：<code>index.html</code>：</p>
 <pre class=" language-lang-html"><code class="language-lang-html"><!DOCTYPE html>
 <html lang="en">
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="UTF-8">
     <title>Title</title>
 <link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
@@ -887,7 +888,7 @@ def index(request):
 <p>前端的模板可以直接使用对象及对象的<code>&quot;.&quot;</code>操作，修改模板<code>index.html</code>如下：</p>
 <pre class=" language-lang-html"><code class="language-lang-html"><!DOCTYPE html>
 <html lang="en">
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
@@ -944,7 +945,7 @@ def index(request):
 <p>展示文章列表，修改<code>index.html</code>：</p>
 <pre class=" language-lang-html"><code class="language-lang-html"><!DOCTYPE html>
 <html lang="en">
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
@@ -961,7 +962,7 @@ def index(request):
 <h2 id="文章内容页面"><a href="#文章内容页面" class="headerlink" title="文章内容页面"></a>文章内容页面</h2><p>先添加一个文章内容的模板，在<code>blog/templates/blog/</code>目录下新建<code>article_page.html</code>：</p>
 <pre class=" language-lang-html"><code class="language-lang-html"><!DOCTYPE html>
 <html lang="en">
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="UTF-8">
     <title>Article Page</title>
 </head>
@@ -1020,7 +1021,7 @@ app_name = 'blog'
 <h2 id="博客编写页面"><a href="#博客编写页面" class="headerlink" title="博客编写页面"></a>博客编写页面</h2><p>首先新建一个模板文件<code>edit_page.html</code>：</p>
 <pre class=" language-lang-html"><code class="language-lang-html"><!DOCTYPE html>
 <html lang="en">
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="UTF-8">
     <title>Edit Page</title>
 </head>
@@ -1367,7 +1368,7 @@ admin.site.register(Article, ArticleAdmin)
             <ul class="dropdown-menu">
             <li>
                 <a class="sidebar_archives-link" href="/archives/2019/07/">July 2019<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/05/">May 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/04/">April 2019<span class="sidebar_archives-count">9</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/12/">December 2018<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/11/">November 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/07/">July 2018<span class="sidebar_archives-count">23</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/06/">June 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/04/">April 2018<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/03/">March 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/01/">January 2018<span class="sidebar_archives-count">9</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/12/">December 2017<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/11/">November 2017<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/10/">October 2017<span class="sidebar_archives-count">8</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/08/">August 2017<span class="sidebar_archives-count">15</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/03/">March 2017<span class="sidebar_archives-count">6</span></a>
-            </li></ul>
+            </ul>
         </li>
         
     
@@ -1385,7 +1386,7 @@ admin.site.register(Article, ArticleAdmin)
             <ul class="dropdown-menu">
                 <li>
                 <a class="sidebar_archives-link" href="/categories/Android/">Android<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/Android碎片/">Android碎片<span class="sidebar_archives-count">16</span></a></li><li><a class="sidebar_archives-link" href="/categories/Android错误解决/">Android错误解决<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/C/">C#<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/Django/">Django<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Git/">Git<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Hexo/">Hexo<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/Java/">Java<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Java笔记/">Java笔记<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/Linux/">Linux<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/Maven/">Maven<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/Python/">Python<span class="sidebar_archives-count">9</span></a></li><li><a class="sidebar_archives-link" href="/categories/Shell/">Shell<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/SpringBoot/">SpringBoot<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/Ubuntu/">Ubuntu<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/categories/Vue/">Vue<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/WPF/">WPF<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/剑指Offer编程题/">剑指Offer编程题<span class="sidebar_archives-count">22</span></a></li><li><a class="sidebar_archives-link" href="/categories/小技能/">小技能<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/数据结构与算法/">数据结构与算法<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/机器学习/">机器学习<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/杂记/">杂记<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/游戏/">游戏<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/皮皮夏/">皮皮夏<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/皮皮夏的奇葩日记/">皮皮夏的奇葩日记<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/论文笔记/">论文笔记<span class="sidebar_archives-count">2</span></a>
-            </li></ul>
+            </ul>
         </li>
         
     
@@ -1466,7 +1467,7 @@ It will not impact the appearance and can give developers a lot of support :)
 
 <!-- Theme Material -->
 
-    <a href="https://github.com/viosey/hexo-theme-material" class="sidebar-footer-text-a" target="_blank">
+    <a href="https://github.com/viosey/hexo-theme-material"  class="sidebar-footer-text-a" target="_blank">
         <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
             Theme - Material
             <span class="sidebar-badge badge-circle">i</span>

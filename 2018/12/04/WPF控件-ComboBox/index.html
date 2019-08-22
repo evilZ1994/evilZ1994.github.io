@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html style="display: none;" lang="en">
-    <head><meta name="generator" content="Hexo 3.8.0">
+    <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
     <!--
         © Material Theme
@@ -36,7 +36,7 @@
     <meta name="theme-color" content="#0097A7">
     <meta name="author" content="Zhu Yuexin">
     <meta name="description" itemprop="description" content="呀！发现一只会写代码的猪！">
-    <meta name="keywords" content="null,wpf,ComboBox">
+    <meta name="keywords" content=",wpf,ComboBox">
 
     <!-- Site Verification -->
     
@@ -555,7 +555,8 @@
     -->
 
     <!-- Left aligned menu below button -->
-    <button id="post-toc-trigger-btn" class="mdl-button mdl-js-button mdl-button--icon">
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
         <i class="material-icons">format_list_numbered</i>
     </button>
 
@@ -613,7 +614,7 @@
 
     <!-- Author Avatar -->
     <div id="author-avatar">
-        <img src="/img/avatar.gif" width="44px" height="44px" alt="Author Avatar">
+        <img src="/img/avatar.gif" width="44px" height="44px" alt="Author Avatar"/>
     </div>
     <!-- Author Name & Date -->
     <div>
@@ -643,7 +644,7 @@
     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
         <li class="mdl-menu__item">
         <a class="post_tag-link" href="/tags/ComboBox/">ComboBox</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/wpf/">wpf</a>
-    </li></ul>
+    </ul>
     
 
     <!-- Share -->
@@ -712,17 +713,17 @@
         <h1 id="配置数据源"><a href="#配置数据源" class="headerlink" title="配置数据源"></a>配置数据源</h1><ul>
 <li><p>设置它的<code>ComboBoxItem</code>项</p>
 <p>添加用户控件<code>ComboBoxUserControl</code>，<code>ComboBoxUserControl.xaml</code>里面：</p>
-<pre class=" language-lang-xaml"><code class="language-lang-xaml"><combobox selectedindex="0">
-    <comboboxitem>
-        <textblock>张三</textblock>
-    </comboboxitem>
-    <comboboxitem>
-        <textblock>李四</textblock>
-    </comboboxitem>
-    <comboboxitem>
-        <textblock>王五</textblock>
-    </comboboxitem>
-</combobox>
+<pre class=" language-lang-xaml"><code class="language-lang-xaml"><ComboBox SelectedIndex="0">
+    <ComboBoxItem>
+        <TextBlock>张三</TextBlock>
+    </ComboBoxItem>
+    <ComboBoxItem>
+        <TextBlock>李四</TextBlock>
+    </ComboBoxItem>
+    <ComboBoxItem>
+        <TextBlock>王五</TextBlock>
+    </ComboBoxItem>
+</ComboBox>
 </code></pre>
 </li>
 <li><p><code>ItemsSource</code>设置数据源，<code>DisplayMemberPath</code>设置显示的属性</p>
@@ -738,7 +739,7 @@
     /// </summary>
     public partial class ComboBoxUserControl : UserControl
     {
-        public List<student> StudentList { get; set; }
+        public List<Student> StudentList { get; set; }
 
         public ComboBoxUserControl()
         {
@@ -756,37 +757,37 @@
         }
     }
 }
-</student></code></pre>
+</code></pre>
 <p>在<code>ComboBoxUserControl.xaml</code>中绑定数据源：</p>
-<pre class=" language-lang-xaml"><code class="language-lang-xaml"><grid>
-    <stackpanel>
-        <textblock>学生列表：</textblock>
-        <combobox itemssource="{Binding StudentList}" selectedindex="0" selectionchanged="ComboBox_SelectionChanged">
-        </combobox>
-    </stackpanel>  
-</grid>
+<pre class=" language-lang-xaml"><code class="language-lang-xaml"><Grid>
+    <StackPanel>
+        <TextBlock>学生列表：</TextBlock>
+        <ComboBox ItemsSource="{Binding StudentList}" SelectedIndex="0" SelectionChanged="ComboBox_SelectionChanged">
+        </ComboBox>
+    </StackPanel>  
+</Grid>
 </code></pre>
 <p>此时只绑定了数据源，没有设置<code>DisplayMemberPath</code>，显示效果：</p>
 <p><img src="http://upyun.nidhogg.cn/img/WPF20181204155052.png" alt></p>
 <p>然后设置一下<code>DisplayMemberPath</code>：</p>
-<pre class=" language-lang-xaml"><code class="language-lang-xaml"><grid>
-    <stackpanel>
-        <textblock>学生列表：</textblock>
-        <combobox itemssource="{Binding StudentList}" displaymemberpath="Name" selectionchanged="ComboBox_SelectionChanged">
-        </combobox>
-    </stackpanel>  
-</grid>
+<pre class=" language-lang-xaml"><code class="language-lang-xaml"><Grid>
+    <StackPanel>
+        <TextBlock>学生列表：</TextBlock>
+        <ComboBox ItemsSource="{Binding StudentList}" DisplayMemberPath="Name" SelectionChanged="ComboBox_SelectionChanged">
+        </ComboBox>
+    </StackPanel>  
+</Grid>
 </code></pre>
 <p>显示效果：</p>
 <p><img src="http://upyun.nidhogg.cn/img/WPF20181204155840.png" alt></p>
 <p>最后设置一下<code>SelectedValuePath</code>属性：</p>
-<pre class=" language-lang-xaml"><code class="language-lang-xaml"><grid>
-    <stackpanel>
-        <textblock>学生列表：</textblock>
-        <combobox itemssource="{Binding StudentList}" displaymemberpath="Name" selectedvaluepath="Name" selectionchanged="ComboBox_SelectionChanged">
-        </combobox>
-    </stackpanel>  
-</grid>
+<pre class=" language-lang-xaml"><code class="language-lang-xaml"><Grid>
+    <StackPanel>
+        <TextBlock>学生列表：</TextBlock>
+        <ComboBox ItemsSource="{Binding StudentList}" DisplayMemberPath="Name" SelectedValuePath="Name" SelectionChanged="ComboBox_SelectionChanged">
+        </ComboBox>
+    </StackPanel>  
+</Grid>
 </code></pre>
 <p>修改<code>ComboBox_SelectionChanged</code>方法：</p>
 <pre class=" language-lang-c#"><code class="language-lang-c#">private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -927,7 +928,7 @@
             <ul class="dropdown-menu">
             <li>
                 <a class="sidebar_archives-link" href="/archives/2019/07/">July 2019<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/05/">May 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/04/">April 2019<span class="sidebar_archives-count">9</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/12/">December 2018<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/11/">November 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/07/">July 2018<span class="sidebar_archives-count">23</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/06/">June 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/04/">April 2018<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/03/">March 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/01/">January 2018<span class="sidebar_archives-count">9</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/12/">December 2017<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/11/">November 2017<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/10/">October 2017<span class="sidebar_archives-count">8</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/08/">August 2017<span class="sidebar_archives-count">15</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/03/">March 2017<span class="sidebar_archives-count">6</span></a>
-            </li></ul>
+            </ul>
         </li>
         
     
@@ -945,7 +946,7 @@
             <ul class="dropdown-menu">
                 <li>
                 <a class="sidebar_archives-link" href="/categories/Android/">Android<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/Android碎片/">Android碎片<span class="sidebar_archives-count">16</span></a></li><li><a class="sidebar_archives-link" href="/categories/Android错误解决/">Android错误解决<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/C/">C#<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/Django/">Django<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Git/">Git<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Hexo/">Hexo<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/Java/">Java<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Java笔记/">Java笔记<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/Linux/">Linux<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/Maven/">Maven<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/Python/">Python<span class="sidebar_archives-count">9</span></a></li><li><a class="sidebar_archives-link" href="/categories/Shell/">Shell<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/SpringBoot/">SpringBoot<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/Ubuntu/">Ubuntu<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/categories/Vue/">Vue<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/WPF/">WPF<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/剑指Offer编程题/">剑指Offer编程题<span class="sidebar_archives-count">22</span></a></li><li><a class="sidebar_archives-link" href="/categories/小技能/">小技能<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/数据结构与算法/">数据结构与算法<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/机器学习/">机器学习<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/杂记/">杂记<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/游戏/">游戏<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/皮皮夏/">皮皮夏<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/皮皮夏的奇葩日记/">皮皮夏的奇葩日记<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/论文笔记/">论文笔记<span class="sidebar_archives-count">2</span></a>
-            </li></ul>
+            </ul>
         </li>
         
     
@@ -1026,7 +1027,7 @@ It will not impact the appearance and can give developers a lot of support :)
 
 <!-- Theme Material -->
 
-    <a href="https://github.com/viosey/hexo-theme-material" class="sidebar-footer-text-a" target="_blank">
+    <a href="https://github.com/viosey/hexo-theme-material"  class="sidebar-footer-text-a" target="_blank">
         <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
             Theme - Material
             <span class="sidebar-badge badge-circle">i</span>

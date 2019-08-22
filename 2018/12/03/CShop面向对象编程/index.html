@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html style="display: none;" lang="en">
-    <head><meta name="generator" content="Hexo 3.8.0">
+    <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
     <!--
         © Material Theme
@@ -36,7 +36,7 @@
     <meta name="theme-color" content="#0097A7">
     <meta name="author" content="Zhu Yuexin">
     <meta name="description" itemprop="description" content="呀！发现一只会写代码的猪！">
-    <meta name="keywords" content="null,c#">
+    <meta name="keywords" content=",c#">
 
     <!-- Site Verification -->
     
@@ -555,7 +555,8 @@
     -->
 
     <!-- Left aligned menu below button -->
-    <button id="post-toc-trigger-btn" class="mdl-button mdl-js-button mdl-button--icon">
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
         <i class="material-icons">format_list_numbered</i>
     </button>
 
@@ -613,7 +614,7 @@
 
     <!-- Author Avatar -->
     <div id="author-avatar">
-        <img src="/img/avatar.gif" width="44px" height="44px" alt="Author Avatar">
+        <img src="/img/avatar.gif" width="44px" height="44px" alt="Author Avatar"/>
     </div>
     <!-- Author Name & Date -->
     <div>
@@ -643,7 +644,7 @@
     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
         <li class="mdl-menu__item">
         <a class="post_tag-link" href="/tags/c/">c#</a>
-    </li></ul>
+    </ul>
     
 
     <!-- Share -->
@@ -1048,10 +1049,10 @@ dogs.Add(new Dog("David"));
 ((Dog)dogs[0]).PrintName();
 </code></pre>
 <h2 id="List-lt-T-gt"><a href="#List-lt-T-gt" class="headerlink" title="List&lt;T&gt;"></a><code>List&lt;T&gt;</code></h2><p>由于<code>ArrayList</code>是类型不安全的，而且有装箱拆箱的性能问题，于是出现了<strong><code>List&lt;T&gt;</code></strong></p>
-<pre class=" language-lang-c#"><code class="language-lang-c#">List<dog> dogs = new List<dog>();
+<pre class=" language-lang-c#"><code class="language-lang-c#">List<Dog> dogs = new List<Dog>();
 dogs.Add(new Dog("David"));
 dogs[0].PrintName();
-</dog></dog></code></pre>
+</code></pre>
 <h2 id="字典Dictionary-lt-Tkey-Tvalue-gt"><a href="#字典Dictionary-lt-Tkey-Tvalue-gt" class="headerlink" title="字典Dictionary&lt;Tkey, Tvalue&gt;"></a>字典<code>Dictionary&lt;Tkey, Tvalue&gt;</code></h2><p>字典容器存储的是一系列的键值对，每个值对应一个唯一的键。键的意义在于，我们可以通过键相对高效的访问到值。</p>
 <p>字典操作：</p>
 <ul>
@@ -1060,10 +1061,10 @@ dogs[0].PrintName();
 <li>删除：<code>Remove</code></li>
 <li>访问：<code>[key]</code></li>
 </ul>
-<pre class=" language-lang-c#"><code class="language-lang-c#">Dictionary<string, dog> dic = new Dictionary<string, dog>();
+<pre class=" language-lang-c#"><code class="language-lang-c#">Dictionary<string, Dog> dic = new Dictionary<string, Dog>();
 dic.Add("A", new Dog("A"));
 dic["A"].PrintName();
-</string,></string,></code></pre>
+</code></pre>
 <h2 id="栈"><a href="#栈" class="headerlink" title="栈"></a>栈</h2><p>栈是先进先出，后进后出的一种容器。</p>
 <p>操作：</p>
 <ul>
@@ -1071,22 +1072,22 @@ dic["A"].PrintName();
 <li>入栈：<code>Push</code></li>
 <li>获取栈顶元素：<code>Peek</code></li>
 </ul>
-<pre class=" language-lang-c#"><code class="language-lang-c#">Stack<dog> dogs = new Stack<dog>();
+<pre class=" language-lang-c#"><code class="language-lang-c#">Stack<Dog> dogs = new Stack<Dog>();
 dogs.Push(new Dog("David"));
 dogs.Peek().PrintName();
 dog = dogs.Pop();
-</dog></dog></code></pre>
+</code></pre>
 <h2 id="队列"><a href="#队列" class="headerlink" title="队列"></a>队列</h2><p>队列是先进先出的容器。</p>
 <p>操作：</p>
 <ul>
 <li>出队：<code>Dequeue</code></li>
 <li>入队：<code>Enqueue</code></li>
 </ul>
-<pre class=" language-lang-c#"><code class="language-lang-c#">Queue<pet> queue = new Queue<pet>();
+<pre class=" language-lang-c#"><code class="language-lang-c#">Queue<Pet> queue = new Queue<Pet>();
 queue.Enqueue(new Dog("David"));
 queue.Enqueue(new Cat("Tom"));
 queue.Dequeue().PrintName();
-</pet></pet></code></pre>
+</code></pre>
 <h1 id="委托和事件"><a href="#委托和事件" class="headerlink" title="委托和事件"></a>委托和事件</h1><h2 id="委托"><a href="#委托" class="headerlink" title="委托"></a>委托</h2><p>委托就是持有一个或者多个方法的对象。并且该对象可以执行，可以传递。</p>
 <h3 id="声明委托类型："><a href="#声明委托类型：" class="headerlink" title="声明委托类型："></a>声明委托类型：</h3><pre class=" language-lang-c#"><code class="language-lang-c#">delegate void ActCute();
 </code></pre>
@@ -1337,7 +1338,7 @@ Dog newDog = new Dog("Jimmy");
             <ul class="dropdown-menu">
             <li>
                 <a class="sidebar_archives-link" href="/archives/2019/07/">July 2019<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/05/">May 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/04/">April 2019<span class="sidebar_archives-count">9</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/12/">December 2018<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/11/">November 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/07/">July 2018<span class="sidebar_archives-count">23</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/06/">June 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/04/">April 2018<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/03/">March 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/01/">January 2018<span class="sidebar_archives-count">9</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/12/">December 2017<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/11/">November 2017<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/10/">October 2017<span class="sidebar_archives-count">8</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/08/">August 2017<span class="sidebar_archives-count">15</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/03/">March 2017<span class="sidebar_archives-count">6</span></a>
-            </li></ul>
+            </ul>
         </li>
         
     
@@ -1355,7 +1356,7 @@ Dog newDog = new Dog("Jimmy");
             <ul class="dropdown-menu">
                 <li>
                 <a class="sidebar_archives-link" href="/categories/Android/">Android<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/Android碎片/">Android碎片<span class="sidebar_archives-count">16</span></a></li><li><a class="sidebar_archives-link" href="/categories/Android错误解决/">Android错误解决<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/C/">C#<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/Django/">Django<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Git/">Git<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Hexo/">Hexo<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/Java/">Java<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Java笔记/">Java笔记<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/Linux/">Linux<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/Maven/">Maven<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/Python/">Python<span class="sidebar_archives-count">9</span></a></li><li><a class="sidebar_archives-link" href="/categories/Shell/">Shell<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/SpringBoot/">SpringBoot<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/Ubuntu/">Ubuntu<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/categories/Vue/">Vue<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/WPF/">WPF<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/剑指Offer编程题/">剑指Offer编程题<span class="sidebar_archives-count">22</span></a></li><li><a class="sidebar_archives-link" href="/categories/小技能/">小技能<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/数据结构与算法/">数据结构与算法<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/机器学习/">机器学习<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/杂记/">杂记<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/游戏/">游戏<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/皮皮夏/">皮皮夏<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/皮皮夏的奇葩日记/">皮皮夏的奇葩日记<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/论文笔记/">论文笔记<span class="sidebar_archives-count">2</span></a>
-            </li></ul>
+            </ul>
         </li>
         
     
@@ -1436,7 +1437,7 @@ It will not impact the appearance and can give developers a lot of support :)
 
 <!-- Theme Material -->
 
-    <a href="https://github.com/viosey/hexo-theme-material" class="sidebar-footer-text-a" target="_blank">
+    <a href="https://github.com/viosey/hexo-theme-material"  class="sidebar-footer-text-a" target="_blank">
         <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
             Theme - Material
             <span class="sidebar-badge badge-circle">i</span>

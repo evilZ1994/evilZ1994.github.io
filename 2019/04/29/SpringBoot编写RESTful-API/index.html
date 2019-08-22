@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html style="display: none;" lang="en">
-    <head><meta name="generator" content="Hexo 3.8.0">
+    <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
     <!--
         © Material Theme
@@ -36,7 +36,7 @@
     <meta name="theme-color" content="#0097A7">
     <meta name="author" content="Zhu Yuexin">
     <meta name="description" itemprop="description" content="呀！发现一只会写代码的猪！">
-    <meta name="keywords" content="null,java,spring-boot,restful">
+    <meta name="keywords" content=",java,spring-boot,restful">
 
     <!-- Site Verification -->
     
@@ -555,7 +555,8 @@
     -->
 
     <!-- Left aligned menu below button -->
-    <button id="post-toc-trigger-btn" class="mdl-button mdl-js-button mdl-button--icon">
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
         <i class="material-icons">format_list_numbered</i>
     </button>
 
@@ -613,7 +614,7 @@
 
     <!-- Author Avatar -->
     <div id="author-avatar">
-        <img src="/img/avatar.gif" width="44px" height="44px" alt="Author Avatar">
+        <img src="/img/avatar.gif" width="44px" height="44px" alt="Author Avatar"/>
     </div>
     <!-- Author Name & Date -->
     <div>
@@ -643,7 +644,7 @@
     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
         <li class="mdl-menu__item">
         <a class="post_tag-link" href="/tags/java/">java</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/restful/">restful</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/spring-boot/">spring-boot</a>
-    </li></ul>
+    </ul>
     
 
     <!-- Share -->
@@ -759,7 +760,7 @@ public class TvSeriesDto {
     private Integer id;
     private String name;
     private int seasonCount;  // 总共多少季
-    private List<tvcharacterdto> tvCharacters;  // 角色表
+    private List<TvCharacterDto> tvCharacters;  // 角色表
     // 设置日期格式化为Json格式
     @JsonFormat(timezone = "GMT+8", pattern = "yyyy-MM-dd")
     private Date originRelease;  // 发行日期
@@ -806,11 +807,11 @@ public class TvSeriesDto {
         this.originRelease = originRelease;
     }
 
-      public List<tvcharacterdto> getTvCharacters() {
+      public List<TvCharacterDto> getTvCharacters() {
         return tvCharacters;
     }
 
-    public void setTvCharacters(List<tvcharacterdto> tvCharacters) {
+    public void setTvCharacters(List<TvCharacterDto> tvCharacters) {
         this.tvCharacters = tvCharacters;
     }
 
@@ -824,7 +825,7 @@ public class TvSeriesDto {
                 '}';
     }
 }
-</tvcharacterdto></tvcharacterdto></tvcharacterdto></code></pre>
+</code></pre>
 <p>这里配置了日期的Json格式化，除了注解方式，还可以在配置文件中配置。这里我们采用<code>.yml</code>配置，将<code>application.properties</code>修改为<code>application.yml</code>，然后配置日期的Json格式化：</p>
 <pre class=" language-lang-yaml"><code class="language-lang-yaml">spring:
   jackson:
@@ -871,9 +872,9 @@ public class TvSeriesDto {
 public class TvSeriesController {
 
     @GetMapping
-    public List<tvseriesdto> getAll() {
+    public List<TvSeriesDto> getAll() {
         // 示例：http://localhost:8080/tvseries
-        List<tvseriesdto> list = new ArrayList<>();
+        List<TvSeriesDto> list = new ArrayList<>();
         list.add(createWestWorld());
         list.add(createPoi());
         return list;
@@ -891,7 +892,7 @@ public class TvSeriesController {
         return new TvSeriesDto(101, "West World", 1, c.getTime());
     }
 }
-</tvseriesdto></tvseriesdto></code></pre>
+</code></pre>
 <p>然后启动SpringBoot，在浏览器地址输入：<a href="http://localhost:8080/tvseries，可以看到返回的Json数据：" target="_blank" rel="noopener">http://localhost:8080/tvseries，可以看到返回的Json数据：</a></p>
 <pre class=" language-lang-json"><code class="language-lang-json">[{"id":101,"name":"West World","seasonCount":1,"originRelease":"2016-10-02"},{"id":102,"name":"Person of Interest","seasonCount":5,"originRelease":"2011-09-22"}]
 </code></pre>
@@ -916,22 +917,22 @@ public class TvSeriesController {
     private static final Log log = LogFactory.getLog(TvSeriesController.class);
 
     @GetMapping
-    public List<tvseriesdto> getAll() {
+    public List<TvSeriesDto> getAll() {
         // 示例：http://localhost:8080/tvseries
         if (log.isTraceEnabled()) {
             log.trace("getAll()被调用了");
         }
-        List<tvseriesdto> list = new ArrayList<>();
+        List<TvSeriesDto> list = new ArrayList<>();
         list.add(createWestWorld());
         list.add(createPoi());
         return list;
     }
 }
-</tvseriesdto></tvseriesdto></code></pre>
+</code></pre>
 <h2 id="SpringBoot热部署"><a href="#SpringBoot热部署" class="headerlink" title="SpringBoot热部署"></a>SpringBoot热部署</h2><p>首先在pom.xml中加入devtools:</p>
 <pre class=" language-lang-xml"><code class="language-lang-xml"><dependency>
-  <groupid>org.springframework.boot</groupid>
-  <artifactid>spring-boot-devtools</artifactid>
+  <groupId>org.springframework.boot</groupId>
+  <artifactId>spring-boot-devtools</artifactId>
 </dependency>
 </code></pre>
 <p>然后在Idea中打开自动编译</p>
@@ -984,11 +985,11 @@ public TvSeriesDto updateOne(@PathVariable int id, @RequestBody TvSeriesDto tvSe
 </code></pre>
 <h3 id="根据id删除一个电视剧"><a href="#根据id删除一个电视剧" class="headerlink" title="根据id删除一个电视剧"></a>根据id删除一个电视剧</h3><p><strong>DELETE /tvseries/{id}</strong></p>
 <pre class=" language-lang-java"><code class="language-lang-java">@DeleteMapping("/{id}")
-public Map<string, string> deleteOne(@PathVariable int id, HttpServletRequest request, @RequestParam(value = "delete_reason", required = false)String deleteReason) throws Exception {
+public Map<String, String> deleteOne(@PathVariable int id, HttpServletRequest request, @RequestParam(value = "delete_reason", required = false)String deleteReason) throws Exception {
     if (log.isTraceEnabled()) {
         log.trace("deleteOne " + id);
     }
-    Map<string, string> result = new HashMap<>();
+    Map<String, String> result = new HashMap<>();
     if (id == 101) {
         //TODO: 执行删除代码
         result.put("message", "#101被" + request.getRemoteAddr() + "删除（原因：" + deleteReason + ")");
@@ -999,7 +1000,7 @@ public Map<string, string> deleteOne(@PathVariable int id, HttpServletRequest re
     }
     return result;
 }
-</string,></string,></code></pre>
+</code></pre>
 <h3 id="文件上传示例"><a href="#文件上传示例" class="headerlink" title="文件上传示例"></a>文件上传示例</h3><p><strong>POST /tvseries/{id}/photos</strong></p>
 <pre class=" language-lang-java"><code class="language-lang-java">import org.apache.commons.io.IOUtils;
 
@@ -1020,8 +1021,8 @@ public void addPhoto(@PathVariable int id, @RequestParam("photo")MultipartFile i
 <p>IOUtils需要引入<code>commons-io</code>依赖：</p>
 <p>pom.xml</p>
 <pre class=" language-lang-xml"><code class="language-lang-xml"><dependency>
-    <groupid>commons-io</groupid>
-    <artifactid>commons-io</artifactid>
+    <groupId>commons-io</groupId>
+    <artifactId>commons-io</artifactId>
     <version>2.6</version>
 </dependency>
 </code></pre>
@@ -1064,13 +1065,13 @@ public byte[] getIcon(@PathVariable int id) throws Exception {
     @NotNull private String name;  // 表示客户端必须传名称
     @DecimalMin("1") private int seasonCount;  // 总共多少季
     @Valid @NotNull @Size(min = 2)  // @Valid表示要级联校验；@Size(min = 2)表示这个列表至少要有2项内容，否则不通过校验
-    private List<tvcharacterdto> tvCharacters;
+    private List<TvCharacterDto> tvCharacters;
     // 设置日期格式化为Json格式
     @JsonFormat(timezone = "GMT+8", pattern = "yyyy-MM-dd")
     // @Past表示只接受过去的时间，比当前时间晚的被认为不合格
     @Past private Date originRelease;  // 发行日期
 }
-</tvcharacterdto></code></pre>
+</code></pre>
 <p>TvCharacterDto.java:</p>
 <pre class=" language-lang-java"><code class="language-lang-java">public class TvCharacterDto {
     private Integer id;
@@ -1120,13 +1121,13 @@ public TvSeriesDto insertOne(@Valid @RequestBody TvSeriesDto tvSeriesDto) {
 <p>示例：</p>
 <pre class=" language-lang-java"><code class="language-lang-java">// images不可为null；每个元素(Image类型)需要级联验证
 @NotNull
-private List<@valid image> images;
-</@valid></code></pre>
+private List<@Valid Image> images;
+</code></pre>
 <pre class=" language-lang-java"><code class="language-lang-java">// images长度至少为1，不可为null；每个元素（String类型）不可为null，最短长度为10
 @NotNull
 @Size(min = 1)
-private List<@size(min = 10) @notnull string> images;
-</@size(min></code></pre>
+private List<@Size(min = 10) @NotNull String> images;
+</code></pre>
 <blockquote>
 <p>约束规则对子类有效</p>
 </blockquote>
@@ -1152,13 +1153,13 @@ private List<@size(min = 10) @notnull string> images;
 <li>修改pom.xml，添加Mybatis支持</li>
 </ul>
 <pre class=" language-lang-xml"><code class="language-lang-xml"><dependency>
-    <groupid>org.mybatis.spring.boot</groupid>
-    <artifactid>mybatis-spring-boot-starter</artifactid>
+    <groupId>org.mybatis.spring.boot</groupId>
+    <artifactId>mybatis-spring-boot-starter</artifactId>
     <version>2.0.1</version>
 </dependency>
 <dependency>
-    <groupid>mysql</groupid>
-    <artifactid>mysql-connector-java</artifactid>
+    <groupId>mysql</groupId>
+    <artifactId>mysql-connector-java</artifactId>
 </dependency>
 </code></pre>
 <ul>
@@ -1215,9 +1216,9 @@ PRIMARY KEY (id)
 <pre class=" language-lang-java"><code class="language-lang-java">@Repository
 public interface TvSeriesDao {
     @Select("select * from tv_series")
-    List<tvseries> getAll();
+    List<TvSeries> getAll();
 }
-</tvseries></code></pre>
+</code></pre>
 <p>这里的查询语句是直接写在注解里的，如果查询比较复杂的话可以写在XML文件中</p>
 <h3 id="Service层"><a href="#Service层" class="headerlink" title="Service层"></a>Service层</h3><p>新建<code>service</code>目录：</p>
 <p>TvSeriesService.java</p>
@@ -1226,11 +1227,11 @@ public class TvSeriesService {
     @Autowired
     TvSeriesDao tvSeriesDao;
 
-    public List<tvseries> getAllTvSeries() {
+    public List<TvSeries> getAllTvSeries() {
         return tvSeriesDao.getAll();
     }
 }
-</tvseries></code></pre>
+</code></pre>
 <h3 id="Controller层"><a href="#Controller层" class="headerlink" title="Controller层"></a>Controller层</h3><p>新建<code>controller</code>目录，把之前的<code>TvSeriesController</code>拷贝过来（之前的controller需要把注解删掉或者注释掉，否则两个controller会冲突），修改数据操作逻辑：</p>
 <pre class=" language-lang-java"><code class="language-lang-java">@RestController
 @RequestMapping("/tvseries")
@@ -1242,25 +1243,25 @@ public class TvSeriesController {
     TvSeriesService tvSeriesService;
 
     @GetMapping
-    public List<tvseries> getAll() {
+    public List<TvSeries> getAll() {
         // 示例：http://localhost:8080/tvseries
         if (log.isTraceEnabled()) {
             log.trace("getAll()被调用了");
         }
-        List<tvseries> list = tvSeriesService.getAllTvSeries();
+        List<TvSeries> list = tvSeriesService.getAllTvSeries();
         if (log.isTraceEnabled()) {
             log.trace("查询到" + list.size() + "条记录");
         }
         return list;
     }
 }
-</tvseries></tvseries></code></pre>
+</code></pre>
 <h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><p>MyBatis可以用<strong>TypeHandler</strong>处理枚举、数组和JSON类型</p>
 <h1 id="单元测试"><a href="#单元测试" class="headerlink" title="单元测试"></a>单元测试</h1><h2 id="JUnit"><a href="#JUnit" class="headerlink" title="JUnit"></a>JUnit</h2><p><img src="http://upyun.nidhogg.cn/img/SpringBootRest20190503112700.png" alt="http://upyun.nidhogg.cn/img/SpringBootRest20190503112700.png"></p>
 <h2 id="mockito"><a href="#mockito" class="headerlink" title="mockito"></a>mockito</h2><p>pom.xml</p>
 <pre class=" language-lang-xml"><code class="language-lang-xml"><dependency>
-    <groupid>org.mockito</groupid>
-    <artifactid>mockito-core</artifactid>
+    <groupId>org.mockito</groupId>
+    <artifactId>mockito-core</artifactId>
     <scope>test</scope>
 </dependency>
 </code></pre>
@@ -1277,7 +1278,7 @@ public class TvSeriesServiceTests {
 
     @Test
     public void testGetAllWithMockito() {
-        List<tvseries> list = tvSeriesService.getAllTvSeries();
+        List<TvSeries> list = tvSeriesService.getAllTvSeries();
         // 这里的测试结果依赖连接数据库内的记录，很难写一个判断是否成功的条件，甚至无法执行
         // 下面的testGetAll()方法，使用了mock出来的dao作为桩模块，避免了这一情形
         Assert.assertTrue(list.size() >= 0);
@@ -1286,7 +1287,7 @@ public class TvSeriesServiceTests {
     @Test
     public void testGetAll() {
         // 设置一个TvSeries list
-        List<tvseries> list = new ArrayList<>();
+        List<TvSeries> list = new ArrayList<>();
         TvSeries ts = new TvSeries();
         ts.setName("POI");
         list.add(ts);
@@ -1295,7 +1296,7 @@ public class TvSeriesServiceTests {
         Mockito.when(tvSeriesDao.getAll()).thenReturn(list);
 
         // 测试tvSeriesService的getAllTvSeries()方法，获得返回值
-        List<tvseries> result = tvSeriesService.getAllTvSeries();
+        List<TvSeries> result = tvSeriesService.getAllTvSeries();
 
         // 判断返回值是否和最初做的那个list相同，应该是相同的
         Assert.assertTrue(result.size() == list.size());
@@ -1327,7 +1328,7 @@ public class TvSeriesServiceTests {
         Assert.assertTrue(mockExecuted.get(0));
     }
 }
-</tvseries></tvseries></tvseries></code></pre>
+</code></pre>
 <h3 id="测试web控制层"><a href="#测试web控制层" class="headerlink" title="测试web控制层"></a>测试web控制层</h3><p>AppTests.java</p>
 <pre class=" language-lang-java"><code class="language-lang-java">@RunWith(SpringRunner.class)
 @SpringBootTest
@@ -1351,7 +1352,7 @@ public class AppTests {
 
     @Test
     public void testGetAll() throws Exception {
-        List<tvseries> list = new ArrayList<>();
+        List<TvSeries> list = new ArrayList<>();
         TvSeries ts = new TvSeries();
         ts.setName("POI");
         list.add(ts);
@@ -1365,7 +1366,7 @@ public class AppTests {
         // 上面这几句和字面意思一致，期望状态是200，返回值包含POI三个字母，桩模块返回的一个电视剧名字是POI，如果测试正确是包含这三个字母的。
     }
 }
-</tvseries></code></pre>
+</code></pre>
 <h1 id="SpringBoot事务Transactional"><a href="#SpringBoot事务Transactional" class="headerlink" title="SpringBoot事务Transactional"></a>SpringBoot事务Transactional</h1><p><img src="http://upyun.nidhogg.cn/img/SpringBootRest20190503154700.png" alt="http://upyun.nidhogg.cn/img/SpringBootRest20190503154700.png"></p>
 <p><img src="http://upyun.nidhogg.cn/img/SpringBootRest20190503155200.png" alt="http://upyun.nidhogg.cn/img/SpringBootRest20190503155200.png"></p>
 <h2 id="propagation参数"><a href="#propagation参数" class="headerlink" title="propagation参数"></a>propagation参数</h2><p><img src="http://upyun.nidhogg.cn/img/SpringBootRest20190503154800.png" alt="http://upyun.nidhogg.cn/img/SpringBootRest20190503154800.png"></p>
@@ -1384,8 +1385,8 @@ public class AppTests {
 <p>默认值-1表示永远不会超时</p>
 <h1 id="Spring-Security"><a href="#Spring-Security" class="headerlink" title="Spring Security"></a>Spring Security</h1><p>依赖：</p>
 <pre class=" language-lang-xml"><code class="language-lang-xml"><dependency>
-  <groupid>org.springframework.boot</groupid>
-  <artifactid>spring-boot-starter-security</artifactid>
+  <groupId>org.springframework.boot</groupId>
+  <artifactId>spring-boot-starter-security</artifactId>
 </dependency>
 </code></pre>
 <h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p><img src="http://upyun.nidhogg.cn/img/SpringBootRest20190503170300.png" alt="http://upyun.nidhogg.cn/img/SpringBootRest20190503170300.png"></p>
@@ -1453,7 +1454,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 <pre class=" language-lang-java"><code class="language-lang-java">@Service
 public class TokenService {
     // 一般是把token和用户对应关系放在数据库或高速缓存(例如readis/memcache等），放在一个单例类的成员变量里仅适合很小规模的情形
-    private Map<string, userdetails> tokenMap = new HashMap<>();
+    private Map<String, UserDetails> tokenMap = new HashMap<>();
 
     /**
      * 登陆，成功返回token
@@ -1504,7 +1505,7 @@ public class TokenService {
         return new UserDetails() {
             @Override
             public Collection<? extends GrantedAuthority> getAuthorities() {
-                Collection<grantedauthority> authorities = new ArrayList<>();
+                Collection<GrantedAuthority> authorities = new ArrayList<>();
 
                 //这是增加了一种名为query的权限，可以使用 @hasAuthority("query") 来判断
                 SimpleGrantedAuthority authority = new SimpleGrantedAuthority("query");
@@ -1551,7 +1552,7 @@ public class TokenService {
         };
     }
 }
-</grantedauthority></string,></code></pre>
+</code></pre>
 <h4 id="TokenController-java"><a href="#TokenController-java" class="headerlink" title="TokenController.java"></a>TokenController.java</h4><pre class=" language-lang-java"><code class="language-lang-java">@RestController
 @RequestMapping("/token")
 public class TokenController {
@@ -1561,11 +1562,11 @@ public class TokenController {
     TokenService tokenService;
 
     @PostMapping
-    public ResponseEntity<map<string, object>> login(@RequestBody Map<string, string> userInfo) {
+    public ResponseEntity<Map<String, Object>> login(@RequestBody Map<String, String> userInfo) {
         String userName = userInfo.get("username");
         String password = userInfo.get("password");
 
-        HashMap<string, object> result = new HashMap<>();
+        HashMap<String, Object> result = new HashMap<>();
         String token = tokenService.login(userName, password);
         if (token == null) {
             result.put("message", "invalid username or password");
@@ -1576,7 +1577,7 @@ public class TokenController {
         }
     }
 }
-</string,></string,></map<string,></code></pre>
+</code></pre>
 <h4 id="AuthenticationTokenFilter-java"><a href="#AuthenticationTokenFilter-java" class="headerlink" title="AuthenticationTokenFilter.java"></a>AuthenticationTokenFilter.java</h4><p>对请求过滤时，将Token对应的用户信息取出放置到Spring上下文中</p>
 <pre class=" language-lang-java"><code class="language-lang-java">/**
  * 从request中获取token，并把token转换成用户，放置到当前的spring context内
@@ -1622,16 +1623,17 @@ public class SampleService {
      * PreAuthorize/PostAuthorize注解也可以写在Service的public方法上
      */
     @PreAuthorize("#id % 2 == 0")
-    //  @PostAuthorize("returnObject.get('id') <= 10") public map<string, object> getOneById(int id) {
+    //  @PostAuthorize("returnObject.get('id') <= 10")
+    public Map<String, Object> getOneById(int id) {
         if (log.isTraceEnabled()) {
             log.trace("getOneById: " + id);
         }
-        HashMap<string, object> map = new HashMap<>();
+        HashMap<String, Object> map = new HashMap<>();
         map.put("id", id);
         return map;
     }
 }
-</string,></=></code></pre>
+</code></pre>
 <h4 id="SampleController-java"><a href="#SampleController-java" class="headerlink" title="SampleController.java"></a>SampleController.java</h4><pre class=" language-lang-java"><code class="language-lang-java">@RestController
 @RequestMapping("/")
 public class SampleController {
@@ -1649,17 +1651,17 @@ public class SampleController {
      */
     @GetMapping
     @PreAuthorize("hasRole('author')")
-    public List<map<string, object>> getAll() {
+    public List<Map<String, Object>> getAll() {
         if (log.isTraceEnabled()) {
             log.trace("getAll()");
         }
-        List<map<string, object>> list = new ArrayList<>();
-        HashMap<string, object> m1 = new HashMap<>();
+        List<Map<String, Object>> list = new ArrayList<>();
+        HashMap<String, Object> m1 = new HashMap<>();
         m1.put("id", 101);
         m1.put("name", "jack");
         list.add(m1);
 
-        HashMap<string, object> m2 = new HashMap<>();
+        HashMap<String, Object> m2 = new HashMap<>();
         m2.put("id", 102);
         m2.put("name", "Dolores");
         list.add(m2);
@@ -1673,11 +1675,11 @@ public class SampleController {
      * #curl -H "Authorization: Bearer xxxx" http://localhost:8080/{id} 得到的数据中有authro字段，值是当前token对应的用户名
      */
     @GetMapping("/{id}")
-    public Map<string, object> getOne(@PathVariable int id, Authentication authentication) {
+    public Map<String, Object> getOne(@PathVariable int id, Authentication authentication) {
         if (log.isTraceEnabled()) {
             log.trace("getOne: " + id);
         }
-        HashMap<string, object> map = new HashMap<>();
+        HashMap<String, Object> map = new HashMap<>();
         map.put("id", id);
         map.put("name", (id == 101 ? "Waytt" : (id == 102 ? "Dolores" : "unknow")));
         if (authentication != null) {
@@ -1692,8 +1694,8 @@ public class SampleController {
     @PutMapping("/{id}")
     // @PreAuthorize("map.get('id') == 10")
     //  @PostAuthorize("returnObject.get('id') == 10")
-    public Map<string, object> updateOne(@PathVariable int id, @RequestBody Map<string, object> map) {
-        Map<string, object> result = sampleService.getOneById(id);
+    public Map<String, Object> updateOne(@PathVariable int id, @RequestBody Map<String, Object> map) {
+        Map<String, Object> result = sampleService.getOneById(id);
         map.remove("id");
         result.putAll(map);
         return result;
@@ -1709,7 +1711,7 @@ public class SampleController {
     @PostMapping("/children")
     @PreFilter(filterTarget = "list", value = "filterObject.startsWith('a')")
     @PostFilter("filterObject.startsWith('b')")
-    public List<string> echo(@RequestBody List<string> list) {
+    public List<String> echo(@RequestBody List<String> list) {
         if(log.isTraceEnabled()) {
             log.trace("echo ... list.size()= " + list.size());
             for(String s : list) {
@@ -1719,7 +1721,7 @@ public class SampleController {
         return list;
     }
 }
-</string></string></string,></string,></string,></string,></string,></string,></string,></map<string,></map<string,></code></pre>
+</code></pre>
 <h2 id="OAuth2-0"><a href="#OAuth2-0" class="headerlink" title="OAuth2.0"></a>OAuth2.0</h2><p><img src="http://upyun.nidhogg.cn/img/SpringBootRest20190503204800.png" alt="http://upyun.nidhogg.cn/img/SpringBootRest20190503204800.png"></p>
 <p><img src="http://upyun.nidhogg.cn/img/SpringBootRest20190503204900.png" alt="http://upyun.nidhogg.cn/img/SpringBootRest20190503204900.png"></p>
 <p>OAuth2.0有四种授权模式，其中<strong>授权码模式、密码模式</strong>比较常用，<strong>简化模式、客户端模式</strong>较少使用。</p>
@@ -1733,8 +1735,8 @@ public class SampleController {
 <p>注意<strong>Playload</strong>部分没有加密，不要存放敏感信息。</p>
 <p>依赖：</p>
 <pre class=" language-lang-xml"><code class="language-lang-xml"><dependency>
-    <groupid>com.auth0</groupid>
-  <artifactid>java-jwt</artifactid>
+    <groupId>com.auth0</groupId>
+  <artifactId>java-jwt</artifactId>
   <version>3.3.0</version>
 </dependency>
 </code></pre>
@@ -1927,7 +1929,7 @@ public class SampleController {
             <ul class="dropdown-menu">
             <li>
                 <a class="sidebar_archives-link" href="/archives/2019/07/">July 2019<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/05/">May 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/04/">April 2019<span class="sidebar_archives-count">9</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/12/">December 2018<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/11/">November 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/07/">July 2018<span class="sidebar_archives-count">23</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/06/">June 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/04/">April 2018<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/03/">March 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/01/">January 2018<span class="sidebar_archives-count">9</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/12/">December 2017<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/11/">November 2017<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/10/">October 2017<span class="sidebar_archives-count">8</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/08/">August 2017<span class="sidebar_archives-count">15</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/03/">March 2017<span class="sidebar_archives-count">6</span></a>
-            </li></ul>
+            </ul>
         </li>
         
     
@@ -1945,7 +1947,7 @@ public class SampleController {
             <ul class="dropdown-menu">
                 <li>
                 <a class="sidebar_archives-link" href="/categories/Android/">Android<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/Android碎片/">Android碎片<span class="sidebar_archives-count">16</span></a></li><li><a class="sidebar_archives-link" href="/categories/Android错误解决/">Android错误解决<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/C/">C#<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/Django/">Django<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Git/">Git<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Hexo/">Hexo<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/Java/">Java<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Java笔记/">Java笔记<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/Linux/">Linux<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/Maven/">Maven<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/Python/">Python<span class="sidebar_archives-count">9</span></a></li><li><a class="sidebar_archives-link" href="/categories/Shell/">Shell<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/SpringBoot/">SpringBoot<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/Ubuntu/">Ubuntu<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/categories/Vue/">Vue<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/WPF/">WPF<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/剑指Offer编程题/">剑指Offer编程题<span class="sidebar_archives-count">22</span></a></li><li><a class="sidebar_archives-link" href="/categories/小技能/">小技能<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/数据结构与算法/">数据结构与算法<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/机器学习/">机器学习<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/杂记/">杂记<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/游戏/">游戏<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/皮皮夏/">皮皮夏<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/皮皮夏的奇葩日记/">皮皮夏的奇葩日记<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/论文笔记/">论文笔记<span class="sidebar_archives-count">2</span></a>
-            </li></ul>
+            </ul>
         </li>
         
     
@@ -2026,7 +2028,7 @@ It will not impact the appearance and can give developers a lot of support :)
 
 <!-- Theme Material -->
 
-    <a href="https://github.com/viosey/hexo-theme-material" class="sidebar-footer-text-a" target="_blank">
+    <a href="https://github.com/viosey/hexo-theme-material"  class="sidebar-footer-text-a" target="_blank">
         <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
             Theme - Material
             <span class="sidebar-badge badge-circle">i</span>

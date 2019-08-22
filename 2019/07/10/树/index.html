@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html style="display: none;" lang="en">
-    <head><meta name="generator" content="Hexo 3.8.0">
+    <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
     <!--
         © Material Theme
@@ -36,7 +36,7 @@
     <meta name="theme-color" content="#0097A7">
     <meta name="author" content="Zhu Yuexin">
     <meta name="description" itemprop="description" content="呀！发现一只会写代码的猪！">
-    <meta name="keywords" content="null,数据结构,树,二叉树,线索二叉树,赫夫曼树,二叉搜索树,AVL树,红黑树,B树,B+树">
+    <meta name="keywords" content=",数据结构,树,二叉树,线索二叉树,赫夫曼树,二叉搜索树,AVL树,红黑树,B树,B+树">
 
     <!-- Site Verification -->
     
@@ -555,7 +555,8 @@
     -->
 
     <!-- Left aligned menu below button -->
-    <button id="post-toc-trigger-btn" class="mdl-button mdl-js-button mdl-button--icon">
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
         <i class="material-icons">format_list_numbered</i>
     </button>
 
@@ -613,7 +614,7 @@
 
     <!-- Author Avatar -->
     <div id="author-avatar">
-        <img src="/img/avatar.gif" width="44px" height="44px" alt="Author Avatar">
+        <img src="/img/avatar.gif" width="44px" height="44px" alt="Author Avatar"/>
     </div>
     <!-- Author Name & Date -->
     <div>
@@ -643,7 +644,7 @@
     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
         <li class="mdl-menu__item">
         <a class="post_tag-link" href="/tags/AVL树/">AVL树</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/B-树/">B+树</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/B树/">B树</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/二叉搜索树/">二叉搜索树</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/二叉树/">二叉树</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/数据结构/">数据结构</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/树/">树</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/红黑树/">红黑树</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/线索二叉树/">线索二叉树</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/赫夫曼树/">赫夫曼树</a>
-    </li></ul>
+    </ul>
     
 
     <!-- Share -->
@@ -1630,7 +1631,12 @@ public class ThreadedBinaryTree {
     private Node createHuffmanTree(int[] arr) {
         // 先根据传入的数组元素，创建若干个节点
         Node[] nodes = new Node[arr.length];
-        for (int i=0; i<arr.length; i++) { nodes[i]="new" node(arr[i]); } 记录数组中剩余的节点 int num="arr.length;" while (num> 1) {
+        for (int i=0; i<arr.length; i++) {
+            nodes[i] = new Node(arr[i]);
+        }
+        // 记录数组中剩余的节点
+        int num = arr.length;
+        while (num > 1) {
             // 当数组中的元素多于两个时，用两轮冒泡排序，将最小的两个节点放到数组最后
             for (int i = 0; i < 2 && num > 2; i++) {
                 for (int j = 0; j < num-1; j++) {
@@ -1657,7 +1663,7 @@ public class ThreadedBinaryTree {
         return root;
     }
 }
-</arr.length;></code></pre>
+</code></pre>
 <h2 id="赫夫曼编码"><a href="#赫夫曼编码" class="headerlink" title="赫夫曼编码"></a>赫夫曼编码</h2><p>举个🌰：</p>
 <p>假如我们要传输一句话：<strong>can you can a can as a canner can can a can.</strong></p>
 <p>如果采用定长编码，每个字符对应的ASCII码都采用8位的二进制表示，那么：</p>
@@ -1688,7 +1694,7 @@ public class HuffmanCoding {
     // 压缩后的byte数组
     private byte[] encodedBytes;
     // 保存编码表
-    private Map<byte, string> huffCodes = new HashMap<>();
+    private Map<Byte, String> huffCodes = new HashMap<>();
 
     /**
      * 压缩byte数组
@@ -1724,7 +1730,7 @@ public class HuffmanCoding {
             return encodedBytes;
         }
         // 先统计每一个byte出现的次数，并存入一个集合中
-        List<node> nodes = getNodes(bytes);
+        List<Node> nodes = getNodes(bytes);
         // 创建一颗赫夫曼树
         this.root = createHuffmanTree(nodes);
         // 创建一个赫夫曼编码表，保存在huffCodes中
@@ -1766,7 +1772,7 @@ public class HuffmanCoding {
             // 读取byte数组
             byte[] b = (byte[]) ois.readObject();
             // 读取赫夫曼编码表
-            Map<byte, string> codes = (Map<byte, string>) ois.readObject();
+            Map<Byte, String> codes = (Map<Byte, String>) ois.readObject();
             ois.close();
             is.close();
             // 解码
@@ -1787,17 +1793,80 @@ public class HuffmanCoding {
      * @param bytes
      * @return
      */
-    public byte[] huffmanDecoding(byte[] bytes, Map<byte, string> huffCodes) {
+    public byte[] huffmanDecoding(byte[] bytes, Map<Byte, String> huffCodes) {
         StringBuilder sb = new StringBuilder();
         // 把byte数组转为一个二进制的字符串
-        for (int i=0; i<bytes.length; i++) { byte b="bytes[i];" 最后一个数不用补0 boolean flag="!(i" =="bytes.length" - 1); sb.append(byte2bitstr(b, flag)); } 把字符串按照指定的赫夫曼编码进行解码 把赫夫曼编码表的键值对进行调换 map<string,> map = new HashMap<>();
-        for (Map.Entry<byte, string> entry : huffCodes.entrySet()) {
+        for (int i=0; i<bytes.length; i++) {
+            byte b = bytes[i];
+            // 最后一个数不用补0
+            boolean flag = !(i == bytes.length - 1);
+            sb.append(byte2bitStr(b, flag));
+        }
+        // 把字符串按照指定的赫夫曼编码进行解码
+        // 把赫夫曼编码表的键值对进行调换
+        Map<String, Byte> map = new HashMap<>();
+        for (Map.Entry<Byte, String> entry : huffCodes.entrySet()) {
             map.put(entry.getValue(), entry.getKey());
         }
         // 由于新的byte数组长度不确定，用一个list集合保存byte
-        List<byte> decodedList = new ArrayList<>();
+        List<Byte> decodedList = new ArrayList<>();
         // 处理字符串
-        for (int i=0; i<sb.length();) 256 { int count="1;" while (true) string key="sb.substring(i," i + count); byte b="map.get(key);" if (b !="null)" decodedlist.add(b); break; } count++; 把集合转为数组 byte[] decodedbytes="new" byte[decodedlist.size()]; for (int i<decodedbytes.length; i++) decodedbytes[i]="decodedList.get(i);" return decodedbytes; ** * 将字节转为8位二进制的字符串 对于负数，取最后8位，对于正数，前面几位要补0 @param flag 是否补0（最后一个数不用补0） private byte2bitstr( b, boolean flag) temp="b;" (flag) 按位或 |="256;" s="Integer.toBinaryString(temp);" s.substring(s.length() - 8); s; 进行赫夫曼编码 void zip() stringbuilder sb="new" stringbuilder(); 把需要压缩的byte数组处理成一个二进制的字符串 (byte : this.bytes) sb.append(this.huffcodes.get(b)); 定义长度 len="(int)Math.ceil(sb.length()" 8.0); 初始化encodedbytes encodedbytes="new" byte[len]; index="0;" i<sb.length(); i+="8)" strbyte; (i+8> sb.length()) {
+        for (int i=0; i<sb.length();) {
+            int count = 1;
+            while (true) {
+                String key = sb.substring(i, i + count);
+                Byte b = map.get(key);
+                if (b != null) {
+                    decodedList.add(b);
+                    break;
+                }
+                count++;
+            }
+            i += count;
+        }
+        // 把集合转为数组
+        byte[] decodedBytes = new byte[decodedList.size()];
+        for (int i=0; i<decodedBytes.length; i++) {
+            decodedBytes[i] = decodedList.get(i);
+        }
+        return decodedBytes;
+    }
+
+    /**
+     * 将字节转为8位二进制的字符串
+     * 对于负数，取最后8位，对于正数，前面几位要补0
+     * @param flag 是否补0（最后一个数不用补0）
+     */
+    private String byte2bitStr( byte b, boolean flag) {
+        int temp = b;
+        if (flag) {
+            // 按位或 256
+            temp |= 256;
+        }
+        String s = Integer.toBinaryString(temp);
+        if (flag) {
+            return s.substring(s.length() - 8);
+        }
+        return s;
+    }
+
+    /**
+     * 进行赫夫曼编码
+     */
+    private void zip() {
+        StringBuilder sb = new StringBuilder();
+        // 把需要压缩的byte数组处理成一个二进制的字符串
+        for (byte b : this.bytes) {
+            sb.append(this.huffCodes.get(b));
+        }
+        // 定义长度
+        int len = (int)Math.ceil(sb.length() / 8.0);
+        // 初始化encodedBytes
+        encodedBytes = new byte[len];
+        int index = 0;
+        for (int i=0; i<sb.length(); i+=8) {
+            String strByte;
+            if (i+8 > sb.length()) {
                 strByte = sb.substring(i);
             } else {
                 strByte = sb.substring(i, i + 8);
@@ -1836,7 +1905,7 @@ public class HuffmanCoding {
      * @param nodes
      * @return
      */
-    private static Node createHuffmanTree(List<node> nodes) {
+    private static Node createHuffmanTree(List<Node> nodes) {
         while (nodes.size() > 1) {
             // 排序
             Collections.sort(nodes);
@@ -1862,9 +1931,9 @@ public class HuffmanCoding {
      * @param bytes
      * @return
      */
-    private static List<node> getNodes(byte[] bytes) {
-        List<node> nodes = new ArrayList<>();
-        Map<byte, integer> counts = new HashMap<>();
+    private static List<Node> getNodes(byte[] bytes) {
+        List<Node> nodes = new ArrayList<>();
+        Map<Byte, Integer> counts = new HashMap<>();
         // 统计每一个byte出现的次数
         for (byte b : bytes) {
             Integer count = counts.get(b);
@@ -1879,7 +1948,7 @@ public class HuffmanCoding {
             // counts.merge(b, 1, (a, a2) -> a + 1);
         }
         // 把每一个键值对转换为node对象
-        for (Map.Entry<byte, integer> entry : counts.entrySet()) {
+        for (Map.Entry<Byte, Integer> entry : counts.entrySet()) {
             nodes.add(new Node(entry.getKey(), entry.getValue()));
         }
         return nodes;
@@ -1893,11 +1962,11 @@ public class HuffmanCoding {
         return root;
     }
 
-    public Map<byte, string> getHuffCodes() {
+    public Map<Byte, String> getHuffCodes() {
         return huffCodes;
     }
 }
-</byte,></byte,></byte,></node></node></node></sb.length();)></byte></byte,></bytes.length;></byte,></byte,></byte,></node></byte,></code></pre>
+</code></pre>
 <p><strong>TestHuffmanCoding.class</strong></p>
 <pre class=" language-lang-java"><code class="language-lang-java">package DataStructure.Tree.HuffmanTree.HuffmanCoding;
 
@@ -2938,7 +3007,7 @@ public class TestRedBlackTree {
             <ul class="dropdown-menu">
             <li>
                 <a class="sidebar_archives-link" href="/archives/2019/07/">July 2019<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/05/">May 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/04/">April 2019<span class="sidebar_archives-count">9</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/12/">December 2018<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/11/">November 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/07/">July 2018<span class="sidebar_archives-count">23</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/06/">June 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/04/">April 2018<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/03/">March 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/01/">January 2018<span class="sidebar_archives-count">9</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/12/">December 2017<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/11/">November 2017<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/10/">October 2017<span class="sidebar_archives-count">8</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/08/">August 2017<span class="sidebar_archives-count">15</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/03/">March 2017<span class="sidebar_archives-count">6</span></a>
-            </li></ul>
+            </ul>
         </li>
         
     
@@ -2956,7 +3025,7 @@ public class TestRedBlackTree {
             <ul class="dropdown-menu">
                 <li>
                 <a class="sidebar_archives-link" href="/categories/Android/">Android<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/Android碎片/">Android碎片<span class="sidebar_archives-count">16</span></a></li><li><a class="sidebar_archives-link" href="/categories/Android错误解决/">Android错误解决<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/C/">C#<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/Django/">Django<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Git/">Git<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Hexo/">Hexo<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/Java/">Java<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Java笔记/">Java笔记<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/Linux/">Linux<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/Maven/">Maven<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/Python/">Python<span class="sidebar_archives-count">9</span></a></li><li><a class="sidebar_archives-link" href="/categories/Shell/">Shell<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/SpringBoot/">SpringBoot<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/Ubuntu/">Ubuntu<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/categories/Vue/">Vue<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/WPF/">WPF<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/剑指Offer编程题/">剑指Offer编程题<span class="sidebar_archives-count">22</span></a></li><li><a class="sidebar_archives-link" href="/categories/小技能/">小技能<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/数据结构与算法/">数据结构与算法<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/机器学习/">机器学习<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/杂记/">杂记<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/游戏/">游戏<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/皮皮夏/">皮皮夏<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/皮皮夏的奇葩日记/">皮皮夏的奇葩日记<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/论文笔记/">论文笔记<span class="sidebar_archives-count">2</span></a>
-            </li></ul>
+            </ul>
         </li>
         
     
@@ -3037,7 +3106,7 @@ It will not impact the appearance and can give developers a lot of support :)
 
 <!-- Theme Material -->
 
-    <a href="https://github.com/viosey/hexo-theme-material" class="sidebar-footer-text-a" target="_blank">
+    <a href="https://github.com/viosey/hexo-theme-material"  class="sidebar-footer-text-a" target="_blank">
         <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
             Theme - Material
             <span class="sidebar-badge badge-circle">i</span>

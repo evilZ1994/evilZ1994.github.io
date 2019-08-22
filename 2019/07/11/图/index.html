@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html style="display: none;" lang="en">
-    <head><meta name="generator" content="Hexo 3.8.0">
+    <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
     <!--
         © Material Theme
@@ -36,7 +36,7 @@
     <meta name="theme-color" content="#0097A7">
     <meta name="author" content="Zhu Yuexin">
     <meta name="description" itemprop="description" content="呀！发现一只会写代码的猪！">
-    <meta name="keywords" content="null,数据结构,图,深度优先搜索,dfs,广度优先搜索,bfs,邻接表,邻接矩阵">
+    <meta name="keywords" content=",数据结构,图,深度优先搜索,dfs,广度优先搜索,bfs,邻接表,邻接矩阵">
 
     <!-- Site Verification -->
     
@@ -555,7 +555,8 @@
     -->
 
     <!-- Left aligned menu below button -->
-    <button id="post-toc-trigger-btn" class="mdl-button mdl-js-button mdl-button--icon">
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
         <i class="material-icons">format_list_numbered</i>
     </button>
 
@@ -613,7 +614,7 @@
 
     <!-- Author Avatar -->
     <div id="author-avatar">
-        <img src="/img/avatar.gif" width="44px" height="44px" alt="Author Avatar">
+        <img src="/img/avatar.gif" width="44px" height="44px" alt="Author Avatar"/>
     </div>
     <!-- Author Name & Date -->
     <div>
@@ -643,7 +644,7 @@
     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
         <li class="mdl-menu__item">
         <a class="post_tag-link" href="/tags/bfs/">bfs</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/dfs/">dfs</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/图/">图</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/广度优先搜索/">广度优先搜索</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/数据结构/">数据结构</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/深度优先搜索/">深度优先搜索</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/邻接矩阵/">邻接矩阵</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/邻接表/">邻接表</a>
-    </li></ul>
+    </ul>
     
 
     <!-- Share -->
@@ -949,7 +950,7 @@ public class Graph {
         if (vertices[0] == null) {
             return;
         }
-        Queue<vertex> queue = new LinkedBlockingQueue<>();
+        Queue<Vertex> queue = new LinkedBlockingQueue<>();
         vertices[0].setVisited(flag);
         System.out.println(vertices[0].getValue());
         queue.add(vertices[0]);
@@ -972,7 +973,7 @@ public class Graph {
         return vertices;
     }
 }
-</vertex></code></pre>
+</code></pre>
 <p><strong>TestGraph.java</strong></p>
 <pre class=" language-lang-java"><code class="language-lang-java">package DataStructure.Graph.List;
 
@@ -1053,9 +1054,9 @@ public class Graph {
     // 每遍历一次，这个值就取反（因为节点的访问标识一旦被访问就被设置为这个值）
     private boolean flag = true;
     // 栈，用于深度优先搜索
-    Stack<integer> stack = new Stack<>();
+    Stack<Integer> stack = new Stack<>();
     // 队列，用于广度优先搜索
-    Queue<integer> queue = new LinkedBlockingQueue<>();
+    Queue<Integer> queue = new LinkedBlockingQueue<>();
 
     public Graph(int size) {
         this.vertices = new Vertex[size];
@@ -1084,7 +1085,78 @@ public class Graph {
     }
 
     private int getIndex(String v) {
-        for (int i=0; i<vertices.length; 1 i++) { if (vertices[i].getvalue().equals(v)) return i; } -1; ** * 深度优先搜索dfs 遍历图 public void dfs() 从第0个顶点开始遍历 int currentindex="0;" 将第0个顶点设置为已访问 vertices[currentindex].setvisited(flag); 将第0个顶点入栈 stack.push(currentindex); system.out.println(vertices[currentindex].getvalue()); start="0;" while (!stack.isempty()) for (int i="start" + 1; i<vertices.length; (adjacentmatrix[currentindex][i]="=" && vertices[i].getvisited() !="flag)" 访问下一个元素，标记为已访问，并入栈 vertices[i].setvisited(flag); stack.push(i); system.out.println(vertices[i].getvalue()); 弹出栈顶元素（前一个元素再次遍历时，只需要接着这个元素的位置开始） 修改当前位置为栈顶元素位置 遍历完成，flag取反，以便下一次遍历 flag="!flag;" 广度优先搜索bfs bfs() 从第0个节点开始 将第0个节点设置为已访问 将第0个节点入队列 queue.add(currentindex); (!queue.isempty()) 将下一个元素设置为已访问，并入队列 queue.add(i); int[][] getadjacentmatrix() adjacentmatrix; < code></vertices.length;></integer></integer></code></pre>
+        for (int i=0; i<vertices.length; i++) {
+            if (vertices[i].getValue().equals(v)) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
+    /**
+     * 深度优先搜索DFS 遍历图
+     */
+    public void dfs() {
+        // 从第0个顶点开始遍历
+        int currentIndex = 0;
+        // 将第0个顶点设置为已访问
+        vertices[currentIndex].setVisited(flag);
+        // 将第0个顶点入栈
+        stack.push(currentIndex);
+        System.out.println(vertices[currentIndex].getValue());
+        int start = 0;
+        while (!stack.isEmpty()) {
+            for (int i=start + 1; i<vertices.length; i++) {
+                if (adjacentMatrix[currentIndex][i] == 1 && vertices[i].getVisited() != flag) {
+                    // 访问下一个元素，标记为已访问，并入栈
+                    vertices[i].setVisited(flag);
+                    stack.push(i);
+                    System.out.println(vertices[i].getValue());
+                    currentIndex = i;
+                    i=0;
+                }
+            }
+            // 弹出栈顶元素（前一个元素再次遍历时，只需要接着这个元素的位置开始）
+            start = stack.pop();
+            // 修改当前位置为栈顶元素位置
+            if (!stack.isEmpty()) {
+                currentIndex = stack.peek();
+            }
+        }
+        // 遍历完成，flag取反，以便下一次遍历
+        flag = !flag;
+    }
+
+    /**
+     * 广度优先搜索BFS 遍历图
+     */
+    public void bfs() {
+        // 从第0个节点开始
+        int currentIndex = 0;
+        // 将第0个节点设置为已访问
+        vertices[currentIndex].setVisited(flag);
+        // 将第0个节点入队列
+        queue.add(currentIndex);
+        System.out.println(vertices[currentIndex].getValue());
+        while (!queue.isEmpty()) {
+            currentIndex = queue.poll();
+            for (int i=0; i<vertices.length; i++) {
+                if (adjacentMatrix[currentIndex][i] == 1 && vertices[i].getVisited() != flag) {
+                    // 将下一个元素设置为已访问，并入队列
+                    vertices[i].setVisited(flag);
+                    queue.add(i);
+                    System.out.println(vertices[i].getValue());
+                }
+            }
+        }
+        flag = !flag;
+    }
+
+    public int[][] getAdjacentMatrix() {
+        return adjacentMatrix;
+    }
+}
+</code></pre>
 <p><strong>TestGraph.java</strong></p>
 <pre class=" language-lang-java"><code class="language-lang-java">package DataStructure.Graph;
 
@@ -1233,7 +1305,7 @@ public class TestGraph {
             <ul class="dropdown-menu">
             <li>
                 <a class="sidebar_archives-link" href="/archives/2019/07/">July 2019<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/05/">May 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/04/">April 2019<span class="sidebar_archives-count">9</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/12/">December 2018<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/11/">November 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/07/">July 2018<span class="sidebar_archives-count">23</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/06/">June 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/04/">April 2018<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/03/">March 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/01/">January 2018<span class="sidebar_archives-count">9</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/12/">December 2017<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/11/">November 2017<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/10/">October 2017<span class="sidebar_archives-count">8</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/08/">August 2017<span class="sidebar_archives-count">15</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/03/">March 2017<span class="sidebar_archives-count">6</span></a>
-            </li></ul>
+            </ul>
         </li>
         
     
@@ -1251,7 +1323,7 @@ public class TestGraph {
             <ul class="dropdown-menu">
                 <li>
                 <a class="sidebar_archives-link" href="/categories/Android/">Android<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/Android碎片/">Android碎片<span class="sidebar_archives-count">16</span></a></li><li><a class="sidebar_archives-link" href="/categories/Android错误解决/">Android错误解决<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/C/">C#<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/Django/">Django<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Git/">Git<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Hexo/">Hexo<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/Java/">Java<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Java笔记/">Java笔记<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/Linux/">Linux<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/Maven/">Maven<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/Python/">Python<span class="sidebar_archives-count">9</span></a></li><li><a class="sidebar_archives-link" href="/categories/Shell/">Shell<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/SpringBoot/">SpringBoot<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/Ubuntu/">Ubuntu<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/categories/Vue/">Vue<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/WPF/">WPF<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/剑指Offer编程题/">剑指Offer编程题<span class="sidebar_archives-count">22</span></a></li><li><a class="sidebar_archives-link" href="/categories/小技能/">小技能<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/数据结构与算法/">数据结构与算法<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/机器学习/">机器学习<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/杂记/">杂记<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/游戏/">游戏<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/皮皮夏/">皮皮夏<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/皮皮夏的奇葩日记/">皮皮夏的奇葩日记<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/论文笔记/">论文笔记<span class="sidebar_archives-count">2</span></a>
-            </li></ul>
+            </ul>
         </li>
         
     
@@ -1332,7 +1404,7 @@ It will not impact the appearance and can give developers a lot of support :)
 
 <!-- Theme Material -->
 
-    <a href="https://github.com/viosey/hexo-theme-material" class="sidebar-footer-text-a" target="_blank">
+    <a href="https://github.com/viosey/hexo-theme-material"  class="sidebar-footer-text-a" target="_blank">
         <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
             Theme - Material
             <span class="sidebar-badge badge-circle">i</span>

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html style="display: none;" lang="en">
-    <head><meta name="generator" content="Hexo 3.8.0">
+    <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
     <!--
         © Material Theme
@@ -36,7 +36,7 @@
     <meta name="theme-color" content="#0097A7">
     <meta name="author" content="Zhu Yuexin">
     <meta name="description" itemprop="description" content="呀！发现一只会写代码的猪！">
-    <meta name="keywords" content="null,android,EditText">
+    <meta name="keywords" content=",android,EditText">
 
     <!-- Site Verification -->
     
@@ -555,7 +555,8 @@
     -->
 
     <!-- Left aligned menu below button -->
-    <button id="post-toc-trigger-btn" class="mdl-button mdl-js-button mdl-button--icon">
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
         <i class="material-icons">format_list_numbered</i>
     </button>
 
@@ -613,7 +614,7 @@
 
     <!-- Author Avatar -->
     <div id="author-avatar">
-        <img src="/img/avatar.gif" width="44px" height="44px" alt="Author Avatar">
+        <img src="/img/avatar.gif" width="44px" height="44px" alt="Author Avatar"/>
     </div>
     <!-- Author Name & Date -->
     <div>
@@ -643,7 +644,7 @@
     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
         <li class="mdl-menu__item">
         <a class="post_tag-link" href="/tags/EditText/">EditText</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/android/">android</a>
-    </li></ul>
+    </ul>
     
 
     <!-- Share -->
@@ -719,11 +720,25 @@ compile 'com.android.support:appcompat-v7:X.X.X' // X.X.X 为最新的版本号
     <item name="android:textColorHint">@color/gray_ccc</item>
 </style>
 </code></pre>
-<h1 id="通过”android-theme”属性将自定义的样式应用于EditText"><a href="#通过”android-theme”属性将自定义的样式应用于EditText" class="headerlink" title="通过”android:theme”属性将自定义的样式应用于EditText"></a>通过”android:theme”属性将自定义的样式应用于EditText</h1><pre class=" language-lang-xml"><code class="language-lang-xml"><edittext android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="Hint text" android:theme="@style/EditTextTheme">
-</edittext></code></pre>
-<h1 id="如果是在-lt-android-support-design-widget-TextInputLayout-gt-下的EditText或者TextInputEditText，则需要在TextInputLayout上应用样式"><a href="#如果是在-lt-android-support-design-widget-TextInputLayout-gt-下的EditText或者TextInputEditText，则需要在TextInputLayout上应用样式" class="headerlink" title="如果是在&lt;android.support.design.widget.TextInputLayout&gt;下的EditText或者TextInputEditText，则需要在TextInputLayout上应用样式"></a>如果是在<code>&lt;android.support.design.widget.TextInputLayout&gt;</code>下的EditText或者TextInputEditText，则需要在TextInputLayout上应用样式</h1><pre class=" language-lang-xml"><code class="language-lang-xml"><android.support.design.widget.textinputlayout app:theme="@style/EditTextTheme" android:layout_width="match_parent" android:layout_height="wrap_content">
-    <android.support.design.widget.textinputedittext android:id="@+id/register_pass" android:hint="@string/password" android:digits="@string/password_limit" android:inputtype="textPassword" android:layout_margintop="20dp" android:layout_width="match_parent" android:layout_height="wrap_content">
-</android.support.design.widget.textinputedittext></android.support.design.widget.textinputlayout>
+<h1 id="通过”android-theme”属性将自定义的样式应用于EditText"><a href="#通过”android-theme”属性将自定义的样式应用于EditText" class="headerlink" title="通过”android:theme”属性将自定义的样式应用于EditText"></a>通过”android:theme”属性将自定义的样式应用于EditText</h1><pre class=" language-lang-xml"><code class="language-lang-xml"><EditText
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:hint="Hint text"
+android:theme="@style/EditTextTheme"/>
+</code></pre>
+<h1 id="如果是在-lt-android-support-design-widget-TextInputLayout-gt-下的EditText或者TextInputEditText，则需要在TextInputLayout上应用样式"><a href="#如果是在-lt-android-support-design-widget-TextInputLayout-gt-下的EditText或者TextInputEditText，则需要在TextInputLayout上应用样式" class="headerlink" title="如果是在&lt;android.support.design.widget.TextInputLayout&gt;下的EditText或者TextInputEditText，则需要在TextInputLayout上应用样式"></a>如果是在<code>&lt;android.support.design.widget.TextInputLayout&gt;</code>下的EditText或者TextInputEditText，则需要在TextInputLayout上应用样式</h1><pre class=" language-lang-xml"><code class="language-lang-xml"><android.support.design.widget.TextInputLayout
+    app:theme="@style/EditTextTheme"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <android.support.design.widget.TextInputEditText
+        android:id="@+id/register_pass"
+        android:hint="@string/password"
+        android:digits="@string/password_limit"
+        android:inputType="textPassword"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+</android.support.design.widget.TextInputLayout>
 </code></pre>
 
     
@@ -851,7 +866,7 @@ compile 'com.android.support:appcompat-v7:X.X.X' // X.X.X 为最新的版本号
             <ul class="dropdown-menu">
             <li>
                 <a class="sidebar_archives-link" href="/archives/2019/07/">July 2019<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/05/">May 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/04/">April 2019<span class="sidebar_archives-count">9</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/12/">December 2018<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/11/">November 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/07/">July 2018<span class="sidebar_archives-count">23</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/06/">June 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/04/">April 2018<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/03/">March 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/01/">January 2018<span class="sidebar_archives-count">9</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/12/">December 2017<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/11/">November 2017<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/10/">October 2017<span class="sidebar_archives-count">8</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/08/">August 2017<span class="sidebar_archives-count">15</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/03/">March 2017<span class="sidebar_archives-count">6</span></a>
-            </li></ul>
+            </ul>
         </li>
         
     
@@ -869,7 +884,7 @@ compile 'com.android.support:appcompat-v7:X.X.X' // X.X.X 为最新的版本号
             <ul class="dropdown-menu">
                 <li>
                 <a class="sidebar_archives-link" href="/categories/Android/">Android<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/Android碎片/">Android碎片<span class="sidebar_archives-count">16</span></a></li><li><a class="sidebar_archives-link" href="/categories/Android错误解决/">Android错误解决<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/C/">C#<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/Django/">Django<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Git/">Git<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Hexo/">Hexo<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/Java/">Java<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Java笔记/">Java笔记<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/Linux/">Linux<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/Maven/">Maven<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/Python/">Python<span class="sidebar_archives-count">9</span></a></li><li><a class="sidebar_archives-link" href="/categories/Shell/">Shell<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/SpringBoot/">SpringBoot<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/Ubuntu/">Ubuntu<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/categories/Vue/">Vue<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/WPF/">WPF<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/剑指Offer编程题/">剑指Offer编程题<span class="sidebar_archives-count">22</span></a></li><li><a class="sidebar_archives-link" href="/categories/小技能/">小技能<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/数据结构与算法/">数据结构与算法<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/机器学习/">机器学习<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/杂记/">杂记<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/游戏/">游戏<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/皮皮夏/">皮皮夏<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/皮皮夏的奇葩日记/">皮皮夏的奇葩日记<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/论文笔记/">论文笔记<span class="sidebar_archives-count">2</span></a>
-            </li></ul>
+            </ul>
         </li>
         
     
@@ -950,7 +965,7 @@ It will not impact the appearance and can give developers a lot of support :)
 
 <!-- Theme Material -->
 
-    <a href="https://github.com/viosey/hexo-theme-material" class="sidebar-footer-text-a" target="_blank">
+    <a href="https://github.com/viosey/hexo-theme-material"  class="sidebar-footer-text-a" target="_blank">
         <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
             Theme - Material
             <span class="sidebar-badge badge-circle">i</span>
