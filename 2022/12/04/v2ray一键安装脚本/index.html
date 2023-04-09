@@ -1,0 +1,2211 @@
+<!DOCTYPE html>
+<html style="display: none;" lang="en">
+    <head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <!--
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.4.0 -->
+    <script>window.materialVersion = "1.4.0"</script>
+
+    <!-- Title -->
+    
+    <title>
+        
+            v2ray一键安装脚本 | 
+        
+        Mr.Z&#39;s Blog
+    </title>
+
+    <!-- dns prefetch -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    <!-- Meta & Info -->
+    <meta http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="theme-color" content="#0097A7">
+    <meta name="author" content="Zhu Yuexin">
+    <meta name="description" itemprop="description" content="呀！发现一只会写代码的猪！">
+    <meta name="keywords" content=",v2ray">
+
+    <!-- Site Verification -->
+    
+    
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/favicon.ico">
+    <link rel="icon" sizes="192x192" href="/img/favicon.ico">
+    <link rel="apple-touch-icon" href="/img/favicon.ico">
+
+    <!--iOS -->
+    <meta name="apple-mobile-web-app-title" content="Title">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="480">
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Mr.Z&#39;s Blog">
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="http://yoursite.com">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="v2ray一键安装脚本 | Mr.Z&#39;s Blog">
+    <meta property="og:image" content="/img/favicon.ico">
+    <meta property="og:description" content="呀！发现一只会写代码的猪！">
+    <meta property="og:article:tag" content="v2ray"> 
+
+    
+        <meta property="article:published_time" content="Dec 04, 2022">
+        <meta property="article:modified_time" content="Jan 04, 2023">
+    
+
+    <!-- The Twitter Card protocol -->
+    <meta name="twitter:title" content="v2ray一键安装脚本 | Mr.Z&#39;s Blog">
+    <meta name="twitter:description" content="呀！发现一只会写代码的猪！">
+    <meta name="twitter:image" content="/img/favicon.ico">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="http://yoursite.com">
+
+    <!-- Add canonical link for SEO -->
+    
+        <link rel="canonical" href="http://yoursite.com/2022/12/04/v2ray一键安装脚本/index.html">
+    
+
+    <!-- Structured-data for SEO -->
+    
+        
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Mr.Z&#39;s Blog",
+        "logo": "/img/favicon.ico"
+    },
+    "author": {
+        "@type": "Person",
+        "name": "Zhu Yuexin",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/favicon.ico"
+        },
+        "description": "The keyboard is typing on my fingertip,<br>The code is writing me,<br>My eyes are flashing in the cursor, and you are missing me."
+    },
+    "headline": "v2ray一键安装脚本",
+    "url": "http://yoursite.com/2022/12/04/v2ray一键安装脚本/index.html",
+    "datePublished": "Dec 04, 2022",
+    "dateModified": "Jan 04, 2023",
+    "description": "呀！发现一只会写代码的猪！",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://yoursite.com"
+    }
+}
+</script>
+
+
+    
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+
+        
+            <script src="/js/ie-blocker.en.js"></script>
+        
+    <![endif]-->
+
+    <!-- Import lsloader -->
+    <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(key){try{localStorage.removeItem(key)}catch(e){}};lsloader.setLS=function(key,val){try{localStorage.setItem(key,val)}catch(e){}};lsloader.getLS=function(key){var val="";try{val=localStorage.getItem(key)}catch(e){val=""}return val};versionString="/*"+materialVersion+"*/";lsloader.clean=function(){try{var keys=[];for(var i=0;i<localStorage.length;i++){keys.push(localStorage.key(i))}keys.forEach(function(key){var data=lsloader.getLS(key);if(data&&data.indexOf(versionString)===-1){lsloader.removeLS(key)}})}catch(e){}};lsloader.clean();lsloader.load=function(jsname,jspath,cssonload){cssonload=cssonload||function(){};var code;code=this.getLS(jsname);if(code&&code.indexOf(versionString)===-1){this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload);return}if(code){var versionNumber=code.split(versionString)[0];if(versionNumber!=jspath){console.log("reload:"+jspath);this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload);return}code=code.split(versionString)[1];if(/\.js?.+$/.test(versionNumber)){this.jsRunSequence.push({name:jsname,code:code});this.runjs(jspath,jsname,code)}else{document.getElementById(jsname).appendChild(document.createTextNode(code));cssonload()}}else{this.requestResource(jsname,jspath,cssonload)}};lsloader.requestResource=function(name,path,cssonload){var that=this;if(/\.js?.+$/.test(path)){this.iojs(path,name,function(path,name,code){that.setLS(name,path+versionString+code);that.runjs(path,name,code)})}else if(/\.css?.+$/.test(path)){this.iocss(path,name,function(code){document.getElementById(name).appendChild(document.createTextNode(code));that.setLS(name,path+versionString+code)},cssonload)}};lsloader.iojs=function(path,jsname,callback){var that=this;that.jsRunSequence.push({name:jsname,code:""});try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(path,jsname,xhr.response);return}}that.jsfallback(path,jsname)}};xhr.send(null)}catch(e){that.jsfallback(path,jsname)}};lsloader.iocss=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.iofonts=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.runjs=function(path,name,code){if(!!name&&!!code){for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code=code}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var script=document.createElement("script");script.appendChild(document.createTextNode(this.jsRunSequence[0].code));script.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(script);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var that=this;var script=document.createElement("script");script.src=this.jsRunSequence[0].path;script.type="text/javascript";this.jsRunSequence[0].status="loading";script.onload=function(){that.jsRunSequence.shift();if(that.jsRunSequence.length>0){that.runjs()}};document.body.appendChild(script)}};lsloader.tagLoad=function(path,name){this.jsRunSequence.push({name:name,code:"",path:path,status:"failed"});this.runjs()};lsloader.jsfallback=function(path,name){if(!!this.jsnamemap[name]){return}else{this.jsnamemap[name]=name}for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code="";this.jsRunSequence[k].status="failed";this.jsRunSequence[k].path=path}}this.runjs()};lsloader.cssfallback=function(path,name,cssonload){if(!!this.cssnamemap[name]){return}else{this.cssnamemap[name]=1}var link=document.createElement("link");link.type="text/css";link.href=path;link.rel="stylesheet";link.onload=link.onerror=cssonload;var root=document.getElementsByTagName("script")[0];root.parentNode.insertBefore(link,root)};lsloader.runInlineScript=function(scriptId,codeId){var code=document.getElementById(codeId).innerText;this.jsRunSequence.push({name:scriptId,code:code});this.runjs()};lsloader.loadCombo=function(jslist){var updateList="";var requestingModules={};for(var k in jslist){var LS=this.getLS(jslist[k].name);if(!!LS){var version=LS.split(versionString)[0];var code=LS.split(versionString)[1]}else{var version=""}if(version==jslist[k].path){this.jsRunSequence.push({name:jslist[k].name,code:code,path:jslist[k].path})}else{this.jsRunSequence.push({name:jslist[k].name,code:null,path:jslist[k].path,status:"comboloading"});requestingModules[jslist[k].name]=true;updateList+=(updateList==""?"":";")+jslist[k].path}}var that=this;if(!!updateList){var xhr=new XMLHttpRequest;xhr.open("get",combo+updateList,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){that.runCombo(xhr.response,requestingModules);return}}else{for(var i in that.jsRunSequence){if(requestingModules[that.jsRunSequence[i].name]){that.jsRunSequence[i].status="failed"}}that.runjs()}}};xhr.send(null)}this.runjs()};lsloader.runCombo=function(comboCode,requestingModules){comboCode=comboCode.split("/*combojs*/");comboCode.shift();for(var k in this.jsRunSequence){if(!!requestingModules[this.jsRunSequence[k].name]&&!!comboCode[0]){this.jsRunSequence[k].status="comboJS";this.jsRunSequence[k].code=comboCode[0];this.setLS(this.jsRunSequence[k].name,this.jsRunSequence[k].path+versionString+comboCode[0]);comboCode.shift()}}this.runjs()}})();</script>
+
+    <!-- Import CSS & jQuery -->
+    
+        <style id="css/material.min.css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("css/material.min.css","/css/material.min.css?fJTiM/K1J3dWIruo3pxtAw==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";})</script>
+        <style id="css/style.min.css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("css/style.min.css","/css/style.min.css?oCSEO3ST+aEypEwttTDI9g==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";})</script>
+        
+        
+            <style>
+    
+    .footer-sns-facebook {
+        background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0OCIgaGVpZ2h0PSI0OCIgY2xhc3M9Imljb24iIHZpZXdCb3g9IjAgMCAxMDI0IDEwMjQiPjxwYXRoIGQ9Ik0xMzguNiA3OGMtMjIuNCA1LjItNTUuOCA0MC4yLTYwLjYgNjMuNC0xLjQgNi40LTIgMTI5LjgtMS42IDM2Ny42LjYgMjk4LjYgMSAzNTguOCAzLjQgMzYzIDExIDIwLjIgMjEuNiAzMi40IDM3LjIgNDMgMTUgMTAuMiAxNy40IDExLjIgMzMgMTMgMTEuMiAxLjQgMTM2IDIgMzY1IDEuNiAzMTQtLjYgMzQ4LjYtMSAzNTUtMy44IDE1LjgtNy4yIDMzLjgtMjIgNDMuMi0zNS40IDUuMi03LjQgMTAuOC0xNi42IDEyLjYtMjAuNCAyLjgtNi40IDMuMi00MC44IDMuOC0zNTQgLjQtMjIzLS4yLTM1My40LTEuNC0zNjUtMi0xNy0yLjYtMTguNi0xMy0zNC04LjYtMTIuNi0xNC4yLTE4LjQtMjUuMi0yNS44LTcuOC01LjQtMTcuNC0xMS0yMS42LTEyLjQtNi0yLjItNzIuOC0yLjYtMzY1LjQtMi42LTE5Ni44LjItMzYxIC44LTM2NC40IDEuOHptNjU3LjYgODcuOGw0LjggMy44djU1LjJjMCA1NC42IDAgNTUuMi00LjYgNTkuNi00LjQgNC40LTYgNC42LTUwLjIgNS42bC00NS42IDEtNy4yIDUuNmMtMTAuNCA4LTE2LjggMTcuMi0xOS4yIDI3LjQtMSA1LTEuOCAyNC44LTEuOCA0NCAuMiAzOCAxLjYgNDQuNiAxMC44IDQ4IDIuOCAxLjIgMjguNCAyIDU2LjggMiA0Ny44IDAgNTIgLjIgNTYuMiAzLjhsNC44IDMuOHY1NS4yYzAgNTQuNiAwIDU1LjItNC42IDU5LjYtNC40IDQuNi01LjQgNC42LTU3IDUuMi0yOC44LjItNTQuNC44LTU2LjggMS40LTIuNC42LTUuNiAzLTYuOCA1LjQtMS44IDMuMi0yLjQgNDEuNC0yLjYgMTQzLjJsLS4yIDEzOC44LTUuNiA0LjgtNS42IDQuOEg2MDljLTUyLjQgMC01Mi44IDAtNTguMi00LjZsLTUuNC00LjYtLjItMTQwLjYtLjItMTQwLjYtNC44LTMuOGMtNC4yLTMuNC04LTMuOC0zNS42LTMuOC0zMi44IDAtNDEtMS44LTQzLjYtMTAtLjYtMi4yLTEuMi0yNS40LTEuMi01MS40IDAtNjAuOC0uMi01NyAzLjQtNjEuNiAyLjgtMy42IDYtNCAzNy44LTUgMzMtMSAzNS4yLTEuMiAzOS40LTUuNiA0LjYtNC40IDQuNi01LjIgNS44LTcxIDEuMi03My40LjItNjcuMiAxNi42LTk5LjQgOC0xNS44IDEyLjgtMjIgMjgtMzcgMTUuMi0xNS4yIDIxLjQtMTkuNiAzOC4yLTI4IDExLTUuNCAyNC0xMSAyOS0xMi4yIDYuMi0xLjggMjguNi0yLjYgNzEuMi0yLjYgNTguNi0uMiA2Mi42IDAgNjcgMy42eiIvPjwvc3ZnPg==);
+    }
+    
+    
+    .footer-sns-twitter {
+        background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0OCIgaGVpZ2h0PSI0OCIgY2xhc3M9Imljb24iIHZpZXdCb3g9IjAgMCAxMDI0IDEwMjQiPjxwYXRoIGQ9Ik0xMzguNiA3OGMtMjIuNCA1LjItNTUuOCA0MC4yLTYwLjYgNjMuNC0xLjQgNi40LTIgMTI5LjgtMS42IDM2Ny42LjYgMjk4LjYgMSAzNTguOCAzLjQgMzYzIDExIDIwLjIgMjEuNiAzMi40IDM3LjIgNDMgMTUgMTAuMiAxNy40IDExLjIgMzMgMTMgMTEuMiAxLjQgMTM2IDIgMzY1IDEuNiAzMTQtLjYgMzQ4LjYtMSAzNTUtMy44IDE1LjgtNy4yIDMzLjgtMjIgNDMuMi0zNS40IDUuMi03LjQgMTAuOC0xNi42IDEyLjYtMjAuNCAyLjgtNi40IDMuMi00MC44IDMuOC0zNTQgLjQtMjIzLS4yLTM1My40LTEuNC0zNjUtMi0xNy0yLjYtMTguNi0xMy0zNC04LjYtMTIuNi0xNC4yLTE4LjQtMjUuMi0yNS44LTcuOC01LjQtMTcuNC0xMS0yMS42LTEyLjQtNi0yLjItNzIuOC0yLjYtMzY1LjQtMi42LTE5Ni44LjItMzYxIC44LTM2NC40IDEuOHptNTMyLjggMjA1YzEwIDQgMjMgMTAuOCAyOC44IDE1LjIgMTIuNiA5LjIgMTYuNiAxMC42IDI5LjQgOS40IDYuNi0uNiAxMy0zLjIgMjAuNC04LjIgMTEuMi03LjYgMTkuNC05LjIgMjMuNi01IDMuNiAzLjYgMi44IDktMi44IDE4LjYtNy4yIDEyLjQtNiAxOC44IDQuMiAyNC4yIDQuNCAyLjIgOC4yIDUuNiA4LjYgNy40IDEgNC44LTEyLjYgMjQuMi0yMiAzMS44LTExLjggOS4yLTE3LjIgMjIuNi0xOS42IDQ3LjgtNC44IDUwLjQtNy44IDY2LjYtMTYuNCA4NS40LTMgNy03IDE3LjgtOC44IDI0LTEuOCA2LjQtNSAxNC42LTcuNCAxOC40LTIuMiAzLjgtNy40IDEzLTExLjQgMjAuNC0xNy4yIDMwLjgtNDMuNCA2MS40LTcxLjQgODMuOC0yNS42IDIwLjQtNDYgMzMuMi02NC4yIDQwLjItOC40IDMuMi0xOCA3LjYtMjEuNCA5LjYtNy40IDQuNi0yMi40IDguNi01Ny4yIDE1LTYyLjIgMTEuNi03OS4yIDExLjQtMTM1LjYtMS0zMi40LTctMzguNi05LTUyLTE2LjgtMjEuNC0xMi42LTI0LjItMTQuOC0yNC4yLTE5LjQgMC02LjIgMTAuMi05LjIgMzUtMTAuNCAyMi40LTEgMjguNi0yLjYgNTctMTQuMiAyMy44LTkuOCAyOS40LTEyLjggMzAuNC0xNi44IDIuMi04LjItMy0xMy4yLTI2LjgtMjUuNC0yNS44LTEzLjItMzIuMi0xOC40LTQzLjgtMzUuOC05LTEzLjYtMTAtMjEuMi0zLjYtMzMuNiA1LjQtMTAuOCAzLjYtMTUtMTEuOC0yNS40LTktNi0xNC0xMS42LTIwLjgtMjIuNi0yMy40LTM3LjgtMjUtNTAuOC03LjItNTkuOCA0LjgtMi40IDkuNC01LjQgMTAuMi02LjYgMi44LTQuMi0uNC0xNS42LTguNC0yOS0xMS42LTE5LjYtMTMuMi0yNS44LTEzLjItNTUuMiAwLTI4LjggMi42LTM3LjggMTItNDAuMiA5LTIuMiAxNC44IDEgMzUuNiAyMC4yIDI0LjggMjIuOCA0My42IDM2LjYgNjIuOCA0NS44IDggMy44IDE3LjggOS4yIDIyIDEyIDQuMiAyLjggMTQuOCA3IDIzLjQgOS4yIDguNiAyLjIgMjQuMiA2LjggMzQuOCAxMC4yIDEzLjQgNC40IDIzLjYgNi40IDMzIDYuNiAxMi44LjIgMTQuMi0uMiAxOC42LTUuNCA0LTQuOCA0LjgtNy44IDQuOC0xOS4yIDAtMTQuNCA1LjYtMzkuNiAxMS4yLTUwLjYgNC4yLTguNCAyOS4yLTM0LjIgMzkuOC00MS40IDcuOC01LjQgMzUuNi0xNiA1Mi0yMCAxNC4yLTMuNiAzMi42LTEuMiA1Mi40IDYuOHoiLz48L3N2Zz4=);
+    }
+    
+    
+    .footer-sns-gplus {
+        background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0OCIgaGVpZ2h0PSI0OCIgY2xhc3M9Imljb24iIHZpZXdCb3g9IjAgMCAxMDI0IDEwMjQiPjxwYXRoIGQ9Ik0xMzguNiA3OGMtMjIuNCA1LjItNTUuOCA0MC4yLTYwLjYgNjMuNC0xLjQgNi40LTIgMTI5LjgtMS42IDM2Ny42LjYgMjk4LjYgMSAzNTguOCAzLjQgMzYzIDExIDIwLjIgMjEuNiAzMi40IDM3LjIgNDMgMTUgMTAuMiAxNy40IDExLjIgMzMgMTMgMTEuMiAxLjQgMTM2IDIgMzY1IDEuNiAzMTQtLjYgMzQ4LjYtMSAzNTUtMy44IDE1LjgtNy4yIDMzLjgtMjIgNDMuMi0zNS40IDUuMi03LjQgMTAuOC0xNi42IDEyLjYtMjAuNCAyLjgtNi40IDMuMi00MC44IDMuOC0zNTQgLjQtMjIzLS4yLTM1My40LTEuNC0zNjUtMi0xNy0yLjYtMTguNi0xMy0zNC04LjYtMTIuNi0xNC4yLTE4LjQtMjUuMi0yNS44LTcuOC01LjQtMTcuNC0xMS0yMS42LTEyLjQtNi0yLjItNzIuOC0yLjYtMzY1LjQtMi42LTE5Ni44LjItMzYxIC44LTM2NC40IDEuOHpNNDMwIDI5NS40YzQwLjYgMTUuNCA1Ni42IDIzLjggNzIuNiAzOC40IDYuOCA2LjIgNy4yIDE1LjIgMSAyMy40LTYuMiA4LTMzLjYgMzMuOC0zOSAzNi42LTUuNiAyLjgtMTcuNiAyLjgtMjMuMi0uMi0yLjQtMS4yLTguMi01LjItMTMtOC44LTExLjItOC42LTI0LjYtMTEuMi01NS4yLTExLjItMjcuNCAwLTQwLjYgMi42LTUyLjIgMTAuNC00LjQgMi44LTEyLjIgNy42LTE3LjIgMTAuNi0yMyAxMy4yLTUxLjQgNTUtNTUuOCA4Mi40LTIuNiAxNS42LTIuNCAzNC44LjIgNTEgMi44IDE3LjQgMTkuOCA0OC44IDM1LjIgNjUuMiAxNiAxNi42IDQ1IDMzLjYgNjIuOCAzNi42IDI2LjggNC40IDY1LjggMS42IDc5LjQtNS44IDIwLjYtMTEuNCAzMS0xOSA0MS0zMC40IDE4LjgtMjEuNiAyMy40LTM0LjIgMTUuNi00My44LTMuOC00LjgtNC40LTQuOC01MS01LjgtNjAuOC0xLjItNTYuMiAyLjItNTYuMi00My4yIDAtMzIuNC4yLTMzLjIgNC44LTM3IDQuNC0zLjYgOS0zLjggOTItMy44IDc5IDAgODcuOC40IDk0LjIgMy42IDExLjIgNS42IDEzIDExLjQgMTIuOCA0My40IDAgMjUuNC0uOCAzMC44LTcuNiA1OC00IDE2LjYtOS44IDM0LTEyLjYgMzktMi44IDUtOC4yIDE0LjItMTEuNiAyMC42LTguNCAxNS40LTI3LjIgMzYuOC00MC44IDQ2LjYtNS44IDQuNC0xMy44IDEwLjItMTcuNiAxMy4yLTMuOCAzLTExIDctMTYuMiA4LjgtNS4yIDEuOC0xNi4yIDYuNC0yNC40IDEwLTIyLjQgOS42LTM0LjggMTEuNi03MyAxMS42LTM3LjYuMi00Ny0xLjQtNzEtMTItOC4yLTMuNi0xNy42LTcuMi0yMC44LTgtMTUuOC0zLjgtNjctNDUuMi03Ny44LTYyLjgtMi4yLTMuOC03LjYtMTEuNi0xMS44LTE3LjItNC4yLTUuNC05LTE0LTEwLjYtMTktMS44LTQuOC02LjItMTYtMTAtMjQuOC0zLjYtOC44LTcuOC0yMi4yLTkuMi0yOS42LTMuMi0xOC44LTEuNC03OS40IDIuOC05MS40IDEzLjgtNDAuNiAzNS42LTc4IDU4LjgtMTAwLjIgMTQtMTMuNiA0Ny4yLTM2LjQgNTgtMzkuOCA0LjItMS40IDEzLjQtNS4yIDIwLjYtOC40IDIyLTEwIDMyLjgtMTEuNiA3Ni0xMSAzMy44LjYgNDAuNCAxLjIgNTAgNC44em0zNDAuOCA4MC44YzggMy42IDkuNiAxMS4yIDkuMiAzOS4yLS42IDM0LjQtLjYgMzQgNSAzOS42IDQuOCA1IDUuNCA1IDM3LjYgNSA0My40IDAgNDQuNC44IDQzLjIgMzYuMi0uOCAxNy0xLjIgMTguNC02LjQgMjMtNS40IDQuNi02LjYgNC44LTM3LjYgNC44LTMxLjIgMC0zMiAuMi0zNi44IDUtNS42IDUuNC01LjYgNC40LTUgNDEuMi40IDI2LjQuMiAyNy40LTQuNiAzMy00LjggNS42LTYgNS44LTI0LjQgNi40LTIwLjguOC0yOS42LTEuNC0zMy40LTguNC0xLjQtMi42LTItMTUuNi0xLjgtMzUuNi40LTMxLjIuNC0zMS42LTQuNi0zNi42cy01LjYtNS0zNi01Yy0xOC44IDAtMzMtLjgtMzYtMi4yLTcuNi0zLjYtOS42LTExLjItOC44LTMzLjguOC0yOC4yLjQtMjggNDEtMjggNDUuNCAwIDQ1LjQgMCA0NC42LTQyLjYtLjYtMzMtLjYtMzMgNS0zOC40IDQuNC00LjYgNi4yLTUgMjQuOC01IDExIDAgMjIuMiAxIDI1IDIuMnoiLz48L3N2Zz4=);
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</style>
+
+        
+        <!-- Config CSS -->
+
+<!-- Other Styles -->
+<style>
+  body, html {
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+  }
+
+  a {
+    color: #00838F;
+  }
+
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: #0097A7 !important;
+  }
+
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: #0097A7 !important;
+  }
+
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: #0097A7 !important;
+  }
+
+  .toTop {
+    background: #757575 !important;
+  }
+
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: #757575;
+  }
+
+  #scheme-Paradox .MD-burger-layer {
+    background-color: #757575;
+  }
+
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: #757575;
+  }
+
+  .post-toc a:hover {
+    color: #00838F;
+    text-decoration: underline;
+  }
+
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+      body{
+        background-color: #F5F5F5;
+      }
+
+      /* blog_info bottom background */
+      #scheme-Paradox .material-layout .something-else .mdl-card__supporting-text{
+        background-color: #fff;
+      }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+    <style>
+      .fade {
+        transition: all 800ms linear;
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+        opacity: 1;
+      }
+
+      .fade.out{
+        opacity: 0;
+      }
+    </style>
+
+
+<!-- Import Font -->
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+        <script>lsloader.load("js/jquery.min.js","/js/jquery.min.js?qcusAULNeBksqffqUM2+Ig==")</script>
+    
+    
+    <script>function Queue(){this.dataStore=[];this.offer=b;this.poll=d;this.execNext=a;this.debug=false;this.startDebug=c;function b(e){if(this.debug){console.log("Offered a Queued Function.")}if(typeof e==="function"){this.dataStore.push(e)}else{console.log("You must offer a function.")}}function d(){if(this.debug){console.log("Polled a Queued Function.")}return this.dataStore.shift()}function a(){var e=this.poll();if(e!==undefined){if(this.debug){console.log("Run a Queued Function.")}e()}}function c(){this.debug=true}}var queue=new Queue();</script>
+
+    <!-- Analytics -->
+    
+
+    <!-- Custom Head -->
+    
+        
+            <style>
+  canvas {
+    width: 100%;
+    background: white;
+    position: fixed;
+    z-index: -1;
+    
+    }
+  </style>
+  <script>
+    //var autoplay = getURLParameter('autoplay');
+    var autoplay = true;
+    var lastError = "";
+    var playing = !!autoplay;
+    function receiveMessage(event){
+      var origin = event.origin || event.originalEvent.origin;
+      console.log("Received message from " + origin);
+      if(origin !== "http://dwitter.localhost:8000"
+        && origin !== "http://localhost:8000"
+        && origin !== "https://localhost:8000"
+        && origin !== "https://www.dwitter.net"
+        && origin !== "https://dwitter.net"){
+          return;
+        }
+      console.log("Message was: " + event.data);
+
+      switch (event.data) {
+        case "toggle":
+          playing ? pauseDemo() : playDemo();
+          break;
+        case "play":
+          playDemo();
+          break;
+        case "pause":
+          pauseDemo();
+          break;
+        case "showStats":
+          setStatsVisibility(true);
+          break;
+        case "hideStats":
+          setStatsVisibility(false);
+          break;
+      }
+
+      if(event.data.substring(0, 4) == "code"){
+        var code = event.data.substring(5,event.data.length);
+        newCode(code);
+      }
+    }
+
+    function displayError(e) {
+      if(lastError != e){
+        lastError = e;
+        parent.postMessage({
+          'type': 'error',
+          'error': ""+e,
+          'location': window.location.href
+        },"*");
+      }
+    }
+
+    function newCode(code) {
+        try {
+          eval("u = function(t){"+code+"\n};");
+        } catch (e) {
+          u = function(t){
+            throw e;
+          };
+          throw e;
+        }
+        displayError("");
+        reset();
+    }
+
+    function pauseDemo(){
+      if(!playing){
+        return;
+      }
+
+      pauseTime = +new Date();
+
+      playing = false;
+    }
+
+    function playDemo(){
+      if(playing){
+        return
+      }
+
+      playing = true;
+      requestAnimationFrame(loop);
+    }
+    var timeOffset = 0;
+
+    window.addEventListener("message", receiveMessage, false);
+
+    function getURLParameter(name) {
+      return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search)||[,""])[1].replace(/\+/g, '%20'))||null
+    }
+
+    function setStatsVisibility(visible) {
+      document.getElementById('stats').style.visibility = visible ? 'visible' : 'hidden';
+    }
+  </script>
+  
+  
+  <script type="text/javascript">
+    (function(f,e){"object"===typeof exports&&"undefined"!==typeof module?module.exports=e():"function"===typeof define&&define.amd?define(e):f.Stats=e()})(this,function(){var f=function(){function e(a){c.appendChild(a.dom);return a}function u(a){for(var d=0;d<c.children.length;d++)c.children[d].style.display=d===a?"block":"none";l=a}var l=0,c=document.createElement("div");c.style.cssText="position:fixed;top:0;right:0;opacity:0.9;z-index:10000";var k=(performance||Date).now(),g=k,a=0,r=e(new f.Panel("FPS","#0ff","#002")),h=e(new f.Panel("MS","#0f0","#020"));if(self.performance&&self.performance.memory)var t=e(new f.Panel("MB","#f08","#201"));u(0);return{REVISION:16,dom:c,addPanel:e,showPanel:u,begin:function(){k=(performance||Date).now()},end:function(){a++;var c=(performance||Date).now();h.update(c-k,200);if(c>g+1E3&&(r.update(1E3*a/(c-g),100),g=c,a=0,t)){var d=performance.memory;t.update(d.usedJSHeapSize/1048576,d.jsHeapSizeLimit/1048576)}return c},update:function(){k=this.end()},domElement:c,setMode:u}};f.Panel=function(e,f,l){var c=Infinity,k=0,g=Math.round,a=g(window.devicePixelRatio||1),r=80*a,h=48*a,t=3*a,v=2*a,d=3*a,m=15*a,n=74*a,p=30*a,q=document.createElement("canvas");q.width=r;q.height=h;q.style.cssText="width:80px;height:48px";var b=q.getContext("2d");b.font="bold "+9*a+"px Helvetica,Arial,sans-serif";b.textBaseline="top";b.fillStyle=l;b.fillRect(0,0,r,h);b.fillStyle=f;b.fillText(e,t,v);b.fillRect(d,m,n,p);b.fillStyle=l;b.globalAlpha=.9;b.fillRect(d,m,n,p);return{dom:q,update:function(h,w){c=Math.min(c,h);k=Math.max(k,h);b.fillStyle=l;b.globalAlpha=1;b.fillRect(0,0,r,m);b.fillStyle=f;b.fillText(g(h)+" "+e+" ("+g(c)+"-"+g(k)+")",t,v);b.drawImage(q,d+a,m,n-a,p,d,m,n-a,p);b.fillRect(d+n-a,m,a,p);b.fillStyle=l;b.globalAlpha=.9;b.fillRect(d+n-a,m,a,g((1-h/w)*p))}}};return f});
+  </script>
+
+        
+            <canvas id="c" width="2000" height="1080"></canvas>
+<script>
+  function createStats() {
+    var stats = new Stats();
+    stats.showPanel(0);
+    stats.dom.setAttribute('id', 'stats');
+    document.body.appendChild(stats.dom);
+    return stats;
+  }
+
+  var stats = createStats();
+  setStatsVisibility(false);
+
+  var c = document.querySelector("#c");
+  c.width = 1920;
+  c.height = 1080;
+  var S = Math.sin;
+  var C = Math.cos;
+  var T = Math.tan;
+  function R(r,g,b,a) {
+    a = a === undefined ? 1 : a;
+    return "rgba("+(r|0)+","+(g|0)+","+(b|0)+","+a+")";
+    };
+  var x = c.getContext("2d");
+  var time = 0;
+  var frame = 0;
+  function u(t) {
+     x.fillRect(0,0,i=w=c.width=2e3,w);
+     x.fillStyle="#FFFFFF";
+     x.fillRect(0,0,w,w);
+     x.fillStyle="#03A9F4";
+     for(;i--;)T=t*99,z=w*99/(i-T%1),a=i+T-T%1,x.fillRect(C(a*a)*z+1e3,C(a*w)*z+500,w/i,w/i)
+
+     /*x.fillStyle="#FFFFFF";
+      x.fillRect(0,0,2e3,2e3);
+      x.fillStyle="#03A9F4";
+      x.font="20px Comic Sans MS";
+      for(i=100;i--;){
+        Z=130-(t*10+i)%130;
+        s=280/Z;
+        var str_index=i%7;
+        var love_words;
+        switch(str_index) {
+          case 0:
+            love_words="I ♥ 皮皮夏";
+            break;
+          case 1:
+            love_words="Do you love me ?"
+            break;
+          case 2:
+            love_words="I love you";
+            break;
+          case 3:
+            love_words="You are so pretty !";
+            break;
+          case 4:
+            love_words="I ♥ you";
+            break;
+          case 5:
+            love_words="Love You Forever";
+            break;
+          case 6:
+            love_words="♥";
+            break;
+          default:
+            love_words="♥";
+        }
+        x.fillText(love_words,960+1/Z*(-99+i*6e72%199)*700,540+(-70+i*8e61%140)/Z*700);
+      }*/
+    }
+  function loop() {
+    stats = stats || createStats();
+
+    if (playing){
+      requestAnimationFrame(loop);
+    }
+    time = frame/60;
+    if(time * 60 | 0 == frame - 1){
+      time += 0.000001;
+    }
+    frame++;
+
+    try {
+      stats.begin();
+      u(time);
+      stats.end();
+      displayError("");
+    } catch (e) {
+      displayError(e);
+      throw e;
+    }
+  }
+  if(autoplay) {
+      loop();
+  }
+
+  function reset(){
+    c = document.querySelector("#c");
+    c.width = 1920;
+    c.height = 1080;
+    S = Math.sin;
+    C = Math.cos;
+    T = Math.tan;
+    R = function(r,g,b,a) {
+      a = a === undefined ? 1 : a;
+      return "rgba("+(r|0)+","+(g|0)+","+(b|0)+","+a+")";
+    };
+    x = c.getContext("2d");
+    time = 0;
+    frame = 0;
+  }
+  </script>
+
+        
+    
+<link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
+
+
+    
+        <body id="scheme-Paradox" class="lazy">
+            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
+
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
+
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
+
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span class="MD-burger-layer"></span>
+                        </button>
+                    
+
+                    <!-- Post TOC -->
+
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+    <!-- Left aligned menu below button -->
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        
+        <!--
+        <li class="mdl-menu__item">
+            Some Action
+        </li>
+        -->
+    </ul>
+    
+
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
+
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').addClass('lazy');
+</script>
+
+        
+    
+            <p class="article-headline-p">
+                v2ray一键安装脚本
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.gif" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>Zhu Yuexin</strong>
+        <span>Dec 04, 2022</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/v2ray/">v2ray</a>
+    </ul>
+    
+
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=v2ray一键安装脚本&url=http://yoursite.com/2022/12/04/v2ray一键安装脚本/index.html&pic=&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                Share to Weibo
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=v2ray一键安装脚本&url=http://yoursite.com/2022/12/04/v2ray一键安装脚本/index.html&via=Zhu Yuexin" target="_blank">
+            <li class="mdl-menu__item">
+                Share to Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2022/12/04/v2ray一键安装脚本/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                Share to Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com/2022/12/04/v2ray一键安装脚本/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                Share to Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <blockquote>
+<p> 来源：<a href="https://raw.githubusercontent.com/233boy/v2ray/master/install.sh?v" target="_blank" rel="noopener">https://raw.githubusercontent.com/233boy/v2ray/master/install.sh?v</a></p>
+</blockquote>
+<p>脚本：</p>
+<pre class=" language-lang-sh"><code class="language-lang-sh">#!/bin/bash
+
+red='\e[91m'
+green='\e[92m'
+yellow='\e[93m'
+magenta='\e[95m'
+cyan='\e[96m'
+none='\e[0m'
+_red() { echo -e ${red}$*${none}; }
+_green() { echo -e ${green}$*${none}; }
+_yellow() { echo -e ${yellow}$*${none}; }
+_magenta() { echo -e ${magenta}$*${none}; }
+_cyan() { echo -e ${cyan}$*${none}; }
+
+# Root
+[[ $(id -u) != 0 ]] && echo -e "\n 哎呀……请使用 ${red}root ${none}用户运行 ${yellow}~(^_^) ${none}\n" && exit 1
+
+cmd="apt-get"
+
+sys_bit=$(uname -m)
+
+case $sys_bit in
+# i[36]86)
+#     v2ray_bit="32"
+#     caddy_arch="386"
+#     ;;
+'amd64' | x86_64)
+    v2ray_bit="64"
+    caddy_arch="amd64"
+    ;;
+# *armv6*)
+#     v2ray_bit="arm32-v6"
+#     caddy_arch="arm6"
+#     ;;
+# *armv7*)
+#     v2ray_bit="arm32-v7a"
+#     caddy_arch="arm7"
+#     ;;
+*aarch64* | *armv8*)
+    v2ray_bit="arm64-v8a"
+    caddy_arch="arm64"
+    ;;
+*)
+    echo -e " 
+    哈哈……这个 ${red}辣鸡脚本${none} 不支持你的系统。 ${yellow}(-_-) ${none}
+
+    备注: 仅支持 Ubuntu 16+ / Debian 8+ / CentOS 7+ 系统
+    " && exit 1
+    ;;
+esac
+
+# 笨笨的检测方法
+if [[ $(command -v apt-get) || $(command -v yum) ]] && [[ $(command -v systemctl) ]]; then
+
+    if [[ $(command -v yum) ]]; then
+
+        cmd="yum"
+
+    fi
+
+else
+
+    echo -e " 
+    哈哈……这个 ${red}辣鸡脚本${none} 不支持你的系统。 ${yellow}(-_-) ${none}
+
+    备注: 仅支持 Ubuntu 16+ / Debian 8+ / CentOS 7+ 系统
+    " && exit 1
+
+fi
+
+uuid=$(cat /proc/sys/kernel/random/uuid)
+old_id="e55c8d17-2cf3-b21a-bcf1-eeacb011ed79"
+v2ray_server_config="/etc/v2ray/config.json"
+v2ray_client_config="/etc/v2ray/233blog_v2ray_config.json"
+backup="/etc/v2ray/233blog_v2ray_backup.conf"
+_v2ray_sh="/usr/local/sbin/v2ray"
+systemd=true
+# _test=true
+
+transport=(
+    TCP
+    TCP_HTTP
+    WebSocket
+    "WebSocket + TLS"
+    HTTP/2
+    mKCP
+    mKCP_utp
+    mKCP_srtp
+    mKCP_wechat-video
+    mKCP_dtls
+    mKCP_wireguard
+    QUIC
+    QUIC_utp
+    QUIC_srtp
+    QUIC_wechat-video
+    QUIC_dtls
+    QUIC_wireguard
+    TCP_dynamicPort
+    TCP_HTTP_dynamicPort
+    WebSocket_dynamicPort
+    mKCP_dynamicPort
+    mKCP_utp_dynamicPort
+    mKCP_srtp_dynamicPort
+    mKCP_wechat-video_dynamicPort
+    mKCP_dtls_dynamicPort
+    mKCP_wireguard_dynamicPort
+    QUIC_dynamicPort
+    QUIC_utp_dynamicPort
+    QUIC_srtp_dynamicPort
+    QUIC_wechat-video_dynamicPort
+    QUIC_dtls_dynamicPort
+    QUIC_wireguard_dynamicPort
+    VLESS_WebSocket_TLS
+)
+
+ciphers=(
+    aes-128-gcm
+    aes-256-gcm
+    chacha20-ietf-poly1305
+)
+
+_load() {
+    local _dir="/etc/v2ray/233boy/v2ray/src/"
+    . "${_dir}$@"
+}
+_sys_timezone() {
+    IS_OPENVZ=
+    if hostnamectl status | grep -q openvz; then
+        IS_OPENVZ=1
+    fi
+
+    echo
+    timedatectl set-timezone Asia/Shanghai
+    timedatectl set-ntp true
+    echo "已将你的主机设置为Asia/Shanghai时区并通过systemd-timesyncd自动同步时间。"
+    echo
+
+    if [[ $IS_OPENVZ ]]; then
+        echo
+        echo -e "你的主机环境为 ${yellow}Openvz${none} ，建议使用${yellow}v2ray mkcp${none}系列协议。"
+        echo -e "注意：${yellow}Openvz${none} 系统时间无法由虚拟机内程序控制同步。"
+        echo -e "如果主机时间跟实际相差${yellow}超过90秒${none}，v2ray将无法正常通信，请发ticket联系vps主机商调整。"
+    fi
+}
+
+_sys_time() {
+    echo -e "\n主机时间：${yellow}"
+    timedatectl status | sed -n '1p;4p'
+    echo -e "${none}"
+    [[ $IS_OPENV ]] && pause
+}
+v2ray_config() {
+    # clear
+    echo
+    while :; do
+        echo -e "请选择 "$yellow"V2Ray"$none" 传输协议 [${magenta}1-${#transport[*]}$none]"
+        echo
+        for ((i = 1; i <= ${#transport[*]}; i++)); do
+            Stream="${transport[$i - 1]}"
+            if [[ "$i" -le 9 ]]; then
+                # echo
+                echo -e "$yellow  $i. $none${Stream}"
+            else
+                # echo
+                echo -e "$yellow $i. $none${Stream}"
+            fi
+        done
+        echo
+        echo "备注1: 含有 [dynamicPort] 的即启用动态端口.."
+        echo "备注2: [utp | srtp | wechat-video | dtls | wireguard] 分别伪装成 [BT下载 | 视频通话 | 微信视频通话 | DTLS 1.2 数据包 | WireGuard 数据包]"
+        echo
+        read -p "$(echo -e "(默认协议: ${cyan}TCP$none)"):" v2ray_transport
+        [ -z "$v2ray_transport" ] && v2ray_transport=1
+        case $v2ray_transport in
+        [1-9] | [1-2][0-9] | 3[0-3])
+            echo
+            echo
+            echo -e "$yellow V2Ray 传输协议 = $cyan${transport[$v2ray_transport - 1]}$none"
+            echo "----------------------------------------------------------------"
+            echo
+            break
+            ;;
+        *)
+            error
+            ;;
+        esac
+    done
+    v2ray_port_config
+}
+v2ray_port_config() {
+    case $v2ray_transport in
+    4 | 5 | 33)
+        tls_config
+        ;;
+    *)
+        local random=$(shuf -i20001-65535 -n1)
+        while :; do
+            echo -e "请输入 "$yellow"V2Ray"$none" 端口 ["$magenta"1-65535"$none"]"
+            read -p "$(echo -e "(默认端口: ${cyan}${random}$none):")" v2ray_port
+            [ -z "$v2ray_port" ] && v2ray_port=$random
+            case $v2ray_port in
+            [1-9] | [1-9][0-9] | [1-9][0-9][0-9] | [1-9][0-9][0-9][0-9] | [1-5][0-9][0-9][0-9][0-9] | 6[0-4][0-9][0-9][0-9] | 65[0-4][0-9][0-9] | 655[0-3][0-5])
+                echo
+                echo
+                echo -e "$yellow V2Ray 端口 = $cyan$v2ray_port$none"
+                echo "----------------------------------------------------------------"
+                echo
+                break
+                ;;
+            *)
+                error
+                ;;
+            esac
+        done
+        if [[ $v2ray_transport -ge 18 && $v2ray_transport -ne 33 ]]; then
+            v2ray_dynamic_port_start
+        fi
+        ;;
+    esac
+}
+
+v2ray_dynamic_port_start() {
+
+    while :; do
+        echo -e "请输入 "$yellow"V2Ray 动态端口开始 "$none"范围 ["$magenta"1-65535"$none"]"
+        read -p "$(echo -e "(默认开始端口: ${cyan}10000$none):")" v2ray_dynamic_port_start_input
+        [ -z $v2ray_dynamic_port_start_input ] && v2ray_dynamic_port_start_input=10000
+        case $v2ray_dynamic_port_start_input in
+        $v2ray_port)
+            echo
+            echo " 不能和 V2Ray 端口一毛一样...."
+            echo
+            echo -e " 当前 V2Ray 端口：${cyan}$v2ray_port${none}"
+            error
+            ;;
+        [1-9] | [1-9][0-9] | [1-9][0-9][0-9] | [1-9][0-9][0-9][0-9] | [1-5][0-9][0-9][0-9][0-9] | 6[0-4][0-9][0-9][0-9] | 65[0-4][0-9][0-9] | 655[0-3][0-5])
+            echo
+            echo
+            echo -e "$yellow V2Ray 动态端口开始 = $cyan$v2ray_dynamic_port_start_input$none"
+            echo "----------------------------------------------------------------"
+            echo
+            break
+            ;;
+        *)
+            error
+            ;;
+        esac
+
+    done
+
+    if [[ $v2ray_dynamic_port_start_input -lt $v2ray_port ]]; then
+        lt_v2ray_port=true
+    fi
+
+    v2ray_dynamic_port_end
+}
+v2ray_dynamic_port_end() {
+
+    while :; do
+        echo -e "请输入 "$yellow"V2Ray 动态端口结束 "$none"范围 ["$magenta"1-65535"$none"]"
+        read -p "$(echo -e "(默认结束端口: ${cyan}20000$none):")" v2ray_dynamic_port_end_input
+        [ -z $v2ray_dynamic_port_end_input ] && v2ray_dynamic_port_end_input=20000
+        case $v2ray_dynamic_port_end_input in
+        [1-9] | [1-9][0-9] | [1-9][0-9][0-9] | [1-9][0-9][0-9][0-9] | [1-5][0-9][0-9][0-9][0-9] | 6[0-4][0-9][0-9][0-9] | 65[0-4][0-9][0-9] | 655[0-3][0-5])
+
+            if [[ $v2ray_dynamic_port_end_input -le $v2ray_dynamic_port_start_input ]]; then
+                echo
+                echo " 不能小于或等于 V2Ray 动态端口开始范围"
+                echo
+                echo -e " 当前 V2Ray 动态端口开始：${cyan}$v2ray_dynamic_port_start_input${none}"
+                error
+            elif [ $lt_v2ray_port ] && [[ ${v2ray_dynamic_port_end_input} -ge $v2ray_port ]]; then
+                echo
+                echo " V2Ray 动态端口结束范围 不能包括 V2Ray 端口..."
+                echo
+                echo -e " 当前 V2Ray 端口：${cyan}$v2ray_port${none}"
+                error
+            else
+                echo
+                echo
+                echo -e "$yellow V2Ray 动态端口结束 = $cyan$v2ray_dynamic_port_end_input$none"
+                echo "----------------------------------------------------------------"
+                echo
+                break
+            fi
+            ;;
+        *)
+            error
+            ;;
+        esac
+
+    done
+
+}
+
+tls_config() {
+
+    echo
+    local random=$(shuf -i20001-65535 -n1)
+    while :; do
+        echo -e "请输入 "$yellow"V2Ray"$none" 端口 ["$magenta"1-65535"$none"]，不能选择 "$magenta"80"$none" 或 "$magenta"443"$none" 端口"
+        read -p "$(echo -e "(默认端口: ${cyan}${random}$none):")" v2ray_port
+        [ -z "$v2ray_port" ] && v2ray_port=$random
+        case $v2ray_port in
+        80)
+            echo
+            echo " ...都说了不能选择 80 端口了咯....."
+            error
+            ;;
+        443)
+            echo
+            echo " ..都说了不能选择 443 端口了咯....."
+            error
+            ;;
+        [1-9] | [1-9][0-9] | [1-9][0-9][0-9] | [1-9][0-9][0-9][0-9] | [1-5][0-9][0-9][0-9][0-9] | 6[0-4][0-9][0-9][0-9] | 65[0-4][0-9][0-9] | 655[0-3][0-5])
+            echo
+            echo
+            echo -e "$yellow V2Ray 端口 = $cyan$v2ray_port$none"
+            echo "----------------------------------------------------------------"
+            echo
+            break
+            ;;
+        *)
+            error
+            ;;
+        esac
+    done
+
+    while :; do
+        echo
+        echo -e "请输入一个 ${magenta}正确的域名${none}，一定一定一定要正确，不！能！出！错！"
+        read -p "(例如：233blog.com): " domain
+        [ -z "$domain" ] && error && continue
+        echo
+        echo
+        echo -e "$yellow 你的域名 = $cyan$domain$none"
+        echo "----------------------------------------------------------------"
+        break
+    done
+    get_ip
+    echo
+    echo
+    echo -e "$yellow 请将 $magenta$domain$none $yellow 解析到: $cyan$ip$none"
+    echo
+    echo -e "$yellow 请将 $magenta$domain$none $yellow 解析到: $cyan$ip$none"
+    echo
+    echo -e "$yellow 请将 $magenta$domain$none $yellow 解析到: $cyan$ip$none"
+    echo "----------------------------------------------------------------"
+    echo
+
+    while :; do
+
+        read -p "$(echo -e "(是否已经正确解析: [${magenta}Y$none]):") " record
+        if [[ -z "$record" ]]; then
+            error
+        else
+            if [[ "$record" == [Yy] ]]; then
+                domain_check
+                echo
+                echo
+                echo -e "$yellow 域名解析 = ${cyan}我确定已经有解析了$none"
+                echo "----------------------------------------------------------------"
+                echo
+                break
+            else
+                error
+            fi
+        fi
+
+    done
+
+    if [[ $v2ray_transport -eq 4 ]]; then
+        auto_tls_config
+    else
+        caddy=true
+        install_caddy_info="打开"
+    fi
+
+    if [[ $caddy ]]; then
+        path_config_ask
+    fi
+}
+auto_tls_config() {
+    echo -e "
+
+        安装 Caddy 来实现 自动配置 TLS
+
+        如果你已经安装 Nginx 或 Caddy
+
+        $yellow并且..自己能搞定配置 TLS$none
+
+        那么就不需要 打开自动配置 TLS
+        "
+    echo "----------------------------------------------------------------"
+    echo
+
+    while :; do
+
+        read -p "$(echo -e "(是否自动配置 TLS: [${magenta}Y/N$none]):") " auto_install_caddy
+        if [[ -z "$auto_install_caddy" ]]; then
+            error
+        else
+            if [[ "$auto_install_caddy" == [Yy] ]]; then
+                caddy=true
+                install_caddy_info="打开"
+                echo
+                echo
+                echo -e "$yellow 自动配置 TLS = $cyan$install_caddy_info$none"
+                echo "----------------------------------------------------------------"
+                echo
+                break
+            elif [[ "$auto_install_caddy" == [Nn] ]]; then
+                install_caddy_info="关闭"
+                echo
+                echo
+                echo -e "$yellow 自动配置 TLS = $cyan$install_caddy_info$none"
+                echo "----------------------------------------------------------------"
+                echo
+                break
+            else
+                error
+            fi
+        fi
+
+    done
+}
+path_config_ask() {
+    echo
+    while :; do
+        echo -e "是否开启 网站伪装 和 路径分流 [${magenta}Y/N$none]"
+        read -p "$(echo -e "(默认: [${cyan}N$none]):")" path_ask
+        [[ -z $path_ask ]] && path_ask="n"
+
+        case $path_ask in
+        Y | y)
+            path_config
+            break
+            ;;
+        N | n)
+            echo
+            echo
+            echo -e "$yellow 网站伪装 和 路径分流 = $cyan 不想配置 $none"
+            echo "----------------------------------------------------------------"
+            echo
+            break
+            ;;
+        *)
+            error
+            ;;
+        esac
+    done
+}
+path_config() {
+    echo
+    while :; do
+        echo -e "请输入想要 ${magenta} 用来分流的路径 $none , 例如 /233blog , 那么只需要输入 233blog 即可"
+        read -p "$(echo -e "(默认: [${cyan}233blog$none]):")" path
+        [[ -z $path ]] && path="233blog"
+
+        case $path in
+        *[/$]*)
+            echo
+            echo -e " 由于这个脚本太辣鸡了..所以分流的路径不能包含$red / $none或$red $ $none这两个符号.... "
+            echo
+            error
+            ;;
+        *)
+            echo
+            echo
+            echo -e "$yellow 分流的路径 = ${cyan}/${path}$none"
+            echo "----------------------------------------------------------------"
+            echo
+            break
+            ;;
+        esac
+    done
+    is_path=true
+    proxy_site_config
+}
+proxy_site_config() {
+    echo
+    while :; do
+        echo -e "请输入 ${magenta}一个正确的 $none ${cyan}网址$none 用来作为 ${cyan}网站的伪装$none , 例如 https://liyafly.com"
+        echo -e "举例...你当前的域名是 $green$domain$none , 伪装的网址的是 https://liyafly.com"
+        echo -e "然后打开你的域名时候...显示出来的内容就是来自 https://liyafly.com 的内容"
+        echo -e "其实就是一个反代...明白就好..."
+        echo -e "如果不能伪装成功...可以使用 v2ray config 修改伪装的网址"
+        read -p "$(echo -e "(默认: [${cyan}https://liyafly.com$none]):")" proxy_site
+        [[ -z $proxy_site ]] && proxy_site="https://liyafly.com"
+
+        case $proxy_site in
+        *[#$]*)
+            echo
+            echo -e " 由于这个脚本太辣鸡了..所以伪装的网址不能包含$red # $none或$red $ $none这两个符号.... "
+            echo
+            error
+            ;;
+        *)
+            echo
+            echo
+            echo -e "$yellow 伪装的网址 = ${cyan}${proxy_site}$none"
+            echo "----------------------------------------------------------------"
+            echo
+            break
+            ;;
+        esac
+    done
+}
+
+blocked_hosts() {
+    echo
+    while :; do
+        echo -e "是否开启广告拦截(会影响性能) [${magenta}Y/N$none]"
+        read -p "$(echo -e "(默认 [${cyan}N$none]):")" blocked_ad
+        [[ -z $blocked_ad ]] && blocked_ad="n"
+
+        case $blocked_ad in
+        Y | y)
+            blocked_ad_info="开启"
+            ban_ad=true
+            echo
+            echo
+            echo -e "$yellow 广告拦截 = $cyan开启$none"
+            echo "----------------------------------------------------------------"
+            echo
+            break
+            ;;
+        N | n)
+            blocked_ad_info="关闭"
+            echo
+            echo
+            echo -e "$yellow 广告拦截 = $cyan 关闭 $none"
+            echo "----------------------------------------------------------------"
+            echo
+            break
+            ;;
+        *)
+            error
+            ;;
+        esac
+    done
+}
+shadowsocks_config() {
+
+    echo
+
+    while :; do
+        echo -e "是否配置 ${yellow}Shadowsocks${none} [${magenta}Y/N$none]"
+        read -p "$(echo -e "(默认 [${cyan}N$none]):") " install_shadowsocks
+        [[ -z "$install_shadowsocks" ]] && install_shadowsocks="n"
+        if [[ "$install_shadowsocks" == [Yy] ]]; then
+            echo
+            shadowsocks=true
+            shadowsocks_port_config
+            break
+        elif [[ "$install_shadowsocks" == [Nn] ]]; then
+            break
+        else
+            error
+        fi
+
+    done
+
+}
+
+shadowsocks_port_config() {
+    local random=$(shuf -i20001-65535 -n1)
+    while :; do
+        echo -e "请输入 "$yellow"Shadowsocks"$none" 端口 ["$magenta"1-65535"$none"]，不能和 "$yellow"V2Ray"$none" 端口相同"
+        read -p "$(echo -e "(默认端口: ${cyan}${random}$none):") " ssport
+        [ -z "$ssport" ] && ssport=$random
+        case $ssport in
+        $v2ray_port)
+            echo
+            echo " 不能和 V2Ray 端口一毛一样...."
+            error
+            ;;
+        [1-9] | [1-9][0-9] | [1-9][0-9][0-9] | [1-9][0-9][0-9][0-9] | [1-5][0-9][0-9][0-9][0-9] | 6[0-4][0-9][0-9][0-9] | 65[0-4][0-9][0-9] | 655[0-3][0-5])
+            if [[ $v2ray_transport == [45] ]]; then
+                local tls=ture
+            fi
+            if [[ $tls && $ssport == "80" ]] || [[ $tls && $ssport == "443" ]]; then
+                echo
+                echo -e "由于你已选择了 "$green"WebSocket + TLS $none或$green HTTP/2"$none" 传输协议."
+                echo
+                echo -e "所以不能选择 "$magenta"80"$none" 或 "$magenta"443"$none" 端口"
+                error
+            elif [[ $v2ray_dynamic_port_start_input == $ssport || $v2ray_dynamic_port_end_input == $ssport ]]; then
+                local multi_port="${v2ray_dynamic_port_start_input} - ${v2ray_dynamic_port_end_input}"
+                echo
+                echo " 抱歉，此端口和 V2Ray 动态端口 冲突，当前 V2Ray 动态端口范围为：$multi_port"
+                error
+            elif [[ $v2ray_dynamic_port_start_input -lt $ssport && $ssport -le $v2ray_dynamic_port_end_input ]]; then
+                local multi_port="${v2ray_dynamic_port_start_input} - ${v2ray_dynamic_port_end_input}"
+                echo
+                echo " 抱歉，此端口和 V2Ray 动态端口 冲突，当前 V2Ray 动态端口范围为：$multi_port"
+                error
+            else
+                echo
+                echo
+                echo -e "$yellow Shadowsocks 端口 = $cyan$ssport$none"
+                echo "----------------------------------------------------------------"
+                echo
+                break
+            fi
+            ;;
+        *)
+            error
+            ;;
+        esac
+
+    done
+
+    shadowsocks_password_config
+}
+shadowsocks_password_config() {
+
+    while :; do
+        echo -e "请输入 "$yellow"Shadowsocks"$none" 密码"
+        read -p "$(echo -e "(默认密码: ${cyan}233blog.com$none)"): " sspass
+        [ -z "$sspass" ] && sspass="233blog.com"
+        case $sspass in
+        *[/$]*)
+            echo
+            echo -e " 由于这个脚本太辣鸡了..所以密码不能包含$red / $none或$red $ $none这两个符号.... "
+            echo
+            error
+            ;;
+        *)
+            echo
+            echo
+            echo -e "$yellow Shadowsocks 密码 = $cyan$sspass$none"
+            echo "----------------------------------------------------------------"
+            echo
+            break
+            ;;
+        esac
+
+    done
+
+    shadowsocks_ciphers_config
+}
+shadowsocks_ciphers_config() {
+
+    while :; do
+        echo -e "请选择 "$yellow"Shadowsocks"$none" 加密协议 [${magenta}1-${#ciphers[*]}$none]"
+        for ((i = 1; i <= ${#ciphers[*]}; i++)); do
+            ciphers_show="${ciphers[$i - 1]}"
+            echo
+            echo -e "$yellow $i. $none${ciphers_show}"
+        done
+        echo
+        read -p "$(echo -e "(默认加密协议: ${cyan}${ciphers[1]}$none)"):" ssciphers_opt
+        [ -z "$ssciphers_opt" ] && ssciphers_opt=2
+        case $ssciphers_opt in
+        [1-3])
+            ssciphers=${ciphers[$ssciphers_opt - 1]}
+            echo
+            echo
+            echo -e "$yellow Shadowsocks 加密协议 = $cyan${ssciphers}$none"
+            echo "----------------------------------------------------------------"
+            echo
+            break
+            ;;
+        *)
+            error
+            ;;
+        esac
+
+    done
+    pause
+}
+
+install_info() {
+    clear
+    echo
+    echo " ....准备安装了咯..看看有毛有配置正确了..."
+    echo
+    echo "---------- 安装信息 -------------"
+    echo
+    echo -e "$yellow V2Ray 传输协议 = $cyan${transport[$v2ray_transport - 1]}$none"
+
+    if [[ $v2ray_transport == [45] || $v2ray_transport == 33 ]]; then
+        echo
+        echo -e "$yellow V2Ray 端口 = $cyan$v2ray_port$none"
+        echo
+        echo -e "$yellow 你的域名 = $cyan$domain$none"
+        echo
+        echo -e "$yellow 域名解析 = ${cyan}我确定已经有解析了$none"
+        echo
+        echo -e "$yellow 自动配置 TLS = $cyan$install_caddy_info$none"
+
+        if [[ $ban_ad ]]; then
+            echo
+            echo -e "$yellow 广告拦截 = $cyan$blocked_ad_info$none"
+        fi
+        if [[ $is_path ]]; then
+            echo
+            echo -e "$yellow 路径分流 = ${cyan}/${path}$none"
+        fi
+    elif [[ $v2ray_transport -ge 18 && $v2ray_transport -ne 33 ]]; then
+        echo
+        echo -e "$yellow V2Ray 端口 = $cyan$v2ray_port$none"
+        echo
+        echo -e "$yellow V2Ray 动态端口范围 = $cyan${v2ray_dynamic_port_start_input} - ${v2ray_dynamic_port_end_input}$none"
+
+        if [[ $ban_ad ]]; then
+            echo
+            echo -e "$yellow 广告拦截 = $cyan$blocked_ad_info$none"
+        fi
+    else
+        echo
+        echo -e "$yellow V2Ray 端口 = $cyan$v2ray_port$none"
+
+        if [[ $ban_ad ]]; then
+            echo
+            echo -e "$yellow 广告拦截 = $cyan$blocked_ad_info$none"
+        fi
+    fi
+    if [ $shadowsocks ]; then
+        echo
+        echo -e "$yellow Shadowsocks 端口 = $cyan$ssport$none"
+        echo
+        echo -e "$yellow Shadowsocks 密码 = $cyan$sspass$none"
+        echo
+        echo -e "$yellow Shadowsocks 加密协议 = $cyan${ssciphers}$none"
+    else
+        echo
+        echo -e "$yellow 是否配置 Shadowsocks = ${cyan}未配置${none}"
+    fi
+    echo
+    echo "---------- END -------------"
+    echo
+    pause
+    echo
+}
+
+domain_check() {
+    # if [[ $cmd == "yum" ]]; then
+    #     yum install bind-utils -y
+    # else
+    #     $cmd install dnsutils -y
+    # fi
+    # test_domain=$(dig $domain +short)
+    test_domain=$(ping $domain -c 1 -W 2 | head -1)
+    # test_domain=$(wget -qO- --header='accept: application/dns-json' "https://cloudflare-dns.com/dns-query?name=$domain&type=A" | grep -oE "([0-9]{1,3}\.){3}[0-9]{1,3}" | head -1)
+    # test_domain=$(curl -sH 'accept: application/dns-json' "https://cloudflare-dns.com/dns-query?name=$domain&type=A" | grep -oE "([0-9]{1,3}\.){3}[0-9]{1,3}" | head -1)
+    if [[ ! $(echo $test_domain | grep $ip) ]]; then
+        echo
+        echo -e "$red 检测域名解析错误....$none"
+        echo
+        echo -e " 你的域名: $yellow$domain$none 未解析到: $cyan$ip$none"
+        echo
+        echo -e " PING 测试结果: $cyan$test_domain$none"
+        echo
+        echo "备注...如果你的域名是使用 Cloudflare 解析的话..在 DNS 那, 将 (Proxy status / 代理状态), 设置成 (DNS only / 仅限 DNS)"
+        echo
+        exit 1
+    fi
+}
+
+install_caddy() {
+    # download caddy file then install
+    _load download-caddy.sh
+    _download_caddy_file
+    _install_caddy_service
+    caddy_config
+
+}
+caddy_config() {
+    # local email=$(shuf -i1-10000000000 -n1)
+    _load caddy-config.sh
+
+    # systemctl restart caddy
+    do_service restart caddy
+}
+
+install_v2ray() {
+    $cmd update -y
+    if [[ $cmd == "apt-get" ]]; then
+        $cmd install -y lrzsz git zip unzip curl wget qrencode libcap2-bin dbus
+    else
+        # $cmd install -y lrzsz git zip unzip curl wget qrencode libcap iptables-services
+        $cmd install -y lrzsz git zip unzip curl wget qrencode libcap
+    fi
+    ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+    [ -d /etc/v2ray ] && rm -rf /etc/v2ray
+    # date -s "$(curl -sI g.cn | grep Date | cut -d' ' -f3-6)Z"
+    _sys_timezone
+    _sys_time
+
+    if [[ $local_install ]]; then
+        if [[ ! -d $(pwd)/config ]]; then
+            echo
+            echo -e "$red 哎呀呀...安装失败了咯...$none"
+            echo
+            echo -e " 请确保你有完整的上传 233v2.com 的 V2Ray 一键安装脚本 & 管理脚本到当前 ${green}$(pwd) $none目录下"
+            echo
+            exit 1
+        fi
+        mkdir -p /etc/v2ray/233boy/v2ray
+        cp -rf $(pwd)/* /etc/v2ray/233boy/v2ray
+    else
+        pushd /tmp
+        git clone https://github.com/233boy/v2ray -b "$_gitbranch" /etc/v2ray/233boy/v2ray --depth=1
+        popd
+
+    fi
+
+    if [[ ! -d /etc/v2ray/233boy/v2ray ]]; then
+        echo
+        echo -e "$red 哎呀呀...克隆脚本仓库出错了...$none"
+        echo
+        echo -e " 温馨提示..... 请尝试自行安装 Git: ${green}$cmd install -y git $none 之后再安装此脚本"
+        echo
+        exit 1
+    fi
+
+    # download v2ray file then install
+    _load download-v2ray.sh
+    _download_v2ray_file
+    _install_v2ray_service
+    _mkdir_dir
+}
+
+config() {
+    cp -f /etc/v2ray/233boy/v2ray/config/backup.conf $backup
+    cp -f /etc/v2ray/233boy/v2ray/v2ray.sh $_v2ray_sh
+    chmod +x $_v2ray_sh
+
+    v2ray_id=$uuid
+    alterId=0
+    ban_bt=true
+    if [[ $v2ray_transport -ge 18 && $v2ray_transport -ne 33 ]]; then
+        v2ray_dynamicPort_start=${v2ray_dynamic_port_start_input}
+        v2ray_dynamicPort_end=${v2ray_dynamic_port_end_input}
+    fi
+    _load config.sh
+
+    # if [[ $cmd == "apt-get" ]]; then
+    #     cat >/etc/network/if-pre-up.d/iptables <<-EOF
+    #         #!/bin/sh
+    #         /sbin/iptables-restore < /etc/iptables.rules.v4
+    #         /sbin/ip6tables-restore < /etc/iptables.rules.v6
+    #     EOF
+    #     chmod +x /etc/network/if-pre-up.d/iptables
+    #     # else
+    #     #     [ $(pgrep "firewall") ] && systemctl stop firewalld
+    #     #     systemctl mask firewalld
+    #     #     systemctl disable firewalld
+    #     #     systemctl enable iptables
+    #     #     systemctl enable ip6tables
+    #     #     systemctl start iptables
+    #     #     systemctl start ip6tables
+    # fi
+
+    # systemctl restart v2ray
+    do_service restart v2ray
+    backup_config
+
+}
+
+backup_config() {
+    sed -i "18s/=1/=$v2ray_transport/; 21s/=2333/=$v2ray_port/; 24s/=$old_id/=$uuid/" $backup
+    if [[ $v2ray_transport -ge 18 && $v2ray_transport -ne 33 ]]; then
+        sed -i "30s/=10000/=$v2ray_dynamic_port_start_input/; 33s/=20000/=$v2ray_dynamic_port_end_input/" $backup
+    fi
+    if [[ $shadowsocks ]]; then
+        sed -i "42s/=/=true/; 45s/=6666/=$ssport/; 48s/=233blog.com/=$sspass/; 51s/=chacha20-ietf/=$ssciphers/" $backup
+    fi
+    [[ $v2ray_transport == [45] || $v2ray_transport == 33 ]] && sed -i "36s/=233blog.com/=$domain/" $backup
+    [[ $caddy ]] && sed -i "39s/=/=true/" $backup
+    [[ $ban_ad ]] && sed -i "54s/=/=true/" $backup
+    if [[ $is_path ]]; then
+        sed -i "57s/=/=true/; 60s/=233blog/=$path/" $backup
+        sed -i "63s#=https://liyafly.com#=$proxy_site#" $backup
+    fi
+}
+
+get_ip() {
+    # ip=$(curl -s https://ipinfo.io/ip)
+    # [[ -z $ip ]] && ip=$(curl -s https://api.ip.sb/ip)
+    # [[ -z $ip ]] && ip=$(curl -s https://api.ipify.org)
+    # [[ -z $ip ]] && ip=$(curl -s https://ip.seeip.org)
+    # [[ -z $ip ]] && ip=$(curl -s https://ifconfig.co/ip)
+    # [[ -z $ip ]] && ip=$(curl -s https://api.myip.com | grep -oE "([0-9]{1,3}\.){3}[0-9]{1,3}")
+    # [[ -z $ip ]] && ip=$(curl -s icanhazip.com)
+    # [[ -z $ip ]] && ip=$(curl -s myip.ipip.net | grep -oE "([0-9]{1,3}\.){3}[0-9]{1,3}")
+    export "$(wget -4 -qO- https://dash.cloudflare.com/cdn-cgi/trace | grep ip=)" >/dev/null 2>&1
+    [[ -z $ip ]] && export "$(wget -6 -qO- https://dash.cloudflare.com/cdn-cgi/trace | grep ip=)" >/dev/null 2>&1
+    [[ -z $ip ]] && echo -e "\n$red 获取IP失败, 这垃圾小鸡扔了吧！$none\n" && exit
+}
+
+error() {
+
+    echo -e "\n$red 输入错误！$none\n"
+
+}
+
+pause() {
+
+    read -rsp "$(echo -e "按 $green Enter 回车键 $none 继续....或按 $red Ctrl + C $none 取消.")" -d $'\n'
+    echo
+}
+do_service() {
+    if [[ $systemd ]]; then
+        systemctl $1 $2
+    else
+        service $2 $1
+    fi
+}
+show_config_info() {
+    clear
+    _load v2ray-info.sh
+    _v2_args
+    _v2_info
+    _load ss-info.sh
+
+}
+
+install() {
+    if [[ -f /usr/bin/v2ray/v2ray && -f /etc/v2ray/config.json ]] && [[ -f $backup && -d /etc/v2ray/233boy/v2ray ]]; then
+        echo
+        echo " 大佬...你已经安装 V2Ray 啦...无需重新安装"
+        echo
+        echo -e " $yellow输入 ${cyan}v2ray${none} $yellow即可管理 V2Ray${none}"
+        echo
+        exit 1
+    elif [[ -f /usr/bin/v2ray/v2ray && -f /etc/v2ray/config.json ]] && [[ -f /etc/v2ray/233blog_v2ray_backup.txt && -d /etc/v2ray/233boy/v2ray ]]; then
+        echo
+        echo "  如果你需要继续安装.. 请先卸载旧版本"
+        echo
+        echo -e " $yellow输入 ${cyan}v2ray uninstall${none} $yellow即可卸载${none}"
+        echo
+        exit 1
+    fi
+    v2ray_config
+    blocked_hosts
+    shadowsocks_config
+    install_info
+    # [[ $caddy ]] && domain_check
+    install_v2ray
+    if [[ $caddy || $v2ray_port == "80" ]]; then
+        if [[ $cmd == "yum" ]]; then
+            [[ $(pgrep "httpd") ]] && systemctl stop httpd
+            [[ $(command -v httpd) ]] && yum remove httpd -y
+        else
+            [[ $(pgrep "apache2") ]] && service apache2 stop
+            [[ $(command -v apache2) ]] && apt-get remove apache2* -y
+        fi
+    fi
+    [[ $caddy ]] && install_caddy
+
+    ## bbr
+    # _load bbr.sh
+    # _try_enable_bbr
+
+    get_ip
+    config
+    show_config_info
+}
+uninstall() {
+
+    if [[ -f /usr/bin/v2ray/v2ray && -f /etc/v2ray/config.json ]] && [[ -f $backup && -d /etc/v2ray/233boy/v2ray ]]; then
+        . $backup
+        if [[ $mark ]]; then
+            _load uninstall.sh
+        else
+            echo
+            echo -e " $yellow输入 ${cyan}v2ray uninstall${none} $yellow即可卸载${none}"
+            echo
+        fi
+
+    elif [[ -f /usr/bin/v2ray/v2ray && -f /etc/v2ray/config.json ]] && [[ -f /etc/v2ray/233blog_v2ray_backup.txt && -d /etc/v2ray/233boy/v2ray ]]; then
+        echo
+        echo -e " $yellow输入 ${cyan}v2ray uninstall${none} $yellow即可卸载${none}"
+        echo
+    else
+        echo -e "
+        $red 大胸弟...你貌似毛有安装 V2Ray ....卸载个鸡鸡哦...$none
+
+        备注...仅支持卸载使用我 (233v2.com) 提供的 V2Ray 一键安装脚本
+        " && exit 1
+    fi
+
+}
+
+args=$1
+_gitbranch=$2
+[ -z $1 ] && args="online"
+case $args in
+online)
+    #hello world
+    [[ -z $_gitbranch ]] && _gitbranch="master"
+    ;;
+local)
+    local_install=true
+    ;;
+*)
+    echo
+    echo -e " 你输入的这个参数 <$red $args $none> ...这个是什么鬼啊...脚本不认识它哇"
+    echo
+    echo -e " 这个辣鸡脚本仅支持输入$green local / online $none参数"
+    echo
+    echo -e " 输入$yellow local $none即是使用本地安装"
+    echo
+    echo -e " 输入$yellow online $none即是使用在线安装 (默认)"
+    echo
+    exit 1
+    ;;
+esac
+
+clear
+while :; do
+    echo
+    echo "........... V2Ray 一键安装脚本 & 管理脚本 by 233v2.com .........."
+    echo
+    echo "帮助说明: https://233v2.com/post/1/"
+    echo
+    echo "搭建教程: https://233v2.com/post/2/"
+    echo
+    echo " 1. 安装"
+    echo
+    echo " 2. 卸载"
+    echo
+    if [[ $local_install ]]; then
+        echo -e "$yellow 温馨提示.. 本地安装已启用 ..$none"
+        echo
+    fi
+    read -p "$(echo -e "请选择 [${magenta}1-2$none]:")" choose
+    case $choose in
+    1)
+        install
+        break
+        ;;
+    2)
+        uninstall
+        break
+        ;;
+    *)
+        error
+        ;;
+    esac
+done
+</code></pre>
+<p>脚本执行：先保存为<code>install.sh</code>文件，然后执行<code>bash install.sh</code></p>
+
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+        <a href="/2023/04/01/N-API开发Node-addons程序/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            Newer
+        </a>
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2019/11/12/修改MySQL密码强度验证/" id="post_nav-older" class="next-content">
+            Older
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
+
+
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(/img/sidebar_header.png);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="/img/avatar.gif" alt="Zhu Yuexin's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        yuexinzh@gmail.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="mailto: yuexinzh@gmail.com" target="_blank" title="Email Me">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        
+                        Email Me
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    
+        <li id="sidebar-first-li">
+            <a href="/">
+                
+                    <i class="material-icons sidebar-material-icons">home</i>
+                
+                Home
+            </a>
+        </li>
+        
+    
+
+    <!-- Archives  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">inbox</i>
+                
+                    Archives
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+            <li>
+                <a class="sidebar_archives-link" href="/archives/2023/04/">April 2023<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2022/12/">December 2022<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/11/">November 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/07/">July 2019<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/05/">May 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/04/">April 2019<span class="sidebar_archives-count">9</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/12/">December 2018<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/11/">November 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/07/">July 2018<span class="sidebar_archives-count">23</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/06/">June 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/04/">April 2018<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/03/">March 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/01/">January 2018<span class="sidebar_archives-count">9</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/12/">December 2017<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/11/">November 2017<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/10/">October 2017<span class="sidebar_archives-count">8</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/08/">August 2017<span class="sidebar_archives-count">15</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/03/">March 2017<span class="sidebar_archives-count">6</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Categories  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">chrome_reader_mode</i>
+                
+                Categories
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+                <li>
+                <a class="sidebar_archives-link" href="/categories/Android/">Android<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/Android碎片/">Android碎片<span class="sidebar_archives-count">16</span></a></li><li><a class="sidebar_archives-link" href="/categories/Android错误解决/">Android错误解决<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/C/">C#<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/Django/">Django<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Git/">Git<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Hexo/">Hexo<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/Java/">Java<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Java笔记/">Java笔记<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/Linux/">Linux<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/Maven/">Maven<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/MySQL/">MySQL<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/Node/">Node<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Python/">Python<span class="sidebar_archives-count">9</span></a></li><li><a class="sidebar_archives-link" href="/categories/Shell/">Shell<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/SpringBoot/">SpringBoot<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/Ubuntu/">Ubuntu<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/categories/Vue/">Vue<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/WPF/">WPF<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/剑指Offer编程题/">剑指Offer编程题<span class="sidebar_archives-count">22</span></a></li><li><a class="sidebar_archives-link" href="/categories/小技能/">小技能<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/数据结构与算法/">数据结构与算法<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/机器学习/">机器学习<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/杂记/">杂记<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/游戏/">游戏<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/皮皮夏/">皮皮夏<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/皮皮夏的奇葩日记/">皮皮夏的奇葩日记<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/论文笔记/">论文笔记<span class="sidebar_archives-count">2</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Pages  -->
+    
+        <li>
+            <a href="/tags" title="Tags">
+                
+                    <i class="material-icons sidebar-material-icons">sort</i>
+                
+                Tags
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/timeline" title="Timeline">
+                
+                    <i class="material-icons sidebar-material-icons">timeline</i>
+                
+                Timeline
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/links" title="Links">
+                
+                    <i class="material-icons sidebar-material-icons">link</i>
+                
+                Links
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/about" title="About">
+                
+                    <i class="material-icons sidebar-material-icons">person</i>
+                
+                About
+            </a>
+        </li>
+        
+            <li class="divider"></li>
+        
+    
+
+    <!-- Article Number  -->
+    
+        <li>
+            <a href="/archives">
+                Number of articles
+                <span class="sidebar-badge">97</span>
+            </a>
+        </li>
+        
+    
+</ul>
+
+
+        <!-- Sidebar Footer -->
+        <!--
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :)
+-->
+
+<!-- Sidebar Divider -->
+
+    <div class="sidebar-divider"></div>
+
+
+<!-- Theme Material -->
+
+    <a href="https://github.com/viosey/hexo-theme-material"  class="sidebar-footer-text-a" target="_blank">
+        <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+            Theme - Material
+            <span class="sidebar-badge badge-circle">i</span>
+        </div>
+    </a>
+
+
+<!-- Help & Support -->
+<!--
+
+-->
+
+<!-- Feedback -->
+<!--
+
+-->
+
+<!-- About Theme -->
+<!--
+
+-->
+
+    </div>
+
+    <!-- Sidebar Image -->
+    
+
+</aside>
+
+                    
+
+                    
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+    
+        <!-- Paradox Footer Left Section -->
+        <div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+        <a href="https://twitter.com/twitter" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-twitter">
+                <span class="visuallyhidden">Twitter</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Facebook -->
+    
+        <a href="https://www.facebook.com/facebook" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-facebook">
+                <span class="visuallyhidden">Facebook</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Google + -->
+    
+        <a href="https://www.google.com/" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-gplus">
+                <span class="visuallyhidden">Google Plus</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Weibo -->
+    
+
+    <!-- Instagram -->
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+
+    <!-- LinkedIn -->
+    
+
+    <!-- Zhihu -->
+    
+
+    <!-- Bilibili -->
+    
+
+    <!-- Telegram -->
+    
+</div>
+
+
+        <!--Copyright-->
+        <div id="copyright">
+            Copyright&nbsp;©<script type="text/javascript">var fd = new Date();document.write("&nbsp;" + fd.getFullYear() + "&nbsp;");</script>Mr.Z's Blog
+        </div>
+
+        <!-- Paradox Footer Right Section -->
+
+        <!--
+        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+        It will not impact the appearance and can give developers a lot of support :)
+
+        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+        它不会影响美观并可以给开发者很大的支持。 :)
+        -->
+
+        <div class="mdl-mini-footer--right-section">
+            <div>
+                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
+                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+            </div>
+        </div>
+    
+</footer>
+
+
+                    <!-- Import File -->
+
+
+    <script>lsloader.load("js/lazyload.min.js","/js/lazyload.min.js?1BcfzuNXqV+ntF6gq+5X3Q==")</script>
+    <script>lsloader.load("js/js.min.js","/js/js.min.js?oAl/+lvaqTFV31JXTmbrNA==")</script>
+
+
+
+    <script>lsloader.load("js/nprogress.js","/js/nprogress.js?pl3Qhb9lvqR1FlyLUna1Yw==")</script>
+
+
+<script type="text/ls-javascript" id="NProgress-script">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    $('#nprogress .bar').css({
+        'background': '#29d'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#29d',
+        'border-left-color': '#29d'
+    });
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- UC Browser Compatible -->
+<script>
+	var agent = navigator.userAgent.toLowerCase();
+	if(agent.indexOf('ucbrowser')>0) {
+		document.write('<link rel="stylesheet" href="/css/uc.css">');
+	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+	}
+</script>
+
+<!-- Window Load-->
+<script type="text/ls-javascript" id="window-load">
+    $(window).on('load', function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+</script>
+
+<!-- MathJax Load-->
+
+<script type="text/ls-javascript" id="lazy-load">
+    // Offer LazyLoad
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    // Start Queue
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script>
+
+<!-- Bing Background -->
+
+
+<script>
+    (function(){
+        var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
+
+        for (var i = 0; i < scriptList.length; ++i) {
+            var item = scriptList[i];
+            lsloader.runInlineScript(item.id,item.id);
+        }
+    })()
+console.log('\n %c © Material Theme | Version: 1.4.0 | https://github.com/viosey/hexo-theme-material %c \n', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;');
+</script>
+
+                </main>
+            </div>
+        </body>
+    
+</html>
